@@ -37,6 +37,7 @@ function App() {
           <Route path="/reviews" element={<div className="p-8 text-center">Reviews page coming soon!</div>} />
           <Route path="/about" element={<div className="p-8 text-center">About page coming soon!</div>} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
