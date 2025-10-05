@@ -7,6 +7,11 @@ import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import AgentListPage from "./pages/AgentListPage";
 import AgentProfilePage from "./pages/AgentProfilePage";
+import CompareAgentsPage from "./pages/CompareAgentsPage";
+import ReviewsPage from "./pages/ReviewsPage";
+import HowItWorksPage from "./pages/HowItWorksPage";
+import UserDashboard from "./pages/UserDashboard";
+import SubmitReviewPage from "./pages/SubmitReviewPage";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
