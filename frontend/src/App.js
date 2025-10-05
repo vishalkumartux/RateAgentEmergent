@@ -3,6 +3,7 @@ import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import AgentListPage from "./pages/AgentListPage";
 import AgentProfilePage from "./pages/AgentProfilePage";
