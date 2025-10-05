@@ -38,8 +38,11 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/agents" element={<AgentListPage />} />
           <Route path="/agent/:id" element={<AgentProfilePage />} />
-          <Route path="/compare" element={<div className="p-8 text-center">Compare page coming soon!</div>} />
-          <Route path="/reviews" element={<div className="p-8 text-center">Reviews page coming soon!</div>} />
+          <Route path="/compare" element={<CompareAgentsPage />} />
+          <Route path="/reviews" element={<ReviewsPage />} />
+          <Route path="/how-it-works" element={<HowItWorksPage />} />
+          <Route path="/dashboard" element={<UserDashboard />} />
+          <Route path="/submit-review" element={<SubmitReviewPage />} />
           <Route path="/about" element={<div className="p-8 text-center">About page coming soon!</div>} />
         </Routes>
         <Footer />
