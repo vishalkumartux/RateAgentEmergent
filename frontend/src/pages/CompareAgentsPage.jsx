@@ -113,31 +113,31 @@ const CompareAgentsPage = () => {
               ) : (
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold">Search Agents</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Search Agents</h3>
                     <Button variant="ghost" onClick={() => setShowAddAgent(false)}>
                       <X className="h-4 w-4" />
                     </Button>
                   </div>
                   <div className="relative">
-                    <Search className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                    <Search className="absolute left-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-500" />
                     <Input
                       placeholder="Search by name, location, or company..."
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="pl-10"
+                      className="pl-10 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                     />
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-64 overflow-y-auto">
                     {availableAgents.map((agent) => (
-                      <div key={agent.id} className="border border-gray-200 rounded-lg p-4 hover:border-emerald-300 cursor-pointer transition-colors" onClick={() => addAgent(agent)}>
+                      <div key={agent.id} className="border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg p-4 hover:border-amber-300 dark:hover:border-amber-600 cursor-pointer transition-colors" onClick={() => addAgent(agent)}>
                         <div className="flex items-center space-x-3">
                           <img src={agent.photo} alt={agent.name} className="w-12 h-12 rounded-full object-cover" />
                           <div>
-                            <h4 className="font-semibold text-gray-900">{agent.name}</h4>
-                            <p className="text-gray-600 text-sm">{agent.company}</p>
+                            <h4 className="font-semibold text-gray-900 dark:text-white">{agent.name}</h4>
+                            <p className="text-gray-600 dark:text-gray-300 text-sm">{agent.company}</p>
                             <div className="flex items-center mt-1">
                               <Star className="h-4 w-4 text-amber-400 fill-current" />
-                              <span className="text-sm ml-1">{agent.rating}</span>
+                              <span className="text-sm ml-1 text-gray-900 dark:text-white">{agent.rating}</span>
                             </div>
                           </div>
                         </div>
