@@ -85,46 +85,87 @@ const HomePage = () => {
             </p>
           </div>
 
-          {/* Search Form */}
-          <form onSubmit={handleSearch} className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 md:p-8 max-w-4xl mx-auto mb-16 border border-gray-100 dark:border-gray-700">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-end">
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Location</label>
-                <div className="relative">
-                  <MapPin className="absolute left-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-500" />
-                  <Input
-                    placeholder="Enter suburb or city"
-                    value={searchLocation}
-                    onChange={(e) => setSearchLocation(e.target.value)}
-                    className="pl-10 h-12 border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:border-amber-500 focus:ring-amber-500"
-                  />
+          {/* Modern Search Form */}
+          <div className="max-w-5xl mx-auto mb-16">
+            <form onSubmit={handleSearch} className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-3 border-2 border-gray-100 dark:border-gray-700">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
+                {/* Location Search with Autocomplete */}
+                <div className="md:col-span-5">
+                  <div className="relative">
+                    <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-amber-600 z-10" />
+                    <Input
+                      placeholder="Where are you buying?"
+                      value={searchLocation}
+                      onChange={(e) => setSearchLocation(e.target.value)}
+                      list="locations"
+                      className="pl-12 h-14 text-base border-0 focus:ring-0 bg-transparent dark:text-white font-medium"
+                    />
+                    <datalist id="locations">
+                      <option value="Sydney CBD" />
+                      <option value="Bondi Beach" />
+                      <option value="Manly" />
+                      <option value="Surry Hills" />
+                      <option value="Newtown" />
+                      <option value="Parramatta" />
+                    </datalist>
+                  </div>
+                </div>
+
+                {/* Divider */}
+                <div className="hidden md:block h-10 w-px bg-gray-200 dark:bg-gray-600 md:col-span-auto"></div>
+
+                {/* Property Type */}
+                <div className="md:col-span-4">
+                  <select
+                    value={searchSpecialty}
+                    onChange={(e) => setSearchSpecialty(e.target.value)}
+                    className="w-full h-14 px-4 text-base border-0 focus:ring-0 bg-transparent dark:bg-transparent dark:text-white font-medium cursor-pointer"
+                  >
+                    <option value="">All Property Types</option>
+                    <option value="Luxury Homes">Luxury Homes</option>
+                    <option value="First Home Buyers">First Home Buyers</option>
+                    <option value="Investment Properties">Investment</option>
+                    <option value="Apartments">Apartments</option>
+                    <option value="Commercial">Commercial</option>
+                  </select>
+                </div>
+
+                {/* Search Button */}
+                <div className="md:col-span-2">
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="w-full h-14 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-2xl transition-all duration-200 hover:shadow-xl hover:scale-105"
+                  >
+                    <Search className="h-5 w-5 md:mr-0 lg:mr-2" />
+                    <span className="hidden lg:inline">Search</span>
+                  </Button>
                 </div>
               </div>
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Property Type</label>
-                <select
-                  value={searchSpecialty}
-                  onChange={(e) => setSearchSpecialty(e.target.value)}
-                  className="w-full h-12 px-3 border border-gray-200 dark:border-gray-600 rounded-lg focus:border-amber-500 focus:ring-amber-500 bg-white dark:bg-gray-700 dark:text-white"
-                >
-                  <option value="">All Property Types</option>
-                  <option value="Luxury Homes">Luxury Homes</option>
-                  <option value="First Home Buyers">First Home Buyers</option>
-                  <option value="Investment Properties">Investment Properties</option>
-                  <option value="Apartments">Apartments</option>
-                  <option value="Commercial">Commercial</option>
-                </select>
+            </form>
+
+            {/* Popular Searches */}
+            <div className="mt-6 text-center">
+              <div className="text-sm text-gray-500 dark:text-gray-400 mb-3 flex items-center justify-center">
+                <TrendingUp className="h-4 w-4 mr-2" />
+                Popular Searches:
               </div>
-              <Button 
-                type="submit" 
-                size="lg" 
-                className="h-12 bg-amber-600 hover:bg-amber-700 text-white px-8 font-semibold transition-all duration-200 hover:shadow-lg"
-              >
-                <Search className="h-5 w-5 mr-2" />
-                Find Agents
-              </Button>
+              <div className="flex flex-wrap gap-2 justify-center">
+                {['Sydney CBD', 'Bondi Beach', 'Manly', 'Parramatta', 'North Shore'].map((location) => (
+                  <button
+                    key={location}
+                    onClick={() => {
+                      setSearchLocation(location);
+                      handleSearch({ preventDefault: () => {} });
+                    }}
+                    className="px-4 py-2 bg-gray-100 dark:bg-gray-700 hover:bg-amber-100 dark:hover:bg-amber-900 text-gray-700 dark:text-gray-300 hover:text-amber-700 dark:hover:text-amber-400 rounded-full text-sm font-medium transition-all duration-200 hover:shadow-md"
+                  >
+                    {location}
+                  </button>
+                ))}
+              </div>
             </div>
-          </form>
+          </div>
 
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
