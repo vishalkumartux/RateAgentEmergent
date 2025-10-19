@@ -19,9 +19,16 @@ import {
   ArrowLeft,
   MessageCircle,
   Share2,
-  Heart
+  Heart,
+  Bed,
+  Bath,
+  Car,
+  Home,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react';
 import { mockAgents } from '../mock/agentData';
+import { getDealsByAgentId, formatDealPrice } from '../mock/dealData';
 
 const AgentProfilePage = () => {
   const { id } = useParams();
