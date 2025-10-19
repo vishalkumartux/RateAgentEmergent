@@ -8,7 +8,11 @@ import { useAuth } from '../context/AuthContext';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const { theme, toggleTheme } = useTheme();
+  const { user, logout, isAuthenticated, isAdmin } = useAuth();
 
   const navigation = [
     { name: 'Find Agents', href: '/agents', icon: Search },
