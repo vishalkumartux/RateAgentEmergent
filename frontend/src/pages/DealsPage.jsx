@@ -350,7 +350,8 @@ const DealsPage = () => {
           </div>
         )}
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 
