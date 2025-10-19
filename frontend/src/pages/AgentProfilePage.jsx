@@ -320,37 +320,60 @@ const AgentProfilePage = () => {
 
           {/* Reviews Tab */}
           <TabsContent value="reviews" className="space-y-6">
-            <Card>
+            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
               <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Star className="h-5 w-5 mr-2 text-emerald-600" />
-                  Client Reviews
+                <CardTitle className="flex items-center text-gray-900 dark:text-white">
+                  <Star className="h-5 w-5 mr-2 text-amber-600" />
+                  Client Reviews ({agent.reviews.length})
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-6">
-                  {agent.reviews.map((review) => (
-                    <div key={review.id} className="border-b border-gray-200 pb-6 last:border-b-0 last:pb-0">
+                  {displayedReviews.map((review) => (
+                    <div key={review.id} className="border-b border-gray-200 dark:border-gray-700 pb-6 last:border-b-0 last:pb-0">
                       <div className="flex items-start justify-between mb-3">
                         <div>
-                          <h4 className="font-semibold text-gray-900">{review.author}</h4>
+                          <h4 className="font-semibold text-gray-900 dark:text-white">{review.author}</h4>
                           <div className="flex items-center space-x-1 mt-1">
                             {[...Array(5)].map((_, i) => (
                               <Star
                                 key={i}
                                 className={`h-4 w-4 ${
-                                  i < review.rating ? 'text-amber-400 fill-current' : 'text-gray-300'
+                                  i < review.rating ? 'text-amber-400 fill-current' : 'text-gray-300 dark:text-gray-600'
                                 }`}
                               />
                             ))}
                           </div>
                         </div>
-                        <span className="text-sm text-gray-500">{review.date}</span>
+                        <span className="text-sm text-gray-500 dark:text-gray-400">{review.date}</span>
                       </div>
-                      <p className="text-gray-700 leading-relaxed">{review.comment}</p>
+                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{review.comment}</p>
                     </div>
                   ))}
                 </div>
+                
+                {/* Show More/Less Button */}
+                {agent.reviews.length > 5 && (
+                  <div className="mt-6 text-center pt-6 border-t border-gray-200 dark:border-gray-700">
+                    <Button
+                      variant="outline"
+                      onClick={() => setShowAllReviews(!showAllReviews)}
+                      className="border-amber-600 text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950"
+                    >
+                      {showAllReviews ? (
+                        <>
+                          <ChevronUp className="h-4 w-4 mr-2" />
+                          Show Less
+                        </>
+                      ) : (
+                        <>
+                          <ChevronDown className="h-4 w-4 mr-2" />
+                          Show All {agent.reviews.length} Reviews
+                        </>
+                      )}
+                    </Button>
+                  </div>
+                )}
               </CardContent>
             </Card>
           </TabsContent>
