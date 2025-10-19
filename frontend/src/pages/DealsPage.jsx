@@ -96,35 +96,67 @@ const DealsPage = () => {
           </p>
         </div>
 
-        {/* Search and Filters */}
-        <Card className="mb-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+        {/* Modern Search and Filters */}
+        <Card className="mb-8 bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700 shadow-xl">
           <CardContent className="p-6">
-            <div className="space-y-4">
-              {/* Search Bar */}
-              <div className="flex gap-4">
-                <div className="flex-1 relative">
-                  <MapPin className="absolute left-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-500" />
+            <div className="space-y-6">
+              {/* Main Search Bar */}
+              <div className="flex gap-3">
+                <div className="flex-1 relative group">
+                  <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-amber-600 z-10" />
                   <Input
                     placeholder="Search by location, suburb, or address..."
                     value={searchLocation}
                     onChange={(e) => setSearchLocation(e.target.value)}
-                    className="pl-10 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                    list="deal-locations"
+                    className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:focus:ring-amber-900 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
                   />
+                  <datalist id="deal-locations">
+                    <option value="Sydney CBD" />
+                    <option value="Bondi Beach" />
+                    <option value="Manly" />
+                    <option value="Double Bay" />
+                    <option value="Darling Point" />
+                    <option value="Coogee" />
+                  </datalist>
                 </div>
                 <Button
-                  variant="outline"
+                  variant={showFilters ? "default" : "outline"}
                   onClick={() => setShowFilters(!showFilters)}
-                  className="dark:border-gray-600 dark:text-gray-300"
+                  className={`h-14 px-6 rounded-2xl font-semibold transition-all ${
+                    showFilters 
+                      ? 'bg-amber-600 hover:bg-amber-700 text-white' 
+                      : 'border-2 border-gray-200 dark:border-gray-600 hover:border-amber-600 dark:text-gray-300'
+                  }`}
                 >
                   <SlidersHorizontal className="h-5 w-5 mr-2" />
                   Filters
                   {activeFiltersCount > 0 && (
-                    <Badge className="ml-2 bg-amber-600 text-white">
+                    <Badge className="ml-2 bg-white text-amber-600">
                       {activeFiltersCount}
                     </Badge>
                   )}
                 </Button>
               </div>
+
+              {/* Popular Searches */}
+              {!showFilters && (
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-sm text-gray-500 dark:text-gray-400 flex items-center">
+                    <TrendingUp className="h-4 w-4 mr-1" />
+                    Quick Search:
+                  </span>
+                  {['Bondi Beach', 'Sydney CBD', 'Manly', 'Apartments', 'Houses', 'Under $2M'].map((quick) => (
+                    <button
+                      key={quick}
+                      onClick={() => setSearchLocation(quick)}
+                      className="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 hover:bg-amber-100 dark:hover:bg-amber-900 text-gray-700 dark:text-gray-300 hover:text-amber-700 dark:hover:text-amber-400 rounded-full text-sm transition-all duration-200 hover:shadow-md"
+                    >
+                      {quick}
+                    </button>
+                  ))}
+                </div>
+              )}
 
               {/* Filters Panel */}
               {showFilters && (
