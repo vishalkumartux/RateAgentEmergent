@@ -17,6 +17,11 @@ import SubmitReviewPage from "./pages/SubmitReviewPage";
 import RegisterPage from "./pages/auth/RegisterPage";
 import LoginPage from "./pages/auth/LoginPage";
 import VerifyEmailPage from "./pages/auth/VerifyEmailPage";
+import OrganizationSetupPage from "./pages/admin/OrganizationSetupPage";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import StaffInvitePage from "./pages/staff/StaffInvitePage";
+import StaffProfileSetup from "./pages/staff/StaffProfileSetup";
+import StaffProfile from "./pages/staff/StaffProfile";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
