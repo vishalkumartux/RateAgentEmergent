@@ -113,11 +113,11 @@ const HomePage = () => {
               const Icon = stat.icon;
               return (
                 <div key={index} className="text-center group">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-xl shadow-lg mb-4 group-hover:shadow-xl transition-shadow duration-200">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-white dark:bg-gray-800 rounded-xl shadow-lg mb-4 group-hover:shadow-xl transition-shadow duration-200">
                     <Icon className={`h-8 w-8 ${stat.color}`} />
                   </div>
-                  <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">{stat.value}</div>
-                  <div className="text-gray-600 text-sm md:text-base">{stat.label}</div>
+                  <div className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1">{stat.value}</div>
+                  <div className="text-gray-600 dark:text-gray-300 text-sm md:text-base">{stat.label}</div>
                 </div>
               );
             })}
