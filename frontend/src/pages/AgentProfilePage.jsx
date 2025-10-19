@@ -217,29 +217,102 @@ const AgentProfilePage = () => {
             </Card>
           </TabsContent>
 
-          {/* Sales Tab */}
+          {/* Sales Tab - Now showing actual deals */}
           <TabsContent value="sales" className="space-y-6">
-            <Card>
+            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
               <CardHeader>
-                <CardTitle className="flex items-center">
-                  <TrendingUp className="h-5 w-5 mr-2 text-emerald-600" />
-                  Recent Sales
+                <CardTitle className="flex items-center text-gray-900 dark:text-white">
+                  <TrendingUp className="h-5 w-5 mr-2 text-amber-600" />
+                  Recent Deals ({agentDeals.length})
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4">
-                  {agent.recentSales.map((sale, index) => (
-                    <div key={index} className="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
-                      <div>
-                        <h4 className="font-semibold text-gray-900">{sale.address}</h4>
-                        <p className="text-gray-600 text-sm">Sold {sale.date}</p>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-xl font-bold text-emerald-600">{sale.price}</div>
-                        <div className="text-sm text-gray-600">{sale.daysOnMarket} days on market</div>
-                      </div>
+                {agentDeals.length === 0 ? (
+                  <div className="text-center py-8 text-gray-500 dark:text-gray-400">
+                    No deals found for this agent yet.
+                  </div>
+                ) : (
+                  <>
+                    <div className="space-y-4">
+                      {displayedDeals.map((deal) => (
+                        <Link key={deal.id} to={`/deal/${deal.id}`} className="block">
+                          <div className="flex items-start gap-4 p-4 border border-gray-200 dark:border-gray-600 rounded-lg hover:border-amber-300 dark:hover:border-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950 transition-all group">
+                            <img 
+                              src={deal.photos[0]} 
+                              alt={deal.address} 
+                              className="w-32 h-24 object-cover rounded-lg flex-shrink-0"
+                            />
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-start justify-between mb-2">
+                                <div>
+                                  <h4 className="font-semibold text-gray-900 dark:text-white group-hover:text-amber-600 transition-colors line-clamp-1">
+                                    {deal.address}
+                                  </h4>
+                                  <p className="text-gray-600 dark:text-gray-400 text-sm flex items-center mt-1">
+                                    <MapPin className="h-3 w-3 mr-1" />
+                                    {deal.suburb}, {deal.state}
+                                  </p>
+                                </div>
+                                <Badge className={`ml-2 ${deal.dealType === 'sale' ? 'bg-amber-600' : 'bg-blue-600'} text-white`}>
+                                  {deal.dealType === 'sale' ? 'Sold' : 'Leased'}
+                                </Badge>
+                              </div>
+                              <div className="flex items-center space-x-4 text-sm text-gray-600 dark:text-gray-400 mb-2">
+                                <div className="flex items-center">
+                                  <Bed className="h-4 w-4 mr-1" />
+                                  {deal.bedrooms}
+                                </div>
+                                <div className="flex items-center">
+                                  <Bath className="h-4 w-4 mr-1" />
+                                  {deal.bathrooms}
+                                </div>
+                                <div className="flex items-center">
+                                  <Car className="h-4 w-4 mr-1" />
+                                  {deal.carSpaces}
+                                </div>
+                                <div className="flex items-center">
+                                  <Home className="h-4 w-4 mr-1" />
+                                  {deal.propertyType}
+                                </div>
+                              </div>
+                              <div className="flex items-center justify-between">
+                                <div className="text-xl font-bold text-amber-600">
+                                  {formatDealPrice(deal)}
+                                </div>
+                                <div className="text-sm text-gray-500 dark:text-gray-400">
+                                  {deal.daysOnMarket} days on market
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </Link>
+                      ))}
                     </div>
-                  ))}
+                    
+                    {/* Show More/Less Button */}
+                    {agentDeals.length > 5 && (
+                      <div className="mt-6 text-center">
+                        <Button
+                          variant="outline"
+                          onClick={() => setShowAllDeals(!showAllDeals)}
+                          className="border-amber-600 text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950"
+                        >
+                          {showAllDeals ? (
+                            <>
+                              <ChevronUp className="h-4 w-4 mr-2" />
+                              Show Less
+                            </>
+                          ) : (
+                            <>
+                              <ChevronDown className="h-4 w-4 mr-2" />
+                              Show All {agentDeals.length} Deals
+                            </>
+                          )}
+                        </Button>
+                      </div>
+                    )}
+                  </>
+                )}
                 </div>
               </CardContent>
             </Card>
