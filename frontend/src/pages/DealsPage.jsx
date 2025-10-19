@@ -261,12 +261,16 @@ const DealsPage = () => {
                     </div>
                   </div>
 
-                  <div className="mt-4 flex justify-end">
+                  <div className="mt-6 flex justify-between items-center">
+                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                      {activeFiltersCount} {activeFiltersCount === 1 ? 'filter' : 'filters'} active
+                    </div>
                     <Button
                       variant="outline"
                       onClick={resetFilters}
-                      className="dark:border-gray-600 dark:text-gray-300"
+                      className="border-2 border-gray-200 dark:border-gray-600 hover:border-amber-600 dark:text-gray-300 rounded-xl px-6 h-11 font-semibold transition-all"
                     >
+                      <X className="h-4 w-4 mr-2" />
                       Reset Filters
                     </Button>
                   </div>
