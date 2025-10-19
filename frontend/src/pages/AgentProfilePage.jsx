@@ -313,7 +313,6 @@ const AgentProfilePage = () => {
                     )}
                   </>
                 )}
-                </div>
               </CardContent>
             </Card>
           </TabsContent>
