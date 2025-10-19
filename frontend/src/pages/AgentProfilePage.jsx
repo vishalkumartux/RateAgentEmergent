@@ -34,6 +34,13 @@ const AgentProfilePage = () => {
   const { id } = useParams();
   const agent = mockAgents.find(a => a.id === parseInt(id));
   const [activeTab, setActiveTab] = useState('overview');
+  const [showAllDeals, setShowAllDeals] = useState(false);
+  const [showAllReviews, setShowAllReviews] = useState(false);
+  
+  // Get deals by this agent
+  const agentDeals = getDealsByAgentId(parseInt(id));
+  const displayedDeals = showAllDeals ? agentDeals : agentDeals.slice(0, 5);
+  const displayedReviews = showAllReviews ? agent.reviews : agent.reviews.slice(0, 5);
 
   if (!agent) {
     return (
