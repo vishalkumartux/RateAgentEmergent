@@ -256,16 +256,16 @@ const CompareAgentsPage = () => {
 
         {/* Empty State */}
         {selectedAgents.length === 0 && (
-          <Card className="text-center py-16">
+          <Card className="text-center py-16 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
             <CardContent>
-              <BarChart3 className="h-16 w-16 text-gray-300 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Start Comparing Agents</h3>
-              <p className="text-gray-600 mb-6">
+              <BarChart3 className="h-16 w-16 text-gray-300 dark:text-gray-600 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Start Comparing Agents</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
                 Add agents to compare their performance metrics, specialties, and track records side by side.
               </p>
               <Button 
                 onClick={() => setShowAddAgent(true)} 
-                className="bg-emerald-600 hover:bg-emerald-700 text-white"
+                className="bg-amber-600 hover:bg-amber-700 text-white"
               >
                 <Plus className="h-5 w-5 mr-2" />
                 Add Your First Agent
