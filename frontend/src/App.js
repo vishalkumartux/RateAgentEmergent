@@ -65,9 +65,9 @@ function App() {
               <Route path="/verify-email" element={<VerifyEmailPage />} />
               <Route path="/organization-setup" element={<OrganizationSetupPage />} />
               <Route path="/admin/dashboard" element={<AdminDashboard />} />
-              <Route path=\"/staff/invite\" element={<StaffInvitePage />} />
-              <Route path=\"/staff/profile-setup\" element={<StaffProfileSetup />} />
-              <Route path=\"/staff/profile\" element={<StaffProfile />} />
+              <Route path="/staff/invite" element={<StaffInvitePage />} />
+              <Route path="/staff/profile-setup" element={<StaffProfileSetup />} />
+              <Route path="/staff/profile" element={<StaffProfile />} />
               <Route path=\"/admin/profile\" element={<AdminProfile />} />
               <Route path=\"/staff/my-profile\" element={<StaffProfilePage />} />
               <Route path=\"/staff/deals\" element={<MyDeals />} />
