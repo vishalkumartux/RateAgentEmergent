@@ -162,8 +162,8 @@ const Header = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`flex items-center space-x-3 px-4 py-3 rounded-lg font-medium transition-all ${
                     isActive(item.href)
-                      ? 'text-emerald-600 bg-emerald-50'
-                      : 'text-gray-600 hover:text-emerald-600 hover:bg-emerald-50'
+                      ? 'text-amber-600 bg-amber-50 dark:bg-amber-950'
+                      : 'text-gray-600 dark:text-gray-300 hover:text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950'
                   }`}
                 >
                   <Icon className="h-5 w-5" />
