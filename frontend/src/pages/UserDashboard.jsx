@@ -101,7 +101,7 @@ const UserDashboard = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
           <Card>
             <CardContent className="p-6 text-center">
-              <Heart className="h-8 w-8 text-emerald-600 mx-auto mb-3" />
+              <Heart className="h-8 w-8 text-amber-600 mx-auto mb-3" />
               <div className="text-2xl font-bold text-gray-900">{savedAgents.length}</div>
               <div className="text-gray-600 text-sm">Saved Agents</div>
             </CardContent>
