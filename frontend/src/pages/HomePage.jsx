@@ -99,7 +99,7 @@ const HomePage = () => {
               <Button 
                 type="submit" 
                 size="lg" 
-                className="h-12 bg-emerald-600 hover:bg-emerald-700 text-white px-8 font-semibold transition-all duration-200 hover:shadow-lg"
+                className="h-12 bg-amber-600 hover:bg-amber-700 text-white px-8 font-semibold transition-all duration-200 hover:shadow-lg"
               >
                 <Search className="h-5 w-5 mr-2" />
                 Find Agents
