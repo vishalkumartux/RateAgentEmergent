@@ -58,6 +58,11 @@ function App() {
               <Route path="/register" element={<RegisterPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/verify-email" element={<VerifyEmailPage />} />
+              <Route path="/organization-setup" element={<OrganizationSetupPage />} />
+              <Route path="/admin/dashboard" element={<AdminDashboard />} />
+              <Route path="/staff/invite" element={<StaffInvitePage />} />
+              <Route path="/staff/profile-setup" element={<StaffProfileSetup />} />
+              <Route path="/staff/profile" element={<StaffProfile />} />
               <Route path="/about" element={<div className="p-8 text-center">About page coming soon!</div>} />
             </Routes>
             <Footer />
