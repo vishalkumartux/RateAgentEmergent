@@ -205,20 +205,20 @@ const CompareAgentsPage = () => {
                       const bestAgent = getBestPerformer(metric.key);
                       
                       return (
-                        <tr key={metric.key} className="border-b border-gray-100">
+                        <tr key={metric.key} className="border-b border-gray-100 dark:border-gray-700">
                           <td className="py-4 px-2">
                             <div className="flex items-center space-x-2">
-                              <Icon className="h-5 w-5 text-emerald-600" />
-                              <span className="font-medium text-gray-900">{metric.label}</span>
+                              <Icon className="h-5 w-5 text-amber-600" />
+                              <span className="font-medium text-gray-900 dark:text-white">{metric.label}</span>
                             </div>
                           </td>
                           {selectedAgents.map((agent) => {
                             const isBest = bestAgent && bestAgent.id === agent.id;
                             return (
                               <td key={agent.id} className="py-4 px-4 text-center">
-                                <div className={`font-semibold ${isBest ? 'text-emerald-600' : 'text-gray-900'}`}>
+                                <div className={`font-semibold ${isBest ? 'text-amber-600' : 'text-gray-900 dark:text-white'}`}>
                                   {metric.format(agent[metric.key])}
-                                  {isBest && <Award className="h-4 w-4 inline ml-1 text-emerald-500" />}
+                                  {isBest && <Award className="h-4 w-4 inline ml-1 text-amber-500" />}
                                 </div>
                               </td>
                             );
