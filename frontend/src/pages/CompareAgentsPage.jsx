@@ -95,18 +95,18 @@ const CompareAgentsPage = () => {
 
         {/* Add Agent Section */}
         {selectedAgents.length < 3 && (
-          <Card className="mb-8">
+          <Card className="mb-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
             <CardContent className="p-6">
               {!showAddAgent ? (
                 <div className="text-center">
                   <Button 
                     onClick={() => setShowAddAgent(true)} 
-                    className="bg-emerald-600 hover:bg-emerald-700 text-white"
+                    className="bg-amber-600 hover:bg-amber-700 text-white"
                   >
                     <Plus className="h-5 w-5 mr-2" />
                     Add Agent to Compare
                   </Button>
-                  <p className="text-gray-600 mt-2">
+                  <p className="text-gray-600 dark:text-gray-300 mt-2">
                     You can compare up to 3 agents ({selectedAgents.length}/3 selected)
                   </p>
                 </div>
