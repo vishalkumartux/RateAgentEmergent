@@ -17,6 +17,7 @@ import SubmitReviewPage from "./pages/SubmitReviewPage";
 import RegisterPage from "./pages/auth/RegisterPage";
 import LoginPage from "./pages/auth/LoginPage";
 import VerifyEmailPage from "./pages/auth/VerifyEmailPage";
+import PublicSignupPage from "./pages/auth/PublicSignupPage";
 import OrganizationSetupPage from "./pages/admin/OrganizationSetupPage";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import StaffInvitePage from "./pages/staff/StaffInvitePage";
