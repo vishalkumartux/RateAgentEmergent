@@ -344,7 +344,7 @@ const AddDeal = () => {
                         <SelectItem value="commercial-lease">Commercial Lease</SelectItem>
                       </SelectContent>
                     </Select>
-                    {errors.dealType && <p className="text red-600 text-sm mt-1">{errors.dealType}</p>}
+                    {errors.dealType && <p className="text-red-600 text-sm mt-1">{errors.dealType}</p>}
                   </div>
                 </div>
                 
