@@ -8,6 +8,7 @@ const Footer = () => {
   const footerLinks = {
     platform: [
       { name: 'Find Agents', href: '/agents' },
+      { name: 'Deals', href: '/deals' },
       { name: 'Compare Agents', href: '/compare' },
       { name: 'Reviews', href: '/reviews' },
       { name: 'How it Works', href: '/how-it-works' }
