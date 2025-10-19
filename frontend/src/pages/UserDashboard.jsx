@@ -213,7 +213,7 @@ const UserDashboard = () => {
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">No saved agents yet</h3>
                     <p className="text-gray-600 mb-6">Start browsing agents and save your favorites for easy access.</p>
                     <Link to="/agents">
-                      <Button className="bg-emerald-600 hover:bg-emerald-700 text-white">
+                      <Button className="bg-amber-600 hover:bg-amber-700 text-white">
                         Browse Agents
                       </Button>
                     </Link>
