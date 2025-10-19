@@ -179,13 +179,14 @@ const DealsPage = () => {
                     </div>
 
                     <div>
-                      <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">
+                      <label className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2 block flex items-center">
+                        <Home className="h-4 w-4 mr-1.5 text-amber-600" />
                         Property Type
                       </label>
                       <select
                         value={filters.propertyType}
                         onChange={(e) => setFilters({ ...filters, propertyType: e.target.value })}
-                        className="w-full h-10 px-3 border border-gray-200 dark:border-gray-600 rounded-lg focus:border-amber-500 focus:ring-amber-500 bg-white dark:bg-gray-700 dark:text-white"
+                        className="w-full h-11 px-3 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:focus:ring-amber-900 bg-white dark:bg-gray-700 dark:text-white font-medium transition-all"
                       >
                         <option value="">All Types</option>
                         <option value="House">House</option>
@@ -195,13 +196,14 @@ const DealsPage = () => {
                     </div>
 
                     <div>
-                      <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">
-                        Min Bedrooms
+                      <label className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2 block flex items-center">
+                        <Bed className="h-4 w-4 mr-1.5 text-amber-600" />
+                        Bedrooms
                       </label>
                       <select
                         value={filters.bedrooms}
                         onChange={(e) => setFilters({ ...filters, bedrooms: e.target.value })}
-                        className="w-full h-10 px-3 border border-gray-200 dark:border-gray-600 rounded-lg focus:border-amber-500 focus:ring-amber-500 bg-white dark:bg-gray-700 dark:text-white"
+                        className="w-full h-11 px-3 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:focus:ring-amber-900 bg-white dark:bg-gray-700 dark:text-white font-medium transition-all"
                       >
                         <option value="">Any</option>
                         <option value="1">1+</option>
@@ -213,13 +215,14 @@ const DealsPage = () => {
                     </div>
 
                     <div>
-                      <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">
-                        Min Bathrooms
+                      <label className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2 block flex items-center">
+                        <Bath className="h-4 w-4 mr-1.5 text-amber-600" />
+                        Bathrooms
                       </label>
                       <select
                         value={filters.bathrooms}
                         onChange={(e) => setFilters({ ...filters, bathrooms: e.target.value })}
-                        className="w-full h-10 px-3 border border-gray-200 dark:border-gray-600 rounded-lg focus:border-amber-500 focus:ring-amber-500 bg-white dark:bg-gray-700 dark:text-white"
+                        className="w-full h-11 px-3 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:focus:ring-amber-900 bg-white dark:bg-gray-700 dark:text-white font-medium transition-all"
                       >
                         <option value="">Any</option>
                         <option value="1">1+</option>
@@ -230,7 +233,8 @@ const DealsPage = () => {
                     </div>
 
                     <div>
-                      <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">
+                      <label className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2 block flex items-center">
+                        <DollarSign className="h-4 w-4 mr-1.5 text-amber-600" />
                         Min Price
                       </label>
                       <Input
@@ -238,12 +242,13 @@ const DealsPage = () => {
                         placeholder="Min"
                         value={filters.minPrice}
                         onChange={(e) => setFilters({ ...filters, minPrice: e.target.value })}
-                        className="dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                        className="h-11 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:focus:ring-amber-900 dark:bg-gray-700 dark:text-white font-medium transition-all"
                       />
                     </div>
 
                     <div>
-                      <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">
+                      <label className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2 block flex items-center">
+                        <DollarSign className="h-4 w-4 mr-1.5 text-amber-600" />
                         Max Price
                       </label>
                       <Input
@@ -251,7 +256,7 @@ const DealsPage = () => {
                         placeholder="Max"
                         value={filters.maxPrice}
                         onChange={(e) => setFilters({ ...filters, maxPrice: e.target.value })}
-                        className="dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                        className="h-11 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:focus:ring-amber-900 dark:bg-gray-700 dark:text-white font-medium transition-all"
                       />
                     </div>
                   </div>
