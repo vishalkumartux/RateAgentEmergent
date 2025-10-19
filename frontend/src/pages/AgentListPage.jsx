@@ -267,16 +267,16 @@ const AgentListPage = () => {
                   
                   <div className="grid grid-cols-3 gap-3 text-sm">
                     <div className="text-center">
-                      <div className="text-xs text-gray-500">Sales Volume</div>
-                      <div className="font-semibold text-gray-900">{agent.salesVolume}</div>
+                      <div className="text-xs text-gray-500 dark:text-gray-400">Sales Volume</div>
+                      <div className="font-semibold text-gray-900 dark:text-white">{agent.salesVolume}</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-xs text-gray-500">Avg Days</div>
-                      <div className="font-semibold text-gray-900">{agent.avgDaysOnMarket}</div>
+                      <div className="text-xs text-gray-500 dark:text-gray-400">Avg Days</div>
+                      <div className="font-semibold text-gray-900 dark:text-white">{agent.avgDaysOnMarket}</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-xs text-gray-500">Accuracy</div>
-                      <div className="font-semibold text-gray-900">{agent.priceAccuracy}</div>
+                      <div className="text-xs text-gray-500 dark:text-gray-400">Accuracy</div>
+                      <div className="font-semibold text-gray-900 dark:text-white">{agent.priceAccuracy}</div>
                     </div>
                   </div>
                 </div>
@@ -284,7 +284,7 @@ const AgentListPage = () => {
                 {/* Specialties */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   {agent.specialties.map((specialty, index) => (
-                    <Badge key={index} variant="secondary" className="bg-gray-50 text-gray-700 text-xs">
+                    <Badge key={index} variant="secondary" className="bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs">
                       {specialty}
                     </Badge>
                   ))}
@@ -293,7 +293,7 @@ const AgentListPage = () => {
                 {/* Contact Actions */}
                 <div className="space-y-3">
                   <Link to={`/agent/${agent.id}`} className="block">
-                    <Button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white transition-all duration-200 group-hover:shadow-lg">
+                    <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white transition-all duration-200 group-hover:shadow-lg">
                       View Full Profile
                       <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Button>
