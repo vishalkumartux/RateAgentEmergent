@@ -36,23 +36,30 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/agents" element={<AgentListPage />} />
-          <Route path="/agent/:id" element={<AgentProfilePage />} />
-          <Route path="/compare" element={<CompareAgentsPage />} />
-          <Route path="/reviews" element={<ReviewsPage />} />
-          <Route path="/how-it-works" element={<HowItWorksPage />} />
-          <Route path="/dashboard" element={<UserDashboard />} />
-          <Route path="/submit-review" element={<SubmitReviewPage />} />
-          <Route path="/about" element={<div className="p-8 text-center">About page coming soon!</div>} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </div>
+    <ThemeProvider>
+      <AuthProvider>
+        <div className="App">
+          <BrowserRouter>
+            <Header />
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/agents" element={<AgentListPage />} />
+              <Route path="/agent/:id" element={<AgentProfilePage />} />
+              <Route path="/compare" element={<CompareAgentsPage />} />
+              <Route path="/reviews" element={<ReviewsPage />} />
+              <Route path="/how-it-works" element={<HowItWorksPage />} />
+              <Route path="/dashboard" element={<UserDashboard />} />
+              <Route path="/submit-review" element={<SubmitReviewPage />} />
+              <Route path="/register" element={<RegisterPage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/verify-email" element={<VerifyEmailPage />} />
+              <Route path="/about" element={<div className="p-8 text-center">About page coming soon!</div>} />
+            </Routes>
+            <Footer />
+          </BrowserRouter>
+        </div>
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
 
