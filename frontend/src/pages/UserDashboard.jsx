@@ -346,7 +346,7 @@ const UserDashboard = () => {
                 
                 <div className="pt-6 border-t border-gray-200">
                   <div className="flex space-x-4">
-                    <Button className="bg-emerald-600 hover:bg-emerald-700 text-white">
+                    <Button className="bg-amber-600 hover:bg-amber-700 text-white">
                       Edit Profile
                     </Button>
                     <Button variant="outline">
