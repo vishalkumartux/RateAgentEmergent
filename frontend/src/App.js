@@ -49,7 +49,7 @@ function App() {
   return (
     <ThemeProvider>
       <AuthProvider>
-        <div className="App">
+        <div className="App min-h-screen bg-background text-foreground">
           <BrowserRouter>
             <Header />
             <Routes>
@@ -74,7 +74,7 @@ function App() {
               <Route path="/staff/deals" element={<MyDeals />} />
               <Route path="/staff/deals/add" element={<AddDeal />} />
               <Route path="/staff/deals/:id" element={<DealDetails />} />
-              <Route path="/about" element={<div className="p-8 text-center">About page coming soon!</div>} />
+              <Route path="/about" element={<div className="p-8 text-center dark:text-gray-300">About page coming soon!</div>} />
             </Routes>
             <Footer />
           </BrowserRouter>
