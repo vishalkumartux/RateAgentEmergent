@@ -28,6 +28,8 @@ import StaffProfilePage from "./pages/staff/StaffProfilePage";
 import MyDeals from "./pages/staff/MyDeals";
 import AddDeal from "./pages/staff/AddDeal";
 import DealDetails from "./pages/staff/DealDetails";
+import DealsPage from "./pages/DealsPage";
+import DealDetailPage from "./pages/DealDetailPage";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
