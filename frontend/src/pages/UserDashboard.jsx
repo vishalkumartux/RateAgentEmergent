@@ -294,7 +294,7 @@ const UserDashboard = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <User className="h-5 w-5 mr-2 text-emerald-600" />
+                  <User className="h-5 w-5 mr-2 text-amber-600" />
                   Profile Settings
                 </CardTitle>
               </CardHeader>
