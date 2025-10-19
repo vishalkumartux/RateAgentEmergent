@@ -179,15 +179,18 @@ const AgentListPage = () => {
             </div>
           )}
 
-          {/* Advanced Filters */}
+          {/* Modern Advanced Filters */}
           {showFilters && (
-            <div className="mt-6 pt-6 border-t border-gray-200">
+            <div className="mt-6 pt-6 border-t-2 border-gray-100 dark:border-gray-700 animate-in fade-in slide-in-from-top-4 duration-300">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {/* Location Filter */}
                 <div>
-                  <label className="text-sm font-medium text-gray-700 mb-2 block">Location</label>
+                  <label className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2 block flex items-center">
+                    <MapPin className="h-4 w-4 mr-1.5 text-amber-600" />
+                    Location
+                  </label>
                   <Select value={selectedLocation} onValueChange={setSelectedLocation}>
-                    <SelectTrigger>
+                    <SelectTrigger className="h-11 border-2 border-gray-200 dark:border-gray-600 rounded-xl dark:bg-gray-700 dark:text-white">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
