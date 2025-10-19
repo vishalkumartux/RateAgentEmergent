@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
+import { ThemeProvider } from "./context/ThemeContext";
+import { AuthProvider } from "./context/AuthContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
@@ -12,6 +14,9 @@ import ReviewsPage from "./pages/ReviewsPage";
 import HowItWorksPage from "./pages/HowItWorksPage";
 import UserDashboard from "./pages/UserDashboard";
 import SubmitReviewPage from "./pages/SubmitReviewPage";
+import RegisterPage from "./pages/auth/RegisterPage";
+import LoginPage from "./pages/auth/LoginPage";
+import VerifyEmailPage from "./pages/auth/VerifyEmailPage";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
