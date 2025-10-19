@@ -141,7 +141,7 @@ const AgentListPage = () => {
                 <SlidersHorizontal className="h-5 w-5 mr-2" />
                 Filters
                 {activeFiltersCount > 0 && (
-                  <Badge className="ml-2 bg-emerald-600 text-white">
+                  <Badge className="ml-2 bg-amber-600 text-white">
                     {activeFiltersCount}
                   </Badge>
                 )}
