@@ -231,21 +231,21 @@ const AgentListPage = () => {
         {/* Results */}
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
           {filteredAgents.map((agent) => (
-            <Card key={agent.id} className="group hover:shadow-xl transition-all duration-300 border-gray-200 hover:border-emerald-200 bg-white">
+            <Card key={agent.id} className="group hover:shadow-xl transition-all duration-300 border-gray-200 hover:border-amber-200 bg-white dark:bg-gray-800">
               <CardContent className="p-6">
                 {/* Agent Header */}
                 <div className="flex items-start space-x-4 mb-6">
                   <img
                     src={agent.photo}
                     alt={agent.name}
-                    className="w-16 h-16 rounded-full object-cover border-4 border-white shadow-lg group-hover:shadow-xl transition-shadow"
+                    className="w-16 h-16 rounded-full object-cover border-4 border-white dark:border-gray-700 shadow-lg group-hover:shadow-xl transition-shadow"
                   />
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-xl font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors truncate">
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-amber-600 transition-colors truncate">
                       {agent.name}
                     </h3>
-                    <p className="text-gray-600 font-medium truncate">{agent.company}</p>
-                    <p className="text-gray-500 text-sm flex items-center mt-1">
+                    <p className="text-gray-600 dark:text-gray-300 font-medium truncate">{agent.company}</p>
+                    <p className="text-gray-500 dark:text-gray-400 text-sm flex items-center mt-1">
                       <MapPin className="h-4 w-4 mr-1 flex-shrink-0" />
                       {agent.location}
                     </p>
@@ -257,10 +257,10 @@ const AgentListPage = () => {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-1">
                       <Star className="h-5 w-5 text-amber-400 fill-current" />
-                      <span className="font-semibold text-gray-900">{agent.rating}</span>
-                      <span className="text-gray-500">({agent.reviewCount})</span>
+                      <span className="font-semibold text-gray-900 dark:text-white">{agent.rating}</span>
+                      <span className="text-gray-500 dark:text-gray-400">({agent.reviewCount})</span>
                     </div>
-                    <Badge className="bg-emerald-50 text-emerald-700">
+                    <Badge className="bg-amber-50 dark:bg-amber-900 text-amber-700 dark:text-amber-300">
                       {agent.yearsExperience}y exp
                     </Badge>
                   </div>
