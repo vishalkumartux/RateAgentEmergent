@@ -272,8 +272,8 @@ const UserDashboard = () => {
                     const Icon = getActivityIcon(activity.type);
                     return (
                       <div key={activity.id} className="flex items-center space-x-4 p-4 border border-gray-200 rounded-lg">
-                        <div className="w-10 h-10 bg-emerald-50 rounded-full flex items-center justify-center">
-                          <Icon className="h-5 w-5 text-emerald-600" />
+                        <div className="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center">
+                          <Icon className="h-5 w-5 text-amber-600" />
                         </div>
                         <div className="flex-1">
                           <p className="font-medium text-gray-900">{activity.action}</p>
