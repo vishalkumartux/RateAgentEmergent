@@ -17,6 +17,7 @@ const Header = () => {
   // Base navigation for all users
   const navigation = [
     { name: 'Find Agents', href: '/agents', icon: Search },
+    { name: 'Deals', href: '/deals', icon: BarChart3 },
     { name: 'Compare', href: '/compare', icon: TrendingUp },
     { name: 'Reviews', href: '/reviews', icon: Star },
     { name: 'About', href: '/about', icon: Users },
