@@ -76,6 +76,8 @@ function App() {
               <Route path="/staff/deals" element={<MyDeals />} />
               <Route path="/staff/deals/add" element={<AddDeal />} />
               <Route path="/staff/deals/:id" element={<DealDetails />} />
+              <Route path="/deals" element={<DealsPage />} />
+              <Route path="/deal/:id" element={<DealDetailPage />} />
               <Route path="/about" element={<div className="p-8 text-center dark:text-gray-300">About page coming soon!</div>} />
             </Routes>
             <Footer />
