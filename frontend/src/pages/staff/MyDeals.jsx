@@ -240,44 +240,50 @@ const MyDeals = () => {
           })}
         </div>
 
-        {/* Search and Filters */}
-        <Card className="mb-6">
+        {/* Modern Search and Filters */}
+        <Card className="mb-6 bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700 shadow-xl">
           <CardContent className="p-6">
             <div className="flex flex-col lg:flex-row gap-4">
-              {/* Search */}
+              {/* Modern Search */}
               <div className="relative flex-1">
-                <Search className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-amber-600 z-10" />
                 <Input
                   placeholder="Search by address or property details..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10"
+                  list="deal-search"
+                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:focus:ring-amber-900 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
                 />
+                <datalist id="deal-search">
+                  <option value="Bondi Beach" />
+                  <option value="Double Bay" />
+                  <option value="Coogee" />
+                </datalist>
               </div>
               
-              {/* Filters */}
+              {/* Modern Filters */}
               <div className="flex space-x-3">
                 <Select value={statusFilter} onValueChange={setStatusFilter}>
-                  <SelectTrigger className="w-40">
+                  <SelectTrigger className="w-44 h-14 border-2 border-gray-200 dark:border-gray-600 rounded-2xl font-semibold dark:bg-gray-700 dark:text-white">
                     <SelectValue placeholder="Status" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="all">All Status</SelectItem>
-                    <SelectItem value="active">Active</SelectItem>
-                    <SelectItem value="under contract">Under Contract</SelectItem>
-                    <SelectItem value="sold">Sold</SelectItem>
-                    <SelectItem value="leased">Leased</SelectItem>
+                    <SelectItem value="all">📋 All Status</SelectItem>
+                    <SelectItem value="active">🟢 Active</SelectItem>
+                    <SelectItem value="under contract">🟡 Under Contract</SelectItem>
+                    <SelectItem value="sold">✅ Sold</SelectItem>
+                    <SelectItem value="leased">✅ Leased</SelectItem>
                   </SelectContent>
                 </Select>
                 
                 <Select value={typeFilter} onValueChange={setTypeFilter}>
-                  <SelectTrigger className="w-40">
+                  <SelectTrigger className="w-40 h-14 border-2 border-gray-200 dark:border-gray-600 rounded-2xl font-semibold dark:bg-gray-700 dark:text-white">
                     <SelectValue placeholder="Type" />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">All Types</SelectItem>
-                    <SelectItem value="sale">Sale</SelectItem>
-                    <SelectItem value="rental">Rental</SelectItem>
+                    <SelectItem value="sale">💰 Sale</SelectItem>
+                    <SelectItem value="rental">🏠 Rental</SelectItem>
                     <SelectItem value="commercial">Commercial</SelectItem>
                   </SelectContent>
                 </Select>
