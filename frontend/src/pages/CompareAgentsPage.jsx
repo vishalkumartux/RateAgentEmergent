@@ -228,18 +228,18 @@ const CompareAgentsPage = () => {
                     })}
                     
                     {/* Specialties Row */}
-                    <tr className="border-b border-gray-100">
+                    <tr className="border-b border-gray-100 dark:border-gray-700">
                       <td className="py-4 px-2">
                         <div className="flex items-center space-x-2">
-                          <TrendingUp className="h-5 w-5 text-emerald-600" />
-                          <span className="font-medium text-gray-900">Specialties</span>
+                          <TrendingUp className="h-5 w-5 text-amber-600" />
+                          <span className="font-medium text-gray-900 dark:text-white">Specialties</span>
                         </div>
                       </td>
                       {selectedAgents.map((agent) => (
                         <td key={agent.id} className="py-4 px-4">
                           <div className="flex flex-wrap gap-1 justify-center">
                             {agent.specialties.map((specialty, index) => (
-                              <Badge key={index} variant="secondary" className="text-xs">
+                              <Badge key={index} variant="secondary" className="text-xs bg-amber-50 dark:bg-amber-900 text-amber-700 dark:text-amber-300">
                                 {specialty}
                               </Badge>
                             ))}
