@@ -1,0 +1,939 @@
+openapi: 3.0.3
+info:
+  title: AgentRate API
+  description: |
+    RESTful API for AgentRate - Real Estate Agent Discovery Platform
+    
+    This API specification is for .NET Core backend implementation.
+    Database: SQL Server
+    
+    **Authentication**: JWT Bearer Token
+    **Base URL**: https://api.agentrate.com/api
+    
+  version: 1.0.0
+  contact:
+    name: AgentRate Development Team
+    email: dev@agentrate.com
+
+servers:
+  - url: https://api.agentrate.com/api
+    description: Production server
+  - url: https://staging-api.agentrate.com/api
+    description: Staging server
+  - url: http://localhost:5000/api
+    description: Local development
+
+tags:
+  - name: Authentication
+    description: User authentication and authorization
+  - name: Agents
+    description: Real estate agent management
+  - name: Deals
+    description: Property deal management
+  - name: Reviews
+    description: Agent reviews and ratings
+  - name: Users
+    description: User profile management
+  - name: Organizations
+    description: Agency organization management
+  - name: Search
+    description: Global search functionality
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    # ============ AUTH SCHEMAS ============
+    LoginRequest:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          format: email
+          example: user@example.com
+        password:
+          type: string
+          format: password
+          example: Password123!
+
+    LoginResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        user:
+          $ref: '#/components/schemas/User'
+        token:
+          type: string
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+        
+    RegisterRequest:
+      type: object
+      required:
+        - email
+        - password
+        - name
+        - organizationName
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          format: password
+        name:
+          type: string
+        organizationName:
+          type: string
+        phone:
+          type: string
+        
+    # ============ USER SCHEMAS ============
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        email:
+          type: string
+        name:
+          type: string
+        role:
+          type: string
+          enum: [public_user, agency_staff, agency_admin]
+        organizationId:
+          type: integer
+          nullable: true
+        organizationName:
+          type: string
+          nullable: true
+        isVerified:
+          type: boolean
+        createdAt:
+          type: string
+          format: date-time
+
+    # ============ AGENT SCHEMAS ============
+    Agent:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        photo:
+          type: string
+          format: uri
+        company:
+          type: string
+        location:
+          type: string
+        rating:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 5
+        reviewCount:
+          type: integer
+        yearsExperience:
+          type: integer
+        specialties:
+          type: array
+          items:
+            type: string
+        bio:
+          type: string
+        salesVolume:
+          type: string
+        avgDaysOnMarket:
+          type: integer
+        priceAccuracy:
+          type: string
+        recentSales:
+          type: array
+          items:
+            $ref: '#/components/schemas/Sale'
+        reviews:
+          type: array
+          items:
+            $ref: '#/components/schemas/Review'
+
+    Sale:
+      type: object
+      properties:
+        address:
+          type: string
+        price:
+          type: string
+        date:
+          type: string
+        daysOnMarket:
+          type: integer
+
+    # ============ DEAL SCHEMAS ============
+    Deal:
+      type: object
+      properties:
+        id:
+          type: integer
+        agentId:
+          type: integer
+        agentName:
+          type: string
+        agentCompany:
+          type: string
+        agentPhoto:
+          type: string
+          format: uri
+        address:
+          type: string
+        suburb:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+        propertyType:
+          type: string
+          enum: [House, Apartment, Townhouse, Land, Commercial]
+        dealType:
+          type: string
+          enum: [sale, rent]
+        status:
+          type: string
+          enum: [sold, leased, active, under_contract]
+        bedrooms:
+          type: integer
+        bathrooms:
+          type: integer
+        carSpaces:
+          type: integer
+        landSize:
+          type: string
+        buildingArea:
+          type: string
+        price:
+          type: number
+        soldDate:
+          type: string
+          format: date
+        daysOnMarket:
+          type: integer
+        photos:
+          type: array
+          items:
+            type: string
+            format: uri
+        description:
+          type: string
+        features:
+          type: array
+          items:
+            type: string
+        createdAt:
+          type: string
+          format: date-time
+
+    CreateDealRequest:
+      type: object
+      required:
+        - address
+        - suburb
+        - propertyType
+        - dealType
+        - bedrooms
+        - bathrooms
+        - price
+      properties:
+        address:
+          type: string
+        suburb:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+        propertyType:
+          type: string
+        dealType:
+          type: string
+        bedrooms:
+          type: integer
+        bathrooms:
+          type: integer
+        carSpaces:
+          type: integer
+        landSize:
+          type: string
+        buildingArea:
+          type: string
+        price:
+          type: number
+        description:
+          type: string
+        features:
+          type: array
+          items:
+            type: string
+
+    # ============ REVIEW SCHEMAS ============
+    Review:
+      type: object
+      properties:
+        id:
+          type: integer
+        agentId:
+          type: integer
+        agentName:
+          type: string
+        agentCompany:
+          type: string
+        author:
+          type: string
+        rating:
+          type: integer
+          minimum: 1
+          maximum: 5
+        comment:
+          type: string
+        date:
+          type: string
+        verified:
+          type: boolean
+        createdAt:
+          type: string
+          format: date-time
+
+    SubmitReviewRequest:
+      type: object
+      required:
+        - agentId
+        - rating
+        - comment
+      properties:
+        agentId:
+          type: integer
+        rating:
+          type: integer
+          minimum: 1
+          maximum: 5
+        comment:
+          type: string
+        author:
+          type: string
+
+    # ============ COMMON SCHEMAS ============
+    ApiResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+        data:
+          type: object
+
+    ErrorResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: false
+        error:
+          type: string
+        message:
+          type: string
+
+paths:
+  # ============================================
+  # AUTHENTICATION ENDPOINTS
+  # ============================================
+  /auth/login:
+    post:
+      tags:
+        - Authentication
+      summary: User login
+      description: Authenticate user with email and password
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        '401':
+          description: Invalid credentials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /auth/register:
+    post:
+      tags:
+        - Authentication
+      summary: Register agency admin
+      description: Register new agency administrator account
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterRequest'
+      responses:
+        '201':
+          description: Registration successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /auth/signup:
+    post:
+      tags:
+        - Authentication
+      summary: Public user signup
+      description: Register new public user account
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - password
+                - name
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+                name:
+                  type: string
+      responses:
+        '201':
+          description: Signup successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /auth/logout:
+    post:
+      tags:
+        - Authentication
+      summary: Logout user
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Logout successful
+
+  # ============================================
+  # AGENT ENDPOINTS
+  # ============================================
+  /agents:
+    get:
+      tags:
+        - Agents
+      summary: Get all agents
+      description: Retrieve list of agents with optional filters
+      parameters:
+        - name: search
+          in: query
+          schema:
+            type: string
+        - name: location
+          in: query
+          schema:
+            type: string
+        - name: specialty
+          in: query
+          schema:
+            type: string
+        - name: minRating
+          in: query
+          schema:
+            type: number
+        - name: page
+          in: query
+          schema:
+            type: integer
+            default: 1
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+      responses:
+        '200':
+          description: Agents retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Agent'
+                  total:
+                    type: integer
+                  page:
+                    type: integer
+                  pages:
+                    type: integer
+
+  /agents/{id}:
+    get:
+      tags:
+        - Agents
+      summary: Get agent by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Agent found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    $ref: '#/components/schemas/Agent'
+        '404':
+          description: Agent not found
+
+  # ============================================
+  # DEAL ENDPOINTS
+  # ============================================
+  /deals:
+    get:
+      tags:
+        - Deals
+      summary: Get all deals
+      parameters:
+        - name: search
+          in: query
+          schema:
+            type: string
+        - name: dealType
+          in: query
+          schema:
+            type: string
+            enum: [sale, rent]
+        - name: propertyType
+          in: query
+          schema:
+            type: string
+        - name: minBedrooms
+          in: query
+          schema:
+            type: integer
+        - name: minPrice
+          in: query
+          schema:
+            type: number
+        - name: maxPrice
+          in: query
+          schema:
+            type: number
+        - name: page
+          in: query
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Deals retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Deal'
+                  total:
+                    type: integer
+
+    post:
+      tags:
+        - Deals
+      summary: Create new deal
+      description: Create new property deal (Staff/Admin only)
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDealRequest'
+      responses:
+        '201':
+          description: Deal created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+
+  /deals/{id}:
+    get:
+      tags:
+        - Deals
+      summary: Get deal by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Deal found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    $ref: '#/components/schemas/Deal'
+
+    put:
+      tags:
+        - Deals
+      summary: Update deal
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDealRequest'
+      responses:
+        '200':
+          description: Deal updated successfully
+
+    delete:
+      tags:
+        - Deals
+      summary: Delete deal
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Deal deleted successfully
+
+  /deals/agent/{agentId}:
+    get:
+      tags:
+        - Deals
+      summary: Get deals by agent
+      parameters:
+        - name: agentId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Deals retrieved successfully
+
+  # ============================================
+  # REVIEW ENDPOINTS
+  # ============================================
+  /reviews:
+    get:
+      tags:
+        - Reviews
+      summary: Get all reviews
+      parameters:
+        - name: search
+          in: query
+          schema:
+            type: string
+        - name: agentId
+          in: query
+          schema:
+            type: integer
+        - name: minRating
+          in: query
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Reviews retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Review'
+
+    post:
+      tags:
+        - Reviews
+      summary: Submit new review
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SubmitReviewRequest'
+      responses:
+        '201':
+          description: Review submitted successfully
+
+  # ============================================
+  # USER ENDPOINTS
+  # ============================================
+  /user/profile:
+    get:
+      tags:
+        - Users
+      summary: Get user profile
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Profile retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    $ref: '#/components/schemas/User'
+
+    put:
+      tags:
+        - Users
+      summary: Update user profile
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                phone:
+                  type: string
+      responses:
+        '200':
+          description: Profile updated successfully
+
+  /user/saved-agents:
+    post:
+      tags:
+        - Users
+      summary: Save favorite agent
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                agentId:
+                  type: integer
+      responses:
+        '200':
+          description: Agent saved successfully
+
+  /user/saved-agents/{agentId}:
+    delete:
+      tags:
+        - Users
+      summary: Remove saved agent
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: agentId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Agent removed from favorites
+
+  # ============================================
+  # ORGANIZATION ENDPOINTS
+  # ============================================
+  /organizations:
+    post:
+      tags:
+        - Organizations
+      summary: Create organization
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                address:
+                  type: string
+                phone:
+                  type: string
+                email:
+                  type: string
+      responses:
+        '201':
+          description: Organization created successfully
+
+  /organizations/{id}:
+    put:
+      tags:
+        - Organizations
+      summary: Update organization
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Organization updated successfully
+
+  /organizations/invite-staff:
+    post:
+      tags:
+        - Organizations
+      summary: Invite staff member
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                name:
+                  type: string
+                role:
+                  type: string
+      responses:
+        '200':
+          description: Invitation sent successfully
+
+  # ============================================
+  # SEARCH ENDPOINTS
+  # ============================================
+  /search:
+    get:
+      tags:
+        - Search
+      summary: Global search
+      parameters:
+        - name: query
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Search results
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: object
+                    properties:
+                      agents:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Agent'
+                      deals:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Deal'
