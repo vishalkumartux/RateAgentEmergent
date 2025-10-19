@@ -158,18 +158,19 @@ const DealsPage = () => {
                 </div>
               )}
 
-              {/* Filters Panel */}
+              {/* Modern Filters Panel */}
               {showFilters && (
-                <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+                <div className="pt-6 border-t-2 border-gray-100 dark:border-gray-700 animate-in fade-in slide-in-from-top-4 duration-300">
                   <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4">
                     <div>
-                      <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">
+                      <label className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2 block flex items-center">
+                        <Home className="h-4 w-4 mr-1.5 text-amber-600" />
                         Deal Type
                       </label>
                       <select
                         value={filters.dealType}
                         onChange={(e) => setFilters({ ...filters, dealType: e.target.value })}
-                        className="w-full h-10 px-3 border border-gray-200 dark:border-gray-600 rounded-lg focus:border-amber-500 focus:ring-amber-500 bg-white dark:bg-gray-700 dark:text-white"
+                        className="w-full h-11 px-3 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:focus:ring-amber-900 bg-white dark:bg-gray-700 dark:text-white font-medium transition-all"
                       >
                         <option value="">All</option>
                         <option value="sale">Sale</option>
