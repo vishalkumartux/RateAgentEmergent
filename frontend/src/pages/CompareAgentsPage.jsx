@@ -163,8 +163,8 @@ const CompareAgentsPage = () => {
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
-                    <tr className="border-b border-gray-200">
-                      <th className="text-left py-4 px-2 font-medium text-gray-700">Agent</th>
+                    <tr className="border-b border-gray-200 dark:border-gray-700">
+                      <th className="text-left py-4 px-2 font-medium text-gray-700 dark:text-gray-300">Agent</th>
                       {selectedAgents.map((agent) => (
                         <th key={agent.id} className="text-center py-4 px-4 min-w-[250px]">
                           <div className="space-y-3">
@@ -172,7 +172,7 @@ const CompareAgentsPage = () => {
                               <img
                                 src={agent.photo}
                                 alt={agent.name}
-                                className="w-16 h-16 rounded-full mx-auto object-cover border-4 border-white shadow-lg"
+                                className="w-16 h-16 rounded-full mx-auto object-cover border-4 border-white dark:border-gray-700 shadow-lg"
                               />
                               <button
                                 onClick={() => removeAgent(agent.id)}
@@ -182,15 +182,15 @@ const CompareAgentsPage = () => {
                               </button>
                             </div>
                             <div>
-                              <h3 className="font-semibold text-gray-900">{agent.name}</h3>
-                              <p className="text-gray-600 text-sm">{agent.company}</p>
-                              <p className="text-gray-500 text-xs flex items-center justify-center mt-1">
+                              <h3 className="font-semibold text-gray-900 dark:text-white">{agent.name}</h3>
+                              <p className="text-gray-600 dark:text-gray-300 text-sm">{agent.company}</p>
+                              <p className="text-gray-500 dark:text-gray-400 text-xs flex items-center justify-center mt-1">
                                 <MapPin className="h-3 w-3 mr-1" />
                                 {agent.location}
                               </p>
                             </div>
                             <Link to={`/agent/${agent.id}`}>
-                              <Button size="sm" variant="outline" className="w-full">
+                              <Button size="sm" variant="outline" className="w-full border-amber-600 text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950">
                                 View Profile
                               </Button>
                             </Link>
