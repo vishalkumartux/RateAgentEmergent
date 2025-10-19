@@ -23,20 +23,26 @@ const Header = () => {
 
   const isActive = (path) => location.pathname === path;
 
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+    setIsUserMenuOpen(false);
+  };
+
   return (
-    <header className="bg-white border-b border-gray-100 sticky top-0 z-50 backdrop-blur-md bg-white/95">
+    <header className="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 sticky top-0 z-50 backdrop-blur-md bg-white/95 dark:bg-gray-900/95">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-transform duration-200">
+            <div className="w-10 h-10 bg-gradient-to-r from-amber-500 to-yellow-600 rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-transform duration-200">
               <Star className="h-5 w-5 text-white" />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-bold text-gray-900 group-hover:text-emerald-600 transition-colors">
+              <span className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-amber-600 transition-colors">
                 AgentRate
               </span>
-              <span className="text-xs text-gray-500 -mt-1">Find Your Perfect Agent</span>
+              <span className="text-xs text-gray-500 dark:text-gray-400 -mt-1">Find Your Perfect Agent</span>
             </div>
           </Link>
 
