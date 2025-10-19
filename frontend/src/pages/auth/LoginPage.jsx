@@ -166,10 +166,22 @@ const LoginPage = () => {
 
             {/* Demo Credentials */}
             <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
-              <p className="text-xs text-gray-500 mb-3 text-center">
+              <p className="text-xs text-gray-500 dark:text-gray-400 mb-3 text-center">
                 Demo Credentials (password: password123)
               </p>
               <div className="grid grid-cols-1 gap-2 text-xs">
+                <div className="flex justify-between items-center p-2 bg-gray-50 dark:bg-gray-800 rounded">
+                  <span className="text-gray-600 dark:text-gray-400">Public User:</span>
+                  <button 
+                    type="button"
+                    onClick={() => {
+                      setFormData(prev => ({ ...prev, email: 'public@user.com', password: 'password123' }));
+                    }}
+                    className="text-amber-600 hover:text-amber-700 font-mono"
+                  >
+                    public@user.com
+                  </button>
+                </div>
                 <div className="flex justify-between items-center p-2 bg-gray-50 dark:bg-gray-800 rounded">
                   <span className="text-gray-600 dark:text-gray-400">Agency Admin:</span>
                   <button 
