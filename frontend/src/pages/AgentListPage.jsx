@@ -104,50 +104,80 @@ const AgentListPage = () => {
           </p>
         </div>
 
-        {/* Search and Filter Bar */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-8">
+        {/* Modern Search and Filter Bar */}
+        <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl border-2 border-gray-100 dark:border-gray-700 p-6 mb-8">
           <div className="flex flex-col lg:flex-row gap-4 items-center">
-            {/* Search */}
+            {/* Modern Search */}
             <div className="relative flex-1 min-w-0">
-              <Search className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-amber-600 z-10" />
               <Input
                 placeholder="Search by name, location, or company..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 h-12"
+                list="agent-suggestions"
+                className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:focus:ring-amber-900 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
               />
+              <datalist id="agent-suggestions">
+                <option value="Sydney" />
+                <option value="Melbourne" />
+                <option value="Brisbane" />
+                <option value="Perth" />
+              </datalist>
             </div>
             
             {/* Quick Filters */}
             <div className="flex flex-wrap gap-3">
               <Select value={sortBy} onValueChange={setSortBy}>
-                <SelectTrigger className="w-40 h-12">
+                <SelectTrigger className="w-44 h-14 border-2 border-gray-200 dark:border-gray-600 rounded-2xl font-semibold dark:bg-gray-700 dark:text-white">
                   <SelectValue placeholder="Sort by" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="rating">Highest Rated</SelectItem>
-                  <SelectItem value="reviews">Most Reviews</SelectItem>
-                  <SelectItem value="experience">Most Experience</SelectItem>
-                  <SelectItem value="sales">Highest Sales</SelectItem>
-                  <SelectItem value="speed">Fastest Sales</SelectItem>
+                  <SelectItem value="rating">⭐ Highest Rated</SelectItem>
+                  <SelectItem value="reviews">💬 Most Reviews</SelectItem>
+                  <SelectItem value="experience">🎯 Most Experience</SelectItem>
+                  <SelectItem value="sales">💰 Highest Sales</SelectItem>
+                  <SelectItem value="speed">⚡ Fastest Sales</SelectItem>
                 </SelectContent>
               </Select>
               
               <Button
-                variant="outline"
+                variant={showFilters ? "default" : "outline"}
                 onClick={() => setShowFilters(!showFilters)}
-                className="h-12 px-4"
+                className={`h-14 px-6 rounded-2xl font-semibold transition-all ${
+                  showFilters 
+                    ? 'bg-amber-600 hover:bg-amber-700 text-white' 
+                    : 'border-2 border-gray-200 dark:border-gray-600 hover:border-amber-600'
+                }`}
               >
                 <SlidersHorizontal className="h-5 w-5 mr-2" />
                 Filters
                 {activeFiltersCount > 0 && (
-                  <Badge className="ml-2 bg-amber-600 text-white">
+                  <Badge className="ml-2 bg-white text-amber-600">
                     {activeFiltersCount}
                   </Badge>
                 )}
               </Button>
             </div>
           </div>
+
+          {/* Popular Searches */}
+          {!showFilters && (
+            <div className="mt-4 flex items-center gap-2 flex-wrap">
+              <span className="text-sm text-gray-500 dark:text-gray-400 flex items-center">
+                <TrendingUp className="h-4 w-4 mr-1" />
+                Popular:
+              </span>
+              {['Sydney', 'Luxury Homes', 'First Home Buyers', 'Top Rated'].map((quick) => (
+                <button
+                  key={quick}
+                  onClick={() => setSearchTerm(quick)}
+                  className="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 hover:bg-amber-100 dark:hover:bg-amber-900 text-gray-700 dark:text-gray-300 hover:text-amber-700 dark:hover:text-amber-400 rounded-full text-sm transition-all duration-200 hover:shadow-md"
+                >
+                  {quick}
+                </button>
+              ))}
+            </div>
+          )}
 
           {/* Advanced Filters */}
           {showFilters && (
