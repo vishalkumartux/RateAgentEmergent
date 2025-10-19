@@ -144,7 +144,7 @@ const UserDashboard = () => {
               <CardHeader>
                 <CardTitle className="flex items-center justify-between">
                   <div className="flex items-center">
-                    <Heart className="h-5 w-5 mr-2 text-emerald-600" />
+                    <Heart className="h-5 w-5 mr-2 text-amber-600" />
                     Saved Agents ({savedAgents.length})
                   </div>
                   <Button variant="outline" size="sm">
