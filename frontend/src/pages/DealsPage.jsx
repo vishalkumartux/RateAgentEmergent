@@ -16,7 +16,9 @@ import {
   Calendar,
   SlidersHorizontal,
   ArrowRight,
-  User
+  User,
+  TrendingUp,
+  X
 } from 'lucide-react';
 import { mockDeals, formatDealPrice } from '../mock/dealData';
 
