@@ -49,8 +49,26 @@ const HomePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
+    <>
+      <SEO 
+        title="AgentRate - Find Your Perfect Real Estate Agent | Verified Performance & Reviews"
+        description="Compare top-rated real estate agents in Australia. View verified performance data, authentic client reviews, and property deals. Find the perfect buyer's agent for your needs."
+        keywords="real estate agents Australia, buyer agents Sydney, property agents, agent reviews, real estate comparison, property deals"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "AgentRate",
+          "url": "https://agentrate.com.au",
+          "description": "Australia's leading platform for comparing real estate agents",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://agentrate.com.au/agents?search={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }}
+      />
+      <div className="min-h-screen bg-background">
+        {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-slate-50 via-white to-emerald-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 pt-16 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
