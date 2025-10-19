@@ -219,7 +219,11 @@ const Header = () => {
                       </Button>
                     </Link>
                   )}
-                  <Link to={isAdmin ? "/admin/profile" : "/staff/my-profile"}>
+                  <Link to={
+                    isAdmin ? "/admin/profile" : 
+                    user?.role === 'agency_staff' ? "/staff/my-profile" : 
+                    "/dashboard"
+                  }>
                     <Button variant="ghost" className="w-full justify-start text-gray-600 dark:text-gray-300">
                       <User className="h-4 w-4 mr-3" />
                       My Profile
