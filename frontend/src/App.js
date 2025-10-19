@@ -82,7 +82,18 @@ function App() {
               <Route path="/staff/deals/:id" element={<DealDetails />} />
               <Route path="/deals" element={<DealsPage />} />
               <Route path="/deal/:id" element={<DealDetailPage />} />
-              <Route path="/about" element={<div className="p-8 text-center dark:text-gray-300">About page coming soon!</div>} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/privacy" element={<PrivacyPolicyPage />} />
+              <Route path="/terms" element={<TermsPage />} />
+              <Route path="/careers" element={<div className="p-8 text-center dark:text-gray-300">Careers page - Content placeholder</div>} />
+              <Route path="/press" element={<div className="p-8 text-center dark:text-gray-300">Press page - Content placeholder</div>} />
+              <Route path="/blog" element={<div className="p-8 text-center dark:text-gray-300">Blog page - Content placeholder</div>} />
+              <Route path="/reports" element={<div className="p-8 text-center dark:text-gray-300">Market Reports - Content placeholder</div>} />
+              <Route path="/agent-resources" element={<div className="p-8 text-center dark:text-gray-300">Agent Resources - Content placeholder</div>} />
+              <Route path="/help" element={<div className="p-8 text-center dark:text-gray-300">Help Center - Content placeholder</div>} />
+              <Route path="/cookies" element={<div className="p-8 text-center dark:text-gray-300">Cookie Policy - Content placeholder</div>} />
+              <Route path="/disclaimer" element={<div className="p-8 text-center dark:text-gray-300">Disclaimer - Content placeholder</div>} />
             </Routes>
             <Footer />
           </BrowserRouter>
