@@ -139,20 +139,20 @@ const HomePage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {featuredAgents.map((agent) => (
-              <Card key={agent.id} className="group hover:shadow-xl transition-all duration-300 border-gray-100 hover:border-emerald-200">
+              <Card key={agent.id} className="group hover:shadow-xl transition-all duration-300 border-gray-100 dark:border-gray-700 hover:border-amber-200 dark:hover:border-amber-600 bg-white dark:bg-gray-800">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4 mb-4">
                     <img
                       src={agent.photo}
                       alt={agent.name}
-                      className="w-16 h-16 rounded-full object-cover border-4 border-white shadow-lg"
+                      className="w-16 h-16 rounded-full object-cover border-4 border-white dark:border-gray-700 shadow-lg"
                     />
                     <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors">
+                      <h3 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-amber-600 transition-colors">
                         {agent.name}
                       </h3>
-                      <p className="text-gray-600 font-medium">{agent.company}</p>
-                      <p className="text-gray-500 text-sm flex items-center mt-1">
+                      <p className="text-gray-600 dark:text-gray-300 font-medium">{agent.company}</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm flex items-center mt-1">
                         <MapPin className="h-4 w-4 mr-1" />
                         {agent.location}
                       </p>
@@ -162,32 +162,32 @@ const HomePage = () => {
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center space-x-1">
                       <Star className="h-5 w-5 text-amber-400 fill-current" />
-                      <span className="font-semibold text-gray-900">{agent.rating}</span>
-                      <span className="text-gray-500">({agent.reviewCount} reviews)</span>
+                      <span className="font-semibold text-gray-900 dark:text-white">{agent.rating}</span>
+                      <span className="text-gray-500 dark:text-gray-400">({agent.reviewCount} reviews)</span>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-2 gap-4 mb-4 text-sm">
                     <div>
-                      <div className="text-gray-500">Sales Volume</div>
-                      <div className="font-semibold text-gray-900">{agent.salesVolume}</div>
+                      <div className="text-gray-500 dark:text-gray-400">Sales Volume</div>
+                      <div className="font-semibold text-gray-900 dark:text-white">{agent.salesVolume}</div>
                     </div>
                     <div>
-                      <div className="text-gray-500">Avg. Days</div>
-                      <div className="font-semibold text-gray-900">{agent.avgDaysOnMarket}</div>
+                      <div className="text-gray-500 dark:text-gray-400">Avg. Days</div>
+                      <div className="font-semibold text-gray-900 dark:text-white">{agent.avgDaysOnMarket}</div>
                     </div>
                   </div>
 
                   <div className="flex flex-wrap gap-2 mb-4">
                     {agent.specialties.slice(0, 2).map((specialty, index) => (
-                      <Badge key={index} variant="secondary" className="bg-emerald-50 text-emerald-700 hover:bg-emerald-100">
+                      <Badge key={index} variant="secondary" className="bg-amber-50 dark:bg-amber-900 text-amber-700 dark:text-amber-300 hover:bg-amber-100 dark:hover:bg-amber-800">
                         {specialty}
                       </Badge>
                     ))}
                   </div>
 
                   <Link to={`/agent/${agent.id}`}>
-                    <Button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white group-hover:shadow-lg transition-all duration-200">
+                    <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white group-hover:shadow-lg transition-all duration-200">
                       View Profile
                       <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Button>
