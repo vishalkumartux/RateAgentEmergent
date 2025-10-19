@@ -22,6 +22,11 @@ import AdminDashboard from "./pages/admin/AdminDashboard";
 import StaffInvitePage from "./pages/staff/StaffInvitePage";
 import StaffProfileSetup from "./pages/staff/StaffProfileSetup";
 import StaffProfile from "./pages/staff/StaffProfile";
+import AdminProfile from "./pages/admin/AdminProfile";
+import StaffProfilePage from "./pages/staff/StaffProfilePage";
+import MyDeals from "./pages/staff/MyDeals";
+import AddDeal from "./pages/staff/AddDeal";
+import DealDetails from "./pages/staff/DealDetails";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
