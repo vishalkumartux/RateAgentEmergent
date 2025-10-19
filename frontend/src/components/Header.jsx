@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
-import { Search, Menu, X, Star, Users, TrendingUp, Sun, Moon, LogOut, Settings, User } from 'lucide-react';
+import { Search, Menu, X, Star, Users, TrendingUp, Sun, Moon, LogOut, Settings, User, BarChart3 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
 
