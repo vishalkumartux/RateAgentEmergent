@@ -208,6 +208,11 @@ const Header = () => {
                       Sign In
                     </Button>
                   </Link>
+                  <Link to="/public-signup">
+                    <Button variant="outline" className="w-full border-amber-600 text-amber-600 hover:bg-amber-50">
+                      Sign Up
+                    </Button>
+                  </Link>
                   <Link to="/register">
                     <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white">
                       List Your Agency
