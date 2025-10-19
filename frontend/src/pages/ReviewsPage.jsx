@@ -176,29 +176,58 @@ const ReviewsPage = () => {
 
           {/* Main Content */}
           <div className="lg:col-span-3">
-            {/* Search and Sort */}
-            <Card className="mb-6">
+            {/* Modern Search and Sort */}
+            <Card className="mb-6 bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700 shadow-xl">
               <CardContent className="p-6">
                 <div className="flex flex-col sm:flex-row gap-4">
                   <div className="relative flex-1">
-                    <Search className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-amber-600 z-10" />
                     <Input
                       placeholder="Search reviews, agents, or clients..."
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="pl-10"
+                      list="review-search"
+                      className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:focus:ring-amber-900 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
                     />
+                    <datalist id="review-search">
+                      <option value="5 star reviews" />
+                      <option value="Sarah Johnson" />
+                      <option value="Michael Chen" />
+                      <option value="Sydney" />
+                    </datalist>
                   </div>
                   <Select value={sortBy} onValueChange={setSortBy}>
-                    <SelectTrigger className="w-full sm:w-48">
+                    <SelectTrigger className="w-full sm:w-52 h-14 border-2 border-gray-200 dark:border-gray-600 rounded-2xl font-semibold dark:bg-gray-700 dark:text-white">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="recent">Most Recent</SelectItem>
-                      <SelectItem value="rating-high">Highest Rating</SelectItem>
-                      <SelectItem value="rating-low">Lowest Rating</SelectItem>
+                      <SelectItem value="recent">🕐 Most Recent</SelectItem>
+                      <SelectItem value="rating-high">⭐ Highest Rating</SelectItem>
+                      <SelectItem value="rating-low">📉 Lowest Rating</SelectItem>
                     </SelectContent>
                   </Select>
+                </div>
+
+                {/* Popular Searches */}
+                <div className="mt-4 flex items-center gap-2 flex-wrap">
+                  <span className="text-sm text-gray-500 dark:text-gray-400 flex items-center">
+                    <TrendingUp className="h-4 w-4 mr-1" />
+                    Quick Filter:
+                  </span>
+                  {['5 Stars', '4+ Stars', 'Recent', 'Sydney'].map((quick) => (
+                    <button
+                      key={quick}
+                      onClick={() => {
+                        if (quick === '5 Stars') setRatingFilter([5]);
+                        else if (quick === '4+ Stars') setRatingFilter([4]);
+                        else if (quick === 'Recent') setSortBy('recent');
+                        else setSearchTerm(quick);
+                      }}
+                      className="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 hover:bg-amber-100 dark:hover:bg-amber-900 text-gray-700 dark:text-gray-300 hover:text-amber-700 dark:hover:text-amber-400 rounded-full text-sm transition-all duration-200 hover:shadow-md"
+                    >
+                      {quick}
+                    </button>
+                  ))}
                 </div>
               </CardContent>
             </Card>
