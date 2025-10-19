@@ -14,12 +14,23 @@ const Header = () => {
   const { theme, toggleTheme } = useTheme();
   const { user, logout, isAuthenticated, isAdmin } = useAuth();
 
-  const navigation = [
+  // Base navigation for all users
+  const baseNavigation = [
     { name: 'Find Agents', href: '/agents', icon: Search },
     { name: 'Compare', href: '/compare', icon: TrendingUp },
     { name: 'Reviews', href: '/reviews', icon: Star },
     { name: 'About', href: '/about', icon: Users },
   ];
+
+  // Add authenticated user navigation
+  const navigation = isAuthenticated 
+    ? [
+        ...baseNavigation,
+        ...(isAdmin || user?.role === 'agency_staff' 
+          ? [{ name: 'My Deals', href: '/staff/deals', icon: BarChart3 }] 
+          : [])
+      ]
+    : baseNavigation;
 
   const isActive = (path) => location.pathname === path;
 
