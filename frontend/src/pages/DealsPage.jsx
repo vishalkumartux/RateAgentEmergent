@@ -78,9 +78,15 @@ const DealsPage = () => {
   const activeFiltersCount = Object.values(filters).filter(v => v !== '').length;
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Header */}
+    <>
+      <SEO 
+        title="Browse Property Deals - Real Estate Transactions by Top Agents | AgentRate"
+        description="Explore sold properties and rental deals handled by Australia's top-rated real estate agents. Filter by location, price, property type, and more."
+        keywords="property deals Australia, real estate sales, sold properties, rental properties, property listings, agent deals"
+      />
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Browse Property Deals
