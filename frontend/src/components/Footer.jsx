@@ -82,7 +82,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-gray-300 hover:text-emerald-400 transition-colors"
+                    className="text-gray-300 hover:text-amber-400 transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -99,7 +99,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-gray-300 hover:text-emerald-400 transition-colors"
+                    className="text-gray-300 hover:text-amber-400 transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -116,7 +116,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-gray-300 hover:text-emerald-400 transition-colors"
+                    className="text-gray-300 hover:text-amber-400 transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -133,7 +133,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-gray-300 hover:text-emerald-400 transition-colors"
+                    className="text-gray-300 hover:text-amber-400 transition-colors"
                   >
                     {link.name}
                   </Link>
