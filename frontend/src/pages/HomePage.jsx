@@ -238,23 +238,25 @@ const HomePage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-emerald-600 to-teal-600">
+      <section className="py-16 bg-gradient-to-r from-amber-600 to-yellow-600 dark:from-amber-700 dark:to-yellow-700">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-white mb-4">
             Ready to Find Your Perfect Agent?
           </h2>
-          <p className="text-xl text-emerald-100 mb-8">
+          <p className="text-xl text-amber-100 mb-8">
             Join thousands of satisfied customers who found their ideal real estate professional through AgentRate
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/agents">
-              <Button size="lg" className="bg-white text-emerald-600 hover:bg-gray-50 px-8 py-3 text-lg font-semibold">
+              <Button size="lg" className="bg-white text-amber-600 hover:bg-gray-50 px-8 py-3 text-lg font-semibold">
                 Browse Agents
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-emerald-600 px-8 py-3 text-lg font-semibold">
-              List Your Agency
-            </Button>
+            <Link to="/register">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-amber-600 px-8 py-3 text-lg font-semibold">
+                List Your Agency
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
