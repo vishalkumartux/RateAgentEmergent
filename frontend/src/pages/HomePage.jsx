@@ -4,6 +4,7 @@ import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Card, CardContent } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
+import SEO from '../components/SEO';
 import { Search, MapPin, Star, TrendingUp, Users, Award, ArrowRight, CheckCircle } from 'lucide-react';
 import { mockAgents } from '../mock/agentData';
 
