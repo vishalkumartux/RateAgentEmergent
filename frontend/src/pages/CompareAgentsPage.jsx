@@ -119,13 +119,19 @@ const CompareAgentsPage = () => {
                     </Button>
                   </div>
                   <div className="relative">
-                    <Search className="absolute left-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-500" />
+                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-amber-600 z-10" />
                     <Input
                       placeholder="Search by name, location, or company..."
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="pl-10 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                      list="compare-agents"
+                      className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:focus:ring-amber-900 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
                     />
+                    <datalist id="compare-agents">
+                      <option value="Sydney agents" />
+                      <option value="Melbourne agents" />
+                      <option value="Top rated" />
+                    </datalist>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-64 overflow-y-auto">
                     {availableAgents.map((agent) => (
