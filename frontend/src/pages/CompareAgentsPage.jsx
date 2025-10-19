@@ -152,10 +152,10 @@ const CompareAgentsPage = () => {
 
         {/* Comparison Table */}
         {selectedAgents.length > 0 && (
-          <Card>
+          <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
             <CardHeader>
-              <CardTitle className="flex items-center">
-                <BarChart3 className="h-5 w-5 mr-2 text-emerald-600" />
+              <CardTitle className="flex items-center text-gray-900 dark:text-white">
+                <BarChart3 className="h-5 w-5 mr-2 text-amber-600" />
                 Agent Comparison
               </CardTitle>
             </CardHeader>
