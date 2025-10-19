@@ -4,10 +4,10 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "vite"
+    "start": "vite --host 0.0.0.0"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
