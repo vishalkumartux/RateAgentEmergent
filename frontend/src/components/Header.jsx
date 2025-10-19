@@ -171,13 +171,55 @@ const Header = () => {
                 </Link>
               );
             })}
-            <div className="border-t border-gray-100 pt-4 space-y-2">
-              <Button variant="ghost" className="w-full justify-start text-gray-600">
-                Sign In
+            <div className="border-t border-gray-100 dark:border-gray-700 pt-4 space-y-2">
+              <Button
+                onClick={toggleTheme}
+                variant="ghost"
+                className="w-full justify-start text-gray-600 dark:text-gray-300"
+              >
+                {theme === 'light' ? <Moon className="h-4 w-4 mr-3" /> : <Sun className="h-4 w-4 mr-3" />}
+                {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
               </Button>
-              <Button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white">
-                List Your Agency
-              </Button>
+              
+              {!isAuthenticated ? (
+                <>
+                  <Link to="/login">
+                    <Button variant="ghost" className="w-full justify-start text-gray-600 dark:text-gray-300">
+                      Sign In
+                    </Button>
+                  </Link>
+                  <Link to="/register">
+                    <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white">
+                      List Your Agency
+                    </Button>
+                  </Link>
+                </>
+              ) : (
+                <>
+                  {isAdmin && (
+                    <Link to="/admin/dashboard">
+                      <Button variant="ghost" className="w-full justify-start text-gray-600 dark:text-gray-300">
+                        <Settings className="h-4 w-4 mr-3" />
+                        Admin Dashboard
+                      </Button>
+                    </Link>
+                  )}
+                  <Link to="/dashboard">
+                    <Button variant="ghost" className="w-full justify-start text-gray-600 dark:text-gray-300">
+                      <User className="h-4 w-4 mr-3" />
+                      My Profile
+                    </Button>
+                  </Link>
+                  <Button
+                    onClick={handleLogout}
+                    variant="ghost"
+                    className="w-full justify-start text-gray-600 dark:text-gray-300"
+                  >
+                    <LogOut className="h-4 w-4 mr-3" />
+                    Sign Out
+                  </Button>
+                </>
+              )}
             </div>
           </div>
         )}
