@@ -67,26 +67,26 @@ const HomePage = () => {
           </div>
 
           {/* Search Form */}
-          <form onSubmit={handleSearch} className="bg-white rounded-2xl shadow-xl p-6 md:p-8 max-w-4xl mx-auto mb-16 border border-gray-100">
+          <form onSubmit={handleSearch} className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 md:p-8 max-w-4xl mx-auto mb-16 border border-gray-100 dark:border-gray-700">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-end">
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700">Location</label>
+                <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Location</label>
                 <div className="relative">
-                  <MapPin className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                  <MapPin className="absolute left-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-500" />
                   <Input
                     placeholder="Enter suburb or city"
                     value={searchLocation}
                     onChange={(e) => setSearchLocation(e.target.value)}
-                    className="pl-10 h-12 border-gray-200 focus:border-emerald-500 focus:ring-emerald-500"
+                    className="pl-10 h-12 border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:border-amber-500 focus:ring-amber-500"
                   />
                 </div>
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700">Property Type</label>
+                <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Property Type</label>
                 <select
                   value={searchSpecialty}
                   onChange={(e) => setSearchSpecialty(e.target.value)}
-                  className="w-full h-12 px-3 border border-gray-200 rounded-lg focus:border-emerald-500 focus:ring-emerald-500 bg-white"
+                  className="w-full h-12 px-3 border border-gray-200 dark:border-gray-600 rounded-lg focus:border-amber-500 focus:ring-amber-500 bg-white dark:bg-gray-700 dark:text-white"
                 >
                   <option value="">All Property Types</option>
                   <option value="Luxury Homes">Luxury Homes</option>
