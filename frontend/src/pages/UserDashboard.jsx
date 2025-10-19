@@ -194,7 +194,7 @@ const UserDashboard = () => {
                           
                           <div className="flex space-x-2">
                             <Link to={`/agent/${agent.id}`} className="flex-1">
-                              <Button size="sm" className="w-full bg-emerald-600 hover:bg-emerald-700 text-white">
+                              <Button size="sm" className="w-full bg-amber-600 hover:bg-amber-700 text-white">
                                 <Eye className="h-4 w-4 mr-2" />
                                 View Profile
                               </Button>
