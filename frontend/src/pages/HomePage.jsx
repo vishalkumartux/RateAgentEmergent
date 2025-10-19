@@ -56,7 +56,7 @@ const HomePage = () => {
           <div className="text-center mb-12">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
               Find Your
-              <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent block mt-2">
+              <span className="bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent block mt-2">
                 Perfect Agent
               </span>
             </h1>
