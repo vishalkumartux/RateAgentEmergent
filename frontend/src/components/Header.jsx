@@ -134,6 +134,16 @@ const Header = () => {
                       <User className="inline h-4 w-4 mr-2" />
                       My Profile
                     </Link>
+                    {(isAdmin || user?.role === 'agency_staff') && (
+                      <Link
+                        to="/staff/deals"
+                        className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        onClick={() => setIsUserMenuOpen(false)}
+                      >
+                        <BarChart3 className="inline h-4 w-4 mr-2" />
+                        My Deals
+                      </Link>
+                    )}
                     <button
                       onClick={handleLogout}
                       className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
