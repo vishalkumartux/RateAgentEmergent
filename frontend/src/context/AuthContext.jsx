@@ -36,6 +36,23 @@ const mockUsers = {
       phone: '+61 2 9555 0123',
       bio: 'Specializing in luxury properties with a proven track record.'
     }
+  },
+  'public@user.com': {
+    id: 3,
+    email: 'public@user.com',
+    name: 'Mike Wilson',
+    role: 'public_user',
+    isVerified: true,
+    preferences: {
+      savedAgents: [1, 2],
+      searchHistory: [
+        { query: 'luxury homes Sydney', date: '2024-08-03', results: 12 },
+        { query: 'apartments Bondi', date: '2024-08-01', results: 8 }
+      ],
+      favoriteAreas: ['Bondi Beach', 'Double Bay', 'Paddington'],
+      priceRange: { min: 800000, max: 2000000 },
+      propertyTypes: ['House', 'Apartment']
+    }
   }
 };
 
