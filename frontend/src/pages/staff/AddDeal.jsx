@@ -109,18 +109,28 @@ const AddDeal = () => {
   };
 
   const handlePhotoUpload = (e) => {
-    const files = Array.from(e.target.files);
-    const newPhotos = files.map(file => ({
-      id: Date.now() + Math.random(),
-      file: file,
-      preview: URL.createObjectURL(file),
-      caption: ''
-    }));
-    
-    setFormData(prev => ({
-      ...prev,
-      photos: [...prev.photos, ...newPhotos]
-    }));
+    try {
+      const files = Array.from(e.target.files);
+      if (files.length === 0) return;
+      
+      const newPhotos = files.map((file, index) => ({
+        id: Date.now() + Math.random() + index,
+        file: file,
+        preview: URL.createObjectURL(file),
+        caption: ''
+      }));
+      
+      setFormData(prev => ({
+        ...prev,
+        photos: [...prev.photos, ...newPhotos]
+      }));
+      
+      // Clear the input
+      e.target.value = '';
+    } catch (error) {
+      console.error('Error uploading photos:', error);
+      setErrors(prev => ({ ...prev, photos: 'Error uploading photos. Please try again.' }));
+    }
   };
 
   const removePhoto = (photoId) => {
