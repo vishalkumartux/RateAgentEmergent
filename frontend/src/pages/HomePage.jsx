@@ -199,7 +199,7 @@ const HomePage = () => {
 
           <div className="text-center">
             <Link to="/agents">
-              <Button size="lg" variant="outline" className="border-emerald-600 text-emerald-600 hover:bg-emerald-50">
+              <Button size="lg" variant="outline" className="border-amber-600 text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950">
                 View All Agents
                 <ArrowRight className="h-5 w-5 ml-2" />
               </Button>
@@ -209,13 +209,13 @@ const HomePage = () => {
       </section>
 
       {/* Features */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Why Choose AgentRate?
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               We provide the most comprehensive and transparent platform for finding the right real estate agent
             </p>
           </div>
@@ -224,12 +224,12 @@ const HomePage = () => {
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <div key={index} className="bg-white rounded-xl p-8 text-center group hover:shadow-lg transition-all duration-300">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 ${feature.color} rounded-xl mb-6 group-hover:scale-110 transition-transform duration-200`}>
+                <div key={index} className="bg-white dark:bg-gray-900 rounded-xl p-8 text-center group hover:shadow-lg transition-all duration-300">
+                  <div className={`inline-flex items-center justify-center w-16 h-16 ${feature.color} dark:bg-opacity-20 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-200`}>
                     <Icon className="h-8 w-8" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">{feature.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">{feature.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{feature.description}</p>
                 </div>
               );
             })}
