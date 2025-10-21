@@ -67,45 +67,6 @@ const CompareAgentsPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      {/* Sticky Agent Header Bar */}
-      {selectedAgents.length > 0 && (
-        <div 
-          className={`fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-lg transition-all duration-300 ${
-            showStickyHeader ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
-          }`}
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-2">
-                <BarChart3 className="h-5 w-5 text-amber-600" />
-                <span className="font-semibold text-gray-900 dark:text-white">Comparing:</span>
-              </div>
-              <div className={`flex items-center gap-4 ${selectedAgents.length === 1 ? '' : selectedAgents.length === 2 ? '' : selectedAgents.length === 3 ? '' : ''}`}>
-                {selectedAgents.map((agent) => (
-                  <div key={agent.id} className="flex items-center space-x-2 bg-gray-50 dark:bg-gray-700 rounded-lg px-3 py-2">
-                    <img
-                      src={agent.photo}
-                      alt={agent.name}
-                      className="w-10 h-10 rounded-full object-cover border-2 border-amber-400 dark:border-amber-600"
-                    />
-                    <div className="min-w-0">
-                      <p className="text-sm font-semibold text-gray-900 dark:text-white truncate">{agent.name}</p>
-                      <p className="text-xs text-gray-600 dark:text-gray-400 truncate">{agent.company}</p>
-                    </div>
-                    <button
-                      onClick={() => removeAgent(agent.id)}
-                      className="ml-2 w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-colors flex-shrink-0"
-                    >
-                      <X className="h-3 w-3" />
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
