@@ -16,7 +16,15 @@ import {
   Plus,
   X,
   BarChart3,
-  Users
+  Users,
+  Home,
+  Shield,
+  MessageSquare,
+  CheckCircle,
+  TrendingDown,
+  Percent,
+  Calendar,
+  Building2
 } from 'lucide-react';
 import { mockAgents } from '../mock/agentData';
 
@@ -31,7 +39,7 @@ const CompareAgentsPage = () => {
   );
 
   const addAgent = (agent) => {
-    if (selectedAgents.length < 3) {
+    if (selectedAgents.length < 4) {
       setSelectedAgents([...selectedAgents, agent]);
       setShowAddAgent(false);
       setSearchTerm('');
@@ -42,59 +50,21 @@ const CompareAgentsPage = () => {
     setSelectedAgents(selectedAgents.filter(agent => agent.id !== agentId));
   };
 
-  const comparisonMetrics = [
-    { key: 'rating', label: 'Rating', format: (value) => `${value}/5`, icon: Star },
-    { key: 'salesVolume', label: 'Sales Volume', format: (value) => value, icon: DollarSign },
-    { key: 'avgDaysOnMarket', label: 'Avg Days on Market', format: (value) => `${value} days`, icon: Clock },
-    { key: 'priceAccuracy', label: 'Price Accuracy', format: (value) => value, icon: Target },
-    { key: 'yearsExperience', label: 'Years Experience', format: (value) => `${value} years`, icon: Award },
-    { key: 'reviewCount', label: 'Total Reviews', format: (value) => value, icon: Users }
-  ];
-
-  const getBestPerformer = (metric) => {
-    if (selectedAgents.length === 0) return null;
-    
-    let best = selectedAgents[0];
-    selectedAgents.forEach(agent => {
-      switch (metric) {
-        case 'rating':
-        case 'yearsExperience':
-        case 'reviewCount':
-          if (agent[metric] > best[metric]) best = agent;
-          break;
-        case 'avgDaysOnMarket':
-          if (agent[metric] < best[metric]) best = agent;
-          break;
-        case 'salesVolume':
-          const agentVolume = parseFloat(agent[metric].replace(/[$M,]/g, ''));
-          const bestVolume = parseFloat(best[metric].replace(/[$M,]/g, ''));
-          if (agentVolume > bestVolume) best = agent;
-          break;
-        case 'priceAccuracy':
-          const agentAccuracy = parseFloat(agent[metric].replace(/%/g, ''));
-          const bestAccuracy = parseFloat(best[metric].replace(/%/g, ''));
-          if (agentAccuracy > bestAccuracy) best = agent;
-          break;
-      }
-    });
-    return best;
-  };
-
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Compare Real Estate Agents
+            Compare Buyer Agents
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300">
-            Compare up to 3 agents side by side to make the best choice for your property needs
+            Compare up to 4 buyer agents side by side to find the perfect match for your property purchase
           </p>
         </div>
 
         {/* Add Agent Section */}
-        {selectedAgents.length < 3 && (
+        {selectedAgents.length < 4 && (
           <Card className="mb-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
             <CardContent className="p-6">
               {!showAddAgent ? (
@@ -107,7 +77,7 @@ const CompareAgentsPage = () => {
                     Add Agent to Compare
                   </Button>
                   <p className="text-gray-600 dark:text-gray-300 mt-2">
-                    You can compare up to 3 agents ({selectedAgents.length}/3 selected)
+                    You can compare up to 4 agents ({selectedAgents.length}/4 selected)
                   </p>
                 </div>
               ) : (
@@ -156,108 +126,361 @@ const CompareAgentsPage = () => {
           </Card>
         )}
 
-        {/* Comparison Table */}
+        {/* Comparison Blocks */}
         {selectedAgents.length > 0 && (
-          <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
-            <CardHeader>
-              <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                <BarChart3 className="h-5 w-5 mr-2 text-amber-600" />
-                Agent Comparison
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead>
-                    <tr className="border-b border-gray-200 dark:border-gray-700">
-                      <th className="text-left py-4 px-2 font-medium text-gray-700 dark:text-gray-300">Agent</th>
-                      {selectedAgents.map((agent) => (
-                        <th key={agent.id} className="text-center py-4 px-4 min-w-[250px]">
-                          <div className="space-y-3">
-                            <div className="relative">
-                              <img
-                                src={agent.photo}
-                                alt={agent.name}
-                                className="w-16 h-16 rounded-full mx-auto object-cover border-4 border-white dark:border-gray-700 shadow-lg"
-                              />
-                              <button
-                                onClick={() => removeAgent(agent.id)}
-                                className="absolute -top-1 -right-1 w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-colors"
-                              >
-                                <X className="h-3 w-3" />
-                              </button>
-                            </div>
-                            <div>
-                              <h3 className="font-semibold text-gray-900 dark:text-white">{agent.name}</h3>
-                              <p className="text-gray-600 dark:text-gray-300 text-sm">{agent.company}</p>
-                              <p className="text-gray-500 dark:text-gray-400 text-xs flex items-center justify-center mt-1">
-                                <MapPin className="h-3 w-3 mr-1" />
-                                {agent.location}
-                              </p>
-                            </div>
-                            <Link to={`/agent/${agent.id}`}>
-                              <Button size="sm" variant="outline" className="w-full border-amber-600 text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950">
-                                View Profile
-                              </Button>
-                            </Link>
-                          </div>
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {comparisonMetrics.map((metric) => {
-                      const Icon = metric.icon;
-                      const bestAgent = getBestPerformer(metric.key);
+          <div className="space-y-6">
+            {/* 1. Overview Block */}
+            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+              <CardHeader>
+                <CardTitle className="flex items-center text-gray-900 dark:text-white">
+                  <Users className="h-5 w-5 mr-2 text-amber-600" />
+                  Overview
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className={`grid gap-4 ${selectedAgents.length === 1 ? 'grid-cols-1' : selectedAgents.length === 2 ? 'grid-cols-1 md:grid-cols-2' : selectedAgents.length === 3 ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'}`}>
+                  {selectedAgents.map((agent) => (
+                    <div key={agent.id} className="border border-gray-200 dark:border-gray-600 rounded-lg p-4 relative">
+                      <button
+                        onClick={() => removeAgent(agent.id)}
+                        className="absolute top-2 right-2 w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-colors"
+                      >
+                        <X className="h-3 w-3" />
+                      </button>
                       
-                      return (
-                        <tr key={metric.key} className="border-b border-gray-100 dark:border-gray-700">
-                          <td className="py-4 px-2">
-                            <div className="flex items-center space-x-2">
-                              <Icon className="h-5 w-5 text-amber-600" />
-                              <span className="font-medium text-gray-900 dark:text-white">{metric.label}</span>
-                            </div>
-                          </td>
-                          {selectedAgents.map((agent) => {
-                            const isBest = bestAgent && bestAgent.id === agent.id;
-                            return (
-                              <td key={agent.id} className="py-4 px-4 text-center">
-                                <div className={`font-semibold ${isBest ? 'text-amber-600' : 'text-gray-900 dark:text-white'}`}>
-                                  {metric.format(agent[metric.key])}
-                                  {isBest && <Award className="h-4 w-4 inline ml-1 text-amber-500" />}
-                                </div>
-                              </td>
-                            );
-                          })}
-                        </tr>
-                      );
-                    })}
-                    
-                    {/* Specialties Row */}
-                    <tr className="border-b border-gray-100 dark:border-gray-700">
-                      <td className="py-4 px-2">
-                        <div className="flex items-center space-x-2">
-                          <TrendingUp className="h-5 w-5 text-amber-600" />
-                          <span className="font-medium text-gray-900 dark:text-white">Specialties</span>
-                        </div>
-                      </td>
-                      {selectedAgents.map((agent) => (
-                        <td key={agent.id} className="py-4 px-4">
-                          <div className="flex flex-wrap gap-1 justify-center">
-                            {agent.specialties.map((specialty, index) => (
-                              <Badge key={index} variant="secondary" className="text-xs bg-amber-50 dark:bg-amber-900 text-amber-700 dark:text-amber-300">
-                                {specialty}
+                      <div className="text-center mb-4">
+                        <img
+                          src={agent.photo}
+                          alt={agent.name}
+                          className="w-20 h-20 rounded-full mx-auto object-cover border-4 border-amber-100 dark:border-amber-900 shadow-lg mb-3"
+                        />
+                        <h3 className="font-bold text-lg text-gray-900 dark:text-white">{agent.name}</h3>
+                        <p className="text-gray-600 dark:text-gray-300 text-sm">{agent.company}</p>
+                        <p className="text-gray-500 dark:text-gray-400 text-xs flex items-center justify-center mt-1">
+                          <MapPin className="h-3 w-3 mr-1" />
+                          {agent.location}
+                        </p>
+                      </div>
+
+                      <div className="space-y-3">
+                        <div>
+                          <h4 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-2">Coverage Areas</h4>
+                          <div className="flex flex-wrap gap-1">
+                            {agent.coverageAreas && agent.coverageAreas.map((area, index) => (
+                              <Badge key={index} variant="secondary" className="text-xs bg-amber-50 dark:bg-amber-900 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-700">
+                                {area}
                               </Badge>
                             ))}
                           </div>
-                        </td>
+                        </div>
+
+                        <div>
+                          <h4 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-2">Services</h4>
+                          <div className="flex flex-wrap gap-1">
+                            {agent.services && agent.services.map((service, index) => (
+                              <Badge key={index} variant="outline" className="text-xs border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300">
+                                {service}
+                              </Badge>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div>
+                          <h4 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-1">Fee Model</h4>
+                          <p className="text-sm text-gray-900 dark:text-white font-medium">{agent.feeModel}</p>
+                        </div>
+                      </div>
+
+                      <Link to={`/agent/${agent.id}`} className="mt-4 block">
+                        <Button size="sm" variant="outline" className="w-full border-amber-600 text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950">
+                          View Full Profile
+                        </Button>
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* 2. Performance Block */}
+            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+              <CardHeader>
+                <CardTitle className="flex items-center text-gray-900 dark:text-white">
+                  <TrendingUp className="h-5 w-5 mr-2 text-amber-600" />
+                  Performance Metrics
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {/* Median Days to Secure */}
+                  <div className="border-b border-gray-100 dark:border-gray-700 pb-4">
+                    <div className="flex items-center mb-3">
+                      <Calendar className="h-4 w-4 text-amber-600 mr-2" />
+                      <span className="font-medium text-gray-900 dark:text-white">Median Days to Secure</span>
+                    </div>
+                    <div className={`grid gap-3 ${selectedAgents.length === 1 ? 'grid-cols-1' : selectedAgents.length === 2 ? 'grid-cols-2' : selectedAgents.length === 3 ? 'grid-cols-3' : 'grid-cols-4'}`}>
+                      {selectedAgents.map((agent) => (
+                        <div key={agent.id} className="text-center bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
+                          <div className="text-2xl font-bold text-amber-600">{agent.medianDaysToSecure}</div>
+                          <div className="text-xs text-gray-600 dark:text-gray-400">days</div>
+                        </div>
                       ))}
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </CardContent>
-          </Card>
+                    </div>
+                  </div>
+
+                  {/* Verified Deals Count */}
+                  <div className="border-b border-gray-100 dark:border-gray-700 pb-4">
+                    <div className="flex items-center mb-3">
+                      <CheckCircle className="h-4 w-4 text-amber-600 mr-2" />
+                      <span className="font-medium text-gray-900 dark:text-white">Verified Deals</span>
+                    </div>
+                    <div className={`grid gap-3 ${selectedAgents.length === 1 ? 'grid-cols-1' : selectedAgents.length === 2 ? 'grid-cols-2' : selectedAgents.length === 3 ? 'grid-cols-3' : 'grid-cols-4'}`}>
+                      {selectedAgents.map((agent) => (
+                        <div key={agent.id} className="text-center bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
+                          <div className="text-2xl font-bold text-amber-600">{agent.verifiedDealsCount}</div>
+                          <div className="text-xs text-gray-600 dark:text-gray-400">deals</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Avg Discount % */}
+                  <div className="border-b border-gray-100 dark:border-gray-700 pb-4">
+                    <div className="flex items-center mb-3">
+                      <TrendingDown className="h-4 w-4 text-amber-600 mr-2" />
+                      <span className="font-medium text-gray-900 dark:text-white">Avg Discount Secured</span>
+                    </div>
+                    <div className={`grid gap-3 ${selectedAgents.length === 1 ? 'grid-cols-1' : selectedAgents.length === 2 ? 'grid-cols-2' : selectedAgents.length === 3 ? 'grid-cols-3' : 'grid-cols-4'}`}>
+                      {selectedAgents.map((agent) => (
+                        <div key={agent.id} className="text-center bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
+                          <div className="text-2xl font-bold text-green-600">{agent.avgDiscountPercent}%</div>
+                          <div className="text-xs text-gray-600 dark:text-gray-400">below asking</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Auction Ratio */}
+                  <div className="border-b border-gray-100 dark:border-gray-700 pb-4">
+                    <div className="flex items-center mb-3">
+                      <Target className="h-4 w-4 text-amber-600 mr-2" />
+                      <span className="font-medium text-gray-900 dark:text-white">Auction Success Ratio</span>
+                    </div>
+                    <div className={`grid gap-3 ${selectedAgents.length === 1 ? 'grid-cols-1' : selectedAgents.length === 2 ? 'grid-cols-2' : selectedAgents.length === 3 ? 'grid-cols-3' : 'grid-cols-4'}`}>
+                      {selectedAgents.map((agent) => (
+                        <div key={agent.id} className="text-center bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
+                          <div className="text-2xl font-bold text-amber-600">{agent.auctionSuccessRatio}%</div>
+                          <div className="text-xs text-gray-600 dark:text-gray-400">success rate</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Off-Market Ratio */}
+                  <div>
+                    <div className="flex items-center mb-3">
+                      <Percent className="h-4 w-4 text-amber-600 mr-2" />
+                      <span className="font-medium text-gray-900 dark:text-white">Off-Market Deal Ratio</span>
+                    </div>
+                    <div className={`grid gap-3 ${selectedAgents.length === 1 ? 'grid-cols-1' : selectedAgents.length === 2 ? 'grid-cols-2' : selectedAgents.length === 3 ? 'grid-cols-3' : 'grid-cols-4'}`}>
+                      {selectedAgents.map((agent) => (
+                        <div key={agent.id} className="text-center bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
+                          <div className="text-2xl font-bold text-amber-600">{agent.offMarketRatio}%</div>
+                          <div className="text-xs text-gray-600 dark:text-gray-400">off-market</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* 3. Deal Mix Block */}
+            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+              <CardHeader>
+                <CardTitle className="flex items-center text-gray-900 dark:text-white">
+                  <BarChart3 className="h-5 w-5 mr-2 text-amber-600" />
+                  Deal Mix
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className={`grid gap-6 ${selectedAgents.length === 1 ? 'grid-cols-1' : selectedAgents.length === 2 ? 'grid-cols-1 md:grid-cols-2' : selectedAgents.length === 3 ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'}`}>
+                  {selectedAgents.map((agent) => (
+                    <div key={agent.id} className="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-3 text-center">{agent.name}</h4>
+                      
+                      <div className="space-y-4">
+                        <div>
+                          <h5 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-2">Property Types</h5>
+                          <div className="space-y-2">
+                            {agent.propertyTypesMix && Object.entries(agent.propertyTypesMix).map(([type, percentage]) => (
+                              <div key={type}>
+                                <div className="flex justify-between text-sm mb-1">
+                                  <span className="text-gray-700 dark:text-gray-300">{type}</span>
+                                  <span className="font-semibold text-amber-600">{percentage}%</span>
+                                </div>
+                                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                  <div className="bg-amber-500 h-2 rounded-full" style={{ width: `${percentage}%` }}></div>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div>
+                          <h5 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-2">Price Band Distribution</h5>
+                          <div className="space-y-2">
+                            {agent.priceBandDistribution && Object.entries(agent.priceBandDistribution).map(([band, percentage]) => (
+                              <div key={band}>
+                                <div className="flex justify-between text-sm mb-1">
+                                  <span className="text-gray-700 dark:text-gray-300">{band}</span>
+                                  <span className="font-semibold text-amber-600">{percentage}%</span>
+                                </div>
+                                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                  <div className="bg-amber-500 h-2 rounded-full" style={{ width: `${percentage}%` }}></div>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* 4. Customer Voice Block */}
+            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+              <CardHeader>
+                <CardTitle className="flex items-center text-gray-900 dark:text-white">
+                  <MessageSquare className="h-5 w-5 mr-2 text-amber-600" />
+                  Customer Voice
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className={`grid gap-4 ${selectedAgents.length === 1 ? 'grid-cols-1' : selectedAgents.length === 2 ? 'grid-cols-1 md:grid-cols-2' : selectedAgents.length === 3 ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'}`}>
+                  {selectedAgents.map((agent) => (
+                    <div key={agent.id} className="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
+                      <div className="text-center mb-4">
+                        <div className="flex items-center justify-center mb-2">
+                          <Star className="h-6 w-6 text-amber-400 fill-current" />
+                          <span className="text-3xl font-bold text-gray-900 dark:text-white ml-2">{agent.rating}</span>
+                        </div>
+                        <p className="text-gray-600 dark:text-gray-400 text-sm">{agent.reviewCount} reviews</p>
+                      </div>
+
+                      <div>
+                        <h5 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-2 text-center">Top Tags</h5>
+                        <div className="flex flex-wrap gap-1 justify-center">
+                          {agent.topTags && agent.topTags.map((tag, index) => (
+                            <Badge key={index} variant="secondary" className="text-xs bg-green-50 dark:bg-green-900 text-green-700 dark:text-green-300 border border-green-200 dark:border-green-700">
+                              {tag}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* 5. Compliance & Credibility Block */}
+            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+              <CardHeader>
+                <CardTitle className="flex items-center text-gray-900 dark:text-white">
+                  <Shield className="h-5 w-5 mr-2 text-amber-600" />
+                  Compliance & Credibility
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className={`grid gap-4 ${selectedAgents.length === 1 ? 'grid-cols-1' : selectedAgents.length === 2 ? 'grid-cols-1 md:grid-cols-2' : selectedAgents.length === 3 ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'}`}>
+                  {selectedAgents.map((agent) => (
+                    <div key={agent.id} className="border border-gray-200 dark:border-gray-600 rounded-lg p-4 space-y-3">
+                      <div>
+                        <h5 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-1">Licence Number</h5>
+                        <p className="text-sm text-gray-900 dark:text-white font-mono">{agent.licenceNumber || 'Not provided'}</p>
+                      </div>
+
+                      <div>
+                        <h5 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-2">Industry Memberships</h5>
+                        <div className="flex flex-wrap gap-1">
+                          {agent.industryMemberships && agent.industryMemberships.map((membership, index) => (
+                            <Badge key={index} variant="outline" className="text-xs border-blue-300 dark:border-blue-600 text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-blue-900">
+                              {membership}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div>
+                        <h5 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-1">Professional Indemnity Insurance</h5>
+                        <div className="flex items-center">
+                          {agent.professionalIndemnity ? (
+                            <>
+                              <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
+                              <span className="text-sm text-green-600 dark:text-green-400 font-medium">Insured</span>
+                            </>
+                          ) : (
+                            <>
+                              <X className="h-5 w-5 text-red-500 mr-2" />
+                              <span className="text-sm text-red-600 dark:text-red-400 font-medium">Not Insured</span>
+                            </>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* 6. Recent Deals Block */}
+            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+              <CardHeader>
+                <CardTitle className="flex items-center text-gray-900 dark:text-white">
+                  <Home className="h-5 w-5 mr-2 text-amber-600" />
+                  Recent Deals (Top 3)
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className={`grid gap-4 ${selectedAgents.length === 1 ? 'grid-cols-1' : selectedAgents.length === 2 ? 'grid-cols-1 md:grid-cols-2' : selectedAgents.length === 3 ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'}`}>
+                  {selectedAgents.map((agent) => (
+                    <div key={agent.id} className="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-3">{agent.name}</h4>
+                      <div className="space-y-3">
+                        {agent.recentSales && agent.recentSales.slice(0, 3).map((sale, index) => (
+                          <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-3 hover:border-amber-300 dark:hover:border-amber-600 border-2 border-transparent transition-colors">
+                            <div className="flex items-start justify-between mb-2">
+                              <Building2 className="h-4 w-4 text-amber-600 mt-1 flex-shrink-0" />
+                              <span className="text-lg font-bold text-amber-600 ml-2">{sale.price}</span>
+                            </div>
+                            <p className="text-sm text-gray-900 dark:text-white font-medium mb-2">{sale.address}</p>
+                            <div className="flex items-center justify-between text-xs text-gray-600 dark:text-gray-400">
+                              <span className="flex items-center">
+                                <Calendar className="h-3 w-3 mr-1" />
+                                {new Date(sale.date).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })}
+                              </span>
+                              <span className="flex items-center">
+                                <Clock className="h-3 w-3 mr-1" />
+                                {sale.daysOnMarket} days
+                              </span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      <Link to={`/agent/${agent.id}`} className="mt-3 block">
+                        <Button size="sm" variant="ghost" className="w-full text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950">
+                          View All Deals →
+                        </Button>
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         )}
 
         {/* Empty State */}
@@ -265,9 +488,9 @@ const CompareAgentsPage = () => {
           <Card className="text-center py-16 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
             <CardContent>
               <BarChart3 className="h-16 w-16 text-gray-300 dark:text-gray-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Start Comparing Agents</h3>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Start Comparing Buyer Agents</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Add agents to compare their performance metrics, specialties, and track records side by side.
+                Add buyer agents to compare their performance metrics, services, and track records side by side.
               </p>
               <Button 
                 onClick={() => setShowAddAgent(true)} 
