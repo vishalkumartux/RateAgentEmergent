@@ -63,8 +63,8 @@ const CompareAgentsPage = () => {
           </p>
         </div>
 
-        {/* Add Agent Section */}
-        {selectedAgents.length < 4 && (
+        {/* Add Agent Section - Only show when no agents selected or at top of page */}
+        {selectedAgents.length < 4 && selectedAgents.length === 0 && (
           <Card className="mb-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
             <CardContent className="p-6">
               {!showAddAgent ? (
