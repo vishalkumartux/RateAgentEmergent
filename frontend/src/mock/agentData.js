@@ -258,8 +258,45 @@ export const mockAgents = [
     phone: "+61 8 8555 0654",
     email: "rachel@hillsestate.com.au",
     description: "Dedicated to helping families find their perfect home in Adelaide's most desirable suburbs.",
+    
+    // Enhanced comparison data
+    coverageAreas: ["Burnside", "Norwood", "Unley", "Prospect", "Glenelg"],
+    services: ["Buyer Agent", "Family Home Search", "School Zone Advisory", "Suburb Specialist"],
+    feeModel: "$7,000 - $10,000 fixed",
+    
+    // Performance metrics
+    medianDaysToSecure: 45,
+    verifiedDealsCount: 72,
+    avgDiscountPercent: 4.2,
+    auctionSuccessRatio: 70,
+    offMarketRatio: 20,
+    
+    // Deal mix
+    propertyTypesMix: {
+      "House": 70,
+      "Townhouse": 20,
+      "Villa": 8,
+      "Land": 2
+    },
+    priceBandDistribution: {
+      "$500K-$800K": 30,
+      "$800K-$1.2M": 40,
+      "$1.2M-$2M": 25,
+      "Over $2M": 5
+    },
+    
+    // Customer voice
+    topTags: ["Family focused", "School expert", "Suburb knowledge", "Caring approach"],
+    
+    // Compliance
+    licenceNumber: "SA-20321987",
+    industryMemberships: ["REIA", "REISA"],
+    professionalIndemnity: true,
+    
     recentSales: [
-      { address: "56 Tree-lined Ave, Burnside", price: "$1.4M", date: "2024-07-19", daysOnMarket: 24 }
+      { address: "56 Tree-lined Ave, Burnside", price: "$1.4M", date: "2024-07-19", daysOnMarket: 24 },
+      { address: "88 Park View Dr, Norwood", price: "$950K", date: "2024-07-05", daysOnMarket: 31 },
+      { address: "22 Family St, Unley", price: "$820K", date: "2024-06-22", daysOnMarket: 28 }
     ],
     reviews: [
       { id: 7, author: "Peter Wilson", rating: 5, comment: "Rachel understood exactly what we were looking for. Great communication and follow-up.", date: "2024-07-21" }
