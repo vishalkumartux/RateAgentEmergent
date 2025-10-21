@@ -198,8 +198,45 @@ export const mockAgents = [
     phone: "+61 7 3555 0321",
     email: "tom@urbanproperty.com.au",
     description: "Brisbane commercial and investment property specialist with strong connections in the business community.",
+    
+    // Enhanced comparison data
+    coverageAreas: ["Brisbane CBD", "Fortitude Valley", "South Brisbane", "New Farm", "West End"],
+    services: ["Buyer Agent", "Investment Analysis", "Commercial Advisory", "Portfolio Building"],
+    feeModel: "$10,000 - $20,000 fixed + 1% success fee",
+    
+    // Performance metrics
+    medianDaysToSecure: 52,
+    verifiedDealsCount: 58,
+    avgDiscountPercent: 3.5,
+    auctionSuccessRatio: 55,
+    offMarketRatio: 40,
+    
+    // Deal mix
+    propertyTypesMix: {
+      "Commercial": 45,
+      "Apartment": 30,
+      "Office": 15,
+      "Retail": 10
+    },
+    priceBandDistribution: {
+      "$500K-$1M": 20,
+      "$1M-$2M": 35,
+      "$2M-$5M": 30,
+      "Over $5M": 15
+    },
+    
+    // Customer voice
+    topTags: ["Investment savvy", "Commercial expert", "Deal maker", "Strategic thinker"],
+    
+    // Compliance
+    licenceNumber: "QLD-20654321",
+    industryMemberships: ["REIA", "REIQ", "PCA"],
+    professionalIndemnity: true,
+    
     recentSales: [
-      { address: "Level 3/123 Queen St, Brisbane CBD", price: "$2.1M", date: "2024-07-20", daysOnMarket: 33 }
+      { address: "Level 3/123 Queen St, Brisbane CBD", price: "$2.1M", date: "2024-07-20", daysOnMarket: 33 },
+      { address: "Suite 5/45 James St, Fortitude Valley", price: "$1.8M", date: "2024-07-08", daysOnMarket: 45 },
+      { address: "Shop 8/99 Adelaide St, Brisbane CBD", price: "$1.2M", date: "2024-06-25", daysOnMarket: 38 }
     ],
     reviews: [
       { id: 6, author: "Jennifer Lee", rating: 4, comment: "Good commercial property knowledge. Professional throughout the process.", date: "2024-07-25" }
