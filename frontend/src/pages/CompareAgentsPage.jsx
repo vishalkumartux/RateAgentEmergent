@@ -243,14 +243,7 @@ const CompareAgentsPage = () => {
               <CardContent>
                 <div className={`grid gap-4 ${selectedAgents.length === 1 ? 'grid-cols-1' : selectedAgents.length === 2 ? 'grid-cols-1 md:grid-cols-2' : selectedAgents.length === 3 ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'}`}>
                   {selectedAgents.map((agent) => (
-                    <div key={agent.id} className="border border-gray-200 dark:border-gray-600 rounded-lg p-4 relative">
-                      <button
-                        onClick={() => removeAgent(agent.id)}
-                        className="absolute top-2 right-2 w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-colors"
-                      >
-                        <X className="h-3 w-3" />
-                      </button>
-                      
+                    <div key={agent.id} className="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
                       <div className="text-center mb-4">
                         <img
                           src={agent.photo}
