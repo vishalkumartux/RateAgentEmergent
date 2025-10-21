@@ -32,7 +32,6 @@ const CompareAgentsPage = () => {
   const [selectedAgents, setSelectedAgents] = useState([mockAgents[0], mockAgents[2]]);
   const [searchTerm, setSearchTerm] = useState('');
   const [showAddAgent, setShowAddAgent] = useState(false);
-  const [showStickyHeader, setShowStickyHeader] = useState(false);
 
   const availableAgents = mockAgents.filter(
     agent => !selectedAgents.find(selected => selected.id === agent.id) &&
@@ -50,20 +49,6 @@ const CompareAgentsPage = () => {
   const removeAgent = (agentId) => {
     setSelectedAgents(selectedAgents.filter(agent => agent.id !== agentId));
   };
-
-  // Handle scroll to show/hide sticky header
-  React.useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setShowStickyHeader(true);
-      } else {
-        setShowStickyHeader(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
