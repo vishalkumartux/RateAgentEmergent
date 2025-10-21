@@ -184,52 +184,84 @@ const CompareAgentsPage = () => {
               </div>
             </div>
 
-            {/* Add Agent Modal */}
+            {/* Add Agent Modal - Centered Overlay */}
             {showAddAgent && (
-              <Card className="mb-6 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
-                <CardContent className="p-6">
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Search Agents</h3>
-                      <Button variant="ghost" onClick={() => setShowAddAgent(false)}>
-                        <X className="h-4 w-4" />
-                      </Button>
-                    </div>
-                    <div className="relative">
-                      <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-amber-600 z-10" />
-                      <Input
-                        placeholder="Search by name, location, or company..."
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                        list="compare-agents"
-                        className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:focus:ring-amber-900 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
-                      />
-                      <datalist id="compare-agents">
-                        <option value="Sydney agents" />
-                        <option value="Melbourne agents" />
-                        <option value="Top rated" />
-                      </datalist>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-64 overflow-y-auto">
-                      {availableAgents.map((agent) => (
-                        <div key={agent.id} className="border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg p-4 hover:border-amber-300 dark:hover:border-amber-600 cursor-pointer transition-colors" onClick={() => addAgent(agent)}>
-                          <div className="flex items-center space-x-3">
-                            <img src={agent.photo} alt={agent.name} className="w-12 h-12 rounded-full object-cover" />
-                            <div>
-                              <h4 className="font-semibold text-gray-900 dark:text-white">{agent.name}</h4>
-                              <p className="text-gray-600 dark:text-gray-300 text-sm">{agent.company}</p>
-                              <div className="flex items-center mt-1">
-                                <Star className="h-4 w-4 text-amber-400 fill-current" />
-                                <span className="text-sm ml-1 text-gray-900 dark:text-white">{agent.rating}</span>
-                              </div>
-                            </div>
-                          </div>
+              <>
+                {/* Backdrop */}
+                <div 
+                  className="fixed inset-0 bg-black bg-opacity-50 z-50"
+                  onClick={() => setShowAddAgent(false)}
+                ></div>
+                
+                {/* Modal */}
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+                  <Card className="w-full max-w-4xl max-h-[80vh] overflow-hidden bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 shadow-2xl">
+                    <CardHeader className="border-b border-gray-200 dark:border-gray-700">
+                      <div className="flex items-center justify-between">
+                        <CardTitle className="flex items-center text-gray-900 dark:text-white">
+                          <Search className="h-5 w-5 mr-2 text-amber-600" />
+                          Add Agent to Compare
+                        </CardTitle>
+                        <Button variant="ghost" onClick={() => setShowAddAgent(false)} size="sm">
+                          <X className="h-5 w-5" />
+                        </Button>
+                      </div>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                        Select an agent to add to your comparison ({selectedAgents.length}/4 selected)
+                      </p>
+                    </CardHeader>
+                    <CardContent className="p-6 overflow-y-auto max-h-[60vh]">
+                      <div className="space-y-4">
+                        {/* Search Input */}
+                        <div className="relative">
+                          <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-amber-600 z-10" />
+                          <Input
+                            placeholder="Search by name, location, or company..."
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                            autoFocus
+                            className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:focus:ring-amber-900 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
+                          />
                         </div>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+
+                        {/* Agent List */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                          {availableAgents.length > 0 ? (
+                            availableAgents.map((agent) => (
+                              <div 
+                                key={agent.id} 
+                                className="border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg p-4 hover:border-amber-500 dark:hover:border-amber-600 hover:shadow-md cursor-pointer transition-all" 
+                                onClick={() => addAgent(agent)}
+                              >
+                                <div className="flex items-center space-x-3">
+                                  <img 
+                                    src={agent.photo} 
+                                    alt={agent.name} 
+                                    className="w-16 h-16 rounded-full object-cover border-2 border-amber-400 dark:border-amber-600" 
+                                  />
+                                  <div className="flex-1 min-w-0">
+                                    <h4 className="font-semibold text-gray-900 dark:text-white truncate">{agent.name}</h4>
+                                    <p className="text-gray-600 dark:text-gray-300 text-sm truncate">{agent.company}</p>
+                                    <div className="flex items-center mt-1">
+                                      <Star className="h-4 w-4 text-amber-400 fill-current" />
+                                      <span className="text-sm ml-1 text-gray-900 dark:text-white font-semibold">{agent.rating}</span>
+                                      <span className="text-xs text-gray-500 dark:text-gray-400 ml-1">({agent.reviewCount})</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            ))
+                          ) : (
+                            <div className="col-span-full text-center py-8">
+                              <p className="text-gray-500 dark:text-gray-400">No agents found matching "{searchTerm}"</p>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </>
             )}
 
             {/* 1. Overview Block */}
