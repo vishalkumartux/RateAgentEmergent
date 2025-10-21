@@ -3,19 +3,54 @@ export const mockAgents = [
   {
     id: 1,
     name: "Sarah Johnson",
+    email: "sarah.j@premiumrealty.com",
+    phone: "+61 2 9876 5432",
     photo: "https://images.unsplash.com/photo-1494790108755-2616c88e8d4e?w=400&h=400&fit=crop&crop=face",
     company: "Premium Realty Group",
     location: "Sydney, NSW",
-    specialties: ["Luxury Homes", "Investment Properties"],
     rating: 4.8,
     reviewCount: 127,
-    salesVolume: "$18.5M",
-    avgDaysOnMarket: 23,
-    priceAccuracy: "98.2%",
-    yearsExperience: 8,
-    phone: "+61 2 9555 0123",
-    email: "sarah@premiumrealty.com.au",
-    description: "Specializing in luxury properties across Sydney's Eastern Suburbs with a proven track record of exceeding client expectations.",
+    yearsExperience: 12,
+    specialties: ["Luxury Homes", "Waterfront Properties", "Investment"],
+    bio: "Specializing in luxury waterfront properties with over 12 years of experience in Sydney's premium market. Known for exceptional negotiation skills and personalized service.",
+    salesVolume: "$50M+",
+    avgDaysOnMarket: 18,
+    priceAccuracy: "98%",
+    
+    // Enhanced comparison data
+    coverageAreas: ["Bondi", "Double Bay", "Vaucluse", "Rose Bay"],
+    services: ["Buyer Agent", "Property Search", "Negotiation", "Settlement"],
+    feeModel: "$15,000 - $25,000 fixed + 1.5% success fee",
+    
+    // Performance metrics
+    medianDaysToSecure: 42,
+    verifiedDealsCount: 89,
+    avgDiscountPercent: 5.2,
+    auctionSuccessRatio: 78,
+    offMarketRatio: 35,
+    
+    // Deal mix
+    propertyTypesMix: {
+      "House": 45,
+      "Apartment": 30,
+      "Townhouse": 15,
+      "Land": 10
+    },
+    priceBandDistribution: {
+      "Under $1M": 15,
+      "$1M-$2M": 25,
+      "$2M-$5M": 40,
+      "Over $5M": 20
+    },
+    
+    // Customer voice
+    topTags: ["Great negotiator", "Market expert", "Responsive", "Honest advice"],
+    
+    // Compliance
+    licenceNumber: "NSW-20123456",
+    industryMemberships: ["REIA", "REBAA", "AREC"],
+    professionalIndemnity: true,
+    description: "Specializing in luxury waterfront properties with over 12 years of experience in Sydney's premium market. Known for exceptional negotiation skills and personalized service.",
     recentSales: [
       { address: "123 Ocean View Dr, Bondi", price: "$2.8M", date: "2024-07-15", daysOnMarket: 18 },
       { address: "45 Harbour St, Double Bay", price: "$3.2M", date: "2024-07-08", daysOnMarket: 25 },
