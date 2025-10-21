@@ -138,9 +138,45 @@ export const mockAgents = [
     phone: "+61 7 5555 0789",
     email: "maria@coastalrealty.com.au",
     description: "Gold Coast's premier waterfront property specialist with over a decade of experience in luxury coastal real estate.",
+    
+    // Enhanced comparison data
+    coverageAreas: ["Surfers Paradise", "Sanctuary Cove", "Broadbeach", "Main Beach", "Southport"],
+    services: ["Buyer Agent", "Waterfront Specialist", "Investment Advisory", "Holiday Home Search"],
+    feeModel: "$18,000 - $30,000 fixed + 2% success fee",
+    
+    // Performance metrics
+    medianDaysToSecure: 35,
+    verifiedDealsCount: 124,
+    avgDiscountPercent: 6.5,
+    auctionSuccessRatio: 85,
+    offMarketRatio: 45,
+    
+    // Deal mix
+    propertyTypesMix: {
+      "House": 50,
+      "Apartment": 35,
+      "Villa": 10,
+      "Land": 5
+    },
+    priceBandDistribution: {
+      "$1M-$2M": 20,
+      "$2M-$5M": 45,
+      "$5M-$10M": 25,
+      "Over $10M": 10
+    },
+    
+    // Customer voice
+    topTags: ["Waterfront expert", "Exceptional service", "Market insider", "Luxury specialist"],
+    
+    // Compliance
+    licenceNumber: "QLD-20456789",
+    industryMemberships: ["REIA", "REIQ", "LPMA"],
+    professionalIndemnity: true,
+    
     recentSales: [
       { address: "88 Beachfront Ave, Surfers Paradise", price: "$4.2M", date: "2024-07-25", daysOnMarket: 15 },
-      { address: "22 Marina Way, Sanctuary Cove", price: "$3.8M", date: "2024-07-12", daysOnMarket: 21 }
+      { address: "22 Marina Way, Sanctuary Cove", price: "$3.8M", date: "2024-07-12", daysOnMarket: 21 },
+      { address: "15 Ocean Blvd, Broadbeach", price: "$2.9M", date: "2024-06-30", daysOnMarket: 18 }
     ],
     reviews: [
       { id: 5, author: "Robert Kim", rating: 5, comment: "Maria's expertise in waterfront properties is unmatched. Exceptional service throughout.", date: "2024-07-28" }
