@@ -77,9 +77,45 @@ export const mockAgents = [
     phone: "+61 3 9555 0456",
     email: "david@metroproperty.com.au",
     description: "Helping first-time buyers navigate the Melbourne market with patience and expertise in apartment sales.",
+    
+    // Enhanced comparison data
+    coverageAreas: ["Melbourne CBD", "Carlton", "Fitzroy", "South Yarra", "Docklands"],
+    services: ["Buyer Agent", "First Home Buyer Support", "Property Search", "Finance Advisory"],
+    feeModel: "$8,000 - $12,000 fixed",
+    
+    // Performance metrics
+    medianDaysToSecure: 38,
+    verifiedDealsCount: 67,
+    avgDiscountPercent: 4.8,
+    auctionSuccessRatio: 65,
+    offMarketRatio: 25,
+    
+    // Deal mix
+    propertyTypesMix: {
+      "Apartment": 60,
+      "Townhouse": 25,
+      "House": 10,
+      "Studio": 5
+    },
+    priceBandDistribution: {
+      "Under $500K": 25,
+      "$500K-$800K": 40,
+      "$800K-$1.2M": 30,
+      "Over $1.2M": 5
+    },
+    
+    // Customer voice
+    topTags: ["First home buyer expert", "Patient advisor", "Budget conscious", "Great support"],
+    
+    // Compliance
+    licenceNumber: "VIC-20987654",
+    industryMemberships: ["REIA", "FBAA"],
+    professionalIndemnity: true,
+    
     recentSales: [
       { address: "Unit 12/456 Collins St, Melbourne", price: "$850K", date: "2024-07-18", daysOnMarket: 22 },
-      { address: "205/789 Swanston St, Carlton", price: "$720K", date: "2024-07-05", daysOnMarket: 35 }
+      { address: "205/789 Swanston St, Carlton", price: "$720K", date: "2024-07-05", daysOnMarket: 35 },
+      { address: "302/15 Docklands Dr, Docklands", price: "$680K", date: "2024-06-28", daysOnMarket: 28 }
     ],
     reviews: [
       { id: 3, author: "Emma Thompson", rating: 5, comment: "David was patient and helped us find our perfect first home. Great experience!", date: "2024-07-22" },
