@@ -129,11 +129,32 @@ const CompareAgentsPage = () => {
         {/* Comparison Blocks */}
         {selectedAgents.length > 0 && (
           <div className="space-y-6">
-            {/* Sticky Agent Header - Aligned with columns */}
-            <div className="sticky top-16 z-40 bg-gray-50 dark:bg-gray-900 pb-2 pt-2">
+            {/* Enhanced Sticky Agent Header - Two Rows */}
+            <div className="sticky top-16 z-40 bg-white dark:bg-gray-800 border-b-2 border-gray-200 dark:border-gray-700 shadow-md pb-3 pt-3">
+              {/* Row 1: Title + Add Button */}
+              <div className="flex items-center justify-between mb-3 px-1">
+                <div className="flex items-center space-x-3">
+                  <BarChart3 className="h-6 w-6 text-amber-600" />
+                  <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+                    Comparing Agents ({selectedAgents.length}/4)
+                  </h2>
+                </div>
+                {selectedAgents.length < 4 && (
+                  <Button 
+                    onClick={() => setShowAddAgent(true)} 
+                    className="bg-amber-600 hover:bg-amber-700 text-white"
+                    size="sm"
+                  >
+                    <Plus className="h-4 w-4 mr-2" />
+                    Add Agent
+                  </Button>
+                )}
+              </div>
+
+              {/* Row 2: Agent Cards - Aligned with comparison columns */}
               <div className={`grid gap-4 ${selectedAgents.length === 1 ? 'grid-cols-1' : selectedAgents.length === 2 ? 'grid-cols-1 md:grid-cols-2' : selectedAgents.length === 3 ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'}`}>
                 {selectedAgents.map((agent) => (
-                  <div key={agent.id} className="bg-white dark:bg-gray-800 border-2 border-amber-500 dark:border-amber-600 rounded-lg p-3 shadow-lg">
+                  <div key={agent.id} className="bg-gray-50 dark:bg-gray-700 border-2 border-amber-500 dark:border-amber-600 rounded-lg p-3">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3 min-w-0 flex-1">
                         <img
@@ -153,6 +174,7 @@ const CompareAgentsPage = () => {
                       <button
                         onClick={() => removeAgent(agent.id)}
                         className="ml-2 w-7 h-7 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-colors flex-shrink-0"
+                        title="Remove agent"
                       >
                         <X className="h-3 w-3" />
                       </button>
@@ -161,6 +183,54 @@ const CompareAgentsPage = () => {
                 ))}
               </div>
             </div>
+
+            {/* Add Agent Modal */}
+            {showAddAgent && (
+              <Card className="mb-6 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                <CardContent className="p-6">
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Search Agents</h3>
+                      <Button variant="ghost" onClick={() => setShowAddAgent(false)}>
+                        <X className="h-4 w-4" />
+                      </Button>
+                    </div>
+                    <div className="relative">
+                      <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-amber-600 z-10" />
+                      <Input
+                        placeholder="Search by name, location, or company..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        list="compare-agents"
+                        className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:focus:ring-amber-900 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
+                      />
+                      <datalist id="compare-agents">
+                        <option value="Sydney agents" />
+                        <option value="Melbourne agents" />
+                        <option value="Top rated" />
+                      </datalist>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-64 overflow-y-auto">
+                      {availableAgents.map((agent) => (
+                        <div key={agent.id} className="border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg p-4 hover:border-amber-300 dark:hover:border-amber-600 cursor-pointer transition-colors" onClick={() => addAgent(agent)}>
+                          <div className="flex items-center space-x-3">
+                            <img src={agent.photo} alt={agent.name} className="w-12 h-12 rounded-full object-cover" />
+                            <div>
+                              <h4 className="font-semibold text-gray-900 dark:text-white">{agent.name}</h4>
+                              <p className="text-gray-600 dark:text-gray-300 text-sm">{agent.company}</p>
+                              <div className="flex items-center mt-1">
+                                <Star className="h-4 w-4 text-amber-400 fill-current" />
+                                <span className="text-sm ml-1 text-gray-900 dark:text-white">{agent.rating}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            )}
 
             {/* 1. Overview Block */}
             <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
