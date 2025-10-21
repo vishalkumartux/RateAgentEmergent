@@ -130,7 +130,7 @@ const CompareAgentsPage = () => {
         {selectedAgents.length > 0 && (
           <div className="space-y-6">
             {/* Sticky Agent Header - Aligned with columns */}
-            <div className="sticky top-0 z-40 bg-gray-50 dark:bg-gray-900 pb-2">
+            <div className="sticky top-16 z-40 bg-gray-50 dark:bg-gray-900 pb-2 pt-2">
               <div className={`grid gap-4 ${selectedAgents.length === 1 ? 'grid-cols-1' : selectedAgents.length === 2 ? 'grid-cols-1 md:grid-cols-2' : selectedAgents.length === 3 ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'}`}>
                 {selectedAgents.map((agent) => (
                   <div key={agent.id} className="bg-white dark:bg-gray-800 border-2 border-amber-500 dark:border-amber-600 rounded-lg p-3 shadow-lg">
