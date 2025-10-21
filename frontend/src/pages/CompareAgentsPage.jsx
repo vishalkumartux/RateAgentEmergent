@@ -144,6 +144,39 @@ const CompareAgentsPage = () => {
         {/* Comparison Blocks */}
         {selectedAgents.length > 0 && (
           <div className="space-y-6">
+            {/* Sticky Agent Header - Aligned with columns */}
+            <div className="sticky top-0 z-40 bg-gray-50 dark:bg-gray-900 pb-2">
+              <div className={`grid gap-4 ${selectedAgents.length === 1 ? 'grid-cols-1' : selectedAgents.length === 2 ? 'grid-cols-1 md:grid-cols-2' : selectedAgents.length === 3 ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'}`}>
+                {selectedAgents.map((agent) => (
+                  <div key={agent.id} className="bg-white dark:bg-gray-800 border-2 border-amber-500 dark:border-amber-600 rounded-lg p-3 shadow-lg">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-3 min-w-0 flex-1">
+                        <img
+                          src={agent.photo}
+                          alt={agent.name}
+                          className="w-12 h-12 rounded-full object-cover border-2 border-amber-400 dark:border-amber-600 flex-shrink-0"
+                        />
+                        <div className="min-w-0 flex-1">
+                          <p className="text-sm font-bold text-gray-900 dark:text-white truncate">{agent.name}</p>
+                          <p className="text-xs text-gray-600 dark:text-gray-400 truncate">{agent.company}</p>
+                          <p className="text-xs text-amber-600 dark:text-amber-500 flex items-center mt-0.5">
+                            <MapPin className="h-3 w-3 mr-1" />
+                            {agent.location}
+                          </p>
+                        </div>
+                      </div>
+                      <button
+                        onClick={() => removeAgent(agent.id)}
+                        className="ml-2 w-7 h-7 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-colors flex-shrink-0"
+                      >
+                        <X className="h-3 w-3" />
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             {/* 1. Overview Block */}
             <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
               <CardHeader>
