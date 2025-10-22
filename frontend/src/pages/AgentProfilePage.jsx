@@ -70,92 +70,130 @@ const AgentProfilePage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Breadcrumb */}
-        <div className="mb-6">
-          <Link to="/agents" className="inline-flex items-center text-gray-600 hover:text-emerald-600 transition-colors">
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Agents
-          </Link>
-        </div>
+    <>
+      <SEO 
+        title={`${agent.name} - Buyer's Agent Profile | AgentRate`}
+        description={`${agent.name} is a buyer's agent specializing in ${agent.specialties.join(', ')}. ${agent.verifiedDealsCount} verified deals with ${agent.rating} rating.`}
+      />
+      
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          {/* Breadcrumb */}
+          <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 mb-6">
+            <Link to="/agents" className="hover:text-amber-600">Buyer Agents</Link>
+            <span>/</span>
+            <span>{agent.name}</span>
+          </div>
 
-        {/* Agent Header */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 mb-8">
-          <div className="relative h-32 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-t-2xl"></div>
-          <div className="relative px-8 pb-8">
-            <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-8">
-              {/* Profile Image */}
-              <div className="-mt-16 mb-6 lg:mb-0">
-                <img
-                  src={agent.photo}
-                  alt={agent.name}
-                  className="w-32 h-32 rounded-full border-8 border-white shadow-xl object-cover"
-                />
-              </div>
-              
-              {/* Agent Info */}
-              <div className="flex-1">
-                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
-                  <div>
-                    <h1 className="text-4xl font-bold text-gray-900 mb-2">{agent.name}</h1>
-                    <p className="text-xl font-semibold text-gray-700 mb-2">{agent.company}</p>
-                    <p className="text-gray-600 flex items-center mb-4">
-                      <MapPin className="h-5 w-5 mr-2" />
-                      {agent.location}
-                    </p>
+          {/* Header Section */}
+          <Card className="mb-8 overflow-hidden bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+            <CardContent className="p-0">
+              <div className="relative h-32 bg-gradient-to-r from-amber-500 to-yellow-600"></div>
+              <div className="relative px-6 pb-6">
+                <div className="flex flex-col lg:flex-row gap-6">
+                  {/* Profile Photo */}
+                  <div className="-mt-16 flex-shrink-0">
+                    <img
+                      src={agent.photo}
+                      alt={agent.name}
+                      className="w-32 h-32 rounded-full border-4 border-white dark:border-gray-800 shadow-xl object-cover"
+                    />
+                  </div>
+                  
+                  {/* Agent Info */}
+                  <div className="flex-1 pt-4">
+                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-4">
+                      <div className="flex-1">
+                        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                          {agent.name}
+                        </h1>
+                        <p className="text-lg text-gray-600 dark:text-gray-400 mb-3">{agent.company}</p>
+                        
+                        {/* Coverage Areas */}
+                        <div className="flex items-start gap-2 mb-3">
+                          <MapPin className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                          <div className="flex flex-wrap gap-2">
+                            {agent.coverageAreas.slice(0, 3).map((area, idx) => (
+                              <Badge key={idx} variant="outline" className="bg-amber-50 dark:bg-amber-950 border-amber-200 dark:border-amber-800 text-amber-700 dark:text-amber-400">
+                                {area}
+                              </Badge>
+                            ))}
+                            {agent.coverageAreas.length > 3 && (
+                              <Badge variant="outline" className="bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+                                +{agent.coverageAreas.length - 3} more
+                              </Badge>
+                            )}
+                          </div>
+                        </div>
+                        
+                        {/* Rating */}
+                        <div className="flex items-center gap-4">
+                          <div className="flex items-center gap-1">
+                            <Star className="h-5 w-5 text-amber-400 fill-current" />
+                            <span className="text-xl font-bold text-gray-900 dark:text-white">{agent.rating}</span>
+                            <span className="text-gray-600 dark:text-gray-400">({agent.reviewCount} reviews)</span>
+                          </div>
+                          <div className="h-4 w-px bg-gray-300 dark:bg-gray-600"></div>
+                          <div className="text-sm text-gray-600 dark:text-gray-400">
+                            <span className="font-semibold text-gray-900 dark:text-white">{agent.verifiedDealsCount}</span> verified deals
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Action Buttons */}
+                      <div className="flex flex-col gap-2 lg:min-w-[180px]">
+                        <Button className="bg-amber-600 hover:bg-amber-700 text-white">
+                          <MessageCircle className="h-4 w-4 mr-2" />
+                          Contact Agent
+                        </Button>
+                        <div className="flex gap-2">
+                          <Button variant="outline" size="sm" className="flex-1 border-amber-600 text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950">
+                            <Phone className="h-4 w-4 mr-1" />
+                            Call
+                          </Button>
+                          <Button variant="outline" size="sm" className="flex-1 border-amber-600 text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950">
+                            <Mail className="h-4 w-4 mr-1" />
+                            Email
+                          </Button>
+                        </div>
+                        <div className="flex gap-2">
+                          <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            className="flex-1"
+                            onClick={() => setIsFavorited(!isFavorited)}
+                          >
+                            <Heart className={`h-4 w-4 mr-1 ${isFavorited ? 'fill-current text-red-500' : ''}`} />
+                            Save
+                          </Button>
+                          <Button variant="ghost" size="sm" className="flex-1">
+                            <Share2 className="h-4 w-4 mr-1" />
+                            Share
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
                     
-                    {/* Rating */}
-                    <div className="flex items-center space-x-4 mb-4">
-                      <div className="flex items-center space-x-1">
-                        <Star className="h-6 w-6 text-amber-400 fill-current" />
-                        <span className="text-2xl font-bold text-gray-900">{agent.rating}</span>
-                        <span className="text-gray-600">({agent.reviewCount} reviews)</span>
+                    {/* Quick Stats */}
+                    <div className="grid grid-cols-3 gap-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-amber-600">{agent.verifiedDealsCount}</div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400">Total Deals</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-amber-600">{agent.medianDaysToSecure}d</div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400">Avg. to Secure</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-amber-600">{agent.avgDiscountPercent}%</div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400">Avg. Savings</div>
                       </div>
                     </div>
                   </div>
-                  
-                  {/* Action Buttons */}
-                  <div className="flex flex-col space-y-3 lg:min-w-[200px]">
-                    <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white">
-                      <MessageCircle className="h-5 w-5 mr-2" />
-                      Contact Agent
-                    </Button>
-                    <div className="flex space-x-2">
-                      <Button variant="outline" size="sm" className="flex-1">
-                        <Phone className="h-4 w-4 mr-2" />
-                        Call
-                      </Button>
-                      <Button variant="outline" size="sm" className="flex-1">
-                        <Mail className="h-4 w-4 mr-2" />
-                        Email
-                      </Button>
-                    </div>
-                    <div className="flex space-x-2">
-                      <Button variant="ghost" size="sm" className="flex-1">
-                        <Share2 className="h-4 w-4 mr-2" />
-                        Share
-                      </Button>
-                      <Button variant="ghost" size="sm" className="flex-1">
-                        <Heart className="h-4 w-4 mr-2" />
-                        Save
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Specialties */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {agent.specialties.map((specialty, index) => (
-                    <Badge key={index} className="bg-emerald-50 text-emerald-700 px-3 py-1">
-                      {specialty}
-                    </Badge>
-                  ))}
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+            </CardContent>
+          </Card>
 
         {/* Performance Metrics */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
