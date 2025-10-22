@@ -103,10 +103,7 @@
 
 
 user_problem_statement: |
-  User requested three improvements to the AgentRate platform:
-  1. Create a login page for public users to access their profile section (at path /login)
-  2. Fix dark/light theme not working consistently across the system
-  3. Move "My Deals" from the top menu bar to the user profile dropdown menu
+  User requested implementation of comprehensive "Buyer Agent Detail (Public)" page to replace the existing basic AgentProfilePage with a sales-ready profile featuring detailed sections for About, Services & Pricing, Coverage & Focus, Performance Metrics, Portfolio, Reviews, Compliance, and CTAs.
 
 frontend:
   - task: "Public User Login Page"
