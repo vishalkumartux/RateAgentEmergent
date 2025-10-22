@@ -225,8 +225,9 @@ const DealsPage = () => {
             </p>
           </div>
 
-          {/* Modern Search and Filter Bar */}
-          <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl border-2 border-gray-100 dark:border-gray-700 p-6 mb-8">
+          {/* Modern Search and Filter Bar - Sticky */}
+          <div className="sticky top-16 z-30 bg-gray-50 dark:bg-gray-900 pb-4 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 pt-4">
+            <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl border-2 border-gray-100 dark:border-gray-700 p-6">
             <div className="flex flex-col lg:flex-row gap-4 items-center">
               {/* Modern Search */}
               <div className="relative flex-1 min-w-0">
