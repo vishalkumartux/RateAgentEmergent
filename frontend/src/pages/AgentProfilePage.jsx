@@ -587,15 +587,26 @@ const AgentProfilePage = () => {
                     ))}
                   </div>
                   
-                  {/* Show More/Less Button */}
-                  {agent.reviews.length > 3 && (
+                  {/* Load More Button */}
+                  {hasMoreReviews && (
                     <div className="mt-6 text-center">
                       <Button
                         variant="outline"
-                        onClick={() => setShowAllReviews(!showAllReviews)}
+                        onClick={() => setReviewsToShow(prev => Math.min(prev + 5, agent.reviews.length))}
                         className="border-amber-600 text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950"
                       >
-                        {showAllReviews ? `Show Less` : `Show All ${agent.reviews.length} Reviews`}
+                        Load More Reviews ({agent.reviews.length - reviewsToShow} remaining)
+                      </Button>
+                    </div>
+                  )}
+                  {reviewsToShow > 3 && !hasMoreReviews && (
+                    <div className="mt-6 text-center">
+                      <Button
+                        variant="ghost"
+                        onClick={() => setReviewsToShow(3)}
+                        className="text-gray-600 dark:text-gray-400 hover:text-amber-600"
+                      >
+                        Show Less
                       </Button>
                     </div>
                   )}
