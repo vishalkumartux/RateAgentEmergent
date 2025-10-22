@@ -6,6 +6,8 @@ import { Badge } from '../components/ui/badge';
 import { Input } from '../components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
 import { Slider } from '../components/ui/slider';
+import { Checkbox } from '../components/ui/checkbox';
+import SEO from '../components/SEO';
 import { 
   Search, 
   Star, 
@@ -16,9 +18,26 @@ import {
   Calendar,
   User,
   TrendingUp,
-  Award
+  Award,
+  CheckCircle,
+  ShieldCheck,
+  Flag,
+  Home,
+  Briefcase,
+  DollarSign,
+  X
 } from 'lucide-react';
 import { mockAgents } from '../mock/agentData';
+import { 
+  mockReviews, 
+  BUDGET_BANDS, 
+  SERVICE_TYPES, 
+  TRANSACTION_TYPES,
+  REVIEW_TAGS,
+  getAllSuburbs,
+  filterReviews,
+  sortReviews
+} from '../mock/reviewData';
 
 const ReviewsPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
