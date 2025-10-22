@@ -653,8 +653,9 @@ const AgentProfilePage = () => {
               </div>
             </CardContent>
           </Card>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
