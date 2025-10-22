@@ -538,7 +538,7 @@ const AgentListPage = () => {
           </div>
 
           {/* Agent Cards Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          <div className="max-w-4xl mx-auto space-y-6 mb-8">
             {paginatedAgents.map((agent) => (
               <AgentCard
                 key={agent.id}
