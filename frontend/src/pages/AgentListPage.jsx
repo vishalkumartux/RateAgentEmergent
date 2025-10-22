@@ -44,8 +44,9 @@ const AgentListPage = () => {
   // Compare Tray
   const [compareAgents, setCompareAgents] = useState([]);
   
-  // Shortlist
-  const [shortlistedAgents, setShortlistedAgents] = useState([]);
+  // Pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 12;
 
   // Filters
   const [filters, setFilters] = useState({
