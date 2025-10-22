@@ -675,7 +675,7 @@ const AgentCard = ({ agent, isInCompare, isShortlisted, onToggleCompare, onToggl
   const [showTooltip, setShowTooltip] = useState(null);
 
   return (
-    <Card className="group hover:shadow-xl transition-shadow bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+    <Card className="group hover:shadow-2xl transition-all duration-300 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-amber-500 dark:hover:border-amber-600 rounded-2xl overflow-hidden">
       <CardContent className="p-6">
         {/* Header with Photo */}
         <div className="flex items-start justify-between mb-4">
