@@ -29,7 +29,8 @@ import {
 } from 'lucide-react';
 
 const UserProfile = () => {
-  const { user } = useContext(AuthContext);
+  // Mock user data - in real app would come from AuthContext
+  const user = { name: 'John Anderson', email: 'john.anderson@email.com' };
   
   // Profile state
   const [profile, setProfile] = useState({
