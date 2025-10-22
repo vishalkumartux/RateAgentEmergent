@@ -767,41 +767,10 @@ const UserDashboardComplete = () => {
                   )}
                 </CardContent>
               </Card>
-            </div>
+            </TabsContent>
 
-            {/* Right Column - Activity & Reviews & Alerts */}
-            <div className="space-y-6">
-              {/* Recent Activity Feed */}
-              <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
-                <CardHeader className="border-b border-gray-200 dark:border-gray-700">
-                  <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                    <Clock className="h-5 w-5 mr-2 text-purple-600" />
-                    Recent Activity
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="p-6">
-                  <div className="space-y-4">
-                    {recentActivity.map(activity => {
-                      const Icon = getActivityIcon(activity.type);
-                      const timeAgo = new Date(activity.timestamp).toLocaleString();
-                      return (
-                        <div key={activity.id} className="flex items-start gap-3 pb-4 border-b border-gray-100 dark:border-gray-700 last:border-0 last:pb-0">
-                          <div className="w-8 h-8 bg-purple-100 dark:bg-purple-950 rounded-full flex items-center justify-center flex-shrink-0">
-                            <Icon className="h-4 w-4 text-purple-600" />
-                          </div>
-                          <div className="flex-1">
-                            <p className="text-sm text-gray-900 dark:text-white">{activity.description}</p>
-                            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                              {new Date(activity.timestamp).toLocaleDateString()}
-                            </p>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </CardContent>
-              </Card>
-
+            {/* Reviews Tab */}
+            <TabsContent value="reviews">
               {/* My Reviews Widget */}
               <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
                 <CardHeader className="border-b border-gray-200 dark:border-gray-700">
