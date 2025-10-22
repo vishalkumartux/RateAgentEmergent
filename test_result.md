@@ -103,7 +103,9 @@
 
 
 user_problem_statement: |
-  User requested implementation of comprehensive "Buyer Agent Detail (Public)" page to replace the existing basic AgentProfilePage with a sales-ready profile featuring detailed sections for About, Services & Pricing, Coverage & Focus, Performance Metrics, Portfolio, Reviews, Compliance, and CTAs.
+  User requested comprehensive enhancement of Reviews system for buyer agents with:
+  1. Enhanced Reviews Listing Page: New filters (verified, tags, date range, service type, transaction type), enhanced review cards with metadata, helpful voting, report/flag functionality
+  2. Enhanced Submit Review Page: Expanded form fields, word count guidance, preview before post, anti-spam measures, policy notes
 
 frontend:
   - task: "Buyer Agent Detail Page - Comprehensive Implementation"
