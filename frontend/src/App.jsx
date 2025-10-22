@@ -67,6 +67,7 @@ function App() {
               <Route path="/reviews" element={<ReviewsPage />} />
               <Route path="/how-it-works" element={<HowItWorksPage />} />
               <Route path="/dashboard" element={<UserDashboard />} />
+              <Route path="/profile" element={<UserProfile />} />
               <Route path="/submit-review" element={<SubmitReviewPage />} />
               <Route path="/register" element={<RegisterPage />} />
               <Route path="/login" element={<LoginPage />} />
