@@ -330,6 +330,10 @@ const DealsPage = () => {
               ))}
             </div>
           </div>
+          </div>
+
+          {/* Spacing after sticky bar */}
+          <div className="mb-8"></div>
 
           {/* Filters Modal */}
           {showFilters && (
