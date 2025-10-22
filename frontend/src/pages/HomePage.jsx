@@ -191,7 +191,7 @@ const HomePageImproved = () => {
             </div>
 
             {/* Natural Language Search */}
-            <div className="max-w-4xl mx-auto mb-12">
+            <div className="max-w-4xl mx-auto mb-8">
               <form onSubmit={handleNaturalSearch} className="relative">
                 <div className="relative">
                   <Sparkles className="absolute left-5 top-1/2 -translate-y-1/2 h-6 w-6 text-amber-600 z-10" />
@@ -209,11 +209,26 @@ const HomePageImproved = () => {
                     Search
                   </Button>
                 </div>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 text-center">
-                  <Sparkles className="h-3 w-3 inline mr-1" />
-                  Smart search understands natural language—just type what you're looking for
-                </p>
               </form>
+
+              {/* Quick Search Links */}
+              <div className="mt-4 flex items-center justify-center gap-2 flex-wrap">
+                <span className="text-sm text-gray-500 dark:text-gray-400">Popular:</span>
+                {[
+                  { text: 'Houses Sydney', query: 'house in sydney' },
+                  { text: 'Investment Melbourne', query: 'investment property melbourne' },
+                  { text: 'First Home <$800K', query: 'house under 800k ppor' },
+                  { text: 'High-Yield Brisbane', query: 'high yield investment brisbane' }
+                ].map((link, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setSearchQuery(link.query)}
+                    className="px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-50 dark:hover:bg-amber-950 text-sm text-gray-700 dark:text-gray-300 rounded-full transition-all"
+                  >
+                    {link.text}
+                  </button>
+                ))}
+              </div>
             </div>
 
             {/* Primary CTA Tiles */}
