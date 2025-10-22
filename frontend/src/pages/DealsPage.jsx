@@ -19,6 +19,7 @@ import {
   Star,
   Clock,
   TrendingDown,
+  TrendingUp,
   CheckCircle,
   Heart,
   Share2,
