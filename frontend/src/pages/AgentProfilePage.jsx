@@ -499,66 +499,160 @@ const AgentProfilePage = () => {
             </CardContent>
           </Card>
 
-          {/* Reviews Tab */}
-          <TabsContent value="reviews" className="space-y-6">
-            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
-              <CardHeader>
-                <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                  <Star className="h-5 w-5 mr-2 text-amber-600" />
-                  Client Reviews ({agent.reviews.length})
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-6">
-                  {displayedReviews.map((review) => (
-                    <div key={review.id} className="border-b border-gray-200 dark:border-gray-700 pb-6 last:border-b-0 last:pb-0">
-                      <div className="flex items-start justify-between mb-3">
-                        <div>
-                          <h4 className="font-semibold text-gray-900 dark:text-white">{review.author}</h4>
-                          <div className="flex items-center space-x-1 mt-1">
-                            {[...Array(5)].map((_, i) => (
-                              <Star
-                                key={i}
-                                className={`h-4 w-4 ${
-                                  i < review.rating ? 'text-amber-400 fill-current' : 'text-gray-300 dark:text-gray-600'
-                                }`}
-                              />
-                            ))}
-                          </div>
-                        </div>
-                        <span className="text-sm text-gray-500 dark:text-gray-400">{review.date}</span>
-                      </div>
-                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{review.comment}</p>
-                    </div>
-                  ))}
+          {/* Customer Reviews */}
+          <Card className="mb-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+            <CardHeader>
+              <CardTitle className="flex items-center text-gray-900 dark:text-white">
+                <Star className="h-5 w-5 mr-2 text-amber-600" />
+                Customer Reviews
+              </CardTitle>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                {agent.rating} average rating from {agent.reviewCount} verified clients
+              </p>
+            </CardHeader>
+            <CardContent>
+              {agent.reviews.length === 0 ? (
+                <div className="text-center py-8 text-gray-500 dark:text-gray-400">
+                  No reviews yet.
                 </div>
-                
-                {/* Show More/Less Button */}
-                {agent.reviews.length > 5 && (
-                  <div className="mt-6 text-center pt-6 border-t border-gray-200 dark:border-gray-700">
-                    <Button
-                      variant="outline"
-                      onClick={() => setShowAllReviews(!showAllReviews)}
-                      className="border-amber-600 text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950"
-                    >
-                      {showAllReviews ? (
-                        <>
-                          <ChevronUp className="h-4 w-4 mr-2" />
-                          Show Less
-                        </>
-                      ) : (
-                        <>
-                          <ChevronDown className="h-4 w-4 mr-2" />
-                          Show All {agent.reviews.length} Reviews
-                        </>
-                      )}
-                    </Button>
+              ) : (
+                <>
+                  {/* Top Tags */}
+                  {agent.topTags && agent.topTags.length > 0 && (
+                    <div className="mb-6 p-4 bg-amber-50 dark:bg-amber-950 rounded-lg">
+                      <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Most Mentioned Qualities</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {agent.topTags.map((tag, idx) => (
+                          <Badge key={idx} className="bg-amber-200 dark:bg-amber-800 text-amber-800 dark:text-amber-200">
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  
+                  <div className="space-y-6">
+                    {displayedReviews.map((review) => (
+                      <div key={review.id} className="p-4 border border-gray-200 dark:border-gray-600 rounded-lg">
+                        <div className="flex items-start justify-between mb-3">
+                          <div>
+                            <h4 className="font-semibold text-gray-900 dark:text-white">{review.author}</h4>
+                            <div className="flex items-center gap-1 mt-1">
+                              {[...Array(5)].map((_, i) => (
+                                <Star
+                                  key={i}
+                                  className={`h-4 w-4 ${
+                                    i < review.rating ? 'text-amber-400 fill-current' : 'text-gray-300 dark:text-gray-600'
+                                  }`}
+                                />
+                              ))}
+                            </div>
+                          </div>
+                          <Badge variant="outline" className="bg-green-50 dark:bg-green-950 text-green-700 dark:text-green-400 border-green-300 dark:border-green-700">
+                            <CheckCircle className="h-3 w-3 mr-1" />
+                            Verified
+                          </Badge>
+                        </div>
+                        <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-2">{review.comment}</p>
+                        <div className="text-xs text-gray-500 dark:text-gray-400">
+                          {new Date(review.date).toLocaleDateString('en-AU', { month: 'long', year: 'numeric' })}
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                )}
-              </CardContent>
-            </Card>
-          </TabsContent>
-        </Tabs>
+                  
+                  {/* Show More/Less Button */}
+                  {agent.reviews.length > 3 && (
+                    <div className="mt-6 text-center">
+                      <Button
+                        variant="outline"
+                        onClick={() => setShowAllReviews(!showAllReviews)}
+                        className="border-amber-600 text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950"
+                      >
+                        {showAllReviews ? `Show Less` : `Show All ${agent.reviews.length} Reviews`}
+                      </Button>
+                    </div>
+                  )}
+                </>
+              )}
+            </CardContent>
+          </Card>
+
+          {/* Compliance & Credibility */}
+          <Card className="mb-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+            <CardHeader>
+              <CardTitle className="flex items-center text-gray-900 dark:text-white">
+                <ShieldCheck className="h-5 w-5 mr-2 text-amber-600" />
+                Compliance & Credibility
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              {/* License */}
+              <div className="flex items-start gap-3 p-4 bg-green-50 dark:bg-green-950 rounded-lg border border-green-200 dark:border-green-800">
+                <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                <div className="flex-1">
+                  <div className="font-semibold text-gray-900 dark:text-white">Licensed Buyer's Agent</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                    License: {agent.licenceNumber}
+                  </div>
+                </div>
+              </div>
+              
+              {/* Professional Indemnity */}
+              {agent.professionalIndemnity && (
+                <div className="flex items-start gap-3 p-4 bg-blue-50 dark:bg-blue-950 rounded-lg border border-blue-200 dark:border-blue-800">
+                  <ShieldCheck className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <div className="flex-1">
+                    <div className="font-semibold text-gray-900 dark:text-white">Professional Indemnity Insurance</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                      Full coverage for client protection
+                    </div>
+                  </div>
+                </div>
+              )}
+              
+              {/* Industry Memberships */}
+              {agent.industryMemberships && agent.industryMemberships.length > 0 && (
+                <div>
+                  <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Industry Memberships</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {agent.industryMemberships.map((membership, idx) => (
+                      <Badge key={idx} className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600">
+                        <Award className="h-3 w-3 mr-1" />
+                        {membership}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+
+          {/* Contact CTA Section */}
+          <Card className="bg-gradient-to-r from-amber-500 to-yellow-600 text-white border-0">
+            <CardContent className="p-8 text-center">
+              <h2 className="text-3xl font-bold mb-3">Ready to Work with {agent.name.split(' ')[0]}?</h2>
+              <p className="text-amber-50 mb-6 max-w-2xl mx-auto">
+                Get in touch to discuss your property goals and see how {agent.name.split(' ')[0]} can help you secure your ideal property.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Button size="lg" className="bg-white text-amber-600 hover:bg-gray-100">
+                  <MessageCircle className="h-5 w-5 mr-2" />
+                  Send Message
+                </Button>
+                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-amber-600">
+                  <Phone className="h-5 w-5 mr-2" />
+                  {agent.phone}
+                </Button>
+                <Link to="/compare">
+                  <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-amber-600">
+                    <PieChart className="h-5 w-5 mr-2" />
+                    Compare Agents
+                  </Button>
+                </Link>
+              </div>
+            </CardContent>
+          </Card>
       </div>
     </div>
   );
