@@ -146,6 +146,11 @@ const AgentListPage = () => {
     }
   });
 
+  // Paginate
+  const totalPages = Math.ceil(sortedAgents.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const paginatedAgents = sortedAgents.slice(startIndex, startIndex + itemsPerPage);
+
   // Active filters count
   const activeFiltersCount = Object.entries(filters).reduce((count, [key, value]) => {
     if (key === 'strategyFocus') return count + value.length;
