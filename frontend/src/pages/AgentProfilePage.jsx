@@ -491,15 +491,26 @@ const AgentProfilePage = () => {
                     ))}
                   </div>
                   
-                  {/* Show More/Less Button */}
-                  {agentDeals.length > 6 && (
+                  {/* Load More Button */}
+                  {hasMoreDeals && (
                     <div className="mt-6 text-center">
                       <Button
                         variant="outline"
-                        onClick={() => setShowAllDeals(!showAllDeals)}
+                        onClick={() => setDealsToShow(prev => Math.min(prev + 6, agentDeals.length))}
                         className="border-amber-600 text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950"
                       >
-                        {showAllDeals ? `Show Less` : `Show All ${agentDeals.length} Deals`}
+                        Load More Deals ({agentDeals.length - dealsToShow} remaining)
+                      </Button>
+                    </div>
+                  )}
+                  {dealsToShow > 6 && !hasMoreDeals && (
+                    <div className="mt-6 text-center">
+                      <Button
+                        variant="ghost"
+                        onClick={() => setDealsToShow(6)}
+                        className="text-gray-600 dark:text-gray-400 hover:text-amber-600"
+                      >
+                        Show Less
                       </Button>
                     </div>
                   )}
