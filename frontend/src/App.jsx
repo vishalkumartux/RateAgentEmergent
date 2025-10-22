@@ -13,6 +13,7 @@ import CompareAgentsPage from "./pages/CompareAgentsPage";
 import ReviewsPage from "./pages/ReviewsPage";
 import HowItWorksPage from "./pages/HowItWorksPage";
 import UserDashboard from "./pages/UserDashboard";
+import UserProfile from "./pages/UserProfile";
 import SubmitReviewPage from "./pages/SubmitReviewPage";
 import RegisterPage from "./pages/auth/RegisterPage";
 import LoginPage from "./pages/auth/LoginPage";
