@@ -195,23 +195,147 @@ const AgentProfilePage = () => {
             </CardContent>
           </Card>
 
-        {/* Performance Metrics */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          {performanceMetrics.map((metric, index) => {
-            const Icon = metric.icon;
-            return (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-gray-50 rounded-xl mb-4">
-                    <Icon className={`h-6 w-6 ${metric.color}`} />
+          {/* About Section */}
+          <Card className="mb-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+            <CardHeader>
+              <CardTitle className="flex items-center text-gray-900 dark:text-white">
+                <Users className="h-5 w-5 mr-2 text-amber-600" />
+                About
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                {agent.bio || agent.description}
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-10 h-10 bg-amber-100 dark:bg-amber-950 rounded-lg flex items-center justify-center">
+                    <Award className="h-5 w-5 text-amber-600" />
                   </div>
-                  <div className="text-2xl font-bold text-gray-900 mb-1">{metric.value}</div>
-                  <div className="text-gray-600 text-sm">{metric.label}</div>
-                </CardContent>
-              </Card>
-            );
-          })}
-        </div>
+                  <div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">Experience</div>
+                    <div className="font-semibold text-gray-900 dark:text-white">{agent.yearsExperience} Years</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-10 h-10 bg-amber-100 dark:bg-amber-950 rounded-lg flex items-center justify-center">
+                    <Briefcase className="h-5 w-5 text-amber-600" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">Specializations</div>
+                    <div className="font-semibold text-gray-900 dark:text-white">{agent.specialties.join(', ')}</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-10 h-10 bg-amber-100 dark:bg-amber-950 rounded-lg flex items-center justify-center">
+                    <Building2 className="h-5 w-5 text-amber-600" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">Company</div>
+                    <div className="font-semibold text-gray-900 dark:text-white">{agent.company}</div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Services & Pricing */}
+          <Card className="mb-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+            <CardHeader>
+              <CardTitle className="flex items-center text-gray-900 dark:text-white">
+                <DollarSign className="h-5 w-5 mr-2 text-amber-600" />
+                Services & Pricing
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-6">
+                {/* Services */}
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Services Offered</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {agent.services.map((service, idx) => (
+                      <div key={idx} className="flex items-center gap-2 p-3 bg-amber-50 dark:bg-amber-950 rounded-lg border border-amber-200 dark:border-amber-800">
+                        <CheckCircle className="h-4 w-4 text-amber-600 flex-shrink-0" />
+                        <span className="text-sm text-gray-900 dark:text-white">{service}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* Fee Structure */}
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Fee Structure</h3>
+                  <div className="p-4 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700">
+                    <div className="flex items-start gap-3">
+                      <FileText className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <div className="font-semibold text-gray-900 dark:text-white mb-1">{agent.feeModel}</div>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                          Transparent pricing with no hidden costs. Contact for detailed quote.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Coverage & Focus */}
+          <Card className="mb-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+            <CardHeader>
+              <CardTitle className="flex items-center text-gray-900 dark:text-white">
+                <MapPin className="h-5 w-5 mr-2 text-amber-600" />
+                Coverage & Focus
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              {/* Coverage Areas */}
+              <div>
+                <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Coverage Areas</h3>
+                <div className="flex flex-wrap gap-2">
+                  {agent.coverageAreas.map((area, idx) => (
+                    <Badge key={idx} className="bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-400 border-amber-300 dark:border-amber-700">
+                      {area}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Property Types */}
+              <div>
+                <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Property Type Mix</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  {Object.entries(agent.propertyTypesMix).map(([type, percent]) => (
+                    <div key={type} className="text-center p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                      <div className="text-2xl font-bold text-amber-600">{percent}%</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">{type}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Price Band Distribution */}
+              <div>
+                <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Price Band Experience</h3>
+                <div className="space-y-2">
+                  {Object.entries(agent.priceBandDistribution).map(([band, percent]) => (
+                    <div key={band} className="flex items-center gap-3">
+                      <div className="w-32 text-sm text-gray-600 dark:text-gray-400">{band}</div>
+                      <div className="flex-1 bg-gray-200 dark:bg-gray-700 rounded-full h-6 relative overflow-hidden">
+                        <div 
+                          className="bg-amber-500 h-full rounded-full flex items-center justify-end pr-2"
+                          style={{ width: `${percent}%` }}
+                        >
+                          <span className="text-xs font-semibold text-white">{percent}%</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
 
         {/* Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
