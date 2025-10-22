@@ -3,20 +3,17 @@ import { useParams, Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
+import SEO from '../components/SEO';
 import { 
   Star, 
   MapPin, 
   Phone, 
   Mail, 
-  Calendar,
   TrendingUp,
   Award,
   Clock,
   DollarSign,
   Target,
-  Users,
-  ArrowLeft,
   MessageCircle,
   Share2,
   Heart,
@@ -24,11 +21,20 @@ import {
   Bath,
   Car,
   Home,
-  ChevronDown,
-  ChevronUp
+  Building2,
+  CheckCircle,
+  ShieldCheck,
+  Calendar,
+  Percent,
+  TrendingDown,
+  FileText,
+  Users,
+  Briefcase,
+  PieChart,
+  BarChart3
 } from 'lucide-react';
 import { mockAgents } from '../mock/agentData';
-import { getDealsByAgentId, formatDealPrice } from '../mock/dealData';
+import { getDealsByAgentId, formatDealPrice, getDaysAgo } from '../mock/dealData';
 
 const AgentProfilePage = () => {
   const { id } = useParams();
