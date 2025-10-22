@@ -601,28 +601,9 @@ const DealsPage = () => {
             </>
           )}
 
-          {/* Results Bar */}
-          <div className="mb-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-            <div className="text-gray-600 dark:text-gray-400">
-              Showing {paginatedDeals.length} of {sortedDeals.length} deals
-            </div>
-            
-            {/* Sort Dropdown */}
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-gray-600 dark:text-gray-400">Sort by:</span>
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg dark:bg-gray-800 dark:text-white text-sm"
-              >
-                <option value="recent">Most Recent</option>
-                <option value="highestDiscount">Highest Discount %</option>
-                <option value="shortestDays">Shortest Days to Secure</option>
-                <option value="highestYield">Highest Yield %</option>
-                <option value="priceLow">Price: Low to High</option>
-                <option value="priceHigh">Price: High to Low</option>
-              </select>
-            </div>
+          {/* Results Count */}
+          <div className="mb-6 text-gray-600 dark:text-gray-400">
+            Showing <span className="font-semibold text-gray-900 dark:text-white">{paginatedDeals.length}</span> of <span className="font-semibold text-gray-900 dark:text-white">{sortedDeals.length}</span> deals
           </div>
 
           {/* Map View Placeholder */}
