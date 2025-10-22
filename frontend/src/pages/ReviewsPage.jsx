@@ -52,9 +52,10 @@ const ReviewsPageEnhanced = () => {
     dateTo: ''
   });
   const [sortBy, setSortBy] = useState('recent');
-  const [showFilters, setShowFilters] = useState(false);
+  const [showFiltersModal, setShowFiltersModal] = useState(false);
   const [helpfulReviews, setHelpfulReviews] = useState({});
   const [reportedReviews, setReportedReviews] = useState({});
+  const [reviewsToShow, setReviewsToShow] = useState(12);
 
   // Enhance mock reviews with agent data
   const allReviews = mockReviews.map(review => {
