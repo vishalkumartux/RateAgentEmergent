@@ -316,6 +316,124 @@ const UserDashboardComplete = () => {
             {/* Overview Tab */}
             <TabsContent value="overview" className="space-y-6">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                {/* Left Column - Quick Actions */}
+                <div className="lg:col-span-2 space-y-6">
+                  <Card className="bg-gradient-to-br from-amber-50 to-yellow-50 dark:from-amber-950 dark:to-yellow-950 border-2 border-amber-200 dark:border-amber-800">
+                    <CardContent className="p-6">
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Quick Actions</h3>
+                      <div className="grid grid-cols-2 gap-3">
+                        <Link to="/">
+                          <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white h-12">
+                            <Search className="h-4 w-4 mr-2" />
+                            New Search
+                          </Button>
+                        </Link>
+                        <Link to="/agents">
+                          <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white h-12">
+                            <Users className="h-4 w-4 mr-2" />
+                            Browse Agents
+                          </Button>
+                        </Link>
+                        <Link to="/deals">
+                          <Button className="w-full bg-green-600 hover:bg-green-700 text-white h-12">
+                            <Home className="h-4 w-4 mr-2" />
+                            Browse Deals
+                          </Button>
+                        </Link>
+                        <Link to="/submit-review">
+                          <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white h-12">
+                            <Star className="h-4 w-4 mr-2" />
+                            Write Review
+                          </Button>
+                        </Link>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Recent Activity */}
+                  <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                    <CardHeader className="border-b border-gray-200 dark:border-gray-700">
+                      <CardTitle className="flex items-center text-gray-900 dark:text-white">
+                        <Clock className="h-5 w-5 mr-2 text-purple-600" />
+                        Recent Activity
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="p-6">
+                      <div className="space-y-4">
+                        {recentActivity.map(activity => {
+                          const Icon = getActivityIcon(activity.type);
+                          return (
+                            <div key={activity.id} className="flex items-start gap-3 pb-4 border-b border-gray-100 dark:border-gray-700 last:border-0 last:pb-0">
+                              <div className="w-8 h-8 bg-purple-100 dark:bg-purple-950 rounded-full flex items-center justify-center flex-shrink-0">
+                                <Icon className="h-4 w-4 text-purple-600" />
+                              </div>
+                              <div className="flex-1">
+                                <p className="text-sm text-gray-900 dark:text-white">{activity.description}</p>
+                                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                                  {new Date(activity.timestamp).toLocaleDateString()}
+                                </p>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                {/* Right Column - Summary Cards */}
+                <div className="space-y-6">
+                  <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                    <CardHeader>
+                      <CardTitle className="text-gray-900 dark:text-white">At a Glance</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <div className="flex items-center justify-between p-3 bg-blue-50 dark:bg-blue-950 rounded-lg">
+                        <div className="flex items-center gap-3">
+                          <Search className="h-5 w-5 text-blue-600" />
+                          <span className="text-sm font-medium text-gray-900 dark:text-white">Saved Searches</span>
+                        </div>
+                        <Badge className="bg-blue-600 text-white">{savedSearches.length}</Badge>
+                      </div>
+                      <div className="flex items-center justify-between p-3 bg-amber-50 dark:bg-amber-950 rounded-lg">
+                        <div className="flex items-center gap-3">
+                          <Users className="h-5 w-5 text-amber-600" />
+                          <span className="text-sm font-medium text-gray-900 dark:text-white">Shortlisted Agents</span>
+                        </div>
+                        <Badge className="bg-amber-600 text-white">{shortlistedAgents.length}</Badge>
+                      </div>
+                      <div className="flex items-center justify-between p-3 bg-green-50 dark:bg-green-950 rounded-lg">
+                        <div className="flex items-center gap-3">
+                          <Home className="h-5 w-5 text-green-600" />
+                          <span className="text-sm font-medium text-gray-900 dark:text-white">Shortlisted Deals</span>
+                        </div>
+                        <Badge className="bg-green-600 text-white">{shortlistedDeals.length}</Badge>
+                      </div>
+                      <div className="flex items-center justify-between p-3 bg-purple-50 dark:bg-purple-950 rounded-lg">
+                        <div className="flex items-center gap-3">
+                          <Star className="h-5 w-5 text-purple-600" />
+                          <span className="text-sm font-medium text-gray-900 dark:text-white">Reviews Posted</span>
+                        </div>
+                        <Badge className="bg-purple-600 text-white">{myReviews.length}</Badge>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950 border-2 border-blue-200 dark:border-blue-800">
+                    <CardContent className="p-6 text-center">
+                      <TrendingUp className="h-10 w-10 text-blue-600 mx-auto mb-3" />
+                      <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Pro Tip</h3>
+                      <p className="text-sm text-gray-700 dark:text-gray-300">
+                        Set up alerts on your saved searches to get notified when new matching deals are added!
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+            </TabsContent>
+
+            {/* Searches Tab */}
+            <TabsContent value="searches">
               {/* Saved Searches Widget */}
               <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
                 <CardHeader className="border-b border-gray-200 dark:border-gray-700">
