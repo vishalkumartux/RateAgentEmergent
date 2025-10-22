@@ -220,63 +220,10 @@ const ReviewsPageEnhanced = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            {/* Sidebar - Statistics & Filters */}
-            <div className="lg:col-span-1">
-              {/* Statistics Card */}
-              <Card className="mb-6 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
-                <CardHeader>
-                  <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                    <Star className="h-5 w-5 mr-2 text-amber-600" />
-                    Overall Rating
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-center mb-6">
-                    <div className="text-5xl font-bold text-gray-900 dark:text-white mb-2">
-                      {averageRating.toFixed(1)}
-                    </div>
-                    <div className="flex items-center justify-center mb-2">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className={`h-5 w-5 ${
-                            i < Math.round(averageRating)
-                              ? 'text-amber-400 fill-current'
-                              : 'text-gray-300 dark:text-gray-600'
-                          }`}
-                        />
-                      ))}
-                    </div>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm">
-                      Based on <span className="font-semibold">{totalReviews}</span> reviews
-                    </p>
-                    <p className="text-amber-600 text-sm font-medium mt-1">
-                      <CheckCircle className="h-4 w-4 inline mr-1" />
-                      {verifiedCount} verified
-                    </p>
-                  </div>
-
-                  <div className="space-y-2">
-                    {ratingDistribution.map(({ rating, count, percentage }) => (
-                      <div key={rating} className="flex items-center space-x-2 text-sm">
-                        <span className="w-3 text-gray-700 dark:text-gray-300">{rating}</span>
-                        <Star className="h-3 w-3 text-amber-400 fill-current" />
-                        <div className="flex-1 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                          <div
-                            className="bg-amber-500 h-2 rounded-full"
-                            style={{ width: `${percentage}%` }}
-                          />
-                        </div>
-                        <span className="text-gray-600 dark:text-gray-400 w-8 text-right">{count}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Filters Card */}
-              <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+          {/* Filters Modal */}
+          {showFiltersModal && (
+            <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-start justify-center p-4 overflow-y-auto">
+              <Card className="w-full max-w-2xl my-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
                 <CardHeader>
                   <div className="flex items-center justify-between">
                     <CardTitle className="flex items-center text-gray-900 dark:text-white">
