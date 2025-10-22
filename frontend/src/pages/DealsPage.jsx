@@ -224,62 +224,109 @@ const DealsPage = () => {
             </p>
           </div>
 
-          {/* Search & View Toggle */}
-          <div className="mb-6 flex flex-col md:flex-row gap-4">
-            {/* Search Bar with suggestions */}
-            <div className="flex-1 relative">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-amber-600 z-10" />
-              <Input
-                placeholder="Search by suburb, postcode, or address..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                list="deals-suggestions"
-                className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:focus:ring-amber-900 rounded-2xl dark:bg-gray-800 dark:text-white font-medium transition-all"
-              />
-              <datalist id="deals-suggestions">
-                <option value="Bondi Beach" />
-                <option value="Sydney CBD" />
-                <option value="Manly" />
-                <option value="Randwick" />
-                <option value="Paddington" />
-                <option value="Off-market deals" />
-                <option value="High-yield properties" />
-                <option value="First-home buyer" />
-              </datalist>
+          {/* Modern Search and Filter Bar */}
+          <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl border-2 border-gray-100 dark:border-gray-700 p-6 mb-8">
+            <div className="flex flex-col lg:flex-row gap-4 items-center">
+              {/* Modern Search */}
+              <div className="relative flex-1 min-w-0">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-amber-600 z-10" />
+                <Input
+                  placeholder="Search by suburb, postcode, or address..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  list="deals-suggestions"
+                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:focus:ring-amber-900 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
+                />
+                <datalist id="deals-suggestions">
+                  <option value="Bondi Beach" />
+                  <option value="Sydney CBD" />
+                  <option value="Manly" />
+                  <option value="Randwick" />
+                  <option value="Paddington" />
+                </datalist>
+              </div>
+              
+              {/* Quick Actions */}
+              <div className="flex flex-wrap gap-3">
+                {/* View Mode Toggle */}
+                <div className="flex gap-2 bg-gray-100 dark:bg-gray-700 rounded-2xl p-1">
+                  <Button
+                    variant={viewMode === 'list' ? 'default' : 'ghost'}
+                    onClick={() => setViewMode('list')}
+                    className={`h-12 px-4 rounded-xl transition-all ${
+                      viewMode === 'list' 
+                        ? 'bg-amber-600 hover:bg-amber-700 text-white shadow-md' 
+                        : 'hover:bg-gray-200 dark:hover:bg-gray-600'
+                    }`}
+                  >
+                    <List className="h-4 w-4 mr-2" />
+                    List
+                  </Button>
+                  <Button
+                    variant={viewMode === 'map' ? 'default' : 'ghost'}
+                    onClick={() => setViewMode('map')}
+                    className={`h-12 px-4 rounded-xl transition-all ${
+                      viewMode === 'map' 
+                        ? 'bg-amber-600 hover:bg-amber-700 text-white shadow-md' 
+                        : 'hover:bg-gray-200 dark:hover:bg-gray-600'
+                    }`}
+                  >
+                    <Map className="h-4 w-4 mr-2" />
+                    Map
+                  </Button>
+                </div>
+
+                {/* Sort Dropdown */}
+                <select
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                  className="h-12 px-4 border-2 border-gray-200 dark:border-gray-600 rounded-2xl dark:bg-gray-700 dark:text-white font-semibold transition-all hover:border-amber-500"
+                >
+                  <option value="recent">🕐 Most Recent</option>
+                  <option value="highestDiscount">💰 Highest Discount</option>
+                  <option value="shortestDays">⚡ Shortest Days</option>
+                  <option value="highestYield">📈 Highest Yield</option>
+                  <option value="priceLow">💵 Price: Low-High</option>
+                  <option value="priceHigh">💎 Price: High-Low</option>
+                </select>
+                
+                {/* Filter Button */}
+                <Button
+                  variant={showFilters ? "default" : "outline"}
+                  onClick={() => setShowFilters(!showFilters)}
+                  className={`h-12 px-6 rounded-2xl font-semibold transition-all ${
+                    showFilters 
+                      ? 'bg-amber-600 hover:bg-amber-700 text-white' 
+                      : 'border-2 border-gray-200 dark:border-gray-600 hover:border-amber-600'
+                  }`}
+                >
+                  <SlidersHorizontal className="h-5 w-5 mr-2" />
+                  Filters
+                  {activeFiltersCount > 0 && (
+                    <Badge className="ml-2 bg-white text-amber-600">
+                      {activeFiltersCount}
+                    </Badge>
+                  )}
+                </Button>
+              </div>
             </div>
 
-            {/* View Mode Toggle */}
-            <div className="flex gap-2">
-              <Button
-                variant={viewMode === 'list' ? 'default' : 'outline'}
-                onClick={() => setViewMode('list')}
-                className={viewMode === 'list' ? 'bg-amber-600 hover:bg-amber-700' : ''}
-              >
-                <List className="h-4 w-4 mr-2" />
-                List
-              </Button>
-              <Button
-                variant={viewMode === 'map' ? 'default' : 'outline'}
-                onClick={() => setViewMode('map')}
-                className={viewMode === 'map' ? 'bg-amber-600 hover:bg-amber-700' : ''}
-              >
-                <Map className="h-4 w-4 mr-2" />
-                Map
-              </Button>
+            {/* Popular Searches */}
+            <div className="mt-4 flex items-center gap-2 flex-wrap">
+              <span className="text-sm text-gray-500 dark:text-gray-400 flex items-center">
+                <TrendingUp className="h-4 w-4 mr-1" />
+                Popular:
+              </span>
+              {['Bondi Beach', 'Off-market deals', 'High-yield', 'Sydney CBD', 'First-home buyer'].map((quick) => (
+                <button
+                  key={quick}
+                  onClick={() => setSearchTerm(quick)}
+                  className="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 hover:bg-amber-100 dark:hover:bg-amber-900 text-gray-700 dark:text-gray-300 hover:text-amber-700 dark:hover:text-amber-400 rounded-full text-sm transition-all duration-200 hover:shadow-md"
+                >
+                  {quick}
+                </button>
+              ))}
             </div>
-
-            {/* Filter Toggle */}
-            <Button
-              variant="outline"
-              onClick={() => setShowFilters(!showFilters)}
-              className="relative"
-            >
-              <SlidersHorizontal className="h-4 w-4 mr-2" />
-              Filters
-              {activeFiltersCount > 0 && (
-                <Badge className="ml-2 bg-amber-600 text-white">{activeFiltersCount}</Badge>
-              )}
-            </Button>
           </div>
 
           {/* Filters Modal */}
