@@ -49,7 +49,7 @@ import { mockReviews } from '../mock/reviewData';
 
 const UserDashboardComplete = () => {
   const navigate = useNavigate();
-  const [activeSection, setActiveSection] = useState('overview');
+  const [activeTab, setActiveTab] = useState('overview');
   
   // LocalStorage keys
   const STORAGE_KEYS = {
