@@ -530,7 +530,10 @@ const UserDashboardComplete = () => {
                   )}
                 </CardContent>
               </Card>
+            </TabsContent>
 
+            {/* Agents Tab */}
+            <TabsContent value="agents">
               {/* Shortlisted Agents Widget */}
               <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
                 <CardHeader className="border-b border-gray-200 dark:border-gray-700">
