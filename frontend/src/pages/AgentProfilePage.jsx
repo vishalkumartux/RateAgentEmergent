@@ -337,56 +337,74 @@ const AgentProfilePage = () => {
             </CardContent>
           </Card>
 
-        {/* Tabs */}
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-3 lg:w-auto lg:grid-cols-3">
-            <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="sales">Recent Sales</TabsTrigger>
-            <TabsTrigger value="reviews">Reviews</TabsTrigger>
-          </TabsList>
-
-          {/* Overview Tab */}
-          <TabsContent value="overview" className="space-y-6">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Users className="h-5 w-5 mr-2 text-emerald-600" />
-                  About {agent.name.split(' ')[0]}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  {agent.description}
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">Contact Information</h4>
-                    <div className="space-y-2 text-gray-600">
-                      <div className="flex items-center">
-                        <Phone className="h-4 w-4 mr-3 text-gray-400" />
-                        <span>{agent.phone}</span>
-                      </div>
-                      <div className="flex items-center">
-                        <Mail className="h-4 w-4 mr-3 text-gray-400" />
-                        <span>{agent.email}</span>
-                      </div>
-                    </div>
+          {/* Performance Metrics */}
+          <Card className="mb-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+            <CardHeader>
+              <CardTitle className="flex items-center text-gray-900 dark:text-white">
+                <BarChart3 className="h-5 w-5 mr-2 text-amber-600" />
+                Performance Metrics
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto bg-amber-100 dark:bg-amber-950 rounded-full flex items-center justify-center mb-3">
+                    <Clock className="h-8 w-8 text-amber-600" />
                   </div>
+                  <div className="text-2xl font-bold text-gray-900 dark:text-white">{agent.medianDaysToSecure}</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Median Days to Secure</div>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto bg-amber-100 dark:bg-amber-950 rounded-full flex items-center justify-center mb-3">
+                    <Percent className="h-8 w-8 text-amber-600" />
+                  </div>
+                  <div className="text-2xl font-bold text-gray-900 dark:text-white">{agent.avgDiscountPercent}%</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Avg. Discount</div>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto bg-amber-100 dark:bg-amber-950 rounded-full flex items-center justify-center mb-3">
+                    <Target className="h-8 w-8 text-amber-600" />
+                  </div>
+                  <div className="text-2xl font-bold text-gray-900 dark:text-white">{agent.auctionSuccessRatio}%</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Auction Success Rate</div>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto bg-amber-100 dark:bg-amber-950 rounded-full flex items-center justify-center mb-3">
+                    <TrendingDown className="h-8 w-8 text-amber-600" />
+                  </div>
+                  <div className="text-2xl font-bold text-gray-900 dark:text-white">{agent.offMarketRatio}%</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Off-Market Deals</div>
+                </div>
+              </div>
+              
+              {/* Additional Stats */}
+              <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                  <CheckCircle className="h-5 w-5 text-amber-600" />
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">Specializations</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {agent.specialties.map((specialty, index) => (
-                        <Badge key={index} variant="outline">{specialty}</Badge>
-                      ))}
-                    </div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400">Verified Deals</div>
+                    <div className="font-bold text-gray-900 dark:text-white">{agent.verifiedDealsCount}</div>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
+                <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                  <Star className="h-5 w-5 text-amber-600" />
+                  <div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400">Avg. Rating</div>
+                    <div className="font-bold text-gray-900 dark:text-white">{agent.rating}/5.0</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                  <Users className="h-5 w-5 text-amber-600" />
+                  <div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400">Client Reviews</div>
+                    <div className="font-bold text-gray-900 dark:text-white">{agent.reviewCount}</div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
 
-          {/* Sales Tab - Now showing actual deals */}
-          <TabsContent value="sales" className="space-y-6">
+          {/* Portfolio of Recent Deals */}
             <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
               <CardHeader>
                 <CardTitle className="flex items-center text-gray-900 dark:text-white">
