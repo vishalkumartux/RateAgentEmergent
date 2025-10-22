@@ -550,6 +550,54 @@ const AgentListPage = () => {
                 compareCount={compareAgents.length}
               />
             ))}
+          </div>
+
+          {/* Pagination */}
+          {totalPages > 1 && paginatedAgents.length > 0 && (
+            <div className="flex items-center justify-center gap-2 mb-8">
+              <Button
+                variant="outline"
+                onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                disabled={currentPage === 1}
+                className="disabled:opacity-50"
+              >
+                Previous
+              </Button>
+              <div className="flex gap-1">
+                {[...Array(totalPages)].map((_, i) => {
+                  const pageNum = i + 1;
+                  // Show first page, last page, current page, and pages around current
+                  if (
+                    pageNum === 1 ||
+                    pageNum === totalPages ||
+                    (pageNum >= currentPage - 1 && pageNum <= currentPage + 1)
+                  ) {
+                    return (
+                      <Button
+                        key={i}
+                        variant={currentPage === pageNum ? 'default' : 'outline'}
+                        onClick={() => setCurrentPage(pageNum)}
+                        className={currentPage === pageNum ? 'bg-amber-600 hover:bg-amber-700' : ''}
+                      >
+                        {pageNum}
+                      </Button>
+                    );
+                  } else if (pageNum === currentPage - 2 || pageNum === currentPage + 2) {
+                    return <span key={i} className="px-2">...</span>;
+                  }
+                  return null;
+                })}
+              </div>
+              <Button
+                variant="outline"
+                onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                disabled={currentPage === totalPages}
+                className="disabled:opacity-50"
+              >
+                Next
+              </Button>
+            </div>
+          )}
 
           {/* Empty State */}
           {sortedAgents.length === 0 && (
