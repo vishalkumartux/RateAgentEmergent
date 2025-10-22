@@ -39,14 +39,17 @@ import { getDealsByAgentId, formatDealPrice, getDaysAgo } from '../mock/dealData
 const AgentProfilePage = () => {
   const { id } = useParams();
   const agent = mockAgents.find(a => a.id === parseInt(id));
-  const [showAllDeals, setShowAllDeals] = useState(false);
-  const [showAllReviews, setShowAllReviews] = useState(false);
+  const [dealsToShow, setDealsToShow] = useState(6);
+  const [reviewsToShow, setReviewsToShow] = useState(3);
   const [isFavorited, setIsFavorited] = useState(false);
   
   // Get deals by this agent
   const agentDeals = getDealsByAgentId(parseInt(id));
-  const displayedDeals = showAllDeals ? agentDeals : agentDeals.slice(0, 6);
-  const displayedReviews = showAllReviews ? agent.reviews : agent.reviews.slice(0, 3);
+  const displayedDeals = agentDeals.slice(0, dealsToShow);
+  const displayedReviews = agent.reviews.slice(0, reviewsToShow);
+  
+  const hasMoreDeals = agentDeals.length > dealsToShow;
+  const hasMoreReviews = agent.reviews.length > reviewsToShow;
 
   if (!agent) {
     return (
