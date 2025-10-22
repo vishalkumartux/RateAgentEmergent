@@ -55,15 +55,17 @@ export const mockDeals = [
   },
   {
     id: 2,
-    agentId: 2, // Michael Chen
-    agentName: "Michael Chen",
-    agentCompany: "Sydney Elite Properties",
+    agentId: 2, // David Mitchell
+    agentName: "David Mitchell",
+    agentCompany: "Metro Property Solutions",
     agentPhoto: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+    agentRating: 4.6,
     
     address: "15/88 George Street, Sydney NSW 2000",
     suburb: "Sydney CBD",
     city: "Sydney",
     state: "NSW",
+    postcode: "2000",
     propertyType: "Apartment",
     dealType: "sale",
     status: "sold",
@@ -74,16 +76,26 @@ export const mockDeals = [
     landSize: "N/A",
     buildingArea: "95 sqm",
     
-    price: 1450000,
-    soldDate: "2024-08-20",
-    daysOnMarket: 12,
+    purchasePrice: 1450000,
+    askingPrice: 1500000,
+    achievedVsAsking: -3.3,
+    purchaseDate: "2024-08-20",
+    daysToSecure: 28,
+    discountPercent: 3.3,
+    
+    rentalAppraisal: 750,
+    rentalAchieved: 780,
+    grossYield: 2.8,
+    
+    strategyTags: ["Auction", "First-home buyer"],
+    verified: true,
     
     photos: [
       "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop"
     ],
     
-    description: "Modern apartment in prime CBD location. Floor-to-ceiling windows with city views. Walking distance to everything Sydney has to offer.",
+    description: "Helped first-home buyer secure this modern CBD apartment through competitive auction bidding. Great investment potential.",
     
     features: ["City Views", "Modern Kitchen", "Gym Access", "Concierge", "Central Location"]
   },
