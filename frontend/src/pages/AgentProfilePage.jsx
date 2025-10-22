@@ -42,6 +42,7 @@ const AgentProfilePage = () => {
   const [dealsToShow, setDealsToShow] = useState(6);
   const [reviewsToShow, setReviewsToShow] = useState(3);
   const [isFavorited, setIsFavorited] = useState(false);
+  const [showAllAreas, setShowAllAreas] = useState(false);
   
   // Get deals by this agent
   const agentDeals = getDealsByAgentId(parseInt(id));
