@@ -894,8 +894,8 @@ const UserDashboardComplete = () => {
                   </div>
                 </CardContent>
               </Card>
-            </div>
-          </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </div>
     </>
