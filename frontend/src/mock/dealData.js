@@ -1,4 +1,4 @@
-// Mock deal data for the platform
+// Mock deal data for buyer agents platform
 export const mockDeals = [
   {
     id: 1,
@@ -6,12 +6,14 @@ export const mockDeals = [
     agentName: "Sarah Johnson",
     agentCompany: "Premium Realty Group",
     agentPhoto: "https://images.unsplash.com/photo-1494790108755-2616c88e8d4e?w=400&h=400&fit=crop&crop=face",
+    agentRating: 4.8,
     
     // Property details
     address: "42 Harbour View Drive, Bondi Beach NSW 2026",
     suburb: "Bondi Beach",
     city: "Sydney",
     state: "NSW",
+    postcode: "2026",
     propertyType: "House",
     dealType: "sale",
     status: "sold",
@@ -23,10 +25,22 @@ export const mockDeals = [
     landSize: "450 sqm",
     buildingArea: "280 sqm",
     
-    // Financial details
-    price: 3250000,
-    soldDate: "2024-08-15",
-    daysOnMarket: 18,
+    // Buyer Agent Specific Metrics
+    purchasePrice: 3250000,
+    askingPrice: 3450000,
+    achievedVsAsking: -5.8, // % below asking
+    purchaseDate: "2024-08-15",
+    daysToSecure: 42,
+    discountPercent: 5.8,
+    
+    // Rental & Yield (if applicable)
+    rentalAppraisal: 1200, // per week
+    rentalAchieved: 1250,
+    grossYield: 2.0,
+    
+    // Strategy & Tags
+    strategyTags: ["Off-market", "Pre-auction", "High-yield"],
+    verified: true,
     
     // Images
     photos: [
@@ -35,7 +49,7 @@ export const mockDeals = [
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop"
     ],
     
-    description: "Stunning oceanfront property with breathtaking views. Recently renovated with premium finishes throughout. Perfect for families seeking the ultimate beachside lifestyle.",
+    description: "Secured this stunning oceanfront property for buyer 5.8% below asking through off-market negotiations. Premium beachside lifestyle with strong rental yield.",
     
     features: ["Ocean Views", "Renovated Kitchen", "Pool", "Garden", "Close to Beach"]
   },
