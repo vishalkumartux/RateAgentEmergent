@@ -338,24 +338,31 @@ const AgentProfilePage = () => {
               )}
               
               {/* Price Band Distribution */}
-              <div>
-                <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Price Band Experience</h3>
-                <div className="space-y-2">
-                  {Object.entries(agent.priceBandDistribution).map(([band, percent]) => (
-                    <div key={band} className="flex items-center gap-3">
-                      <div className="w-32 text-sm text-gray-600 dark:text-gray-400">{band}</div>
-                      <div className="flex-1 bg-gray-200 dark:bg-gray-700 rounded-full h-6 relative overflow-hidden">
-                        <div 
-                          className="bg-amber-500 h-full rounded-full flex items-center justify-end pr-2"
-                          style={{ width: `${percent}%` }}
-                        >
-                          <span className="text-xs font-semibold text-white">{percent}%</span>
+              {agent.priceBandDistribution && Object.keys(agent.priceBandDistribution).length > 0 && (
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Price Band Experience</h3>
+                  <div className="space-y-2">
+                    {Object.entries(agent.priceBandDistribution).map(([band, percent]) => (
+                      <div key={band} className="flex items-center gap-3">
+                        <div className="w-32 text-sm text-gray-600 dark:text-gray-400 flex-shrink-0">{band}</div>
+                        <div className="flex-1 bg-gray-200 dark:bg-gray-700 rounded-full h-6 relative overflow-hidden">
+                          <div 
+                            className="bg-amber-500 h-full rounded-full flex items-center justify-end pr-2 transition-all duration-300"
+                            style={{ width: `${Math.max(percent, 5)}%` }}
+                          >
+                            {percent >= 10 && (
+                              <span className="text-xs font-semibold text-white">{percent}%</span>
+                            )}
+                          </div>
+                          {percent < 10 && (
+                            <span className="absolute right-2 top-1/2 -translate-y-1/2 text-xs font-semibold text-gray-600 dark:text-gray-400">{percent}%</span>
+                          )}
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
             </CardContent>
           </Card>
 
