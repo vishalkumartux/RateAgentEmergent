@@ -534,12 +534,12 @@ const AgentListPage = () => {
 
           {/* Results Count */}
           <div className="mb-6 text-gray-600 dark:text-gray-400">
-            Showing <span className="font-semibold text-gray-900 dark:text-white">{sortedAgents.length}</span> buyer agent{sortedAgents.length !== 1 ? 's' : ''}
+            Showing <span className="font-semibold text-gray-900 dark:text-white">{startIndex + 1}-{Math.min(startIndex + itemsPerPage, sortedAgents.length)}</span> of <span className="font-semibold text-gray-900 dark:text-white">{sortedAgents.length}</span> buyer agent{sortedAgents.length !== 1 ? 's' : ''}
           </div>
 
           {/* Agent Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {sortedAgents.map((agent) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {paginatedAgents.map((agent) => (
               <AgentCard
                 key={agent.id}
                 agent={agent}
