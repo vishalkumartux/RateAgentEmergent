@@ -323,17 +323,19 @@ const AgentProfilePage = () => {
               )}
               
               {/* Property Types */}
-              <div>
-                <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Property Type Mix</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                  {Object.entries(agent.propertyTypesMix).map(([type, percent]) => (
-                    <div key={type} className="text-center p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
-                      <div className="text-2xl font-bold text-amber-600">{percent}%</div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">{type}</div>
-                    </div>
-                  ))}
+              {agent.propertyTypesMix && Object.keys(agent.propertyTypesMix).length > 0 && (
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Property Type Mix</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    {Object.entries(agent.propertyTypesMix).map(([type, percent]) => (
+                      <div key={type} className="text-center p-3 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700">
+                        <div className="text-2xl font-bold text-amber-600">{percent}%</div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">{type}</div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
               
               {/* Price Band Distribution */}
               <div>
