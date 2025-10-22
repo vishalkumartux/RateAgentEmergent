@@ -538,6 +538,7 @@ const AgentListPage = () => {
                 isShortlisted={shortlistedAgents.includes(agent.id)}
                 onToggleCompare={() => toggleCompare(agent)}
                 onToggleShortlist={() => toggleShortlist(agent.id)}
+                compareCount={compareAgents.length}
               />
             ))}
           </div>
