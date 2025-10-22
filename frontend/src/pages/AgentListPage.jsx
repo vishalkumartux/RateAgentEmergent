@@ -614,7 +614,7 @@ const AgentListPage = () => {
 };
 
 // Agent Card Component
-const AgentCard = ({ agent, isInCompare, isShortlisted, onToggleCompare, onToggleShortlist }) => {
+const AgentCard = ({ agent, isInCompare, isShortlisted, onToggleCompare, onToggleShortlist, compareCount }) => {
   const [showTooltip, setShowTooltip] = useState(null);
 
   return (
