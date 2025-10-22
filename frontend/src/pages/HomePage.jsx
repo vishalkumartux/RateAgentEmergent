@@ -1,328 +1,719 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Card, CardContent } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
+import { Slider } from '../components/ui/slider';
 import SEO from '../components/SEO';
-import { Search, MapPin, Star, TrendingUp, Users, Award, ArrowRight, CheckCircle } from 'lucide-react';
+import { 
+  Search, 
+  MapPin, 
+  Star, 
+  TrendingUp, 
+  Users, 
+  Award, 
+  ArrowRight, 
+  CheckCircle,
+  Home,
+  Building2,
+  Briefcase,
+  DollarSign,
+  Bed,
+  Bath,
+  Car,
+  Target,
+  Sparkles
+} from 'lucide-react';
 import { mockAgents } from '../mock/agentData';
+import { mockReviews } from '../mock/reviewData';
+import { mockDeals, formatDealPrice } from '../mock/dealData';
 
-const HomePage = () => {
-  const [searchLocation, setSearchLocation] = useState('');
-  const [searchSpecialty, setSearchSpecialty] = useState('');
+const HomePageImproved = () => {
+  const navigate = useNavigate();
+  const [searchQuery, setSearchQuery] = useState('');
+  const [buyBoxTab, setBuyBoxTab] = useState('deals'); // 'deals' or 'agents'
+  
+  // Buy Box state
+  const [buyBox, setBuyBox] = useState({
+    propertyType: 'all',
+    budgetMin: 0,
+    budgetMax: 5000000,
+    bedrooms: 'any',
+    bathrooms: 'any',
+    parking: 'any',
+    strategies: [],
+    suburb: '',
+    radius: 10
+  });
 
-  const featuredAgents = mockAgents.slice(0, 3);
+  const featuredDeals = mockDeals.filter(d => d.verified).slice(0, 3);
+  const topAgents = mockAgents.sort((a, b) => b.rating - a.rating).slice(0, 3);
+  const allReviews = mockReviews.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  const propertyTypes = ['House', 'Townhouse', 'Unit', 'Apartment', 'Land'];
+  const strategies = [
+    'PPOR', 
+    'Investment', 
+    'Renovation', 
+    'Development', 
+    'Subdivision', 
+    'High-yield', 
+    'Off-market'
+  ];
+
+  const cities = [
+    { name: 'Sydney', state: 'NSW', deals: 1250, agents: 340 },
+    { name: 'Melbourne', state: 'VIC', deals: 980, agents: 290 },
+    { name: 'Brisbane', state: 'QLD', deals: 720, agents: 210 },
+    { name: 'Perth', state: 'WA', deals: 450, agents: 140 },
+    { name: 'Adelaide', state: 'SA', deals: 380, agents: 95 }
+  ];
 
   const stats = [
-    { label: 'Verified Agents', value: '10,000+', icon: Users, color: 'text-emerald-600' },
-    { label: 'Properties Sold', value: '$2.5B+', icon: TrendingUp, color: 'text-blue-600' },
-    { label: 'Customer Reviews', value: '50,000+', icon: Star, color: 'text-amber-600' },
-    { label: 'Cities Covered', value: '150+', icon: MapPin, color: 'text-purple-600' }
+    { label: 'Verified Deals', value: '3,800+', icon: Home, color: 'text-amber-600' },
+    { label: 'Buyer Agents', value: '1,200+', icon: Users, color: 'text-blue-600' },
+    { label: 'Client Reviews', value: '8,500+', icon: Star, color: 'text-green-600' },
+    { label: 'Avg. Savings', value: '$42K', icon: TrendingUp, color: 'text-purple-600' }
   ];
 
-  const features = [
-    {
-      title: 'Verified Performance Data',
-      description: 'Real sales data and performance metrics from trusted sources',
-      icon: Award,
-      color: 'bg-emerald-50 text-emerald-600'
-    },
-    {
-      title: 'Authentic Reviews',
-      description: 'Genuine reviews from real clients who have worked with agents',
-      icon: Star,
-      color: 'bg-amber-50 text-amber-600'
-    },
-    {
-      title: 'Smart Matching',
-      description: 'Find agents that match your specific property type and budget',
-      icon: TrendingUp,
-      color: 'bg-blue-50 text-blue-600'
+  // Basic natural language parsing
+  const parseSearchQuery = (query) => {
+    const parsed = {
+      suburb: '',
+      bedrooms: null,
+      budget: null,
+      propertyType: null
+    };
+
+    const lowerQuery = query.toLowerCase();
+    
+    // Extract bedrooms (e.g., "3BR", "3 bedroom", "3 bed")
+    const bedroomMatch = lowerQuery.match(/(\d+)\s*(br|bed|bedroom)/);
+    if (bedroomMatch) parsed.bedrooms = parseInt(bedroomMatch[1]);
+
+    // Extract budget (e.g., "1.2m", "$800k", "under 1m")
+    const budgetMatch = lowerQuery.match(/(\d+\.?\d*)\s*(m|million|k)/i);
+    if (budgetMatch) {
+      const value = parseFloat(budgetMatch[1]);
+      const unit = budgetMatch[2].toLowerCase();
+      parsed.budget = unit.startsWith('m') ? value * 1000000 : value * 1000;
     }
-  ];
 
-  const handleSearch = (e) => {
+    // Extract property type
+    propertyTypes.forEach(type => {
+      if (lowerQuery.includes(type.toLowerCase())) {
+        parsed.propertyType = type;
+      }
+    });
+
+    // Everything else is likely the suburb
+    let suburbQuery = query;
+    if (bedroomMatch) suburbQuery = suburbQuery.replace(bedroomMatch[0], '');
+    if (budgetMatch) suburbQuery = suburbQuery.replace(budgetMatch[0], '');
+    if (parsed.propertyType) suburbQuery = suburbQuery.replace(new RegExp(parsed.propertyType, 'gi'), '');
+    
+    parsed.suburb = suburbQuery.replace(/under|over|in|near|around/gi, '').trim();
+
+    return parsed;
+  };
+
+  const handleNaturalSearch = (e) => {
     e.preventDefault();
-    // Navigate to agents page with search params
-    window.location.href = `/agents?location=${encodeURIComponent(searchLocation)}&specialty=${encodeURIComponent(searchSpecialty)}`;
+    const parsed = parseSearchQuery(searchQuery);
+    
+    // Build query params
+    const params = new URLSearchParams();
+    if (parsed.suburb) params.append('location', parsed.suburb);
+    if (parsed.bedrooms) params.append('bedrooms', parsed.bedrooms);
+    if (parsed.budget) params.append('maxPrice', parsed.budget);
+    if (parsed.propertyType) params.append('propertyType', parsed.propertyType);
+    
+    // Navigate to deals page with parsed filters
+    navigate(`/deals?${params.toString()}`);
+  };
+
+  const handleBuyBoxSearch = () => {
+    const params = new URLSearchParams();
+    
+    if (buyBox.propertyType !== 'all') params.append('propertyType', buyBox.propertyType);
+    if (buyBox.budgetMin > 0) params.append('minPrice', buyBox.budgetMin);
+    if (buyBox.budgetMax < 5000000) params.append('maxPrice', buyBox.budgetMax);
+    if (buyBox.bedrooms !== 'any') params.append('bedrooms', buyBox.bedrooms);
+    if (buyBox.bathrooms !== 'any') params.append('bathrooms', buyBox.bathrooms);
+    if (buyBox.parking !== 'any') params.append('parking', buyBox.parking);
+    if (buyBox.strategies.length > 0) params.append('strategies', buyBox.strategies.join(','));
+    if (buyBox.suburb) params.append('location', buyBox.suburb);
+    
+    const targetPage = buyBoxTab === 'deals' ? '/deals' : '/agents';
+    navigate(`${targetPage}?${params.toString()}`);
+  };
+
+  const handleStrategyToggle = (strategy) => {
+    setBuyBox(prev => ({
+      ...prev,
+      strategies: prev.strategies.includes(strategy)
+        ? prev.strategies.filter(s => s !== strategy)
+        : [...prev.strategies, strategy]
+    }));
+  };
+
+  const formatBudget = (value) => {
+    if (value >= 1000000) return `$${(value / 1000000).toFixed(1)}M`;
+    if (value >= 1000) return `$${(value / 1000).toFixed(0)}K`;
+    return `$${value}`;
   };
 
   return (
     <>
       <SEO 
-        title="AgentRate - Find Your Perfect Real Estate Agent | Verified Performance & Reviews"
-        description="Compare top-rated real estate agents in Australia. View verified performance data, authentic client reviews, and property deals. Find the perfect buyer's agent for your needs."
-        keywords="real estate agents Australia, buyer agents Sydney, property agents, agent reviews, real estate comparison, property deals"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "name": "AgentRate",
-          "url": "https://agentrate.com.au",
-          "description": "Australia's leading platform for comparing real estate agents",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://agentrate.com.au/agents?search={search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
-        }}
+        title="AgentRate - Find Buyer Agents & Property Deals | Verified Performance & Reviews"
+        description="Australia's leading platform for buyer agents and property deals. Compare agents, browse verified deals, set your buy box criteria. Make informed property decisions."
+        keywords="buyer agents Australia, property deals, real estate comparison, agent reviews, buy box, property search"
       />
-      <div className="min-h-screen bg-background">
+      
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
         {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-50 via-white to-emerald-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 pt-16 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-              Find Your
-              <span className="bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent block mt-2">
-                Perfect Agent
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Compare real estate agents based on verified performance data, authentic reviews, 
-              and proven track records. Make informed decisions for your biggest investment.
-            </p>
-          </div>
+        <section className="relative bg-gradient-to-br from-amber-50 via-white to-yellow-50 dark:from-gray-900 dark:via-gray-800 dark:to-amber-950 pt-20 pb-16 overflow-hidden">
+          <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+          <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                Find Your Next Property
+                <span className="bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent block mt-2">
+                  The Smart Way
+                </span>
+              </h1>
+              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+                Search deals, compare buyer agents, and build your perfect buy box—all in one place.
+              </p>
+            </div>
 
-          {/* Modern Search Form */}
-          <div className="max-w-5xl mx-auto mb-16">
-            <form onSubmit={handleSearch} className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-3 border-2 border-gray-100 dark:border-gray-700">
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
-                {/* Location Search with Autocomplete */}
-                <div className="md:col-span-5">
-                  <div className="relative">
-                    <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-amber-600 z-10" />
-                    <Input
-                      placeholder="Where are you buying?"
-                      value={searchLocation}
-                      onChange={(e) => setSearchLocation(e.target.value)}
-                      list="locations"
-                      className="pl-12 h-14 text-base border-0 focus:ring-0 bg-transparent dark:text-white font-medium"
-                    />
-                    <datalist id="locations">
-                      <option value="Sydney CBD" />
-                      <option value="Bondi Beach" />
-                      <option value="Manly" />
-                      <option value="Surry Hills" />
-                      <option value="Newtown" />
-                      <option value="Parramatta" />
-                    </datalist>
-                  </div>
-                </div>
-
-                {/* Divider */}
-                <div className="hidden md:block h-10 w-px bg-gray-200 dark:bg-gray-600 md:col-span-auto"></div>
-
-                {/* Property Type */}
-                <div className="md:col-span-4">
-                  <select
-                    value={searchSpecialty}
-                    onChange={(e) => setSearchSpecialty(e.target.value)}
-                    className="w-full h-14 px-4 text-base border-0 focus:ring-0 bg-transparent dark:bg-transparent dark:text-white font-medium cursor-pointer"
-                  >
-                    <option value="">All Property Types</option>
-                    <option value="Luxury Homes">Luxury Homes</option>
-                    <option value="First Home Buyers">First Home Buyers</option>
-                    <option value="Investment Properties">Investment</option>
-                    <option value="Apartments">Apartments</option>
-                    <option value="Commercial">Commercial</option>
-                  </select>
-                </div>
-
-                {/* Search Button */}
-                <div className="md:col-span-2">
+            {/* Natural Language Search */}
+            <div className="max-w-4xl mx-auto mb-12">
+              <form onSubmit={handleNaturalSearch} className="relative">
+                <div className="relative">
+                  <Sparkles className="absolute left-5 top-1/2 -translate-y-1/2 h-6 w-6 text-amber-600 z-10" />
+                  <Input
+                    placeholder='Try: "3BR house in Preston under 1.2m" or "Investment property Melbourne high yield"'
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="pl-14 pr-32 h-16 text-lg border-2 border-amber-200 dark:border-amber-800 focus:border-amber-500 rounded-2xl bg-white dark:bg-gray-800 shadow-xl"
+                  />
                   <Button 
-                    type="submit" 
-                    size="lg" 
-                    className="w-full h-14 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-2xl transition-all duration-200 hover:shadow-xl hover:scale-105"
+                    type="submit"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-amber-600 hover:bg-amber-700 text-white h-12 px-6 rounded-xl"
                   >
-                    <Search className="h-5 w-5 md:mr-0 lg:mr-2" />
-                    <span className="hidden lg:inline">Search</span>
+                    <Search className="h-4 w-4 mr-2" />
+                    Search
                   </Button>
                 </div>
-              </div>
-            </form>
+                <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 text-center">
+                  <Sparkles className="h-3 w-3 inline mr-1" />
+                  Smart search understands natural language—just type what you're looking for
+                </p>
+              </form>
+            </div>
 
-            {/* Popular Searches */}
-            <div className="mt-6 text-center">
-              <div className="text-sm text-gray-500 dark:text-gray-400 mb-3 flex items-center justify-center">
-                <TrendingUp className="h-4 w-4 mr-2" />
-                Popular Searches:
-              </div>
-              <div className="flex flex-wrap gap-2 justify-center">
-                {['Sydney CBD', 'Bondi Beach', 'Manly', 'Parramatta', 'North Shore'].map((location) => (
+            {/* Primary CTA Tiles */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+              <Link to="/deals">
+                <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-amber-500 bg-white dark:bg-gray-800">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-14 h-14 bg-amber-100 dark:bg-amber-950 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Home className="h-7 w-7 text-amber-600" />
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Find Deals</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      Browse verified property deals
+                    </p>
+                  </CardContent>
+                </Card>
+              </Link>
+
+              <Link to="/agents">
+                <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-blue-500 bg-white dark:bg-gray-800">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-14 h-14 bg-blue-100 dark:bg-blue-950 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Users className="h-7 w-7 text-blue-600" />
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Find Buyer Agents</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      Compare top-rated agents
+                    </p>
+                  </CardContent>
+                </Card>
+              </Link>
+
+              <Link to="/compare">
+                <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-purple-500 bg-white dark:bg-gray-800">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-14 h-14 bg-purple-100 dark:bg-purple-950 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Target className="h-7 w-7 text-purple-600" />
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Compare Agents</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      Side-by-side comparison
+                    </p>
+                  </CardContent>
+                </Card>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <section className="py-12 bg-white dark:bg-gray-800 border-y border-gray-200 dark:border-gray-700">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => {
+                const Icon = stat.icon;
+                return (
+                  <div key={index} className="text-center">
+                    <Icon className={`h-8 w-8 ${stat.color} mx-auto mb-2`} />
+                    <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
+                      {stat.value}
+                    </div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Buy Box Quick-Builder */}
+        <section className="py-16 bg-gray-50 dark:bg-gray-900">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">
+                Build Your Buy Box
+              </h2>
+              <p className="text-gray-600 dark:text-gray-400">
+                Set your criteria and we'll match you with the right deals or agents
+              </p>
+            </div>
+
+            <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700">
+              <CardContent className="p-6">
+                {/* Tabs */}
+                <div className="flex gap-2 mb-6 bg-gray-100 dark:bg-gray-900 p-1 rounded-xl">
                   <button
-                    key={location}
-                    onClick={() => {
-                      setSearchLocation(location);
-                      handleSearch({ preventDefault: () => {} });
-                    }}
-                    className="px-4 py-2 bg-gray-100 dark:bg-gray-700 hover:bg-amber-100 dark:hover:bg-amber-900 text-gray-700 dark:text-gray-300 hover:text-amber-700 dark:hover:text-amber-400 rounded-full text-sm font-medium transition-all duration-200 hover:shadow-md"
+                    onClick={() => setBuyBoxTab('deals')}
+                    className={`flex-1 py-3 px-4 rounded-lg font-semibold transition-all ${
+                      buyBoxTab === 'deals'
+                        ? 'bg-white dark:bg-gray-800 text-amber-600 shadow-md'
+                        : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+                    }`}
                   >
-                    {location}
+                    <Home className="h-4 w-4 inline mr-2" />
+                    Search Deals
                   </button>
-                ))}
+                  <button
+                    onClick={() => setBuyBoxTab('agents')}
+                    className={`flex-1 py-3 px-4 rounded-lg font-semibold transition-all ${
+                      buyBoxTab === 'agents'
+                        ? 'bg-white dark:bg-gray-800 text-blue-600 shadow-md'
+                        : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+                    }`}
+                  >
+                    <Users className="h-4 w-4 inline mr-2" />
+                    Find Agents
+                  </button>
+                </div>
+
+                <div className="space-y-6">
+                  {/* Property Type */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      <Building2 className="h-4 w-4 inline mr-1" />
+                      Property Type
+                    </label>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge
+                        variant={buyBox.propertyType === 'all' ? 'default' : 'outline'}
+                        className={`cursor-pointer px-4 py-2 ${
+                          buyBox.propertyType === 'all'
+                            ? 'bg-amber-600 text-white'
+                            : 'border-gray-300 dark:border-gray-600 hover:border-amber-600'
+                        }`}
+                        onClick={() => setBuyBox(prev => ({ ...prev, propertyType: 'all' }))}
+                      >
+                        All Types
+                      </Badge>
+                      {propertyTypes.map(type => (
+                        <Badge
+                          key={type}
+                          variant={buyBox.propertyType === type ? 'default' : 'outline'}
+                          className={`cursor-pointer px-4 py-2 ${
+                            buyBox.propertyType === type
+                              ? 'bg-amber-600 text-white'
+                              : 'border-gray-300 dark:border-gray-600 hover:border-amber-600'
+                          }`}
+                          onClick={() => setBuyBox(prev => ({ ...prev, propertyType: type }))}
+                        >
+                          {type}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Budget Range */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      <DollarSign className="h-4 w-4 inline mr-1" />
+                      Budget Range: {formatBudget(buyBox.budgetMin)} - {formatBudget(buyBox.budgetMax)}
+                    </label>
+                    <Slider
+                      value={[buyBox.budgetMin, buyBox.budgetMax]}
+                      onValueChange={([min, max]) => setBuyBox(prev => ({ ...prev, budgetMin: min, budgetMax: max }))}
+                      min={0}
+                      max={5000000}
+                      step={50000}
+                      className="mt-2"
+                    />
+                  </div>
+
+                  {/* Bedrooms, Bathrooms, Parking */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        <Bed className="h-4 w-4 inline mr-1" />
+                        Bedrooms
+                      </label>
+                      <Select value={buyBox.bedrooms} onValueChange={(value) => setBuyBox(prev => ({ ...prev, bedrooms: value }))}>
+                        <SelectTrigger className="dark:bg-gray-700 dark:text-white">
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="any">Any</SelectItem>
+                          <SelectItem value="1">1+</SelectItem>
+                          <SelectItem value="2">2+</SelectItem>
+                          <SelectItem value="3">3+</SelectItem>
+                          <SelectItem value="4">4+</SelectItem>
+                          <SelectItem value="5">5+</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        <Bath className="h-4 w-4 inline mr-1" />
+                        Bathrooms
+                      </label>
+                      <Select value={buyBox.bathrooms} onValueChange={(value) => setBuyBox(prev => ({ ...prev, bathrooms: value }))}>
+                        <SelectTrigger className="dark:bg-gray-700 dark:text-white">
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="any">Any</SelectItem>
+                          <SelectItem value="1">1+</SelectItem>
+                          <SelectItem value="2">2+</SelectItem>
+                          <SelectItem value="3">3+</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        <Car className="h-4 w-4 inline mr-1" />
+                        Parking
+                      </label>
+                      <Select value={buyBox.parking} onValueChange={(value) => setBuyBox(prev => ({ ...prev, parking: value }))}>
+                        <SelectTrigger className="dark:bg-gray-700 dark:text-white">
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="any">Any</SelectItem>
+                          <SelectItem value="1">1+</SelectItem>
+                          <SelectItem value="2">2+</SelectItem>
+                          <SelectItem value="3">3+</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </div>
+
+                  {/* Strategy Tags */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      <Target className="h-4 w-4 inline mr-1" />
+                      Investment Strategy
+                    </label>
+                    <div className="flex flex-wrap gap-2">
+                      {strategies.map(strategy => (
+                        <Badge
+                          key={strategy}
+                          variant={buyBox.strategies.includes(strategy) ? 'default' : 'outline'}
+                          className={`cursor-pointer px-3 py-1.5 ${
+                            buyBox.strategies.includes(strategy)
+                              ? 'bg-blue-600 text-white'
+                              : 'border-gray-300 dark:border-gray-600 hover:border-blue-600'
+                          }`}
+                          onClick={() => handleStrategyToggle(strategy)}
+                        >
+                          {strategy}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Location */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        <MapPin className="h-4 w-4 inline mr-1" />
+                        Suburb / Area
+                      </label>
+                      <Input
+                        placeholder="e.g., Carlton, Melbourne"
+                        value={buyBox.suburb}
+                        onChange={(e) => setBuyBox(prev => ({ ...prev, suburb: e.target.value }))}
+                        className="dark:bg-gray-700 dark:text-white"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        Radius (km)
+                      </label>
+                      <Select value={buyBox.radius.toString()} onValueChange={(value) => setBuyBox(prev => ({ ...prev, radius: parseInt(value) }))}>
+                        <SelectTrigger className="dark:bg-gray-700 dark:text-white">
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="5">5 km</SelectItem>
+                          <SelectItem value="10">10 km</SelectItem>
+                          <SelectItem value="15">15 km</SelectItem>
+                          <SelectItem value="20">20 km</SelectItem>
+                          <SelectItem value="30">30 km</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </div>
+
+                  {/* Search Button */}
+                  <Button 
+                    onClick={handleBuyBoxSearch}
+                    className="w-full bg-amber-600 hover:bg-amber-700 text-white h-12 text-lg font-semibold"
+                  >
+                    <Search className="h-5 w-5 mr-2" />
+                    {buyBoxTab === 'deals' ? 'Search Deals' : 'Find Agents'}
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Featured Deals */}
+        <section className="py-16 bg-white dark:bg-gray-800">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between mb-8">
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                  Featured Deals
+                </h2>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Recently verified property transactions
+                </p>
+              </div>
+              <Link to="/deals">
+                <Button variant="outline" className="border-amber-600 text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950">
+                  View All
+                  <ArrowRight className="h-4 w-4 ml-2" />
+                </Button>
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {featuredDeals.map(deal => (
+                <Link key={deal.id} to={`/deal/${deal.id}`}>
+                  <Card className="hover:shadow-xl transition-all border-2 border-transparent hover:border-amber-500">
+                    <img 
+                      src={deal.photos[0]} 
+                      alt={deal.address}
+                      className="w-full h-48 object-cover"
+                    />
+                    <CardContent className="p-4">
+                      {deal.verified && (
+                        <Badge className="bg-green-100 dark:bg-green-950 text-green-700 dark:text-green-400 mb-2">
+                          <CheckCircle className="h-3 w-3 mr-1" />
+                          Verified
+                        </Badge>
+                      )}
+                      <h3 className="font-semibold text-gray-900 dark:text-white mb-2 truncate">
+                        {deal.suburb}, {deal.state}
+                      </h3>
+                      <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 mb-3">
+                        <span className="flex items-center">
+                          <Bed className="h-4 w-4 mr-1" />
+                          {deal.bedrooms}
+                        </span>
+                        <span className="flex items-center">
+                          <Bath className="h-4 w-4 mr-1" />
+                          {deal.bathrooms}
+                        </span>
+                        <span className="flex items-center">
+                          <Car className="h-4 w-4 mr-1" />
+                          {deal.carSpaces}
+                        </span>
+                      </div>
+                      <div className="text-2xl font-bold text-amber-600">
+                        {formatDealPrice(deal)}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Top-Rated Agents */}
+        <section className="py-16 bg-gray-50 dark:bg-gray-900">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between mb-8">
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                  Top-Rated Buyer Agents
+                </h2>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Trusted professionals with proven track records
+                </p>
+              </div>
+              <Link to="/agents">
+                <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950">
+                  View All
+                  <ArrowRight className="h-4 w-4 ml-2" />
+                </Button>
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {topAgents.map(agent => (
+                <Link key={agent.id} to={`/agent/${agent.id}`}>
+                  <Card className="hover:shadow-xl transition-all border-2 border-transparent hover:border-blue-500">
+                    <CardContent className="p-6 text-center">
+                      <img 
+                        src={agent.photo} 
+                        alt={agent.name}
+                        className="w-20 h-20 rounded-full mx-auto mb-4 object-cover border-2 border-amber-200 dark:border-amber-800"
+                      />
+                      <h3 className="font-semibold text-lg text-gray-900 dark:text-white mb-1">
+                        {agent.name}
+                      </h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{agent.company}</p>
+                      
+                      <div className="flex items-center justify-center gap-1 mb-3">
+                        <Star className="h-4 w-4 text-amber-400 fill-current" />
+                        <span className="font-bold text-gray-900 dark:text-white">{agent.rating}</span>
+                        <span className="text-sm text-gray-600 dark:text-gray-400">({agent.reviewCount})</span>
+                      </div>
+
+                      <div className="flex items-center justify-center gap-2 text-xs text-gray-600 dark:text-gray-400">
+                        <Badge variant="outline" className="bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-400">
+                          {agent.verifiedDealsCount} deals
+                        </Badge>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SEO Blocks - Cities */}
+        <section className="py-16 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+              Find Buyer Agents & Deals by City
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {cities.map(city => (
+                <Card key={city.name} className="hover:shadow-lg transition-all">
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                      {city.name}, {city.state}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">
+                      Discover top-rated buyer agents and verified property deals in {city.name}. 
+                      Compare agents, browse recent transactions, and make informed decisions.
+                    </p>
+                    <div className="space-y-2 text-sm">
+                      <Link 
+                        to={`/agents?location=${city.name}`}
+                        className="flex items-center text-blue-600 hover:text-blue-700 font-medium"
+                      >
+                        <Users className="h-4 w-4 mr-2" />
+                        {city.agents} Buyer Agents in {city.name}
+                        <ArrowRight className="h-3 w-3 ml-auto" />
+                      </Link>
+                      <Link 
+                        to={`/deals?location=${city.name}`}
+                        className="flex items-center text-amber-600 hover:text-amber-700 font-medium"
+                      >
+                        <Home className="h-4 w-4 mr-2" />
+                        {city.deals} Verified Deals in {city.name}
+                        <ArrowRight className="h-3 w-3 ml-auto" />
+                      </Link>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="mt-12 text-center">
+              <p className="text-gray-600 dark:text-gray-400 mb-4">
+                Looking for buyer agents or deals in other areas?
+              </p>
+              <div className="flex gap-4 justify-center">
+                <Link to="/agents">
+                  <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950">
+                    Browse All Agents
+                  </Button>
+                </Link>
+                <Link to="/deals">
+                  <Button variant="outline" className="border-amber-600 text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950">
+                    Browse All Deals
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
+        </section>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-            {stats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <div key={index} className="text-center group">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-white dark:bg-gray-800 rounded-xl shadow-lg mb-4 group-hover:shadow-xl transition-shadow duration-200">
-                    <Icon className={`h-8 w-8 ${stat.color}`} />
-                  </div>
-                  <div className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1">{stat.value}</div>
-                  <div className="text-gray-600 dark:text-gray-300 text-sm md:text-base">{stat.label}</div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Agents */}
-      <section className="py-16 bg-white dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Top Rated Agents
+        {/* Final CTA */}
+        <section className="py-16 bg-gradient-to-r from-amber-500 to-yellow-600">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <Award className="h-16 w-16 text-white mx-auto mb-6" />
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Ready to Find Your Perfect Property?
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Discover highly-rated real estate professionals in your area
+            <p className="text-xl text-amber-50 mb-8">
+              Join thousands of smart buyers who use AgentRate to make informed decisions
             </p>
+            <div className="flex gap-4 justify-center flex-wrap">
+              <Link to="/deals">
+                <Button size="lg" className="bg-white text-amber-600 hover:bg-gray-100">
+                  <Home className="h-5 w-5 mr-2" />
+                  Browse Deals
+                </Button>
+              </Link>
+              <Link to="/agents">
+                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-amber-600">
+                  <Users className="h-5 w-5 mr-2" />
+                  Find Agents
+                </Button>
+              </Link>
+            </div>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {featuredAgents.map((agent) => (
-              <Card key={agent.id} className="group hover:shadow-xl transition-all duration-300 border-gray-100 dark:border-gray-700 hover:border-amber-200 dark:hover:border-amber-600 bg-white dark:bg-gray-800">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4 mb-4">
-                    <img
-                      src={agent.photo}
-                      alt={agent.name}
-                      className="w-16 h-16 rounded-full object-cover border-4 border-white dark:border-gray-700 shadow-lg"
-                    />
-                    <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-amber-600 transition-colors">
-                        {agent.name}
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-300 font-medium">{agent.company}</p>
-                      <p className="text-gray-500 dark:text-gray-400 text-sm flex items-center mt-1">
-                        <MapPin className="h-4 w-4 mr-1" />
-                        {agent.location}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-1">
-                      <Star className="h-5 w-5 text-amber-400 fill-current" />
-                      <span className="font-semibold text-gray-900 dark:text-white">{agent.rating}</span>
-                      <span className="text-gray-500 dark:text-gray-400">({agent.reviewCount} reviews)</span>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-4 mb-4 text-sm">
-                    <div>
-                      <div className="text-gray-500 dark:text-gray-400">Sales Volume</div>
-                      <div className="font-semibold text-gray-900 dark:text-white">{agent.salesVolume}</div>
-                    </div>
-                    <div>
-                      <div className="text-gray-500 dark:text-gray-400">Avg. Days</div>
-                      <div className="font-semibold text-gray-900 dark:text-white">{agent.avgDaysOnMarket}</div>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {agent.specialties.slice(0, 2).map((specialty, index) => (
-                      <Badge key={index} variant="secondary" className="bg-amber-50 dark:bg-amber-900 text-amber-700 dark:text-amber-300 hover:bg-amber-100 dark:hover:bg-amber-800">
-                        {specialty}
-                      </Badge>
-                    ))}
-                  </div>
-
-                  <Link to={`/agent/${agent.id}`}>
-                    <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white group-hover:shadow-lg transition-all duration-200">
-                      View Profile
-                      <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Link to="/agents">
-              <Button size="lg" variant="outline" className="border-amber-600 text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950">
-                View All Agents
-                <ArrowRight className="h-5 w-5 ml-2" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Why Choose AgentRate?
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              We provide the most comprehensive and transparent platform for finding the right real estate agent
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {features.map((feature, index) => {
-              const Icon = feature.icon;
-              return (
-                <div key={index} className="bg-white dark:bg-gray-900 rounded-xl p-8 text-center group hover:shadow-lg transition-all duration-300">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 ${feature.color} dark:bg-opacity-20 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-200`}>
-                    <Icon className="h-8 w-8" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">{feature.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{feature.description}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-amber-600 to-yellow-600 dark:from-amber-700 dark:to-yellow-700">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-white mb-4">
-            Ready to Find Your Perfect Agent?
-          </h2>
-          <p className="text-xl text-amber-100 mb-8">
-            Join thousands of satisfied customers who found their ideal real estate professional through AgentRate
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/agents">
-              <Button size="lg" className="bg-white text-amber-600 hover:bg-gray-50 px-8 py-3 text-lg font-semibold">
-                Browse Agents
-              </Button>
-            </Link>
-            <Link to="/register">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-amber-600 px-8 py-3 text-lg font-semibold">
-                List Your Agency
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+        </section>
       </div>
     </>
   );
 };
 
-export default HomePage;
+export default HomePageImproved;
