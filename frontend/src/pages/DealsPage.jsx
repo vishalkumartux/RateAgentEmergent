@@ -227,23 +227,26 @@ const DealsPage = () => {
 
           {/* Search & View Toggle */}
           <div className="mb-6 flex flex-col md:flex-row gap-4">
-            {/* Search Bar with Autocomplete */}
-            <div className="flex-1">
-              <SearchWithAutocomplete
-                value={searchTerm}
-                onChange={setSearchTerm}
+            {/* Search Bar with suggestions */}
+            <div className="flex-1 relative">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-amber-600 z-10" />
+              <Input
                 placeholder="Search by suburb, postcode, or address..."
-                suggestions={[
-                  "Bondi Beach",
-                  "Sydney CBD",
-                  "Manly",
-                  "Randwick",
-                  "Paddington",
-                  "Off-market deals",
-                  "High-yield properties",
-                  "First-home buyer friendly"
-                ]}
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                list="deals-suggestions"
+                className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:focus:ring-amber-900 rounded-2xl dark:bg-gray-800 dark:text-white font-medium transition-all"
               />
+              <datalist id="deals-suggestions">
+                <option value="Bondi Beach" />
+                <option value="Sydney CBD" />
+                <option value="Manly" />
+                <option value="Randwick" />
+                <option value="Paddington" />
+                <option value="Off-market deals" />
+                <option value="High-yield properties" />
+                <option value="First-home buyer" />
+              </datalist>
             </div>
 
             {/* View Mode Toggle */}
