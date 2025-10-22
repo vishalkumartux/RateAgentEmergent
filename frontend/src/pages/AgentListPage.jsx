@@ -48,6 +48,9 @@ const AgentListPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
 
+  // Shortlist
+  const [shortlistedAgents, setShortlistedAgents] = useState([]);
+
   // Filters
   const [filters, setFilters] = useState({
     // Location
