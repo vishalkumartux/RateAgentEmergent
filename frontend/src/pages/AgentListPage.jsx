@@ -303,6 +303,10 @@ const AgentListPage = () => {
               ))}
             </div>
           </div>
+          </div>
+
+          {/* Spacing after sticky bar */}
+          <div className="mb-8"></div>
 
           {/* Filter Modal */}
           {showFilters && (
