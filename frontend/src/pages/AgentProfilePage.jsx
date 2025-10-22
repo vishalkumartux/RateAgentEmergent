@@ -301,16 +301,26 @@ const AgentProfilePage = () => {
             </CardHeader>
             <CardContent className="space-y-6">
               {/* Coverage Areas */}
-              <div>
-                <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Coverage Areas</h3>
-                <div className="flex flex-wrap gap-2">
-                  {agent.coverageAreas.map((area, idx) => (
-                    <Badge key={idx} className="bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-400 border-amber-300 dark:border-amber-700">
-                      {area}
-                    </Badge>
-                  ))}
+              {agent.coverageAreas && agent.coverageAreas.length > 0 && (
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Coverage Areas ({agent.coverageAreas.length})</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {(showAllAreas ? agent.coverageAreas : agent.coverageAreas.slice(0, 8)).map((area, idx) => (
+                      <Badge key={idx} className="bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-400 border-amber-300 dark:border-amber-700">
+                        {area}
+                      </Badge>
+                    ))}
+                  </div>
+                  {agent.coverageAreas.length > 8 && (
+                    <button 
+                      onClick={() => setShowAllAreas(!showAllAreas)}
+                      className="mt-3 text-sm text-amber-600 hover:text-amber-700 font-medium"
+                    >
+                      {showAllAreas ? 'Show less' : `Show ${agent.coverageAreas.length - 8} more areas`}
+                    </button>
+                  )}
                 </div>
-              </div>
+              )}
               
               {/* Property Types */}
               <div>
