@@ -671,7 +671,10 @@ const UserDashboardComplete = () => {
                   )}
                 </CardContent>
               </Card>
+            </TabsContent>
 
+            {/* Deals Tab */}
+            <TabsContent value="deals">
               {/* Shortlisted Deals Widget */}
               <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
                 <CardHeader className="border-b border-gray-200 dark:border-gray-700">
