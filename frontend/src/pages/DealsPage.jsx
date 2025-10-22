@@ -280,235 +280,275 @@ const DealsPage = () => {
             </Button>
           </div>
 
-          {/* Filters Panel */}
+          {/* Filters Modal */}
           {showFilters && (
-            <Card className="mb-6 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
-              <CardContent className="p-6">
-                <div className="space-y-6">
-                  {/* Header */}
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white flex items-center">
-                      <Filter className="h-5 w-5 mr-2 text-amber-600" />
-                      Advanced Filters
-                    </h3>
-                    <div className="flex gap-2">
-                      <Button variant="ghost" size="sm" onClick={resetFilters}>
-                        <X className="h-4 w-4 mr-1" />
-                        Clear All
-                      </Button>
-                      <Button variant="ghost" size="sm" onClick={() => setShowFilters(false)}>
-                        <ChevronUp className="h-4 w-4" />
-                      </Button>
+            <>
+              {/* Backdrop */}
+              <div 
+                className="fixed inset-0 bg-black bg-opacity-50 z-50"
+                onClick={() => setShowFilters(false)}
+              ></div>
+              
+              {/* Modal */}
+              <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto">
+                <Card className="w-full max-w-5xl max-h-[90vh] overflow-hidden bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 shadow-2xl my-8">
+                  <CardHeader className="border-b border-gray-200 dark:border-gray-700 sticky top-0 bg-white dark:bg-gray-800 z-10">
+                    <div className="flex items-center justify-between">
+                      <CardTitle className="flex items-center text-gray-900 dark:text-white">
+                        <Filter className="h-5 w-5 mr-2 text-amber-600" />
+                        Advanced Filters
+                      </CardTitle>
+                      <div className="flex gap-2">
+                        <Button variant="ghost" size="sm" onClick={resetFilters}>
+                          <X className="h-4 w-4 mr-1" />
+                          Clear All
+                        </Button>
+                        <Button variant="ghost" size="sm" onClick={() => setShowFilters(false)}>
+                          <X className="h-5 w-5" />
+                        </Button>
+                      </div>
                     </div>
-                  </div>
-
-                  {/* Location Filters */}
-                  <div>
-                    <h4 className="font-medium text-gray-900 dark:text-white mb-3">Location</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {activeFiltersCount > 0 && (
+                      <p className="text-sm text-amber-600 dark:text-amber-500 mt-2">
+                        {activeFiltersCount} filter{activeFiltersCount > 1 ? 's' : ''} active
+                      </p>
+                    )}
+                  </CardHeader>
+                  
+                  <CardContent className="p-6 overflow-y-auto" style={{ maxHeight: 'calc(90vh - 140px)' }}>
+                    <div className="space-y-6">
+                      {/* Location Filters */}
                       <div>
-                        <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">State</label>
-                        <select
-                          value={filters.state}
-                          onChange={(e) => setFilters({...filters, state: e.target.value})}
-                          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg dark:bg-gray-700 dark:text-white"
-                        >
-                          <option value="">All States</option>
-                          {stateOptions.map(state => (
-                            <option key={state} value={state}>{state}</option>
+                        <h4 className="font-medium text-gray-900 dark:text-white mb-3 text-lg">📍 Location</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                          <div>
+                            <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">State</label>
+                            <select
+                              value={filters.state}
+                              onChange={(e) => setFilters({...filters, state: e.target.value})}
+                              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg dark:bg-gray-700 dark:text-white"
+                            >
+                              <option value="">All States</option>
+                              {stateOptions.map(state => (
+                                <option key={state} value={state}>{state}</option>
+                              ))}
+                            </select>
+                          </div>
+                          <div>
+                            <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">Suburb</label>
+                            <Input
+                              placeholder="Enter suburb"
+                              value={filters.suburb}
+                              onChange={(e) => setFilters({...filters, suburb: e.target.value})}
+                              className="dark:bg-gray-700 dark:text-white"
+                            />
+                          </div>
+                          <div>
+                            <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">Postcode</label>
+                            <Input
+                              placeholder="Enter postcode"
+                              value={filters.postcode}
+                              onChange={(e) => setFilters({...filters, postcode: e.target.value})}
+                              className="dark:bg-gray-700 dark:text-white"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Property Filters */}
+                      <div>
+                        <h4 className="font-medium text-gray-900 dark:text-white mb-3 text-lg">🏠 Property Details</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                          <div>
+                            <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">Type</label>
+                            <select
+                              value={filters.propertyType}
+                              onChange={(e) => setFilters({...filters, propertyType: e.target.value})}
+                              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg dark:bg-gray-700 dark:text-white"
+                            >
+                              <option value="">All Types</option>
+                              {propertyTypeOptions.map(type => (
+                                <option key={type} value={type}>{type}</option>
+                              ))}
+                            </select>
+                          </div>
+                          <div>
+                            <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">Min Beds</label>
+                            <Input
+                              type="number"
+                              placeholder="Any"
+                              value={filters.bedrooms}
+                              onChange={(e) => setFilters({...filters, bedrooms: e.target.value})}
+                              className="dark:bg-gray-700 dark:text-white"
+                            />
+                          </div>
+                          <div>
+                            <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">Min Baths</label>
+                            <Input
+                              type="number"
+                              placeholder="Any"
+                              value={filters.bathrooms}
+                              onChange={(e) => setFilters({...filters, bathrooms: e.target.value})}
+                              className="dark:bg-gray-700 dark:text-white"
+                            />
+                          </div>
+                          <div>
+                            <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">Min Parking</label>
+                            <Input
+                              type="number"
+                              placeholder="Any"
+                              value={filters.carSpaces}
+                              onChange={(e) => setFilters({...filters, carSpaces: e.target.value})}
+                              className="dark:bg-gray-700 dark:text-white"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Budget Range */}
+                      <div>
+                        <h4 className="font-medium text-gray-900 dark:text-white mb-3 text-lg">💰 Budget Range</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div>
+                            <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">Min Price</label>
+                            <Input
+                              type="number"
+                              placeholder="$ Min"
+                              value={filters.minPrice}
+                              onChange={(e) => setFilters({...filters, minPrice: e.target.value})}
+                              className="dark:bg-gray-700 dark:text-white"
+                            />
+                          </div>
+                          <div>
+                            <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">Max Price</label>
+                            <Input
+                              type="number"
+                              placeholder="$ Max"
+                              value={filters.maxPrice}
+                              onChange={(e) => setFilters({...filters, maxPrice: e.target.value})}
+                              className="dark:bg-gray-700 dark:text-white"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Strategy Tags */}
+                      <div>
+                        <h4 className="font-medium text-gray-900 dark:text-white mb-3 text-lg">🎯 Strategy Tags</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {strategyTagOptions.map(tag => (
+                            <Badge
+                              key={tag}
+                              variant={filters.strategyTags.includes(tag) ? 'default' : 'outline'}
+                              className={`cursor-pointer ${filters.strategyTags.includes(tag) ? 'bg-amber-600 hover:bg-amber-700' : 'hover:border-amber-500'}`}
+                              onClick={() => toggleStrategyTag(tag)}
+                            >
+                              {tag}
+                            </Badge>
                           ))}
-                        </select>
+                        </div>
                       </div>
+
+                      {/* Verification & Date */}
                       <div>
-                        <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">Suburb</label>
-                        <Input
-                          placeholder="Enter suburb"
-                          value={filters.suburb}
-                          onChange={(e) => setFilters({...filters, suburb: e.target.value})}
-                          className="dark:bg-gray-700 dark:text-white"
-                        />
+                        <h4 className="font-medium text-gray-900 dark:text-white mb-3 text-lg">✓ Verification & Timeline</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                          <div className="flex items-center space-x-2">
+                            <input
+                              type="checkbox"
+                              id="verifiedOnly"
+                              checked={filters.verifiedOnly}
+                              onChange={(e) => setFilters({...filters, verifiedOnly: e.target.checked})}
+                              className="w-4 h-4 text-amber-600 border-gray-300 rounded focus:ring-amber-500"
+                            />
+                            <label htmlFor="verifiedOnly" className="text-sm text-gray-900 dark:text-white cursor-pointer">
+                              Verified deals only
+                            </label>
+                          </div>
+                          <div>
+                            <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">From Date</label>
+                            <Input
+                              type="date"
+                              value={filters.dateFrom}
+                              onChange={(e) => setFilters({...filters, dateFrom: e.target.value})}
+                              className="dark:bg-gray-700 dark:text-white"
+                            />
+                          </div>
+                          <div>
+                            <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">To Date</label>
+                            <Input
+                              type="date"
+                              value={filters.dateTo}
+                              onChange={(e) => setFilters({...filters, dateTo: e.target.value})}
+                              className="dark:bg-gray-700 dark:text-white"
+                            />
+                          </div>
+                        </div>
                       </div>
+
+                      {/* Performance Metrics */}
                       <div>
-                        <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">Postcode</label>
-                        <Input
-                          placeholder="Enter postcode"
-                          value={filters.postcode}
-                          onChange={(e) => setFilters({...filters, postcode: e.target.value})}
-                          className="dark:bg-gray-700 dark:text-white"
-                        />
+                        <h4 className="font-medium text-gray-900 dark:text-white mb-3 text-lg">📊 Performance Metrics</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                          <div>
+                            <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">Max Days to Secure</label>
+                            <Input
+                              type="number"
+                              placeholder="Any"
+                              value={filters.maxDaysToSecure}
+                              onChange={(e) => setFilters({...filters, maxDaysToSecure: e.target.value})}
+                              className="dark:bg-gray-700 dark:text-white"
+                            />
+                          </div>
+                          <div>
+                            <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">Min Discount %</label>
+                            <Input
+                              type="number"
+                              step="0.1"
+                              placeholder="Any"
+                              value={filters.minDiscountPercent}
+                              onChange={(e) => setFilters({...filters, minDiscountPercent: e.target.value})}
+                              className="dark:bg-gray-700 dark:text-white"
+                            />
+                          </div>
+                          <div>
+                            <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">Min Yield %</label>
+                            <Input
+                              type="number"
+                              step="0.1"
+                              placeholder="Any"
+                              value={filters.minYield}
+                              onChange={(e) => setFilters({...filters, minYield: e.target.value})}
+                              className="dark:bg-gray-700 dark:text-white"
+                            />
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </CardContent>
 
-                  {/* Property Filters */}
-                  <div>
-                    <h4 className="font-medium text-gray-900 dark:text-white mb-3">Property</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                      <div>
-                        <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">Type</label>
-                        <select
-                          value={filters.propertyType}
-                          onChange={(e) => setFilters({...filters, propertyType: e.target.value})}
-                          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg dark:bg-gray-700 dark:text-white"
+                  {/* Footer with Apply Button */}
+                  <div className="border-t border-gray-200 dark:border-gray-700 p-4 bg-gray-50 dark:bg-gray-900 sticky bottom-0">
+                    <div className="flex items-center justify-between">
+                      <div className="text-sm text-gray-600 dark:text-gray-400">
+                        {sortedDeals.length} deal{sortedDeals.length !== 1 ? 's' : ''} match your filters
+                      </div>
+                      <div className="flex gap-2">
+                        <Button variant="outline" onClick={resetFilters}>
+                          Reset
+                        </Button>
+                        <Button 
+                          className="bg-amber-600 hover:bg-amber-700"
+                          onClick={() => setShowFilters(false)}
                         >
-                          <option value="">All Types</option>
-                          {propertyTypeOptions.map(type => (
-                            <option key={type} value={type}>{type}</option>
-                          ))}
-                        </select>
-                      </div>
-                      <div>
-                        <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">Min Beds</label>
-                        <Input
-                          type="number"
-                          placeholder="Any"
-                          value={filters.bedrooms}
-                          onChange={(e) => setFilters({...filters, bedrooms: e.target.value})}
-                          className="dark:bg-gray-700 dark:text-white"
-                        />
-                      </div>
-                      <div>
-                        <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">Min Baths</label>
-                        <Input
-                          type="number"
-                          placeholder="Any"
-                          value={filters.bathrooms}
-                          onChange={(e) => setFilters({...filters, bathrooms: e.target.value})}
-                          className="dark:bg-gray-700 dark:text-white"
-                        />
-                      </div>
-                      <div>
-                        <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">Min Parking</label>
-                        <Input
-                          type="number"
-                          placeholder="Any"
-                          value={filters.carSpaces}
-                          onChange={(e) => setFilters({...filters, carSpaces: e.target.value})}
-                          className="dark:bg-gray-700 dark:text-white"
-                        />
+                          Apply Filters
+                        </Button>
                       </div>
                     </div>
                   </div>
-
-                  {/* Budget Range */}
-                  <div>
-                    <h4 className="font-medium text-gray-900 dark:text-white mb-3">Budget Range</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">Min Price</label>
-                        <Input
-                          type="number"
-                          placeholder="$ Min"
-                          value={filters.minPrice}
-                          onChange={(e) => setFilters({...filters, minPrice: e.target.value})}
-                          className="dark:bg-gray-700 dark:text-white"
-                        />
-                      </div>
-                      <div>
-                        <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">Max Price</label>
-                        <Input
-                          type="number"
-                          placeholder="$ Max"
-                          value={filters.maxPrice}
-                          onChange={(e) => setFilters({...filters, maxPrice: e.target.value})}
-                          className="dark:bg-gray-700 dark:text-white"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Strategy Tags */}
-                  <div>
-                    <h4 className="font-medium text-gray-900 dark:text-white mb-3">Strategy Tags</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {strategyTagOptions.map(tag => (
-                        <Badge
-                          key={tag}
-                          variant={filters.strategyTags.includes(tag) ? 'default' : 'outline'}
-                          className={`cursor-pointer ${filters.strategyTags.includes(tag) ? 'bg-amber-600 hover:bg-amber-700' : 'hover:border-amber-500'}`}
-                          onClick={() => toggleStrategyTag(tag)}
-                        >
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Verification & Date */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="flex items-center space-x-2">
-                      <input
-                        type="checkbox"
-                        id="verifiedOnly"
-                        checked={filters.verifiedOnly}
-                        onChange={(e) => setFilters({...filters, verifiedOnly: e.target.checked})}
-                        className="w-4 h-4 text-amber-600 border-gray-300 rounded focus:ring-amber-500"
-                      />
-                      <label htmlFor="verifiedOnly" className="text-sm text-gray-900 dark:text-white cursor-pointer">
-                        Verified deals only
-                      </label>
-                    </div>
-                    <div>
-                      <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">From Date</label>
-                      <Input
-                        type="date"
-                        value={filters.dateFrom}
-                        onChange={(e) => setFilters({...filters, dateFrom: e.target.value})}
-                        className="dark:bg-gray-700 dark:text-white"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">To Date</label>
-                      <Input
-                        type="date"
-                        value={filters.dateTo}
-                        onChange={(e) => setFilters({...filters, dateTo: e.target.value})}
-                        className="dark:bg-gray-700 dark:text-white"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Performance Metrics */}
-                  <div>
-                    <h4 className="font-medium text-gray-900 dark:text-white mb-3">Performance Metrics</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      <div>
-                        <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">Max Days to Secure</label>
-                        <Input
-                          type="number"
-                          placeholder="Any"
-                          value={filters.maxDaysToSecure}
-                          onChange={(e) => setFilters({...filters, maxDaysToSecure: e.target.value})}
-                          className="dark:bg-gray-700 dark:text-white"
-                        />
-                      </div>
-                      <div>
-                        <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">Min Discount %</label>
-                        <Input
-                          type="number"
-                          step="0.1"
-                          placeholder="Any"
-                          value={filters.minDiscountPercent}
-                          onChange={(e) => setFilters({...filters, minDiscountPercent: e.target.value})}
-                          className="dark:bg-gray-700 dark:text-white"
-                        />
-                      </div>
-                      <div>
-                        <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">Min Yield %</label>
-                        <Input
-                          type="number"
-                          step="0.1"
-                          placeholder="Any"
-                          value={filters.minYield}
-                          onChange={(e) => setFilters({...filters, minYield: e.target.value})}
-                          className="dark:bg-gray-700 dark:text-white"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                </Card>
+              </div>
+            </>
           )}
 
           {/* Results Bar */}
