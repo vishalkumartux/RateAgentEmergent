@@ -286,32 +286,52 @@ const UserDashboardComplete = () => {
 
           {/* Tabs Navigation */}
           <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-            <TabsList className="grid w-full grid-cols-3 lg:grid-cols-6 bg-white dark:bg-gray-800 p-1 rounded-xl border-2 border-gray-200 dark:border-gray-700">
-              <TabsTrigger value="overview" className="data-[state=active]:bg-amber-600 data-[state=active]:text-white">
-                <BarChart3 className="h-4 w-4 mr-2" />
-                Overview
-              </TabsTrigger>
-              <TabsTrigger value="searches" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">
-                <Search className="h-4 w-4 mr-2" />
-                Searches
-              </TabsTrigger>
-              <TabsTrigger value="agents" className="data-[state=active]:bg-amber-600 data-[state=active]:text-white">
-                <Users className="h-4 w-4 mr-2" />
-                Agents
-              </TabsTrigger>
-              <TabsTrigger value="deals" className="data-[state=active]:bg-green-600 data-[state=active]:text-white">
-                <Home className="h-4 w-4 mr-2" />
-                Deals
-              </TabsTrigger>
-              <TabsTrigger value="reviews" className="data-[state=active]:bg-purple-600 data-[state=active]:text-white">
-                <Star className="h-4 w-4 mr-2" />
-                Reviews
-              </TabsTrigger>
-              <TabsTrigger value="settings" className="data-[state=active]:bg-red-600 data-[state=active]:text-white">
-                <Bell className="h-4 w-4 mr-2" />
-                Alerts
-              </TabsTrigger>
-            </TabsList>
+            <div className="bg-white dark:bg-gray-800 p-2 rounded-xl border-2 border-gray-200 dark:border-gray-700">
+              <TabsList className="w-full bg-transparent grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 h-auto p-0">
+                <TabsTrigger 
+                  value="overview" 
+                  className="data-[state=active]:bg-amber-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
+                >
+                  <BarChart3 className="h-4 w-4 mr-2 flex-shrink-0" />
+                  <span className="hidden sm:inline">Overview</span>
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="searches" 
+                  className="data-[state=active]:bg-amber-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
+                >
+                  <Search className="h-4 w-4 mr-2 flex-shrink-0" />
+                  <span className="hidden sm:inline">Searches</span>
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="agents" 
+                  className="data-[state=active]:bg-amber-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
+                >
+                  <Users className="h-4 w-4 mr-2 flex-shrink-0" />
+                  <span className="hidden sm:inline">Agents</span>
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="deals" 
+                  className="data-[state=active]:bg-amber-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
+                >
+                  <Home className="h-4 w-4 mr-2 flex-shrink-0" />
+                  <span className="hidden sm:inline">Deals</span>
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="reviews" 
+                  className="data-[state=active]:bg-amber-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
+                >
+                  <Star className="h-4 w-4 mr-2 flex-shrink-0" />
+                  <span className="hidden sm:inline">Reviews</span>
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="settings" 
+                  className="data-[state=active]:bg-amber-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
+                >
+                  <Bell className="h-4 w-4 mr-2 flex-shrink-0" />
+                  <span className="hidden sm:inline">Alerts</span>
+                </TabsTrigger>
+              </TabsList>
+            </div>
 
             {/* Overview Tab */}
             <TabsContent value="overview" className="space-y-6">
