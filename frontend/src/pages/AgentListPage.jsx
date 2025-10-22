@@ -550,7 +550,6 @@ const AgentListPage = () => {
                 compareCount={compareAgents.length}
               />
             ))}
-          </div>
 
           {/* Empty State */}
           {sortedAgents.length === 0 && (
