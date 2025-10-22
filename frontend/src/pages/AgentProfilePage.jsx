@@ -39,35 +39,35 @@ import { getDealsByAgentId, formatDealPrice, getDaysAgo } from '../mock/dealData
 const AgentProfilePage = () => {
   const { id } = useParams();
   const agent = mockAgents.find(a => a.id === parseInt(id));
-  const [activeTab, setActiveTab] = useState('overview');
   const [showAllDeals, setShowAllDeals] = useState(false);
   const [showAllReviews, setShowAllReviews] = useState(false);
+  const [isFavorited, setIsFavorited] = useState(false);
   
   // Get deals by this agent
   const agentDeals = getDealsByAgentId(parseInt(id));
-  const displayedDeals = showAllDeals ? agentDeals : agentDeals.slice(0, 5);
-  const displayedReviews = showAllReviews ? agent.reviews : agent.reviews.slice(0, 5);
+  const displayedDeals = showAllDeals ? agentDeals : agentDeals.slice(0, 6);
+  const displayedReviews = showAllReviews ? agent.reviews : agent.reviews.slice(0, 3);
 
   if (!agent) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Agent Not Found</h2>
-          <p className="text-gray-600 mb-6">The agent you're looking for doesn't exist.</p>
-          <Link to="/agents">
-            <Button>Back to Agents</Button>
-          </Link>
-        </div>
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
+        <Card className="max-w-md">
+          <CardContent className="p-8 text-center">
+            <Users className="h-16 w-16 text-gray-300 mx-auto mb-4" />
+            <h2 className="text-2xl font-bold mb-2 dark:text-white">Agent Not Found</h2>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
+              The agent profile you're looking for doesn't exist.
+            </p>
+            <Link to="/agents">
+              <Button className="bg-amber-600 hover:bg-amber-700">
+                Browse All Agents
+              </Button>
+            </Link>
+          </CardContent>
+        </Card>
       </div>
     );
   }
-
-  const performanceMetrics = [
-    { label: 'Sales Volume', value: agent.salesVolume, icon: DollarSign, color: 'text-emerald-600' },
-    { label: 'Avg Days on Market', value: `${agent.avgDaysOnMarket} days`, icon: Clock, color: 'text-blue-600' },
-    { label: 'Price Accuracy', value: agent.priceAccuracy, icon: Target, color: 'text-purple-600' },
-    { label: 'Years Experience', value: `${agent.yearsExperience} years`, icon: Award, color: 'text-amber-600' }
-  ];
 
   return (
     <div className="min-h-screen bg-gray-50">
