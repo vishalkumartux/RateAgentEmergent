@@ -101,15 +101,17 @@ export const mockDeals = [
   },
   {
     id: 3,
-    agentId: 3, // Emma Wilson
-    agentName: "Emma Wilson",
-    agentCompany: "Coastal Properties Co.",
+    agentId: 3, // Maria Rodriguez
+    agentName: "Maria Rodriguez",
+    agentCompany: "Coastal Realty Experts",
     agentPhoto: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+    agentRating: 4.9,
     
     address: "128 Ocean Drive, Manly NSW 2095",
     suburb: "Manly",
     city: "Sydney",
     state: "NSW",
+    postcode: "2095",
     propertyType: "Townhouse",
     dealType: "sale",
     status: "sold",
@@ -120,9 +122,118 @@ export const mockDeals = [
     landSize: "180 sqm",
     buildingArea: "165 sqm",
     
-    price: 2100000,
-    soldDate: "2024-07-28",
-    daysOnMarket: 21,
+    purchasePrice: 2100000,
+    askingPrice: null, // Price undisclosed
+    achievedVsAsking: null,
+    purchaseDate: "2024-07-28",
+    daysToSecure: 35,
+    discountPercent: 7.2, // vs AVM
+    
+    rentalAppraisal: 950,
+    rentalAchieved: null, // Not rented yet
+    grossYield: null,
+    
+    strategyTags: ["Off-market", "Private sale"],
+    verified: true,
+    
+    photos: [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop"
+    ],
+    
+    description: "Secured through exclusive off-market channel. Excellent beachside location with renovation potential.",
+    
+    features: ["Beach Access", "Quiet Location", "Garden", "Storage"]
+  },
+  {
+    id: 4,
+    agentId: 1,
+    agentName: "Sarah Johnson",
+    agentCompany: "Premium Realty Group",
+    agentPhoto: "https://images.unsplash.com/photo-1494790108755-2616c88e8d4e?w=400&h=400&fit=crop&crop=face",
+    agentRating: 4.8,
+    
+    address: "56 Park Street, Randwick NSW 2031",
+    suburb: "Randwick",
+    city: "Sydney",
+    state: "NSW",
+    postcode: "2031",
+    propertyType: "House",
+    dealType: "sale",
+    status: "sold",
+    
+    bedrooms: 3,
+    bathrooms: 2,
+    carSpaces: 1,
+    landSize: "420 sqm",
+    buildingArea: "180 sqm",
+    
+    purchasePrice: 1850000,
+    askingPrice: 1950000,
+    achievedVsAsking: -5.1,
+    purchaseDate: "2024-09-10",
+    daysToSecure: 21,
+    discountPercent: 5.1,
+    
+    rentalAppraisal: 850,
+    rentalAchieved: 900,
+    grossYield: 2.5,
+    
+    strategyTags: ["Reno opportunity", "Auction"],
+    verified: true,
+    
+    photos: [
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&h=600&fit=crop"
+    ],
+    
+    description: "Perfect renovation project in sought-after location. Secured at auction with strong buyer competition.",
+    
+    features: ["Large Block", "North Facing", "School Zone", "Quiet Street"]
+  },
+  {
+    id: 5,
+    agentId: 2,
+    agentName: "David Mitchell",
+    agentCompany: "Metro Property Solutions",
+    agentPhoto: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+    agentRating: 4.6,
+    
+    address: "Undisclosed Address, Paddington NSW",
+    suburb: "Paddington",
+    city: "Sydney",
+    state: "NSW",
+    postcode: "2021",
+    propertyType: "Apartment",
+    dealType: "sale",
+    status: "sold",
+    
+    bedrooms: 1,
+    bathrooms: 1,
+    carSpaces: 0,
+    landSize: "N/A",
+    buildingArea: "55 sqm",
+    
+    purchasePrice: null, // Undisclosed
+    askingPrice: null,
+    achievedVsAsking: null,
+    purchaseDate: "2024-09-01",
+    daysToSecure: 14,
+    discountPercent: null,
+    
+    rentalAppraisal: 550,
+    rentalAchieved: 580,
+    grossYield: 3.2, // Estimated based on average price
+    
+    strategyTags: ["Off-market", "High-yield", "Investment"],
+    verified: false,
+    
+    photos: [
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=600&fit=crop"
+    ],
+    
+    description: "Exclusive off-market studio with excellent rental returns. Price undisclosed per buyer's request.",
+    
+    features: ["Central Location", "Low Maintenance", "Investment Grade"]
+  },
     
     photos: [
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop",
