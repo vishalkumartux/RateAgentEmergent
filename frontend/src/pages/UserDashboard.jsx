@@ -284,10 +284,38 @@ const UserDashboardComplete = () => {
             })}
           </div>
 
-          {/* Main Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Left Column - Saved Searches */}
-            <div className="lg:col-span-2 space-y-6">
+          {/* Tabs Navigation */}
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
+            <TabsList className="grid w-full grid-cols-3 lg:grid-cols-6 bg-white dark:bg-gray-800 p-1 rounded-xl border-2 border-gray-200 dark:border-gray-700">
+              <TabsTrigger value="overview" className="data-[state=active]:bg-amber-600 data-[state=active]:text-white">
+                <BarChart3 className="h-4 w-4 mr-2" />
+                Overview
+              </TabsTrigger>
+              <TabsTrigger value="searches" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">
+                <Search className="h-4 w-4 mr-2" />
+                Searches
+              </TabsTrigger>
+              <TabsTrigger value="agents" className="data-[state=active]:bg-amber-600 data-[state=active]:text-white">
+                <Users className="h-4 w-4 mr-2" />
+                Agents
+              </TabsTrigger>
+              <TabsTrigger value="deals" className="data-[state=active]:bg-green-600 data-[state=active]:text-white">
+                <Home className="h-4 w-4 mr-2" />
+                Deals
+              </TabsTrigger>
+              <TabsTrigger value="reviews" className="data-[state=active]:bg-purple-600 data-[state=active]:text-white">
+                <Star className="h-4 w-4 mr-2" />
+                Reviews
+              </TabsTrigger>
+              <TabsTrigger value="settings" className="data-[state=active]:bg-red-600 data-[state=active]:text-white">
+                <Bell className="h-4 w-4 mr-2" />
+                Alerts
+              </TabsTrigger>
+            </TabsList>
+
+            {/* Overview Tab */}
+            <TabsContent value="overview" className="space-y-6">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {/* Saved Searches Widget */}
               <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
                 <CardHeader className="border-b border-gray-200 dark:border-gray-700">
