@@ -139,15 +139,14 @@ const ReviewsPageEnhanced = () => {
   });
 
   // Statistics
-  const averageRating = allReviews.reduce((sum, review) => sum + review.rating, 0) / allReviews.length;
-  const totalReviews = allReviews.length;
-  const verifiedCount = allReviews.filter(r => r.verified).length;
-  const ratingDistribution = [5, 4, 3, 2, 1].map(rating => {
-    const count = allReviews.filter(review => review.rating === rating).length;
-    return { rating, count, percentage: (count / totalReviews) * 100 };
-  });
+  const totalReviews = filteredReviews.length;
+  const verifiedCount = filteredReviews.filter(r => r.verified).length;
 
   const suburbs = getAllSuburbs();
+  
+  // Pagination
+  const displayedReviews = sortedReviews.slice(0, reviewsToShow);
+  const hasMoreReviews = sortedReviews.length > reviewsToShow;
 
   const handleFilterChange = (key, value) => {
     setFilters(prev => ({ ...prev, [key]: value }));
