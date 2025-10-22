@@ -418,10 +418,71 @@ export const getDealsByAgentId = (agentId) => {
   return mockDeals.filter(deal => deal.agentId === agentId);
 };
 
-// Helper function to format price
+// Helper function to format price for buyer agents
 export const formatDealPrice = (deal) => {
-  if (deal.dealType === 'rent') {
-    return `$${deal.price}/week`;
+  if (!deal.purchasePrice || deal.purchasePrice === null) {
+    return "Undisclosed";
   }
-  return `$${(deal.price / 1000000).toFixed(2)}M`;
+  
+  if (deal.purchasePrice >= 1000000) {
+    return `$${(deal.purchasePrice / 1000000).toFixed(2)}M`;
+  }
+  return `$${(deal.purchasePrice / 1000).toFixed(0)}K`;
 };
+
+// Helper to format discount/achievement
+export const formatAchievement = (deal) => {
+  if (deal.achievedVsAsking === null) {
+    return deal.discountPercent ? `${deal.discountPercent}% vs AVM` : null;
+  }
+  return `${Math.abs(deal.achievedVsAsking).toFixed(1)}% ${deal.achievedVsAsking < 0 ? 'below' : 'above'} asking`;
+};
+
+// Helper to calculate days ago
+export const getDaysAgo = (dateString) => {
+  const date = new Date(dateString);
+  const today = new Date();
+  const diffTime = Math.abs(today - date);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  
+  if (diffDays === 0) return 'Today';
+  if (diffDays === 1) return 'Yesterday';
+  if (diffDays < 30) return `${diffDays} days ago`;
+  if (diffDays < 365) return `${Math.floor(diffDays / 30)} months ago`;
+  return `${Math.floor(diffDays / 365)} years ago`;
+};
+
+// Strategy tag options for filters
+export const strategyTagOptions = [
+  "Off-market",
+  "Auction",
+  "Private sale",
+  "Reno opportunity",
+  "Development",
+  "High-yield",
+  "First-home buyer",
+  "Investment",
+  "Pre-auction"
+];
+
+// Property type options
+export const propertyTypeOptions = [
+  "House",
+  "Apartment",
+  "Townhouse",
+  "Villa",
+  "Land",
+  "Studio"
+];
+
+// State options
+export const stateOptions = [
+  "NSW",
+  "VIC",
+  "QLD",
+  "WA",
+  "SA",
+  "TAS",
+  "ACT",
+  "NT"
+];
