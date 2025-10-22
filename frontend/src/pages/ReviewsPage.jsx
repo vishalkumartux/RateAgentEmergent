@@ -41,57 +41,101 @@ import {
 
 const ReviewsPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [ratingFilter, setRatingFilter] = useState([0]);
-  const [locationFilter, setLocationFilter] = useState('all');
+  const [filters, setFilters] = useState({
+    rating: 0,
+    verifiedOnly: false,
+    tags: [],
+    serviceType: 'all',
+    transactionType: 'all',
+    suburb: 'all',
+    dateFrom: '',
+    dateTo: ''
+  });
   const [sortBy, setSortBy] = useState('recent');
   const [showFilters, setShowFilters] = useState(false);
+  const [helpfulReviews, setHelpfulReviews] = useState({});
 
-  // Flatten all reviews from all agents
-  const allReviews = mockAgents.flatMap(agent => 
-    agent.reviews.map(review => ({
+  // Enhance mock reviews with agent data
+  const allReviews = mockReviews.map(review => {
+    const agent = mockAgents.find(a => a.id === review.agentId);
+    return {
       ...review,
-      agentName: agent.name,
-      agentPhoto: agent.photo,
-      agentCompany: agent.company,
-      agentLocation: agent.location,
-      agentId: agent.id,
-      agentRating: agent.rating,
-      agentSpecialties: agent.specialties
-    }))
-  );
-
-  // Filter and sort reviews
-  const filteredReviews = allReviews.filter(review => {
-    const matchesSearch = !searchTerm || 
-      review.agentName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      review.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      review.comment.toLowerCase().includes(searchTerm.toLowerCase());
-    
-    const matchesRating = review.rating >= ratingFilter[0];
-    const matchesLocation = locationFilter === 'all' || review.agentLocation === locationFilter;
-    
-    return matchesSearch && matchesRating && matchesLocation;
-  }).sort((a, b) => {
-    switch (sortBy) {
-      case 'recent':
-        return new Date(b.date) - new Date(a.date);
-      case 'rating-high':
-        return b.rating - a.rating;
-      case 'rating-low':
-        return a.rating - b.rating;
-      default:
-        return 0;
-    }
+      agentPhoto: agent?.photo,
+      agentCompany: agent?.company,
+      agentLocation: agent?.location,
+      agentSpecialties: agent?.specialties || []
+    };
   });
 
+  // Apply filters
+  const searchFiltered = allReviews.filter(review => {
+    if (!searchTerm) return true;
+    const searchLower = searchTerm.toLowerCase();
+    return (
+      review.agentName.toLowerCase().includes(searchLower) ||
+      review.title.toLowerCase().includes(searchLower) ||
+      review.comment.toLowerCase().includes(searchLower) ||
+      review.suburb.toLowerCase().includes(searchLower)
+    );
+  });
+
+  const filtered = filterReviews({ ...filters, reviews: searchFiltered });
+  const sorted = sortReviews(filtered, sortBy);
+
+  // Statistics
   const averageRating = allReviews.reduce((sum, review) => sum + review.rating, 0) / allReviews.length;
   const totalReviews = allReviews.length;
+  const verifiedCount = allReviews.filter(r => r.verified).length;
   const ratingDistribution = [5, 4, 3, 2, 1].map(rating => {
     const count = allReviews.filter(review => review.rating === rating).length;
     return { rating, count, percentage: (count / totalReviews) * 100 };
   });
 
-  const locations = [...new Set(mockAgents.map(agent => agent.location))];
+  const suburbs = getAllSuburbs();
+  
+  const handleFilterChange = (key, value) => {
+    setFilters(prev => ({ ...prev, [key]: value }));
+  };
+  
+  const handleTagToggle = (tag) => {
+    setFilters(prev => ({
+      ...prev,
+      tags: prev.tags.includes(tag)
+        ? prev.tags.filter(t => t !== tag)
+        : [...prev.tags, tag]
+    }));
+  };
+  
+  const handleHelpfulClick = (reviewId) => {
+    setHelpfulReviews(prev => ({
+      ...prev,
+      [reviewId]: !prev[reviewId]
+    }));
+  };
+  
+  const clearAllFilters = () => {
+    setFilters({
+      rating: 0,
+      verifiedOnly: false,
+      tags: [],
+      serviceType: 'all',
+      transactionType: 'all',
+      suburb: 'all',
+      dateFrom: '',
+      dateTo: ''
+    });
+    setSearchTerm('');
+  };
+  
+  const activeFiltersCount = 
+    (filters.rating > 0 ? 1 : 0) +
+    (filters.verifiedOnly ? 1 : 0) +
+    filters.tags.length +
+    (filters.serviceType !== 'all' ? 1 : 0) +
+    (filters.transactionType !== 'all' ? 1 : 0) +
+    (filters.suburb !== 'all' ? 1 : 0) +
+    (filters.dateFrom ? 1 : 0) +
+    (filters.dateTo ? 1 : 0);
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
