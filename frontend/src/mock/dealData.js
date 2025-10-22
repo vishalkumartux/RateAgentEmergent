@@ -233,6 +233,416 @@ export const mockDeals = [
     description: "Exclusive off-market studio with excellent rental returns. Price undisclosed per buyer's request.",
     
     features: ["Central Location", "Low Maintenance", "Investment Grade"]
+  },
+  {
+    id: 6,
+    agentId: 3,
+    agentName: "Maria Rodriguez",
+    agentCompany: "Coastal Realty Experts",
+    agentPhoto: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+    agentRating: 4.9,
+    
+    address: "305 Harbour View, Surfers Paradise QLD 4217",
+    suburb: "Surfers Paradise",
+    city: "Gold Coast",
+    state: "QLD",
+    postcode: "4217",
+    propertyType: "Apartment",
+    dealType: "sale",
+    status: "sold",
+    
+    bedrooms: 3,
+    bathrooms: 2,
+    carSpaces: 2,
+    landSize: "N/A",
+    buildingArea: "145 sqm",
+    
+    purchasePrice: 1650000,
+    askingPrice: 1750000,
+    achievedVsAsking: -5.7,
+    purchaseDate: "2024-08-25",
+    daysToSecure: 25,
+    discountPercent: 5.7,
+    
+    rentalAppraisal: 850,
+    rentalAchieved: 900,
+    grossYield: 2.8,
+    
+    strategyTags: ["Auction", "High-yield"],
+    verified: true,
+    
+    photos: ["https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop"],
+    description: "Beachfront apartment secured at auction with strong yield.",
+    features: ["Ocean Views", "Pool", "Gym", "Security"]
+  },
+  {
+    id: 7,
+    agentId: 1,
+    agentName: "Sarah Johnson",
+    agentCompany: "Premium Realty Group",
+    agentPhoto: "https://images.unsplash.com/photo-1494790108755-2616c88e8d4e?w=400&h=400&fit=crop&crop=face",
+    agentRating: 4.8,
+    
+    address: "78 Beach Road, Coogee NSW 2034",
+    suburb: "Coogee",
+    city: "Sydney",
+    state: "NSW",
+    postcode: "2034",
+    propertyType: "House",
+    dealType: "sale",
+    status: "sold",
+    
+    bedrooms: 4,
+    bathrooms: 3,
+    carSpaces: 2,
+    landSize: "520 sqm",
+    buildingArea: "310 sqm",
+    
+    purchasePrice: 3800000,
+    askingPrice: 4000000,
+    achievedVsAsking: -5.0,
+    purchaseDate: "2024-07-15",
+    daysToSecure: 38,
+    discountPercent: 5.0,
+    
+    rentalAppraisal: 1400,
+    rentalAchieved: 1450,
+    grossYield: 2.0,
+    
+    strategyTags: ["Off-market", "Pre-auction"],
+    verified: true,
+    
+    photos: ["https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop"],
+    description: "Premium beachside home secured off-market.",
+    features: ["Beach Access", "Pool", "Garden", "Study"]
+  },
+  {
+    id: 8,
+    agentId: 2,
+    agentName: "David Mitchell",
+    agentCompany: "Metro Property Solutions",
+    agentPhoto: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+    agentRating: 4.6,
+    
+    address: "Unit 8/120 Collins St, Melbourne VIC 3000",
+    suburb: "Melbourne CBD",
+    city: "Melbourne",
+    state: "VIC",
+    postcode: "3000",
+    propertyType: "Apartment",
+    dealType: "sale",
+    status: "sold",
+    
+    bedrooms: 2,
+    bathrooms: 2,
+    carSpaces: 1,
+    landSize: "N/A",
+    buildingArea: "88 sqm",
+    
+    purchasePrice: 1320000,
+    askingPrice: 1400000,
+    achievedVsAsking: -5.7,
+    purchaseDate: "2024-09-12",
+    daysToSecure: 19,
+    discountPercent: 5.7,
+    
+    rentalAppraisal: 700,
+    rentalAchieved: 750,
+    grossYield: 2.9,
+    
+    strategyTags: ["Auction", "Investment"],
+    verified: true,
+    
+    photos: ["https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop"],
+    description: "CBD apartment with strong rental demand.",
+    features: ["City Views", "Building Gym", "Concierge"]
+  },
+  {
+    id: 9,
+    agentId: 1,
+    agentName: "Sarah Johnson",
+    agentCompany: "Premium Realty Group",
+    agentPhoto: "https://images.unsplash.com/photo-1494790108755-2616c88e8d4e?w=400&h=400&fit=crop&crop=face",
+    agentRating: 4.8,
+    
+    address: "45 Park Avenue, Mosman NSW 2088",
+    suburb: "Mosman",
+    city: "Sydney",
+    state: "NSW",
+    postcode: "2088",
+    propertyType: "House",
+    dealType: "sale",
+    status: "sold",
+    
+    bedrooms: 5,
+    bathrooms: 4,
+    carSpaces: 3,
+    landSize: "680 sqm",
+    buildingArea: "420 sqm",
+    
+    purchasePrice: 5200000,
+    askingPrice: 5500000,
+    achievedVsAsking: -5.5,
+    purchaseDate: "2024-06-20",
+    daysToSecure: 52,
+    discountPercent: 5.5,
+    
+    rentalAppraisal: 2000,
+    rentalAchieved: null,
+    grossYield: null,
+    
+    strategyTags: ["Off-market", "Luxury"],
+    verified: true,
+    
+    photos: ["https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop"],
+    description: "Exclusive luxury home in prime location.",
+    features: ["Harbour Views", "Pool", "Wine Cellar", "Home Theatre"]
+  },
+  {
+    id: 10,
+    agentId: 3,
+    agentName: "Maria Rodriguez",
+    agentCompany: "Coastal Realty Experts",
+    agentPhoto: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+    agentRating: 4.9,
+    
+    address: "22 Seaview Crescent, Broadbeach QLD 4218",
+    suburb: "Broadbeach",
+    city: "Gold Coast",
+    state: "QLD",
+    postcode: "4218",
+    propertyType: "Townhouse",
+    dealType: "sale",
+    status: "sold",
+    
+    bedrooms: 3,
+    bathrooms: 2,
+    carSpaces: 2,
+    landSize: "210 sqm",
+    buildingArea: "195 sqm",
+    
+    purchasePrice: 1890000,
+    askingPrice: 2000000,
+    achievedVsAsking: -5.5,
+    purchaseDate: "2024-08-08",
+    daysToSecure: 31,
+    discountPercent: 5.5,
+    
+    rentalAppraisal: 900,
+    rentalAchieved: 950,
+    grossYield: 2.6,
+    
+    strategyTags: ["Private sale", "High-yield"],
+    verified: true,
+    
+    photos: ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop"],
+    description: "Beachside townhouse with rental potential.",
+    features: ["Beach Access", "Pool", "Modern Kitchen"]
+  },
+  {
+    id: 11,
+    agentId: 2,
+    agentName: "David Mitchell",
+    agentCompany: "Metro Property Solutions",
+    agentPhoto: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+    agentRating: 4.6,
+    
+    address: "Unit 102/45 Lonsdale St, Melbourne VIC 3000",
+    suburb: "Melbourne CBD",
+    city: "Melbourne",
+    state: "VIC",
+    postcode: "3000",
+    propertyType: "Apartment",
+    dealType: "sale",
+    status: "sold",
+    
+    bedrooms: 1,
+    bathrooms: 1,
+    carSpaces: 1,
+    landSize: "N/A",
+    buildingArea: "52 sqm",
+    
+    purchasePrice: 620000,
+    askingPrice: 650000,
+    achievedVsAsking: -4.6,
+    purchaseDate: "2024-09-18",
+    daysToSecure: 16,
+    discountPercent: 4.6,
+    
+    rentalAppraisal: 450,
+    rentalAchieved: 480,
+    grossYield: 4.0,
+    
+    strategyTags: ["First-home buyer", "High-yield"],
+    verified: true,
+    
+    photos: ["https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop"],
+    description: "Perfect first home with excellent yield.",
+    features: ["Central", "Modern", "Security"]
+  },
+  {
+    id: 12,
+    agentId: 1,
+    agentName: "Sarah Johnson",
+    agentCompany: "Premium Realty Group",
+    agentPhoto: "https://images.unsplash.com/photo-1494790108755-2616c88e8d4e?w=400&h=400&fit=crop&crop=face",
+    agentRating: 4.8,
+    
+    address: "88 Harbour Street, Rose Bay NSW 2029",
+    suburb: "Rose Bay",
+    city: "Sydney",
+    state: "NSW",
+    postcode: "2029",
+    propertyType: "House",
+    dealType: "sale",
+    status: "sold",
+    
+    bedrooms: 4,
+    bathrooms: 3,
+    carSpaces: 2,
+    landSize: "550 sqm",
+    buildingArea: "320 sqm",
+    
+    purchasePrice: 4500000,
+    askingPrice: null,
+    achievedVsAsking: null,
+    purchaseDate: "2024-07-08",
+    daysToSecure: 48,
+    discountPercent: 6.5,
+    
+    rentalAppraisal: 1800,
+    rentalAchieved: null,
+    grossYield: null,
+    
+    strategyTags: ["Off-market", "Waterfront"],
+    verified: true,
+    
+    photos: ["https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop"],
+    description: "Exclusive waterfront property secured off-market.",
+    features: ["Water Views", "Pool", "Garden", "Boat Mooring"]
+  },
+  {
+    id: 13,
+    agentId: 3,
+    agentName: "Maria Rodriguez",
+    agentCompany: "Coastal Realty Experts",
+    agentPhoto: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+    agentRating: 4.9,
+    
+    address: "12 Marina Way, Sanctuary Cove QLD 4212",
+    suburb: "Sanctuary Cove",
+    city: "Gold Coast",
+    state: "QLD",
+    postcode: "4212",
+    propertyType: "Villa",
+    dealType: "sale",
+    status: "sold",
+    
+    bedrooms: 3,
+    bathrooms: 2,
+    carSpaces: 2,
+    landSize: "320 sqm",
+    buildingArea: "240 sqm",
+    
+    purchasePrice: 2450000,
+    askingPrice: 2600000,
+    achievedVsAsking: -5.8,
+    purchaseDate: "2024-08-30",
+    daysToSecure: 29,
+    discountPercent: 5.8,
+    
+    rentalAppraisal: 1100,
+    rentalAchieved: 1150,
+    grossYield: 2.4,
+    
+    strategyTags: ["Private sale", "Luxury"],
+    verified: true,
+    
+    photos: ["https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop"],
+    description: "Gated community villa with marina access.",
+    features: ["Marina", "Golf Course", "Security", "Pool"]
+  },
+  {
+    id: 14,
+    agentId: 2,
+    agentName: "David Mitchell",
+    agentCompany: "Metro Property Solutions",
+    agentPhoto: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+    agentRating: 4.6,
+    
+    address: "Unit 505/200 Spencer St, Melbourne VIC 3000",
+    suburb: "Melbourne CBD",
+    city: "Melbourne",
+    state: "VIC",
+    postcode: "3000",
+    propertyType: "Apartment",
+    dealType: "sale",
+    status: "sold",
+    
+    bedrooms: 2,
+    bathrooms: 2,
+    carSpaces: 1,
+    landSize: "N/A",
+    buildingArea: "98 sqm",
+    
+    purchasePrice: 1480000,
+    askingPrice: 1550000,
+    achievedVsAsking: -4.5,
+    purchaseDate: "2024-09-22",
+    daysToSecure: 22,
+    discountPercent: 4.5,
+    
+    rentalAppraisal: 780,
+    rentalAchieved: 820,
+    grossYield: 2.9,
+    
+    strategyTags: ["Auction", "Investment"],
+    verified: true,
+    
+    photos: ["https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop"],
+    description: "Modern apartment with city skyline views.",
+    features: ["City Views", "Pool", "Gym", "Rooftop"]
+  },
+  {
+    id: 15,
+    agentId: 1,
+    agentName: "Sarah Johnson",
+    agentCompany: "Premium Realty Group",
+    agentPhoto: "https://images.unsplash.com/photo-1494790108755-2616c88e8d4e?w=400&h=400&fit=crop&crop=face",
+    agentRating: 4.8,
+    
+    address: "155 Military Road, Vaucluse NSW 2030",
+    suburb: "Vaucluse",
+    city: "Sydney",
+    state: "NSW",
+    postcode: "2030",
+    propertyType: "House",
+    dealType: "sale",
+    status: "sold",
+    
+    bedrooms: 6,
+    bathrooms: 5,
+    carSpaces: 4,
+    landSize: "850 sqm",
+    buildingArea: "580 sqm",
+    
+    purchasePrice: null,
+    askingPrice: null,
+    achievedVsAsking: null,
+    purchaseDate: "2024-06-15",
+    daysToSecure: 65,
+    discountPercent: null,
+    
+    rentalAppraisal: 3000,
+    rentalAchieved: null,
+    grossYield: null,
+    
+    strategyTags: ["Off-market", "Luxury", "Development"],
+    verified: false,
+    
+    photos: ["https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop"],
+    description: "Ultra-luxury estate with development potential. Price confidential.",
+    features: ["Harbour Views", "Tennis Court", "Pool", "Guest House"]
   }
 ];
 
