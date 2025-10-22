@@ -337,185 +337,207 @@ const HomePageImproved = () => {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                  {/* Property Type */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      <Building2 className="h-4 w-4 inline mr-1" />
-                      Property Type
-                    </label>
-                    <div className="flex flex-wrap gap-2">
-                      <Badge
-                        variant={buyBox.propertyType === 'all' ? 'default' : 'outline'}
-                        className={`cursor-pointer px-4 py-2 ${
-                          buyBox.propertyType === 'all'
-                            ? 'bg-amber-600 text-white'
-                            : 'border-gray-300 dark:border-gray-600 hover:border-amber-600'
-                        }`}
-                        onClick={() => setBuyBox(prev => ({ ...prev, propertyType: 'all' }))}
-                      >
-                        All Types
-                      </Badge>
-                      {propertyTypes.map(type => (
-                        <Badge
+              {/* Column 1: Property Type & Location */}
+              <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-amber-300 dark:hover:border-amber-700 transition-all">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+                    <Building2 className="h-5 w-5 mr-2 text-amber-600" />
+                    Property Type
+                  </h3>
+                  <div className="grid grid-cols-2 gap-3 mb-6">
+                    {['All', ...propertyTypes].map(type => {
+                      const isSelected = type === 'All' ? buyBox.propertyType === 'all' : buyBox.propertyType === type;
+                      const icons = { House: '🏠', Townhouse: '🏘️', Unit: '🏢', Apartment: '🏙️', Land: '🌾', All: '✨' };
+                      return (
+                        <button
                           key={type}
-                          variant={buyBox.propertyType === type ? 'default' : 'outline'}
-                          className={`cursor-pointer px-4 py-2 ${
-                            buyBox.propertyType === type
-                              ? 'bg-amber-600 text-white'
-                              : 'border-gray-300 dark:border-gray-600 hover:border-amber-600'
+                          onClick={() => setBuyBox(prev => ({ ...prev, propertyType: type === 'All' ? 'all' : type }))}
+                          className={`p-4 rounded-xl border-2 transition-all text-center ${
+                            isSelected
+                              ? 'border-amber-500 bg-amber-50 dark:bg-amber-950 shadow-md'
+                              : 'border-gray-200 dark:border-gray-700 hover:border-amber-300 dark:hover:border-amber-800'
                           }`}
-                          onClick={() => setBuyBox(prev => ({ ...prev, propertyType: type }))}
                         >
-                          {type}
-                        </Badge>
-                      ))}
-                    </div>
+                          <div className="text-2xl mb-1">{icons[type]}</div>
+                          <div className={`text-sm font-medium ${isSelected ? 'text-amber-700 dark:text-amber-400' : 'text-gray-700 dark:text-gray-300'}`}>
+                            {type}
+                          </div>
+                        </button>
+                      );
+                    })}
                   </div>
 
-                  {/* Budget Range */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      <DollarSign className="h-4 w-4 inline mr-1" />
-                      Budget Range: {formatBudget(buyBox.budgetMin)} - {formatBudget(buyBox.budgetMax)}
-                    </label>
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center">
+                    <MapPin className="h-5 w-5 mr-2 text-blue-600" />
+                    Location
+                  </h3>
+                  <Input
+                    placeholder="e.g., Carlton, Melbourne"
+                    value={buyBox.suburb}
+                    onChange={(e) => setBuyBox(prev => ({ ...prev, suburb: e.target.value }))}
+                    className="mb-3 h-12 border-2 dark:bg-gray-700 dark:text-white"
+                  />
+                  <Select value={buyBox.radius.toString()} onValueChange={(value) => setBuyBox(prev => ({ ...prev, radius: parseInt(value) }))}>
+                    <SelectTrigger className="h-12 border-2 dark:bg-gray-700 dark:text-white">
+                      <SelectValue placeholder="Search radius" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="5">Within 5 km</SelectItem>
+                      <SelectItem value="10">Within 10 km</SelectItem>
+                      <SelectItem value="15">Within 15 km</SelectItem>
+                      <SelectItem value="20">Within 20 km</SelectItem>
+                      <SelectItem value="30">Within 30 km</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </CardContent>
+              </Card>
+
+              {/* Column 2: Budget & Features */}
+              <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-700 transition-all">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+                    <DollarSign className="h-5 w-5 mr-2 text-green-600" />
+                    Budget Range
+                  </h3>
+                  <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950 p-4 rounded-xl mb-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-2xl font-bold text-gray-900 dark:text-white">{formatBudget(buyBox.budgetMin)}</span>
+                      <span className="text-gray-500 dark:text-gray-400">to</span>
+                      <span className="text-2xl font-bold text-gray-900 dark:text-white">{formatBudget(buyBox.budgetMax)}</span>
+                    </div>
                     <Slider
                       value={[buyBox.budgetMin, buyBox.budgetMax]}
                       onValueChange={([min, max]) => setBuyBox(prev => ({ ...prev, budgetMin: min, budgetMax: max }))}
                       min={0}
                       max={5000000}
                       step={50000}
-                      className="mt-2"
+                      className="mt-3"
                     />
                   </div>
 
-                  {/* Bedrooms, Bathrooms, Parking */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        <Bed className="h-4 w-4 inline mr-1" />
-                        Bedrooms
-                      </label>
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center">
+                    <Home className="h-5 w-5 mr-2 text-purple-600" />
+                    Features
+                  </h3>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <Bed className="h-5 w-5 text-gray-500" />
                       <Select value={buyBox.bedrooms} onValueChange={(value) => setBuyBox(prev => ({ ...prev, bedrooms: value }))}>
-                        <SelectTrigger className="dark:bg-gray-700 dark:text-white">
-                          <SelectValue />
+                        <SelectTrigger className="flex-1 h-11 border-2 dark:bg-gray-700 dark:text-white">
+                          <SelectValue placeholder="Bedrooms" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="any">Any</SelectItem>
-                          <SelectItem value="1">1+</SelectItem>
-                          <SelectItem value="2">2+</SelectItem>
-                          <SelectItem value="3">3+</SelectItem>
-                          <SelectItem value="4">4+</SelectItem>
-                          <SelectItem value="5">5+</SelectItem>
+                          <SelectItem value="any">Any Bedrooms</SelectItem>
+                          <SelectItem value="1">1+ Bedrooms</SelectItem>
+                          <SelectItem value="2">2+ Bedrooms</SelectItem>
+                          <SelectItem value="3">3+ Bedrooms</SelectItem>
+                          <SelectItem value="4">4+ Bedrooms</SelectItem>
+                          <SelectItem value="5">5+ Bedrooms</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
 
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        <Bath className="h-4 w-4 inline mr-1" />
-                        Bathrooms
-                      </label>
+                    <div className="flex items-center gap-3">
+                      <Bath className="h-5 w-5 text-gray-500" />
                       <Select value={buyBox.bathrooms} onValueChange={(value) => setBuyBox(prev => ({ ...prev, bathrooms: value }))}>
-                        <SelectTrigger className="dark:bg-gray-700 dark:text-white">
-                          <SelectValue />
+                        <SelectTrigger className="flex-1 h-11 border-2 dark:bg-gray-700 dark:text-white">
+                          <SelectValue placeholder="Bathrooms" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="any">Any</SelectItem>
-                          <SelectItem value="1">1+</SelectItem>
-                          <SelectItem value="2">2+</SelectItem>
-                          <SelectItem value="3">3+</SelectItem>
+                          <SelectItem value="any">Any Bathrooms</SelectItem>
+                          <SelectItem value="1">1+ Bathrooms</SelectItem>
+                          <SelectItem value="2">2+ Bathrooms</SelectItem>
+                          <SelectItem value="3">3+ Bathrooms</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
 
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        <Car className="h-4 w-4 inline mr-1" />
-                        Parking
-                      </label>
+                    <div className="flex items-center gap-3">
+                      <Car className="h-5 w-5 text-gray-500" />
                       <Select value={buyBox.parking} onValueChange={(value) => setBuyBox(prev => ({ ...prev, parking: value }))}>
-                        <SelectTrigger className="dark:bg-gray-700 dark:text-white">
-                          <SelectValue />
+                        <SelectTrigger className="flex-1 h-11 border-2 dark:bg-gray-700 dark:text-white">
+                          <SelectValue placeholder="Parking" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="any">Any</SelectItem>
-                          <SelectItem value="1">1+</SelectItem>
-                          <SelectItem value="2">2+</SelectItem>
-                          <SelectItem value="3">3+</SelectItem>
+                          <SelectItem value="any">Any Parking</SelectItem>
+                          <SelectItem value="1">1+ Parking</SelectItem>
+                          <SelectItem value="2">2+ Parking</SelectItem>
+                          <SelectItem value="3">3+ Parking</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
                   </div>
+                </CardContent>
+              </Card>
 
-                  {/* Strategy Tags */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      <Target className="h-4 w-4 inline mr-1" />
-                      Investment Strategy
-                    </label>
-                    <div className="flex flex-wrap gap-2">
-                      {strategies.map(strategy => (
-                        <Badge
+              {/* Column 3: Strategy & CTA */}
+              <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-700 transition-all">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+                    <Target className="h-5 w-5 mr-2 text-purple-600" />
+                    Strategy
+                  </h3>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {strategies.map(strategy => {
+                      const isSelected = buyBox.strategies.includes(strategy);
+                      return (
+                        <button
                           key={strategy}
-                          variant={buyBox.strategies.includes(strategy) ? 'default' : 'outline'}
-                          className={`cursor-pointer px-3 py-1.5 ${
-                            buyBox.strategies.includes(strategy)
-                              ? 'bg-blue-600 text-white'
-                              : 'border-gray-300 dark:border-gray-600 hover:border-blue-600'
-                          }`}
                           onClick={() => handleStrategyToggle(strategy)}
+                          className={`px-3 py-2 rounded-lg text-sm font-medium transition-all border-2 ${
+                            isSelected
+                              ? 'border-purple-500 bg-purple-50 dark:bg-purple-950 text-purple-700 dark:text-purple-400 shadow-md'
+                              : 'border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-purple-300 dark:hover:border-purple-800'
+                          }`}
                         >
                           {strategy}
-                        </Badge>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {/* Quick Presets */}
+                  <div className="mb-6 p-4 bg-gray-50 dark:bg-gray-900 rounded-xl">
+                    <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Quick Presets</h4>
+                    <div className="space-y-2">
+                      {[
+                        { label: '🏠 First Home', preset: { propertyType: 'House', budgetMax: 800000, strategies: ['PPOR'] } },
+                        { label: '💰 Investment', preset: { propertyType: 'Unit', strategies: ['Investment', 'High-yield'] } },
+                        { label: '🔨 Renovation', preset: { propertyType: 'House', strategies: ['Renovation'] } }
+                      ].map((item, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setBuyBox(prev => ({ ...prev, ...item.preset }))}
+                          className="w-full text-left px-3 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-amber-500 dark:hover:border-amber-500 rounded-lg text-sm transition-all"
+                        >
+                          {item.label}
+                        </button>
                       ))}
                     </div>
                   </div>
 
-                  {/* Location */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        <MapPin className="h-4 w-4 inline mr-1" />
-                        Suburb / Area
-                      </label>
-                      <Input
-                        placeholder="e.g., Carlton, Melbourne"
-                        value={buyBox.suburb}
-                        onChange={(e) => setBuyBox(prev => ({ ...prev, suburb: e.target.value }))}
-                        className="dark:bg-gray-700 dark:text-white"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Radius (km)
-                      </label>
-                      <Select value={buyBox.radius.toString()} onValueChange={(value) => setBuyBox(prev => ({ ...prev, radius: parseInt(value) }))}>
-                        <SelectTrigger className="dark:bg-gray-700 dark:text-white">
-                          <SelectValue />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="5">5 km</SelectItem>
-                          <SelectItem value="10">10 km</SelectItem>
-                          <SelectItem value="15">15 km</SelectItem>
-                          <SelectItem value="20">20 km</SelectItem>
-                          <SelectItem value="30">30 km</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                  </div>
-
-                  {/* Search Button */}
+                  {/* Big Search Button */}
                   <Button 
                     onClick={handleBuyBoxSearch}
-                    className="w-full bg-amber-600 hover:bg-amber-700 text-white h-12 text-lg font-semibold"
+                    className={`w-full h-14 text-lg font-bold shadow-xl transition-all hover:scale-105 ${
+                      buyBoxTab === 'deals'
+                        ? 'bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white'
+                        : 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white'
+                    }`}
                   >
                     <Search className="h-5 w-5 mr-2" />
                     {buyBoxTab === 'deals' ? 'Search Deals' : 'Find Agents'}
                   </Button>
-                </div>
-              </CardContent>
-            </Card>
+
+                  <p className="text-xs text-center text-gray-500 dark:text-gray-400 mt-3">
+                    {buyBoxTab === 'deals' 
+                      ? '3,800+ verified property deals'
+                      : '1,200+ verified buyer agents'
+                    }
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </section>
 
