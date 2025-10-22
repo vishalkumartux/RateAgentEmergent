@@ -298,47 +298,45 @@ const HomePageImproved = () => {
           </div>
         </section>
 
-        {/* Buy Box Quick-Builder */}
-        <section className="py-16 bg-gray-50 dark:bg-gray-900">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">
-                Build Your Buy Box
+        {/* Buy Box Quick-Builder - Redesigned */}
+        <section className="py-16 bg-gradient-to-br from-gray-50 via-white to-amber-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-10">
+              <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">
+                Build Your Perfect Search
               </h2>
-              <p className="text-gray-600 dark:text-gray-400">
-                Set your criteria and we'll match you with the right deals or agents
+              <p className="text-lg text-gray-600 dark:text-gray-400">
+                Tell us what you're looking for, and we'll do the rest
               </p>
             </div>
 
-            <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700">
-              <CardContent className="p-6">
-                {/* Tabs */}
-                <div className="flex gap-2 mb-6 bg-gray-100 dark:bg-gray-900 p-1 rounded-xl">
-                  <button
-                    onClick={() => setBuyBoxTab('deals')}
-                    className={`flex-1 py-3 px-4 rounded-lg font-semibold transition-all ${
-                      buyBoxTab === 'deals'
-                        ? 'bg-white dark:bg-gray-800 text-amber-600 shadow-md'
-                        : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
-                    }`}
-                  >
-                    <Home className="h-4 w-4 inline mr-2" />
-                    Search Deals
-                  </button>
-                  <button
-                    onClick={() => setBuyBoxTab('agents')}
-                    className={`flex-1 py-3 px-4 rounded-lg font-semibold transition-all ${
-                      buyBoxTab === 'agents'
-                        ? 'bg-white dark:bg-gray-800 text-blue-600 shadow-md'
-                        : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
-                    }`}
-                  >
-                    <Users className="h-4 w-4 inline mr-2" />
-                    Find Agents
-                  </button>
-                </div>
+            {/* Tabs - Simplified */}
+            <div className="flex justify-center gap-4 mb-8">
+              <button
+                onClick={() => setBuyBoxTab('deals')}
+                className={`px-8 py-4 rounded-2xl font-semibold transition-all text-lg ${
+                  buyBoxTab === 'deals'
+                    ? 'bg-amber-600 text-white shadow-2xl scale-105'
+                    : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:scale-105 shadow-lg'
+                }`}
+              >
+                <Home className="h-5 w-5 inline mr-2" />
+                Search Deals
+              </button>
+              <button
+                onClick={() => setBuyBoxTab('agents')}
+                className={`px-8 py-4 rounded-2xl font-semibold transition-all text-lg ${
+                  buyBoxTab === 'agents'
+                    ? 'bg-blue-600 text-white shadow-2xl scale-105'
+                    : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:scale-105 shadow-lg'
+                }`}
+              >
+                <Users className="h-5 w-5 inline mr-2" />
+                Find Agents
+              </button>
+            </div>
 
-                <div className="space-y-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                   {/* Property Type */}
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
