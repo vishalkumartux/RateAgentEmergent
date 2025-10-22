@@ -765,7 +765,7 @@ const AgentCard = ({ agent, isInCompare, isShortlisted, onToggleCompare, onToggl
               variant="outline" 
               size="sm"
               onClick={onToggleCompare}
-              disabled={!isInCompare && compareAgents.length >= 4}
+              disabled={!isInCompare && compareCount >= 4}
               className={isInCompare ? 'border-amber-600 text-amber-600' : ''}
             >
               {isInCompare ? <Minus className="h-3 w-3 mr-1" /> : <Plus className="h-3 w-3 mr-1" />}
