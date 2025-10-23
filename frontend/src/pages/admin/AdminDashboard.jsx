@@ -51,15 +51,6 @@ const AdminDashboard = () => {
   const [inviteList, setInviteList] = useState([{ email: '', role: 'agent' }]);
   const [isInviting, setIsInviting] = useState(false);
   const [inviteSuccess, setInviteSuccess] = useState('');
-  const [editingOrg, setEditingOrg] = useState(false);
-  const [orgData, setOrgData] = useState({
-    name: organization?.name || '',
-    email: organization?.email || '',
-    phone: organization?.phone || '',
-    address: organization?.address || '',
-    website: organization?.website || '',
-    description: organization?.description || ''
-  });
 
   // Enhanced stats with new metrics
   const stats = [
