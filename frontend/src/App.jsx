@@ -75,6 +75,7 @@ function App() {
               <Route path="/verify-email" element={<VerifyEmailPage />} />
               <Route path="/organization-setup" element={<OrganizationSetupPage />} />
               <Route path="/admin/dashboard" element={<AdminDashboard />} />
+              <Route path="/admin/onboarding" element={<OnboardingWizard />} />
               <Route path="/staff/invite" element={<StaffInvitePage />} />
               <Route path="/staff/profile-setup" element={<StaffProfileSetup />} />
               <Route path="/staff/profile" element={<StaffProfile />} />
