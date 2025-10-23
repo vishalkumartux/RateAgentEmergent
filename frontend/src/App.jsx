@@ -33,7 +33,7 @@ import MyProfile from "./pages/staff/MyProfile";
 import DealsListPage from "./pages/staff/DealsListPage";
 import MyDeals from "./pages/staff/MyDealsNew";
 import AddDeal from "./pages/staff/AddDeal";
-import DealDetails from "./pages/staff/DealDetails";
+import DealDetails from "./pages/staff/DealDetailsNew";
 import DealsPage from "./pages/DealsPage";
 import DealDetailPage from "./pages/DealDetailPage";
 import AboutPage from "./pages/AboutPage";
