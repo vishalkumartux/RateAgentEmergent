@@ -266,6 +266,14 @@ const Header = () => {
                       </Link>
                     </>
                   )}
+                  {user?.role === 'agency_staff' && (
+                    <Link to="/staff/dashboard" onClick={() => setIsMobileMenuOpen(false)}>
+                      <Button variant="ghost" className="w-full justify-start text-gray-600 dark:text-gray-300">
+                        <BarChart3 className="h-4 w-4 mr-3" />
+                        Agent Dashboard
+                      </Button>
+                    </Link>
+                  )}
                   <Link to={
                     isAdmin ? "/admin/profile" : 
                     user?.role === 'agency_staff' ? "/staff/my-profile" : 
