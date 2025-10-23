@@ -21,6 +21,7 @@ import VerifyEmailPage from "./pages/auth/VerifyEmailPage";
 import PublicSignupPage from "./pages/auth/PublicSignupPage";
 import OrganizationSetupPage from "./pages/admin/OrganizationSetupPage";
 import AdminDashboard from "./pages/admin/AdminDashboard";
+import OnboardingWizard from "./pages/admin/OnboardingWizard";
 import StaffInvitePage from "./pages/staff/StaffInvitePage";
 import StaffProfileSetup from "./pages/staff/StaffProfileSetup";
 import StaffProfile from "./pages/staff/StaffProfile";
