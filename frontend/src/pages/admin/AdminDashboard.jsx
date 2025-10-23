@@ -498,32 +498,39 @@ const AdminDashboard = () => {
                 <CardContent>
                   <div className="space-y-4">
                     {inviteList.map((invite, index) => (
-                      <div key={index} className="flex space-x-2">
-                        <Input
-                          type="email"
-                          value={invite.email}
-                          onChange={(e) => handleInviteChange(index, 'email', e.target.value)}
-                          placeholder="Enter email address"
-                          className="flex-1"
-                        />
-                        <Select
-                          value={invite.role}
-                          onChange={(e) => handleInviteChange(index, 'role', e.target.value)}
-                          className="w-40"
-                        >
-                          <option value="agent">Agent</option>
-                          <option value="admin">Admin</option>
-                        </Select>
-                        {inviteList.length > 1 && (
-                          <Button
-                            type="button"
-                            variant="outline"
-                            size="sm"
-                            onClick={() => removeInviteField(index)}
+                      <div key={index} className="grid grid-cols-12 gap-3">
+                        <div className="col-span-7">
+                          <Input
+                            type="email"
+                            value={invite.email}
+                            onChange={(e) => handleInviteChange(index, 'email', e.target.value)}
+                            placeholder="colleague@example.com"
+                            className="w-full"
+                          />
+                        </div>
+                        <div className="col-span-4">
+                          <Select
+                            value={invite.role}
+                            onChange={(e) => handleInviteChange(index, 'role', e.target.value)}
+                            className="w-full"
                           >
-                            <X className="h-4 w-4" />
-                          </Button>
-                        )}
+                            <option value="agent">Agent</option>
+                            <option value="admin">Admin</option>
+                          </Select>
+                        </div>
+                        <div className="col-span-1 flex items-center justify-center">
+                          {inviteList.length > 1 && (
+                            <Button
+                              type="button"
+                              variant="ghost"
+                              size="sm"
+                              onClick={() => removeInviteField(index)}
+                              className="text-red-600 hover:text-red-700 hover:bg-red-50 dark:hover:bg-red-900/20"
+                            >
+                              <Trash2 className="h-4 w-4" />
+                            </Button>
+                          )}
+                        </div>
                       </div>
                     ))}
                     
