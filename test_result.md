@@ -109,12 +109,100 @@ user_problem_statement: |
   3. My Profile Page: Profile management for agents/admins (PENDING - Phase 4)
 
 frontend:
+  - task: "Org Settings Page - Comprehensive Agency Management"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/admin/OrgSettings.jsx, /app/frontend/src/App.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: |
+          Complete Org Settings page implemented with 5 major sections:
+          
+          **1. Business Information Section:**
+          ✅ Agency logo upload placeholder
+          ✅ Agency name (required field)
+          ✅ Contact email with icon (required)
+          ✅ Phone number with icon
+          ✅ Website URL with icon
+          ✅ Business address (textarea)
+          ✅ Agency description with character counter (0/500)
+          ✅ Professional layout with proper spacing
+          
+          **2. Service Coverage Section:**
+          ✅ Service Regions management (add/remove badges)
+          ✅ Default regions: Sydney CBD, North Shore, Eastern Suburbs
+          ✅ Add new region with input + Add button
+          ✅ Property Types toggles (Residential, Commercial, Industrial, Land, Investment)
+          ✅ Price Range Focus (Min/Max inputs with formatted display)
+          ✅ Three separate cards for better organization
+          
+          **3. Privacy & Compliance Section:**
+          ✅ Show Full Address toggle
+          ✅ Show Contact Information toggle
+          ✅ Allow Direct Contact toggle
+          ✅ Require Email Verification toggle
+          ✅ GDPR Compliant toggle (green highlight)
+          ✅ Data Retention Period input (days)
+          ✅ Compliance notice with lock icon
+          ✅ All toggles functional with proper state management
+          
+          **4. Lead Routing Section:**
+          ✅ Auto-Assign Leads toggle
+          ✅ Round-Robin Distribution toggle (disabled if auto-assign off)
+          ✅ Email Notifications toggle
+          ✅ SMS Notifications toggle
+          ✅ Response Time Target input (hours)
+          ✅ Team Performance info box with tips
+          
+          **5. Subscription & Billing Section:**
+          ✅ Current plan display (Professional - $299/month)
+          ✅ Status badge (Active with green checkmark)
+          ✅ Billing cycle and next billing date
+          ✅ Plan features list with checkmarks
+          ✅ Action buttons (View Invoices, Change Plan, Cancel)
+          ✅ Support contact link
+          ✅ Read-only display (no Save button for this section)
+          
+          **UI/UX Features:**
+          ✅ Sticky sidebar navigation with icons
+          ✅ Active section highlighting (amber background)
+          ✅ Consistent card-based layout
+          ✅ Dark mode support throughout
+          ✅ Sticky Save button at bottom (except subscription)
+          ✅ Save success message with auto-dismiss
+          ✅ Proper form validation indicators
+          ✅ Icon-enhanced inputs for better UX
+          ✅ Info boxes for guidance (amber, blue, green themes)
+          ✅ Responsive grid layouts
+          
+          **Integration:**
+          ✅ Connected to AuthContext for organization data
+          ✅ Route added: /admin/settings
+          ✅ Link from AdminDashboard with "Org Settings" button
+          ✅ Mock data structure for all settings
+          ✅ Update functions integrated (simulated API calls)
+          
+          **Testing Completed:**
+          ✅ All 5 sections load correctly
+          ✅ Navigation between sections works perfectly
+          ✅ Form inputs accept and display data
+          ✅ Toggles switch states correctly
+          ✅ Save functionality triggers success message
+          ✅ Dark mode renders properly
+          ✅ Layout is responsive and professional
+          
+          Page fully functional and ready for backend integration.
+
   - task: "Enhanced Reviews Listing Page"
     implemented: true
     working: true
     file: "/app/frontend/src/pages/ReviewsPage.jsx, /app/frontend/src/mock/reviewData.js"
     stuck_count: 0
-    priority: "high"
+    priority: "medium"
     needs_retesting: false
     status_history:
       - working: true
