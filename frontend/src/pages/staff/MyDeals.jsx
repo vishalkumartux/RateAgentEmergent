@@ -40,8 +40,12 @@ const MyDeals = () => {
   const { user } = useAuth();
   const [activeTab, setActiveTab] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
+  const [showFilters, setShowFilters] = useState(false);
   const [statusFilter, setStatusFilter] = useState('all');
   const [typeFilter, setTypeFilter] = useState('all');
+  const [methodFilter, setMethodFilter] = useState('all');
+  const [verificationFilter, setVerificationFilter] = useState('all');
+  const [sortBy, setSortBy] = useState('newest');
 
   // Mock deals data - TODO: Replace with API call
   const mockDeals = [
