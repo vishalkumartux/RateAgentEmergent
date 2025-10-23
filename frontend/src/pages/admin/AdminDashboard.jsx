@@ -48,7 +48,7 @@ const Select = ({ value, onChange, children, className = '' }) => (
 const AdminDashboard = () => {
   const { user, organization, updateOrganization, inviteStaff } = useAuth();
   const [activeTab, setActiveTab] = useState('overview');
-  const [emailList, setEmailList] = useState(['']);
+  const [inviteList, setInviteList] = useState([{ email: '', role: 'agent' }]);
   const [isInviting, setIsInviting] = useState(false);
   const [inviteSuccess, setInviteSuccess] = useState('');
   const [editingOrg, setEditingOrg] = useState(false);
@@ -61,32 +61,84 @@ const AdminDashboard = () => {
     description: organization?.description || ''
   });
 
+  // Enhanced stats with new metrics
   const stats = [
     {
-      title: 'Total Staff',
-      value: (organization?.staff?.length || 0) + 1, // +1 for admin
-      icon: Users,
-      color: 'text-blue-600'
-    },
-    {
-      title: 'Pending Invites',
-      value: organization?.pendingInvites?.length || 0,
-      icon: Mail,
-      color: 'text-amber-600'
-    },
-    {
-      title: 'Active Listings',
-      value: 12, // Mock data
+      title: 'Published Deals',
+      value: 12,
       icon: BarChart3,
-      color: 'text-emerald-600'
+      color: 'text-blue-600',
+      change: '+3 this month'
+    },
+    {
+      title: 'Verified Deals',
+      value: 8,
+      icon: ShieldCheck,
+      color: 'text-green-600',
+      change: '67% verified'
     },
     {
       title: 'Avg Rating',
       value: '4.8',
       icon: Star,
-      color: 'text-purple-600'
+      color: 'text-amber-600',
+      change: 'Last 12 months'
+    },
+    {
+      title: 'Median Days-to-Secure',
+      value: '42',
+      icon: Calendar,
+      color: 'text-purple-600',
+      change: '6 days faster'
+    },
+    {
+      title: 'Profile Views',
+      value: '1,247',
+      icon: Eye,
+      color: 'text-indigo-600',
+      change: 'Last 30 days'
+    },
+    {
+      title: 'New Leads',
+      value: 18,
+      icon: TrendingUp,
+      color: 'text-emerald-600',
+      change: '+5 this week'
     }
   ];
+
+  // Nudges based on current state
+  const nudges = [];
+  if ((organization?.stats?.publishedDeals || 12) < 3) {
+    nudges.push({
+      type: 'action',
+      title: 'Add your first 3 deals',
+      description: 'Get started by adding successful deals to showcase your track record.',
+      action: 'Add Deal',
+      link: '/staff/deals/add',
+      icon: BarChart3
+    });
+  }
+  if ((organization?.stats?.verifiedDeals || 8) < 5) {
+    nudges.push({
+      type: 'tip',
+      title: 'Verify a deal to boost trust',
+      description: 'Verified deals increase buyer confidence by 73%.',
+      action: 'Learn More',
+      link: '/help/verification',
+      icon: ShieldCheck
+    });
+  }
+  if (organization?.staff?.length < 2) {
+    nudges.push({
+      type: 'action',
+      title: 'Complete agent profiles',
+      description: 'Profiles with photos and bios get 3x more engagement.',
+      action: 'View Profiles',
+      link: '/admin/dashboard',
+      icon: Users
+    });
+  }
 
   const handleEmailChange = (index, value) => {
     const newEmails = [...emailList];
