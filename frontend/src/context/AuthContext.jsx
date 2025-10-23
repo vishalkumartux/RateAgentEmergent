@@ -69,9 +69,57 @@ const mockOrganizations = {
     licenseNumber: 'NSW-12345',
     description: 'Leading real estate agency in Sydney specializing in premium properties.',
     staff: [
-      { id: 2, name: 'Sarah Johnson', email: 'sarah@premiumrealty.com', role: 'Senior Agent', status: 'active' }
+      { 
+        id: 2, 
+        name: 'Sarah Johnson', 
+        email: 'sarah@premiumrealty.com', 
+        role: 'Agent', 
+        status: 'active',
+        lastActive: '2 hours ago',
+        invitedDate: 'Mar 2024',
+        invitedBy: 'John Smith'
+      },
+      { 
+        id: 3, 
+        name: 'Mike Chen', 
+        email: 'mike@premiumrealty.com', 
+        role: 'Agent', 
+        status: 'active',
+        lastActive: 'Today',
+        invitedDate: 'Apr 2024',
+        invitedBy: 'John Smith'
+      },
+      { 
+        id: 4, 
+        name: 'Emma Davis', 
+        email: 'emma@premiumrealty.com', 
+        role: 'Admin', 
+        status: 'inactive',
+        lastActive: '14 days ago',
+        invitedDate: 'Feb 2024',
+        invitedBy: 'John Smith'
+      }
     ],
-    pendingInvites: []
+    pendingInvites: [
+      {
+        id: 'inv-1',
+        email: 'james@example.com',
+        role: 'Agent',
+        invitedBy: 'John Smith',
+        sentAt: '2024-10-15T10:30:00Z'
+      },
+      {
+        id: 'inv-2',
+        email: 'lisa@example.com',
+        role: 'Admin',
+        invitedBy: 'John Smith',
+        sentAt: '2024-10-18T14:20:00Z'
+      }
+    ],
+    stats: {
+      publishedDeals: 12,
+      verifiedDeals: 8
+    }
   }
 };
 
