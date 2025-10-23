@@ -140,28 +140,28 @@ const AdminDashboard = () => {
     });
   }
 
-  const handleEmailChange = (index, value) => {
-    const newEmails = [...emailList];
-    newEmails[index] = value;
-    setEmailList(newEmails);
+  const handleInviteChange = (index, field, value) => {
+    const newInvites = [...inviteList];
+    newInvites[index][field] = value;
+    setInviteList(newInvites);
   };
 
-  const addEmailField = () => {
-    setEmailList([...emailList, '']);
+  const addInviteField = () => {
+    setInviteList([...inviteList, { email: '', role: 'agent' }]);
   };
 
-  const removeEmailField = (index) => {
-    if (emailList.length > 1) {
-      setEmailList(emailList.filter((_, i) => i !== index));
+  const removeInviteField = (index) => {
+    if (inviteList.length > 1) {
+      setInviteList(inviteList.filter((_, i) => i !== index));
     }
   };
 
   const handleInviteStaff = async () => {
-    const validEmails = emailList.filter(email => 
-      email.trim() && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+    const validInvites = inviteList.filter(invite => 
+      invite.email.trim() && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(invite.email)
     );
     
-    if (validEmails.length === 0) {
+    if (validInvites.length === 0) {
       alert('Please enter valid email addresses');
       return;
     }
@@ -169,10 +169,10 @@ const AdminDashboard = () => {
     setIsInviting(true);
     
     try {
-      const result = await inviteStaff(validEmails);
+      const result = await inviteStaff(validInvites.map(i => i.email));
       if (result.success) {
-        setInviteSuccess(`Successfully sent ${validEmails.length} invitation(s)!`);
-        setEmailList(['']); // Reset form
+        setInviteSuccess(`Successfully sent ${validInvites.length} invitation(s)!`);
+        setInviteList([{ email: '', role: 'agent' }]); // Reset form
         setTimeout(() => setInviteSuccess(''), 3000);
       }
     } catch (error) {
@@ -180,6 +180,20 @@ const AdminDashboard = () => {
     } finally {
       setIsInviting(false);
     }
+  };
+
+  const resendInvite = (inviteId) => {
+    // Mock resend functionality
+    setInviteSuccess('Invitation resent successfully!');
+    setTimeout(() => setInviteSuccess(''), 3000);
+  };
+
+  const toggleStaffStatus = (staffId, currentStatus) => {
+    // Mock toggle functionality
+    const updatedStaff = organization?.staff?.map(s => 
+      s.id === staffId ? { ...s, status: currentStatus === 'active' ? 'inactive' : 'active' } : s
+    ) || [];
+    updateOrganization({ staff: updatedStaff });
   };
 
   const handleOrgUpdate = () => {
