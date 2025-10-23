@@ -29,6 +29,8 @@ import StaffProfile from "./pages/staff/StaffProfile";
 import AdminProfile from "./pages/admin/AdminProfile";
 import StaffProfilePage from "./pages/staff/StaffProfilePage";
 import AgentDashboard from "./pages/staff/AgentDashboard";
+import MyProfile from "./pages/staff/MyProfile";
+import DealsListPage from "./pages/staff/DealsListPage";
 import MyDeals from "./pages/staff/MyDeals";
 import AddDeal from "./pages/staff/AddDeal";
 import DealDetails from "./pages/staff/DealDetails";
