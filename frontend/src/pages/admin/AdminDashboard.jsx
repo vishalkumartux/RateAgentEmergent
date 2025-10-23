@@ -398,49 +398,86 @@ const AdminDashboard = () => {
                 {/* Admin (Current User) */}
                 <div className="space-y-4">
                   <div className="flex items-center justify-between p-4 border border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-950 rounded-lg">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center">
-                        <span className="text-white font-semibold text-sm">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center">
+                        <span className="text-white font-semibold">
                           {user?.name?.charAt(0) || 'A'}
                         </span>
                       </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 dark:text-white">{user?.name}</h3>
-                        <p className="text-gray-600 dark:text-gray-400 text-sm">{user?.email}</p>
+                      <div className="flex-1">
+                        <div className="flex items-center space-x-2 mb-1">
+                          <h3 className="font-semibold text-gray-900 dark:text-white">{user?.name}</h3>
+                          <Badge className="bg-amber-600 text-white">Admin</Badge>
+                        </div>
+                        <p className="text-gray-600 dark:text-gray-400 text-sm mb-1">{user?.email}</p>
+                        <div className="flex items-center space-x-3 text-xs text-gray-500 dark:text-gray-500">
+                          <span className="flex items-center">
+                            <Clock className="h-3 w-3 mr-1" />
+                            Last active: Today
+                          </span>
+                          <span>•</span>
+                          <span>Account created: Jan 2024</span>
+                        </div>
                       </div>
                     </div>
-                    <Badge className="bg-amber-600 text-white">Admin</Badge>
                   </div>
                   
                   {/* Staff Members */}
                   {organization?.staff?.map((staff) => (
-                    <div key={staff.id} className="flex items-center justify-between p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-gray-600 dark:bg-gray-400 rounded-full flex items-center justify-center">
-                          <span className="text-white font-semibold text-sm">
+                    <div key={staff.id} className="flex items-center justify-between p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-300 dark:hover:border-gray-600 transition-colors">
+                      <div className="flex items-center space-x-4 flex-1">
+                        <div className="w-12 h-12 bg-gray-600 dark:bg-gray-400 rounded-full flex items-center justify-center">
+                          <span className="text-white font-semibold">
                             {staff.name.charAt(0)}
                           </span>
                         </div>
-                        <div>
-                          <h3 className="font-semibold text-gray-900 dark:text-white">{staff.name}</h3>
-                          <p className="text-gray-600 dark:text-gray-400 text-sm">{staff.email}</p>
+                        <div className="flex-1">
+                          <div className="flex items-center space-x-2 mb-1">
+                            <h3 className="font-semibold text-gray-900 dark:text-white">{staff.name}</h3>
+                            <Badge variant="outline" className="text-xs">
+                              {staff.role || 'Agent'}
+                            </Badge>
+                          </div>
+                          <p className="text-gray-600 dark:text-gray-400 text-sm mb-1">{staff.email}</p>
+                          <div className="flex items-center space-x-3 text-xs text-gray-500 dark:text-gray-500">
+                            <span className="flex items-center">
+                              <Clock className="h-3 w-3 mr-1" />
+                              Last active: {staff.lastActive || '2 days ago'}
+                            </span>
+                            <span>•</span>
+                            <span>Invited: {staff.invitedDate || 'Mar 2024'}</span>
+                          </div>
                         </div>
                       </div>
                       <div className="flex items-center space-x-2">
                         <Badge 
                           variant={staff.status === 'active' ? 'default' : 'secondary'}
-                          className={staff.status === 'active' ? 'bg-green-600 text-white' : ''}
+                          className={staff.status === 'active' ? 'bg-green-600 text-white' : 'bg-gray-400 text-white'}
                         >
                           {staff.status}
                         </Badge>
-                        <Button variant="ghost" size="sm">
+                        <Button 
+                          variant="ghost" 
+                          size="sm"
+                          onClick={() => toggleStaffStatus(staff.id, staff.status)}
+                          title={staff.status === 'active' ? 'Deactivate' : 'Reactivate'}
+                        >
+                          {staff.status === 'active' ? (
+                            <UserX className="h-4 w-4 text-red-600" />
+                          ) : (
+                            <UserCheck className="h-4 w-4 text-green-600" />
+                          )}
+                        </Button>
+                        <Button variant="ghost" size="sm" title="View Profile">
                           <Eye className="h-4 w-4" />
                         </Button>
                       </div>
                     </div>
                   )) || (
-                    <div className="text-center py-8 text-gray-500 dark:text-gray-400">
-                      No staff members yet. Send some invitations to get started!
+                    <div className="text-center py-12">
+                      <UserPlus className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+                      <p className="text-gray-500 dark:text-gray-400 mb-2">No staff members yet</p>
+                      <p className="text-sm text-gray-400 dark:text-gray-500">Send invitations to add agents to your team</p>
                     </div>
                   )}
                 </div>
