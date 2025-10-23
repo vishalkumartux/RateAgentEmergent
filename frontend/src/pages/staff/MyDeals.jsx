@@ -4,7 +4,6 @@ import { Button } from '../../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card';
 import { Input } from '../../components/ui/input';
 import { Badge } from '../../components/ui/badge';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../../components/ui/select';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../components/ui/tabs';
 import { 
   Plus,
@@ -18,11 +17,24 @@ import {
   Calendar,
   MapPin,
   Home,
-  Building2,
-  Users,
-  Clock
+  CheckCircle,
+  Clock,
+  Upload,
+  X,
+  SlidersHorizontal
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+
+const Select = ({ value, onChange, children, className = '', placeholder = '' }) => (
+  <select
+    value={value}
+    onChange={onChange}
+    className={`w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-amber-500 ${className}`}
+  >
+    {placeholder && <option value="">{placeholder}</option>}
+    {children}
+  </select>
+);
 
 const MyDeals = () => {
   const { user } = useAuth();
