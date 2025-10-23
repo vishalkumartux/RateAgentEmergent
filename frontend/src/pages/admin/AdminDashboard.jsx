@@ -312,11 +312,10 @@ const AdminDashboard = () => {
 
         {/* Main Content */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-4">
+          <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="overview">Overview</TabsTrigger>
             <TabsTrigger value="staff">Staff Management</TabsTrigger>
-            <TabsTrigger value="invites">Pending Invites</TabsTrigger>
-            <TabsTrigger value="settings">Organization Settings</TabsTrigger>
+            <TabsTrigger value="invites">Invite & Manage</TabsTrigger>
           </TabsList>
 
           {/* Overview Tab */}
