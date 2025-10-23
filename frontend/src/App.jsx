@@ -85,9 +85,9 @@ function App() {
               <Route path="/staff/invite" element={<StaffInvitePage />} />
               <Route path="/staff/profile-setup" element={<StaffProfileSetup />} />
               <Route path="/staff/profile" element={<StaffProfile />} />
-              <Route path="/admin/profile" element={<AdminProfile />} />
-              <Route path="/staff/my-profile" element={<StaffProfilePage />} />
-              <Route path="/staff/deals" element={<MyDeals />} />
+              <Route path="/admin/profile" element={<MyProfile />} />
+              <Route path="/staff/my-profile" element={<MyProfile />} />
+              <Route path="/staff/deals" element={<DealsListPage />} />
               <Route path="/staff/deals/add" element={<AddDeal />} />
               <Route path="/staff/deals/:id" element={<DealDetails />} />
               <Route path="/deals" element={<DealsPage />} />
