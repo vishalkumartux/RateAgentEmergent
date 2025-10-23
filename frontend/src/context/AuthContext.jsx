@@ -117,8 +117,8 @@ const mockOrganizations = {
       }
     ],
     stats: {
-      publishedDeals: 12,
-      verifiedDeals: 8
+      publishedDeals: 2,  // Changed from 12 to trigger "Add first 3 deals" nudge
+      verifiedDeals: 3    // Changed from 8 to trigger "Verify deals" nudge
     }
   }
 };
