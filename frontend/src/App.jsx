@@ -77,6 +77,7 @@ function App() {
               <Route path="/organization-setup" element={<OrganizationSetupPage />} />
               <Route path="/admin/dashboard" element={<AdminDashboard />} />
               <Route path="/admin/onboarding" element={<OnboardingWizard />} />
+              <Route path="/admin/settings" element={<OrgSettings />} />
               <Route path="/staff/invite" element={<StaffInvitePage />} />
               <Route path="/staff/profile-setup" element={<StaffProfileSetup />} />
               <Route path="/staff/profile" element={<StaffProfile />} />
