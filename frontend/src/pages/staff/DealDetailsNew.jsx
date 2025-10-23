@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { useParams, Link, useSearchParams } from 'react-router-dom';
+import { useParams, Link, useSearchParams, Navigate } from 'react-router-dom';
 import { Button } from '../../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card';
 import { Badge } from '../../components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../components/ui/tabs';
+import DealDetailPage from '../DealDetailPage';
 import { 
   ArrowLeft,
   Edit,
@@ -33,6 +34,37 @@ const DealDetailsNew = () => {
   const [searchParams] = useSearchParams();
   const isPreview = searchParams.get('preview') === 'true';
   const [activeTab, setActiveTab] = useState('details');
+  
+  // If preview mode, render the public view with a banner
+  if (isPreview) {
+    return (
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+        {/* Preview Banner */}
+        <div className="bg-blue-600 dark:bg-blue-700 text-white py-3 sticky top-0 z-50 shadow-lg">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center">
+                <Eye className="h-5 w-5 mr-3" />
+                <div>
+                  <p className="font-semibold">Preview Mode - Public View</p>
+                  <p className="text-sm text-blue-100">This is exactly how buyers will see your deal</p>
+                </div>
+              </div>
+              <Link to="/staff/deals">
+                <Button variant="secondary" size="sm" className="bg-white text-blue-600 hover:bg-blue-50">
+                  <X className="h-4 w-4 mr-2" />
+                  Exit Preview
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+        
+        {/* Render the actual public deal page */}
+        <DealDetailPage />
+      </div>
+    );
+  }
   
   // Mock deals data - find by ID
   const allDeals = [
