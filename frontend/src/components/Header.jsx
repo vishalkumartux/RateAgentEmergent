@@ -13,6 +13,9 @@ const Header = () => {
   const navigate = useNavigate();
   const { theme, toggleTheme } = useTheme();
   const { user, logout, isAuthenticated, isAdmin } = useAuth();
+  
+  // Debug log - UPDATED VERSION with Org Settings
+  console.log('Header loaded - VERSION: 2024-10-23 with Org Settings', { isAdmin, user });
 
   // Base navigation for all users
   const navigation = [
