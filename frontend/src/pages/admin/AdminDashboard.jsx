@@ -21,9 +21,29 @@ import {
   Clock,
   X,
   Edit,
-  Eye
+  Eye,
+  TrendingUp,
+  Calendar,
+  AlertCircle,
+  UserCheck,
+  ShieldCheck,
+  Target,
+  RefreshCw,
+  UserX,
+  UserPlus,
+  LightbulbIcon
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+
+const Select = ({ value, onChange, children, className = '' }) => (
+  <select
+    value={value}
+    onChange={onChange}
+    className={`w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-amber-500 ${className}`}
+  >
+    {children}
+  </select>
+);
 
 const AdminDashboard = () => {
   const { user, organization, updateOrganization, inviteStaff } = useAuth();
