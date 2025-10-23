@@ -498,21 +498,29 @@ const AdminDashboard = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    {emailList.map((email, index) => (
+                    {inviteList.map((invite, index) => (
                       <div key={index} className="flex space-x-2">
                         <Input
                           type="email"
-                          value={email}
-                          onChange={(e) => handleEmailChange(index, e.target.value)}
+                          value={invite.email}
+                          onChange={(e) => handleInviteChange(index, 'email', e.target.value)}
                           placeholder="Enter email address"
                           className="flex-1"
                         />
-                        {emailList.length > 1 && (
+                        <Select
+                          value={invite.role}
+                          onChange={(e) => handleInviteChange(index, 'role', e.target.value)}
+                          className="w-40"
+                        >
+                          <option value="agent">Agent</option>
+                          <option value="admin">Admin</option>
+                        </Select>
+                        {inviteList.length > 1 && (
                           <Button
                             type="button"
                             variant="outline"
                             size="sm"
-                            onClick={() => removeEmailField(index)}
+                            onClick={() => removeInviteField(index)}
                           >
                             <X className="h-4 w-4" />
                           </Button>
@@ -524,10 +532,10 @@ const AdminDashboard = () => {
                       <Button
                         type="button"
                         variant="outline"
-                        onClick={addEmailField}
+                        onClick={addInviteField}
                       >
                         <Plus className="h-4 w-4 mr-2" />
-                        Add Another Email
+                        Add Another
                       </Button>
                       
                       <Button
@@ -540,8 +548,24 @@ const AdminDashboard = () => {
                     </div>
                     
                     {inviteSuccess && (
-                      <p className="text-green-600 font-medium">{inviteSuccess}</p>
+                      <div className="flex items-center p-3 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
+                        <CheckCircle className="h-5 w-5 text-green-600 mr-2" />
+                        <p className="text-green-800 dark:text-green-200 font-medium">{inviteSuccess}</p>
+                      </div>
                     )}
+                    
+                    <div className="p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                      <div className="flex">
+                        <AlertCircle className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-2 mt-0.5 flex-shrink-0" />
+                        <div className="text-sm text-blue-800 dark:text-blue-200">
+                          <strong>Role Permissions:</strong>
+                          <ul className="mt-1 space-y-1">
+                            <li>• <strong>Admin:</strong> Full access to dashboard, settings, and staff management</li>
+                            <li>• <strong>Agent:</strong> Can manage own profile and deals only</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -549,28 +573,58 @@ const AdminDashboard = () => {
               {/* Pending Invites List */}
               <Card>
                 <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <Clock className="h-5 w-5 mr-2 text-amber-600" />
-                    Pending Invitations
+                  <CardTitle className="flex items-center justify-between">
+                    <div className="flex items-center">
+                      <Clock className="h-5 w-5 mr-2 text-amber-600" />
+                      Pending Invitations
+                    </div>
+                    {organization?.pendingInvites?.length > 0 && (
+                      <Badge variant="secondary">
+                        {organization.pendingInvites.length} Pending
+                      </Badge>
+                    )}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   {organization?.pendingInvites?.length > 0 ? (
                     <div className="space-y-3">
                       {organization.pendingInvites.map((invite) => (
-                        <div key={invite.id} className="flex items-center justify-between p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
-                          <div>
-                            <p className="font-semibold text-gray-900 dark:text-white">{invite.email}</p>
-                            <p className="text-gray-600 dark:text-gray-400 text-sm">
-                              Invited by {invite.invitedBy} • {new Date(invite.sentAt).toLocaleDateString()}
-                            </p>
+                        <div key={invite.id} className="flex items-center justify-between p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-300 dark:hover:border-gray-600 transition-colors">
+                          <div className="flex-1">
+                            <div className="flex items-center space-x-2 mb-1">
+                              <p className="font-semibold text-gray-900 dark:text-white">{invite.email}</p>
+                              <Badge variant="outline" className="text-xs">
+                                {invite.role || 'Agent'}
+                              </Badge>
+                            </div>
+                            <div className="flex items-center space-x-3 text-xs text-gray-500 dark:text-gray-500">
+                              <span>Invited by {invite.invitedBy}</span>
+                              <span>•</span>
+                              <span>{new Date(invite.sentAt).toLocaleDateString()}</span>
+                              <span>•</span>
+                              <span className="flex items-center">
+                                <Clock className="h-3 w-3 mr-1" />
+                                {Math.floor((Date.now() - new Date(invite.sentAt)) / (1000 * 60 * 60 * 24))} days ago
+                              </span>
+                            </div>
                           </div>
                           <div className="flex items-center space-x-2">
-                            <Badge variant="secondary">Pending</Badge>
+                            <Badge variant="secondary" className="bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400">
+                              Pending
+                            </Badge>
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              onClick={() => resendInvite(invite.id)}
+                              title="Resend invitation"
+                            >
+                              <RefreshCw className="h-4 w-4 text-blue-600" />
+                            </Button>
                             <Button
                               variant="ghost"
                               size="sm"
                               onClick={() => removePendingInvite(invite.id)}
+                              title="Cancel invitation"
                               className="text-red-600 hover:text-red-700"
                             >
                               <Trash2 className="h-4 w-4" />
@@ -580,8 +634,10 @@ const AdminDashboard = () => {
                       ))}
                     </div>
                   ) : (
-                    <div className="text-center py-8 text-gray-500 dark:text-gray-400">
-                      No pending invitations
+                    <div className="text-center py-12">
+                      <Mail className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+                      <p className="text-gray-500 dark:text-gray-400 mb-2">No pending invitations</p>
+                      <p className="text-sm text-gray-400 dark:text-gray-500">All sent invitations have been accepted or expired</p>
                     </div>
                   )}
                 </CardContent>
