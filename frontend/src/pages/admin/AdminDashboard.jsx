@@ -127,10 +127,10 @@ const AdminDashboard = () => {
   if (staffCount < 5) {
     nudges.push({
       type: 'action',
-      title: 'Complete agent profiles',
+      title: 'Complete your agent profile',
       description: 'Profiles with photos and detailed bios get 3x more engagement.',
-      action: 'View Profiles',
-      link: '/admin/dashboard?tab=staff',
+      action: 'Complete Profile',
+      link: '/admin/profile',
       icon: Users
     });
   }
