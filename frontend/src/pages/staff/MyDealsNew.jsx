@@ -508,7 +508,7 @@ const MyDealsNew = () => {
                             Edit
                           </Button>
                         </Link>
-                        <Link to={`/deal/${deal.id}`} className="flex-1">
+                        <Link to={`/staff/deals/${deal.id}?preview=true`} className="flex-1">
                           <Button variant="outline" size="sm" className="w-full">
                             <Eye className="h-4 w-4 mr-1" />
                             Preview
