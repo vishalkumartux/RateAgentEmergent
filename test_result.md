@@ -103,9 +103,10 @@
 
 
 user_problem_statement: |
-  User requested comprehensive enhancement of Reviews system for buyer agents with:
-  1. Enhanced Reviews Listing Page: New filters (verified, tags, date range, service type, transaction type), enhanced review cards with metadata, helpful voting, report/flag functionality
-  2. Enhanced Submit Review Page: Expanded form fields, word count guidance, preview before post, anti-spam measures, policy notes
+  User requested implementation of Agency Admin features including:
+  1. Onboarding Wizard: First-time setup experience for new admins (COMPLETED)
+  2. Org Settings Page: Comprehensive settings management for agency profile, coverage, privacy, lead routing, and subscription (COMPLETED - Phase 3)
+  3. My Profile Page: Profile management for agents/admins (PENDING - Phase 4)
 
 frontend:
   - task: "Enhanced Reviews Listing Page"
