@@ -187,11 +187,6 @@ const AdminDashboard = () => {
     updateOrganization({ staff: updatedStaff });
   };
 
-  const handleOrgUpdate = () => {
-    updateOrganization(orgData);
-    setEditingOrg(false);
-  };
-
   const removePendingInvite = (inviteId) => {
     const updatedInvites = organization?.pendingInvites?.filter(invite => invite.id !== inviteId) || [];
     updateOrganization({ pendingInvites: updatedInvites });
