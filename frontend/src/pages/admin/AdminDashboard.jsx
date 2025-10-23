@@ -250,20 +250,58 @@ const AdminDashboard = () => {
           </Link>
         </div>
 
+        {/* Nudges Section */}
+        {nudges.length > 0 && (
+          <div className="mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {nudges.map((nudge, index) => {
+                const Icon = nudge.icon;
+                return (
+                  <Card key={index} className="border-l-4 border-amber-500 bg-amber-50 dark:bg-amber-900/10">
+                    <CardContent className="p-4">
+                      <div className="flex items-start space-x-3">
+                        <div className="w-10 h-10 bg-amber-100 dark:bg-amber-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <Icon className="h-5 w-5 text-amber-600 dark:text-amber-400" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold text-gray-900 dark:text-white text-sm mb-1">
+                            {nudge.title}
+                          </h4>
+                          <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">
+                            {nudge.description}
+                          </p>
+                          <Link to={nudge.link}>
+                            <Button size="sm" variant="ghost" className="text-amber-600 hover:text-amber-700 p-0 h-auto">
+                              {nudge.action} →
+                            </Button>
+                          </Link>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
         {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
-              <Card key={index}>
+              <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <div className="flex items-center space-x-4">
-                    <div className={`w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center`}>
-                      <Icon className={`h-6 w-6 ${stat.color}`} />
-                    </div>
-                    <div>
-                      <p className="text-2xl font-bold text-gray-900 dark:text-white">{stat.value}</p>
-                      <p className="text-gray-600 dark:text-gray-400 text-sm">{stat.title}</p>
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-2 mb-3">
+                        <div className={`w-10 h-10 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center`}>
+                          <Icon className={`h-5 w-5 ${stat.color}`} />
+                        </div>
+                      </div>
+                      <p className="text-3xl font-bold text-gray-900 dark:text-white mb-1">{stat.value}</p>
+                      <p className="text-gray-600 dark:text-gray-400 text-sm font-medium mb-1">{stat.title}</p>
+                      <p className="text-xs text-gray-500 dark:text-gray-500">{stat.change}</p>
                     </div>
                   </div>
                 </CardContent>
