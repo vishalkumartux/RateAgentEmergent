@@ -56,17 +56,17 @@ const AdminDashboard = () => {
   const stats = [
     {
       title: 'Published Deals',
-      value: 12,
+      value: organization?.stats?.publishedDeals || 2,
       icon: BarChart3,
       color: 'text-blue-600',
-      change: '+3 this month'
+      change: '+2 this month'
     },
     {
       title: 'Verified Deals',
-      value: 8,
+      value: organization?.stats?.verifiedDeals || 3,
       icon: ShieldCheck,
       color: 'text-green-600',
-      change: '67% verified'
+      change: '60% verified'
     },
     {
       title: 'Avg Rating',
