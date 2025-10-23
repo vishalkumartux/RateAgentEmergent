@@ -100,33 +100,37 @@ const AdminDashboard = () => {
 
   // Nudges based on current state
   const nudges = [];
-  if ((organization?.stats?.publishedDeals || 12) < 3) {
+  const publishedDeals = organization?.stats?.publishedDeals || 0;
+  const verifiedDeals = organization?.stats?.verifiedDeals || 0;
+  const staffCount = organization?.staff?.length || 0;
+  
+  if (publishedDeals < 3) {
     nudges.push({
       type: 'action',
       title: 'Add your first 3 deals',
-      description: 'Get started by adding successful deals to showcase your track record.',
+      description: `You have ${publishedDeals} deal${publishedDeals !== 1 ? 's' : ''}. Add ${3 - publishedDeals} more to showcase your track record.`,
       action: 'Add Deal',
       link: '/staff/deals/add',
       icon: BarChart3
     });
   }
-  if ((organization?.stats?.verifiedDeals || 8) < 5) {
+  if (verifiedDeals < 5) {
     nudges.push({
       type: 'tip',
-      title: 'Verify a deal to boost trust',
-      description: 'Verified deals increase buyer confidence by 73%.',
-      action: 'Learn More',
-      link: '/help/verification',
+      title: 'Verify deals to boost trust',
+      description: `${verifiedDeals} of ${publishedDeals} deals verified. Verified deals increase buyer confidence by 73%.`,
+      action: 'Verify Deals',
+      link: '/staff/deals',
       icon: ShieldCheck
     });
   }
-  if (organization?.staff?.length < 2) {
+  if (staffCount < 5) {
     nudges.push({
       type: 'action',
       title: 'Complete agent profiles',
-      description: 'Profiles with photos and bios get 3x more engagement.',
+      description: 'Profiles with photos and detailed bios get 3x more engagement.',
       action: 'View Profiles',
-      link: '/admin/dashboard',
+      link: '/admin/dashboard?tab=staff',
       icon: Users
     });
   }
