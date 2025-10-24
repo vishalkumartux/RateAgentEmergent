@@ -235,7 +235,7 @@ const Header = () => {
               <Button
                 onClick={toggleTheme}
                 variant="ghost"
-                className="w-full justify-start text-gray-600 dark:text-gray-300 hover:bg-slate-200 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white"
+                className="w-full justify-start text-gray-600 dark:text-gray-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
               >
                 {theme === 'light' ? <Moon className="h-4 w-4 mr-3" /> : <Sun className="h-4 w-4 mr-3" />}
                 {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
