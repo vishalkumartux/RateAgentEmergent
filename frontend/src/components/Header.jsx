@@ -60,9 +60,9 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:bg-green-700 hover:text-white dark:hover:bg-green-600 ${
+                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black ${
                     isActive(item.href)
-                      ? 'text-white bg-green-700 dark:bg-blue-700'
+                      ? 'text-white bg-black dark:bg-white dark:text-black'
                       : 'text-gray-600 dark:text-gray-300'
                   }`}
                 >
