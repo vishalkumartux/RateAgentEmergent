@@ -60,10 +60,10 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:bg-blue-50 dark:hover:bg-blue-950 ${
+                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:bg-blue-800 hover:text-white dark:hover:bg-blue-700 ${
                     isActive(item.href)
-                      ? 'text-blue-800 bg-blue-50 dark:bg-blue-950'
-                      : 'text-gray-600 dark:text-gray-300 hover:text-blue-800'
+                      ? 'text-white bg-blue-800 dark:bg-blue-700'
+                      : 'text-gray-600 dark:text-gray-300'
                   }`}
                 >
                   <Icon className="h-4 w-4" />
