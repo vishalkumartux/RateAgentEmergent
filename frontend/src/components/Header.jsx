@@ -80,7 +80,7 @@ const Header = () => {
               variant="ghost"
               size="sm"
               onClick={toggleTheme}
-              className="text-gray-600 dark:text-gray-300 hover:text-blue-800"
+              className="text-gray-600 dark:text-gray-300 hover:bg-slate-200 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white"
             >
               {theme === 'light' ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
             </Button>
@@ -88,17 +88,17 @@ const Header = () => {
             {!isAuthenticated ? (
               <>
                 <Link to="/login">
-                  <Button variant="ghost" size="sm" className="text-gray-600 dark:text-gray-300 hover:text-blue-800">
+                  <Button variant="ghost" size="sm" className="text-gray-600 dark:text-gray-300 hover:bg-slate-200 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">
                     Sign In
                   </Button>
                 </Link>
                 <Link to="/public-signup">
-                  <Button variant="outline" size="sm" className="border-blue-800 text-blue-800 hover:bg-blue-50">
+                  <Button variant="outline" size="sm" className="border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-white dark:border-blue-600 dark:text-blue-400 dark:hover:bg-blue-700 dark:hover:text-white">
                     Sign Up
                   </Button>
                 </Link>
                 <Link to="/register">
-                  <Button size="sm" className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white px-6">
+                  <Button size="sm" className="bg-blue-800 hover:bg-blue-900 text-white hover:text-white px-6 dark:bg-blue-700 dark:hover:bg-blue-800">
                     List Your Agency
                   </Button>
                 </Link>
