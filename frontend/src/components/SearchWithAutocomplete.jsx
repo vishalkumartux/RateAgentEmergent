@@ -90,7 +90,7 @@ const SearchWithAutocomplete = ({
           placeholder={placeholder}
           className={`${showIcon ? 'pl-12' : 'pl-4'} pr-10 ${sizeClasses[size]} 
             border-2 border-gray-200 dark:border-gray-600 
-            focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:focus:ring-amber-900
+            focus:border-blue-700 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-900
             transition-all duration-200
             dark:bg-gray-700 dark:text-white`}
         />
@@ -117,10 +117,10 @@ const SearchWithAutocomplete = ({
                 <button
                   key={index}
                   onClick={() => handleSuggestionClick(suggestion)}
-                  className="w-full px-4 py-3 text-left hover:bg-amber-50 dark:hover:bg-amber-950 transition-colors flex items-center space-x-3 group"
+                  className="w-full px-4 py-3 text-left hover:bg-blue-50 dark:hover:bg-blue-950 transition-colors flex items-center space-x-3 group"
                 >
-                  <MapPin className="h-4 w-4 text-gray-400 group-hover:text-amber-600 transition-colors" />
-                  <span className="text-gray-900 dark:text-white group-hover:text-amber-600 transition-colors">
+                  <MapPin className="h-4 w-4 text-gray-400 group-hover:text-blue-800 transition-colors" />
+                  <span className="text-gray-900 dark:text-white group-hover:text-blue-800 transition-colors">
                     {suggestion}
                   </span>
                 </button>
@@ -139,10 +139,10 @@ const SearchWithAutocomplete = ({
                 <button
                   key={index}
                   onClick={() => handleSuggestionClick(search)}
-                  className="w-full px-4 py-3 text-left hover:bg-amber-50 dark:hover:bg-amber-950 transition-colors flex items-center space-x-3 group"
+                  className="w-full px-4 py-3 text-left hover:bg-blue-50 dark:hover:bg-blue-950 transition-colors flex items-center space-x-3 group"
                 >
-                  <TrendingUp className="h-4 w-4 text-amber-500 group-hover:text-amber-600 transition-colors" />
-                  <span className="text-gray-900 dark:text-white group-hover:text-amber-600 transition-colors">
+                  <TrendingUp className="h-4 w-4 text-blue-700 group-hover:text-blue-800 transition-colors" />
+                  <span className="text-gray-900 dark:text-white group-hover:text-blue-800 transition-colors">
                     {search}
                   </span>
                 </button>

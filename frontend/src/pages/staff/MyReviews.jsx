@@ -222,7 +222,7 @@ const MyReviews = () => {
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center">
-              <User className="h-5 w-5 text-amber-600" />
+              <User className="h-5 w-5 text-blue-800" />
             </div>
             <div>
               <div className="flex items-center space-x-2">
@@ -279,7 +279,7 @@ const MyReviews = () => {
         {review.tags.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-4">
             {review.tags.map((tag, index) => (
-              <Badge key={index} className="bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 text-xs">
+              <Badge key={index} className="bg-amber-100 dark:bg-amber-900/30 text-blue-900 dark:text-amber-400 text-xs">
                 {tag}
               </Badge>
             ))}
@@ -463,7 +463,7 @@ const MyReviews = () => {
             <CardContent className="p-6">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-lg flex items-center justify-center">
-                  <Star className="h-6 w-6 text-amber-600" />
+                  <Star className="h-6 w-6 text-blue-800" />
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-gray-900 dark:text-white">{avgRating}</p>
@@ -506,7 +506,7 @@ const MyReviews = () => {
         <Card className="mb-8 border-2 border-amber-200 dark:border-amber-800">
           <CardHeader>
             <CardTitle className="flex items-center">
-              <Link2 className="h-5 w-5 mr-2 text-amber-600" />
+              <Link2 className="h-5 w-5 mr-2 text-blue-800" />
               Shareable Review Link
             </CardTitle>
           </CardHeader>
@@ -523,7 +523,7 @@ const MyReviews = () => {
               />
               <Button
                 onClick={handleCopyLink}
-                className={linkCopied ? 'bg-green-600 hover:bg-green-700' : 'bg-amber-600 hover:bg-amber-700'}
+                className={linkCopied ? 'bg-green-600 hover:bg-green-700' : 'bg-blue-800 hover:bg-blue-900'}
               >
                 {linkCopied ? (
                   <>
@@ -566,7 +566,7 @@ const MyReviews = () => {
             <TabsTrigger value="new" className="text-base">
               New ({newReviews.length})
               {newReviews.length > 0 && (
-                <Badge className="ml-2 bg-amber-600">
+                <Badge className="ml-2 bg-blue-800">
                   {newReviews.length}
                 </Badge>
               )}
@@ -606,14 +606,14 @@ const MyReviews = () => {
           <TabsContent value="new" className="mt-6">
             {newReviews.length > 0 ? (
               <>
-                <div className="mb-4 p-4 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+                <div className="mb-4 p-4 bg-blue-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
                   <div className="flex items-start">
-                    <AlertCircle className="h-5 w-5 text-amber-600 dark:text-amber-400 mr-3 mt-0.5" />
+                    <AlertCircle className="h-5 w-5 text-blue-800 dark:text-amber-400 mr-3 mt-0.5" />
                     <div>
                       <p className="font-medium text-amber-900 dark:text-amber-200">
                         Action Required
                       </p>
-                      <p className="text-sm text-amber-700 dark:text-amber-300 mt-1">
+                      <p className="text-sm text-blue-900 dark:text-amber-300 mt-1">
                         {newReviews.length} {newReviews.length === 1 ? 'review' : 'reviews'} waiting for your reply. Responding promptly shows professionalism.
                       </p>
                     </div>

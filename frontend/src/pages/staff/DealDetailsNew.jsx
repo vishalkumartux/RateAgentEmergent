@@ -414,7 +414,7 @@ const DealDetailsNew = () => {
                         </h3>
                         <div className="flex flex-wrap gap-2">
                           {deal.strategyTags.map((tag, index) => (
-                            <Badge key={index} className="bg-amber-600 text-white">
+                            <Badge key={index} className="bg-blue-800 text-white">
                               {tag}
                             </Badge>
                           ))}
@@ -436,7 +436,7 @@ const DealDetailsNew = () => {
                         </div>
                         <div>
                           <p className="text-sm text-gray-600 dark:text-gray-400">Purchase Price</p>
-                          <p className="text-lg font-bold text-amber-600">
+                          <p className="text-lg font-bold text-blue-800">
                             {deal.purchasePrice > 0 ? `$${(deal.purchasePrice / 1000000).toFixed(2)}M` : 'Undisclosed'}
                           </p>
                         </div>
@@ -516,7 +516,7 @@ const DealDetailsNew = () => {
                       </div>
                     </div>
 
-                    <div className="p-4 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+                    <div className="p-4 bg-blue-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
                       <div className="flex items-center justify-between mb-3">
                         <h4 className="font-semibold text-gray-900 dark:text-white">
                           Verification Status
@@ -547,7 +547,7 @@ const DealDetailsNew = () => {
               <CardContent className="space-y-4">
                 <div>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">Purchase Price</p>
-                  <p className="text-2xl font-bold text-amber-600">
+                  <p className="text-2xl font-bold text-blue-800">
                     {deal.purchasePrice > 0 
                       ? `$${(deal.purchasePrice / 1000000).toFixed(2)}M`
                       : 'Undisclosed'}
@@ -630,7 +630,7 @@ const DealDetailsNew = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center">
                       <span className="text-white font-semibold text-lg">
                         {deal.agentName ? deal.agentName.charAt(0) : 'A'}
                       </span>

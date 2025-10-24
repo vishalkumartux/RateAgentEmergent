@@ -231,13 +231,13 @@ const DealsPage = () => {
             <div className="flex flex-col lg:flex-row gap-4 items-center">
               {/* Modern Search */}
               <div className="relative flex-1 min-w-0">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-amber-600 z-10" />
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-blue-800 z-10" />
                 <Input
                   placeholder="Search by suburb, postcode, or address..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   list="deals-suggestions"
-                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:focus:ring-amber-900 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
+                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-blue-700 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-900 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
                 />
                 <datalist id="deals-suggestions">
                   <option value="Bondi Beach" />
@@ -257,7 +257,7 @@ const DealsPage = () => {
                     onClick={() => setViewMode('list')}
                     className={`h-12 px-4 rounded-xl transition-all ${
                       viewMode === 'list' 
-                        ? 'bg-amber-600 hover:bg-amber-700 text-white shadow-md' 
+                        ? 'bg-blue-800 hover:bg-blue-900 text-white shadow-md' 
                         : 'hover:bg-gray-200 dark:hover:bg-gray-600'
                     }`}
                   >
@@ -269,7 +269,7 @@ const DealsPage = () => {
                     onClick={() => setViewMode('map')}
                     className={`h-12 px-4 rounded-xl transition-all ${
                       viewMode === 'map' 
-                        ? 'bg-amber-600 hover:bg-amber-700 text-white shadow-md' 
+                        ? 'bg-blue-800 hover:bg-blue-900 text-white shadow-md' 
                         : 'hover:bg-gray-200 dark:hover:bg-gray-600'
                     }`}
                   >
@@ -282,7 +282,7 @@ const DealsPage = () => {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="h-12 px-4 border-2 border-gray-200 dark:border-gray-600 rounded-2xl dark:bg-gray-700 dark:text-white font-semibold transition-all hover:border-amber-500"
+                  className="h-12 px-4 border-2 border-gray-200 dark:border-gray-600 rounded-2xl dark:bg-gray-700 dark:text-white font-semibold transition-all hover:border-blue-700"
                 >
                   <option value="recent">🕐 Most Recent</option>
                   <option value="highestDiscount">💰 Highest Discount</option>
@@ -298,14 +298,14 @@ const DealsPage = () => {
                   onClick={() => setShowFilters(!showFilters)}
                   className={`h-12 px-6 rounded-2xl font-semibold transition-all ${
                     showFilters 
-                      ? 'bg-amber-600 hover:bg-amber-700 text-white' 
-                      : 'border-2 border-gray-200 dark:border-gray-600 hover:border-amber-600'
+                      ? 'bg-blue-800 hover:bg-blue-900 text-white' 
+                      : 'border-2 border-gray-200 dark:border-gray-600 hover:border-blue-800'
                   }`}
                 >
                   <SlidersHorizontal className="h-5 w-5 mr-2" />
                   Filters
                   {activeFiltersCount > 0 && (
-                    <Badge className="ml-2 bg-white text-amber-600">
+                    <Badge className="ml-2 bg-white text-blue-800">
                       {activeFiltersCount}
                     </Badge>
                   )}
@@ -323,7 +323,7 @@ const DealsPage = () => {
                 <button
                   key={quick}
                   onClick={() => setSearchTerm(quick)}
-                  className="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 hover:bg-amber-100 dark:hover:bg-amber-900 text-gray-700 dark:text-gray-300 hover:text-amber-700 dark:hover:text-amber-400 rounded-full text-sm transition-all duration-200 hover:shadow-md"
+                  className="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 hover:bg-amber-100 dark:hover:bg-amber-900 text-gray-700 dark:text-gray-300 hover:text-blue-900 dark:hover:text-amber-400 rounded-full text-sm transition-all duration-200 hover:shadow-md"
                 >
                   {quick}
                 </button>
@@ -350,7 +350,7 @@ const DealsPage = () => {
                   <CardHeader className="border-b border-gray-200 dark:border-gray-700 sticky top-0 bg-white dark:bg-gray-800 z-10">
                     <div className="flex items-center justify-between">
                       <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                        <Filter className="h-5 w-5 mr-2 text-amber-600" />
+                        <Filter className="h-5 w-5 mr-2 text-blue-800" />
                         Advanced Filters
                       </CardTitle>
                       <div className="flex gap-2">
@@ -364,7 +364,7 @@ const DealsPage = () => {
                       </div>
                     </div>
                     {activeFiltersCount > 0 && (
-                      <p className="text-sm text-amber-600 dark:text-amber-500 mt-2">
+                      <p className="text-sm text-blue-800 dark:text-blue-700 mt-2">
                         {activeFiltersCount} filter{activeFiltersCount > 1 ? 's' : ''} active
                       </p>
                     )}
@@ -495,7 +495,7 @@ const DealsPage = () => {
                             <Badge
                               key={tag}
                               variant={filters.strategyTags.includes(tag) ? 'default' : 'outline'}
-                              className={`cursor-pointer ${filters.strategyTags.includes(tag) ? 'bg-amber-600 hover:bg-amber-700' : 'hover:border-amber-500'}`}
+                              className={`cursor-pointer ${filters.strategyTags.includes(tag) ? 'bg-blue-800 hover:bg-blue-900' : 'hover:border-blue-700'}`}
                               onClick={() => toggleStrategyTag(tag)}
                             >
                               {tag}
@@ -514,7 +514,7 @@ const DealsPage = () => {
                               id="verifiedOnly"
                               checked={filters.verifiedOnly}
                               onChange={(e) => setFilters({...filters, verifiedOnly: e.target.checked})}
-                              className="w-4 h-4 text-amber-600 border-gray-300 rounded focus:ring-amber-500"
+                              className="w-4 h-4 text-blue-800 border-gray-300 rounded focus:ring-amber-500"
                             />
                             <label htmlFor="verifiedOnly" className="text-sm text-gray-900 dark:text-white cursor-pointer">
                               Verified deals only
@@ -593,7 +593,7 @@ const DealsPage = () => {
                           Reset
                         </Button>
                         <Button 
-                          className="bg-amber-600 hover:bg-amber-700"
+                          className="bg-blue-800 hover:bg-blue-900"
                           onClick={() => setShowFilters(false)}
                         >
                           Apply Filters
@@ -667,7 +667,7 @@ const DealsPage = () => {
                         key={i}
                         variant={currentPage === i + 1 ? 'default' : 'outline'}
                         onClick={() => setCurrentPage(i + 1)}
-                        className={currentPage === i + 1 ? 'bg-amber-600 hover:bg-amber-700' : ''}
+                        className={currentPage === i + 1 ? 'bg-blue-800 hover:bg-blue-900' : ''}
                       >
                         {i + 1}
                       </Button>
@@ -695,7 +695,7 @@ const DealCard = ({ deal }) => {
   const achievement = formatAchievement(deal);
   
   return (
-    <Card className="group hover:shadow-2xl transition-all duration-300 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-amber-500 dark:hover:border-amber-600 overflow-hidden rounded-2xl">
+    <Card className="group hover:shadow-2xl transition-all duration-300 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-blue-700 dark:hover:border-blue-800 overflow-hidden rounded-2xl">
       {/* Image */}
       <div className="relative h-48 overflow-hidden">
         <img
@@ -726,7 +726,7 @@ const DealCard = ({ deal }) => {
         {/* Price Band */}
         <div className="mb-3">
           <div className="flex items-baseline gap-2">
-            <span className="text-2xl font-bold text-amber-600">
+            <span className="text-2xl font-bold text-blue-800">
               {formatDealPrice(deal)}
             </span>
             {achievement && (
@@ -784,7 +784,7 @@ const DealCard = ({ deal }) => {
         {deal.strategyTags && deal.strategyTags.length > 0 && (
           <div className="flex flex-wrap gap-1 mb-4">
             {deal.strategyTags.map((tag, index) => (
-              <Badge key={index} variant="outline" className="text-xs border-amber-300 dark:border-amber-600 text-amber-700 dark:text-amber-300">
+              <Badge key={index} variant="outline" className="text-xs border-blue-300 dark:border-blue-800 text-blue-900 dark:text-amber-300">
                 {tag}
               </Badge>
             ))}
@@ -828,12 +828,12 @@ const DealCard = ({ deal }) => {
         {/* View Links */}
         <div className="mt-3 flex gap-2">
           <Link to={`/deal/${deal.id}`} className="flex-1">
-            <Button variant="default" size="sm" className="w-full bg-amber-600 hover:bg-amber-700">
+            <Button variant="default" size="sm" className="w-full bg-blue-800 hover:bg-blue-900">
               View Deal
             </Button>
           </Link>
           <Link to={`/agent/${deal.agentId}`} className="flex-1">
-            <Button variant="outline" size="sm" className="w-full border-amber-600 text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950">
+            <Button variant="outline" size="sm" className="w-full border-blue-800 text-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950">
               View Agent
             </Button>
           </Link>

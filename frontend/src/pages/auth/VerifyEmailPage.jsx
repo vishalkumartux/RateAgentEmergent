@@ -89,13 +89,13 @@ const VerifyEmailPage = () => {
       <div className="max-w-md w-full">
         {/* Header */}
         <div className="text-center mb-8">
-          <Link to="/register" className="inline-flex items-center text-amber-600 hover:text-amber-700 mb-6">
+          <Link to="/register" className="inline-flex items-center text-blue-800 hover:text-blue-900 mb-6">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Registration
           </Link>
           
           <div className="w-16 h-16 bg-amber-100 dark:bg-amber-900 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Mail className="h-8 w-8 text-amber-600" />
+            <Mail className="h-8 w-8 text-blue-800" />
           </div>
           
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
@@ -104,7 +104,7 @@ const VerifyEmailPage = () => {
           <p className="text-gray-600 dark:text-gray-400">
             We've sent a 6-digit verification code to
           </p>
-          <p className="text-amber-600 font-medium">{email}</p>
+          <p className="text-blue-800 font-medium">{email}</p>
         </div>
 
         <Card>
@@ -136,7 +136,7 @@ const VerifyEmailPage = () => {
               <Button 
                 type="submit" 
                 disabled={isSubmitting || verificationCode.length !== 6}
-                className="w-full bg-amber-600 hover:bg-amber-700 text-white"
+                className="w-full bg-blue-800 hover:bg-blue-900 text-white"
               >
                 {isSubmitting ? (
                   <>
@@ -162,7 +162,7 @@ const VerifyEmailPage = () => {
                 variant="outline"
                 onClick={handleResendCode}
                 disabled={resendCooldown > 0}
-                className="text-amber-600 border-amber-600 hover:bg-amber-50"
+                className="text-blue-800 border-blue-800 hover:bg-blue-50"
               >
                 {resendCooldown > 0 ? (
                   `Resend in ${resendCooldown}s`

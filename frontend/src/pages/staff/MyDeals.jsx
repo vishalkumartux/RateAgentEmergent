@@ -173,7 +173,7 @@ const MyDeals = () => {
       label: 'Under Contract',
       value: mockDeals.filter(d => d.status === 'Under Contract').length,
       icon: Clock,
-      color: 'text-amber-600'
+      color: 'text-blue-800'
     },
     {
       label: 'Sold This Month',
@@ -192,7 +192,7 @@ const MyDeals = () => {
   const getStatusBadge = (status) => {
     const statusColors = {
       'Active': 'bg-blue-600 text-white',
-      'Under Contract': 'bg-amber-600 text-white',
+      'Under Contract': 'bg-blue-800 text-white',
       'Sold': 'bg-emerald-600 text-white',
       'Leased': 'bg-emerald-600 text-white'
     };
@@ -215,7 +215,7 @@ const MyDeals = () => {
             </div>
             <div className="mt-4 sm:mt-0">
               <Link to="/staff/deals/add">
-                <Button className="bg-amber-600 hover:bg-amber-700 text-white">
+                <Button className="bg-blue-800 hover:bg-blue-900 text-white">
                   <Plus className="h-4 w-4 mr-2" />
                   Add New Deal
                 </Button>
@@ -252,13 +252,13 @@ const MyDeals = () => {
             <div className="flex flex-col lg:flex-row gap-4">
               {/* Modern Search */}
               <div className="relative flex-1">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-amber-600 z-10" />
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-blue-800 z-10" />
                 <Input
                   placeholder="Search by address or property details..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   list="deal-search"
-                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:focus:ring-amber-900 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
+                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-blue-700 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-900 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
                 />
                 <datalist id="deal-search">
                   <option value="Bondi Beach" />
@@ -339,7 +339,7 @@ const MyDeals = () => {
                         <MapPin className="h-4 w-4" />
                         <span>{deal.propertyType}</span>
                       </div>
-                      <div className="text-2xl font-bold text-amber-600 mb-3">
+                      <div className="text-2xl font-bold text-blue-800 mb-3">
                         {deal.price}
                       </div>
                     </div>
@@ -425,7 +425,7 @@ const MyDeals = () => {
                     }
                   </p>
                   <Link to="/staff/deals/add">
-                    <Button className="bg-amber-600 hover:bg-amber-700 text-white">
+                    <Button className="bg-blue-800 hover:bg-blue-900 text-white">
                       <Plus className="h-4 w-4 mr-2" />
                       Add New Deal
                     </Button>

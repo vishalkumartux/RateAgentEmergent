@@ -228,23 +228,23 @@ const ReviewsPageImproved = () => {
               <CardContent className="p-4">
                 <div className="flex flex-col sm:flex-row gap-3">
                   <div className="relative flex-1">
-                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-amber-600 z-10" />
+                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-blue-800 z-10" />
                     <Input
                       placeholder="Search reviews, agents, or suburbs..."
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="pl-12 h-12 border-2 border-gray-200 dark:border-gray-600 focus:border-amber-500 rounded-xl dark:bg-gray-700 dark:text-white"
+                      className="pl-12 h-12 border-2 border-gray-200 dark:border-gray-600 focus:border-blue-700 rounded-xl dark:bg-gray-700 dark:text-white"
                     />
                   </div>
                   <Button
                     variant="outline"
                     onClick={() => setShowFiltersModal(true)}
-                    className="h-12 border-2 border-amber-600 text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950 rounded-xl font-semibold min-w-[140px]"
+                    className="h-12 border-2 border-blue-800 text-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950 rounded-xl font-semibold min-w-[140px]"
                   >
                     <Filter className="h-4 w-4 mr-2" />
                     Filters
                     {activeFiltersCount > 0 && (
-                      <Badge className="ml-2 bg-amber-600 text-white">
+                      <Badge className="ml-2 bg-blue-800 text-white">
                         {activeFiltersCount}
                       </Badge>
                     )}
@@ -276,7 +276,7 @@ const ReviewsPageImproved = () => {
                         else if (quick === 'Investment') handleFilterChange('transactionType', 'Investment Property');
                         else if (quick === 'First Home') handleFilterChange('serviceType', 'First Home Buyer Support');
                       }}
-                      className="px-3 py-1 bg-gray-100 dark:bg-gray-700 hover:bg-amber-100 dark:hover:bg-amber-900 text-gray-700 dark:text-gray-300 hover:text-amber-700 dark:hover:text-amber-400 rounded-full text-xs transition-all"
+                      className="px-3 py-1 bg-gray-100 dark:bg-gray-700 hover:bg-amber-100 dark:hover:bg-amber-900 text-gray-700 dark:text-gray-300 hover:text-blue-900 dark:hover:text-amber-400 rounded-full text-xs transition-all"
                     >
                       {quick}
                     </button>
@@ -288,7 +288,7 @@ const ReviewsPageImproved = () => {
                   <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700 flex items-center gap-2 flex-wrap">
                     <span className="text-xs text-gray-600 dark:text-gray-400">Active:</span>
                     {filters.rating > 0 && (
-                      <Badge variant="outline" className="bg-amber-50 dark:bg-amber-950 border-amber-300 dark:border-amber-700 text-xs">
+                      <Badge variant="outline" className="bg-blue-50 dark:bg-blue-950 border-blue-300 dark:border-amber-700 text-xs">
                         {filters.rating}+ stars
                         <X className="h-3 w-3 ml-1 cursor-pointer" onClick={() => handleFilterChange('rating', 0)} />
                       </Badge>
@@ -308,7 +308,7 @@ const ReviewsPageImproved = () => {
                     {activeFiltersCount > 0 && (
                       <button
                         onClick={clearAllFilters}
-                        className="text-xs text-amber-600 hover:text-amber-700 font-medium underline"
+                        className="text-xs text-blue-800 hover:text-blue-900 font-medium underline"
                       >
                         Clear all
                       </button>
@@ -350,7 +350,7 @@ const ReviewsPageImproved = () => {
                         <div className="flex-1">
                           <Link
                             to={`/agent/${review.agentId}`}
-                            className="text-lg font-semibold text-gray-900 dark:text-white hover:text-amber-600 transition-colors"
+                            className="text-lg font-semibold text-gray-900 dark:text-white hover:text-blue-800 transition-colors"
                           >
                             {review.agentName}
                           </Link>
@@ -421,7 +421,7 @@ const ReviewsPageImproved = () => {
                         {review.tags.map((tag, idx) => (
                           <Badge
                             key={idx}
-                            className="bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-400 border-amber-300 dark:border-amber-700 text-xs"
+                            className="bg-amber-100 dark:bg-blue-950 text-blue-900 dark:text-amber-400 border-blue-300 dark:border-amber-700 text-xs"
                           >
                             {tag}
                           </Badge>
@@ -448,7 +448,7 @@ const ReviewsPageImproved = () => {
                           variant="ghost"
                           size="sm"
                           className={`text-gray-600 dark:text-gray-400 text-xs ${
-                            isHelpful ? 'text-amber-600 dark:text-amber-400' : 'hover:text-amber-600'
+                            isHelpful ? 'text-blue-800 dark:text-amber-400' : 'hover:text-blue-800'
                           }`}
                           onClick={() => handleHelpfulClick(review.id)}
                         >
@@ -478,7 +478,7 @@ const ReviewsPageImproved = () => {
             <div className="mt-8 text-center">
               <Button
                 onClick={() => setReviewsToShow(prev => prev + 12)}
-                className="bg-amber-600 hover:bg-amber-700 text-white"
+                className="bg-blue-800 hover:bg-blue-900 text-white"
               >
                 Load More Reviews ({sortedReviews.length - reviewsToShow} remaining)
               </Button>
@@ -494,7 +494,7 @@ const ReviewsPageImproved = () => {
                 <p className="text-gray-600 dark:text-gray-400 mb-6">
                   Try adjusting your search criteria or filters to see more reviews.
                 </p>
-                <Button onClick={clearAllFilters} className="bg-amber-600 hover:bg-amber-700 text-white">
+                <Button onClick={clearAllFilters} className="bg-blue-800 hover:bg-blue-900 text-white">
                   Clear All Filters
                 </Button>
               </CardContent>
@@ -505,7 +505,7 @@ const ReviewsPageImproved = () => {
           {displayedReviews.length > 0 && (
             <Card className="mt-8 bg-gradient-to-r from-amber-50 to-yellow-50 dark:from-amber-950 dark:to-yellow-950 border-amber-200 dark:border-amber-800">
               <CardContent className="p-8 text-center">
-                <Award className="h-12 w-12 text-amber-600 mx-auto mb-4" />
+                <Award className="h-12 w-12 text-blue-800 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                   Have you worked with a buyer agent?
                 </h3>
@@ -513,7 +513,7 @@ const ReviewsPageImproved = () => {
                   Help other property buyers by sharing your experience. Your review makes a difference!
                 </p>
                 <Link to="/submit-review">
-                  <Button className="bg-amber-600 hover:bg-amber-700 text-white">
+                  <Button className="bg-blue-800 hover:bg-blue-900 text-white">
                     <MessageCircle className="h-4 w-4 mr-2" />
                     Write a Review
                   </Button>
@@ -531,10 +531,10 @@ const ReviewsPageImproved = () => {
             <CardHeader className="border-b border-gray-200 dark:border-gray-700">
               <div className="flex items-center justify-between">
                 <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                  <Filter className="h-5 w-5 mr-2 text-amber-600" />
+                  <Filter className="h-5 w-5 mr-2 text-blue-800" />
                   Filters
                   {activeFiltersCount > 0 && (
-                    <Badge className="ml-2 bg-amber-600 text-white">
+                    <Badge className="ml-2 bg-blue-800 text-white">
                       {activeFiltersCount}
                     </Badge>
                   )}
@@ -692,8 +692,8 @@ const ReviewsPageImproved = () => {
                       variant={filters.tags.includes(tag) ? "default" : "outline"}
                       className={`cursor-pointer transition-colors ${
                         filters.tags.includes(tag)
-                          ? 'bg-amber-600 text-white border-amber-600'
-                          : 'border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-amber-600 hover:text-amber-600'
+                          ? 'bg-blue-800 text-white border-blue-800'
+                          : 'border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-blue-800 hover:text-blue-800'
                       }`}
                       onClick={() => handleTagToggle(tag)}
                     >
@@ -708,14 +708,14 @@ const ReviewsPageImproved = () => {
                 <Button
                   variant="ghost"
                   onClick={clearAllFilters}
-                  className="text-amber-600 hover:text-amber-700"
+                  className="text-blue-800 hover:text-blue-900"
                 >
                   Clear all filters
                 </Button>
               )}
               <Button
                 onClick={() => setShowFiltersModal(false)}
-                className="bg-amber-600 hover:bg-amber-700 text-white ml-auto"
+                className="bg-blue-800 hover:bg-blue-900 text-white ml-auto"
               >
                 Apply Filters
               </Button>

@@ -111,7 +111,7 @@ const UserProfile = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Header */}
           <div className="mb-8">
-            <Link to="/dashboard" className="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-amber-600 mb-4">
+            <Link to="/dashboard" className="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-800 mb-4">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Dashboard
             </Link>
@@ -151,7 +151,7 @@ const UserProfile = () => {
                           onClick={() => setActiveSection(section.id)}
                           className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
                             activeSection === section.id
-                              ? 'bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-400 font-semibold'
+                              ? 'bg-amber-100 dark:bg-blue-950 text-blue-900 dark:text-amber-400 font-semibold'
                               : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
                           }`}
                         >
@@ -173,7 +173,7 @@ const UserProfile = () => {
                   <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
                     <CardHeader className="border-b border-gray-200 dark:border-gray-700">
                       <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                        <User className="h-5 w-5 mr-2 text-amber-600" />
+                        <User className="h-5 w-5 mr-2 text-blue-800" />
                         Personal Information
                       </CardTitle>
                     </CardHeader>
@@ -188,7 +188,7 @@ const UserProfile = () => {
                           />
                           <button 
                             onClick={handleAvatarUpload}
-                            className="absolute bottom-0 right-0 w-8 h-8 bg-amber-600 hover:bg-amber-700 text-white rounded-full flex items-center justify-center"
+                            className="absolute bottom-0 right-0 w-8 h-8 bg-blue-800 hover:bg-blue-900 text-white rounded-full flex items-center justify-center"
                           >
                             <Camera className="h-4 w-4" />
                           </button>
@@ -283,7 +283,7 @@ const UserProfile = () => {
                       </div>
 
                       <div className="mt-6 flex justify-end">
-                        <Button onClick={handleSaveProfile} className="bg-amber-600 hover:bg-amber-700 text-white">
+                        <Button onClick={handleSaveProfile} className="bg-blue-800 hover:bg-blue-900 text-white">
                           <Save className="h-4 w-4 mr-2" />
                           Save Changes
                         </Button>

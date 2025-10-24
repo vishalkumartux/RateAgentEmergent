@@ -229,7 +229,7 @@ const MyDealsNew = () => {
       label: 'Total Portfolio Value',
       value: `$${(totalValue / 1000000).toFixed(1)}M`,
       icon: DollarSign,
-      color: 'text-amber-600'
+      color: 'text-blue-800'
     },
     {
       label: 'Avg Days-to-Secure',
@@ -286,7 +286,7 @@ const MyDealsNew = () => {
             </div>
             <div className="mt-4 sm:mt-0">
               <Link to="/staff/deals/add">
-                <Button className="bg-amber-600 hover:bg-amber-700 text-white">
+                <Button className="bg-blue-800 hover:bg-blue-900 text-white">
                   <Plus className="h-4 w-4 mr-2" />
                   Add New Deal
                 </Button>
@@ -323,12 +323,12 @@ const MyDealsNew = () => {
             <div className="flex flex-col lg:flex-row gap-4">
               {/* Search */}
               <div className="relative flex-1">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-amber-600 z-10" />
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-blue-800 z-10" />
                 <Input
                   placeholder="Search by suburb or address..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-amber-500 rounded-2xl dark:bg-gray-700 dark:text-white font-medium"
+                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-blue-700 rounded-2xl dark:bg-gray-700 dark:text-white font-medium"
                 />
               </div>
               
@@ -377,7 +377,7 @@ const MyDealsNew = () => {
                 <button
                   key={index}
                   onClick={() => handlePopularSearch(search)}
-                  className="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full hover:bg-amber-100 dark:hover:bg-amber-900/30 hover:text-amber-700 dark:hover:text-amber-400 transition-colors"
+                  className="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full hover:bg-amber-100 dark:hover:bg-amber-900/30 hover:text-blue-900 dark:hover:text-amber-400 transition-colors"
                 >
                   {search.label}
                 </button>
@@ -457,7 +457,7 @@ const MyDealsNew = () => {
 
                       {/* Price */}
                       <div className="mb-3">
-                        <p className="text-2xl font-bold text-amber-600">
+                        <p className="text-2xl font-bold text-blue-800">
                           {deal.purchasePrice > 0 
                             ? `$${(deal.purchasePrice / 1000000).toFixed(2)}M`
                             : 'Undisclosed'}
@@ -515,7 +515,7 @@ const MyDealsNew = () => {
                           </Button>
                         </Link>
                         {deal.status === 'Draft' && (
-                          <Button size="sm" className="bg-amber-600 hover:bg-amber-700" title="Publish Deal">
+                          <Button size="sm" className="bg-blue-800 hover:bg-blue-900" title="Publish Deal">
                             <Upload className="h-4 w-4" />
                           </Button>
                         )}
@@ -537,7 +537,7 @@ const MyDealsNew = () => {
                       : 'Start building your portfolio by adding your first deal'}
                   </p>
                   <Link to="/staff/deals/add">
-                    <Button className="bg-amber-600 hover:bg-amber-700 text-white">
+                    <Button className="bg-blue-800 hover:bg-blue-900 text-white">
                       <Plus className="h-4 w-4 mr-2" />
                       Add Your First Deal
                     </Button>

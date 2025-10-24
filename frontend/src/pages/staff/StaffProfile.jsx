@@ -51,7 +51,7 @@ const StaffProfile = () => {
   // Mock performance data
   const performanceStats = [
     { label: 'Properties Sold (12m)', value: '24', icon: BarChart3, color: 'text-emerald-600' },
-    { label: 'Average Rating', value: '4.8', icon: Star, color: 'text-amber-600' },
+    { label: 'Average Rating', value: '4.8', icon: Star, color: 'text-blue-800' },
     { label: 'Avg Days on Market', value: '23', icon: Clock, color: 'text-blue-600' },
     { label: 'Client Satisfaction', value: '98%', icon: TrendingUp, color: 'text-purple-600' }
   ];
@@ -126,7 +126,7 @@ const StaffProfile = () => {
               {!isEditing ? (
                 <Button
                   onClick={() => setIsEditing(true)}
-                  className="bg-amber-600 hover:bg-amber-700 text-white"
+                  className="bg-blue-800 hover:bg-blue-900 text-white"
                 >
                   <Edit className="h-4 w-4 mr-2" />
                   Edit Profile
@@ -135,7 +135,7 @@ const StaffProfile = () => {
                 <div className="flex space-x-2">
                   <Button
                     onClick={handleSave}
-                    className="bg-amber-600 hover:bg-amber-700 text-white"
+                    className="bg-blue-800 hover:bg-blue-900 text-white"
                   >
                     <Save className="h-4 w-4 mr-2" />
                     Save Changes
@@ -170,7 +170,7 @@ const StaffProfile = () => {
                   <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
                     {profileData.name}
                   </h2>
-                  <Badge className="bg-amber-600 text-white">Agent</Badge>
+                  <Badge className="bg-blue-800 text-white">Agent</Badge>
                 </div>
                 
                 <p className="text-xl text-gray-700 dark:text-gray-300 mb-2">
@@ -199,7 +199,7 @@ const StaffProfile = () => {
                 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {profileData.specialties.map((specialty, index) => (
-                    <Badge key={index} variant="secondary" className="bg-amber-50 dark:bg-amber-950 text-amber-700 dark:text-amber-300">
+                    <Badge key={index} variant="secondary" className="bg-blue-50 dark:bg-blue-950 text-blue-900 dark:text-amber-300">
                       {specialty}
                     </Badge>
                   ))}
@@ -257,7 +257,7 @@ const StaffProfile = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <User className="h-5 w-5 mr-2 text-amber-600" />
+                  <User className="h-5 w-5 mr-2 text-blue-800" />
                   Profile Information
                 </CardTitle>
               </CardHeader>
@@ -333,8 +333,8 @@ const StaffProfile = () => {
                           onClick={() => handleSpecialtyToggle(specialty)}
                           className={`p-3 text-sm rounded-lg border transition-all text-center ${
                             profileData.specialties.includes(specialty)
-                              ? 'bg-amber-50 dark:bg-amber-950 border-amber-300 dark:border-amber-700 text-amber-700 dark:text-amber-300'
-                              : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-amber-300'
+                              ? 'bg-blue-50 dark:bg-blue-950 border-blue-300 dark:border-amber-700 text-blue-900 dark:text-amber-300'
+                              : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-blue-300'
                           }`}
                         >
                           {specialty}
@@ -352,7 +352,7 @@ const StaffProfile = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <BarChart3 className="h-5 w-5 mr-2 text-amber-600" />
+                  <BarChart3 className="h-5 w-5 mr-2 text-blue-800" />
                   Recent Sales
                 </CardTitle>
               </CardHeader>
@@ -380,7 +380,7 @@ const StaffProfile = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <ExternalLink className="h-5 w-5 mr-2 text-amber-600" />
+                  <ExternalLink className="h-5 w-5 mr-2 text-blue-800" />
                   Social & Web Presence
                 </CardTitle>
               </CardHeader>

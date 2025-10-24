@@ -183,7 +183,7 @@ const DealsListPage = () => {
               </p>
             </div>
             <Link to="/staff/deals/add">
-              <Button className="bg-amber-600 hover:bg-amber-700 text-white">
+              <Button className="bg-blue-800 hover:bg-blue-900 text-white">
                 <Plus className="h-4 w-4 mr-2" />
                 Add New Deal
               </Button>
@@ -215,7 +215,7 @@ const DealsListPage = () => {
               <Filter className="h-4 w-4 mr-2" />
               Filters
               {activeFiltersCount > 0 && (
-                <Badge className="ml-2 bg-amber-600 text-white">
+                <Badge className="ml-2 bg-blue-800 text-white">
                   {activeFiltersCount}
                 </Badge>
               )}
@@ -315,7 +315,7 @@ const DealsListPage = () => {
                       id="hasMedia"
                       checked={hasMedia}
                       onChange={(e) => setHasMedia(e.target.checked)}
-                      className="h-4 w-4 text-amber-600 rounded"
+                      className="h-4 w-4 text-blue-800 rounded"
                     />
                     <label htmlFor="hasMedia" className="ml-2 text-sm text-gray-700 dark:text-gray-300">
                       Has Media (Photos/Docs)
@@ -329,7 +329,7 @@ const DealsListPage = () => {
                   </Button>
                   <Button 
                     onClick={() => setShowFilters(false)}
-                    className="bg-amber-600 hover:bg-amber-700 text-white"
+                    className="bg-blue-800 hover:bg-blue-900 text-white"
                   >
                     Apply Filters
                   </Button>
@@ -498,7 +498,7 @@ const DealsListPage = () => {
                         </Button>
                       </Link>
                       {deal.status === 'Draft' && (
-                        <Button size="sm" className="bg-amber-600 hover:bg-amber-700 text-white w-full">
+                        <Button size="sm" className="bg-blue-800 hover:bg-blue-900 text-white w-full">
                           <Upload className="h-4 w-4 mr-2" />
                           Publish
                         </Button>
@@ -522,7 +522,7 @@ const DealsListPage = () => {
                   : 'Start building your portfolio by adding your first deal'}
               </p>
               <Link to="/staff/deals/add">
-                <Button className="bg-amber-600 hover:bg-amber-700 text-white">
+                <Button className="bg-blue-800 hover:bg-blue-900 text-white">
                   <Plus className="h-4 w-4 mr-2" />
                   Add Your First Deal
                 </Button>

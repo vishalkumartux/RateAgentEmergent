@@ -131,13 +131,13 @@ const SubmitReviewPage = () => {
               {!selectedAgent ? (
                 <div className="space-y-4">
                   <div className="relative">
-                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-amber-600 z-10" />
+                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-blue-800 z-10" />
                     <Input
                       placeholder="Search by agent name, company, or location..."
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
                       list="review-agents"
-                      className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:focus:ring-amber-900 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
+                      className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-blue-700 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-900 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
                     />
                     <datalist id="review-agents">
                       <option value="Sarah Johnson" />

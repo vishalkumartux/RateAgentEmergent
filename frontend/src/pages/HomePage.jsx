@@ -72,7 +72,7 @@ const HomePageImproved = () => {
   ];
 
   const stats = [
-    { label: 'Verified Deals', value: '3,800+', icon: Home, color: 'text-amber-600' },
+    { label: 'Verified Deals', value: '3,800+', icon: Home, color: 'text-blue-800' },
     { label: 'Buyer Agents', value: '1,200+', icon: Users, color: 'text-blue-600' },
     { label: 'Client Reviews', value: '8,500+', icon: Star, color: 'text-green-600' },
     { label: 'Avg. Savings', value: '$42K', icon: TrendingUp, color: 'text-purple-600' }
@@ -181,7 +181,7 @@ const HomePageImproved = () => {
             <div className="text-center mb-12">
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
                 Find Your Next Property
-                <span className="bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent block mt-2">
+                <span className="bg-gradient-to-r from-amber-600 to-blue-600 bg-clip-text text-transparent block mt-2">
                   The Smart Way
                 </span>
               </h1>
@@ -194,16 +194,16 @@ const HomePageImproved = () => {
             <div className="max-w-4xl mx-auto mb-8">
               <form onSubmit={handleNaturalSearch} className="relative">
                 <div className="relative">
-                  <Sparkles className="absolute left-5 top-1/2 -translate-y-1/2 h-6 w-6 text-amber-600 z-10" />
+                  <Sparkles className="absolute left-5 top-1/2 -translate-y-1/2 h-6 w-6 text-blue-800 z-10" />
                   <Input
                     placeholder='Try: "3BR house in Preston under 1.2m" or "Investment property Melbourne high yield"'
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-14 pr-32 h-16 text-lg border-2 border-amber-200 dark:border-amber-800 focus:border-amber-500 rounded-2xl bg-white dark:bg-gray-800 shadow-xl"
+                    className="pl-14 pr-32 h-16 text-lg border-2 border-amber-200 dark:border-amber-800 focus:border-blue-700 rounded-2xl bg-white dark:bg-gray-800 shadow-xl"
                   />
                   <Button 
                     type="submit"
-                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-amber-600 hover:bg-amber-700 text-white h-12 px-6 rounded-xl"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-blue-800 hover:bg-blue-900 text-white h-12 px-6 rounded-xl"
                   >
                     <Search className="h-4 w-4 mr-2" />
                     Search
@@ -223,7 +223,7 @@ const HomePageImproved = () => {
                   <button
                     key={idx}
                     onClick={() => setSearchQuery(link.query)}
-                    className="px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-50 dark:hover:bg-amber-950 text-sm text-gray-700 dark:text-gray-300 rounded-full transition-all"
+                    className="px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:border-blue-700 dark:hover:border-blue-700 hover:bg-blue-50 dark:hover:bg-blue-950 text-sm text-gray-700 dark:text-gray-300 rounded-full transition-all"
                   >
                     {link.text}
                   </button>
@@ -234,10 +234,10 @@ const HomePageImproved = () => {
             {/* Primary CTA Tiles */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
               <Link to="/deals">
-                <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-amber-500 bg-white dark:bg-gray-800">
+                <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-blue-700 bg-white dark:bg-gray-800">
                   <CardContent className="p-6 text-center">
-                    <div className="w-14 h-14 bg-amber-100 dark:bg-amber-950 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Home className="h-7 w-7 text-amber-600" />
+                    <div className="w-14 h-14 bg-amber-100 dark:bg-blue-950 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Home className="h-7 w-7 text-blue-800" />
                     </div>
                     <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Find Deals</h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -316,7 +316,7 @@ const HomePageImproved = () => {
                 onClick={() => setBuyBoxTab('deals')}
                 className={`px-8 py-4 rounded-2xl font-semibold transition-all text-lg ${
                   buyBoxTab === 'deals'
-                    ? 'bg-amber-600 text-white shadow-2xl scale-105'
+                    ? 'bg-blue-800 text-white shadow-2xl scale-105'
                     : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:scale-105 shadow-lg'
                 }`}
               >
@@ -338,10 +338,10 @@ const HomePageImproved = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {/* Column 1: Property Type & Location */}
-              <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-amber-300 dark:hover:border-amber-700 transition-all">
+              <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-amber-700 transition-all">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
-                    <Building2 className="h-5 w-5 mr-2 text-amber-600" />
+                    <Building2 className="h-5 w-5 mr-2 text-blue-800" />
                     Property Type
                   </h3>
                   <div className="grid grid-cols-2 gap-3 mb-6">
@@ -354,12 +354,12 @@ const HomePageImproved = () => {
                           onClick={() => setBuyBox(prev => ({ ...prev, propertyType: type === 'All' ? 'all' : type }))}
                           className={`p-4 rounded-xl border-2 transition-all text-center ${
                             isSelected
-                              ? 'border-amber-500 bg-amber-50 dark:bg-amber-950 shadow-md'
-                              : 'border-gray-200 dark:border-gray-700 hover:border-amber-300 dark:hover:border-amber-800'
+                              ? 'border-blue-700 bg-blue-50 dark:bg-blue-950 shadow-md'
+                              : 'border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-amber-800'
                           }`}
                         >
                           <div className="text-2xl mb-1">{icons[type]}</div>
-                          <div className={`text-sm font-medium ${isSelected ? 'text-amber-700 dark:text-amber-400' : 'text-gray-700 dark:text-gray-300'}`}>
+                          <div className={`text-sm font-medium ${isSelected ? 'text-blue-900 dark:text-amber-400' : 'text-gray-700 dark:text-gray-300'}`}>
                             {type}
                           </div>
                         </button>
@@ -508,7 +508,7 @@ const HomePageImproved = () => {
                         <button
                           key={idx}
                           onClick={() => setBuyBox(prev => ({ ...prev, ...item.preset }))}
-                          className="w-full text-left px-3 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-amber-500 dark:hover:border-amber-500 rounded-lg text-sm transition-all"
+                          className="w-full text-left px-3 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-blue-700 dark:hover:border-blue-700 rounded-lg text-sm transition-all"
                         >
                           {item.label}
                         </button>
@@ -521,7 +521,7 @@ const HomePageImproved = () => {
                     onClick={handleBuyBoxSearch}
                     className={`w-full h-14 text-lg font-bold shadow-xl transition-all hover:scale-105 ${
                       buyBoxTab === 'deals'
-                        ? 'bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white'
+                        ? 'bg-gradient-to-r from-amber-600 to-blue-600 hover:from-amber-700 hover:to-yellow-700 text-white'
                         : 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white'
                     }`}
                   >
@@ -554,7 +554,7 @@ const HomePageImproved = () => {
                 </p>
               </div>
               <Link to="/deals">
-                <Button variant="outline" className="border-amber-600 text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950">
+                <Button variant="outline" className="border-blue-800 text-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950">
                   View All
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </Button>
@@ -564,7 +564,7 @@ const HomePageImproved = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {featuredDeals.map(deal => (
                 <Link key={deal.id} to={`/deal/${deal.id}`}>
-                  <Card className="hover:shadow-xl transition-all border-2 border-transparent hover:border-amber-500">
+                  <Card className="hover:shadow-xl transition-all border-2 border-transparent hover:border-blue-700">
                     <img 
                       src={deal.photos[0]} 
                       alt={deal.address}
@@ -594,7 +594,7 @@ const HomePageImproved = () => {
                           {deal.carSpaces}
                         </span>
                       </div>
-                      <div className="text-2xl font-bold text-amber-600">
+                      <div className="text-2xl font-bold text-blue-800">
                         {formatDealPrice(deal)}
                       </div>
                     </CardContent>
@@ -688,7 +688,7 @@ const HomePageImproved = () => {
                       </Link>
                       <Link 
                         to={`/deals?location=${city.name}`}
-                        className="flex items-center text-amber-600 hover:text-amber-700 font-medium"
+                        className="flex items-center text-blue-800 hover:text-blue-900 font-medium"
                       >
                         <Home className="h-4 w-4 mr-2" />
                         {city.deals} Verified Deals in {city.name}
@@ -711,7 +711,7 @@ const HomePageImproved = () => {
                   </Button>
                 </Link>
                 <Link to="/deals">
-                  <Button variant="outline" className="border-amber-600 text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950">
+                  <Button variant="outline" className="border-blue-800 text-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950">
                     Browse All Deals
                   </Button>
                 </Link>
@@ -721,7 +721,7 @@ const HomePageImproved = () => {
         </section>
 
         {/* Final CTA */}
-        <section className="py-16 bg-gradient-to-r from-amber-500 to-yellow-600">
+        <section className="py-16 bg-gradient-to-r from-blue-800 to-blue-600">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Award className="h-16 w-16 text-white mx-auto mb-6" />
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -732,13 +732,13 @@ const HomePageImproved = () => {
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Link to="/deals">
-                <Button size="lg" className="bg-white text-amber-600 hover:bg-gray-100">
+                <Button size="lg" className="bg-white text-blue-800 hover:bg-gray-100">
                   <Home className="h-5 w-5 mr-2" />
                   Browse Deals
                 </Button>
               </Link>
               <Link to="/agents">
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-amber-600">
+                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-blue-800">
                   <Users className="h-5 w-5 mr-2" />
                   Find Agents
                 </Button>

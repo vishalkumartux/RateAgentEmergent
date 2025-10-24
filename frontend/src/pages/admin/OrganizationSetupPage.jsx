@@ -114,7 +114,7 @@ const OrganizationSetupPage = () => {
         {/* Header */}
         <div className="text-center mb-8">
           <div className="w-16 h-16 bg-amber-100 dark:bg-amber-900 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Building2 className="h-8 w-8 text-amber-600" />
+            <Building2 className="h-8 w-8 text-blue-800" />
           </div>
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Complete Your Organization Setup
@@ -128,7 +128,7 @@ const OrganizationSetupPage = () => {
           {/* Basic Information */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center text-amber-600">
+              <CardTitle className="flex items-center text-blue-800">
                 <Building2 className="h-5 w-5 mr-2" />
                 Basic Information
               </CardTitle>
@@ -214,7 +214,7 @@ const OrganizationSetupPage = () => {
           {/* Specializations */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center text-amber-600">
+              <CardTitle className="flex items-center text-blue-800">
                 <CheckCircle className="h-5 w-5 mr-2" />
                 Specializations
               </CardTitle>
@@ -231,8 +231,8 @@ const OrganizationSetupPage = () => {
                     onClick={() => handleSpecializationToggle(spec)}
                     className={`p-3 text-sm rounded-lg border transition-all text-center ${
                       formData.specializations.includes(spec)
-                        ? 'bg-amber-50 dark:bg-amber-950 border-amber-300 dark:border-amber-700 text-amber-700 dark:text-amber-300'
-                        : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-amber-300 dark:hover:border-amber-700'
+                        ? 'bg-blue-50 dark:bg-blue-950 border-blue-300 dark:border-amber-700 text-blue-900 dark:text-amber-300'
+                        : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-blue-300 dark:hover:border-amber-700'
                     }`}
                   >
                     {spec}
@@ -245,7 +245,7 @@ const OrganizationSetupPage = () => {
           {/* Description & Service Areas */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center text-amber-600">
+              <CardTitle className="flex items-center text-blue-800">
                 <FileText className="h-5 w-5 mr-2" />
                 About Your Agency
               </CardTitle>
@@ -280,7 +280,7 @@ const OrganizationSetupPage = () => {
             <Button 
               type="submit" 
               disabled={isSubmitting}
-              className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 text-lg"
+              className="bg-blue-800 hover:bg-blue-900 text-white px-8 py-3 text-lg"
             >
               {isSubmitting ? 'Setting up...' : (
                 <>

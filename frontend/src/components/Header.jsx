@@ -60,10 +60,10 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:bg-amber-50 dark:hover:bg-amber-950 ${
+                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:bg-blue-50 dark:hover:bg-blue-950 ${
                     isActive(item.href)
-                      ? 'text-amber-600 bg-amber-50 dark:bg-amber-950'
-                      : 'text-gray-600 dark:text-gray-300 hover:text-amber-600'
+                      ? 'text-blue-800 bg-blue-50 dark:bg-blue-950'
+                      : 'text-gray-600 dark:text-gray-300 hover:text-blue-800'
                   }`}
                 >
                   <Icon className="h-4 w-4" />
@@ -80,7 +80,7 @@ const Header = () => {
               variant="ghost"
               size="sm"
               onClick={toggleTheme}
-              className="text-gray-600 dark:text-gray-300 hover:text-amber-600"
+              className="text-gray-600 dark:text-gray-300 hover:text-blue-800"
             >
               {theme === 'light' ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
             </Button>
@@ -88,17 +88,17 @@ const Header = () => {
             {!isAuthenticated ? (
               <>
                 <Link to="/login">
-                  <Button variant="ghost" size="sm" className="text-gray-600 dark:text-gray-300 hover:text-amber-600">
+                  <Button variant="ghost" size="sm" className="text-gray-600 dark:text-gray-300 hover:text-blue-800">
                     Sign In
                   </Button>
                 </Link>
                 <Link to="/public-signup">
-                  <Button variant="outline" size="sm" className="border-amber-600 text-amber-600 hover:bg-amber-50">
+                  <Button variant="outline" size="sm" className="border-blue-800 text-blue-800 hover:bg-blue-50">
                     Sign Up
                   </Button>
                 </Link>
                 <Link to="/register">
-                  <Button size="sm" className="bg-amber-600 hover:bg-amber-700 text-white px-6">
+                  <Button size="sm" className="bg-blue-800 hover:bg-blue-900 text-white px-6">
                     List Your Agency
                   </Button>
                 </Link>
@@ -109,7 +109,7 @@ const Header = () => {
                   variant="ghost"
                   size="sm"
                   onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                  className="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-amber-600"
+                  className="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-blue-800"
                 >
                   <User className="h-4 w-4" />
                   <span>{user.name}</span>
@@ -222,8 +222,8 @@ const Header = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`flex items-center space-x-3 px-4 py-3 rounded-lg font-medium transition-all ${
                     isActive(item.href)
-                      ? 'text-amber-600 bg-amber-50 dark:bg-amber-950'
-                      : 'text-gray-600 dark:text-gray-300 hover:text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950'
+                      ? 'text-blue-800 bg-blue-50 dark:bg-blue-950'
+                      : 'text-gray-600 dark:text-gray-300 hover:text-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950'
                   }`}
                 >
                   <Icon className="h-5 w-5" />
@@ -249,12 +249,12 @@ const Header = () => {
                     </Button>
                   </Link>
                   <Link to="/public-signup">
-                    <Button variant="outline" className="w-full border-amber-600 text-amber-600 hover:bg-amber-50">
+                    <Button variant="outline" className="w-full border-blue-800 text-blue-800 hover:bg-blue-50">
                       Sign Up
                     </Button>
                   </Link>
                   <Link to="/register">
-                    <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white">
+                    <Button className="w-full bg-blue-800 hover:bg-blue-900 text-white">
                       List Your Agency
                     </Button>
                   </Link>

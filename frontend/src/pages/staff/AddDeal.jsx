@@ -237,7 +237,7 @@ const AddDeal = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
-          <Link to="/staff/deals" className="inline-flex items-center text-amber-600 hover:text-amber-700 mb-6">
+          <Link to="/staff/deals" className="inline-flex items-center text-blue-800 hover:text-blue-900 mb-6">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to My Deals
           </Link>
@@ -261,7 +261,7 @@ const AddDeal = () => {
                 <div key={step.number} className="flex items-center">
                   <div className={`flex items-center justify-center w-12 h-12 rounded-full border-2 transition-colors ${
                     isCompleted ? 'bg-emerald-600 border-emerald-600' :
-                    isActive ? 'bg-amber-600 border-amber-600' :
+                    isActive ? 'bg-blue-800 border-blue-800' :
                     'bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600'
                   }`}>
                     {isCompleted ? (
@@ -274,7 +274,7 @@ const AddDeal = () => {
                   </div>
                   <div className="ml-3">
                     <div className={`text-sm font-medium ${
-                      isActive ? 'text-amber-600' :
+                      isActive ? 'text-blue-800' :
                       isCompleted ? 'text-emerald-600' :
                       'text-gray-500'
                     }`}>
@@ -301,7 +301,7 @@ const AddDeal = () => {
         <Card className="mb-8">
           <CardHeader>
             <CardTitle className="flex items-center">
-              {React.createElement(steps[currentStep - 1].icon, { className: "h-5 w-5 mr-2 text-amber-600" })}
+              {React.createElement(steps[currentStep - 1].icon, { className: "h-5 w-5 mr-2 text-blue-800" })}
               {steps[currentStep - 1].title}
             </CardTitle>
           </CardHeader>
@@ -494,7 +494,7 @@ const AddDeal = () => {
                           />
                           {index === 0 && (
                             <div className="absolute top-2 left-2">
-                              <Badge className="bg-amber-600 text-white text-xs">Main Photo</Badge>
+                              <Badge className="bg-blue-800 text-white text-xs">Main Photo</Badge>
                             </div>
                           )}
                           <button
@@ -770,7 +770,7 @@ const AddDeal = () => {
             {currentStep < 4 ? (
               <Button
                 onClick={nextStep}
-                className="bg-amber-600 hover:bg-amber-700 text-white"
+                className="bg-blue-800 hover:bg-blue-900 text-white"
               >
                 Next Step
                 <ArrowLeft className="h-4 w-4 ml-2 rotate-180" />

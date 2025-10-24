@@ -72,13 +72,13 @@ const LoginPage = () => {
       <div className="max-w-md w-full">
         {/* Header */}
         <div className="text-center mb-8">
-          <Link to="/" className="inline-flex items-center text-amber-600 hover:text-amber-700 mb-6">
+          <Link to="/" className="inline-flex items-center text-blue-800 hover:text-blue-900 mb-6">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Home
           </Link>
           
           <div className="w-16 h-16 bg-amber-100 dark:bg-amber-900 rounded-full flex items-center justify-center mx-auto mb-4">
-            <LogIn className="h-8 w-8 text-amber-600" />
+            <LogIn className="h-8 w-8 text-blue-800" />
           </div>
           
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
@@ -142,7 +142,7 @@ const LoginPage = () => {
                 </div>
                 <Link 
                   to="/forgot-password" 
-                  className="text-sm text-amber-600 hover:text-amber-700"
+                  className="text-sm text-blue-800 hover:text-blue-900"
                 >
                   Forgot password?
                 </Link>
@@ -158,7 +158,7 @@ const LoginPage = () => {
               <Button 
                 type="submit" 
                 disabled={isSubmitting}
-                className="w-full bg-amber-600 hover:bg-amber-700 text-white"
+                className="w-full bg-blue-800 hover:bg-blue-900 text-white"
               >
                 {isSubmitting ? 'Signing In...' : 'Sign In'}
               </Button>
@@ -177,7 +177,7 @@ const LoginPage = () => {
                     onClick={() => {
                       setFormData(prev => ({ ...prev, email: 'public@user.com', password: 'password123' }));
                     }}
-                    className="text-amber-600 hover:text-amber-700 font-mono"
+                    className="text-blue-800 hover:text-blue-900 font-mono"
                   >
                     public@user.com
                   </button>
@@ -189,7 +189,7 @@ const LoginPage = () => {
                     onClick={() => {
                       setFormData(prev => ({ ...prev, email: 'admin@premiumrealty.com', password: 'password123' }));
                     }}
-                    className="text-amber-600 hover:text-amber-700 font-mono"
+                    className="text-blue-800 hover:text-blue-900 font-mono"
                   >
                     admin@premiumrealty.com
                   </button>
@@ -201,7 +201,7 @@ const LoginPage = () => {
                     onClick={() => {
                       setFormData(prev => ({ ...prev, email: 'sarah@premiumrealty.com', password: 'password123' }));
                     }}
-                    className="text-amber-600 hover:text-amber-700 font-mono"
+                    className="text-blue-800 hover:text-blue-900 font-mono"
                   >
                     sarah@premiumrealty.com
                   </button>
@@ -213,7 +213,7 @@ const LoginPage = () => {
             <div className="mt-6 text-center">
               <p className="text-gray-600 dark:text-gray-400 text-sm">
                 Don't have an account?{' '}
-                <Link to="/register" className="text-amber-600 hover:text-amber-700 font-medium">
+                <Link to="/register" className="text-blue-800 hover:text-blue-900 font-medium">
                   Register your agency
                 </Link>
               </p>

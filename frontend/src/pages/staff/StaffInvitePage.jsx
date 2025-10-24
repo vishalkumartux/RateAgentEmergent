@@ -99,7 +99,7 @@ const StaffInvitePage = () => {
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-amber-600 mx-auto"></div>
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-800 mx-auto"></div>
           <p className="mt-4 text-gray-600 dark:text-gray-400">Validating invitation...</p>
         </div>
       </div>
@@ -119,7 +119,7 @@ const StaffInvitePage = () => {
               This invitation link is invalid or has expired. Please contact your administrator for a new invitation.
             </p>
             <Link to="/">
-              <Button className="bg-amber-600 hover:bg-amber-700 text-white">
+              <Button className="bg-blue-800 hover:bg-blue-900 text-white">
                 Back to Home
               </Button>
             </Link>
@@ -134,13 +134,13 @@ const StaffInvitePage = () => {
       <div className="max-w-md w-full">
         {/* Header */}
         <div className="text-center mb-8">
-          <Link to="/" className="inline-flex items-center text-amber-600 hover:text-amber-700 mb-6">
+          <Link to="/" className="inline-flex items-center text-blue-800 hover:text-blue-900 mb-6">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Home
           </Link>
           
           <div className="w-16 h-16 bg-amber-100 dark:bg-amber-900 rounded-full flex items-center justify-center mx-auto mb-4">
-            <UserCheck className="h-8 w-8 text-amber-600" />
+            <UserCheck className="h-8 w-8 text-blue-800" />
           </div>
           
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
@@ -149,19 +149,19 @@ const StaffInvitePage = () => {
           <p className="text-gray-600 dark:text-gray-400">
             Complete your account setup to join
           </p>
-          <p className="text-amber-600 font-medium">{inviteData.organizationName}</p>
+          <p className="text-blue-800 font-medium">{inviteData.organizationName}</p>
         </div>
 
         {/* Invitation Details */}
-        <Card className="mb-6 bg-amber-50 dark:bg-amber-950 border-amber-200 dark:border-amber-800">
+        <Card className="mb-6 bg-blue-50 dark:bg-blue-950 border-amber-200 dark:border-amber-800">
           <CardContent className="p-6">
             <div className="flex items-center space-x-3">
-              <Building2 className="h-6 w-6 text-amber-600" />
+              <Building2 className="h-6 w-6 text-blue-800" />
               <div>
                 <p className="text-amber-900 dark:text-amber-100 font-medium">
                   You've been invited by {inviteData.invitedBy}
                 </p>
-                <p className="text-amber-700 dark:text-amber-300 text-sm">
+                <p className="text-blue-900 dark:text-amber-300 text-sm">
                   Email: {inviteData.email}
                 </p>
               </div>
@@ -235,7 +235,7 @@ const StaffInvitePage = () => {
               <Button 
                 type="submit" 
                 disabled={isSubmitting}
-                className="w-full bg-amber-600 hover:bg-amber-700 text-white"
+                className="w-full bg-blue-800 hover:bg-blue-900 text-white"
               >
                 {isSubmitting ? 'Creating Account...' : 'Create Account & Continue'}
               </Button>

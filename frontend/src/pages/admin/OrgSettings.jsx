@@ -199,7 +199,7 @@ const OrgSettings = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <Building2 className="h-5 w-5 mr-2 text-amber-600" />
+                    <Building2 className="h-5 w-5 mr-2 text-blue-800" />
                     Business Information
                   </CardTitle>
                   <CardDescription>
@@ -324,7 +324,7 @@ const OrgSettings = () => {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center">
-                      <MapPin className="h-5 w-5 mr-2 text-amber-600" />
+                      <MapPin className="h-5 w-5 mr-2 text-blue-800" />
                       Service Regions
                     </CardTitle>
                     <CardDescription>
@@ -369,7 +369,7 @@ const OrgSettings = () => {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center">
-                      <Home className="h-5 w-5 mr-2 text-amber-600" />
+                      <Home className="h-5 w-5 mr-2 text-blue-800" />
                       Property Types
                     </CardTitle>
                     <CardDescription>
@@ -400,7 +400,7 @@ const OrgSettings = () => {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center">
-                      <DollarSign className="h-5 w-5 mr-2 text-amber-600" />
+                      <DollarSign className="h-5 w-5 mr-2 text-blue-800" />
                       Price Range Focus
                     </CardTitle>
                     <CardDescription>
@@ -449,7 +449,7 @@ const OrgSettings = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <Shield className="h-5 w-5 mr-2 text-amber-600" />
+                    <Shield className="h-5 w-5 mr-2 text-blue-800" />
                     Privacy & Compliance Settings
                   </CardTitle>
                   <CardDescription>
@@ -554,7 +554,7 @@ const OrgSettings = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <Bell className="h-5 w-5 mr-2 text-amber-600" />
+                    <Bell className="h-5 w-5 mr-2 text-blue-800" />
                     Lead Routing Preferences
                   </CardTitle>
                   <CardDescription>
@@ -626,9 +626,9 @@ const OrgSettings = () => {
                   </div>
 
                   {/* Info Box */}
-                  <div className="p-4 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+                  <div className="p-4 bg-blue-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
                     <div className="flex">
-                      <Users className="h-5 w-5 text-amber-600 dark:text-amber-400 mr-3 mt-0.5" />
+                      <Users className="h-5 w-5 text-blue-800 dark:text-amber-400 mr-3 mt-0.5" />
                       <div>
                         <h4 className="font-medium text-amber-900 dark:text-amber-200 mb-1">Team Performance</h4>
                         <p className="text-sm text-amber-800 dark:text-amber-300">
@@ -646,7 +646,7 @@ const OrgSettings = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <CreditCard className="h-5 w-5 mr-2 text-amber-600" />
+                    <CreditCard className="h-5 w-5 mr-2 text-blue-800" />
                     Subscription & Billing
                   </CardTitle>
                   <CardDescription>
@@ -659,7 +659,7 @@ const OrgSettings = () => {
                     <div className="flex items-center justify-between mb-4">
                       <div>
                         <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{subscription.plan}</h3>
-                        <p className="text-amber-700 dark:text-amber-300 font-medium">{subscription.amount}</p>
+                        <p className="text-blue-900 dark:text-amber-300 font-medium">{subscription.amount}</p>
                       </div>
                       <Badge className="bg-green-600 text-white px-3 py-1">
                         <CheckCircle className="h-3 w-3 mr-1 inline" />
@@ -726,7 +726,7 @@ const OrgSettings = () => {
                   <Button
                     onClick={handleSave}
                     disabled={isSaving}
-                    className="bg-amber-600 hover:bg-amber-700 text-white"
+                    className="bg-blue-800 hover:bg-blue-900 text-white"
                   >
                     <Save className="h-4 w-4 mr-2" />
                     {isSaving ? 'Saving...' : 'Save Changes'}

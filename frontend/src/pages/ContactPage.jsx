@@ -83,10 +83,10 @@ const ContactPage = () => {
                 <Card key={index} className="text-center hover:shadow-lg transition-shadow bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
                   <CardContent className="p-6">
                     <div className="w-16 h-16 bg-amber-100 dark:bg-amber-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Icon className="h-8 w-8 text-amber-600" />
+                      <Icon className="h-8 w-8 text-blue-800" />
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{info.title}</h3>
-                    <p className="text-amber-600 font-medium mb-1">{info.content}</p>
+                    <p className="text-blue-800 font-medium mb-1">{info.content}</p>
                     <p className="text-sm text-gray-500 dark:text-gray-400">{info.description}</p>
                   </CardContent>
                 </Card>
@@ -99,7 +99,7 @@ const ContactPage = () => {
             <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
-                  <MessageCircle className="h-6 w-6 text-amber-600 mr-3" />
+                  <MessageCircle className="h-6 w-6 text-blue-800 mr-3" />
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Send Us a Message</h2>
                 </div>
 
@@ -166,7 +166,7 @@ const ContactPage = () => {
                       />
                     </div>
 
-                    <Button type="submit" size="lg" className="w-full bg-amber-600 hover:bg-amber-700 text-white">
+                    <Button type="submit" size="lg" className="w-full bg-blue-800 hover:bg-blue-900 text-white">
                       <Send className="h-5 w-5 mr-2" />
                       Send Message
                     </Button>

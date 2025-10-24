@@ -228,7 +228,7 @@ const UserDashboardComplete = () => {
 
   const stats = [
     { label: 'Saved Searches', value: savedSearches.length, icon: Search, color: 'text-blue-600', bgColor: 'bg-blue-100 dark:bg-blue-950' },
-    { label: 'Shortlisted Agents', value: shortlistedAgents.length, icon: Users, color: 'text-amber-600', bgColor: 'bg-amber-100 dark:bg-amber-950' },
+    { label: 'Shortlisted Agents', value: shortlistedAgents.length, icon: Users, color: 'text-blue-800', bgColor: 'bg-amber-100 dark:bg-blue-950' },
     { label: 'Shortlisted Deals', value: shortlistedDeals.length, icon: Home, color: 'text-green-600', bgColor: 'bg-green-100 dark:bg-green-950' },
     { label: 'Reviews Posted', value: myReviews.length, icon: Star, color: 'text-purple-600', bgColor: 'bg-purple-100 dark:bg-purple-950' }
   ];
@@ -290,42 +290,42 @@ const UserDashboardComplete = () => {
               <TabsList className="w-full bg-transparent grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 h-auto p-0">
                 <TabsTrigger 
                   value="overview" 
-                  className="data-[state=active]:bg-amber-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
+                  className="data-[state=active]:bg-blue-800 data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
                 >
                   <BarChart3 className="h-4 w-4 mr-2 flex-shrink-0" />
                   <span className="hidden sm:inline">Overview</span>
                 </TabsTrigger>
                 <TabsTrigger 
                   value="searches" 
-                  className="data-[state=active]:bg-amber-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
+                  className="data-[state=active]:bg-blue-800 data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
                 >
                   <Search className="h-4 w-4 mr-2 flex-shrink-0" />
                   <span className="hidden sm:inline">Searches</span>
                 </TabsTrigger>
                 <TabsTrigger 
                   value="agents" 
-                  className="data-[state=active]:bg-amber-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
+                  className="data-[state=active]:bg-blue-800 data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
                 >
                   <Users className="h-4 w-4 mr-2 flex-shrink-0" />
                   <span className="hidden sm:inline">Agents</span>
                 </TabsTrigger>
                 <TabsTrigger 
                   value="deals" 
-                  className="data-[state=active]:bg-amber-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
+                  className="data-[state=active]:bg-blue-800 data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
                 >
                   <Home className="h-4 w-4 mr-2 flex-shrink-0" />
                   <span className="hidden sm:inline">Deals</span>
                 </TabsTrigger>
                 <TabsTrigger 
                   value="reviews" 
-                  className="data-[state=active]:bg-amber-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
+                  className="data-[state=active]:bg-blue-800 data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
                 >
                   <Star className="h-4 w-4 mr-2 flex-shrink-0" />
                   <span className="hidden sm:inline">Reviews</span>
                 </TabsTrigger>
                 <TabsTrigger 
                   value="settings" 
-                  className="data-[state=active]:bg-amber-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
+                  className="data-[state=active]:bg-blue-800 data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
                 >
                   <Bell className="h-4 w-4 mr-2 flex-shrink-0" />
                   <span className="hidden sm:inline">Alerts</span>
@@ -349,7 +349,7 @@ const UserDashboardComplete = () => {
                           </Button>
                         </Link>
                         <Link to="/agents">
-                          <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white h-12">
+                          <Button className="w-full bg-blue-800 hover:bg-blue-900 text-white h-12">
                             <Users className="h-4 w-4 mr-2" />
                             Browse Agents
                           </Button>
@@ -415,12 +415,12 @@ const UserDashboardComplete = () => {
                         </div>
                         <Badge className="bg-blue-600 text-white">{savedSearches.length}</Badge>
                       </div>
-                      <div className="flex items-center justify-between p-3 bg-amber-50 dark:bg-amber-950 rounded-lg">
+                      <div className="flex items-center justify-between p-3 bg-blue-50 dark:bg-blue-950 rounded-lg">
                         <div className="flex items-center gap-3">
-                          <Users className="h-5 w-5 text-amber-600" />
+                          <Users className="h-5 w-5 text-blue-800" />
                           <span className="text-sm font-medium text-gray-900 dark:text-white">Shortlisted Agents</span>
                         </div>
-                        <Badge className="bg-amber-600 text-white">{shortlistedAgents.length}</Badge>
+                        <Badge className="bg-blue-800 text-white">{shortlistedAgents.length}</Badge>
                       </div>
                       <div className="flex items-center justify-between p-3 bg-green-50 dark:bg-green-950 rounded-lg">
                         <div className="flex items-center gap-3">
@@ -528,7 +528,7 @@ const UserDashboardComplete = () => {
                                 size="sm"
                                 variant={search.alertEnabled ? "default" : "outline"}
                                 onClick={() => handleToggleAlert(search.id)}
-                                className={search.alertEnabled ? "bg-amber-600 hover:bg-amber-700 text-white" : ""}
+                                className={search.alertEnabled ? "bg-blue-800 hover:bg-blue-900 text-white" : ""}
                               >
                                 <Bell className="h-3 w-3 mr-1" />
                                 {search.alertEnabled ? 'Alert On' : 'Alert Off'}
@@ -559,7 +559,7 @@ const UserDashboardComplete = () => {
                 <CardHeader className="border-b border-gray-200 dark:border-gray-700">
                   <div className="flex items-center justify-between">
                     <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                      <Users className="h-5 w-5 mr-2 text-amber-600" />
+                      <Users className="h-5 w-5 mr-2 text-blue-800" />
                       Shortlisted Agents ({shortlistedAgents.length})
                     </CardTitle>
                     <div className="flex gap-2">
@@ -592,7 +592,7 @@ const UserDashboardComplete = () => {
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">No agents shortlisted</h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">Browse agents and save your favorites</p>
                       <Link to="/agents">
-                        <Button className="bg-amber-600 hover:bg-amber-700 text-white">
+                        <Button className="bg-blue-800 hover:bg-blue-900 text-white">
                           Browse Agents
                         </Button>
                       </Link>
@@ -616,7 +616,7 @@ const UserDashboardComplete = () => {
                             </Link>
                             <div className="flex-1">
                               <Link to={`/agent/${agent.id}`}>
-                                <h4 className="font-semibold text-gray-900 dark:text-white hover:text-amber-600 transition-colors">
+                                <h4 className="font-semibold text-gray-900 dark:text-white hover:text-blue-800 transition-colors">
                                   {agent.name}
                                 </h4>
                               </Link>
@@ -823,7 +823,7 @@ const UserDashboardComplete = () => {
                       {myReviews.map(review => (
                         <div key={review.id} className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
                           <div className="flex items-start justify-between mb-2">
-                            <Link to={`/agent/${review.agentId}`} className="font-semibold text-gray-900 dark:text-white hover:text-amber-600">
+                            <Link to={`/agent/${review.agentId}`} className="font-semibold text-gray-900 dark:text-white hover:text-blue-800">
                               {review.agentName}
                             </Link>
                             <Badge className={

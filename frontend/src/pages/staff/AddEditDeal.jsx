@@ -262,7 +262,7 @@ const AddEditDeal = () => {
                         isCompleted
                           ? 'bg-green-600 text-white'
                           : isActive
-                          ? 'bg-amber-600 text-white'
+                          ? 'bg-blue-800 text-white'
                           : 'bg-gray-200 dark:bg-gray-700 text-gray-400'
                       }`}
                     >
@@ -274,7 +274,7 @@ const AddEditDeal = () => {
                     </button>
                     <div className="text-center">
                       <p className={`text-sm font-semibold ${
-                        isActive ? 'text-amber-600 dark:text-amber-400' : 'text-gray-600 dark:text-gray-400'
+                        isActive ? 'text-blue-800 dark:text-amber-400' : 'text-gray-600 dark:text-gray-400'
                       }`}>
                         {step.title}
                       </p>
@@ -401,7 +401,7 @@ const AddEditDeal = () => {
                         onClick={() => setFormData({...formData, propertyType: type})}
                         className={`p-4 border-2 rounded-lg text-center transition-colors ${
                           formData.propertyType === type
-                            ? 'border-amber-600 bg-amber-50 dark:bg-amber-900/20 text-amber-700 dark:text-amber-400'
+                            ? 'border-blue-800 bg-blue-50 dark:bg-amber-900/20 text-blue-900 dark:text-amber-400'
                             : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                         }`}
                       >
@@ -500,7 +500,7 @@ const AddEditDeal = () => {
                         onClick={() => setFormData({...formData, method})}
                         className={`p-4 border-2 rounded-lg text-center transition-colors ${
                           formData.method === method
-                            ? 'border-amber-600 bg-amber-50 dark:bg-amber-900/20 text-amber-700 dark:text-amber-400'
+                            ? 'border-blue-800 bg-blue-50 dark:bg-amber-900/20 text-blue-900 dark:text-amber-400'
                             : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                         }`}
                       >
@@ -561,7 +561,7 @@ const AddEditDeal = () => {
                   </p>
                   <div className="flex flex-wrap gap-2 mb-3">
                     {formData.strategyTags.map(tag => (
-                      <Badge key={tag} className="bg-amber-600 text-white">
+                      <Badge key={tag} className="bg-blue-800 text-white">
                         {tag}
                         <button
                           onClick={() => removeStrategyTag(tag)}
@@ -579,7 +579,7 @@ const AddEditDeal = () => {
                           key={tag}
                           type="button"
                           onClick={() => addStrategyTag(tag)}
-                          className="px-3 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-full hover:border-amber-500 hover:text-amber-600 transition-colors"
+                          className="px-3 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-full hover:border-blue-700 hover:text-blue-800 transition-colors"
                         >
                           + {tag}
                         </button>
@@ -784,7 +784,7 @@ const AddEditDeal = () => {
                         onChange={handlePhotoUpload}
                         className="hidden"
                       />
-                      <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-8 text-center cursor-pointer hover:border-amber-500 transition-colors">
+                      <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-8 text-center cursor-pointer hover:border-blue-700 transition-colors">
                         <ImageIcon className="h-12 w-12 text-gray-400 mx-auto mb-3" />
                         <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
                           Click to upload photos
@@ -807,7 +807,7 @@ const AddEditDeal = () => {
                       id="mediaConsent"
                       checked={formData.mediaConsent}
                       onChange={(e) => setFormData({...formData, mediaConsent: e.target.checked})}
-                      className="mt-1 h-4 w-4 text-amber-600 rounded"
+                      className="mt-1 h-4 w-4 text-blue-800 rounded"
                     />
                     <label htmlFor="mediaConsent" className="ml-3">
                       <p className="font-medium text-gray-900 dark:text-white">
@@ -844,7 +844,7 @@ const AddEditDeal = () => {
                     onClick={() => setFormData({...formData, verificationLevel: 'L0'})}
                     className={`w-full p-4 border-2 rounded-lg text-left transition-colors ${
                       formData.verificationLevel === 'L0'
-                        ? 'border-amber-600 bg-amber-50 dark:bg-amber-900/20'
+                        ? 'border-blue-800 bg-blue-50 dark:bg-amber-900/20'
                         : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                     }`}
                   >
@@ -861,7 +861,7 @@ const AddEditDeal = () => {
                         </p>
                       </div>
                       {formData.verificationLevel === 'L0' && (
-                        <CheckCircle className="h-5 w-5 text-amber-600 ml-2" />
+                        <CheckCircle className="h-5 w-5 text-blue-800 ml-2" />
                       )}
                     </div>
                   </button>
@@ -1034,7 +1034,7 @@ const AddEditDeal = () => {
                       onClick={() => setFormData({...formData, status: 'draft'})}
                       className={`p-4 border-2 rounded-lg text-center transition-colors ${
                         formData.status === 'draft'
-                          ? 'border-amber-600 bg-amber-50 dark:bg-amber-900/20'
+                          ? 'border-blue-800 bg-blue-50 dark:bg-amber-900/20'
                           : 'border-gray-200 dark:border-gray-700'
                       }`}
                     >
@@ -1073,9 +1073,9 @@ const AddEditDeal = () => {
                     </div>
                   )}
                   {formData.photos.length === 0 && (
-                    <div className="flex items-center p-3 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
-                      <Info className="h-5 w-5 text-amber-600 mr-2" />
-                      <p className="text-sm text-amber-700 dark:text-amber-400">
+                    <div className="flex items-center p-3 bg-blue-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+                      <Info className="h-5 w-5 text-blue-800 mr-2" />
+                      <p className="text-sm text-blue-900 dark:text-amber-400">
                         Adding photos increases buyer engagement by 3x
                       </p>
                     </div>
@@ -1100,7 +1100,7 @@ const AddEditDeal = () => {
                   Save Draft
                 </Button>
                 {currentStep < 6 ? (
-                  <Button onClick={handleNext} className="bg-amber-600 hover:bg-amber-700 text-white">
+                  <Button onClick={handleNext} className="bg-blue-800 hover:bg-blue-900 text-white">
                     Next Step
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>

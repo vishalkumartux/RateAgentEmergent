@@ -64,7 +64,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
               The agent profile you're looking for doesn't exist.
             </p>
             <Link to="/agents">
-              <Button className="bg-amber-600 hover:bg-amber-700">
+              <Button className="bg-blue-800 hover:bg-blue-900">
                 Browse All Agents
               </Button>
             </Link>
@@ -85,7 +85,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 mb-6">
-            <Link to="/agents" className="hover:text-amber-600">Buyer Agents</Link>
+            <Link to="/agents" className="hover:text-blue-800">Buyer Agents</Link>
             <span>/</span>
             <span>{agent.name}</span>
           </div>
@@ -93,7 +93,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
           {/* Header Section */}
           <Card className="mb-8 overflow-hidden bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
             <CardContent className="p-0">
-              <div className="relative h-32 bg-gradient-to-r from-amber-500 to-yellow-600"></div>
+              <div className="relative h-32 bg-gradient-to-r from-blue-800 to-blue-600"></div>
               <div className="relative px-6 pb-6">
                 <div className="flex flex-col lg:flex-row gap-6">
                   {/* Profile Photo */}
@@ -117,10 +117,10 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                         {/* Coverage Areas */}
                         {agent.coverageAreas && agent.coverageAreas.length > 0 && (
                           <div className="flex items-start gap-2 mb-3">
-                            <MapPin className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                            <MapPin className="h-5 w-5 text-blue-800 flex-shrink-0 mt-0.5" />
                             <div className="flex flex-wrap gap-2">
                               {agent.coverageAreas.slice(0, 4).map((area, idx) => (
-                                <Badge key={idx} variant="outline" className="bg-amber-50 dark:bg-amber-950 border-amber-200 dark:border-amber-800 text-amber-700 dark:text-amber-400">
+                                <Badge key={idx} variant="outline" className="bg-blue-50 dark:bg-blue-950 border-amber-200 dark:border-amber-800 text-blue-900 dark:text-amber-400">
                                   {area}
                                 </Badge>
                               ))}
@@ -153,16 +153,16 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                       
                       {/* Action Buttons */}
                       <div className="flex flex-col gap-2 lg:min-w-[180px]">
-                        <Button className="bg-amber-600 hover:bg-amber-700 text-white">
+                        <Button className="bg-blue-800 hover:bg-blue-900 text-white">
                           <MessageCircle className="h-4 w-4 mr-2" />
                           Contact Agent
                         </Button>
                         <div className="flex gap-2">
-                          <Button variant="outline" size="sm" className="flex-1 border-amber-600 text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950">
+                          <Button variant="outline" size="sm" className="flex-1 border-blue-800 text-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950">
                             <Phone className="h-4 w-4 mr-1" />
                             Call
                           </Button>
-                          <Button variant="outline" size="sm" className="flex-1 border-amber-600 text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950">
+                          <Button variant="outline" size="sm" className="flex-1 border-blue-800 text-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950">
                             <Mail className="h-4 w-4 mr-1" />
                             Email
                           </Button>
@@ -188,15 +188,15 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                     {/* Quick Stats */}
                     <div className="grid grid-cols-3 gap-4 pt-4 border-t border-gray-200 dark:border-gray-700">
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-amber-600">{agent.verifiedDealsCount}</div>
+                        <div className="text-2xl font-bold text-blue-800">{agent.verifiedDealsCount}</div>
                         <div className="text-xs text-gray-600 dark:text-gray-400">Total Deals</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-amber-600">{agent.medianDaysToSecure}d</div>
+                        <div className="text-2xl font-bold text-blue-800">{agent.medianDaysToSecure}d</div>
                         <div className="text-xs text-gray-600 dark:text-gray-400">Avg. to Secure</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-amber-600">{agent.avgDiscountPercent}%</div>
+                        <div className="text-2xl font-bold text-blue-800">{agent.avgDiscountPercent}%</div>
                         <div className="text-xs text-gray-600 dark:text-gray-400">Avg. Savings</div>
                       </div>
                     </div>
@@ -210,7 +210,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
           <Card className="mb-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
             <CardHeader>
               <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                <Users className="h-5 w-5 mr-2 text-amber-600" />
+                <Users className="h-5 w-5 mr-2 text-blue-800" />
                 About
               </CardTitle>
             </CardHeader>
@@ -220,8 +220,8 @@ const AgentProfilePage = ({ agentIdOverride }) => {
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-10 h-10 bg-amber-100 dark:bg-amber-950 rounded-lg flex items-center justify-center">
-                    <Award className="h-5 w-5 text-amber-600" />
+                  <div className="flex-shrink-0 w-10 h-10 bg-amber-100 dark:bg-blue-950 rounded-lg flex items-center justify-center">
+                    <Award className="h-5 w-5 text-blue-800" />
                   </div>
                   <div>
                     <div className="text-sm text-gray-600 dark:text-gray-400">Experience</div>
@@ -229,8 +229,8 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-10 h-10 bg-amber-100 dark:bg-amber-950 rounded-lg flex items-center justify-center">
-                    <Briefcase className="h-5 w-5 text-amber-600" />
+                  <div className="flex-shrink-0 w-10 h-10 bg-amber-100 dark:bg-blue-950 rounded-lg flex items-center justify-center">
+                    <Briefcase className="h-5 w-5 text-blue-800" />
                   </div>
                   <div>
                     <div className="text-sm text-gray-600 dark:text-gray-400">Specializations</div>
@@ -238,8 +238,8 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-10 h-10 bg-amber-100 dark:bg-amber-950 rounded-lg flex items-center justify-center">
-                    <Building2 className="h-5 w-5 text-amber-600" />
+                  <div className="flex-shrink-0 w-10 h-10 bg-amber-100 dark:bg-blue-950 rounded-lg flex items-center justify-center">
+                    <Building2 className="h-5 w-5 text-blue-800" />
                   </div>
                   <div>
                     <div className="text-sm text-gray-600 dark:text-gray-400">Company</div>
@@ -254,7 +254,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
           <Card className="mb-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
             <CardHeader>
               <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                <DollarSign className="h-5 w-5 mr-2 text-amber-600" />
+                <DollarSign className="h-5 w-5 mr-2 text-blue-800" />
                 Services & Pricing
               </CardTitle>
             </CardHeader>
@@ -265,8 +265,8 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                   <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Services Offered</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {agent.services.map((service, idx) => (
-                      <div key={idx} className="flex items-center gap-2 p-3 bg-amber-50 dark:bg-amber-950 rounded-lg border border-amber-200 dark:border-amber-800">
-                        <CheckCircle className="h-4 w-4 text-amber-600 flex-shrink-0" />
+                      <div key={idx} className="flex items-center gap-2 p-3 bg-blue-50 dark:bg-blue-950 rounded-lg border border-amber-200 dark:border-amber-800">
+                        <CheckCircle className="h-4 w-4 text-blue-800 flex-shrink-0" />
                         <span className="text-sm text-gray-900 dark:text-white">{service}</span>
                       </div>
                     ))}
@@ -278,7 +278,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                   <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Fee Structure</h3>
                   <div className="p-4 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700">
                     <div className="flex items-start gap-3">
-                      <FileText className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                      <FileText className="h-5 w-5 text-blue-800 flex-shrink-0 mt-0.5" />
                       <div>
                         <div className="font-semibold text-gray-900 dark:text-white mb-1">{agent.feeModel}</div>
                         <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -296,7 +296,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
           <Card className="mb-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
             <CardHeader>
               <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                <MapPin className="h-5 w-5 mr-2 text-amber-600" />
+                <MapPin className="h-5 w-5 mr-2 text-blue-800" />
                 Coverage & Focus
               </CardTitle>
             </CardHeader>
@@ -307,7 +307,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                   <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Coverage Areas ({agent.coverageAreas.length})</h3>
                   <div className="flex flex-wrap gap-2">
                     {(showAllAreas ? agent.coverageAreas : agent.coverageAreas.slice(0, 8)).map((area, idx) => (
-                      <Badge key={idx} className="bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-400 border-amber-300 dark:border-amber-700">
+                      <Badge key={idx} className="bg-amber-100 dark:bg-blue-950 text-blue-900 dark:text-amber-400 border-blue-300 dark:border-amber-700">
                         {area}
                       </Badge>
                     ))}
@@ -315,7 +315,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                   {agent.coverageAreas.length > 8 && (
                     <button 
                       onClick={() => setShowAllAreas(!showAllAreas)}
-                      className="mt-3 text-sm text-amber-600 hover:text-amber-700 font-medium"
+                      className="mt-3 text-sm text-blue-800 hover:text-blue-900 font-medium"
                     >
                       {showAllAreas ? 'Show less' : `Show ${agent.coverageAreas.length - 8} more areas`}
                     </button>
@@ -330,7 +330,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                     {Object.entries(agent.propertyTypesMix).map(([type, percent]) => (
                       <div key={type} className="text-center p-3 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700">
-                        <div className="text-2xl font-bold text-amber-600">{percent}%</div>
+                        <div className="text-2xl font-bold text-blue-800">{percent}%</div>
                         <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">{type}</div>
                       </div>
                     ))}
@@ -348,7 +348,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                         <div className="w-32 text-sm text-gray-600 dark:text-gray-400 flex-shrink-0">{band}</div>
                         <div className="flex-1 bg-gray-200 dark:bg-gray-700 rounded-full h-6 relative overflow-hidden">
                           <div 
-                            className="bg-amber-500 h-full rounded-full flex items-center justify-end pr-2 transition-all duration-300"
+                            className="bg-blue-800 h-full rounded-full flex items-center justify-end pr-2 transition-all duration-300"
                             style={{ width: `${Math.max(percent, 5)}%` }}
                           >
                             {percent >= 10 && (
@@ -371,36 +371,36 @@ const AgentProfilePage = ({ agentIdOverride }) => {
           <Card className="mb-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
             <CardHeader>
               <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                <BarChart3 className="h-5 w-5 mr-2 text-amber-600" />
+                <BarChart3 className="h-5 w-5 mr-2 text-blue-800" />
                 Performance Metrics
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div className="text-center">
-                  <div className="w-16 h-16 mx-auto bg-amber-100 dark:bg-amber-950 rounded-full flex items-center justify-center mb-3">
-                    <Clock className="h-8 w-8 text-amber-600" />
+                  <div className="w-16 h-16 mx-auto bg-amber-100 dark:bg-blue-950 rounded-full flex items-center justify-center mb-3">
+                    <Clock className="h-8 w-8 text-blue-800" />
                   </div>
                   <div className="text-2xl font-bold text-gray-900 dark:text-white">{agent.medianDaysToSecure}</div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">Median Days to Secure</div>
                 </div>
                 <div className="text-center">
-                  <div className="w-16 h-16 mx-auto bg-amber-100 dark:bg-amber-950 rounded-full flex items-center justify-center mb-3">
-                    <Percent className="h-8 w-8 text-amber-600" />
+                  <div className="w-16 h-16 mx-auto bg-amber-100 dark:bg-blue-950 rounded-full flex items-center justify-center mb-3">
+                    <Percent className="h-8 w-8 text-blue-800" />
                   </div>
                   <div className="text-2xl font-bold text-gray-900 dark:text-white">{agent.avgDiscountPercent}%</div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">Avg. Discount</div>
                 </div>
                 <div className="text-center">
-                  <div className="w-16 h-16 mx-auto bg-amber-100 dark:bg-amber-950 rounded-full flex items-center justify-center mb-3">
-                    <Target className="h-8 w-8 text-amber-600" />
+                  <div className="w-16 h-16 mx-auto bg-amber-100 dark:bg-blue-950 rounded-full flex items-center justify-center mb-3">
+                    <Target className="h-8 w-8 text-blue-800" />
                   </div>
                   <div className="text-2xl font-bold text-gray-900 dark:text-white">{agent.auctionSuccessRatio}%</div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">Auction Success Rate</div>
                 </div>
                 <div className="text-center">
-                  <div className="w-16 h-16 mx-auto bg-amber-100 dark:bg-amber-950 rounded-full flex items-center justify-center mb-3">
-                    <TrendingDown className="h-8 w-8 text-amber-600" />
+                  <div className="w-16 h-16 mx-auto bg-amber-100 dark:bg-blue-950 rounded-full flex items-center justify-center mb-3">
+                    <TrendingDown className="h-8 w-8 text-blue-800" />
                   </div>
                   <div className="text-2xl font-bold text-gray-900 dark:text-white">{agent.offMarketRatio}%</div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">Off-Market Deals</div>
@@ -410,21 +410,21 @@ const AgentProfilePage = ({ agentIdOverride }) => {
               {/* Additional Stats */}
               <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700 grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
-                  <CheckCircle className="h-5 w-5 text-amber-600" />
+                  <CheckCircle className="h-5 w-5 text-blue-800" />
                   <div>
                     <div className="text-xs text-gray-600 dark:text-gray-400">Verified Deals</div>
                     <div className="font-bold text-gray-900 dark:text-white">{agent.verifiedDealsCount}</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
-                  <Star className="h-5 w-5 text-amber-600" />
+                  <Star className="h-5 w-5 text-blue-800" />
                   <div>
                     <div className="text-xs text-gray-600 dark:text-gray-400">Avg. Rating</div>
                     <div className="font-bold text-gray-900 dark:text-white">{agent.rating}/5.0</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
-                  <Users className="h-5 w-5 text-amber-600" />
+                  <Users className="h-5 w-5 text-blue-800" />
                   <div>
                     <div className="text-xs text-gray-600 dark:text-gray-400">Client Reviews</div>
                     <div className="font-bold text-gray-900 dark:text-white">{agent.reviewCount}</div>
@@ -438,7 +438,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
           <Card className="mb-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
             <CardHeader>
               <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                <TrendingUp className="h-5 w-5 mr-2 text-amber-600" />
+                <TrendingUp className="h-5 w-5 mr-2 text-blue-800" />
                 Recent Deals Portfolio
               </CardTitle>
               <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
@@ -463,7 +463,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                       <Link 
                         key={deal.id} 
                         to={`/deal/${deal.id}`}
-                        className="group border border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden hover:border-amber-300 dark:hover:border-amber-600 hover:shadow-lg transition-all"
+                        className="group border border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden hover:border-blue-300 dark:hover:border-blue-800 hover:shadow-lg transition-all"
                       >
                         <img 
                           src={deal.photos[0]} 
@@ -473,7 +473,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                         <div className="p-4">
                           <div className="flex items-start justify-between mb-2">
                             <div className="flex-1 min-w-0">
-                              <h4 className="font-semibold text-gray-900 dark:text-white group-hover:text-amber-600 transition-colors truncate">
+                              <h4 className="font-semibold text-gray-900 dark:text-white group-hover:text-blue-800 transition-colors truncate">
                                 {deal.suburb} {deal.propertyType}
                               </h4>
                               <p className="text-sm text-gray-600 dark:text-gray-400 flex items-center mt-1">
@@ -505,7 +505,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                           </div>
                           
                           <div className="flex items-center justify-between pt-3 border-t border-gray-200 dark:border-gray-700">
-                            <div className="text-lg font-bold text-amber-600">
+                            <div className="text-lg font-bold text-blue-800">
                               {formatDealPrice(deal)}
                             </div>
                             <div className="text-xs text-gray-500 dark:text-gray-400">
@@ -524,7 +524,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                       <Button
                         variant="outline"
                         onClick={() => setDealsToShow(prev => Math.min(prev + 6, agentDeals.length))}
-                        className="border-amber-600 text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950"
+                        className="border-blue-800 text-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950"
                       >
                         Load More Deals ({agentDeals.length - dealsToShow} remaining)
                       </Button>
@@ -535,7 +535,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                       <Button
                         variant="ghost"
                         onClick={() => setDealsToShow(6)}
-                        className="text-gray-600 dark:text-gray-400 hover:text-amber-600"
+                        className="text-gray-600 dark:text-gray-400 hover:text-blue-800"
                       >
                         Show Less
                       </Button>
@@ -550,7 +550,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
           <Card className="mb-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
             <CardHeader>
               <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                <Star className="h-5 w-5 mr-2 text-amber-600" />
+                <Star className="h-5 w-5 mr-2 text-blue-800" />
                 Customer Reviews
               </CardTitle>
               <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
@@ -572,7 +572,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                 <>
                   {/* Top Tags */}
                   {agent.topTags && agent.topTags.length > 0 && (
-                    <div className="mb-6 p-4 bg-amber-50 dark:bg-amber-950 rounded-lg">
+                    <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-950 rounded-lg">
                       <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Most Mentioned Qualities</h4>
                       <div className="flex flex-wrap gap-2">
                         {agent.topTags.map((tag, idx) => (
@@ -620,7 +620,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                       <Button
                         variant="outline"
                         onClick={() => setReviewsToShow(prev => Math.min(prev + 5, agent.reviews.length))}
-                        className="border-amber-600 text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950"
+                        className="border-blue-800 text-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950"
                       >
                         Load More Reviews ({agent.reviews.length - reviewsToShow} remaining)
                       </Button>
@@ -631,7 +631,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                       <Button
                         variant="ghost"
                         onClick={() => setReviewsToShow(3)}
-                        className="text-gray-600 dark:text-gray-400 hover:text-amber-600"
+                        className="text-gray-600 dark:text-gray-400 hover:text-blue-800"
                       >
                         Show Less
                       </Button>
@@ -646,7 +646,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
           <Card className="mb-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
             <CardHeader>
               <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                <ShieldCheck className="h-5 w-5 mr-2 text-amber-600" />
+                <ShieldCheck className="h-5 w-5 mr-2 text-blue-800" />
                 Compliance & Credibility
               </CardTitle>
             </CardHeader>
@@ -693,23 +693,23 @@ const AgentProfilePage = ({ agentIdOverride }) => {
           </Card>
 
           {/* Contact CTA Section */}
-          <Card className="bg-gradient-to-r from-amber-500 to-yellow-600 text-white border-0">
+          <Card className="bg-gradient-to-r from-blue-800 to-blue-600 text-white border-0">
             <CardContent className="p-8 text-center">
               <h2 className="text-3xl font-bold mb-3">Ready to Work with {agent.name.split(' ')[0]}?</h2>
               <p className="text-amber-50 mb-6 max-w-2xl mx-auto">
                 Get in touch to discuss your property goals and see how {agent.name.split(' ')[0]} can help you secure your ideal property.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button size="lg" className="bg-white text-amber-600 hover:bg-gray-100">
+                <Button size="lg" className="bg-white text-blue-800 hover:bg-gray-100">
                   <MessageCircle className="h-5 w-5 mr-2" />
                   Send Message
                 </Button>
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-amber-600">
+                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-blue-800">
                   <Phone className="h-5 w-5 mr-2" />
                   {agent.phone}
                 </Button>
                 <Link to="/compare">
-                  <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-amber-600">
+                  <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-blue-800">
                     <PieChart className="h-5 w-5 mr-2" />
                     Compare Agents
                   </Button>

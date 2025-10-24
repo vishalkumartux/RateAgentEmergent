@@ -163,7 +163,7 @@ const MyProfile = () => {
               <Button 
                 onClick={handleSave}
                 disabled={isSaving}
-                className="bg-amber-600 hover:bg-amber-700 text-white"
+                className="bg-blue-800 hover:bg-blue-900 text-white"
               >
                 <Save className="h-4 w-4 mr-2" />
                 {isSaving ? 'Saving...' : 'Save Changes'}
@@ -187,7 +187,7 @@ const MyProfile = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <User className="h-5 w-5 mr-2 text-amber-600" />
+                  <User className="h-5 w-5 mr-2 text-blue-800" />
                   Basic Information
                 </CardTitle>
               </CardHeader>
@@ -271,7 +271,7 @@ const MyProfile = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Globe className="h-5 w-5 mr-2 text-amber-600" />
+                  <Globe className="h-5 w-5 mr-2 text-blue-800" />
                   Languages
                 </CardTitle>
               </CardHeader>
@@ -312,7 +312,7 @@ const MyProfile = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <MapPin className="h-5 w-5 mr-2 text-amber-600" />
+                  <MapPin className="h-5 w-5 mr-2 text-blue-800" />
                   Coverage Areas
                 </CardTitle>
               </CardHeader>
@@ -353,7 +353,7 @@ const MyProfile = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Briefcase className="h-5 w-5 mr-2 text-amber-600" />
+                  <Briefcase className="h-5 w-5 mr-2 text-blue-800" />
                   Services Offered
                 </CardTitle>
               </CardHeader>
@@ -381,7 +381,7 @@ const MyProfile = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <DollarSign className="h-5 w-5 mr-2 text-amber-600" />
+                  <DollarSign className="h-5 w-5 mr-2 text-blue-800" />
                   Indicative Fee (Optional)
                 </CardTitle>
               </CardHeader>
@@ -409,7 +409,7 @@ const MyProfile = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Eye className="h-5 w-5 mr-2 text-amber-600" />
+                  <Eye className="h-5 w-5 mr-2 text-blue-800" />
                   Profile Visibility
                 </CardTitle>
               </CardHeader>
@@ -436,7 +436,7 @@ const MyProfile = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Award className="h-5 w-5 mr-2 text-amber-600" />
+                  <Award className="h-5 w-5 mr-2 text-blue-800" />
                   Performance Metrics
                 </CardTitle>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -464,10 +464,10 @@ const MyProfile = () => {
                   </p>
                 </div>
 
-                <div className="p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg">
+                <div className="p-4 bg-blue-50 dark:bg-amber-900/20 rounded-lg">
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-sm text-gray-600 dark:text-gray-400">Average Rating</span>
-                    <Star className="h-4 w-4 text-amber-600" />
+                    <Star className="h-4 w-4 text-blue-800" />
                   </div>
                   <div className="flex items-baseline space-x-2">
                     <p className="text-2xl font-bold text-gray-900 dark:text-white">
@@ -486,7 +486,7 @@ const MyProfile = () => {
             </Card>
 
             {/* Help Card */}
-            <Card className="border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-900/20">
+            <Card className="border-amber-200 dark:border-amber-800 bg-blue-50 dark:bg-amber-900/20">
               <CardContent className="p-6">
                 <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
                   Profile Tips

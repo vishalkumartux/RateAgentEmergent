@@ -41,7 +41,7 @@ const HowItWorksPage = () => {
       title: "Read Reviews",
       description: "Read authentic reviews from real clients who have worked with these agents. Get insights into their communication style and expertise.",
       icon: Star,
-      color: "bg-amber-50 text-amber-600",
+      color: "bg-blue-50 text-blue-800",
       features: ["Verified client reviews", "Rating system", "Detailed feedback"]
     },
     {

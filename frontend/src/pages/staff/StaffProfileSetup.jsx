@@ -129,7 +129,7 @@ const StaffProfileSetup = () => {
         {/* Header */}
         <div className="text-center mb-8">
           <div className="w-16 h-16 bg-amber-100 dark:bg-amber-900 rounded-full flex items-center justify-center mx-auto mb-4">
-            <User className="h-8 w-8 text-amber-600" />
+            <User className="h-8 w-8 text-blue-800" />
           </div>
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Create Your Agent Profile
@@ -143,7 +143,7 @@ const StaffProfileSetup = () => {
           {/* Profile Photo */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center text-amber-600">
+              <CardTitle className="flex items-center text-blue-800">
                 <Camera className="h-5 w-5 mr-2" />
                 Profile Photo
               </CardTitle>
@@ -164,7 +164,7 @@ const StaffProfileSetup = () => {
                   </div>
                   <label 
                     htmlFor="photo-upload"
-                    className="absolute bottom-0 right-0 w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center cursor-pointer hover:bg-amber-700 transition-colors"
+                    className="absolute bottom-0 right-0 w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center cursor-pointer hover:bg-blue-900 transition-colors"
                   >
                     <Camera className="h-5 w-5 text-white" />
                   </label>
@@ -197,7 +197,7 @@ const StaffProfileSetup = () => {
           {/* Basic Information */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center text-amber-600">
+              <CardTitle className="flex items-center text-blue-800">
                 <User className="h-5 w-5 mr-2" />
                 Basic Information
               </CardTitle>
@@ -259,7 +259,7 @@ const StaffProfileSetup = () => {
           {/* Professional Information */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center text-amber-600">
+              <CardTitle className="flex items-center text-blue-800">
                 <Award className="h-5 w-5 mr-2" />
                 Professional Information
               </CardTitle>
@@ -306,8 +306,8 @@ const StaffProfileSetup = () => {
                       onClick={() => handleSpecialtyToggle(specialty)}
                       className={`p-3 text-sm rounded-lg border transition-all text-center ${
                         formData.specialties.includes(specialty)
-                          ? 'bg-amber-50 dark:bg-amber-950 border-amber-300 dark:border-amber-700 text-amber-700 dark:text-amber-300'
-                          : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-amber-300 dark:hover:border-amber-700'
+                          ? 'bg-blue-50 dark:bg-blue-950 border-blue-300 dark:border-amber-700 text-blue-900 dark:text-amber-300'
+                          : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-blue-300 dark:hover:border-amber-700'
                       }`}
                     >
                       {specialty}
@@ -321,7 +321,7 @@ const StaffProfileSetup = () => {
           {/* Bio & About */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center text-amber-600">
+              <CardTitle className="flex items-center text-blue-800">
                 <FileText className="h-5 w-5 mr-2" />
                 About You
               </CardTitle>
@@ -373,7 +373,7 @@ const StaffProfileSetup = () => {
             <Button 
               type="submit" 
               disabled={isSubmitting}
-              className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 text-lg"
+              className="bg-blue-800 hover:bg-blue-900 text-white px-8 py-3 text-lg"
             >
               {isSubmitting ? 'Creating Profile...' : (
                 <>

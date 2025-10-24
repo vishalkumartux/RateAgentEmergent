@@ -270,7 +270,7 @@ const OnboardingWizard = () => {
                           isComplete
                             ? 'bg-green-600 text-white'
                             : isCurrent
-                            ? 'bg-amber-600 text-white ring-4 ring-amber-200 dark:ring-amber-900'
+                            ? 'bg-blue-800 text-white ring-4 ring-blue-200 dark:ring-blue-900'
                             : 'bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400'
                         }`}
                       >
@@ -280,7 +280,7 @@ const OnboardingWizard = () => {
                           <Icon className="h-6 w-6" />
                         )}
                       </div>
-                      <span className={`text-xs font-medium ${isCurrent ? 'text-amber-600' : 'text-gray-600 dark:text-gray-400'}`}>
+                      <span className={`text-xs font-medium ${isCurrent ? 'text-blue-800' : 'text-gray-600 dark:text-gray-400'}`}>
                         {step.title}
                       </span>
                     </div>
@@ -300,11 +300,11 @@ const OnboardingWizard = () => {
                 <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                   Profile Completeness
                 </span>
-                <span className="text-sm font-bold text-amber-600">{completeness}%</span>
+                <span className="text-sm font-bold text-blue-800">{completeness}%</span>
               </div>
               <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
                 <div
-                  className="bg-gradient-to-r from-amber-500 to-green-500 h-3 rounded-full transition-all duration-500"
+                  className="bg-gradient-to-r from-blue-800 to-green-500 h-3 rounded-full transition-all duration-500"
                   style={{ width: `${completeness}%` }}
                 />
               </div>
@@ -472,7 +472,7 @@ const OnboardingWizard = () => {
                         placeholder="Enter suburb or region"
                         className="dark:bg-gray-700 dark:text-white"
                       />
-                      <Button onClick={handleAddCoverageArea} type="button" className="bg-amber-600 hover:bg-amber-700">
+                      <Button onClick={handleAddCoverageArea} type="button" className="bg-blue-800 hover:bg-blue-900">
                         Add
                       </Button>
                     </div>
@@ -480,7 +480,7 @@ const OnboardingWizard = () => {
                       {orgData.coverageAreas.map((area, index) => (
                         <Badge
                           key={index}
-                          className="bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-400 pr-1"
+                          className="bg-amber-100 dark:bg-blue-950 text-blue-900 dark:text-amber-400 pr-1"
                         >
                           {area}
                           <button
@@ -669,7 +669,7 @@ const OnboardingWizard = () => {
                     </Button>
                   </div>
 
-                  <div className="p-4 bg-amber-50 dark:bg-amber-950 rounded-lg border border-amber-200 dark:border-amber-800">
+                  <div className="p-4 bg-blue-50 dark:bg-blue-950 rounded-lg border border-amber-200 dark:border-amber-800">
                     <p className="text-sm text-gray-700 dark:text-gray-300">
                       <Users className="h-4 w-4 inline mr-1" />
                       Invites will be stored and you can manage them later from the Staff section
@@ -715,7 +715,7 @@ const OnboardingWizard = () => {
                       <h3 className="font-semibold text-gray-900 dark:text-white mb-3">Coverage Areas ({orgData.coverageAreas.length})</h3>
                       <div className="flex flex-wrap gap-2">
                         {orgData.coverageAreas.map((area, index) => (
-                          <Badge key={index} className="bg-amber-600 text-white">
+                          <Badge key={index} className="bg-blue-800 text-white">
                             {area}
                           </Badge>
                         ))}
@@ -795,7 +795,7 @@ const OnboardingWizard = () => {
               <Button
                 onClick={handleNext}
                 disabled={!isStepComplete(currentStep)}
-                className="bg-amber-600 hover:bg-amber-700 text-white"
+                className="bg-blue-800 hover:bg-blue-900 text-white"
               >
                 Next
                 <ChevronRight className="h-4 w-4 ml-2" />
@@ -807,7 +807,7 @@ const OnboardingWizard = () => {
           <div className="text-center mt-6">
             <button
               onClick={() => navigate('/admin/dashboard')}
-              className="text-sm text-gray-600 dark:text-gray-400 hover:text-amber-600"
+              className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-800"
             >
               Save & continue later
             </button>

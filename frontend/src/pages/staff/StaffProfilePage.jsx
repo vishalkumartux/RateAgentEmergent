@@ -50,7 +50,7 @@ const StaffProfilePage = () => {
   const performanceStats = [
     { label: 'Active Listings', value: '12', icon: BarChart3, color: 'text-emerald-600' },
     { label: 'Properties Sold (YTD)', value: '24', icon: TrendingUp, color: 'text-blue-600' },
-    { label: 'Average Rating', value: '4.8', icon: Star, color: 'text-amber-600' },
+    { label: 'Average Rating', value: '4.8', icon: Star, color: 'text-blue-800' },
     { label: 'Avg Days on Market', value: '23', icon: Clock, color: 'text-purple-600' }
   ];
   
@@ -158,7 +158,7 @@ const StaffProfilePage = () => {
             </div>
             <div className="mt-4 sm:mt-0 flex space-x-3">
               <Link to="/staff/deals">
-                <Button variant="outline" className="border-amber-600 text-amber-600 hover:bg-amber-50">
+                <Button variant="outline" className="border-blue-800 text-blue-800 hover:bg-blue-50">
                   <BarChart3 className="h-4 w-4 mr-2" />
                   My Deals
                 </Button>
@@ -166,7 +166,7 @@ const StaffProfilePage = () => {
               {!isEditing ? (
                 <Button
                   onClick={() => setIsEditing(true)}
-                  className="bg-amber-600 hover:bg-amber-700 text-white"
+                  className="bg-blue-800 hover:bg-blue-900 text-white"
                 >
                   <Edit className="h-4 w-4 mr-2" />
                   Edit Profile
@@ -175,7 +175,7 @@ const StaffProfilePage = () => {
                 <div className="flex space-x-2">
                   <Button
                     onClick={handleSave}
-                    className="bg-amber-600 hover:bg-amber-700 text-white"
+                    className="bg-blue-800 hover:bg-blue-900 text-white"
                   >
                     <Save className="h-4 w-4 mr-2" />
                     Save Changes
@@ -239,7 +239,7 @@ const StaffProfilePage = () => {
                 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {profileData.specialties.map((specialty, index) => (
-                    <Badge key={index} variant="secondary" className="bg-amber-50 dark:bg-amber-950 text-amber-700 dark:text-amber-300">
+                    <Badge key={index} variant="secondary" className="bg-blue-50 dark:bg-blue-950 text-blue-900 dark:text-amber-300">
                       {specialty}
                     </Badge>
                   ))}
@@ -298,7 +298,7 @@ const StaffProfilePage = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <User className="h-5 w-5 mr-2 text-amber-600" />
+                  <User className="h-5 w-5 mr-2 text-blue-800" />
                   Agent Profile Information
                 </CardTitle>
               </CardHeader>
@@ -374,8 +374,8 @@ const StaffProfilePage = () => {
                           onClick={() => handleSpecialtyToggle(specialty)}
                           className={`p-3 text-sm rounded-lg border transition-all text-center ${
                             profileData.specialties.includes(specialty)
-                              ? 'bg-amber-50 dark:bg-amber-950 border-amber-300 dark:border-amber-700 text-amber-700 dark:text-amber-300'
-                              : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-amber-300'
+                              ? 'bg-blue-50 dark:bg-blue-950 border-blue-300 dark:border-amber-700 text-blue-900 dark:text-amber-300'
+                              : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-blue-300'
                           }`}
                         >
                           {specialty}
@@ -394,7 +394,7 @@ const StaffProfilePage = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <Target className="h-5 w-5 mr-2 text-amber-600" />
+                    <Target className="h-5 w-5 mr-2 text-blue-800" />
                     Goals & Targets
                   </CardTitle>
                 </CardHeader>
@@ -418,7 +418,7 @@ const StaffProfilePage = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <TrendingUp className="h-5 w-5 mr-2 text-amber-600" />
+                    <TrendingUp className="h-5 w-5 mr-2 text-blue-800" />
                     Monthly Metrics
                   </CardTitle>
                 </CardHeader>
@@ -448,11 +448,11 @@ const StaffProfilePage = () => {
               <CardHeader>
                 <CardTitle className="flex items-center justify-between">
                   <div className="flex items-center">
-                    <BarChart3 className="h-5 w-5 mr-2 text-amber-600" />
+                    <BarChart3 className="h-5 w-5 mr-2 text-blue-800" />
                     Recent Deals
                   </div>
                   <Link to="/staff/deals">
-                    <Button size="sm" className="bg-amber-600 hover:bg-amber-700 text-white">
+                    <Button size="sm" className="bg-blue-800 hover:bg-blue-900 text-white">
                       View All Deals
                     </Button>
                   </Link>
@@ -474,7 +474,7 @@ const StaffProfilePage = () => {
                         className={`${
                           deal.status === 'Sold' ? 'bg-green-600 text-white' :
                           deal.status === 'Under Contract' ? 'bg-blue-600 text-white' :
-                          'bg-amber-600 text-white'
+                          'bg-blue-800 text-white'
                         }`}
                       >
                         {deal.status}
@@ -491,7 +491,7 @@ const StaffProfilePage = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Star className="h-5 w-5 mr-2 text-amber-600" />
+                  <Star className="h-5 w-5 mr-2 text-blue-800" />
                   Client Testimonials
                 </CardTitle>
               </CardHeader>

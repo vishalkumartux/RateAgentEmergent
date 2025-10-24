@@ -129,8 +129,8 @@ const AgentDashboard = () => {
       title: 'Average Rating',
       value: agentStats.averageRating.toFixed(1),
       icon: Star,
-      color: 'text-amber-600',
-      bgColor: 'bg-amber-50 dark:bg-amber-900/20',
+      color: 'text-blue-800',
+      bgColor: 'bg-blue-50 dark:bg-amber-900/20',
       change: `${agentStats.totalReviews} total reviews`
     },
     {
@@ -158,7 +158,7 @@ const AgentDashboard = () => {
               </p>
             </div>
             <Link to="/staff/deals/add">
-              <Button className="bg-amber-600 hover:bg-amber-700 text-white">
+              <Button className="bg-blue-800 hover:bg-blue-900 text-white">
                 <Plus className="h-4 w-4 mr-2" />
                 Add New Deal
               </Button>
@@ -200,11 +200,11 @@ const AgentDashboard = () => {
               <CardHeader>
                 <div className="flex items-center justify-between">
                   <CardTitle className="flex items-center">
-                    <Home className="h-5 w-5 mr-2 text-amber-600" />
+                    <Home className="h-5 w-5 mr-2 text-blue-800" />
                     My Published Deals
                   </CardTitle>
                   <Link to="/staff/deals">
-                    <Button variant="ghost" size="sm" className="text-amber-600 hover:text-amber-700">
+                    <Button variant="ghost" size="sm" className="text-blue-800 hover:text-blue-900">
                       View All
                       <ArrowRight className="h-4 w-4 ml-1" />
                     </Button>
@@ -216,7 +216,7 @@ const AgentDashboard = () => {
                   {myDeals.map((deal) => (
                     <div 
                       key={deal.id} 
-                      className="flex items-start justify-between p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-amber-300 dark:hover:border-amber-700 transition-colors"
+                      className="flex items-start justify-between p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-300 dark:hover:border-amber-700 transition-colors"
                     >
                       <div className="flex-1">
                         <div className="flex items-center space-x-2 mb-2">
@@ -251,7 +251,7 @@ const AgentDashboard = () => {
                         </div>
                       </div>
                       <div className="text-right ml-4">
-                        <p className="text-lg font-bold text-amber-600 dark:text-amber-400">
+                        <p className="text-lg font-bold text-blue-800 dark:text-amber-400">
                           {deal.price}
                         </p>
                         <p className="text-xs text-gray-500 dark:text-gray-500">
@@ -269,7 +269,7 @@ const AgentDashboard = () => {
                         Start adding your successful deals to showcase your track record
                       </p>
                       <Link to="/staff/deals/add">
-                        <Button className="bg-amber-600 hover:bg-amber-700 text-white">
+                        <Button className="bg-blue-800 hover:bg-blue-900 text-white">
                           <Plus className="h-4 w-4 mr-2" />
                           Add Your First Deal
                         </Button>
@@ -286,7 +286,7 @@ const AgentDashboard = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Star className="h-5 w-5 mr-2 text-amber-600" />
+                  <Star className="h-5 w-5 mr-2 text-blue-800" />
                   Latest Reviews
                 </CardTitle>
               </CardHeader>
@@ -352,7 +352,7 @@ const AgentDashboard = () => {
             <Card className="mt-6">
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <TrendingUp className="h-5 w-5 mr-2 text-amber-600" />
+                  <TrendingUp className="h-5 w-5 mr-2 text-blue-800" />
                   Quick Actions
                 </CardTitle>
               </CardHeader>

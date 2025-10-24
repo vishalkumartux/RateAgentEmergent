@@ -78,7 +78,7 @@ const AboutPage = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto">
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-                Transforming How People <span className="text-amber-600">Find Agents</span>
+                Transforming How People <span className="text-blue-800">Find Agents</span>
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
                 AgentRate was founded on a simple belief: finding the right real estate agent shouldn't be a gamble. 
@@ -104,7 +104,7 @@ const AboutPage = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold text-amber-600 mb-2">{stat.value}</div>
+                  <div className="text-4xl md:text-5xl font-bold text-blue-800 mb-2">{stat.value}</div>
                   <div className="text-gray-600 dark:text-gray-400">{stat.label}</div>
                 </div>
               ))}
@@ -129,7 +129,7 @@ const AboutPage = () => {
                   <Card key={index} className="text-center hover:shadow-lg transition-shadow bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700">
                     <CardContent className="p-6">
                       <div className="w-16 h-16 bg-amber-100 dark:bg-amber-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <Icon className="h-8 w-8 text-amber-600" />
+                        <Icon className="h-8 w-8 text-blue-800" />
                       </div>
                       <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">{value.title}</h3>
                       <p className="text-gray-600 dark:text-gray-300">{value.description}</p>
@@ -161,7 +161,7 @@ const AboutPage = () => {
                       className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-amber-100 dark:border-amber-900"
                     />
                     <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">{member.name}</h3>
-                    <p className="text-amber-600 font-medium mb-3">{member.role}</p>
+                    <p className="text-blue-800 font-medium mb-3">{member.role}</p>
                     <p className="text-gray-600 dark:text-gray-400 text-sm">{member.bio}</p>
                   </CardContent>
                 </Card>
@@ -171,7 +171,7 @@ const AboutPage = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-amber-600 to-yellow-600 dark:from-amber-700 dark:to-yellow-700">
+        <section className="py-16 bg-gradient-to-r from-amber-600 to-blue-600 dark:from-amber-700 dark:to-yellow-700">
           <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
             <h2 className="text-4xl font-bold text-white mb-4">
               Ready to Find Your Perfect Agent?
@@ -181,13 +181,13 @@ const AboutPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/agents">
-                <Button size="lg" className="bg-white text-amber-600 hover:bg-gray-50 px-8">
+                <Button size="lg" className="bg-white text-blue-800 hover:bg-gray-50 px-8">
                   Browse Agents
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
               <Link to="/deals">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-amber-600 px-8">
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-800 px-8">
                   View Deals
                 </Button>
               </Link>
