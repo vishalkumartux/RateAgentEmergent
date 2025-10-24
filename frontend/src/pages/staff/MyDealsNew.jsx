@@ -504,18 +504,18 @@ const MyDealsNew = () => {
                       <div className="flex gap-2">
                         <Link to={`/staff/deals/${deal.id}`} className="flex-1">
                           <Button variant="outline" size="sm" className="w-full">
+                            <Eye className="h-4 w-4 mr-1" />
+                            View
+                          </Button>
+                        </Link>
+                        <Link to={`/staff/deals/${deal.id}/edit`} className="flex-1">
+                          <Button variant="outline" size="sm" className="w-full">
                             <Edit className="h-4 w-4 mr-1" />
                             Edit
                           </Button>
                         </Link>
-                        <Link to={`/staff/deals/${deal.id}?preview=true`} className="flex-1">
-                          <Button variant="outline" size="sm" className="w-full">
-                            <Eye className="h-4 w-4 mr-1" />
-                            Preview
-                          </Button>
-                        </Link>
                         {deal.status === 'Draft' && (
-                          <Button size="sm" className="bg-amber-600 hover:bg-amber-700">
+                          <Button size="sm" className="bg-amber-600 hover:bg-amber-700" title="Publish Deal">
                             <Upload className="h-4 w-4" />
                           </Button>
                         )}
