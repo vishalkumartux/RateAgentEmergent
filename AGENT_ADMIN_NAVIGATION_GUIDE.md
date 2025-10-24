@@ -428,5 +428,5 @@ Login → Agent Dashboard
 
 ---
 
-Last Updated: October 2024
-Version: 1.0
+Last Updated: October 24, 2024
+Version: 1.1 - Fixed preview mode navigation to stay within agent/admin area
