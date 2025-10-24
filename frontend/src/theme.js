@@ -110,22 +110,22 @@ export const colors = {
 
 export const buttons = {
   // Primary Button (Main CTAs - Navy Blue)
-  primary: `${colors.primary.bg} ${colors.primary.bgHover} ${colors.primary.bgDark} ${colors.primary.bgDarkHover} text-white`,
+  primary: `${colors.primary.bg} ${colors.primary.bgHover} ${colors.primary.bgDark} ${colors.primary.bgDarkHover} text-white hover:text-white`,
   
   // Success Button (Publish, Verify, Complete - Green)
-  success: `${colors.success.bg} ${colors.success.bgHover} ${colors.success.bgDark} ${colors.success.bgDarkHover} text-white`,
+  success: `${colors.success.bg} ${colors.success.bgHover} ${colors.success.bgDark} ${colors.success.bgDarkHover} text-white hover:text-white`,
   
   // Secondary Button (Outlined)
-  secondary: `border-2 ${colors.primary.border} ${colors.primary.text} hover:bg-blue-50 ${colors.primary.borderDark} ${colors.primary.textDark} dark:hover:bg-blue-950`,
+  secondary: `border-2 ${colors.primary.border} ${colors.primary.text} hover:bg-blue-800 hover:text-white ${colors.primary.borderDark} ${colors.primary.textDark} dark:hover:bg-blue-700 dark:hover:text-white`,
   
   // Ghost Button (Minimal)
-  ghost: `${colors.secondary.text} hover:bg-slate-100 ${colors.secondary.textDark} dark:hover:bg-slate-800`,
+  ghost: `${colors.secondary.text} hover:bg-slate-200 hover:text-slate-900 ${colors.secondary.textDark} dark:hover:bg-slate-700 dark:hover:text-white`,
   
   // Destructive Button (Delete, Remove)
-  destructive: `${colors.error.bg} ${colors.error.bgHover} ${colors.error.bgDark} text-white`,
+  destructive: `${colors.error.bg} ${colors.error.bgHover} ${colors.error.bgDark} text-white hover:text-white`,
   
   // Teal Button (Secondary Actions)
-  teal: `${colors.teal.bg} ${colors.teal.bgHover} ${colors.teal.bgDark} text-white`,
+  teal: `${colors.teal.bg} ${colors.teal.bgHover} ${colors.teal.bgDark} text-white hover:text-white`,
 };
 
 // ==================== BADGE STYLES ====================
