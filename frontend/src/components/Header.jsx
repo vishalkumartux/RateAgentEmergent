@@ -295,12 +295,20 @@ const Header = () => {
                     </Button>
                   </Link>
                   {(isAdmin || user?.role === 'agency_staff') && (
-                    <Link to="/staff/deals" onClick={() => setIsMobileMenuOpen(false)}>
-                      <Button variant="ghost" className="w-full justify-start text-gray-600 dark:text-gray-300">
-                        <BarChart3 className="h-4 w-4 mr-3" />
-                        My Deals
-                      </Button>
-                    </Link>
+                    <>
+                      <Link to="/staff/deals" onClick={() => setIsMobileMenuOpen(false)}>
+                        <Button variant="ghost" className="w-full justify-start text-gray-600 dark:text-gray-300">
+                          <BarChart3 className="h-4 w-4 mr-3" />
+                          My Deals
+                        </Button>
+                      </Link>
+                      <Link to="/staff/reviews" onClick={() => setIsMobileMenuOpen(false)}>
+                        <Button variant="ghost" className="w-full justify-start text-gray-600 dark:text-gray-300">
+                          <Star className="h-4 w-4 mr-3" />
+                          My Reviews
+                        </Button>
+                      </Link>
+                    </>
                   )}
                   <Button
                     onClick={handleLogout}
