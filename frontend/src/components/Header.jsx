@@ -41,14 +41,14 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-gradient-to-r from-amber-500 to-yellow-600 rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-transform duration-200">
+            <div className={`w-10 h-10 bg-gradient-to-r ${colors.primary.bg} ${colors.info.bg} rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-transform duration-200`}>
               <Star className="h-5 w-5 text-white" />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-amber-600 transition-colors">
+              <span className={`text-xl font-bold ${text.primary} group-hover:${colors.primary.text} transition-colors`}>
                 AgentRate
               </span>
-              <span className="text-xs text-gray-500 dark:text-gray-400 -mt-1">Find Your Perfect Agent</span>
+              <span className={`text-xs ${text.secondary} -mt-1`}>Find Your Perfect Agent</span>
             </div>
           </Link>
 
