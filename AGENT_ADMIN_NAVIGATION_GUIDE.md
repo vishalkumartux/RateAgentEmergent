@@ -198,12 +198,13 @@ Login → Agent Dashboard
 
 ## 👁️ Preview Mode Flow
 
+### Deal Preview Mode
 **Route:** `/staff/deals/:id?preview=true`
 
-### Preview Mode Features:
+#### Preview Mode Features:
 - **Blue banner at top:** "Preview Mode - Public View"
 - **Renders exact public DealDetailPage** component
-- **Exit Preview button** → Returns to `/staff/deals`
+- **Exit Preview button** → Returns to `/staff/deals/:id` (Deal Details page)
 - **No edit capabilities** (shows how buyers see it)
 
 **What Agents See:**
@@ -213,6 +214,21 @@ Login → Agent Dashboard
 - All public features (Save Deal, Share, etc.)
 - Similar deals by same agent
 - All buyer-facing elements
+
+### Profile Preview Mode
+**Route:** `/staff/my-profile?preview=true`
+
+#### Preview Mode Features:
+- **Blue banner at top:** "Preview Mode - Public View"
+- **Renders exact public AgentProfilePage** component
+- **Exit Preview button** → Returns to `/staff/my-profile` (Edit Profile page)
+- **No edit capabilities** (shows how buyers see the profile)
+
+**What Agents See:**
+- Exact public agent profile layout
+- All sections (About, Services, Portfolio, Reviews, etc.)
+- Public visibility settings applied
+- All buyer-facing elements as they appear on `/agent/:id`
 
 ---
 
