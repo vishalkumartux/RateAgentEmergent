@@ -325,7 +325,7 @@ Login → Admin Dashboard
   → Click "Preview Public"
   → See exact buyer view with blue banner
   → Looks good!
-  → Click "Exit Preview"
+  → Click "Exit Preview" (returns to Deal Details)
   → Click "Edit Deal"
   → Go to Step 6
   → Click "Publish Deal"
@@ -340,8 +340,9 @@ Login → Agent Dashboard
   → Add new coverage area
   → Click "Save Changes"
   → Click "Preview Public Profile"
-  → See how buyers see profile
-  → Return via browser back
+  → See how buyers see profile (stays in /staff/my-profile?preview=true)
+  → Click "Exit Preview"
+  → Returns to Edit Profile page
 ```
 
 ---
