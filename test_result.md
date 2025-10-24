@@ -109,6 +109,78 @@ user_problem_statement: |
   3. My Profile Page: Profile management for agents/admins (PENDING - Phase 4)
 
 frontend:
+  - task: "My Reviews Page - Reputation Management"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/staff/MyReviews.jsx, /app/frontend/src/App.jsx, /app/frontend/src/components/Header.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: |
+          ✅ MY REVIEWS PAGE COMPLETE
+          
+          **Purpose:** Reputation management for public pages
+          
+          **Features Implemented:**
+          1. Stats Dashboard:
+             - Average Rating (4.3)
+             - Total Reviews (6)
+             - Pending Replies (3)
+          
+          2. Shareable Review Link:
+             - Auto-generated link to public review submission
+             - Copy to clipboard functionality
+             - Social media share buttons (Facebook, Twitter, LinkedIn, Email)
+             - No invite campaigns (MVP approach)
+          
+          3. Three Tabs:
+             - Published (3): All public reviews
+             - New (2): Reviews waiting for reply (with badge)
+             - Flagged (1): Inappropriate/inaccurate reviews (with badge)
+          
+          4. Review Cards:
+             - Reviewer initials (privacy-safe)
+             - Star rating, verified badge
+             - Service type, transaction type, budget band, suburb
+             - Review tags
+             - Agent reply section (if replied)
+             - Actions: Reply, Flag/Unflag
+          
+          5. Reply Functionality:
+             - Inline form (500 char limit)
+             - Public reply visible on agent profile
+             - Character counter
+             - Post/Cancel actions
+          
+          6. Flag Functionality:
+             - Flag form with optional reason (200 chars)
+             - Visual indicator (red border)
+             - Unflag option
+             - Explanation that reviews remain public until admin review
+          
+          **Navigation:**
+          - Route: /staff/reviews
+          - Added to Header dropdown (desktop & mobile)
+          - Accessible to both Admin and Agent users
+          
+          **UI/UX:**
+          - Tabs with badge counts for New and Flagged
+          - Color coding (amber, blue, red, green)
+          - Empty states for each tab
+          - Responsive design
+          - Dark mode support
+          
+          **Drives Public Pages:**
+          - Reviews appear on agent profile
+          - Average rating calculation
+          - Review count display
+          - Top tags from reviews
+          
+          Tested and working perfectly with mock data.
+
   - task: "Navigation Fixes - Preview Mode Redirects"
     implemented: true
     working: true
