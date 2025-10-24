@@ -88,7 +88,7 @@ const Header = () => {
             {!isAuthenticated ? (
               <>
                 <Link to="/login">
-                  <Button variant="ghost" size="sm" className="text-gray-600 dark:text-gray-300 hover:bg-slate-200 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">
+                  <Button variant="ghost" size="sm" className="text-gray-600 dark:text-gray-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black">
                     Sign In
                   </Button>
                 </Link>
