@@ -137,7 +137,7 @@ const MyProfile = () => {
           </div>
           
           {/* Render the actual public agent profile page */}
-          <AgentProfilePage />
+          <AgentProfilePage agentIdOverride={1} />
         </div>
       ) : (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
