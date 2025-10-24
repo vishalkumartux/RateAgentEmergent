@@ -36,8 +36,9 @@ import {
 import { mockAgents } from '../mock/agentData';
 import { getDealsByAgentId, formatDealPrice, getDaysAgo } from '../mock/dealData';
 
-const AgentProfilePage = () => {
-  const { id } = useParams();
+const AgentProfilePage = ({ agentIdOverride }) => {
+  const { id: paramId } = useParams();
+  const id = agentIdOverride || paramId;
   const agent = mockAgents.find(a => a.id === parseInt(id));
   const [dealsToShow, setDealsToShow] = useState(6);
   const [reviewsToShow, setReviewsToShow] = useState(3);
