@@ -60,9 +60,9 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:bg-blue-800 hover:text-white dark:hover:bg-blue-700 ${
+                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:bg-green-700 hover:text-white dark:hover:bg-green-600 ${
                     isActive(item.href)
-                      ? 'text-white bg-blue-800 dark:bg-blue-700'
+                      ? 'text-white bg-green-700 dark:bg-blue-700'
                       : 'text-gray-600 dark:text-gray-300'
                   }`}
                 >
@@ -93,12 +93,12 @@ const Header = () => {
                   </Button>
                 </Link>
                 <Link to="/public-signup">
-                  <Button variant="outline" size="sm" className="border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-white dark:border-blue-600 dark:text-blue-400 dark:hover:bg-blue-700 dark:hover:text-white">
+                  <Button variant="outline" size="sm" className="border-black text-black hover:bg-green-700 hover:text-white dark:border-gray-300 dark:text-white dark:hover:bg-green-600 dark:hover:text-white">
                     Sign Up
                   </Button>
                 </Link>
                 <Link to="/register">
-                  <Button size="sm" className="bg-blue-800 hover:bg-blue-900 text-white hover:text-white px-6 dark:bg-blue-700 dark:hover:bg-blue-800">
+                  <Button size="sm" className="bg-green-700 hover:bg-green-800 text-white hover:text-white px-6 dark:bg-blue-700 dark:hover:bg-green-700">
                     List Your Agency
                   </Button>
                 </Link>
@@ -109,7 +109,7 @@ const Header = () => {
                   variant="ghost"
                   size="sm"
                   onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                  className="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-blue-800"
+                  className="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-black"
                 >
                   <User className="h-4 w-4" />
                   <span>{user.name}</span>
@@ -222,8 +222,8 @@ const Header = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`flex items-center space-x-3 px-4 py-3 rounded-lg font-medium transition-all ${
                     isActive(item.href)
-                      ? 'text-white bg-blue-800 dark:bg-blue-700'
-                      : 'text-gray-600 dark:text-gray-300 hover:bg-blue-800 hover:text-white dark:hover:bg-blue-700'
+                      ? 'text-white bg-green-700 dark:bg-blue-700'
+                      : 'text-gray-600 dark:text-gray-300 hover:bg-green-700 hover:text-white dark:hover:bg-green-600'
                   }`}
                 >
                   <Icon className="h-5 w-5" />
@@ -249,12 +249,12 @@ const Header = () => {
                     </Button>
                   </Link>
                   <Link to="/public-signup">
-                    <Button variant="outline" className="w-full border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-white dark:border-blue-600 dark:text-blue-400 dark:hover:bg-blue-700 dark:hover:text-white">
+                    <Button variant="outline" className="w-full border-black text-black hover:bg-green-700 hover:text-white dark:border-gray-300 dark:text-white dark:hover:bg-green-600 dark:hover:text-white">
                       Sign Up
                     </Button>
                   </Link>
                   <Link to="/register">
-                    <Button className="w-full bg-blue-800 hover:bg-blue-900 text-white hover:text-white dark:bg-blue-700 dark:hover:bg-blue-800">
+                    <Button className="w-full bg-green-700 hover:bg-green-800 text-white hover:text-white dark:bg-blue-700 dark:hover:bg-green-700">
                       List Your Agency
                     </Button>
                   </Link>

@@ -199,7 +199,7 @@ const OrgSettings = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <Building2 className="h-5 w-5 mr-2 text-blue-800" />
+                    <Building2 className="h-5 w-5 mr-2 text-black" />
                     Business Information
                   </CardTitle>
                   <CardDescription>
@@ -324,7 +324,7 @@ const OrgSettings = () => {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center">
-                      <MapPin className="h-5 w-5 mr-2 text-blue-800" />
+                      <MapPin className="h-5 w-5 mr-2 text-black" />
                       Service Regions
                     </CardTitle>
                     <CardDescription>
@@ -369,7 +369,7 @@ const OrgSettings = () => {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center">
-                      <Home className="h-5 w-5 mr-2 text-blue-800" />
+                      <Home className="h-5 w-5 mr-2 text-black" />
                       Property Types
                     </CardTitle>
                     <CardDescription>
@@ -400,7 +400,7 @@ const OrgSettings = () => {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center">
-                      <DollarSign className="h-5 w-5 mr-2 text-blue-800" />
+                      <DollarSign className="h-5 w-5 mr-2 text-black" />
                       Price Range Focus
                     </CardTitle>
                     <CardDescription>
@@ -449,7 +449,7 @@ const OrgSettings = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <Shield className="h-5 w-5 mr-2 text-blue-800" />
+                    <Shield className="h-5 w-5 mr-2 text-black" />
                     Privacy & Compliance Settings
                   </CardTitle>
                   <CardDescription>
@@ -534,12 +534,12 @@ const OrgSettings = () => {
                   </div>
 
                   {/* Compliance Notice */}
-                  <div className="p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                  <div className="p-4 bg-gray-50 dark:bg-blue-900/20 border border-blue-200 dark:border-black rounded-lg">
                     <div className="flex">
-                      <Lock className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-3 mt-0.5" />
+                      <Lock className="h-5 w-5 text-blue-600 dark:text-white mr-3 mt-0.5" />
                       <div>
-                        <h4 className="font-medium text-blue-900 dark:text-blue-200 mb-1">Data Security</h4>
-                        <p className="text-sm text-blue-800 dark:text-blue-300">
+                        <h4 className="font-medium text-black dark:text-blue-200 mb-1">Data Security</h4>
+                        <p className="text-sm text-black dark:text-blue-300">
                           All user data is encrypted at rest and in transit. We comply with Australian Privacy Principles (APPs) and GDPR requirements.
                         </p>
                       </div>
@@ -554,7 +554,7 @@ const OrgSettings = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <Bell className="h-5 w-5 mr-2 text-blue-800" />
+                    <Bell className="h-5 w-5 mr-2 text-black" />
                     Lead Routing Preferences
                   </CardTitle>
                   <CardDescription>
@@ -626,9 +626,9 @@ const OrgSettings = () => {
                   </div>
 
                   {/* Info Box */}
-                  <div className="p-4 bg-blue-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+                  <div className="p-4 bg-gray-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
                     <div className="flex">
-                      <Users className="h-5 w-5 text-blue-800 dark:text-amber-400 mr-3 mt-0.5" />
+                      <Users className="h-5 w-5 text-black dark:text-amber-400 mr-3 mt-0.5" />
                       <div>
                         <h4 className="font-medium text-amber-900 dark:text-amber-200 mb-1">Team Performance</h4>
                         <p className="text-sm text-amber-800 dark:text-amber-300">
@@ -646,7 +646,7 @@ const OrgSettings = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <CreditCard className="h-5 w-5 mr-2 text-blue-800" />
+                    <CreditCard className="h-5 w-5 mr-2 text-black" />
                     Subscription & Billing
                   </CardTitle>
                   <CardDescription>
@@ -659,7 +659,7 @@ const OrgSettings = () => {
                     <div className="flex items-center justify-between mb-4">
                       <div>
                         <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{subscription.plan}</h3>
-                        <p className="text-blue-900 dark:text-amber-300 font-medium">{subscription.amount}</p>
+                        <p className="text-black dark:text-amber-300 font-medium">{subscription.amount}</p>
                       </div>
                       <Badge className="bg-green-600 text-white px-3 py-1">
                         <CheckCircle className="h-3 w-3 mr-1 inline" />
@@ -707,8 +707,8 @@ const OrgSettings = () => {
                   </div>
 
                   {/* Support Notice */}
-                  <div className="p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
-                    <p className="text-sm text-blue-800 dark:text-blue-300">
+                  <div className="p-4 bg-gray-50 dark:bg-blue-900/20 border border-blue-200 dark:border-black rounded-lg">
+                    <p className="text-sm text-black dark:text-blue-300">
                       Need help with billing? <a href="/contact" className="font-semibold underline">Contact our support team</a>
                     </p>
                   </div>
@@ -726,7 +726,7 @@ const OrgSettings = () => {
                   <Button
                     onClick={handleSave}
                     disabled={isSaving}
-                    className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white"
+                    className="bg-green-700 hover:bg-green-800 hover:text-white text-white"
                   >
                     <Save className="h-4 w-4 mr-2" />
                     {isSaving ? 'Saving...' : 'Save Changes'}

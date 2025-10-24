@@ -262,7 +262,7 @@ const AddEditDeal = () => {
                         isCompleted
                           ? 'bg-green-600 text-white'
                           : isActive
-                          ? 'bg-blue-800 text-white'
+                          ? 'bg-green-700 text-white'
                           : 'bg-gray-200 dark:bg-gray-700 text-gray-400'
                       }`}
                     >
@@ -274,7 +274,7 @@ const AddEditDeal = () => {
                     </button>
                     <div className="text-center">
                       <p className={`text-sm font-semibold ${
-                        isActive ? 'text-blue-800 dark:text-amber-400' : 'text-gray-600 dark:text-gray-400'
+                        isActive ? 'text-black dark:text-amber-400' : 'text-gray-600 dark:text-gray-400'
                       }`}>
                         {step.title}
                       </p>
@@ -401,7 +401,7 @@ const AddEditDeal = () => {
                         onClick={() => setFormData({...formData, propertyType: type})}
                         className={`p-4 border-2 rounded-lg text-center transition-colors ${
                           formData.propertyType === type
-                            ? 'border-blue-800 bg-blue-50 dark:bg-amber-900/20 text-blue-900 dark:text-amber-400'
+                            ? 'border-black bg-gray-50 dark:bg-amber-900/20 text-black dark:text-amber-400'
                             : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                         }`}
                       >
@@ -456,10 +456,10 @@ const AddEditDeal = () => {
                     <p className="text-red-500 text-sm mt-1">{errors.streetAddress}</p>
                   )}
                   
-                  <div className="flex items-center justify-between mt-3 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                  <div className="flex items-center justify-between mt-3 p-3 bg-gray-50 dark:bg-blue-900/20 border border-blue-200 dark:border-black rounded-lg">
                     <div className="flex-1">
                       <div className="flex items-center">
-                        <Info className="h-4 w-4 text-blue-600 dark:text-blue-400 mr-2" />
+                        <Info className="h-4 w-4 text-blue-600 dark:text-white mr-2" />
                         <span className="text-sm font-medium text-gray-900 dark:text-white">
                           Mask street number for privacy
                         </span>
@@ -500,7 +500,7 @@ const AddEditDeal = () => {
                         onClick={() => setFormData({...formData, method})}
                         className={`p-4 border-2 rounded-lg text-center transition-colors ${
                           formData.method === method
-                            ? 'border-blue-800 bg-blue-50 dark:bg-amber-900/20 text-blue-900 dark:text-amber-400'
+                            ? 'border-black bg-gray-50 dark:bg-amber-900/20 text-black dark:text-amber-400'
                             : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                         }`}
                       >
@@ -561,7 +561,7 @@ const AddEditDeal = () => {
                   </p>
                   <div className="flex flex-wrap gap-2 mb-3">
                     {formData.strategyTags.map(tag => (
-                      <Badge key={tag} className="bg-blue-800 text-white">
+                      <Badge key={tag} className="bg-green-700 text-white">
                         {tag}
                         <button
                           onClick={() => removeStrategyTag(tag)}
@@ -579,7 +579,7 @@ const AddEditDeal = () => {
                           key={tag}
                           type="button"
                           onClick={() => addStrategyTag(tag)}
-                          className="px-3 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-full hover:border-blue-700 hover:text-blue-800 transition-colors"
+                          className="px-3 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-full hover:border-blue-700 hover:text-black transition-colors"
                         >
                           + {tag}
                         </button>
@@ -694,8 +694,8 @@ const AddEditDeal = () => {
 
                   {/* Auto-calculated Yield */}
                   {grossYield && (
-                    <div className="mt-3 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
-                      <p className="text-sm text-blue-700 dark:text-blue-400">
+                    <div className="mt-3 p-3 bg-gray-50 dark:bg-blue-900/20 border border-blue-200 dark:border-black rounded-lg">
+                      <p className="text-sm text-black dark:text-white">
                         <strong>Gross Yield:</strong> {grossYield}%
                       </p>
                     </div>
@@ -807,7 +807,7 @@ const AddEditDeal = () => {
                       id="mediaConsent"
                       checked={formData.mediaConsent}
                       onChange={(e) => setFormData({...formData, mediaConsent: e.target.checked})}
-                      className="mt-1 h-4 w-4 text-blue-800 rounded"
+                      className="mt-1 h-4 w-4 text-black rounded"
                     />
                     <label htmlFor="mediaConsent" className="ml-3">
                       <p className="font-medium text-gray-900 dark:text-white">
@@ -844,7 +844,7 @@ const AddEditDeal = () => {
                     onClick={() => setFormData({...formData, verificationLevel: 'L0'})}
                     className={`w-full p-4 border-2 rounded-lg text-left transition-colors ${
                       formData.verificationLevel === 'L0'
-                        ? 'border-blue-800 bg-blue-50 dark:bg-amber-900/20'
+                        ? 'border-black bg-gray-50 dark:bg-amber-900/20'
                         : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                     }`}
                   >
@@ -861,7 +861,7 @@ const AddEditDeal = () => {
                         </p>
                       </div>
                       {formData.verificationLevel === 'L0' && (
-                        <CheckCircle className="h-5 w-5 text-blue-800 ml-2" />
+                        <CheckCircle className="h-5 w-5 text-black ml-2" />
                       )}
                     </div>
                   </button>
@@ -871,7 +871,7 @@ const AddEditDeal = () => {
                     onClick={() => setFormData({...formData, verificationLevel: 'L1'})}
                     className={`w-full p-4 border-2 rounded-lg text-left transition-colors ${
                       formData.verificationLevel === 'L1'
-                        ? 'border-blue-600 bg-blue-50 dark:bg-blue-900/20'
+                        ? 'border-gray-300 bg-gray-50 dark:bg-blue-900/20'
                         : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                     }`}
                   >
@@ -897,7 +897,7 @@ const AddEditDeal = () => {
 
                 {/* Evidence Upload */}
                 {formData.verificationLevel === 'L1' && (
-                  <div className="p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                  <div className="p-4 bg-gray-50 dark:bg-blue-900/20 border border-blue-200 dark:border-black rounded-lg">
                     <Label>Upload Evidence (Redacted)</Label>
                     <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
                       Upload redacted contract page or settlement statement (names, addresses removed)
@@ -908,9 +908,9 @@ const AddEditDeal = () => {
                         accept=".pdf,.jpg,.jpeg,.png"
                         className="hidden"
                       />
-                      <div className="border-2 border-dashed border-blue-300 dark:border-blue-600 rounded-lg p-6 text-center cursor-pointer hover:border-blue-500 transition-colors">
+                      <div className="border-2 border-dashed border-blue-300 dark:border-gray-300 rounded-lg p-6 text-center cursor-pointer hover:border-gray-300 transition-colors">
                         <FileText className="h-10 w-10 text-blue-600 mx-auto mb-2" />
-                        <p className="text-sm font-medium text-blue-700 dark:text-blue-400">
+                        <p className="text-sm font-medium text-black dark:text-white">
                           Click to upload document
                         </p>
                         <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
@@ -1005,10 +1005,10 @@ const AddEditDeal = () => {
                 </Card>
 
                 {/* Preview Link */}
-                <div className="p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                <div className="p-4 bg-gray-50 dark:bg-blue-900/20 border border-blue-200 dark:border-black rounded-lg">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
-                      <Eye className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-3" />
+                      <Eye className="h-5 w-5 text-blue-600 dark:text-white mr-3" />
                       <div>
                         <p className="font-medium text-gray-900 dark:text-white">
                           Preview Public View
@@ -1034,7 +1034,7 @@ const AddEditDeal = () => {
                       onClick={() => setFormData({...formData, status: 'draft'})}
                       className={`p-4 border-2 rounded-lg text-center transition-colors ${
                         formData.status === 'draft'
-                          ? 'border-blue-800 bg-blue-50 dark:bg-amber-900/20'
+                          ? 'border-black bg-gray-50 dark:bg-amber-900/20'
                           : 'border-gray-200 dark:border-gray-700'
                       }`}
                     >
@@ -1073,9 +1073,9 @@ const AddEditDeal = () => {
                     </div>
                   )}
                   {formData.photos.length === 0 && (
-                    <div className="flex items-center p-3 bg-blue-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
-                      <Info className="h-5 w-5 text-blue-800 mr-2" />
-                      <p className="text-sm text-blue-900 dark:text-amber-400">
+                    <div className="flex items-center p-3 bg-gray-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+                      <Info className="h-5 w-5 text-black mr-2" />
+                      <p className="text-sm text-black dark:text-amber-400">
                         Adding photos increases buyer engagement by 3x
                       </p>
                     </div>
@@ -1100,7 +1100,7 @@ const AddEditDeal = () => {
                   Save Draft
                 </Button>
                 {currentStep < 6 ? (
-                  <Button onClick={handleNext} className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
+                  <Button onClick={handleNext} className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
                     Next Step
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>

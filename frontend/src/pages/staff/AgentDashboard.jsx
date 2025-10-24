@@ -114,7 +114,7 @@ const AgentDashboard = () => {
       value: agentStats.publishedDeals,
       icon: BarChart3,
       color: 'text-blue-600',
-      bgColor: 'bg-blue-50 dark:bg-blue-900/20',
+      bgColor: 'bg-gray-50 dark:bg-blue-900/20',
       change: `+${agentStats.dealsThisMonth} this month`
     },
     {
@@ -129,8 +129,8 @@ const AgentDashboard = () => {
       title: 'Average Rating',
       value: agentStats.averageRating.toFixed(1),
       icon: Star,
-      color: 'text-blue-800',
-      bgColor: 'bg-blue-50 dark:bg-amber-900/20',
+      color: 'text-black',
+      bgColor: 'bg-gray-50 dark:bg-amber-900/20',
       change: `${agentStats.totalReviews} total reviews`
     },
     {
@@ -158,7 +158,7 @@ const AgentDashboard = () => {
               </p>
             </div>
             <Link to="/staff/deals/add">
-              <Button className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
+              <Button className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
                 <Plus className="h-4 w-4 mr-2" />
                 Add New Deal
               </Button>
@@ -200,11 +200,11 @@ const AgentDashboard = () => {
               <CardHeader>
                 <div className="flex items-center justify-between">
                   <CardTitle className="flex items-center">
-                    <Home className="h-5 w-5 mr-2 text-blue-800" />
+                    <Home className="h-5 w-5 mr-2 text-black" />
                     My Published Deals
                   </CardTitle>
                   <Link to="/staff/deals">
-                    <Button variant="ghost" size="sm" className="text-blue-800 hover:text-blue-900">
+                    <Button variant="ghost" size="sm" className="text-black hover:text-black">
                       View All
                       <ArrowRight className="h-4 w-4 ml-1" />
                     </Button>
@@ -251,7 +251,7 @@ const AgentDashboard = () => {
                         </div>
                       </div>
                       <div className="text-right ml-4">
-                        <p className="text-lg font-bold text-blue-800 dark:text-amber-400">
+                        <p className="text-lg font-bold text-black dark:text-amber-400">
                           {deal.price}
                         </p>
                         <p className="text-xs text-gray-500 dark:text-gray-500">
@@ -269,7 +269,7 @@ const AgentDashboard = () => {
                         Start adding your successful deals to showcase your track record
                       </p>
                       <Link to="/staff/deals/add">
-                        <Button className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
+                        <Button className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
                           <Plus className="h-4 w-4 mr-2" />
                           Add Your First Deal
                         </Button>
@@ -286,7 +286,7 @@ const AgentDashboard = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Star className="h-5 w-5 mr-2 text-blue-800" />
+                  <Star className="h-5 w-5 mr-2 text-black" />
                   Latest Reviews
                 </CardTitle>
               </CardHeader>
@@ -352,7 +352,7 @@ const AgentDashboard = () => {
             <Card className="mt-6">
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <TrendingUp className="h-5 w-5 mr-2 text-blue-800" />
+                  <TrendingUp className="h-5 w-5 mr-2 text-black" />
                   Quick Actions
                 </CardTitle>
               </CardHeader>

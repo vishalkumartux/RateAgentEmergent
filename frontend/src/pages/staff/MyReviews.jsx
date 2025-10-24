@@ -222,7 +222,7 @@ const MyReviews = () => {
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center">
-              <User className="h-5 w-5 text-blue-800" />
+              <User className="h-5 w-5 text-black" />
             </div>
             <div>
               <div className="flex items-center space-x-2">
@@ -279,7 +279,7 @@ const MyReviews = () => {
         {review.tags.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-4">
             {review.tags.map((tag, index) => (
-              <Badge key={index} className="bg-amber-100 dark:bg-amber-900/30 text-blue-900 dark:text-amber-400 text-xs">
+              <Badge key={index} className="bg-amber-100 dark:bg-amber-900/30 text-black dark:text-amber-400 text-xs">
                 {tag}
               </Badge>
             ))}
@@ -303,19 +303,19 @@ const MyReviews = () => {
 
         {/* Agent Reply */}
         {review.hasReply && review.reply && (
-          <div className="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-600 rounded">
+          <div className="mt-4 p-4 bg-gray-50 dark:bg-blue-900/20 border-l-4 border-gray-300 rounded">
             <div className="flex items-start space-x-3">
-              <Reply className="h-4 w-4 text-blue-600 dark:text-blue-400 mt-1 flex-shrink-0" />
+              <Reply className="h-4 w-4 text-blue-600 dark:text-white mt-1 flex-shrink-0" />
               <div className="flex-1">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-semibold text-blue-900 dark:text-blue-200">
+                  <span className="text-sm font-semibold text-black dark:text-blue-200">
                     Your Reply
                   </span>
-                  <span className="text-xs text-blue-700 dark:text-blue-300">
+                  <span className="text-xs text-black dark:text-blue-300">
                     {new Date(review.reply.date).toLocaleDateString()}
                   </span>
                 </div>
-                <p className="text-sm text-blue-800 dark:text-blue-200 leading-relaxed">
+                <p className="text-sm text-black dark:text-blue-200 leading-relaxed">
                   {review.reply.text}
                 </p>
               </div>
@@ -463,7 +463,7 @@ const MyReviews = () => {
             <CardContent className="p-6">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-lg flex items-center justify-center">
-                  <Star className="h-6 w-6 text-blue-800" />
+                  <Star className="h-6 w-6 text-black" />
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-gray-900 dark:text-white">{avgRating}</p>
@@ -506,7 +506,7 @@ const MyReviews = () => {
         <Card className="mb-8 border-2 border-amber-200 dark:border-amber-800">
           <CardHeader>
             <CardTitle className="flex items-center">
-              <Link2 className="h-5 w-5 mr-2 text-blue-800" />
+              <Link2 className="h-5 w-5 mr-2 text-black" />
               Shareable Review Link
             </CardTitle>
           </CardHeader>
@@ -523,7 +523,7 @@ const MyReviews = () => {
               />
               <Button
                 onClick={handleCopyLink}
-                className={linkCopied ? 'bg-green-600 hover:bg-green-700' : 'bg-blue-800 hover:bg-blue-900'}
+                className={linkCopied ? 'bg-green-600 hover:bg-green-700' : 'bg-green-700 hover:bg-green-800'}
               >
                 {linkCopied ? (
                   <>
@@ -566,7 +566,7 @@ const MyReviews = () => {
             <TabsTrigger value="new" className="text-base">
               New ({newReviews.length})
               {newReviews.length > 0 && (
-                <Badge className="ml-2 bg-blue-800">
+                <Badge className="ml-2 bg-green-700">
                   {newReviews.length}
                 </Badge>
               )}
@@ -606,14 +606,14 @@ const MyReviews = () => {
           <TabsContent value="new" className="mt-6">
             {newReviews.length > 0 ? (
               <>
-                <div className="mb-4 p-4 bg-blue-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+                <div className="mb-4 p-4 bg-gray-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
                   <div className="flex items-start">
-                    <AlertCircle className="h-5 w-5 text-blue-800 dark:text-amber-400 mr-3 mt-0.5" />
+                    <AlertCircle className="h-5 w-5 text-black dark:text-amber-400 mr-3 mt-0.5" />
                     <div>
                       <p className="font-medium text-amber-900 dark:text-amber-200">
                         Action Required
                       </p>
-                      <p className="text-sm text-blue-900 dark:text-amber-300 mt-1">
+                      <p className="text-sm text-black dark:text-amber-300 mt-1">
                         {newReviews.length} {newReviews.length === 1 ? 'review' : 'reviews'} waiting for your reply. Responding promptly shows professionalism.
                       </p>
                     </div>

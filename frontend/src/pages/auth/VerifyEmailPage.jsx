@@ -89,13 +89,13 @@ const VerifyEmailPage = () => {
       <div className="max-w-md w-full">
         {/* Header */}
         <div className="text-center mb-8">
-          <Link to="/register" className="inline-flex items-center text-blue-800 hover:text-blue-900 mb-6">
+          <Link to="/register" className="inline-flex items-center text-black hover:text-black mb-6">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Registration
           </Link>
           
           <div className="w-16 h-16 bg-amber-100 dark:bg-amber-900 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Mail className="h-8 w-8 text-blue-800" />
+            <Mail className="h-8 w-8 text-black" />
           </div>
           
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
@@ -104,7 +104,7 @@ const VerifyEmailPage = () => {
           <p className="text-gray-600 dark:text-gray-400">
             We've sent a 6-digit verification code to
           </p>
-          <p className="text-blue-800 font-medium">{email}</p>
+          <p className="text-black font-medium">{email}</p>
         </div>
 
         <Card>
@@ -136,7 +136,7 @@ const VerifyEmailPage = () => {
               <Button 
                 type="submit" 
                 disabled={isSubmitting || verificationCode.length !== 6}
-                className="w-full bg-blue-800 hover:bg-blue-900 hover:text-white text-white"
+                className="w-full bg-green-700 hover:bg-green-800 hover:text-white text-white"
               >
                 {isSubmitting ? (
                   <>
@@ -162,7 +162,7 @@ const VerifyEmailPage = () => {
                 variant="outline"
                 onClick={handleResendCode}
                 disabled={resendCooldown > 0}
-                className="text-blue-800 border-blue-800 hover:bg-blue-50"
+                className="text-black border-black hover:bg-gray-50"
               >
                 {resendCooldown > 0 ? (
                   `Resend in ${resendCooldown}s`
@@ -175,15 +175,15 @@ const VerifyEmailPage = () => {
         </Card>
 
         {/* Help */}
-        <Card className="mt-6 bg-blue-50 dark:bg-blue-950 border-blue-200 dark:border-blue-800">
+        <Card className="mt-6 bg-gray-50 dark:bg-gray-900 border-blue-200 dark:border-black">
           <CardContent className="p-4">
             <div className="flex items-start space-x-3">
               <AlertCircle className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <div className="text-sm">
-                <p className="text-blue-900 dark:text-blue-100 font-medium mb-1">
+                <p className="text-black dark:text-blue-100 font-medium mb-1">
                   Having trouble?
                 </p>
-                <p className="text-blue-700 dark:text-blue-300">
+                <p className="text-black dark:text-blue-300">
                   Check your spam folder or contact support if you don't receive the verification code within 5 minutes.
                 </p>
               </div>

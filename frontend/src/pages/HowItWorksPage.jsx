@@ -25,7 +25,7 @@ const HowItWorksPage = () => {
       title: "Search & Browse",
       description: "Enter your location and property type to find verified agents in your area. Browse detailed profiles with performance metrics and client reviews.",
       icon: Search,
-      color: "bg-blue-50 text-blue-600",
+      color: "bg-gray-50 text-blue-600",
       features: ["Location-based search", "Property type filtering", "Advanced search options"]
     },
     {
@@ -41,7 +41,7 @@ const HowItWorksPage = () => {
       title: "Read Reviews",
       description: "Read authentic reviews from real clients who have worked with these agents. Get insights into their communication style and expertise.",
       icon: Star,
-      color: "bg-blue-50 text-blue-800",
+      color: "bg-gray-50 text-black",
       features: ["Verified client reviews", "Rating system", "Detailed feedback"]
     },
     {

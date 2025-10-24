@@ -100,7 +100,7 @@ const DealDetails = () => {
   const getStatusBadge = (status) => {
     const statusColors = {
       'Active': 'bg-blue-600 text-white',
-      'Under Contract': 'bg-blue-800 text-white',
+      'Under Contract': 'bg-green-700 text-white',
       'Sold': 'bg-emerald-600 text-white',
       'Leased': 'bg-emerald-600 text-white'
     };
@@ -111,7 +111,7 @@ const DealDetails = () => {
     const colors = {
       'New': 'bg-red-600 text-white',
       'Responded': 'bg-green-600 text-white',
-      'Follow Up': 'bg-blue-800 text-white'
+      'Follow Up': 'bg-green-700 text-white'
     };
     return colors[status] || 'bg-gray-600 text-white';
   };
@@ -135,7 +135,7 @@ const DealDetails = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
-          <Link to="/staff/deals" className="inline-flex items-center text-blue-800 hover:text-blue-900 mb-6">
+          <Link to="/staff/deals" className="inline-flex items-center text-black hover:text-black mb-6">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to My Deals
           </Link>
@@ -158,7 +158,7 @@ const DealDetails = () => {
                 Share
               </Button>
               <Link to={`/staff/deals/${id}/edit`}>
-                <Button className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
+                <Button className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
                   <Edit className="h-4 w-4 mr-2" />
                   Edit Deal
                 </Button>
@@ -195,7 +195,7 @@ const DealDetails = () => {
                   </div>
                 </div>
                 
-                <div className="text-3xl font-bold text-blue-800 mb-4">
+                <div className="text-3xl font-bold text-black mb-4">
                   {dealData.price}
                   <span className="text-sm font-normal text-gray-600 dark:text-gray-400 ml-2">
                     {dealData.priceType}
@@ -274,7 +274,7 @@ const DealDetails = () => {
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <Clock className="h-6 w-6 text-blue-800 mx-auto mb-2" />
+              <Clock className="h-6 w-6 text-black mx-auto mb-2" />
               <div className="text-xl font-bold text-gray-900 dark:text-white">{dealData.analytics.averageViewTime}</div>
               <div className="text-sm text-gray-600 dark:text-gray-400">Avg View Time</div>
             </CardContent>
@@ -307,7 +307,7 @@ const DealDetails = () => {
                     <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Key Features</h4>
                     <div className="flex flex-wrap gap-2">
                       {dealData.features.map((feature, index) => (
-                        <Badge key={index} variant="secondary" className="bg-blue-50 dark:bg-blue-950 text-blue-900 dark:text-amber-300">
+                        <Badge key={index} variant="secondary" className="bg-gray-50 dark:bg-gray-900 text-black dark:text-amber-300">
                           {feature}
                         </Badge>
                       ))}
@@ -364,7 +364,7 @@ const DealDetails = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Camera className="h-5 w-5 mr-2 text-blue-800" />
+                  <Camera className="h-5 w-5 mr-2 text-black" />
                   Property Photos
                 </CardTitle>
               </CardHeader>
@@ -379,7 +379,7 @@ const DealDetails = () => {
                       />
                       {index === 0 && (
                         <div className="absolute top-2 left-2">
-                          <Badge className="bg-blue-800 text-white text-xs">Main Photo</Badge>
+                          <Badge className="bg-green-700 text-white text-xs">Main Photo</Badge>
                         </div>
                       )}
                     </div>
@@ -394,7 +394,7 @@ const DealDetails = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <MessageCircle className="h-5 w-5 mr-2 text-blue-800" />
+                  <MessageCircle className="h-5 w-5 mr-2 text-black" />
                   Client Enquiries
                 </CardTitle>
               </CardHeader>
@@ -425,7 +425,7 @@ const DealDetails = () => {
                       </div>
                       <p className="text-gray-700 dark:text-gray-300 mb-3">{enquiry.message}</p>
                       <div className="flex space-x-2">
-                        <Button size="sm" className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
+                        <Button size="sm" className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
                           <Phone className="h-3 w-3 mr-1" />
                           Call
                         </Button>
@@ -450,7 +450,7 @@ const DealDetails = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Calendar className="h-5 w-5 mr-2 text-blue-800" />
+                  <Calendar className="h-5 w-5 mr-2 text-black" />
                   Inspection Schedule
                 </CardTitle>
               </CardHeader>
@@ -481,7 +481,7 @@ const DealDetails = () => {
                       </div>
                     </div>
                   ))}
-                  <Button className="w-full bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
+                  <Button className="w-full bg-green-700 hover:bg-green-800 hover:text-white text-white">
                     Add Inspection Time
                   </Button>
                 </div>
@@ -495,7 +495,7 @@ const DealDetails = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <BarChart3 className="h-5 w-5 mr-2 text-blue-800" />
+                    <BarChart3 className="h-5 w-5 mr-2 text-black" />
                     Marketing Strategy
                   </CardTitle>
                 </CardHeader>
@@ -510,7 +510,7 @@ const DealDetails = () => {
                       <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Target Market</h4>
                       <div className="flex flex-wrap gap-2">
                         {dealData.targetMarket.map((market, index) => (
-                          <Badge key={index} className="bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300">
+                          <Badge key={index} className="bg-gray-50 dark:bg-gray-900 text-black dark:text-blue-300">
                             {market}
                           </Badge>
                         ))}

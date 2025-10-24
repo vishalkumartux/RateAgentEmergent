@@ -72,7 +72,7 @@ const AdminDashboard = () => {
       title: 'Avg Rating',
       value: '4.8',
       icon: Star,
-      color: 'text-blue-800',
+      color: 'text-black',
       change: 'Last 12 months'
     },
     {
@@ -209,7 +209,7 @@ const AdminDashboard = () => {
               Please complete your organization setup first.
             </p>
             <Link to="/organization-setup">
-              <Button className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
+              <Button className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
                 Setup Organization
               </Button>
             </Link>
@@ -233,7 +233,7 @@ const AdminDashboard = () => {
             </p>
           </div>
           <Link to="/admin/settings">
-            <Button className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
+            <Button className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
               <Settings className="h-4 w-4 mr-2" />
               Org Settings
             </Button>
@@ -247,11 +247,11 @@ const AdminDashboard = () => {
               {nudges.map((nudge, index) => {
                 const Icon = nudge.icon;
                 return (
-                  <Card key={index} className="border-l-4 border-blue-700 bg-blue-50 dark:bg-amber-900/10">
+                  <Card key={index} className="border-l-4 border-blue-700 bg-gray-50 dark:bg-amber-900/10">
                     <CardContent className="p-4">
                       <div className="flex items-start space-x-3">
                         <div className="w-10 h-10 bg-amber-100 dark:bg-amber-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <Icon className="h-5 w-5 text-blue-800 dark:text-amber-400" />
+                          <Icon className="h-5 w-5 text-black dark:text-amber-400" />
                         </div>
                         <div className="flex-1">
                           <h4 className="font-semibold text-gray-900 dark:text-white text-sm mb-1">
@@ -261,7 +261,7 @@ const AdminDashboard = () => {
                             {nudge.description}
                           </p>
                           <Link to={nudge.link}>
-                            <Button size="sm" variant="ghost" className="text-blue-800 hover:text-blue-900 p-0 h-auto">
+                            <Button size="sm" variant="ghost" className="text-black hover:text-black p-0 h-auto">
                               {nudge.action} →
                             </Button>
                           </Link>
@@ -315,7 +315,7 @@ const AdminDashboard = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <Building2 className="h-5 w-5 mr-2 text-blue-800" />
+                    <Building2 className="h-5 w-5 mr-2 text-black" />
                     Organization Information
                   </CardTitle>
                 </CardHeader>
@@ -343,7 +343,7 @@ const AdminDashboard = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <Clock className="h-5 w-5 mr-2 text-blue-800" />
+                    <Clock className="h-5 w-5 mr-2 text-black" />
                     Recent Activity
                   </CardTitle>
                 </CardHeader>
@@ -375,7 +375,7 @@ const AdminDashboard = () => {
               <CardHeader>
                 <CardTitle className="flex items-center justify-between">
                   <div className="flex items-center">
-                    <Users className="h-5 w-5 mr-2 text-blue-800" />
+                    <Users className="h-5 w-5 mr-2 text-black" />
                     Staff Members
                   </div>
                   <Badge variant="secondary">
@@ -386,9 +386,9 @@ const AdminDashboard = () => {
               <CardContent>
                 {/* Admin (Current User) */}
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between p-4 border border-amber-200 dark:border-amber-800 bg-blue-50 dark:bg-blue-950 rounded-lg">
+                  <div className="flex items-center justify-between p-4 border border-amber-200 dark:border-amber-800 bg-gray-50 dark:bg-gray-900 rounded-lg">
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center">
+                      <div className="w-12 h-12 bg-green-700 rounded-full flex items-center justify-center">
                         <span className="text-white font-semibold">
                           {user?.name?.charAt(0) || 'A'}
                         </span>
@@ -396,7 +396,7 @@ const AdminDashboard = () => {
                       <div className="flex-1">
                         <div className="flex items-center space-x-2 mb-1">
                           <h3 className="font-semibold text-gray-900 dark:text-white">{user?.name}</h3>
-                          <Badge className="bg-blue-800 text-white">Admin</Badge>
+                          <Badge className="bg-green-700 text-white">Admin</Badge>
                         </div>
                         <p className="text-gray-600 dark:text-gray-400 text-sm mb-1">{user?.email}</p>
                         <div className="flex items-center space-x-3 text-xs text-gray-500 dark:text-gray-500">
@@ -481,7 +481,7 @@ const AdminDashboard = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <Send className="h-5 w-5 mr-2 text-blue-800" />
+                    <Send className="h-5 w-5 mr-2 text-black" />
                     Invite Staff Members
                   </CardTitle>
                 </CardHeader>
@@ -537,7 +537,7 @@ const AdminDashboard = () => {
                       <Button
                         onClick={handleInviteStaff}
                         disabled={isInviting}
-                        className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white"
+                        className="bg-green-700 hover:bg-green-800 hover:text-white text-white"
                       >
                         {isInviting ? 'Sending...' : 'Send Invitations'}
                       </Button>
@@ -550,10 +550,10 @@ const AdminDashboard = () => {
                       </div>
                     )}
                     
-                    <div className="p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                    <div className="p-4 bg-gray-50 dark:bg-blue-900/20 border border-blue-200 dark:border-black rounded-lg">
                       <div className="flex">
-                        <AlertCircle className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-2 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm text-blue-800 dark:text-blue-200">
+                        <AlertCircle className="h-5 w-5 text-blue-600 dark:text-white mr-2 mt-0.5 flex-shrink-0" />
+                        <div className="text-sm text-black dark:text-blue-200">
                           <strong>Role Permissions:</strong>
                           <ul className="mt-1 space-y-1">
                             <li>• <strong>Admin:</strong> Full access to dashboard, settings, and staff management</li>
@@ -571,7 +571,7 @@ const AdminDashboard = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-between">
                     <div className="flex items-center">
-                      <Clock className="h-5 w-5 mr-2 text-blue-800" />
+                      <Clock className="h-5 w-5 mr-2 text-black" />
                       Pending Invitations
                     </div>
                     {organization?.pendingInvites?.length > 0 && (

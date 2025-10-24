@@ -183,7 +183,7 @@ const DealsListPage = () => {
               </p>
             </div>
             <Link to="/staff/deals/add">
-              <Button className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
+              <Button className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
                 <Plus className="h-4 w-4 mr-2" />
                 Add New Deal
               </Button>
@@ -215,7 +215,7 @@ const DealsListPage = () => {
               <Filter className="h-4 w-4 mr-2" />
               Filters
               {activeFiltersCount > 0 && (
-                <Badge className="ml-2 bg-blue-800 text-white">
+                <Badge className="ml-2 bg-green-700 text-white">
                   {activeFiltersCount}
                 </Badge>
               )}
@@ -315,7 +315,7 @@ const DealsListPage = () => {
                       id="hasMedia"
                       checked={hasMedia}
                       onChange={(e) => setHasMedia(e.target.checked)}
-                      className="h-4 w-4 text-blue-800 rounded"
+                      className="h-4 w-4 text-black rounded"
                     />
                     <label htmlFor="hasMedia" className="ml-2 text-sm text-gray-700 dark:text-gray-300">
                       Has Media (Photos/Docs)
@@ -329,7 +329,7 @@ const DealsListPage = () => {
                   </Button>
                   <Button 
                     onClick={() => setShowFilters(false)}
-                    className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white"
+                    className="bg-green-700 hover:bg-green-800 hover:text-white text-white"
                   >
                     Apply Filters
                   </Button>
@@ -421,7 +421,7 @@ const DealsListPage = () => {
                         </Badge>
                         <Badge 
                           variant="outline"
-                          className={deal.verification === 'L1' ? 'bg-blue-50 text-blue-700 border-blue-200' : ''}
+                          className={deal.verification === 'L1' ? 'bg-gray-50 text-black border-blue-200' : ''}
                         >
                           {deal.verification === 'L1' ? '✓ Verified' : 'Pending Verification'}
                         </Badge>
@@ -498,7 +498,7 @@ const DealsListPage = () => {
                         </Button>
                       </Link>
                       {deal.status === 'Draft' && (
-                        <Button size="sm" className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white w-full">
+                        <Button size="sm" className="bg-green-700 hover:bg-green-800 hover:text-white text-white w-full">
                           <Upload className="h-4 w-4 mr-2" />
                           Publish
                         </Button>
@@ -522,7 +522,7 @@ const DealsListPage = () => {
                   : 'Start building your portfolio by adding your first deal'}
               </p>
               <Link to="/staff/deals/add">
-                <Button className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
+                <Button className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
                   <Plus className="h-4 w-4 mr-2" />
                   Add Your First Deal
                 </Button>

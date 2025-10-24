@@ -109,7 +109,7 @@ const RegisterPage = () => {
       <div className="max-w-4xl w-full">
         {/* Header */}
         <div className="text-center mb-8">
-          <Link to="/" className="inline-flex items-center text-blue-800 hover:text-blue-900 mb-6">
+          <Link to="/" className="inline-flex items-center text-black hover:text-black mb-6">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Home
           </Link>
@@ -126,7 +126,7 @@ const RegisterPage = () => {
             {/* Admin Details */}
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center text-blue-800">
+                <CardTitle className="flex items-center text-black">
                   <User className="h-5 w-5 mr-2" />
                   Agency Administrator Details
                 </CardTitle>
@@ -199,7 +199,7 @@ const RegisterPage = () => {
             {/* Organization Details */}
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center text-blue-800">
+                <CardTitle className="flex items-center text-black">
                   <Building2 className="h-5 w-5 mr-2" />
                   Organization Details
                 </CardTitle>
@@ -293,7 +293,7 @@ const RegisterPage = () => {
           </Card>
 
           {/* Terms and Conditions */}
-          <Card className="bg-blue-50 dark:bg-blue-950 border-amber-200 dark:border-amber-800">
+          <Card className="bg-gray-50 dark:bg-gray-900 border-amber-200 dark:border-amber-800">
             <CardContent className="p-6">
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
@@ -304,7 +304,7 @@ const RegisterPage = () => {
                     className="mt-0.5"
                   />
                   <Label htmlFor="agreeToTerms" className="text-sm leading-relaxed">
-                    I agree to the <Link to="/terms" className="text-blue-800 hover:text-blue-900 underline">Terms and Conditions</Link> and <Link to="/privacy" className="text-blue-800 hover:text-blue-900 underline">Privacy Policy</Link> *
+                    I agree to the <Link to="/terms" className="text-black hover:text-black underline">Terms and Conditions</Link> and <Link to="/privacy" className="text-black hover:text-black underline">Privacy Policy</Link> *
                   </Label>
                 </div>
                 {errors.agreeToTerms && <p className="text-red-600 text-sm">{errors.agreeToTerms}</p>}
@@ -334,7 +334,7 @@ const RegisterPage = () => {
             <Button 
               type="submit" 
               disabled={isSubmitting}
-              className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white px-8"
+              className="bg-green-700 hover:bg-green-800 hover:text-white text-white px-8"
             >
               {isSubmitting ? 'Creating Account...' : 'Create Account'}
             </Button>

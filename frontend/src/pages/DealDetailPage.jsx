@@ -50,7 +50,7 @@ const DealDetailPage = () => {
               The deal you're looking for doesn't exist.
             </p>
             <Link to="/deals">
-              <Button className="bg-blue-800 hover:bg-blue-900 hover:text-white">
+              <Button className="bg-green-700 hover:bg-green-800 hover:text-white">
                 Browse All Deals
               </Button>
             </Link>
@@ -80,7 +80,7 @@ const DealDetailPage = () => {
           {/* Hero Section */}
           <div className="mb-8">
             <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 mb-3">
-              <Link to="/deals" className="hover:text-blue-800">Deals</Link>
+              <Link to="/deals" className="hover:text-black">Deals</Link>
               <span>/</span>
               <span>{deal.suburb}</span>
             </div>
@@ -106,7 +106,7 @@ const DealDetailPage = () => {
                 <Button
                   variant={isShortlisted ? "default" : "outline"}
                   onClick={() => setIsShortlisted(!isShortlisted)}
-                  className={isShortlisted ? "bg-blue-800 hover:bg-blue-900 hover:text-white" : ""}
+                  className={isShortlisted ? "bg-green-700 hover:bg-green-800 hover:text-white" : ""}
                 >
                   <Heart className={`h-4 w-4 mr-2 ${isShortlisted ? 'fill-current' : ''}`} />
                   {isShortlisted ? 'Saved' : 'Save Deal'}
@@ -147,7 +147,7 @@ const DealDetailPage = () => {
               <Card className="border-2 border-gray-200 dark:border-gray-700">
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <DollarSign className="h-5 w-5 mr-2 text-blue-800" />
+                    <DollarSign className="h-5 w-5 mr-2 text-black" />
                     Price & Timing
                   </CardTitle>
                 </CardHeader>
@@ -155,14 +155,14 @@ const DealDetailPage = () => {
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div>
                       <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Purchase Price</div>
-                      <div className="text-2xl font-bold text-blue-800">
+                      <div className="text-2xl font-bold text-black">
                         {formatDealPrice(deal)}
                       </div>
                     </div>
                     <div>
                       <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Days to Secure</div>
                       <div className="text-2xl font-bold text-gray-900 dark:text-white flex items-center">
-                        <Clock className="h-5 w-5 mr-2 text-blue-800" />
+                        <Clock className="h-5 w-5 mr-2 text-black" />
                         {deal.daysToSecure}
                       </div>
                     </div>
@@ -184,7 +184,7 @@ const DealDetailPage = () => {
               <Card className="border-2 border-gray-200 dark:border-gray-700">
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <TrendingDown className="h-5 w-5 mr-2 text-blue-800" />
+                    <TrendingDown className="h-5 w-5 mr-2 text-black" />
                     Value Story
                   </CardTitle>
                 </CardHeader>
@@ -216,13 +216,13 @@ const DealDetailPage = () => {
                     <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Buyer Brief Summary</h4>
                     <div className="space-y-2">
                       <div className="flex items-start">
-                        <Target className="h-4 w-4 mr-2 text-blue-800 mt-1" />
+                        <Target className="h-4 w-4 mr-2 text-black mt-1" />
                         <div>
                           <span className="font-medium">Budget:</span> {formatDealPrice(deal)}
                         </div>
                       </div>
                       <div className="flex items-start">
-                        <CheckCircle className="h-4 w-4 mr-2 text-blue-800 mt-1" />
+                        <CheckCircle className="h-4 w-4 mr-2 text-black mt-1" />
                         <div>
                           <span className="font-medium">Must-haves:</span>{' '}
                           {deal.features && deal.features.join(', ')}
@@ -238,7 +238,7 @@ const DealDetailPage = () => {
                 <Card className="border-2 border-gray-200 dark:border-gray-700">
                   <CardHeader>
                     <CardTitle className="flex items-center">
-                      <Percent className="h-5 w-5 mr-2 text-blue-800" />
+                      <Percent className="h-5 w-5 mr-2 text-black" />
                       Rental & Yield
                     </CardTitle>
                   </CardHeader>
@@ -263,7 +263,7 @@ const DealDetailPage = () => {
                       {deal.grossYield && (
                         <div>
                           <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Gross Yield</div>
-                          <div className="text-xl font-bold text-blue-800">
+                          <div className="text-xl font-bold text-black">
                             {deal.grossYield}%
                           </div>
                         </div>
@@ -277,7 +277,7 @@ const DealDetailPage = () => {
               <Card className="border-2 border-gray-200 dark:border-gray-700">
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <Home className="h-5 w-5 mr-2 text-blue-800" />
+                    <Home className="h-5 w-5 mr-2 text-black" />
                     Property Details
                   </CardTitle>
                 </CardHeader>
@@ -285,7 +285,7 @@ const DealDetailPage = () => {
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {deal.bedrooms && (
                       <div className="flex items-center">
-                        <Bed className="h-5 w-5 mr-2 text-blue-800" />
+                        <Bed className="h-5 w-5 mr-2 text-black" />
                         <div>
                           <div className="text-sm text-gray-600 dark:text-gray-400">Bedrooms</div>
                           <div className="font-semibold">{deal.bedrooms}</div>
@@ -294,7 +294,7 @@ const DealDetailPage = () => {
                     )}
                     {deal.bathrooms && (
                       <div className="flex items-center">
-                        <Bath className="h-5 w-5 mr-2 text-blue-800" />
+                        <Bath className="h-5 w-5 mr-2 text-black" />
                         <div>
                           <div className="text-sm text-gray-600 dark:text-gray-400">Bathrooms</div>
                           <div className="font-semibold">{deal.bathrooms}</div>
@@ -303,7 +303,7 @@ const DealDetailPage = () => {
                     )}
                     {deal.carSpaces > 0 && (
                       <div className="flex items-center">
-                        <Car className="h-5 w-5 mr-2 text-blue-800" />
+                        <Car className="h-5 w-5 mr-2 text-black" />
                         <div>
                           <div className="text-sm text-gray-600 dark:text-gray-400">Parking</div>
                           <div className="font-semibold">{deal.carSpaces}</div>
@@ -311,7 +311,7 @@ const DealDetailPage = () => {
                       </div>
                     )}
                     <div className="flex items-center">
-                      <Home className="h-5 w-5 mr-2 text-blue-800" />
+                      <Home className="h-5 w-5 mr-2 text-black" />
                       <div>
                         <div className="text-sm text-gray-600 dark:text-gray-400">Land Size</div>
                         <div className="font-semibold">{deal.landSize}</div>
@@ -324,7 +324,7 @@ const DealDetailPage = () => {
                       <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Features</h4>
                       <div className="flex flex-wrap gap-2">
                         {deal.features.map((feature, idx) => (
-                          <Badge key={idx} variant="outline" className="border-blue-300 dark:border-blue-800">
+                          <Badge key={idx} variant="outline" className="border-blue-300 dark:border-black">
                             {feature}
                           </Badge>
                         ))}
@@ -439,8 +439,8 @@ const DealDetailPage = () => {
             <div className="lg:col-span-1">
               {agent && (
                 <div className="sticky top-32">
-                  <Card className="border-2 border-blue-700 dark:border-blue-800">
-                    <CardHeader className="bg-blue-50 dark:bg-amber-900">
+                  <Card className="border-2 border-blue-700 dark:border-black">
+                    <CardHeader className="bg-gray-50 dark:bg-amber-900">
                       <CardTitle className="text-amber-900 dark:text-amber-100">
                         Deal Secured By
                       </CardTitle>
@@ -484,13 +484,13 @@ const DealDetailPage = () => {
 
                       <div className="space-y-2">
                         <Link to={`/agent/${agent.id}`}>
-                          <Button className="w-full bg-blue-800 hover:bg-blue-900 hover:text-white">
+                          <Button className="w-full bg-green-700 hover:bg-green-800 hover:text-white">
                             View Full Profile
                           </Button>
                         </Link>
                         <Button
                           variant={agentShortlisted ? "default" : "outline"}
-                          className={`w-full ${agentShortlisted ? 'bg-blue-800 hover:bg-blue-900' : ''}`}
+                          className={`w-full ${agentShortlisted ? 'bg-green-700 hover:bg-green-800' : ''}`}
                           onClick={() => setAgentShortlisted(!agentShortlisted)}
                         >
                           <Heart className={`h-4 w-4 mr-2 ${agentShortlisted ? 'fill-current' : ''}`} />
@@ -505,11 +505,11 @@ const DealDetailPage = () => {
                   </Card>
 
                   {/* Privacy Notice */}
-                  <Card className="mt-4 bg-blue-50 dark:bg-blue-900 border-2 border-blue-200 dark:border-blue-700">
+                  <Card className="mt-4 bg-gray-50 dark:bg-blue-900 border-2 border-blue-200 dark:border-blue-700">
                     <CardContent className="p-4">
                       <div className="flex items-start">
-                        <Info className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-2 flex-shrink-0 mt-0.5" />
-                        <div className="text-sm text-blue-800 dark:text-blue-200">
+                        <Info className="h-5 w-5 text-blue-600 dark:text-white mr-2 flex-shrink-0 mt-0.5" />
+                        <div className="text-sm text-black dark:text-blue-200">
                           <strong>Privacy Protected:</strong> Street numbers are masked and no personally identifying buyer details are displayed.
                         </div>
                       </div>

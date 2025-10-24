@@ -51,7 +51,7 @@ const DealDetailsNew = () => {
                 </div>
               </div>
               <Link to={`/staff/deals/${id}`}>
-                <Button variant="secondary" size="sm" className="bg-white text-blue-600 hover:bg-blue-50">
+                <Button variant="secondary" size="sm" className="bg-white text-blue-600 hover:bg-gray-50">
                   <X className="h-4 w-4 mr-2" />
                   Exit Preview
                 </Button>
@@ -176,15 +176,15 @@ const DealDetailsNew = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Preview Banner */}
         {isPreview && (
-          <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+          <div className="mb-6 p-4 bg-gray-50 dark:bg-blue-900/20 border border-blue-200 dark:border-black rounded-lg">
             <div className="flex items-center justify-between">
               <div className="flex items-center">
-                <Eye className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-3" />
+                <Eye className="h-5 w-5 text-blue-600 dark:text-white mr-3" />
                 <div>
-                  <p className="font-semibold text-blue-900 dark:text-blue-200">
+                  <p className="font-semibold text-black dark:text-blue-200">
                     Preview Mode
                   </p>
-                  <p className="text-sm text-blue-700 dark:text-blue-300">
+                  <p className="text-sm text-black dark:text-blue-300">
                     This is how your deal will appear to buyers on the public site
                   </p>
                 </div>
@@ -414,7 +414,7 @@ const DealDetailsNew = () => {
                         </h3>
                         <div className="flex flex-wrap gap-2">
                           {deal.strategyTags.map((tag, index) => (
-                            <Badge key={index} className="bg-blue-800 text-white">
+                            <Badge key={index} className="bg-green-700 text-white">
                               {tag}
                             </Badge>
                           ))}
@@ -436,7 +436,7 @@ const DealDetailsNew = () => {
                         </div>
                         <div>
                           <p className="text-sm text-gray-600 dark:text-gray-400">Purchase Price</p>
-                          <p className="text-lg font-bold text-blue-800">
+                          <p className="text-lg font-bold text-black">
                             {deal.purchasePrice > 0 ? `$${(deal.purchasePrice / 1000000).toFixed(2)}M` : 'Undisclosed'}
                           </p>
                         </div>
@@ -501,7 +501,7 @@ const DealDetailsNew = () => {
                         </p>
                       </div>
                       
-                      <div className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                      <div className="p-4 bg-gray-50 dark:bg-blue-900/20 rounded-lg">
                         <div className="flex items-center mb-2">
                           <Calendar className="h-5 w-5 text-blue-600 mr-2" />
                           <span className="text-sm text-gray-600 dark:text-gray-400">Purchase Date</span>
@@ -516,7 +516,7 @@ const DealDetailsNew = () => {
                       </div>
                     </div>
 
-                    <div className="p-4 bg-blue-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+                    <div className="p-4 bg-gray-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
                       <div className="flex items-center justify-between mb-3">
                         <h4 className="font-semibold text-gray-900 dark:text-white">
                           Verification Status
@@ -547,7 +547,7 @@ const DealDetailsNew = () => {
               <CardContent className="space-y-4">
                 <div>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">Purchase Price</p>
-                  <p className="text-2xl font-bold text-blue-800">
+                  <p className="text-2xl font-bold text-black">
                     {deal.purchasePrice > 0 
                       ? `$${(deal.purchasePrice / 1000000).toFixed(2)}M`
                       : 'Undisclosed'}
@@ -630,7 +630,7 @@ const DealDetailsNew = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 bg-green-700 rounded-full flex items-center justify-center">
                       <span className="text-white font-semibold text-lg">
                         {deal.agentName ? deal.agentName.charAt(0) : 'A'}
                       </span>

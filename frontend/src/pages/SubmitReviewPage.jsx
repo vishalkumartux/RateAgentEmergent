@@ -131,7 +131,7 @@ const SubmitReviewPage = () => {
               {!selectedAgent ? (
                 <div className="space-y-4">
                   <div className="relative">
-                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-blue-800 z-10" />
+                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-black z-10" />
                     <Input
                       placeholder="Search by agent name, company, or location..."
                       value={searchTerm}
@@ -368,13 +368,13 @@ const SubmitReviewPage = () => {
               </Card>
 
               {/* Guidelines */}
-              <Card className="bg-blue-50 border-blue-200">
+              <Card className="bg-gray-50 border-blue-200">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-3">
                     <AlertCircle className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
                     <div>
-                      <h3 className="font-semibold text-blue-900 mb-2">Review Guidelines</h3>
-                      <ul className="text-blue-800 text-sm space-y-1">
+                      <h3 className="font-semibold text-black mb-2">Review Guidelines</h3>
+                      <ul className="text-black text-sm space-y-1">
                         <li>• Be honest and constructive in your feedback</li>
                         <li>• Focus on your personal experience with the agent</li>
                         <li>• Avoid sharing personal information about transactions</li>

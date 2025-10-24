@@ -47,7 +47,7 @@ const AdminProfile = () => {
     { label: 'Organization Revenue', value: '$2.4M', icon: BarChart3, color: 'text-emerald-600' },
     { label: 'Team Members', value: '12', icon: Users, color: 'text-blue-600' },
     { label: 'Active Listings', value: '48', icon: Building2, color: 'text-purple-600' },
-    { label: 'Years Leading', value: '8', icon: Award, color: 'text-blue-800' }
+    { label: 'Years Leading', value: '8', icon: Award, color: 'text-black' }
   ];
   
   const recentActivities = [
@@ -102,7 +102,7 @@ const AdminProfile = () => {
               {!isEditing ? (
                 <Button
                   onClick={() => setIsEditing(true)}
-                  className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white"
+                  className="bg-green-700 hover:bg-green-800 hover:text-white text-white"
                 >
                   <Edit className="h-4 w-4 mr-2" />
                   Edit Profile
@@ -111,7 +111,7 @@ const AdminProfile = () => {
                 <div className="flex space-x-2">
                   <Button
                     onClick={handleSave}
-                    className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white"
+                    className="bg-green-700 hover:bg-green-800 hover:text-white text-white"
                   >
                     <Save className="h-4 w-4 mr-2" />
                     Save Changes
@@ -146,7 +146,7 @@ const AdminProfile = () => {
                   <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
                     {profileData.name}
                   </h2>
-                  <Badge className="bg-blue-800 text-white">
+                  <Badge className="bg-green-700 text-white">
                     <Shield className="h-3 w-3 mr-1" />
                     Admin
                   </Badge>
@@ -211,7 +211,7 @@ const AdminProfile = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <User className="h-5 w-5 mr-2 text-blue-800" />
+                  <User className="h-5 w-5 mr-2 text-black" />
                   Administrative Profile
                 </CardTitle>
               </CardHeader>
@@ -309,7 +309,7 @@ const AdminProfile = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <BarChart3 className="h-5 w-5 mr-2 text-blue-800" />
+                  <BarChart3 className="h-5 w-5 mr-2 text-black" />
                   Recent Administrative Activity
                 </CardTitle>
               </CardHeader>
@@ -317,7 +317,7 @@ const AdminProfile = () => {
                 <div className="space-y-4">
                   {recentActivities.map((activity, index) => (
                     <div key={index} className="flex items-start space-x-4 p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
-                      <div className="w-2 h-2 bg-blue-800 rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-green-700 rounded-full mt-2 flex-shrink-0"></div>
                       <div className="flex-1">
                         <h4 className="font-semibold text-gray-900 dark:text-white">{activity.action}</h4>
                         <p className="text-gray-600 dark:text-gray-400 text-sm">{activity.details}</p>
@@ -335,7 +335,7 @@ const AdminProfile = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Shield className="h-5 w-5 mr-2 text-blue-800" />
+                  <Shield className="h-5 w-5 mr-2 text-black" />
                   Administrative Settings
                 </CardTitle>
               </CardHeader>
@@ -351,7 +351,7 @@ const AdminProfile = () => {
                   />
                 </div>
                 
-                <div className="bg-blue-50 dark:bg-blue-950 border border-amber-200 dark:border-amber-800 rounded-lg p-4">
+                <div className="bg-gray-50 dark:bg-gray-900 border border-amber-200 dark:border-amber-800 rounded-lg p-4">
                   <h4 className="font-semibold text-amber-900 dark:text-amber-100 mb-2">Administrative Privileges</h4>
                   <ul className="text-amber-800 dark:text-amber-200 text-sm space-y-1">
                     <li>• Full organization management access</li>

@@ -234,7 +234,7 @@ const AgentListPage = () => {
             <div className="flex flex-col lg:flex-row gap-4 items-center">
               {/* Modern Search */}
               <div className="relative flex-1 min-w-0">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-blue-800 z-10" />
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-black z-10" />
                 <Input
                   placeholder="Search by name, location, or company..."
                   value={searchTerm}
@@ -271,14 +271,14 @@ const AgentListPage = () => {
                   onClick={() => setShowFilters(!showFilters)}
                   className={`h-12 px-6 rounded-2xl font-semibold transition-all ${
                     showFilters 
-                      ? 'bg-blue-800 hover:bg-blue-900 text-white' 
-                      : 'border-2 border-gray-200 dark:border-gray-600 hover:border-blue-800'
+                      ? 'bg-green-700 hover:bg-green-800 text-white' 
+                      : 'border-2 border-gray-200 dark:border-gray-600 hover:border-black'
                   }`}
                 >
                   <SlidersHorizontal className="h-5 w-5 mr-2" />
                   Filters
                   {activeFiltersCount > 0 && (
-                    <Badge className="ml-2 bg-white text-blue-800">
+                    <Badge className="ml-2 bg-white text-black">
                       {activeFiltersCount}
                     </Badge>
                   )}
@@ -296,7 +296,7 @@ const AgentListPage = () => {
                 <button
                   key={quick}
                   onClick={() => setSearchTerm(quick)}
-                  className="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 hover:bg-amber-100 dark:hover:bg-amber-900 text-gray-700 dark:text-gray-300 hover:text-blue-900 dark:hover:text-amber-400 rounded-full text-sm transition-all duration-200 hover:shadow-md"
+                  className="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 hover:bg-amber-100 dark:hover:bg-amber-900 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-amber-400 rounded-full text-sm transition-all duration-200 hover:shadow-md"
                 >
                   {quick}
                 </button>
@@ -323,7 +323,7 @@ const AgentListPage = () => {
                   <CardHeader className="border-b border-gray-200 dark:border-gray-700 sticky top-0 bg-white dark:bg-gray-800 z-10">
                     <div className="flex items-center justify-between">
                       <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                        <Filter className="h-5 w-5 mr-2 text-blue-800" />
+                        <Filter className="h-5 w-5 mr-2 text-black" />
                         Advanced Filters
                       </CardTitle>
                       <div className="flex gap-2">
@@ -437,7 +437,7 @@ const AgentListPage = () => {
                             <Badge
                               key={strategy}
                               variant={filters.strategyFocus.includes(strategy) ? 'default' : 'outline'}
-                              className={`cursor-pointer ${filters.strategyFocus.includes(strategy) ? 'bg-blue-800 hover:bg-blue-900' : 'hover:border-blue-700'}`}
+                              className={`cursor-pointer ${filters.strategyFocus.includes(strategy) ? 'bg-green-700 hover:bg-green-800' : 'hover:border-blue-700'}`}
                               onClick={() => toggleStrategyFocus(strategy)}
                             >
                               {strategy}
@@ -470,7 +470,7 @@ const AgentListPage = () => {
                               id="verifiedOnly"
                               checked={filters.verifiedOnly}
                               onChange={(e) => setFilters({...filters, verifiedOnly: e.target.checked})}
-                              className="w-4 h-4 text-blue-800 border-gray-300 rounded focus:ring-amber-500"
+                              className="w-4 h-4 text-black border-gray-300 rounded focus:ring-amber-500"
                             />
                             <label htmlFor="verifiedOnly" className="text-sm text-gray-900 dark:text-white cursor-pointer">
                               Verified deals only
@@ -502,7 +502,7 @@ const AgentListPage = () => {
                               id="displaysPricing"
                               checked={filters.displaysPricing}
                               onChange={(e) => setFilters({...filters, displaysPricing: e.target.checked})}
-                              className="w-4 h-4 text-blue-800 border-gray-300 rounded focus:ring-amber-500"
+                              className="w-4 h-4 text-black border-gray-300 rounded focus:ring-amber-500"
                             />
                             <label htmlFor="displaysPricing" className="text-sm text-gray-900 dark:text-white cursor-pointer">
                               Displays pricing publicly
@@ -524,7 +524,7 @@ const AgentListPage = () => {
                           Reset
                         </Button>
                         <Button 
-                          className="bg-blue-800 hover:bg-blue-900 hover:text-white"
+                          className="bg-green-700 hover:bg-green-800 hover:text-white"
                           onClick={() => setShowFilters(false)}
                         >
                           Apply Filters
@@ -582,7 +582,7 @@ const AgentListPage = () => {
                         key={i}
                         variant={currentPage === pageNum ? 'default' : 'outline'}
                         onClick={() => setCurrentPage(pageNum)}
-                        className={currentPage === pageNum ? 'bg-blue-800 hover:bg-blue-900' : ''}
+                        className={currentPage === pageNum ? 'bg-green-700 hover:bg-green-800' : ''}
                       >
                         {pageNum}
                       </Button>
@@ -658,7 +658,7 @@ const AgentListPage = () => {
                     Clear All
                   </Button>
                   <Button 
-                    className="bg-blue-800 hover:bg-blue-900 hover:text-white"
+                    className="bg-green-700 hover:bg-green-800 hover:text-white"
                     onClick={goToCompare}
                     disabled={compareAgents.length < 2}
                   >
@@ -680,7 +680,7 @@ const AgentCard = ({ agent, isInCompare, isShortlisted, onToggleCompare, onToggl
   const [showTooltip, setShowTooltip] = useState(null);
 
   return (
-    <Card className="group hover:shadow-2xl transition-all duration-300 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-blue-700 dark:hover:border-blue-800 rounded-2xl overflow-hidden">
+    <Card className="group hover:shadow-2xl transition-all duration-300 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-blue-700 dark:hover:border-black rounded-2xl overflow-hidden">
       <CardContent className="p-6">
         {/* Header with Photo */}
         <div className="flex items-start justify-between mb-4">
@@ -752,7 +752,7 @@ const AgentCard = ({ agent, isInCompare, isShortlisted, onToggleCompare, onToggl
                 )}
               </button>
             </div>
-            <span className="font-semibold text-blue-800">{agent.medianDaysToSecure || 'N/A'} days</span>
+            <span className="font-semibold text-black">{agent.medianDaysToSecure || 'N/A'} days</span>
           </div>
 
           {/* Avg Discount */}
@@ -782,7 +782,7 @@ const AgentCard = ({ agent, isInCompare, isShortlisted, onToggleCompare, onToggl
                 <Target className="h-4 w-4 mr-1" />
                 Auction Success
               </div>
-              <span className="font-semibold text-blue-800">{agent.auctionSuccessRatio}%</span>
+              <span className="font-semibold text-black">{agent.auctionSuccessRatio}%</span>
             </div>
           )}
         </div>
@@ -795,7 +795,7 @@ const AgentCard = ({ agent, isInCompare, isShortlisted, onToggleCompare, onToggl
           </p>
           <div className="flex flex-wrap gap-1">
             {agent.services && agent.services.slice(0, 2).map((service, index) => (
-              <Badge key={index} variant="outline" className="text-xs border-blue-300 dark:border-blue-800">
+              <Badge key={index} variant="outline" className="text-xs border-blue-300 dark:border-black">
                 {service}
               </Badge>
             ))}
@@ -807,7 +807,7 @@ const AgentCard = ({ agent, isInCompare, isShortlisted, onToggleCompare, onToggl
           <div className="mb-4">
             <div className="flex flex-wrap gap-1">
               {agent.specialties.map((specialty, index) => (
-                <Badge key={index} variant="secondary" className="text-xs bg-blue-50 dark:bg-blue-900 text-blue-700 dark:text-blue-300">
+                <Badge key={index} variant="secondary" className="text-xs bg-gray-50 dark:bg-blue-900 text-black dark:text-blue-300">
                   {specialty}
                 </Badge>
               ))}
@@ -818,7 +818,7 @@ const AgentCard = ({ agent, isInCompare, isShortlisted, onToggleCompare, onToggl
         {/* CTAs */}
         <div className="space-y-2">
           <Link to={`/agent/${agent.id}`} className="block">
-            <Button className="w-full bg-blue-800 hover:bg-blue-900 hover:text-white">
+            <Button className="w-full bg-green-700 hover:bg-green-800 hover:text-white">
               View Profile
             </Button>
           </Link>
@@ -828,7 +828,7 @@ const AgentCard = ({ agent, isInCompare, isShortlisted, onToggleCompare, onToggl
               size="sm"
               onClick={onToggleCompare}
               disabled={!isInCompare && compareCount >= 4}
-              className={isInCompare ? 'border-blue-800 text-blue-800' : ''}
+              className={isInCompare ? 'border-black text-black' : ''}
             >
               {isInCompare ? <Minus className="h-3 w-3 mr-1" /> : <Plus className="h-3 w-3 mr-1" />}
               Compare

@@ -71,7 +71,7 @@ const CompareAgentsPage = () => {
                 <div className="text-center">
                   <Button 
                     onClick={() => setShowAddAgent(true)} 
-                    className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white"
+                    className="bg-green-700 hover:bg-green-800 hover:text-white text-white"
                   >
                     <Plus className="h-5 w-5 mr-2" />
                     Add Agent to Compare
@@ -89,7 +89,7 @@ const CompareAgentsPage = () => {
                     </Button>
                   </div>
                   <div className="relative">
-                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-blue-800 z-10" />
+                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-black z-10" />
                     <Input
                       placeholder="Search by name, location, or company..."
                       value={searchTerm}
@@ -105,7 +105,7 @@ const CompareAgentsPage = () => {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-64 overflow-y-auto">
                     {availableAgents.map((agent) => (
-                      <div key={agent.id} className="border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg p-4 hover:border-blue-300 dark:hover:border-blue-800 cursor-pointer transition-colors" onClick={() => addAgent(agent)}>
+                      <div key={agent.id} className="border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg p-4 hover:border-blue-300 dark:hover:border-black cursor-pointer transition-colors" onClick={() => addAgent(agent)}>
                         <div className="flex items-center space-x-3">
                           <img src={agent.photo} alt={agent.name} className="w-12 h-12 rounded-full object-cover" />
                           <div>
@@ -134,7 +134,7 @@ const CompareAgentsPage = () => {
               {/* Row 1: Title + Add Button */}
               <div className="flex items-center justify-between mb-3 px-1">
                 <div className="flex items-center space-x-3">
-                  <BarChart3 className="h-6 w-6 text-blue-800" />
+                  <BarChart3 className="h-6 w-6 text-black" />
                   <h2 className="text-xl font-bold text-gray-900 dark:text-white">
                     Comparing Agents ({selectedAgents.length}/4)
                   </h2>
@@ -142,7 +142,7 @@ const CompareAgentsPage = () => {
                 {selectedAgents.length < 4 && (
                   <Button 
                     onClick={() => setShowAddAgent(true)} 
-                    className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white"
+                    className="bg-green-700 hover:bg-green-800 hover:text-white text-white"
                     size="sm"
                   >
                     <Plus className="h-4 w-4 mr-2" />
@@ -154,18 +154,18 @@ const CompareAgentsPage = () => {
               {/* Row 2: Agent Cards - Aligned with comparison columns */}
               <div className={`grid gap-4 ${selectedAgents.length === 1 ? 'grid-cols-1' : selectedAgents.length === 2 ? 'grid-cols-1 md:grid-cols-2' : selectedAgents.length === 3 ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'}`}>
                 {selectedAgents.map((agent) => (
-                  <div key={agent.id} className="bg-gray-50 dark:bg-gray-700 border-2 border-blue-700 dark:border-blue-800 rounded-lg p-3">
+                  <div key={agent.id} className="bg-gray-50 dark:bg-gray-700 border-2 border-blue-700 dark:border-black rounded-lg p-3">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3 min-w-0 flex-1">
                         <img
                           src={agent.photo}
                           alt={agent.name}
-                          className="w-12 h-12 rounded-full object-cover border-2 border-amber-400 dark:border-blue-800 flex-shrink-0"
+                          className="w-12 h-12 rounded-full object-cover border-2 border-amber-400 dark:border-black flex-shrink-0"
                         />
                         <div className="min-w-0 flex-1">
                           <p className="text-sm font-bold text-gray-900 dark:text-white truncate">{agent.name}</p>
                           <p className="text-xs text-gray-600 dark:text-gray-400 truncate">{agent.company}</p>
-                          <p className="text-xs text-blue-800 dark:text-blue-700 flex items-center mt-0.5">
+                          <p className="text-xs text-black dark:text-black flex items-center mt-0.5">
                             <MapPin className="h-3 w-3 mr-1" />
                             {agent.location}
                           </p>
@@ -199,7 +199,7 @@ const CompareAgentsPage = () => {
                     <CardHeader className="border-b border-gray-200 dark:border-gray-700">
                       <div className="flex items-center justify-between">
                         <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                          <Search className="h-5 w-5 mr-2 text-blue-800" />
+                          <Search className="h-5 w-5 mr-2 text-black" />
                           Add Agent to Compare
                         </CardTitle>
                         <Button variant="ghost" onClick={() => setShowAddAgent(false)} size="sm">
@@ -214,7 +214,7 @@ const CompareAgentsPage = () => {
                       <div className="space-y-4">
                         {/* Search Input */}
                         <div className="relative">
-                          <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-blue-800 z-10" />
+                          <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-black z-10" />
                           <Input
                             placeholder="Search by name, location, or company..."
                             value={searchTerm}
@@ -230,14 +230,14 @@ const CompareAgentsPage = () => {
                             availableAgents.map((agent) => (
                               <div 
                                 key={agent.id} 
-                                className="border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg p-4 hover:border-blue-700 dark:hover:border-blue-800 hover:shadow-md cursor-pointer transition-all" 
+                                className="border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg p-4 hover:border-blue-700 dark:hover:border-black hover:shadow-md cursor-pointer transition-all" 
                                 onClick={() => addAgent(agent)}
                               >
                                 <div className="flex items-center space-x-3">
                                   <img 
                                     src={agent.photo} 
                                     alt={agent.name} 
-                                    className="w-16 h-16 rounded-full object-cover border-2 border-amber-400 dark:border-blue-800" 
+                                    className="w-16 h-16 rounded-full object-cover border-2 border-amber-400 dark:border-black" 
                                   />
                                   <div className="flex-1 min-w-0">
                                     <h4 className="font-semibold text-gray-900 dark:text-white truncate">{agent.name}</h4>
@@ -268,7 +268,7 @@ const CompareAgentsPage = () => {
             <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
               <CardHeader>
                 <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                  <Users className="h-5 w-5 mr-2 text-blue-800" />
+                  <Users className="h-5 w-5 mr-2 text-black" />
                   Overview
                 </CardTitle>
               </CardHeader>
@@ -295,7 +295,7 @@ const CompareAgentsPage = () => {
                           <h4 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-2">Coverage Areas</h4>
                           <div className="flex flex-wrap gap-1">
                             {agent.coverageAreas && agent.coverageAreas.map((area, index) => (
-                              <Badge key={index} variant="secondary" className="text-xs bg-blue-50 dark:bg-amber-900 text-blue-900 dark:text-amber-300 border border-amber-200 dark:border-amber-700">
+                              <Badge key={index} variant="secondary" className="text-xs bg-gray-50 dark:bg-amber-900 text-black dark:text-amber-300 border border-amber-200 dark:border-amber-700">
                                 {area}
                               </Badge>
                             ))}
@@ -320,7 +320,7 @@ const CompareAgentsPage = () => {
                       </div>
 
                       <Link to={`/agent/${agent.id}`} className="mt-4 block">
-                        <Button size="sm" variant="outline" className="w-full border-blue-800 text-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950">
+                        <Button size="sm" variant="outline" className="w-full border-black text-black hover:bg-gray-50 dark:hover:bg-gray-800">
                           View Full Profile
                         </Button>
                       </Link>
@@ -334,7 +334,7 @@ const CompareAgentsPage = () => {
             <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
               <CardHeader>
                 <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                  <TrendingUp className="h-5 w-5 mr-2 text-blue-800" />
+                  <TrendingUp className="h-5 w-5 mr-2 text-black" />
                   Performance Metrics
                 </CardTitle>
               </CardHeader>
@@ -343,13 +343,13 @@ const CompareAgentsPage = () => {
                   {/* Median Days to Secure */}
                   <div className="border-b border-gray-100 dark:border-gray-700 pb-4">
                     <div className="flex items-center mb-3">
-                      <Calendar className="h-4 w-4 text-blue-800 mr-2" />
+                      <Calendar className="h-4 w-4 text-black mr-2" />
                       <span className="font-medium text-gray-900 dark:text-white">Median Days to Secure</span>
                     </div>
                     <div className={`grid gap-3 ${selectedAgents.length === 1 ? 'grid-cols-1' : selectedAgents.length === 2 ? 'grid-cols-2' : selectedAgents.length === 3 ? 'grid-cols-3' : 'grid-cols-4'}`}>
                       {selectedAgents.map((agent) => (
                         <div key={agent.id} className="text-center bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
-                          <div className="text-2xl font-bold text-blue-800">{agent.medianDaysToSecure}</div>
+                          <div className="text-2xl font-bold text-black">{agent.medianDaysToSecure}</div>
                           <div className="text-xs text-gray-600 dark:text-gray-400">days</div>
                         </div>
                       ))}
@@ -359,13 +359,13 @@ const CompareAgentsPage = () => {
                   {/* Verified Deals Count */}
                   <div className="border-b border-gray-100 dark:border-gray-700 pb-4">
                     <div className="flex items-center mb-3">
-                      <CheckCircle className="h-4 w-4 text-blue-800 mr-2" />
+                      <CheckCircle className="h-4 w-4 text-black mr-2" />
                       <span className="font-medium text-gray-900 dark:text-white">Verified Deals</span>
                     </div>
                     <div className={`grid gap-3 ${selectedAgents.length === 1 ? 'grid-cols-1' : selectedAgents.length === 2 ? 'grid-cols-2' : selectedAgents.length === 3 ? 'grid-cols-3' : 'grid-cols-4'}`}>
                       {selectedAgents.map((agent) => (
                         <div key={agent.id} className="text-center bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
-                          <div className="text-2xl font-bold text-blue-800">{agent.verifiedDealsCount}</div>
+                          <div className="text-2xl font-bold text-black">{agent.verifiedDealsCount}</div>
                           <div className="text-xs text-gray-600 dark:text-gray-400">deals</div>
                         </div>
                       ))}
@@ -375,7 +375,7 @@ const CompareAgentsPage = () => {
                   {/* Avg Discount % */}
                   <div className="border-b border-gray-100 dark:border-gray-700 pb-4">
                     <div className="flex items-center mb-3">
-                      <TrendingDown className="h-4 w-4 text-blue-800 mr-2" />
+                      <TrendingDown className="h-4 w-4 text-black mr-2" />
                       <span className="font-medium text-gray-900 dark:text-white">Avg Discount Secured</span>
                     </div>
                     <div className={`grid gap-3 ${selectedAgents.length === 1 ? 'grid-cols-1' : selectedAgents.length === 2 ? 'grid-cols-2' : selectedAgents.length === 3 ? 'grid-cols-3' : 'grid-cols-4'}`}>
@@ -391,13 +391,13 @@ const CompareAgentsPage = () => {
                   {/* Auction Ratio */}
                   <div className="border-b border-gray-100 dark:border-gray-700 pb-4">
                     <div className="flex items-center mb-3">
-                      <Target className="h-4 w-4 text-blue-800 mr-2" />
+                      <Target className="h-4 w-4 text-black mr-2" />
                       <span className="font-medium text-gray-900 dark:text-white">Auction Success Ratio</span>
                     </div>
                     <div className={`grid gap-3 ${selectedAgents.length === 1 ? 'grid-cols-1' : selectedAgents.length === 2 ? 'grid-cols-2' : selectedAgents.length === 3 ? 'grid-cols-3' : 'grid-cols-4'}`}>
                       {selectedAgents.map((agent) => (
                         <div key={agent.id} className="text-center bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
-                          <div className="text-2xl font-bold text-blue-800">{agent.auctionSuccessRatio}%</div>
+                          <div className="text-2xl font-bold text-black">{agent.auctionSuccessRatio}%</div>
                           <div className="text-xs text-gray-600 dark:text-gray-400">success rate</div>
                         </div>
                       ))}
@@ -407,13 +407,13 @@ const CompareAgentsPage = () => {
                   {/* Off-Market Ratio */}
                   <div>
                     <div className="flex items-center mb-3">
-                      <Percent className="h-4 w-4 text-blue-800 mr-2" />
+                      <Percent className="h-4 w-4 text-black mr-2" />
                       <span className="font-medium text-gray-900 dark:text-white">Off-Market Deal Ratio</span>
                     </div>
                     <div className={`grid gap-3 ${selectedAgents.length === 1 ? 'grid-cols-1' : selectedAgents.length === 2 ? 'grid-cols-2' : selectedAgents.length === 3 ? 'grid-cols-3' : 'grid-cols-4'}`}>
                       {selectedAgents.map((agent) => (
                         <div key={agent.id} className="text-center bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
-                          <div className="text-2xl font-bold text-blue-800">{agent.offMarketRatio}%</div>
+                          <div className="text-2xl font-bold text-black">{agent.offMarketRatio}%</div>
                           <div className="text-xs text-gray-600 dark:text-gray-400">off-market</div>
                         </div>
                       ))}
@@ -427,7 +427,7 @@ const CompareAgentsPage = () => {
             <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
               <CardHeader>
                 <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                  <BarChart3 className="h-5 w-5 mr-2 text-blue-800" />
+                  <BarChart3 className="h-5 w-5 mr-2 text-black" />
                   Deal Mix
                 </CardTitle>
               </CardHeader>
@@ -445,10 +445,10 @@ const CompareAgentsPage = () => {
                               <div key={type}>
                                 <div className="flex justify-between text-sm mb-1">
                                   <span className="text-gray-700 dark:text-gray-300">{type}</span>
-                                  <span className="font-semibold text-blue-800">{percentage}%</span>
+                                  <span className="font-semibold text-black">{percentage}%</span>
                                 </div>
                                 <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                                  <div className="bg-blue-800 h-2 rounded-full" style={{ width: `${percentage}%` }}></div>
+                                  <div className="bg-green-700 h-2 rounded-full" style={{ width: `${percentage}%` }}></div>
                                 </div>
                               </div>
                             ))}
@@ -462,10 +462,10 @@ const CompareAgentsPage = () => {
                               <div key={band}>
                                 <div className="flex justify-between text-sm mb-1">
                                   <span className="text-gray-700 dark:text-gray-300">{band}</span>
-                                  <span className="font-semibold text-blue-800">{percentage}%</span>
+                                  <span className="font-semibold text-black">{percentage}%</span>
                                 </div>
                                 <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                                  <div className="bg-blue-800 h-2 rounded-full" style={{ width: `${percentage}%` }}></div>
+                                  <div className="bg-green-700 h-2 rounded-full" style={{ width: `${percentage}%` }}></div>
                                 </div>
                               </div>
                             ))}
@@ -482,7 +482,7 @@ const CompareAgentsPage = () => {
             <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
               <CardHeader>
                 <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                  <MessageSquare className="h-5 w-5 mr-2 text-blue-800" />
+                  <MessageSquare className="h-5 w-5 mr-2 text-black" />
                   Customer Voice
                 </CardTitle>
               </CardHeader>
@@ -518,7 +518,7 @@ const CompareAgentsPage = () => {
             <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
               <CardHeader>
                 <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                  <Shield className="h-5 w-5 mr-2 text-blue-800" />
+                  <Shield className="h-5 w-5 mr-2 text-black" />
                   Compliance & Credibility
                 </CardTitle>
               </CardHeader>
@@ -535,7 +535,7 @@ const CompareAgentsPage = () => {
                         <h5 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-2">Industry Memberships</h5>
                         <div className="flex flex-wrap gap-1">
                           {agent.industryMemberships && agent.industryMemberships.map((membership, index) => (
-                            <Badge key={index} variant="outline" className="text-xs border-blue-300 dark:border-blue-600 text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-blue-900">
+                            <Badge key={index} variant="outline" className="text-xs border-blue-300 dark:border-gray-300 text-black dark:text-blue-300 bg-gray-50 dark:bg-blue-900">
                               {membership}
                             </Badge>
                           ))}
@@ -568,7 +568,7 @@ const CompareAgentsPage = () => {
             <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
               <CardHeader>
                 <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                  <Home className="h-5 w-5 mr-2 text-blue-800" />
+                  <Home className="h-5 w-5 mr-2 text-black" />
                   Recent Deals (Top 3)
                 </CardTitle>
               </CardHeader>
@@ -579,10 +579,10 @@ const CompareAgentsPage = () => {
                       <h4 className="font-semibold text-gray-900 dark:text-white mb-3">{agent.name}</h4>
                       <div className="space-y-3">
                         {agent.recentSales && agent.recentSales.slice(0, 3).map((sale, index) => (
-                          <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-3 hover:border-blue-300 dark:hover:border-blue-800 border-2 border-transparent transition-colors">
+                          <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-3 hover:border-blue-300 dark:hover:border-black border-2 border-transparent transition-colors">
                             <div className="flex items-start justify-between mb-2">
-                              <Building2 className="h-4 w-4 text-blue-800 mt-1 flex-shrink-0" />
-                              <span className="text-lg font-bold text-blue-800 ml-2">{sale.price}</span>
+                              <Building2 className="h-4 w-4 text-black mt-1 flex-shrink-0" />
+                              <span className="text-lg font-bold text-black ml-2">{sale.price}</span>
                             </div>
                             <p className="text-sm text-gray-900 dark:text-white font-medium mb-2">{sale.address}</p>
                             <div className="flex items-center justify-between text-xs text-gray-600 dark:text-gray-400">
@@ -599,7 +599,7 @@ const CompareAgentsPage = () => {
                         ))}
                       </div>
                       <Link to={`/agent/${agent.id}`} className="mt-3 block">
-                        <Button size="sm" variant="ghost" className="w-full text-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950">
+                        <Button size="sm" variant="ghost" className="w-full text-black hover:bg-gray-50 dark:hover:bg-gray-800">
                           View All Deals →
                         </Button>
                       </Link>
@@ -622,7 +622,7 @@ const CompareAgentsPage = () => {
               </p>
               <Button 
                 onClick={() => setShowAddAgent(true)} 
-                className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white"
+                className="bg-green-700 hover:bg-green-800 hover:text-white text-white"
               >
                 <Plus className="h-5 w-5 mr-2" />
                 Add Your First Agent

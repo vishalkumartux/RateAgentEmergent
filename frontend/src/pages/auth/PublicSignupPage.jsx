@@ -101,13 +101,13 @@ const PublicSignupPage = () => {
       <div className="max-w-md w-full">
         {/* Header */}
         <div className="text-center mb-8">
-          <Link to="/" className="inline-flex items-center text-blue-800 hover:text-blue-900 mb-6">
+          <Link to="/" className="inline-flex items-center text-black hover:text-black mb-6">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Home
           </Link>
           
           <div className="w-16 h-16 bg-amber-100 dark:bg-amber-900 rounded-full flex items-center justify-center mx-auto mb-4">
-            <User className="h-8 w-8 text-blue-800" />
+            <User className="h-8 w-8 text-black" />
           </div>
           
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
@@ -206,7 +206,7 @@ const PublicSignupPage = () => {
                   className="mt-0.5"
                 />
                 <Label htmlFor="agreeToTerms" className="text-sm leading-relaxed">
-                  I agree to the <Link to="/terms" className="text-blue-800 hover:text-blue-900 underline">Terms and Conditions</Link> and <Link to="/privacy" className="text-blue-800 hover:text-blue-900 underline">Privacy Policy</Link>
+                  I agree to the <Link to="/terms" className="text-black hover:text-black underline">Terms and Conditions</Link> and <Link to="/privacy" className="text-black hover:text-black underline">Privacy Policy</Link>
                 </Label>
               </div>
               {errors.agreeToTerms && <p className="text-red-600 text-sm">{errors.agreeToTerms}</p>}
@@ -221,7 +221,7 @@ const PublicSignupPage = () => {
               <Button 
                 type="submit" 
                 disabled={isSubmitting}
-                className="w-full bg-blue-800 hover:bg-blue-900 hover:text-white text-white"
+                className="w-full bg-green-700 hover:bg-green-800 hover:text-white text-white"
               >
                 {isSubmitting ? 'Creating Account...' : 'Create Account'}
               </Button>
@@ -231,7 +231,7 @@ const PublicSignupPage = () => {
             <div className="mt-6 text-center">
               <p className="text-gray-600 dark:text-gray-400 text-sm">
                 Already have an account?{' '}
-                <Link to="/login" className="text-blue-800 hover:text-blue-900 font-medium">
+                <Link to="/login" className="text-black hover:text-black font-medium">
                   Sign in here
                 </Link>
               </p>
@@ -240,15 +240,15 @@ const PublicSignupPage = () => {
         </Card>
 
         {/* Benefits */}
-        <Card className="mt-6 bg-blue-50 dark:bg-blue-950 border-blue-200 dark:border-blue-800">
+        <Card className="mt-6 bg-gray-50 dark:bg-gray-900 border-blue-200 dark:border-black">
           <CardContent className="p-4">
             <div className="flex items-start space-x-3">
               <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <div className="text-sm">
-                <p className="text-blue-900 dark:text-blue-100 font-medium mb-1">
+                <p className="text-black dark:text-blue-100 font-medium mb-1">
                   What you get with your account:
                 </p>
-                <ul className="text-blue-700 dark:text-blue-300 space-y-1">
+                <ul className="text-black dark:text-blue-300 space-y-1">
                   <li>• Save favorite agents and properties</li>
                   <li>• Track your search history and preferences</li>
                   <li>• Get personalized agent recommendations</li>
