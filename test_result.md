@@ -111,24 +111,35 @@ user_problem_statement: |
 frontend:
   - task: "Navigation Fixes - Preview Mode Redirects"
     implemented: true
-    working: "pending_test"
-    file: "/app/frontend/src/pages/staff/DealDetailsNew.jsx, /app/frontend/src/pages/staff/MyProfile.jsx"
+    working: true
+    file: "/app/frontend/src/pages/staff/DealDetailsNew.jsx, /app/frontend/src/pages/staff/MyProfile.jsx, /app/frontend/src/pages/AgentProfilePage.jsx"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
-      - working: "pending_test"
+      - working: true
         agent: "main"
         comment: |
-          Fixed two navigation issues per user feedback:
+          ✅ ALL NAVIGATION ISSUES FIXED AND TESTED
           
-          1. **Deal Preview Close**: Changed exit preview redirect from `/staff/deals` (list) to `/staff/deals/${id}` (detail page)
-          2. **My Profile Preview**: Changed from redirecting to public `/agent/1` to staying in staff area with `/staff/my-profile?preview=true`
-             - Implemented preview mode similar to deals
-             - Added preview banner with exit button
-             - Renders public AgentProfilePage within staff context
+          **Fix 1: Deal Preview Exit** 
+          - Changed exit preview redirect from `/staff/deals` (list) to `/staff/deals/${id}` (detail page)
+          - File: DealDetailsNew.jsx line 53
+          - Test: ✅ URL correctly changes from `/staff/deals/1?preview=true` to `/staff/deals/1`
           
-          Both fixes ensure users stay within the agent/admin area during preview workflows.
+          **Fix 2: My Profile Preview** 
+          - Issue: Preview showed blank page (AgentProfilePage needs agent ID from URL params)
+          - Solution: Modified AgentProfilePage to accept optional `agentIdOverride` prop
+          - Now passes agentIdOverride={1} when rendering in preview mode
+          - Files: MyProfile.jsx (line 140), AgentProfilePage.jsx (line 39)
+          - Test: ✅ Preview shows full public profile with banner
+          - Test: ✅ Exit returns to `/staff/my-profile` (edit mode)
+          
+          Both preview modes now:
+          - Stay within agent/admin area
+          - Show blue preview banner
+          - Have working "Exit Preview" button
+          - Return to correct edit/detail page (not list)
 
   - task: "Org Settings Page - Comprehensive Agency Management"
     implemented: true
