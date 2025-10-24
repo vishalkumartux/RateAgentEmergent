@@ -222,8 +222,8 @@ const Header = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`flex items-center space-x-3 px-4 py-3 rounded-lg font-medium transition-all ${
                     isActive(item.href)
-                      ? 'text-white bg-green-700 dark:bg-blue-700'
-                      : 'text-gray-600 dark:text-gray-300 hover:bg-green-700 hover:text-white dark:hover:bg-green-600'
+                      ? 'text-white bg-black dark:bg-white dark:text-black'
+                      : 'text-gray-600 dark:text-gray-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black'
                   }`}
                 >
                   <Icon className="h-5 w-5" />
