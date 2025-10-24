@@ -109,6 +109,27 @@ user_problem_statement: |
   3. My Profile Page: Profile management for agents/admins (PENDING - Phase 4)
 
 frontend:
+  - task: "Navigation Fixes - Preview Mode Redirects"
+    implemented: true
+    working: "pending_test"
+    file: "/app/frontend/src/pages/staff/DealDetailsNew.jsx, /app/frontend/src/pages/staff/MyProfile.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "pending_test"
+        agent: "main"
+        comment: |
+          Fixed two navigation issues per user feedback:
+          
+          1. **Deal Preview Close**: Changed exit preview redirect from `/staff/deals` (list) to `/staff/deals/${id}` (detail page)
+          2. **My Profile Preview**: Changed from redirecting to public `/agent/1` to staying in staff area with `/staff/my-profile?preview=true`
+             - Implemented preview mode similar to deals
+             - Added preview banner with exit button
+             - Renders public AgentProfilePage within staff context
+          
+          Both fixes ensure users stay within the agent/admin area during preview workflows.
+
   - task: "Org Settings Page - Comprehensive Agency Management"
     implemented: true
     working: true
