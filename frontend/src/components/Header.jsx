@@ -222,8 +222,8 @@ const Header = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`flex items-center space-x-3 px-4 py-3 rounded-lg font-medium transition-all ${
                     isActive(item.href)
-                      ? 'text-blue-800 bg-blue-50 dark:bg-blue-950'
-                      : 'text-gray-600 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-blue-950'
+                      ? 'text-white bg-blue-800 dark:bg-blue-700'
+                      : 'text-gray-600 dark:text-gray-300 hover:bg-blue-800 hover:text-white dark:hover:bg-blue-700'
                   }`}
                 >
                   <Icon className="h-5 w-5" />
@@ -235,7 +235,7 @@ const Header = () => {
               <Button
                 onClick={toggleTheme}
                 variant="ghost"
-                className="w-full justify-start text-gray-600 dark:text-gray-300"
+                className="w-full justify-start text-gray-600 dark:text-gray-300 hover:bg-slate-200 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white"
               >
                 {theme === 'light' ? <Moon className="h-4 w-4 mr-3" /> : <Sun className="h-4 w-4 mr-3" />}
                 {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
@@ -244,17 +244,17 @@ const Header = () => {
               {!isAuthenticated ? (
                 <>
                   <Link to="/login">
-                    <Button variant="ghost" className="w-full justify-start text-gray-600 dark:text-gray-300">
+                    <Button variant="ghost" className="w-full justify-start text-gray-600 dark:text-gray-300 hover:bg-slate-200 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">
                       Sign In
                     </Button>
                   </Link>
                   <Link to="/public-signup">
-                    <Button variant="outline" className="w-full border-blue-800 text-blue-800 hover:bg-blue-50">
+                    <Button variant="outline" className="w-full border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-white dark:border-blue-600 dark:text-blue-400 dark:hover:bg-blue-700 dark:hover:text-white">
                       Sign Up
                     </Button>
                   </Link>
                   <Link to="/register">
-                    <Button className="w-full bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
+                    <Button className="w-full bg-blue-800 hover:bg-blue-900 text-white hover:text-white dark:bg-blue-700 dark:hover:bg-blue-800">
                       List Your Agency
                     </Button>
                   </Link>
