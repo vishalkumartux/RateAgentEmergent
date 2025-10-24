@@ -394,7 +394,8 @@ Login → Agent Dashboard
 
 ### Agent Routes:
 - `/staff/dashboard` - Agent performance hub
-- `/staff/my-profile` - Agent's public profile
+- `/staff/my-profile` - Agent's public profile (edit mode)
+- `/staff/my-profile?preview=true` - Profile preview mode (public view)
 - `/staff/deals` - Deal portfolio management
 - `/staff/deals/add` - Add new deal workflow
 - `/staff/deals/:id` - Deal details (view mode)
