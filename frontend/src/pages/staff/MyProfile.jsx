@@ -111,6 +111,35 @@ const MyProfile = () => {
   };
 
   return (
+    <>
+      {/* If preview mode, render the public view with a banner */}
+      {isPreview ? (
+        <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+          {/* Preview Banner */}
+          <div className="bg-blue-600 dark:bg-blue-700 text-white py-3 sticky top-0 z-50 shadow-lg">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center">
+                  <Eye className="h-5 w-5 mr-3" />
+                  <div>
+                    <p className="font-semibold">Preview Mode - Public View</p>
+                    <p className="text-sm text-blue-100">This is exactly how buyers will see your profile</p>
+                  </div>
+                </div>
+                <Link to="/staff/my-profile">
+                  <Button variant="secondary" size="sm" className="bg-white text-blue-600 hover:bg-blue-50">
+                    <X className="h-4 w-4 mr-2" />
+                    Exit Preview
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+          
+          {/* Render the actual public agent profile page */}
+          <AgentProfilePage />
+        </div>
+      ) : (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
