@@ -500,7 +500,7 @@ const AddDeal = () => {
                           <button
                             type="button"
                             onClick={() => removePhoto(photo.id)}
-                            className="absolute top-2 right-2 w-6 h-6 bg-red-600 text-white rounded-full flex items-center justify-center hover:bg-red-700 transition-colors"
+                            className="absolute top-2 right-2 w-6 h-6 bg-red-600 text-white rounded-full flex items-center justify-center hover:bg-red-700 hover:text-white transition-colors"
                           >
                             <X className="h-3 w-3" />
                           </button>
@@ -770,7 +770,7 @@ const AddDeal = () => {
             {currentStep < 4 ? (
               <Button
                 onClick={nextStep}
-                className="bg-blue-800 hover:bg-blue-900 text-white"
+                className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white"
               >
                 Next Step
                 <ArrowLeft className="h-4 w-4 ml-2 rotate-180" />
@@ -779,7 +779,7 @@ const AddDeal = () => {
               <Button
                 onClick={handleSubmit}
                 disabled={isSubmitting}
-                className="bg-emerald-600 hover:bg-emerald-700 text-white"
+                className="bg-emerald-600 hover:bg-emerald-700 hover:text-white text-white"
               >
                 {isSubmitting ? 'Creating Deal...' : (
                   <>

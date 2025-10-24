@@ -164,7 +164,7 @@ const StaffProfileSetup = () => {
                   </div>
                   <label 
                     htmlFor="photo-upload"
-                    className="absolute bottom-0 right-0 w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center cursor-pointer hover:bg-blue-900 transition-colors"
+                    className="absolute bottom-0 right-0 w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center cursor-pointer hover:bg-blue-900 hover:text-white transition-colors"
                   >
                     <Camera className="h-5 w-5 text-white" />
                   </label>
@@ -373,7 +373,7 @@ const StaffProfileSetup = () => {
             <Button 
               type="submit" 
               disabled={isSubmitting}
-              className="bg-blue-800 hover:bg-blue-900 text-white px-8 py-3 text-lg"
+              className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white px-8 py-3 text-lg"
             >
               {isSubmitting ? 'Creating Profile...' : (
                 <>

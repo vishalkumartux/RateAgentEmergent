@@ -209,7 +209,7 @@ const AdminDashboard = () => {
               Please complete your organization setup first.
             </p>
             <Link to="/organization-setup">
-              <Button className="bg-blue-800 hover:bg-blue-900 text-white">
+              <Button className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
                 Setup Organization
               </Button>
             </Link>
@@ -233,7 +233,7 @@ const AdminDashboard = () => {
             </p>
           </div>
           <Link to="/admin/settings">
-            <Button className="bg-blue-800 hover:bg-blue-900 text-white">
+            <Button className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
               <Settings className="h-4 w-4 mr-2" />
               Org Settings
             </Button>
@@ -537,7 +537,7 @@ const AdminDashboard = () => {
                       <Button
                         onClick={handleInviteStaff}
                         disabled={isInviting}
-                        className="bg-blue-800 hover:bg-blue-900 text-white"
+                        className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white"
                       >
                         {isInviting ? 'Sending...' : 'Send Invitations'}
                       </Button>

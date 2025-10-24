@@ -593,7 +593,7 @@ const DealsPage = () => {
                           Reset
                         </Button>
                         <Button 
-                          className="bg-blue-800 hover:bg-blue-900"
+                          className="bg-blue-800 hover:bg-blue-900 hover:text-white"
                           onClick={() => setShowFilters(false)}
                         >
                           Apply Filters
@@ -828,7 +828,7 @@ const DealCard = ({ deal }) => {
         {/* View Links */}
         <div className="mt-3 flex gap-2">
           <Link to={`/deal/${deal.id}`} className="flex-1">
-            <Button variant="default" size="sm" className="w-full bg-blue-800 hover:bg-blue-900">
+            <Button variant="default" size="sm" className="w-full bg-blue-800 hover:bg-blue-900 hover:text-white">
               View Deal
             </Button>
           </Link>

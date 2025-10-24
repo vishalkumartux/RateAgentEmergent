@@ -98,7 +98,7 @@ const Header = () => {
                   </Button>
                 </Link>
                 <Link to="/register">
-                  <Button size="sm" className="bg-blue-800 hover:bg-blue-900 text-white px-6">
+                  <Button size="sm" className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white px-6">
                     List Your Agency
                   </Button>
                 </Link>
@@ -121,7 +121,7 @@ const Header = () => {
                       <>
                         <Link
                           to="/admin/dashboard"
-                          className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                          className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-700"
                           onClick={() => setIsUserMenuOpen(false)}
                         >
                           <BarChart3 className="inline h-4 w-4 mr-2" />
@@ -129,7 +129,7 @@ const Header = () => {
                         </Link>
                         <Link
                           to="/admin/settings"
-                          className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                          className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-700"
                           onClick={() => setIsUserMenuOpen(false)}
                         >
                           <Settings className="inline h-4 w-4 mr-2" />
@@ -142,7 +142,7 @@ const Header = () => {
                       <>
                         <Link
                           to="/staff/dashboard"
-                          className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                          className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-700"
                           onClick={() => setIsUserMenuOpen(false)}
                         >
                           <BarChart3 className="inline h-4 w-4 mr-2" />
@@ -157,7 +157,7 @@ const Header = () => {
                         user?.role === 'agency_staff' ? "/staff/my-profile" : 
                         "/dashboard"
                       }
-                      className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                      className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-700"
                       onClick={() => setIsUserMenuOpen(false)}
                     >
                       <User className="inline h-4 w-4 mr-2" />
@@ -167,7 +167,7 @@ const Header = () => {
                       <>
                         <Link
                           to="/staff/deals"
-                          className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                          className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-700"
                           onClick={() => setIsUserMenuOpen(false)}
                         >
                           <BarChart3 className="inline h-4 w-4 mr-2" />
@@ -175,7 +175,7 @@ const Header = () => {
                         </Link>
                         <Link
                           to="/staff/reviews"
-                          className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                          className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-700"
                           onClick={() => setIsUserMenuOpen(false)}
                         >
                           <Star className="inline h-4 w-4 mr-2" />
@@ -186,7 +186,7 @@ const Header = () => {
                     <div className="border-t border-gray-200 dark:border-gray-700 my-1"></div>
                     <button
                       onClick={handleLogout}
-                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-700"
                     >
                       <LogOut className="inline h-4 w-4 mr-2" />
                       Sign Out
@@ -223,7 +223,7 @@ const Header = () => {
                   className={`flex items-center space-x-3 px-4 py-3 rounded-lg font-medium transition-all ${
                     isActive(item.href)
                       ? 'text-blue-800 bg-blue-50 dark:bg-blue-950'
-                      : 'text-gray-600 dark:text-gray-300 hover:text-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950'
+                      : 'text-gray-600 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-blue-950'
                   }`}
                 >
                   <Icon className="h-5 w-5" />
@@ -254,7 +254,7 @@ const Header = () => {
                     </Button>
                   </Link>
                   <Link to="/register">
-                    <Button className="w-full bg-blue-800 hover:bg-blue-900 text-white">
+                    <Button className="w-full bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
                       List Your Agency
                     </Button>
                   </Link>

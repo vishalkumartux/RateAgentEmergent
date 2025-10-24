@@ -95,7 +95,7 @@ const SubmitReviewPage = () => {
             <p className="text-gray-600 mb-6">
               Thank you for sharing your experience. Your review will help other clients make informed decisions.
             </p>
-            <Button onClick={() => navigate('/reviews')} className="bg-emerald-600 hover:bg-emerald-700 text-white">
+            <Button onClick={() => navigate('/reviews')} className="bg-emerald-600 hover:bg-emerald-700 hover:text-white text-white">
               View All Reviews
             </Button>
           </CardContent>
@@ -391,7 +391,7 @@ const SubmitReviewPage = () => {
                 <Button
                   type="submit"
                   disabled={!isFormValid || isSubmitting}
-                  className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 text-lg"
+                  className="bg-emerald-600 hover:bg-emerald-700 hover:text-white text-white px-8 py-3 text-lg"
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit Review'}
                 </Button>

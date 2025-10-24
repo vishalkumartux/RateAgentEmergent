@@ -334,7 +334,7 @@ const RegisterPage = () => {
             <Button 
               type="submit" 
               disabled={isSubmitting}
-              className="bg-blue-800 hover:bg-blue-900 text-white px-8"
+              className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white px-8"
             >
               {isSubmitting ? 'Creating Account...' : 'Create Account'}
             </Button>

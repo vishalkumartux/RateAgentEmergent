@@ -355,7 +355,7 @@ const MyReviews = () => {
                   size="sm"
                   onClick={() => handleReply(review.id)}
                   disabled={!replyText.trim()}
-                  className="bg-blue-600 hover:bg-blue-700 text-white"
+                  className="bg-blue-600 hover:bg-blue-700 hover:text-white text-white"
                 >
                   <Send className="h-4 w-4 mr-2" />
                   Post Reply
@@ -396,7 +396,7 @@ const MyReviews = () => {
                 <Button
                   size="sm"
                   onClick={() => handleFlag(review.id)}
-                  className="bg-red-600 hover:bg-red-700 text-white"
+                  className="bg-red-600 hover:bg-red-700 hover:text-white text-white"
                 >
                   <Flag className="h-4 w-4 mr-2" />
                   Flag Review

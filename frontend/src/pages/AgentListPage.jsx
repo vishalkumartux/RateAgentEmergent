@@ -524,7 +524,7 @@ const AgentListPage = () => {
                           Reset
                         </Button>
                         <Button 
-                          className="bg-blue-800 hover:bg-blue-900"
+                          className="bg-blue-800 hover:bg-blue-900 hover:text-white"
                           onClick={() => setShowFilters(false)}
                         >
                           Apply Filters
@@ -658,7 +658,7 @@ const AgentListPage = () => {
                     Clear All
                   </Button>
                   <Button 
-                    className="bg-blue-800 hover:bg-blue-900"
+                    className="bg-blue-800 hover:bg-blue-900 hover:text-white"
                     onClick={goToCompare}
                     disabled={compareAgents.length < 2}
                   >
@@ -818,7 +818,7 @@ const AgentCard = ({ agent, isInCompare, isShortlisted, onToggleCompare, onToggl
         {/* CTAs */}
         <div className="space-y-2">
           <Link to={`/agent/${agent.id}`} className="block">
-            <Button className="w-full bg-blue-800 hover:bg-blue-900">
+            <Button className="w-full bg-blue-800 hover:bg-blue-900 hover:text-white">
               View Profile
             </Button>
           </Link>

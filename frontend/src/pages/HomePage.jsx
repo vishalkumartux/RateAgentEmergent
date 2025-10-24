@@ -203,7 +203,7 @@ const HomePageImproved = () => {
                   />
                   <Button 
                     type="submit"
-                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-blue-800 hover:bg-blue-900 text-white h-12 px-6 rounded-xl"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-blue-800 hover:bg-blue-900 hover:text-white text-white h-12 px-6 rounded-xl"
                   >
                     <Search className="h-4 w-4 mr-2" />
                     Search

@@ -183,7 +183,7 @@ const DealsListPage = () => {
               </p>
             </div>
             <Link to="/staff/deals/add">
-              <Button className="bg-blue-800 hover:bg-blue-900 text-white">
+              <Button className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
                 <Plus className="h-4 w-4 mr-2" />
                 Add New Deal
               </Button>
@@ -329,7 +329,7 @@ const DealsListPage = () => {
                   </Button>
                   <Button 
                     onClick={() => setShowFilters(false)}
-                    className="bg-blue-800 hover:bg-blue-900 text-white"
+                    className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white"
                   >
                     Apply Filters
                   </Button>
@@ -498,7 +498,7 @@ const DealsListPage = () => {
                         </Button>
                       </Link>
                       {deal.status === 'Draft' && (
-                        <Button size="sm" className="bg-blue-800 hover:bg-blue-900 text-white w-full">
+                        <Button size="sm" className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white w-full">
                           <Upload className="h-4 w-4 mr-2" />
                           Publish
                         </Button>
@@ -522,7 +522,7 @@ const DealsListPage = () => {
                   : 'Start building your portfolio by adding your first deal'}
               </p>
               <Link to="/staff/deals/add">
-                <Button className="bg-blue-800 hover:bg-blue-900 text-white">
+                <Button className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
                   <Plus className="h-4 w-4 mr-2" />
                   Add Your First Deal
                 </Button>

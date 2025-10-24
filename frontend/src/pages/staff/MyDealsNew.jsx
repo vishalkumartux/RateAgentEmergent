@@ -286,7 +286,7 @@ const MyDealsNew = () => {
             </div>
             <div className="mt-4 sm:mt-0">
               <Link to="/staff/deals/add">
-                <Button className="bg-blue-800 hover:bg-blue-900 text-white">
+                <Button className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
                   <Plus className="h-4 w-4 mr-2" />
                   Add New Deal
                 </Button>
@@ -515,7 +515,7 @@ const MyDealsNew = () => {
                           </Button>
                         </Link>
                         {deal.status === 'Draft' && (
-                          <Button size="sm" className="bg-blue-800 hover:bg-blue-900" title="Publish Deal">
+                          <Button size="sm" className="bg-blue-800 hover:bg-blue-900 hover:text-white" title="Publish Deal">
                             <Upload className="h-4 w-4" />
                           </Button>
                         )}
@@ -537,7 +537,7 @@ const MyDealsNew = () => {
                       : 'Start building your portfolio by adding your first deal'}
                   </p>
                   <Link to="/staff/deals/add">
-                    <Button className="bg-blue-800 hover:bg-blue-900 text-white">
+                    <Button className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
                       <Plus className="h-4 w-4 mr-2" />
                       Add Your First Deal
                     </Button>

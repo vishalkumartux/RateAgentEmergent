@@ -478,7 +478,7 @@ const ReviewsPageImproved = () => {
             <div className="mt-8 text-center">
               <Button
                 onClick={() => setReviewsToShow(prev => prev + 12)}
-                className="bg-blue-800 hover:bg-blue-900 text-white"
+                className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white"
               >
                 Load More Reviews ({sortedReviews.length - reviewsToShow} remaining)
               </Button>
@@ -494,7 +494,7 @@ const ReviewsPageImproved = () => {
                 <p className="text-gray-600 dark:text-gray-400 mb-6">
                   Try adjusting your search criteria or filters to see more reviews.
                 </p>
-                <Button onClick={clearAllFilters} className="bg-blue-800 hover:bg-blue-900 text-white">
+                <Button onClick={clearAllFilters} className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
                   Clear All Filters
                 </Button>
               </CardContent>
@@ -513,7 +513,7 @@ const ReviewsPageImproved = () => {
                   Help other property buyers by sharing your experience. Your review makes a difference!
                 </p>
                 <Link to="/submit-review">
-                  <Button className="bg-blue-800 hover:bg-blue-900 text-white">
+                  <Button className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
                     <MessageCircle className="h-4 w-4 mr-2" />
                     Write a Review
                   </Button>
@@ -715,7 +715,7 @@ const ReviewsPageImproved = () => {
               )}
               <Button
                 onClick={() => setShowFiltersModal(false)}
-                className="bg-blue-800 hover:bg-blue-900 text-white ml-auto"
+                className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white ml-auto"
               >
                 Apply Filters
               </Button>

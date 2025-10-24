@@ -161,7 +161,7 @@ const Footer = () => {
                 placeholder="Enter your email"
                 className="px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-700 flex-1 lg:w-80"
               />
-              <button className="px-6 py-3 bg-blue-800 hover:bg-blue-900 rounded-lg font-medium transition-colors whitespace-nowrap">
+              <button className="px-6 py-3 bg-blue-800 hover:bg-blue-900 hover:text-white rounded-lg font-medium transition-colors whitespace-nowrap">
                 Subscribe
               </button>
             </div>
@@ -186,7 +186,7 @@ const Footer = () => {
                   <a
                     key={social.name}
                     href={social.href}
-                    className="w-10 h-10 bg-gray-800 hover:bg-blue-800 rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
+                    className="w-10 h-10 bg-gray-800 hover:bg-blue-800 hover:text-white rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
                     aria-label={social.name}
                   >
                     <Icon className="h-5 w-5" />

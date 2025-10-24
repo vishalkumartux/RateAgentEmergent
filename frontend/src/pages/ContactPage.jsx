@@ -166,7 +166,7 @@ const ContactPage = () => {
                       />
                     </div>
 
-                    <Button type="submit" size="lg" className="w-full bg-blue-800 hover:bg-blue-900 text-white">
+                    <Button type="submit" size="lg" className="w-full bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
                       <Send className="h-5 w-5 mr-2" />
                       Send Message
                     </Button>

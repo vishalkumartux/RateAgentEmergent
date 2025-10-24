@@ -280,7 +280,7 @@ const OrganizationSetupPage = () => {
             <Button 
               type="submit" 
               disabled={isSubmitting}
-              className="bg-blue-800 hover:bg-blue-900 text-white px-8 py-3 text-lg"
+              className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white px-8 py-3 text-lg"
             >
               {isSubmitting ? 'Setting up...' : (
                 <>

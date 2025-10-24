@@ -166,7 +166,7 @@ const StaffProfilePage = () => {
               {!isEditing ? (
                 <Button
                   onClick={() => setIsEditing(true)}
-                  className="bg-blue-800 hover:bg-blue-900 text-white"
+                  className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white"
                 >
                   <Edit className="h-4 w-4 mr-2" />
                   Edit Profile
@@ -175,7 +175,7 @@ const StaffProfilePage = () => {
                 <div className="flex space-x-2">
                   <Button
                     onClick={handleSave}
-                    className="bg-blue-800 hover:bg-blue-900 text-white"
+                    className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white"
                   >
                     <Save className="h-4 w-4 mr-2" />
                     Save Changes
@@ -452,7 +452,7 @@ const StaffProfilePage = () => {
                     Recent Deals
                   </div>
                   <Link to="/staff/deals">
-                    <Button size="sm" className="bg-blue-800 hover:bg-blue-900 text-white">
+                    <Button size="sm" className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
                       View All Deals
                     </Button>
                   </Link>

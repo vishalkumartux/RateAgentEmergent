@@ -215,7 +215,7 @@ const MyDeals = () => {
             </div>
             <div className="mt-4 sm:mt-0">
               <Link to="/staff/deals/add">
-                <Button className="bg-blue-800 hover:bg-blue-900 text-white">
+                <Button className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
                   <Plus className="h-4 w-4 mr-2" />
                   Add New Deal
                 </Button>
@@ -425,7 +425,7 @@ const MyDeals = () => {
                     }
                   </p>
                   <Link to="/staff/deals/add">
-                    <Button className="bg-blue-800 hover:bg-blue-900 text-white">
+                    <Button className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
                       <Plus className="h-4 w-4 mr-2" />
                       Add New Deal
                     </Button>

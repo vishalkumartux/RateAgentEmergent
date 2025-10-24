@@ -71,7 +71,7 @@ const CompareAgentsPage = () => {
                 <div className="text-center">
                   <Button 
                     onClick={() => setShowAddAgent(true)} 
-                    className="bg-blue-800 hover:bg-blue-900 text-white"
+                    className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white"
                   >
                     <Plus className="h-5 w-5 mr-2" />
                     Add Agent to Compare
@@ -142,7 +142,7 @@ const CompareAgentsPage = () => {
                 {selectedAgents.length < 4 && (
                   <Button 
                     onClick={() => setShowAddAgent(true)} 
-                    className="bg-blue-800 hover:bg-blue-900 text-white"
+                    className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white"
                     size="sm"
                   >
                     <Plus className="h-4 w-4 mr-2" />
@@ -622,7 +622,7 @@ const CompareAgentsPage = () => {
               </p>
               <Button 
                 onClick={() => setShowAddAgent(true)} 
-                className="bg-blue-800 hover:bg-blue-900 text-white"
+                className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white"
               >
                 <Plus className="h-5 w-5 mr-2" />
                 Add Your First Agent

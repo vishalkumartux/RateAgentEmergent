@@ -158,7 +158,7 @@ const DealDetails = () => {
                 Share
               </Button>
               <Link to={`/staff/deals/${id}/edit`}>
-                <Button className="bg-blue-800 hover:bg-blue-900 text-white">
+                <Button className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
                   <Edit className="h-4 w-4 mr-2" />
                   Edit Deal
                 </Button>
@@ -425,7 +425,7 @@ const DealDetails = () => {
                       </div>
                       <p className="text-gray-700 dark:text-gray-300 mb-3">{enquiry.message}</p>
                       <div className="flex space-x-2">
-                        <Button size="sm" className="bg-blue-800 hover:bg-blue-900 text-white">
+                        <Button size="sm" className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
                           <Phone className="h-3 w-3 mr-1" />
                           Call
                         </Button>
@@ -481,7 +481,7 @@ const DealDetails = () => {
                       </div>
                     </div>
                   ))}
-                  <Button className="w-full bg-blue-800 hover:bg-blue-900 text-white">
+                  <Button className="w-full bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
                     Add Inspection Time
                   </Button>
                 </div>

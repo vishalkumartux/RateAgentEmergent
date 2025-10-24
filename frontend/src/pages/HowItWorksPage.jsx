@@ -119,7 +119,7 @@ const HowItWorksPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/agents">
-              <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white px-8">
+              <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 hover:text-white text-white px-8">
                 Start Searching
                 <ArrowRight className="h-5 w-5 ml-2" />
               </Button>

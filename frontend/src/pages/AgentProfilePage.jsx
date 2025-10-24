@@ -64,7 +64,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
               The agent profile you're looking for doesn't exist.
             </p>
             <Link to="/agents">
-              <Button className="bg-blue-800 hover:bg-blue-900">
+              <Button className="bg-blue-800 hover:bg-blue-900 hover:text-white">
                 Browse All Agents
               </Button>
             </Link>
@@ -153,7 +153,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                       
                       {/* Action Buttons */}
                       <div className="flex flex-col gap-2 lg:min-w-[180px]">
-                        <Button className="bg-blue-800 hover:bg-blue-900 text-white">
+                        <Button className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
                           <MessageCircle className="h-4 w-4 mr-2" />
                           Contact Agent
                         </Button>

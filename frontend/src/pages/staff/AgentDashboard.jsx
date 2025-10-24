@@ -158,7 +158,7 @@ const AgentDashboard = () => {
               </p>
             </div>
             <Link to="/staff/deals/add">
-              <Button className="bg-blue-800 hover:bg-blue-900 text-white">
+              <Button className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
                 <Plus className="h-4 w-4 mr-2" />
                 Add New Deal
               </Button>
@@ -269,7 +269,7 @@ const AgentDashboard = () => {
                         Start adding your successful deals to showcase your track record
                       </p>
                       <Link to="/staff/deals/add">
-                        <Button className="bg-blue-800 hover:bg-blue-900 text-white">
+                        <Button className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
                           <Plus className="h-4 w-4 mr-2" />
                           Add Your First Deal
                         </Button>

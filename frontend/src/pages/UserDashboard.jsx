@@ -343,13 +343,13 @@ const UserDashboardComplete = () => {
                       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Quick Actions</h3>
                       <div className="grid grid-cols-2 gap-3">
                         <Link to="/">
-                          <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white h-12">
+                          <Button className="w-full bg-blue-600 hover:bg-blue-700 hover:text-white text-white h-12">
                             <Search className="h-4 w-4 mr-2" />
                             New Search
                           </Button>
                         </Link>
                         <Link to="/agents">
-                          <Button className="w-full bg-blue-800 hover:bg-blue-900 text-white h-12">
+                          <Button className="w-full bg-blue-800 hover:bg-blue-900 hover:text-white text-white h-12">
                             <Users className="h-4 w-4 mr-2" />
                             Browse Agents
                           </Button>
@@ -477,7 +477,7 @@ const UserDashboardComplete = () => {
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">No saved searches yet</h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">Create a search on the homepage to get started</p>
                       <Link to="/">
-                        <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                        <Button className="bg-blue-600 hover:bg-blue-700 hover:text-white text-white">
                           Create Search
                         </Button>
                       </Link>
@@ -511,7 +511,7 @@ const UserDashboardComplete = () => {
                               <Button
                                 size="sm"
                                 onClick={() => handleRunSearch(search)}
-                                className="bg-blue-600 hover:bg-blue-700 text-white"
+                                className="bg-blue-600 hover:bg-blue-700 hover:text-white text-white"
                               >
                                 <Play className="h-3 w-3 mr-1" />
                                 Run
@@ -528,7 +528,7 @@ const UserDashboardComplete = () => {
                                 size="sm"
                                 variant={search.alertEnabled ? "default" : "outline"}
                                 onClick={() => handleToggleAlert(search.id)}
-                                className={search.alertEnabled ? "bg-blue-800 hover:bg-blue-900 text-white" : ""}
+                                className={search.alertEnabled ? "bg-blue-800 hover:bg-blue-900 hover:text-white text-white" : ""}
                               >
                                 <Bell className="h-3 w-3 mr-1" />
                                 {search.alertEnabled ? 'Alert On' : 'Alert Off'}
@@ -592,7 +592,7 @@ const UserDashboardComplete = () => {
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">No agents shortlisted</h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">Browse agents and save your favorites</p>
                       <Link to="/agents">
-                        <Button className="bg-blue-800 hover:bg-blue-900 text-white">
+                        <Button className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
                           Browse Agents
                         </Button>
                       </Link>
@@ -766,7 +766,7 @@ const UserDashboardComplete = () => {
                                 size="sm"
                                 variant={dealContacted[deal.id] ? "default" : "outline"}
                                 onClick={() => handleToggleDealContacted(deal.id)}
-                                className={dealContacted[deal.id] ? "bg-blue-600 hover:bg-blue-700 text-white" : ""}
+                                className={dealContacted[deal.id] ? "bg-blue-600 hover:bg-blue-700 hover:text-white text-white" : ""}
                               >
                                 <CheckCircle className="h-3 w-3 mr-1" />
                                 {dealContacted[deal.id] ? 'Contacted' : 'Mark Contacted'}

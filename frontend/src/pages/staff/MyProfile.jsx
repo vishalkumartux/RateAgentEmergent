@@ -163,7 +163,7 @@ const MyProfile = () => {
               <Button 
                 onClick={handleSave}
                 disabled={isSaving}
-                className="bg-blue-800 hover:bg-blue-900 text-white"
+                className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white"
               >
                 <Save className="h-4 w-4 mr-2" />
                 {isSaving ? 'Saving...' : 'Save Changes'}

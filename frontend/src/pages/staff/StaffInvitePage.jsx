@@ -119,7 +119,7 @@ const StaffInvitePage = () => {
               This invitation link is invalid or has expired. Please contact your administrator for a new invitation.
             </p>
             <Link to="/">
-              <Button className="bg-blue-800 hover:bg-blue-900 text-white">
+              <Button className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
                 Back to Home
               </Button>
             </Link>
@@ -235,7 +235,7 @@ const StaffInvitePage = () => {
               <Button 
                 type="submit" 
                 disabled={isSubmitting}
-                className="w-full bg-blue-800 hover:bg-blue-900 text-white"
+                className="w-full bg-blue-800 hover:bg-blue-900 hover:text-white text-white"
               >
                 {isSubmitting ? 'Creating Account...' : 'Create Account & Continue'}
               </Button>

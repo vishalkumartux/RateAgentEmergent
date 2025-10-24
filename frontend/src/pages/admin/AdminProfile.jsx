@@ -102,7 +102,7 @@ const AdminProfile = () => {
               {!isEditing ? (
                 <Button
                   onClick={() => setIsEditing(true)}
-                  className="bg-blue-800 hover:bg-blue-900 text-white"
+                  className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white"
                 >
                   <Edit className="h-4 w-4 mr-2" />
                   Edit Profile
@@ -111,7 +111,7 @@ const AdminProfile = () => {
                 <div className="flex space-x-2">
                   <Button
                     onClick={handleSave}
-                    className="bg-blue-800 hover:bg-blue-900 text-white"
+                    className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white"
                   >
                     <Save className="h-4 w-4 mr-2" />
                     Save Changes

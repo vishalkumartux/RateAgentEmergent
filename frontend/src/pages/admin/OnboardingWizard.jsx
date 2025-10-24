@@ -472,7 +472,7 @@ const OnboardingWizard = () => {
                         placeholder="Enter suburb or region"
                         className="dark:bg-gray-700 dark:text-white"
                       />
-                      <Button onClick={handleAddCoverageArea} type="button" className="bg-blue-800 hover:bg-blue-900">
+                      <Button onClick={handleAddCoverageArea} type="button" className="bg-blue-800 hover:bg-blue-900 hover:text-white">
                         Add
                       </Button>
                     </div>
@@ -795,7 +795,7 @@ const OnboardingWizard = () => {
               <Button
                 onClick={handleNext}
                 disabled={!isStepComplete(currentStep)}
-                className="bg-blue-800 hover:bg-blue-900 text-white"
+                className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white"
               >
                 Next
                 <ChevronRight className="h-4 w-4 ml-2" />

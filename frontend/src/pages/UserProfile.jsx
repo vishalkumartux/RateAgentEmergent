@@ -152,7 +152,7 @@ const UserProfile = () => {
                           className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
                             activeSection === section.id
                               ? 'bg-amber-100 dark:bg-blue-950 text-blue-900 dark:text-amber-400 font-semibold'
-                              : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                              : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-700'
                           }`}
                         >
                           <Icon className="h-5 w-5" />
@@ -188,7 +188,7 @@ const UserProfile = () => {
                           />
                           <button 
                             onClick={handleAvatarUpload}
-                            className="absolute bottom-0 right-0 w-8 h-8 bg-blue-800 hover:bg-blue-900 text-white rounded-full flex items-center justify-center"
+                            className="absolute bottom-0 right-0 w-8 h-8 bg-blue-800 hover:bg-blue-900 hover:text-white text-white rounded-full flex items-center justify-center"
                           >
                             <Camera className="h-4 w-4" />
                           </button>
@@ -283,7 +283,7 @@ const UserProfile = () => {
                       </div>
 
                       <div className="mt-6 flex justify-end">
-                        <Button onClick={handleSaveProfile} className="bg-blue-800 hover:bg-blue-900 text-white">
+                        <Button onClick={handleSaveProfile} className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
                           <Save className="h-4 w-4 mr-2" />
                           Save Changes
                         </Button>
@@ -370,7 +370,7 @@ const UserProfile = () => {
                     </div>
 
                     <div className="pt-4">
-                      <Button onClick={handleSaveProfile} className="bg-blue-600 hover:bg-blue-700 text-white">
+                      <Button onClick={handleSaveProfile} className="bg-blue-600 hover:bg-blue-700 hover:text-white text-white">
                         <Save className="h-4 w-4 mr-2" />
                         Save Preferences
                       </Button>
@@ -500,7 +500,7 @@ const UserProfile = () => {
                             className="mt-2 dark:bg-gray-700 dark:text-white"
                           />
                         </div>
-                        <Button onClick={handleChangePassword} className="bg-red-600 hover:bg-red-700 text-white">
+                        <Button onClick={handleChangePassword} className="bg-red-600 hover:bg-red-700 hover:text-white text-white">
                           <Lock className="h-4 w-4 mr-2" />
                           Change Password
                         </Button>

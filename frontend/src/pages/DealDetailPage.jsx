@@ -50,7 +50,7 @@ const DealDetailPage = () => {
               The deal you're looking for doesn't exist.
             </p>
             <Link to="/deals">
-              <Button className="bg-blue-800 hover:bg-blue-900">
+              <Button className="bg-blue-800 hover:bg-blue-900 hover:text-white">
                 Browse All Deals
               </Button>
             </Link>
@@ -106,7 +106,7 @@ const DealDetailPage = () => {
                 <Button
                   variant={isShortlisted ? "default" : "outline"}
                   onClick={() => setIsShortlisted(!isShortlisted)}
-                  className={isShortlisted ? "bg-blue-800 hover:bg-blue-900" : ""}
+                  className={isShortlisted ? "bg-blue-800 hover:bg-blue-900 hover:text-white" : ""}
                 >
                   <Heart className={`h-4 w-4 mr-2 ${isShortlisted ? 'fill-current' : ''}`} />
                   {isShortlisted ? 'Saved' : 'Save Deal'}
@@ -484,7 +484,7 @@ const DealDetailPage = () => {
 
                       <div className="space-y-2">
                         <Link to={`/agent/${agent.id}`}>
-                          <Button className="w-full bg-blue-800 hover:bg-blue-900">
+                          <Button className="w-full bg-blue-800 hover:bg-blue-900 hover:text-white">
                             View Full Profile
                           </Button>
                         </Link>

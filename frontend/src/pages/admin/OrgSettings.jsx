@@ -179,7 +179,7 @@ const OrgSettings = () => {
                         className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
                           activeSection === section.id
                             ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-900 dark:text-amber-200'
-                            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
+                            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-800'
                         }`}
                       >
                         <Icon className="h-5 w-5" />
@@ -726,7 +726,7 @@ const OrgSettings = () => {
                   <Button
                     onClick={handleSave}
                     disabled={isSaving}
-                    className="bg-blue-800 hover:bg-blue-900 text-white"
+                    className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white"
                   >
                     <Save className="h-4 w-4 mr-2" />
                     {isSaving ? 'Saving...' : 'Save Changes'}

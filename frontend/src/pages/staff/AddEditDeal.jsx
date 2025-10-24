@@ -1100,7 +1100,7 @@ const AddEditDeal = () => {
                   Save Draft
                 </Button>
                 {currentStep < 6 ? (
-                  <Button onClick={handleNext} className="bg-blue-800 hover:bg-blue-900 text-white">
+                  <Button onClick={handleNext} className="bg-blue-800 hover:bg-blue-900 hover:text-white text-white">
                     Next Step
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
