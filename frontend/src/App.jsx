@@ -89,6 +89,7 @@ function App() {
               <Route path="/admin/profile" element={<MyProfile />} />
               <Route path="/staff/my-profile" element={<MyProfile />} />
               <Route path="/staff/deals" element={<MyDeals />} />
+              <Route path="/staff/reviews" element={<MyReviews />} />
               <Route path="/staff/deals/add" element={<AddEditDeal />} />
               <Route path="/staff/deals/:id" element={<DealDetails />} />
               <Route path="/staff/deals/:id/edit" element={<AddEditDeal />} />
