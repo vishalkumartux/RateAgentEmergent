@@ -112,8 +112,15 @@ Login → Agent Dashboard
 
 ### From My Profile:
 1. **Save Changes Button (Header)** → Saves profile updates
-2. **Preview Public Profile Button (Header)** → `/agent/:id` (public view)
+2. **Preview Public Profile Button (Header)** → `/staff/my-profile?preview=true` (stays in staff area)
 3. **Back to Deals** (via dropdown menu)
+
+### Preview Mode:
+- **Route:** `/staff/my-profile?preview=true`
+- **Blue banner at top:** "Preview Mode - Public View"
+- **Renders exact public AgentProfilePage** within staff context
+- **Exit Preview button** → Returns to `/staff/my-profile` (edit mode)
+- Shows exactly how buyers will see the agent's profile
 
 ### Editable Sections:
 - Basic Information (photo, name, title, bio, experience)
