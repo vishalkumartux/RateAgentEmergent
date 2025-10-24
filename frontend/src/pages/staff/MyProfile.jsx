@@ -29,6 +29,8 @@ import { useAuth } from '../../context/AuthContext';
 
 const MyProfile = () => {
   const { user } = useAuth();
+  const [searchParams] = useSearchParams();
+  const isPreview = searchParams.get('preview') === 'true';
   const [isSaving, setIsSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState('');
   
