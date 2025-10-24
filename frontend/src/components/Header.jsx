@@ -254,7 +254,7 @@ const Header = () => {
                     </Button>
                   </Link>
                   <Link to="/register">
-                    <Button className="w-full bg-green-700 hover:bg-green-800 text-white hover:text-white dark:bg-blue-700 dark:hover:bg-green-700">
+                    <Button className="w-full bg-black hover:bg-gray-800 text-white hover:text-white dark:bg-white dark:text-black dark:hover:bg-gray-200">
                       List Your Agency
                     </Button>
                   </Link>
