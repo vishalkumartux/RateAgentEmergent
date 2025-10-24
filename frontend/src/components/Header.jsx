@@ -5,6 +5,7 @@ import { Input } from './ui/input';
 import { Search, Menu, X, Star, Users, TrendingUp, Sun, Moon, LogOut, Settings, User, BarChart3 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
+import { colors, buttons, text, backgrounds } from '../theme';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
