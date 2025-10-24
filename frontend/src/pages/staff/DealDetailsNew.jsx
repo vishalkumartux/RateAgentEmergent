@@ -583,23 +583,31 @@ const DealDetailsNew = () => {
             {!isPreview && (
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-lg">Actions</CardTitle>
+                  <CardTitle className="text-lg">Quick Actions</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2">
+                  <Link to={`/staff/deals/${id}/edit`} className="block">
+                    <Button variant="outline" className="w-full justify-start">
+                      <Edit className="h-4 w-4 mr-2" />
+                      Edit Deal
+                    </Button>
+                  </Link>
                   <Link to={`/staff/deals/${id}?preview=true`} className="block">
                     <Button variant="outline" className="w-full justify-start">
                       <Eye className="h-4 w-4 mr-2" />
                       Preview Public View
                     </Button>
                   </Link>
-                  <Button variant="outline" className="w-full justify-start">
-                    <Edit className="h-4 w-4 mr-2" />
-                    Edit Details
-                  </Button>
                   {deal.status === 'Draft' && (
-                    <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white">
+                    <Button className="w-full bg-green-600 hover:bg-green-700 text-white justify-start">
                       <Upload className="h-4 w-4 mr-2" />
                       Publish Deal
+                    </Button>
+                  )}
+                  {deal.status === 'Published' && (
+                    <Button variant="outline" className="w-full justify-start">
+                      <X className="h-4 w-4 mr-2" />
+                      Unpublish
                     </Button>
                   )}
                   {!deal.verified && (
