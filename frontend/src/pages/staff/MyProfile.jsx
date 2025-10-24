@@ -154,7 +154,7 @@ const MyProfile = () => {
               </p>
             </div>
             <div className="flex space-x-3">
-              <Link to="/agent/1">
+              <Link to="/staff/my-profile?preview=true">
                 <Button variant="outline">
                   <Eye className="h-4 w-4 mr-2" />
                   Preview Public Profile
