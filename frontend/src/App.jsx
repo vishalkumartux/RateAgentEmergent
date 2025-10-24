@@ -88,8 +88,9 @@ function App() {
               <Route path="/admin/profile" element={<MyProfile />} />
               <Route path="/staff/my-profile" element={<MyProfile />} />
               <Route path="/staff/deals" element={<MyDeals />} />
-              <Route path="/staff/deals/add" element={<AddDeal />} />
+              <Route path="/staff/deals/add" element={<AddEditDeal />} />
               <Route path="/staff/deals/:id" element={<DealDetails />} />
+              <Route path="/staff/deals/:id/edit" element={<AddEditDeal />} />
               <Route path="/deals" element={<DealsPage />} />
               <Route path="/deal/:id" element={<DealDetailPage />} />
               <Route path="/about" element={<AboutPage />} />
