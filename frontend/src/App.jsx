@@ -32,7 +32,7 @@ import AgentDashboard from "./pages/staff/AgentDashboard";
 import MyProfile from "./pages/staff/MyProfile";
 import DealsListPage from "./pages/staff/DealsListPage";
 import MyDeals from "./pages/staff/MyDealsNew";
-import AddDeal from "./pages/staff/AddDeal";
+import AddEditDeal from "./pages/staff/AddEditDeal";
 import DealDetails from "./pages/staff/DealDetailsNew";
 import DealsPage from "./pages/DealsPage";
 import DealDetailPage from "./pages/DealDetailPage";
