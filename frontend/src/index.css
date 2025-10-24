@@ -21,89 +21,90 @@ code {
 @layer base {
   :root {
         /* Backgrounds */
-        --background: 0 0% 100%;
-        --foreground: 222 47% 11%;
+        --background: 0 0% 100%;  /* Pure white */
+        --foreground: 215 25% 9%;  /* slate-900 #0F172A */
         --card: 0 0% 100%;
-        --card-foreground: 222 47% 11%;
+        --card-foreground: 215 25% 9%;
         --popover: 0 0% 100%;
-        --popover-foreground: 222 47% 11%;
+        --popover-foreground: 215 25% 9%;
         
-        /* Primary - Professional Blue */
-        --primary: 217 91% 60%;  /* blue-500 #3B82F6 */
+        /* Primary - Deep Navy Blue (Trust & Authority) */
+        --primary: 224 76% 40%;  /* blue-800 #1E40AF */
         --primary-foreground: 0 0% 100%;
         
-        /* Secondary - Modern Teal */
-        --secondary: 188 78% 41%;  /* cyan-600 #0891B2 */
+        /* Secondary - Professional Slate */
+        --secondary: 215 20% 38%;  /* slate-600 #475569 */
         --secondary-foreground: 0 0% 100%;
         
-        /* Muted - Neutral Gray */
-        --muted: 220 14% 96%;  /* gray-50 */
-        --muted-foreground: 220 9% 46%;  /* gray-500 */
+        /* Muted - Neutral */
+        --muted: 210 40% 98%;  /* slate-50 #F8FAFC */
+        --muted-foreground: 215 16% 47%;  /* slate-600 #475569 */
         
-        /* Accent - Warm Amber (CTAs) */
-        --accent: 38 92% 50%;  /* amber-500 #F59E0B */
-        --accent-foreground: 26 83% 14%;  /* darker text */
+        /* Accent - Forest Green (Success/Publish) */
+        --accent: 166 76% 26%;  /* emerald-700 #047857 */
+        --accent-foreground: 0 0% 100%;
         
-        /* Destructive - Error Red */
-        --destructive: 0 84% 60%;  /* red-500 */
-        --destructive-foreground: 0 0% 98%;
+        /* Destructive - Deep Red */
+        --destructive: 0 74% 42%;  /* red-700 #B91C1C */
+        --destructive-foreground: 0 0% 100%;
         
         /* Borders & Inputs */
-        --border: 220 13% 91%;  /* gray-200 */
-        --input: 220 13% 91%;
-        --ring: 217 91% 60%;  /* blue-500 */
+        --border: 214 32% 91%;  /* slate-200 #E2E8F0 */
+        --input: 214 32% 91%;
+        --ring: 224 76% 40%;  /* blue-800 */
         
-        /* Chart colors */
-        --chart-1: 217 91% 60%;  /* blue */
-        --chart-2: 188 78% 41%;  /* teal */
-        --chart-3: 158 64% 52%;  /* green */
-        --chart-4: 38 92% 50%;  /* amber */
-        --chart-5: 24 95% 53%;  /* orange */
+        /* Chart colors - Professional palette */
+        --chart-1: 224 76% 40%;  /* navy blue */
+        --chart-2: 166 76% 26%;  /* forest green */
+        --chart-3: 183 74% 23%;  /* teal-700 */
+        --chart-4: 43 96% 40%;  /* muted gold */
+        --chart-5: 215 20% 38%;  /* slate */
         
         --radius: 0.5rem;
     }
     
   .dark {
-        /* Backgrounds - Warmer, softer dark */
+        /* Backgrounds - Sophisticated Slate (Not Pure Black) */
         --background: 222 47% 11%;  /* slate-900 #0F172A */
-        --foreground: 210 40% 98%;  /* slate-50 */
+        --foreground: 210 40% 96%;  /* slate-100 #F1F5F9 */
         --card: 217 33% 17%;  /* slate-800 #1E293B */
-        --card-foreground: 210 40% 98%;
+        --card-foreground: 210 40% 96%;
         --popover: 217 33% 17%;
-        --popover-foreground: 210 40% 98%;
+        --popover-foreground: 210 40% 96%;
         
-        /* Primary - Lighter Blue for dark mode */
-        --primary: 213 94% 68%;  /* blue-400 #60A5FA */
+        /* Primary - Lighter Navy for Dark Mode */
+        --primary: 217 91% 60%;  /* blue-500 #3B82F6 */
         --primary-foreground: 222 47% 11%;
         
-        /* Secondary - Lighter Teal */
-        --secondary: 189 94% 43%;  /* cyan-500 #06B6D4 */
-        --secondary-foreground: 210 40% 98%;
+        /* Secondary - Lighter Slate */
+        --secondary: 215 14% 58%;  /* slate-400 #94A3B8 */
+        --secondary-foreground: 210 40% 96%;
         
-        /* Muted - Softer dark gray */
+        /* Muted - Darker Slate */
         --muted: 215 28% 17%;  /* slate-800 */
         --muted-foreground: 218 11% 65%;  /* slate-400 */
         
-        /* Accent - Lighter Amber */
-        --accent: 43 96% 56%;  /* amber-400 #FBBF24 */
-        --accent-foreground: 222 47% 11%;
+        /* Accent - Lighter Forest Green */
+        --accent: 160 84% 39%;  /* emerald-500 #10B981 */
+        --accent-foreground: 210 40% 96%;
         
         /* Destructive - Softer Red */
-        --destructive: 0 84% 60%;  /* red-500 */
-        --destructive-foreground: 210 40% 98%;
+        --destructive: 0 72% 51%;  /* red-600 #DC2626 */
+        --destructive-foreground: 210 40% 96%;
         
-        /* Borders & Inputs - Higher contrast */
-        --border: 215 20% 27%;  /* slate-700 */
+        /* Borders & Inputs - Higher Contrast */
+        --border: 215 20% 27%;  /* slate-700 #334155 */
         --input: 215 20% 27%;
-        --ring: 213 94% 68%;  /* blue-400 */
+        --ring: 217 91% 60%;  /* blue-500 */
         
         /* Chart colors - Lighter for dark mode */
-        --chart-1: 213 94% 68%;  /* blue */
-        --chart-2: 189 94% 43%;  /* teal */
-        --chart-3: 160 84% 39%;  /* green */
-        --chart-4: 43 96% 56%;  /* amber */
-        --chart-5: 20 94% 65%;  /* orange */
+        --chart-1: 217 91% 60%;  /* navy blue */
+        --chart-2: 160 84% 39%;  /* forest green */
+        --chart-3: 172 66% 50%;  /* teal */
+        --chart-4: 45 93% 47%;  /* muted gold */
+        --chart-5: 215 14% 58%;  /* slate */
     }
+}
 }
 
 
