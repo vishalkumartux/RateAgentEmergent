@@ -341,37 +341,28 @@ test_plan:
 agent_communication:
   - agent: "main"
     message: |
-      ✅ Phase 3 Complete: Org Settings Page
+      ✅ Navigation Fixes Complete
       
-      Successfully implemented comprehensive Organization Settings page with 5 major sections:
+      Fixed two critical navigation issues reported by user:
       
-      **Features Delivered:**
-      1. Business Information - Logo, name, contact details, address, description
-      2. Service Coverage - Regions management, property types, price range
-      3. Privacy & Compliance - Data visibility controls, GDPR compliance, retention settings
-      4. Lead Routing - Auto-assignment, round-robin, notifications, response time
-      5. Subscription & Billing - Plan details, features, billing info (read-only)
+      **Fix 1: Deal Preview Close Redirect**
+      - Issue: Closing preview redirected to My Deals list
+      - Fix: Changed redirect from `/staff/deals` to `/staff/deals/${id}` (back to deal detail page)
+      - File: /app/frontend/src/pages/staff/DealDetailsNew.jsx (line 54)
       
-      **Technical Implementation:**
-      - Route: /admin/settings
-      - File: /app/frontend/src/pages/admin/OrgSettings.jsx
-      - Integration: Connected to AuthContext
-      - Navigation: Sidebar with active section highlighting
-      - UI: Consistent card layout, dark mode support, sticky save button
+      **Fix 2: My Profile Preview Navigation**
+      - Issue: Preview redirected to public profile page (outside agent/admin area)
+      - Fix: Implemented preview mode within staff area using `?preview=true` param
+      - Added preview banner with "Exit Preview" button
+      - Now renders public AgentProfilePage within staff context
+      - Files: /app/frontend/src/pages/staff/MyProfile.jsx
+      - Preview link changed from `/agent/1` to `/staff/my-profile?preview=true`
       
-      **Testing:**
-      ✅ All sections navigate correctly
-      ✅ Forms accept and display data
-      ✅ Toggles work properly
-      ✅ Save functionality implemented
-      ✅ Visual design matches theme
-      ✅ Responsive layout verified
+      **Testing Required:**
+      - Verify deal preview close returns to deal detail page
+      - Verify My Profile preview stays in staff area
+      - Verify preview exit returns to My Profile edit page
       
-      **Next Phase Options:**
-      1. Phase 4: My Profile page for agents/admins
-      2. Enhanced Submit Review Page
-      3. Backend integration for settings persistence
-      
-      Waiting for user direction on next steps.
+      Frontend restarted and ready for testing.
 
 #====================================================================================================
