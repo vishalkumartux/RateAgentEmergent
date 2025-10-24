@@ -50,7 +50,7 @@ const DealDetailsNew = () => {
                   <p className="text-sm text-blue-100">This is exactly how buyers will see your deal</p>
                 </div>
               </div>
-              <Link to="/staff/deals">
+              <Link to={`/staff/deals/${id}`}>
                 <Button variant="secondary" size="sm" className="bg-white text-blue-600 hover:bg-blue-50">
                   <X className="h-4 w-4 mr-2" />
                   Exit Preview
