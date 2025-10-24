@@ -738,6 +738,352 @@ const AddEditDeal = () => {
               </div>
             )}
 
+            {/* Step 4: Media */}
+            {currentStep === 4 && (
+              <div className="space-y-6">
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    Media & Documents
+                  </h2>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    Add photos to showcase the property (recommended)
+                  </p>
+                </div>
+
+                {/* Photo Upload */}
+                <div>
+                  <Label>Property Photos (1-8 photos)</Label>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                    EXIF data will be automatically stripped for privacy
+                  </p>
+                  
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                    {formData.photos.map(photo => (
+                      <div key={photo.id} className="relative group">
+                        <img 
+                          src={photo.url} 
+                          alt={photo.name}
+                          className="w-full h-32 object-cover rounded-lg"
+                        />
+                        <button
+                          onClick={() => removePhoto(photo.id)}
+                          className="absolute top-2 right-2 p-1 bg-red-600 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                        >
+                          <X className="h-4 w-4" />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+
+                  {formData.photos.length < 8 && (
+                    <label className="block">
+                      <input
+                        type="file"
+                        accept="image/*"
+                        multiple
+                        onChange={handlePhotoUpload}
+                        className="hidden"
+                      />
+                      <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-8 text-center cursor-pointer hover:border-amber-500 transition-colors">
+                        <ImageIcon className="h-12 w-12 text-gray-400 mx-auto mb-3" />
+                        <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                          Click to upload photos
+                        </p>
+                        <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">
+                          PNG, JPG up to 10MB each ({8 - formData.photos.length} remaining)
+                        </p>
+                      </div>
+                    </label>
+                  )}
+                </div>
+
+                {/* Media Consent */}
+                <div className={`p-4 border-2 rounded-lg ${
+                  errors.mediaConsent ? 'border-red-500 bg-red-50 dark:bg-red-900/20' : 'border-gray-200 dark:border-gray-700'
+                }`}>
+                  <div className="flex items-start">
+                    <input
+                      type="checkbox"
+                      id="mediaConsent"
+                      checked={formData.mediaConsent}
+                      onChange={(e) => setFormData({...formData, mediaConsent: e.target.checked})}
+                      className="mt-1 h-4 w-4 text-amber-600 rounded"
+                    />
+                    <label htmlFor="mediaConsent" className="ml-3">
+                      <p className="font-medium text-gray-900 dark:text-white">
+                        Media Publishing Rights *
+                      </p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                        I confirm that I have the right to publish these images and that they don't contain personally identifiable information about the buyer or seller.
+                      </p>
+                    </label>
+                  </div>
+                  {errors.mediaConsent && (
+                    <p className="text-red-500 text-sm mt-2 ml-7">{errors.mediaConsent}</p>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Step 5: Verification */}
+            {currentStep === 5 && (
+              <div className="space-y-6">
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    Verification Level
+                  </h2>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    Increase trust by providing evidence (optional)
+                  </p>
+                </div>
+
+                {/* Verification Options */}
+                <div className="space-y-4">
+                  <button
+                    type="button"
+                    onClick={() => setFormData({...formData, verificationLevel: 'L0'})}
+                    className={`w-full p-4 border-2 rounded-lg text-left transition-colors ${
+                      formData.verificationLevel === 'L0'
+                        ? 'border-amber-600 bg-amber-50 dark:bg-amber-900/20'
+                        : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
+                    }`}
+                  >
+                    <div className="flex items-start">
+                      <div className="flex-1">
+                        <div className="flex items-center mb-2">
+                          <Badge variant="secondary" className="mr-2">L0</Badge>
+                          <span className="font-semibold text-gray-900 dark:text-white">
+                            Self-Declared
+                          </span>
+                        </div>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                          No documentation required. Deal appears with standard trust level.
+                        </p>
+                      </div>
+                      {formData.verificationLevel === 'L0' && (
+                        <CheckCircle className="h-5 w-5 text-amber-600 ml-2" />
+                      )}
+                    </div>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setFormData({...formData, verificationLevel: 'L1'})}
+                    className={`w-full p-4 border-2 rounded-lg text-left transition-colors ${
+                      formData.verificationLevel === 'L1'
+                        ? 'border-blue-600 bg-blue-50 dark:bg-blue-900/20'
+                        : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
+                    }`}
+                  >
+                    <div className="flex items-start">
+                      <div className="flex-1">
+                        <div className="flex items-center mb-2">
+                          <Badge className="bg-blue-600 text-white mr-2">L1</Badge>
+                          <span className="font-semibold text-gray-900 dark:text-white">
+                            Evidence Submitted
+                          </span>
+                          <Badge variant="outline" className="ml-2 text-xs">Recommended</Badge>
+                        </div>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                          Upload redacted evidence (contract page, settlement, or internal authority). Gets "Verified" badge publicly.
+                        </p>
+                      </div>
+                      {formData.verificationLevel === 'L1' && (
+                        <CheckCircle className="h-5 w-5 text-blue-600 ml-2" />
+                      )}
+                    </div>
+                  </button>
+                </div>
+
+                {/* Evidence Upload */}
+                {formData.verificationLevel === 'L1' && (
+                  <div className="p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                    <Label>Upload Evidence (Redacted)</Label>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                      Upload redacted contract page or settlement statement (names, addresses removed)
+                    </p>
+                    <label className="block">
+                      <input
+                        type="file"
+                        accept=".pdf,.jpg,.jpeg,.png"
+                        className="hidden"
+                      />
+                      <div className="border-2 border-dashed border-blue-300 dark:border-blue-600 rounded-lg p-6 text-center cursor-pointer hover:border-blue-500 transition-colors">
+                        <FileText className="h-10 w-10 text-blue-600 mx-auto mb-2" />
+                        <p className="text-sm font-medium text-blue-700 dark:text-blue-400">
+                          Click to upload document
+                        </p>
+                        <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+                          PDF, JPG, PNG up to 5MB
+                        </p>
+                      </div>
+                    </label>
+                  </div>
+                )}
+
+                {/* What We Verify */}
+                <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                  <div className="flex items-start">
+                    <Info className="h-5 w-5 text-gray-600 dark:text-gray-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="font-medium text-gray-900 dark:text-white mb-2">
+                        What We Verify
+                      </p>
+                      <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                        <li>• Purchase occurred in stated month/year</li>
+                        <li>• Property location matches suburb/state</li>
+                        <li>• Agent was involved in the transaction</li>
+                        <li>• Price range is accurate (if disclosed)</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Step 6: Review & Publish */}
+            {currentStep === 6 && (
+              <div className="space-y-6">
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    Review & Publish
+                  </h2>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    Final check before publishing to your portfolio
+                  </p>
+                </div>
+
+                {/* Deal Summary */}
+                <Card className="bg-gray-50 dark:bg-gray-800">
+                  <CardContent className="p-6">
+                    <h3 className="font-semibold text-lg text-gray-900 dark:text-white mb-4">
+                      Deal Summary
+                    </h3>
+                    <div className="grid grid-cols-2 gap-4 text-sm">
+                      <div>
+                        <p className="text-gray-600 dark:text-gray-400">Property</p>
+                        <p className="font-medium text-gray-900 dark:text-white">
+                          {formData.propertyType} in {formData.suburb}
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-gray-600 dark:text-gray-400">Purchase Date</p>
+                        <p className="font-medium text-gray-900 dark:text-white">
+                          {formData.purchaseMonth}/{formData.purchaseYear}
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-gray-600 dark:text-gray-400">Method</p>
+                        <p className="font-medium text-gray-900 dark:text-white">
+                          {formData.method}
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-gray-600 dark:text-gray-400">Days-to-Secure</p>
+                        <p className="font-medium text-gray-900 dark:text-white">
+                          {formData.daysToSecure} days
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-gray-600 dark:text-gray-400">Price</p>
+                        <p className="font-medium text-gray-900 dark:text-white">
+                          {formData.priceUndisclosed 
+                            ? 'Undisclosed'
+                            : formData.purchasePrice 
+                            ? `$${parseInt(formData.purchasePrice).toLocaleString()}`
+                            : 'Not set'}
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-gray-600 dark:text-gray-400">Verification</p>
+                        <Badge className={formData.verificationLevel === 'L1' ? 'bg-blue-600' : 'bg-gray-600'}>
+                          {formData.verificationLevel}
+                        </Badge>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Preview Link */}
+                <div className="p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center">
+                      <Eye className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-3" />
+                      <div>
+                        <p className="font-medium text-gray-900 dark:text-white">
+                          Preview Public View
+                        </p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                          See exactly how buyers will see this deal
+                        </p>
+                      </div>
+                    </div>
+                    <Button variant="outline" size="sm">
+                      <Eye className="h-4 w-4 mr-2" />
+                      Preview
+                    </Button>
+                  </div>
+                </div>
+
+                {/* Publishing Options */}
+                <div>
+                  <Label>Publishing Status</Label>
+                  <div className="grid grid-cols-2 gap-4 mt-2">
+                    <button
+                      type="button"
+                      onClick={() => setFormData({...formData, status: 'draft'})}
+                      className={`p-4 border-2 rounded-lg text-center transition-colors ${
+                        formData.status === 'draft'
+                          ? 'border-amber-600 bg-amber-50 dark:bg-amber-900/20'
+                          : 'border-gray-200 dark:border-gray-700'
+                      }`}
+                    >
+                      <Save className="h-6 w-6 mx-auto mb-2 text-gray-600" />
+                      <p className="font-medium text-gray-900 dark:text-white">Save as Draft</p>
+                      <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+                        Review later, not public
+                      </p>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setFormData({...formData, status: 'published'})}
+                      className={`p-4 border-2 rounded-lg text-center transition-colors ${
+                        formData.status === 'published'
+                          ? 'border-green-600 bg-green-50 dark:bg-green-900/20'
+                          : 'border-gray-200 dark:border-gray-700'
+                      }`}
+                    >
+                      <Upload className="h-6 w-6 mx-auto mb-2 text-gray-600" />
+                      <p className="font-medium text-gray-900 dark:text-white">Publish Now</p>
+                      <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+                        Live on your portfolio
+                      </p>
+                    </button>
+                  </div>
+                </div>
+
+                {/* Validation Messages */}
+                <div className="space-y-2">
+                  {!formData.valueStory && (
+                    <div className="flex items-center p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
+                      <AlertCircle className="h-5 w-5 text-red-600 mr-2" />
+                      <p className="text-sm text-red-700 dark:text-red-400">
+                        Value story is required before publishing
+                      </p>
+                    </div>
+                  )}
+                  {formData.photos.length === 0 && (
+                    <div className="flex items-center p-3 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+                      <Info className="h-5 w-5 text-amber-600 mr-2" />
+                      <p className="text-sm text-amber-700 dark:text-amber-400">
+                        Adding photos increases buyer engagement by 3x
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
             {/* Navigation Buttons */}
             <div className="flex justify-between mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
               <div>
