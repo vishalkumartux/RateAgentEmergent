@@ -472,7 +472,7 @@ const HomePageImproved = () => {
               </Card>
 
               {/* Column 3: Strategy & CTA */}
-              <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-700 transition-all">
+              <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white transition-all">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
                     <Target className="h-5 w-5 mr-2 text-gray-700" />
@@ -487,8 +487,8 @@ const HomePageImproved = () => {
                           onClick={() => handleStrategyToggle(strategy)}
                           className={`px-3 py-2 rounded-lg text-sm font-medium transition-all border-2 ${
                             isSelected
-                              ? 'border-purple-500 bg-gray-50 dark:bg-gray-100 text-gray-700 dark:text-gray-700 shadow-md'
-                              : 'border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-purple-300 dark:hover:border-purple-800'
+                              ? 'border-black bg-gray-50 dark:bg-gray-100 text-gray-700 dark:text-gray-700 shadow-md'
+                              : 'border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-black dark:hover:border-purple-800'
                           }`}
                         >
                           {strategy}
