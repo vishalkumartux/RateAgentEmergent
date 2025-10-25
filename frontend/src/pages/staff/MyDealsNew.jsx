@@ -303,7 +303,7 @@ const MyDealsNew = () => {
               <Card key={index}>
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20 rounded-lg flex items-center justify-center">
                       <Icon className={`h-6 w-6 ${stat.color}`} />
                     </div>
                     <div>

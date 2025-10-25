@@ -462,7 +462,7 @@ const MyReviews = () => {
           <Card>
             <CardContent className="p-6">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20 rounded-lg flex items-center justify-center">
                   <Star className="h-6 w-6 text-black" />
                 </div>
                 <div>
@@ -476,7 +476,7 @@ const MyReviews = () => {
           <Card>
             <CardContent className="p-6">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800/30 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg flex items-center justify-center">
                   <MessageCircle className="h-6 w-6 text-black" />
                 </div>
                 <div>
@@ -490,7 +490,7 @@ const MyReviews = () => {
           <Card>
             <CardContent className="p-6">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gray-100 dark:bg-gray-100/30 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900/20 dark:to-orange-900/20 rounded-lg flex items-center justify-center">
                   <Reply className="h-6 w-6 text-gray-700" />
                 </div>
                 <div>
