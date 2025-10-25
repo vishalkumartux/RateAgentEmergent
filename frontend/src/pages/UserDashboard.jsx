@@ -800,7 +800,7 @@ const UserDashboardComplete = () => {
                       My Reviews
                     </CardTitle>
                     <Link to="/submit-review">
-                      <Button size="sm" variant="outline" className="border-gray-300 text-yellow-600 hover:bg-gray-200 dark:hover:bg-gray-200">
+                      <Button size="sm" variant="outline" className="border-amber-500 text-amber-600 hover:bg-amber-500 hover:text-white">
                         <Plus className="h-4 w-4 mr-1" />
                         Write Review
                       </Button>
