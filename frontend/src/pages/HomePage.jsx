@@ -73,10 +73,10 @@ const HomePageImproved = () => {
   ];
 
   const stats = [
-    { label: 'Verified Deals', value: '3,800+', icon: Home, color: 'text-black' },
-    { label: 'Buyer Agents', value: '1,200+', icon: Users, color: 'text-black' },
-    { label: 'Client Reviews', value: '8,500+', icon: Star, color: 'text-green-600' },
-    { label: 'Avg. Savings', value: '$42K', icon: TrendingUp, color: 'text-gray-700' }
+    { label: 'Verified Deals', value: '3,800+', icon: Home, color: 'text-black dark:text-white' },
+    { label: 'Buyer Agents', value: '1,200+', icon: Users, color: 'text-black dark:text-white' },
+    { label: 'Client Reviews', value: '8,500+', icon: Star, color: 'text-yellow-600 dark:text-yellow-500' },
+    { label: 'Avg. Savings', value: '$42K', icon: TrendingUp, color: 'text-green-700 dark:text-green-500' }
   ];
 
   // Basic natural language parsing
