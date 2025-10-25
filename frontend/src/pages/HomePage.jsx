@@ -182,7 +182,7 @@ const HomePageImproved = () => {
             <div className="text-center mb-12">
               <h1 className="text-5xl md:text-6xl font-bold text-black dark:text-white mb-6 leading-tight">
                 Find Your Next Property
-                <span className="text-gray-700 dark:text-gray-300 block mt-2">
+                <span className="text-black dark:text-white block mt-2">
                   The Smart Way
                 </span>
               </h1>
@@ -195,7 +195,7 @@ const HomePageImproved = () => {
             <div className="max-w-4xl mx-auto mb-8">
               <form onSubmit={handleNaturalSearch} className="relative">
                 <div className="relative">
-                  <Sparkles className="absolute left-5 top-1/2 -translate-y-1/2 h-6 w-6 text-gray-400 dark:text-gray-500 z-10" />
+                  <Sparkles className="absolute left-5 top-1/2 -translate-y-1/2 h-6 w-6 text-gray-400 dark:text-white dark:text-gray-400 z-10" />
                   <Input
                     placeholder='Try: "3BR house in Preston under 1.2m" or "Investment property Melbourne high yield"'
                     value={searchQuery}
@@ -214,7 +214,7 @@ const HomePageImproved = () => {
 
               {/* Quick Search Links */}
               <div className="mt-4 flex items-center justify-center gap-2 flex-wrap">
-                <span className="text-sm text-gray-500 dark:text-gray-500">Popular:</span>
+                <span className="text-sm text-gray-700 dark:text-gray-400 dark:text-white dark:text-gray-400">Popular:</span>
                 {[
                   { text: 'Houses Sydney', query: 'house in sydney' },
                   { text: 'Investment Melbourne', query: 'investment property melbourne' },
@@ -224,7 +224,7 @@ const HomePageImproved = () => {
                   <button
                     key={idx}
                     onClick={() => setSearchQuery(link.query)}
-                    className="px-3 py-1.5 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 hover:border-black dark:hover:border-white hover:bg-gray-50 dark:hover:bg-gray-800 text-sm text-gray-700 dark:text-gray-300 rounded-full transition-all"
+                    className="px-3 py-1.5 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 hover:border-black dark:hover:border-white hover:bg-gray-50 dark:hover:bg-gray-800 text-sm text-black dark:text-white rounded-full transition-all"
                   >
                     {link.text}
                   </button>
@@ -300,7 +300,7 @@ const HomePageImproved = () => {
         </section>
 
         {/* Buy Box Quick-Builder - Redesigned */}
-        <section className="py-16 bg-gradient-to-br from-gray-50 via-white to-gray-800 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+        <section className="py-16 bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-gray-900 dark:via-gray-900 dark:to-black">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">
@@ -339,7 +339,7 @@ const HomePageImproved = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {/* Column 1: Property Type & Location */}
-              <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-300 transition-all">
+              <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white transition-all">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
                     <Building2 className="h-5 w-5 mr-2 text-black" />
@@ -356,11 +356,11 @@ const HomePageImproved = () => {
                           className={`p-4 rounded-xl border-2 transition-all text-center ${
                             isSelected
                               ? 'border-black bg-gray-50 dark:bg-gray-900 shadow-md'
-                              : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-300'
+                              : 'border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white'
                           }`}
                         >
                           <div className="text-2xl mb-1">{icons[type]}</div>
-                          <div className={`text-sm font-medium ${isSelected ? 'text-black dark:text-gray-700' : 'text-gray-700 dark:text-gray-300'}`}>
+                          <div className={`text-sm font-medium ${isSelected ? 'text-black dark:text-white' : 'text-black dark:text-white'}`}>
                             {type}
                           </div>
                         </button>
@@ -403,7 +403,7 @@ const HomePageImproved = () => {
                   <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950 p-4 rounded-xl mb-4">
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-2xl font-bold text-gray-900 dark:text-white">{formatBudget(buyBox.budgetMin)}</span>
-                      <span className="text-gray-500 dark:text-gray-400">to</span>
+                      <span className="text-gray-700 dark:text-gray-400 dark:text-gray-400">to</span>
                       <span className="text-2xl font-bold text-gray-900 dark:text-white">{formatBudget(buyBox.budgetMax)}</span>
                     </div>
                     <Slider
@@ -422,7 +422,7 @@ const HomePageImproved = () => {
                   </h3>
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
-                      <Bed className="h-5 w-5 text-gray-500" />
+                      <Bed className="h-5 w-5 text-gray-700 dark:text-gray-400" />
                       <Select value={buyBox.bedrooms} onValueChange={(value) => setBuyBox(prev => ({ ...prev, bedrooms: value }))}>
                         <SelectTrigger className="flex-1 h-11 border-2 dark:bg-gray-700 dark:text-white">
                           <SelectValue placeholder="Bedrooms" />
@@ -439,7 +439,7 @@ const HomePageImproved = () => {
                     </div>
 
                     <div className="flex items-center gap-3">
-                      <Bath className="h-5 w-5 text-gray-500" />
+                      <Bath className="h-5 w-5 text-gray-700 dark:text-gray-400" />
                       <Select value={buyBox.bathrooms} onValueChange={(value) => setBuyBox(prev => ({ ...prev, bathrooms: value }))}>
                         <SelectTrigger className="flex-1 h-11 border-2 dark:bg-gray-700 dark:text-white">
                           <SelectValue placeholder="Bathrooms" />
@@ -454,7 +454,7 @@ const HomePageImproved = () => {
                     </div>
 
                     <div className="flex items-center gap-3">
-                      <Car className="h-5 w-5 text-gray-500" />
+                      <Car className="h-5 w-5 text-gray-700 dark:text-gray-400" />
                       <Select value={buyBox.parking} onValueChange={(value) => setBuyBox(prev => ({ ...prev, parking: value }))}>
                         <SelectTrigger className="flex-1 h-11 border-2 dark:bg-gray-700 dark:text-white">
                           <SelectValue placeholder="Parking" />
@@ -487,8 +487,8 @@ const HomePageImproved = () => {
                           onClick={() => handleStrategyToggle(strategy)}
                           className={`px-3 py-2 rounded-lg text-sm font-medium transition-all border-2 ${
                             isSelected
-                              ? 'border-black bg-gray-50 dark:bg-gray-100 text-gray-700 dark:text-gray-700 shadow-md'
-                              : 'border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-black dark:hover:border-purple-800'
+                              ? 'border-black bg-gray-50 dark:bg-gray-100 text-gray-700 dark:text-white shadow-md'
+                              : 'border-gray-200 dark:border-gray-700 text-black dark:text-white hover:border-black dark:hover:border-black'
                           }`}
                         >
                           {strategy}
@@ -499,7 +499,7 @@ const HomePageImproved = () => {
 
                   {/* Quick Presets */}
                   <div className="mb-6 p-4 bg-gray-50 dark:bg-gray-900 rounded-xl">
-                    <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Quick Presets</h4>
+                    <h4 className="text-sm font-semibold text-black dark:text-white mb-3">Quick Presets</h4>
                     <div className="space-y-2">
                       {[
                         { label: '🏠 First Home', preset: { propertyType: 'House', budgetMax: 800000, strategies: ['PPOR'] } },
@@ -526,7 +526,7 @@ const HomePageImproved = () => {
                     {buyBoxTab === 'deals' ? 'Search Deals' : 'Find Agents'}
                   </Button>
 
-                  <p className="text-xs text-center text-gray-500 dark:text-gray-400 mt-3">
+                  <p className="text-xs text-center text-gray-700 dark:text-gray-400 dark:text-gray-400 mt-3">
                     {buyBoxTab === 'deals' 
                       ? '3,800+ verified property deals'
                       : '1,200+ verified buyer agents'
