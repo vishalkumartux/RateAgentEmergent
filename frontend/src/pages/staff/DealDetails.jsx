@@ -307,7 +307,7 @@ const DealDetails = () => {
                     <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Key Features</h4>
                     <div className="flex flex-wrap gap-2">
                       {dealData.features.map((feature, index) => (
-                        <Badge key={index} variant="secondary" className="bg-gray-50 dark:bg-gray-900 text-black dark:text-amber-300">
+                        <Badge key={index} variant="secondary" className="bg-gray-50 dark:bg-gray-900 text-black dark:text-gray-700">
                           {feature}
                         </Badge>
                       ))}

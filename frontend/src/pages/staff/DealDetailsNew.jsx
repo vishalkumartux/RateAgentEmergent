@@ -176,7 +176,7 @@ const DealDetailsNew = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Preview Banner */}
         {isPreview && (
-          <div className="mb-6 p-4 bg-gray-50 dark:bg-blue-900/20 border border-gray-200 dark:border-black rounded-lg">
+          <div className="mb-6 p-4 bg-gray-50 dark:bg-gray-800/20 border border-gray-200 dark:border-black rounded-lg">
             <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <Eye className="h-5 w-5 text-black dark:text-white mr-3" />
@@ -491,7 +491,7 @@ const DealDetailsNew = () => {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="grid grid-cols-2 gap-4">
-                      <div className="p-4 bg-gray-50 dark:bg-purple-900/20 rounded-lg">
+                      <div className="p-4 bg-gray-50 dark:bg-gray-100/20 rounded-lg">
                         <div className="flex items-center mb-2">
                           <Clock className="h-5 w-5 text-gray-700 mr-2" />
                           <span className="text-sm text-gray-600 dark:text-gray-400">Days-to-Secure</span>
@@ -501,7 +501,7 @@ const DealDetailsNew = () => {
                         </p>
                       </div>
                       
-                      <div className="p-4 bg-gray-50 dark:bg-blue-900/20 rounded-lg">
+                      <div className="p-4 bg-gray-50 dark:bg-gray-800/20 rounded-lg">
                         <div className="flex items-center mb-2">
                           <Calendar className="h-5 w-5 text-black mr-2" />
                           <span className="text-sm text-gray-600 dark:text-gray-400">Purchase Date</span>
@@ -516,7 +516,7 @@ const DealDetailsNew = () => {
                       </div>
                     </div>
 
-                    <div className="p-4 bg-gray-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+                    <div className="p-4 bg-gray-50 dark:bg-gray-100 border border-gray-300 dark:border-gray-300 rounded-lg">
                       <div className="flex items-center justify-between mb-3">
                         <h4 className="font-semibold text-gray-900 dark:text-white">
                           Verification Status
@@ -624,7 +624,7 @@ const DealDetailsNew = () => {
 
             {/* Agent Info (Preview Mode) */}
             {isPreview && (
-              <Card className="border-2 border-amber-200 dark:border-amber-800">
+              <Card className="border-2 border-gray-300 dark:border-gray-300">
                 <CardHeader>
                   <CardTitle className="text-lg">Buyer Agent</CardTitle>
                 </CardHeader>

@@ -112,7 +112,7 @@ const CompareAgentsPage = () => {
                             <h4 className="font-semibold text-gray-900 dark:text-white">{agent.name}</h4>
                             <p className="text-gray-600 dark:text-gray-300 text-sm">{agent.company}</p>
                             <div className="flex items-center mt-1">
-                              <Star className="h-4 w-4 text-amber-400 fill-current" />
+                              <Star className="h-4 w-4 text-gray-700 fill-current" />
                               <span className="text-sm ml-1 text-gray-900 dark:text-white">{agent.rating}</span>
                             </div>
                           </div>
@@ -160,7 +160,7 @@ const CompareAgentsPage = () => {
                         <img
                           src={agent.photo}
                           alt={agent.name}
-                          className="w-12 h-12 rounded-full object-cover border-2 border-amber-400 dark:border-black flex-shrink-0"
+                          className="w-12 h-12 rounded-full object-cover border-2 border-gray-300 dark:border-black flex-shrink-0"
                         />
                         <div className="min-w-0 flex-1">
                           <p className="text-sm font-bold text-gray-900 dark:text-white truncate">{agent.name}</p>
@@ -237,13 +237,13 @@ const CompareAgentsPage = () => {
                                   <img 
                                     src={agent.photo} 
                                     alt={agent.name} 
-                                    className="w-16 h-16 rounded-full object-cover border-2 border-amber-400 dark:border-black" 
+                                    className="w-16 h-16 rounded-full object-cover border-2 border-gray-300 dark:border-black" 
                                   />
                                   <div className="flex-1 min-w-0">
                                     <h4 className="font-semibold text-gray-900 dark:text-white truncate">{agent.name}</h4>
                                     <p className="text-gray-600 dark:text-gray-300 text-sm truncate">{agent.company}</p>
                                     <div className="flex items-center mt-1">
-                                      <Star className="h-4 w-4 text-amber-400 fill-current" />
+                                      <Star className="h-4 w-4 text-gray-700 fill-current" />
                                       <span className="text-sm ml-1 text-gray-900 dark:text-white font-semibold">{agent.rating}</span>
                                       <span className="text-xs text-gray-500 dark:text-gray-400 ml-1">({agent.reviewCount})</span>
                                     </div>
@@ -280,7 +280,7 @@ const CompareAgentsPage = () => {
                         <img
                           src={agent.photo}
                           alt={agent.name}
-                          className="w-20 h-20 rounded-full mx-auto object-cover border-4 border-amber-100 dark:border-amber-900 shadow-lg mb-3"
+                          className="w-20 h-20 rounded-full mx-auto object-cover border-4 border-gray-300 dark:border-gray-300 shadow-lg mb-3"
                         />
                         <h3 className="font-bold text-lg text-gray-900 dark:text-white">{agent.name}</h3>
                         <p className="text-gray-600 dark:text-gray-300 text-sm">{agent.company}</p>
@@ -295,7 +295,7 @@ const CompareAgentsPage = () => {
                           <h4 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-2">Coverage Areas</h4>
                           <div className="flex flex-wrap gap-1">
                             {agent.coverageAreas && agent.coverageAreas.map((area, index) => (
-                              <Badge key={index} variant="secondary" className="text-xs bg-gray-50 dark:bg-amber-900 text-black dark:text-amber-300 border border-amber-200 dark:border-amber-700">
+                              <Badge key={index} variant="secondary" className="text-xs bg-gray-50 dark:bg-gray-100 text-black dark:text-gray-700 border border-gray-300 dark:border-gray-300">
                                 {area}
                               </Badge>
                             ))}
@@ -492,7 +492,7 @@ const CompareAgentsPage = () => {
                     <div key={agent.id} className="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
                       <div className="text-center mb-4">
                         <div className="flex items-center justify-center mb-2">
-                          <Star className="h-6 w-6 text-amber-400 fill-current" />
+                          <Star className="h-6 w-6 text-gray-700 fill-current" />
                           <span className="text-3xl font-bold text-gray-900 dark:text-white ml-2">{agent.rating}</span>
                         </div>
                         <p className="text-gray-600 dark:text-gray-400 text-sm">{agent.reviewCount} reviews</p>
@@ -535,7 +535,7 @@ const CompareAgentsPage = () => {
                         <h5 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-2">Industry Memberships</h5>
                         <div className="flex flex-wrap gap-1">
                           {agent.industryMemberships && agent.industryMemberships.map((membership, index) => (
-                            <Badge key={index} variant="outline" className="text-xs border-gray-300 dark:border-gray-300 text-black dark:text-gray-300 bg-gray-50 dark:bg-blue-900">
+                            <Badge key={index} variant="outline" className="text-xs border-gray-300 dark:border-gray-300 text-black dark:text-gray-300 bg-gray-50 dark:bg-gray-800">
                               {membership}
                             </Badge>
                           ))}

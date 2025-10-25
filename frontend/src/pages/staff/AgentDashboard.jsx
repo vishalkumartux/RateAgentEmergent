@@ -114,7 +114,7 @@ const AgentDashboard = () => {
       value: agentStats.publishedDeals,
       icon: BarChart3,
       color: 'text-black',
-      bgColor: 'bg-gray-50 dark:bg-blue-900/20',
+      bgColor: 'bg-gray-50 dark:bg-gray-800/20',
       change: `+${agentStats.dealsThisMonth} this month`
     },
     {
@@ -122,7 +122,7 @@ const AgentDashboard = () => {
       value: agentStats.medianDaysToSecure,
       icon: Calendar,
       color: 'text-gray-700',
-      bgColor: 'bg-gray-50 dark:bg-purple-900/20',
+      bgColor: 'bg-gray-50 dark:bg-gray-100/20',
       change: '5 days faster than avg'
     },
     {
@@ -130,7 +130,7 @@ const AgentDashboard = () => {
       value: agentStats.averageRating.toFixed(1),
       icon: Star,
       color: 'text-black',
-      bgColor: 'bg-gray-50 dark:bg-amber-900/20',
+      bgColor: 'bg-gray-50 dark:bg-gray-100',
       change: `${agentStats.totalReviews} total reviews`
     },
     {
@@ -216,7 +216,7 @@ const AgentDashboard = () => {
                   {myDeals.map((deal) => (
                     <div 
                       key={deal.id} 
-                      className="flex items-start justify-between p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-300 dark:hover:border-amber-700 transition-colors"
+                      className="flex items-start justify-between p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-300 dark:hover:border-gray-300 transition-colors"
                     >
                       <div className="flex-1">
                         <div className="flex items-center space-x-2 mb-2">
@@ -225,7 +225,7 @@ const AgentDashboard = () => {
                           </h4>
                           <Badge 
                             variant={deal.status === 'Verified' ? 'default' : 'secondary'}
-                            className={deal.status === 'Verified' ? 'bg-green-600 text-white' : 'bg-gray-100 text-black dark:bg-gray-800 dark:text-amber-400'}
+                            className={deal.status === 'Verified' ? 'bg-green-600 text-white' : 'bg-gray-100 text-black dark:bg-gray-800 dark:text-gray-700'}
                           >
                             {deal.status === 'Verified' ? (
                               <CheckCircle className="h-3 w-3 mr-1 inline" />
@@ -251,7 +251,7 @@ const AgentDashboard = () => {
                         </div>
                       </div>
                       <div className="text-right ml-4">
-                        <p className="text-lg font-bold text-black dark:text-amber-400">
+                        <p className="text-lg font-bold text-black dark:text-gray-700">
                           {deal.price}
                         </p>
                         <p className="text-xs text-gray-500 dark:text-gray-500">
@@ -315,7 +315,7 @@ const AgentDashboard = () => {
                               key={i}
                               className={`h-3 w-3 ${
                                 i < review.rating
-                                  ? 'fill-amber-400 text-amber-400'
+                                  ? 'fill-amber-400 text-gray-700'
                                   : 'text-gray-300 dark:text-gray-600'
                               }`}
                             />

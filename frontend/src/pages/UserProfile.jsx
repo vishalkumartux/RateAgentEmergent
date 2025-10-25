@@ -151,7 +151,7 @@ const UserProfile = () => {
                           onClick={() => setActiveSection(section.id)}
                           className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
                             activeSection === section.id
-                              ? 'bg-gray-100 dark:bg-gray-900 text-black dark:text-amber-400 font-semibold'
+                              ? 'bg-gray-100 dark:bg-gray-900 text-black dark:text-gray-700 font-semibold'
                               : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-700'
                           }`}
                         >
@@ -448,7 +448,7 @@ const UserProfile = () => {
                     </div>
 
                     <div className="pt-4">
-                      <Button onClick={handleSaveProfile} className="bg-gray-700 hover:bg-purple-700 text-white">
+                      <Button onClick={handleSaveProfile} className="bg-gray-700 hover:bg-gray-100 text-white">
                         <Save className="h-4 w-4 mr-2" />
                         Save Settings
                       </Button>
@@ -577,7 +577,7 @@ const UserProfile = () => {
                     </div>
 
                     <div className="pt-4">
-                      <Button onClick={handleSaveProfile} className="bg-black hover:bg-indigo-700 text-white">
+                      <Button onClick={handleSaveProfile} className="bg-black hover:bg-gray-100 text-white">
                         <Save className="h-4 w-4 mr-2" />
                         Save Privacy Settings
                       </Button>

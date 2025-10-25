@@ -444,7 +444,7 @@ const MyProfile = () => {
                 </p>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="p-4 bg-gray-50 dark:bg-blue-900/20 rounded-lg">
+                <div className="p-4 bg-gray-50 dark:bg-gray-800/20 rounded-lg">
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-sm text-gray-600 dark:text-gray-400">Verified Deals</span>
                     <CheckCircle className="h-4 w-4 text-black" />
@@ -454,7 +454,7 @@ const MyProfile = () => {
                   </p>
                 </div>
 
-                <div className="p-4 bg-gray-50 dark:bg-purple-900/20 rounded-lg">
+                <div className="p-4 bg-gray-50 dark:bg-gray-100/20 rounded-lg">
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-sm text-gray-600 dark:text-gray-400">Median Days-to-Secure</span>
                     <Clock className="h-4 w-4 text-gray-700" />
@@ -464,7 +464,7 @@ const MyProfile = () => {
                   </p>
                 </div>
 
-                <div className="p-4 bg-gray-50 dark:bg-amber-900/20 rounded-lg">
+                <div className="p-4 bg-gray-50 dark:bg-gray-100 rounded-lg">
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-sm text-gray-600 dark:text-gray-400">Average Rating</span>
                     <Star className="h-4 w-4 text-black" />
@@ -486,7 +486,7 @@ const MyProfile = () => {
             </Card>
 
             {/* Help Card */}
-            <Card className="border-amber-200 dark:border-amber-800 bg-gray-50 dark:bg-amber-900/20">
+            <Card className="border-gray-300 dark:border-gray-300 bg-gray-50 dark:bg-gray-100">
               <CardContent className="p-6">
                 <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
                   Profile Tips

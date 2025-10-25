@@ -296,7 +296,7 @@ const AgentListPage = () => {
                 <button
                   key={quick}
                   onClick={() => setSearchTerm(quick)}
-                  className="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-amber-900 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-amber-400 rounded-full text-sm transition-all duration-200 hover:shadow-md"
+                  className="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-100 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-gray-700 rounded-full text-sm transition-all duration-200 hover:shadow-md"
                 >
                   {quick}
                 </button>
@@ -688,13 +688,13 @@ const AgentCard = ({ agent, isInCompare, isShortlisted, onToggleCompare, onToggl
             <img
               src={agent.photo}
               alt={agent.name}
-              className="w-16 h-16 rounded-full object-cover border-2 border-amber-400"
+              className="w-16 h-16 rounded-full object-cover border-2 border-gray-300"
             />
             <div>
               <h3 className="font-bold text-lg text-gray-900 dark:text-white">{agent.name}</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">{agent.company}</p>
               <div className="flex items-center mt-1">
-                <Star className="h-4 w-4 text-amber-400 fill-current" />
+                <Star className="h-4 w-4 text-gray-700 fill-current" />
                 <span className="text-sm font-semibold ml-1 text-gray-900 dark:text-white">{agent.rating}</span>
                 <span className="text-xs text-gray-500 dark:text-gray-400 ml-1">({agent.reviewCount})</span>
               </div>
@@ -807,7 +807,7 @@ const AgentCard = ({ agent, isInCompare, isShortlisted, onToggleCompare, onToggl
           <div className="mb-4">
             <div className="flex flex-wrap gap-1">
               {agent.specialties.map((specialty, index) => (
-                <Badge key={index} variant="secondary" className="text-xs bg-gray-50 dark:bg-blue-900 text-black dark:text-gray-300">
+                <Badge key={index} variant="secondary" className="text-xs bg-gray-50 dark:bg-gray-800 text-black dark:text-gray-300">
                   {specialty}
                 </Badge>
               ))}

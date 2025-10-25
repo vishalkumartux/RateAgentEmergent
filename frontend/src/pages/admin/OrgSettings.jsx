@@ -178,7 +178,7 @@ const OrgSettings = () => {
                         onClick={() => setActiveSection(section.id)}
                         className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
                           activeSection === section.id
-                            ? 'bg-gray-100 dark:bg-gray-800 text-amber-900 dark:text-amber-200'
+                            ? 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-700'
                             : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-800'
                         }`}
                       >
@@ -534,7 +534,7 @@ const OrgSettings = () => {
                   </div>
 
                   {/* Compliance Notice */}
-                  <div className="p-4 bg-gray-50 dark:bg-blue-900/20 border border-gray-200 dark:border-black rounded-lg">
+                  <div className="p-4 bg-gray-50 dark:bg-gray-800/20 border border-gray-200 dark:border-black rounded-lg">
                     <div className="flex">
                       <Lock className="h-5 w-5 text-black dark:text-white mr-3 mt-0.5" />
                       <div>
@@ -626,12 +626,12 @@ const OrgSettings = () => {
                   </div>
 
                   {/* Info Box */}
-                  <div className="p-4 bg-gray-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+                  <div className="p-4 bg-gray-50 dark:bg-gray-100 border border-gray-300 dark:border-gray-300 rounded-lg">
                     <div className="flex">
-                      <Users className="h-5 w-5 text-black dark:text-amber-400 mr-3 mt-0.5" />
+                      <Users className="h-5 w-5 text-black dark:text-gray-700 mr-3 mt-0.5" />
                       <div>
-                        <h4 className="font-medium text-amber-900 dark:text-amber-200 mb-1">Team Performance</h4>
-                        <p className="text-sm text-black dark:text-amber-300">
+                        <h4 className="font-medium text-gray-700 dark:text-gray-700 mb-1">Team Performance</h4>
+                        <p className="text-sm text-black dark:text-gray-700">
                           Fast response times improve conversion rates. We recommend targeting 24 hours or less for initial contact.
                         </p>
                       </div>
@@ -655,11 +655,11 @@ const OrgSettings = () => {
                 </CardHeader>
                 <CardContent className="space-y-6">
                   {/* Current Plan */}
-                  <div className="p-6 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+                  <div className="p-6 bg-gradient-to-br from-gray-900 to-gray-700 dark:from-gray-900/20 dark:to-gray-700/20 border border-gray-300 dark:border-gray-300 rounded-lg">
                     <div className="flex items-center justify-between mb-4">
                       <div>
                         <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{subscription.plan}</h3>
-                        <p className="text-black dark:text-amber-300 font-medium">{subscription.amount}</p>
+                        <p className="text-black dark:text-gray-700 font-medium">{subscription.amount}</p>
                       </div>
                       <Badge className="bg-green-600 text-white px-3 py-1">
                         <CheckCircle className="h-3 w-3 mr-1 inline" />
@@ -707,7 +707,7 @@ const OrgSettings = () => {
                   </div>
 
                   {/* Support Notice */}
-                  <div className="p-4 bg-gray-50 dark:bg-blue-900/20 border border-gray-200 dark:border-black rounded-lg">
+                  <div className="p-4 bg-gray-50 dark:bg-gray-800/20 border border-gray-200 dark:border-black rounded-lg">
                     <p className="text-sm text-black dark:text-gray-300">
                       Need help with billing? <a href="/contact" className="font-semibold underline">Contact our support team</a>
                     </p>

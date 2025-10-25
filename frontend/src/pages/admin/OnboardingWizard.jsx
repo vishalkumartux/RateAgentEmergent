@@ -480,7 +480,7 @@ const OnboardingWizard = () => {
                       {orgData.coverageAreas.map((area, index) => (
                         <Badge
                           key={index}
-                          className="bg-gray-100 dark:bg-gray-900 text-black dark:text-amber-400 pr-1"
+                          className="bg-gray-100 dark:bg-gray-900 text-black dark:text-gray-700 pr-1"
                         >
                           {area}
                           <button
@@ -669,7 +669,7 @@ const OnboardingWizard = () => {
                     </Button>
                   </div>
 
-                  <div className="p-4 bg-gray-50 dark:bg-gray-900 rounded-lg border border-amber-200 dark:border-amber-800">
+                  <div className="p-4 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-300 dark:border-gray-300">
                     <p className="text-sm text-gray-700 dark:text-gray-300">
                       <Users className="h-4 w-4 inline mr-1" />
                       Invites will be stored and you can manage them later from the Staff section

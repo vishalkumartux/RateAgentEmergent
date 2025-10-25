@@ -440,8 +440,8 @@ const DealDetailPage = () => {
               {agent && (
                 <div className="sticky top-32">
                   <Card className="border-2 border-blue-700 dark:border-black">
-                    <CardHeader className="bg-gray-50 dark:bg-amber-900">
-                      <CardTitle className="text-amber-900 dark:text-amber-100">
+                    <CardHeader className="bg-gray-50 dark:bg-gray-100">
+                      <CardTitle className="text-gray-700 dark:text-gray-700">
                         Deal Secured By
                       </CardTitle>
                     </CardHeader>
@@ -450,7 +450,7 @@ const DealDetailPage = () => {
                         <img
                           src={agent.photo}
                           alt={agent.name}
-                          className="w-24 h-24 rounded-full mx-auto object-cover border-4 border-amber-400 mb-3"
+                          className="w-24 h-24 rounded-full mx-auto object-cover border-4 border-gray-300 mb-3"
                         />
                         <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                           {agent.name}
@@ -459,7 +459,7 @@ const DealDetailPage = () => {
                           {agent.company}
                         </p>
                         <div className="flex items-center justify-center mt-2">
-                          <Star className="h-5 w-5 text-amber-400 fill-current" />
+                          <Star className="h-5 w-5 text-gray-700 fill-current" />
                           <span className="ml-1 font-semibold">{agent.rating}</span>
                           <span className="text-gray-600 dark:text-gray-400 ml-1">
                             ({agent.reviewCount} reviews)
@@ -505,7 +505,7 @@ const DealDetailPage = () => {
                   </Card>
 
                   {/* Privacy Notice */}
-                  <Card className="mt-4 bg-gray-50 dark:bg-blue-900 border-2 border-gray-200 dark:border-blue-700">
+                  <Card className="mt-4 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-blue-700">
                     <CardContent className="p-4">
                       <div className="flex items-start">
                         <Info className="h-5 w-5 text-black dark:text-white mr-2 flex-shrink-0 mt-0.5" />

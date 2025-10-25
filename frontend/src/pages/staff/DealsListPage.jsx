@@ -426,7 +426,7 @@ const DealsListPage = () => {
                           {deal.verification === 'L1' ? '✓ Verified' : 'Pending Verification'}
                         </Badge>
                         {deal.hasMedia && (
-                          <Badge variant="outline" className="bg-gray-50 text-purple-700 border-purple-200">
+                          <Badge variant="outline" className="bg-gray-50 text-gray-700 border-purple-200">
                             <ImageIcon className="h-3 w-3 mr-1" />
                             Media
                           </Badge>

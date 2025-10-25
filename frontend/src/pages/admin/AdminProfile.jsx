@@ -351,9 +351,9 @@ const AdminProfile = () => {
                   />
                 </div>
                 
-                <div className="bg-gray-50 dark:bg-gray-900 border border-amber-200 dark:border-amber-800 rounded-lg p-4">
-                  <h4 className="font-semibold text-amber-900 dark:text-amber-100 mb-2">Administrative Privileges</h4>
-                  <ul className="text-black dark:text-amber-200 text-sm space-y-1">
+                <div className="bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-300 rounded-lg p-4">
+                  <h4 className="font-semibold text-gray-700 dark:text-gray-700 mb-2">Administrative Privileges</h4>
+                  <ul className="text-black dark:text-gray-700 text-sm space-y-1">
                     <li>• Full organization management access</li>
                     <li>• Staff member invitation and management</li>
                     <li>• Organization settings and profile editing</li>

@@ -377,7 +377,7 @@ const MyDealsNew = () => {
                 <button
                   key={index}
                   onClick={() => handlePopularSearch(search)}
-                  className="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-black dark:hover:text-amber-400 transition-colors"
+                  className="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-black dark:hover:text-gray-700 transition-colors"
                 >
                   {search.label}
                 </button>

@@ -206,7 +206,7 @@ const MyReviews = () => {
             key={star}
             className={`h-4 w-4 ${
               star <= rating
-                ? 'fill-amber-400 text-amber-400'
+                ? 'fill-amber-400 text-gray-700'
                 : 'text-gray-300 dark:text-gray-600'
             }`}
           />
@@ -279,7 +279,7 @@ const MyReviews = () => {
         {review.tags.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-4">
             {review.tags.map((tag, index) => (
-              <Badge key={index} className="bg-gray-100 dark:bg-gray-800 text-black dark:text-amber-400 text-xs">
+              <Badge key={index} className="bg-gray-100 dark:bg-gray-800 text-black dark:text-gray-700 text-xs">
                 {tag}
               </Badge>
             ))}
@@ -303,7 +303,7 @@ const MyReviews = () => {
 
         {/* Agent Reply */}
         {review.hasReply && review.reply && (
-          <div className="mt-4 p-4 bg-gray-50 dark:bg-blue-900/20 border-l-4 border-gray-300 rounded">
+          <div className="mt-4 p-4 bg-gray-50 dark:bg-gray-800/20 border-l-4 border-gray-300 rounded">
             <div className="flex items-start space-x-3">
               <Reply className="h-4 w-4 text-black dark:text-white mt-1 flex-shrink-0" />
               <div className="flex-1">
@@ -476,7 +476,7 @@ const MyReviews = () => {
           <Card>
             <CardContent className="p-6">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gray-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800/30 rounded-lg flex items-center justify-center">
                   <MessageCircle className="h-6 w-6 text-black" />
                 </div>
                 <div>
@@ -490,7 +490,7 @@ const MyReviews = () => {
           <Card>
             <CardContent className="p-6">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gray-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-gray-100 dark:bg-gray-100/30 rounded-lg flex items-center justify-center">
                   <Reply className="h-6 w-6 text-gray-700" />
                 </div>
                 <div>
@@ -503,7 +503,7 @@ const MyReviews = () => {
         </div>
 
         {/* Shareable Review Link */}
-        <Card className="mb-8 border-2 border-amber-200 dark:border-amber-800">
+        <Card className="mb-8 border-2 border-gray-300 dark:border-gray-300">
           <CardHeader>
             <CardTitle className="flex items-center">
               <Link2 className="h-5 w-5 mr-2 text-black" />
@@ -606,14 +606,14 @@ const MyReviews = () => {
           <TabsContent value="new" className="mt-6">
             {newReviews.length > 0 ? (
               <>
-                <div className="mb-4 p-4 bg-gray-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+                <div className="mb-4 p-4 bg-gray-50 dark:bg-gray-100 border border-gray-300 dark:border-gray-300 rounded-lg">
                   <div className="flex items-start">
-                    <AlertCircle className="h-5 w-5 text-black dark:text-amber-400 mr-3 mt-0.5" />
+                    <AlertCircle className="h-5 w-5 text-black dark:text-gray-700 mr-3 mt-0.5" />
                     <div>
-                      <p className="font-medium text-amber-900 dark:text-amber-200">
+                      <p className="font-medium text-gray-700 dark:text-gray-700">
                         Action Required
                       </p>
-                      <p className="text-sm text-black dark:text-amber-300 mt-1">
+                      <p className="text-sm text-black dark:text-gray-700 mt-1">
                         {newReviews.length} {newReviews.length === 1 ? 'review' : 'reviews'} waiting for your reply. Responding promptly shows professionalism.
                       </p>
                     </div>

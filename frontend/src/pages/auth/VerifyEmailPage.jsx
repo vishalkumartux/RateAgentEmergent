@@ -94,7 +94,7 @@ const VerifyEmailPage = () => {
             Back to Registration
           </Link>
           
-          <div className="w-16 h-16 bg-gray-100 dark:bg-amber-900 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="w-16 h-16 bg-gray-100 dark:bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <Mail className="h-8 w-8 text-black" />
           </div>
           

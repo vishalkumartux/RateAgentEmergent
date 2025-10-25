@@ -293,7 +293,7 @@ const RegisterPage = () => {
           </Card>
 
           {/* Terms and Conditions */}
-          <Card className="bg-gray-50 dark:bg-gray-900 border-amber-200 dark:border-amber-800">
+          <Card className="bg-gray-50 dark:bg-gray-900 border-gray-300 dark:border-gray-300">
             <CardContent className="p-6">
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">

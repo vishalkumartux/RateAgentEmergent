@@ -239,7 +239,7 @@ const StaffProfilePage = () => {
                 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {profileData.specialties.map((specialty, index) => (
-                    <Badge key={index} variant="secondary" className="bg-gray-50 dark:bg-gray-900 text-black dark:text-amber-300">
+                    <Badge key={index} variant="secondary" className="bg-gray-50 dark:bg-gray-900 text-black dark:text-gray-700">
                       {specialty}
                     </Badge>
                   ))}
@@ -374,7 +374,7 @@ const StaffProfilePage = () => {
                           onClick={() => handleSpecialtyToggle(specialty)}
                           className={`p-3 text-sm rounded-lg border transition-all text-center ${
                             profileData.specialties.includes(specialty)
-                              ? 'bg-gray-50 dark:bg-gray-900 border-gray-300 dark:border-amber-700 text-black dark:text-amber-300'
+                              ? 'bg-gray-50 dark:bg-gray-900 border-gray-300 dark:border-gray-300 text-black dark:text-gray-700'
                               : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300'
                           }`}
                         >
@@ -507,7 +507,7 @@ const StaffProfilePage = () => {
                               <Star
                                 key={i}
                                 className={`h-4 w-4 ${
-                                  i < testimonial.rating ? 'text-amber-400 fill-current' : 'text-gray-300'
+                                  i < testimonial.rating ? 'text-gray-700 fill-current' : 'text-gray-300'
                                 }`}
                               />
                             ))}

@@ -175,13 +175,13 @@ const HomePageImproved = () => {
       
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-amber-50 via-white to-yellow-50 dark:from-gray-900 dark:via-gray-800 dark:to-amber-950 pt-20 pb-16 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-gray-900 via-white to-yellow-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-800 pt-20 pb-16 overflow-hidden">
           <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
           <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
                 Find Your Next Property
-                <span className="bg-gradient-to-r from-amber-600 to-blue-600 bg-clip-text text-transparent block mt-2">
+                <span className="bg-gradient-to-r from-gray-900 to-blue-600 bg-clip-text text-transparent block mt-2">
                   The Smart Way
                 </span>
               </h1>
@@ -199,7 +199,7 @@ const HomePageImproved = () => {
                     placeholder='Try: "3BR house in Preston under 1.2m" or "Investment property Melbourne high yield"'
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-14 pr-32 h-16 text-lg border-2 border-amber-200 dark:border-amber-800 focus:border-blue-700 rounded-2xl bg-white dark:bg-gray-800 shadow-xl"
+                    className="pl-14 pr-32 h-16 text-lg border-2 border-gray-300 dark:border-gray-300 focus:border-blue-700 rounded-2xl bg-white dark:bg-gray-800 shadow-xl"
                   />
                   <Button 
                     type="submit"
@@ -264,7 +264,7 @@ const HomePageImproved = () => {
               <Link to="/compare">
                 <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-purple-500 bg-white dark:bg-gray-800">
                   <CardContent className="p-6 text-center">
-                    <div className="w-14 h-14 bg-gray-100 dark:bg-purple-950 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-14 h-14 bg-gray-100 dark:bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Target className="h-7 w-7 text-gray-700" />
                     </div>
                     <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Compare Agents</h3>
@@ -299,7 +299,7 @@ const HomePageImproved = () => {
         </section>
 
         {/* Buy Box Quick-Builder - Redesigned */}
-        <section className="py-16 bg-gradient-to-br from-gray-50 via-white to-amber-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+        <section className="py-16 bg-gradient-to-br from-gray-50 via-white to-gray-800 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">
@@ -338,7 +338,7 @@ const HomePageImproved = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {/* Column 1: Property Type & Location */}
-              <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-amber-700 transition-all">
+              <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-300 transition-all">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
                     <Building2 className="h-5 w-5 mr-2 text-black" />
@@ -355,11 +355,11 @@ const HomePageImproved = () => {
                           className={`p-4 rounded-xl border-2 transition-all text-center ${
                             isSelected
                               ? 'border-blue-700 bg-gray-50 dark:bg-gray-900 shadow-md'
-                              : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-amber-800'
+                              : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-300'
                           }`}
                         >
                           <div className="text-2xl mb-1">{icons[type]}</div>
-                          <div className={`text-sm font-medium ${isSelected ? 'text-black dark:text-amber-400' : 'text-gray-700 dark:text-gray-300'}`}>
+                          <div className={`text-sm font-medium ${isSelected ? 'text-black dark:text-gray-700' : 'text-gray-700 dark:text-gray-300'}`}>
                             {type}
                           </div>
                         </button>
@@ -486,7 +486,7 @@ const HomePageImproved = () => {
                           onClick={() => handleStrategyToggle(strategy)}
                           className={`px-3 py-2 rounded-lg text-sm font-medium transition-all border-2 ${
                             isSelected
-                              ? 'border-purple-500 bg-gray-50 dark:bg-purple-950 text-purple-700 dark:text-purple-400 shadow-md'
+                              ? 'border-purple-500 bg-gray-50 dark:bg-gray-100 text-gray-700 dark:text-gray-700 shadow-md'
                               : 'border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-purple-300 dark:hover:border-purple-800'
                           }`}
                         >
@@ -521,7 +521,7 @@ const HomePageImproved = () => {
                     onClick={handleBuyBoxSearch}
                     className={`w-full h-14 text-lg font-bold shadow-xl transition-all hover:scale-105 ${
                       buyBoxTab === 'deals'
-                        ? 'bg-gradient-to-r from-amber-600 to-blue-600 hover:from-amber-700 hover:to-yellow-700 text-white'
+                        ? 'bg-gradient-to-r from-gray-900 to-blue-600 hover:from-gray-900 hover:to-yellow-700 text-white'
                         : 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white'
                     }`}
                   >
@@ -633,7 +633,7 @@ const HomePageImproved = () => {
                       <img 
                         src={agent.photo} 
                         alt={agent.name}
-                        className="w-20 h-20 rounded-full mx-auto mb-4 object-cover border-2 border-amber-200 dark:border-amber-800"
+                        className="w-20 h-20 rounded-full mx-auto mb-4 object-cover border-2 border-gray-300 dark:border-gray-300"
                       />
                       <h3 className="font-semibold text-lg text-gray-900 dark:text-white mb-1">
                         {agent.name}
@@ -641,7 +641,7 @@ const HomePageImproved = () => {
                       <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{agent.company}</p>
                       
                       <div className="flex items-center justify-center gap-1 mb-3">
-                        <Star className="h-4 w-4 text-amber-400 fill-current" />
+                        <Star className="h-4 w-4 text-gray-700 fill-current" />
                         <span className="font-bold text-gray-900 dark:text-white">{agent.rating}</span>
                         <span className="text-sm text-gray-600 dark:text-gray-400">({agent.reviewCount})</span>
                       </div>
@@ -727,7 +727,7 @@ const HomePageImproved = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Ready to Find Your Perfect Property?
             </h2>
-            <p className="text-xl text-amber-50 mb-8">
+            <p className="text-xl text-gray-700 mb-8">
               Join thousands of smart buyers who use AgentRate to make informed decisions
             </p>
             <div className="flex gap-4 justify-center flex-wrap">

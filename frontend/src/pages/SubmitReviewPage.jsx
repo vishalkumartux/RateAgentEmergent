@@ -229,7 +229,7 @@ const SubmitReviewPage = () => {
                           <Star
                             className={`h-10 w-10 ${
                               value <= (hoverRating || rating)
-                                ? 'text-amber-400 fill-current'
+                                ? 'text-gray-700 fill-current'
                                 : 'text-gray-300'
                             }`}
                           />

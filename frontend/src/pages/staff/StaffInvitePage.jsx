@@ -139,7 +139,7 @@ const StaffInvitePage = () => {
             Back to Home
           </Link>
           
-          <div className="w-16 h-16 bg-gray-100 dark:bg-amber-900 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="w-16 h-16 bg-gray-100 dark:bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <UserCheck className="h-8 w-8 text-black" />
           </div>
           
@@ -153,15 +153,15 @@ const StaffInvitePage = () => {
         </div>
 
         {/* Invitation Details */}
-        <Card className="mb-6 bg-gray-50 dark:bg-gray-900 border-amber-200 dark:border-amber-800">
+        <Card className="mb-6 bg-gray-50 dark:bg-gray-900 border-gray-300 dark:border-gray-300">
           <CardContent className="p-6">
             <div className="flex items-center space-x-3">
               <Building2 className="h-6 w-6 text-black" />
               <div>
-                <p className="text-amber-900 dark:text-amber-100 font-medium">
+                <p className="text-gray-700 dark:text-gray-700 font-medium">
                   You've been invited by {inviteData.invitedBy}
                 </p>
-                <p className="text-black dark:text-amber-300 text-sm">
+                <p className="text-black dark:text-gray-700 text-sm">
                   Email: {inviteData.email}
                 </p>
               </div>

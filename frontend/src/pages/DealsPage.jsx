@@ -323,7 +323,7 @@ const DealsPage = () => {
                 <button
                   key={quick}
                   onClick={() => setSearchTerm(quick)}
-                  className="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-amber-900 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-amber-400 rounded-full text-sm transition-all duration-200 hover:shadow-md"
+                  className="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-100 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-gray-700 rounded-full text-sm transition-all duration-200 hover:shadow-md"
                 >
                   {quick}
                 </button>
@@ -774,7 +774,7 @@ const DealCard = ({ deal }) => {
             </Badge>
           )}
           {deal.grossYield && (
-            <Badge variant="secondary" className="text-xs bg-gray-50 dark:bg-blue-900 text-black dark:text-gray-300">
+            <Badge variant="secondary" className="text-xs bg-gray-50 dark:bg-gray-800 text-black dark:text-gray-300">
               {deal.grossYield}% yield
             </Badge>
           )}
@@ -784,7 +784,7 @@ const DealCard = ({ deal }) => {
         {deal.strategyTags && deal.strategyTags.length > 0 && (
           <div className="flex flex-wrap gap-1 mb-4">
             {deal.strategyTags.map((tag, index) => (
-              <Badge key={index} variant="outline" className="text-xs border-gray-300 dark:border-black text-black dark:text-amber-300">
+              <Badge key={index} variant="outline" className="text-xs border-gray-300 dark:border-black text-black dark:text-gray-700">
                 {tag}
               </Badge>
             ))}
@@ -802,7 +802,7 @@ const DealCard = ({ deal }) => {
             <div>
               <p className="text-sm font-semibold text-gray-900 dark:text-white">{deal.agentName}</p>
               <div className="flex items-center">
-                <Star className="h-3 w-3 text-amber-400 fill-current mr-1" />
+                <Star className="h-3 w-3 text-gray-700 fill-current mr-1" />
                 <span className="text-xs text-gray-600 dark:text-gray-400">{deal.agentRating}</span>
               </div>
             </div>

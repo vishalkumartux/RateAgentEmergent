@@ -120,7 +120,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                             <MapPin className="h-5 w-5 text-black flex-shrink-0 mt-0.5" />
                             <div className="flex flex-wrap gap-2">
                               {agent.coverageAreas.slice(0, 4).map((area, idx) => (
-                                <Badge key={idx} variant="outline" className="bg-gray-50 dark:bg-gray-900 border-amber-200 dark:border-amber-800 text-black dark:text-amber-400">
+                                <Badge key={idx} variant="outline" className="bg-gray-50 dark:bg-gray-900 border-gray-300 dark:border-gray-300 text-black dark:text-gray-700">
                                   {area}
                                 </Badge>
                               ))}
@@ -140,7 +140,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                         {/* Rating */}
                         <div className="flex items-center gap-4">
                           <div className="flex items-center gap-1">
-                            <Star className="h-5 w-5 text-amber-400 fill-current" />
+                            <Star className="h-5 w-5 text-gray-700 fill-current" />
                             <span className="text-xl font-bold text-gray-900 dark:text-white">{agent.rating}</span>
                             <span className="text-gray-600 dark:text-gray-400">({agent.reviewCount} reviews)</span>
                           </div>
@@ -265,7 +265,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                   <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Services Offered</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {agent.services.map((service, idx) => (
-                      <div key={idx} className="flex items-center gap-2 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg border border-amber-200 dark:border-amber-800">
+                      <div key={idx} className="flex items-center gap-2 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-300 dark:border-gray-300">
                         <CheckCircle className="h-4 w-4 text-black flex-shrink-0" />
                         <span className="text-sm text-gray-900 dark:text-white">{service}</span>
                       </div>
@@ -307,7 +307,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                   <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Coverage Areas ({agent.coverageAreas.length})</h3>
                   <div className="flex flex-wrap gap-2">
                     {(showAllAreas ? agent.coverageAreas : agent.coverageAreas.slice(0, 8)).map((area, idx) => (
-                      <Badge key={idx} className="bg-gray-100 dark:bg-gray-900 text-black dark:text-amber-400 border-gray-300 dark:border-amber-700">
+                      <Badge key={idx} className="bg-gray-100 dark:bg-gray-900 text-black dark:text-gray-700 border-gray-300 dark:border-gray-300">
                         {area}
                       </Badge>
                     ))}
@@ -576,7 +576,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                       <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Most Mentioned Qualities</h4>
                       <div className="flex flex-wrap gap-2">
                         {agent.topTags.map((tag, idx) => (
-                          <Badge key={idx} className="bg-gray-200 dark:bg-amber-800 text-black dark:text-amber-200">
+                          <Badge key={idx} className="bg-gray-200 dark:bg-gray-100 text-black dark:text-gray-700">
                             {tag}
                           </Badge>
                         ))}
@@ -595,7 +595,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                                 <Star
                                   key={i}
                                   className={`h-4 w-4 ${
-                                    i < review.rating ? 'text-amber-400 fill-current' : 'text-gray-300 dark:text-gray-600'
+                                    i < review.rating ? 'text-gray-700 fill-current' : 'text-gray-300 dark:text-gray-600'
                                   }`}
                                 />
                               ))}
@@ -696,7 +696,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
           <Card className="bg-gradient-to-r from-blue-800 to-blue-600 text-white border-0">
             <CardContent className="p-8 text-center">
               <h2 className="text-3xl font-bold mb-3">Ready to Work with {agent.name.split(' ')[0]}?</h2>
-              <p className="text-amber-50 mb-6 max-w-2xl mx-auto">
+              <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
                 Get in touch to discuss your property goals and see how {agent.name.split(' ')[0]} can help you secure your ideal property.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">

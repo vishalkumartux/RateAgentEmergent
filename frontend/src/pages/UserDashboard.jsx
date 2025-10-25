@@ -230,7 +230,7 @@ const UserDashboardComplete = () => {
     { label: 'Saved Searches', value: savedSearches.length, icon: Search, color: 'text-black', bgColor: 'bg-gray-100 dark:bg-gray-900' },
     { label: 'Shortlisted Agents', value: shortlistedAgents.length, icon: Users, color: 'text-black', bgColor: 'bg-gray-100 dark:bg-gray-900' },
     { label: 'Shortlisted Deals', value: shortlistedDeals.length, icon: Home, color: 'text-green-600', bgColor: 'bg-green-100 dark:bg-green-950' },
-    { label: 'Reviews Posted', value: myReviews.length, icon: Star, color: 'text-gray-700', bgColor: 'bg-gray-100 dark:bg-purple-950' }
+    { label: 'Reviews Posted', value: myReviews.length, icon: Star, color: 'text-gray-700', bgColor: 'bg-gray-100 dark:bg-gray-100' }
   ];
 
   return (
@@ -338,7 +338,7 @@ const UserDashboardComplete = () => {
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {/* Left Column - Quick Actions */}
                 <div className="lg:col-span-2 space-y-6">
-                  <Card className="bg-gradient-to-br from-amber-50 to-yellow-50 dark:from-amber-950 dark:to-yellow-950 border-2 border-amber-200 dark:border-amber-800">
+                  <Card className="bg-gradient-to-br from-gray-900 to-yellow-50 dark:from-gray-900 dark:to-yellow-950 border-2 border-gray-300 dark:border-gray-300">
                     <CardContent className="p-6">
                       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Quick Actions</h3>
                       <div className="grid grid-cols-2 gap-3">
@@ -361,7 +361,7 @@ const UserDashboardComplete = () => {
                           </Button>
                         </Link>
                         <Link to="/submit-review">
-                          <Button className="w-full bg-gray-700 hover:bg-purple-700 text-white h-12">
+                          <Button className="w-full bg-gray-700 hover:bg-gray-100 text-white h-12">
                             <Star className="h-4 w-4 mr-2" />
                             Write Review
                           </Button>
@@ -384,7 +384,7 @@ const UserDashboardComplete = () => {
                           const Icon = getActivityIcon(activity.type);
                           return (
                             <div key={activity.id} className="flex items-start gap-3 pb-4 border-b border-gray-100 dark:border-gray-700 last:border-0 last:pb-0">
-                              <div className="w-8 h-8 bg-gray-100 dark:bg-purple-950 rounded-full flex items-center justify-center flex-shrink-0">
+                              <div className="w-8 h-8 bg-gray-100 dark:bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
                                 <Icon className="h-4 w-4 text-gray-700" />
                               </div>
                               <div className="flex-1">
@@ -429,7 +429,7 @@ const UserDashboardComplete = () => {
                         </div>
                         <Badge className="bg-green-600 text-white">{shortlistedDeals.length}</Badge>
                       </div>
-                      <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-purple-950 rounded-lg">
+                      <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-100 rounded-lg">
                         <div className="flex items-center gap-3">
                           <Star className="h-5 w-5 text-gray-700" />
                           <span className="text-sm font-medium text-gray-900 dark:text-white">Reviews Posted</span>
@@ -567,7 +567,7 @@ const UserDashboardComplete = () => {
                         <Button 
                           size="sm"
                           onClick={handleCompareAgents}
-                          className="bg-gray-700 hover:bg-purple-700 text-white"
+                          className="bg-gray-700 hover:bg-gray-100 text-white"
                         >
                           <BarChart3 className="h-4 w-4 mr-1" />
                           Compare ({selectedAgentsForCompare.length})
@@ -623,7 +623,7 @@ const UserDashboardComplete = () => {
                               <p className="text-sm text-gray-600 dark:text-gray-400">{agent.company}</p>
                               <div className="flex items-center gap-3 mt-2 text-sm">
                                 <div className="flex items-center">
-                                  <Star className="h-4 w-4 text-amber-400 fill-current mr-1" />
+                                  <Star className="h-4 w-4 text-gray-700 fill-current mr-1" />
                                   {agent.rating}
                                 </div>
                                 <span className="text-gray-500">•</span>
@@ -650,7 +650,7 @@ const UserDashboardComplete = () => {
                                   </div>
                                 </div>
                               ) : agentNotes[agent.id] ? (
-                                <div className="mt-3 p-2 bg-yellow-50 dark:bg-yellow-950 rounded text-sm">
+                                <div className="mt-3 p-2 bg-gray-200 dark:bg-gray-200 rounded text-sm">
                                   <div className="flex items-start justify-between">
                                     <p className="text-gray-700 dark:text-gray-300">{agentNotes[agent.id]}</p>
                                     <Button 
@@ -800,7 +800,7 @@ const UserDashboardComplete = () => {
                       My Reviews
                     </CardTitle>
                     <Link to="/submit-review">
-                      <Button size="sm" variant="outline" className="border-yellow-600 text-yellow-600 hover:bg-yellow-50 dark:hover:bg-yellow-950">
+                      <Button size="sm" variant="outline" className="border-gray-300 text-yellow-600 hover:bg-gray-200 dark:hover:bg-gray-200">
                         <Plus className="h-4 w-4 mr-1" />
                         Write Review
                       </Button>
@@ -813,7 +813,7 @@ const UserDashboardComplete = () => {
                       <Star className="h-10 w-10 text-gray-300 dark:text-gray-600 mx-auto mb-3" />
                       <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">No reviews yet</p>
                       <Link to="/submit-review">
-                        <Button size="sm" className="bg-yellow-600 hover:bg-yellow-700 text-white">
+                        <Button size="sm" className="bg-gray-200 hover:bg-gray-200 text-white">
                           Write Your First Review
                         </Button>
                       </Link>
@@ -828,7 +828,7 @@ const UserDashboardComplete = () => {
                             </Link>
                             <Badge className={
                               review.status === 'published' ? 'bg-green-100 dark:bg-green-950 text-green-700 dark:text-green-400' :
-                              review.status === 'pending' ? 'bg-yellow-100 dark:bg-yellow-950 text-yellow-700 dark:text-yellow-400' :
+                              review.status === 'pending' ? 'bg-gray-200 dark:bg-gray-200 text-yellow-700 dark:text-yellow-400' :
                               'bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-400'
                             }>
                               {review.status}
@@ -836,7 +836,7 @@ const UserDashboardComplete = () => {
                           </div>
                           <div className="flex items-center gap-1 mb-2">
                             {[...Array(5)].map((_, i) => (
-                              <Star key={i} className={`h-4 w-4 ${i < review.rating ? 'text-amber-400 fill-current' : 'text-gray-300 dark:text-gray-600'}`} />
+                              <Star key={i} className={`h-4 w-4 ${i < review.rating ? 'text-gray-700 fill-current' : 'text-gray-300 dark:text-gray-600'}`} />
                             ))}
                           </div>
                           <p className="text-sm text-gray-700 dark:text-gray-300 mb-3 line-clamp-2">{review.comment}</p>

@@ -247,11 +247,11 @@ const AdminDashboard = () => {
               {nudges.map((nudge, index) => {
                 const Icon = nudge.icon;
                 return (
-                  <Card key={index} className="border-l-4 border-blue-700 bg-gray-50 dark:bg-amber-900/10">
+                  <Card key={index} className="border-l-4 border-green-700 bg-gray-50 dark:bg-gray-100">
                     <CardContent className="p-4">
                       <div className="flex items-start space-x-3">
                         <div className="w-10 h-10 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <Icon className="h-5 w-5 text-black dark:text-amber-400" />
+                          <Icon className="h-5 w-5 text-black dark:text-gray-700" />
                         </div>
                         <div className="flex-1">
                           <h4 className="font-semibold text-gray-900 dark:text-white text-sm mb-1">
@@ -386,7 +386,7 @@ const AdminDashboard = () => {
               <CardContent>
                 {/* Admin (Current User) */}
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between p-4 border border-amber-200 dark:border-amber-800 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                  <div className="flex items-center justify-between p-4 border border-gray-300 dark:border-gray-300 bg-gray-50 dark:bg-gray-900 rounded-lg">
                     <div className="flex items-center space-x-4">
                       <div className="w-12 h-12 bg-green-700 rounded-full flex items-center justify-center">
                         <span className="text-white font-semibold">
@@ -550,7 +550,7 @@ const AdminDashboard = () => {
                       </div>
                     )}
                     
-                    <div className="p-4 bg-gray-50 dark:bg-blue-900/20 border border-gray-200 dark:border-black rounded-lg">
+                    <div className="p-4 bg-gray-50 dark:bg-gray-800/20 border border-gray-200 dark:border-black rounded-lg">
                       <div className="flex">
                         <AlertCircle className="h-5 w-5 text-black dark:text-white mr-2 mt-0.5 flex-shrink-0" />
                         <div className="text-sm text-black dark:text-gray-200">
@@ -605,7 +605,7 @@ const AdminDashboard = () => {
                             </div>
                           </div>
                           <div className="flex items-center space-x-2">
-                            <Badge variant="secondary" className="bg-gray-100 text-black dark:bg-gray-800 dark:text-amber-400">
+                            <Badge variant="secondary" className="bg-gray-100 text-black dark:bg-gray-800 dark:text-gray-700">
                               Pending
                             </Badge>
                             <Button

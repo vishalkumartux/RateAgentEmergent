@@ -274,7 +274,7 @@ const AddEditDeal = () => {
                     </button>
                     <div className="text-center">
                       <p className={`text-sm font-semibold ${
-                        isActive ? 'text-black dark:text-amber-400' : 'text-gray-600 dark:text-gray-400'
+                        isActive ? 'text-black dark:text-gray-700' : 'text-gray-600 dark:text-gray-400'
                       }`}>
                         {step.title}
                       </p>
@@ -401,7 +401,7 @@ const AddEditDeal = () => {
                         onClick={() => setFormData({...formData, propertyType: type})}
                         className={`p-4 border-2 rounded-lg text-center transition-colors ${
                           formData.propertyType === type
-                            ? 'border-black bg-gray-50 dark:bg-amber-900/20 text-black dark:text-amber-400'
+                            ? 'border-black bg-gray-50 dark:bg-gray-100 text-black dark:text-gray-700'
                             : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                         }`}
                       >
@@ -456,7 +456,7 @@ const AddEditDeal = () => {
                     <p className="text-red-500 text-sm mt-1">{errors.streetAddress}</p>
                   )}
                   
-                  <div className="flex items-center justify-between mt-3 p-3 bg-gray-50 dark:bg-blue-900/20 border border-gray-200 dark:border-black rounded-lg">
+                  <div className="flex items-center justify-between mt-3 p-3 bg-gray-50 dark:bg-gray-800/20 border border-gray-200 dark:border-black rounded-lg">
                     <div className="flex-1">
                       <div className="flex items-center">
                         <Info className="h-4 w-4 text-black dark:text-white mr-2" />
@@ -500,7 +500,7 @@ const AddEditDeal = () => {
                         onClick={() => setFormData({...formData, method})}
                         className={`p-4 border-2 rounded-lg text-center transition-colors ${
                           formData.method === method
-                            ? 'border-black bg-gray-50 dark:bg-amber-900/20 text-black dark:text-amber-400'
+                            ? 'border-black bg-gray-50 dark:bg-gray-100 text-black dark:text-gray-700'
                             : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                         }`}
                       >
@@ -694,7 +694,7 @@ const AddEditDeal = () => {
 
                   {/* Auto-calculated Yield */}
                   {grossYield && (
-                    <div className="mt-3 p-3 bg-gray-50 dark:bg-blue-900/20 border border-gray-200 dark:border-black rounded-lg">
+                    <div className="mt-3 p-3 bg-gray-50 dark:bg-gray-800/20 border border-gray-200 dark:border-black rounded-lg">
                       <p className="text-sm text-black dark:text-white">
                         <strong>Gross Yield:</strong> {grossYield}%
                       </p>
@@ -844,7 +844,7 @@ const AddEditDeal = () => {
                     onClick={() => setFormData({...formData, verificationLevel: 'L0'})}
                     className={`w-full p-4 border-2 rounded-lg text-left transition-colors ${
                       formData.verificationLevel === 'L0'
-                        ? 'border-black bg-gray-50 dark:bg-amber-900/20'
+                        ? 'border-black bg-gray-50 dark:bg-gray-100'
                         : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                     }`}
                   >
@@ -871,7 +871,7 @@ const AddEditDeal = () => {
                     onClick={() => setFormData({...formData, verificationLevel: 'L1'})}
                     className={`w-full p-4 border-2 rounded-lg text-left transition-colors ${
                       formData.verificationLevel === 'L1'
-                        ? 'border-gray-300 bg-gray-50 dark:bg-blue-900/20'
+                        ? 'border-gray-300 bg-gray-50 dark:bg-gray-800/20'
                         : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                     }`}
                   >
@@ -897,7 +897,7 @@ const AddEditDeal = () => {
 
                 {/* Evidence Upload */}
                 {formData.verificationLevel === 'L1' && (
-                  <div className="p-4 bg-gray-50 dark:bg-blue-900/20 border border-gray-200 dark:border-black rounded-lg">
+                  <div className="p-4 bg-gray-50 dark:bg-gray-800/20 border border-gray-200 dark:border-black rounded-lg">
                     <Label>Upload Evidence (Redacted)</Label>
                     <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
                       Upload redacted contract page or settlement statement (names, addresses removed)
@@ -1005,7 +1005,7 @@ const AddEditDeal = () => {
                 </Card>
 
                 {/* Preview Link */}
-                <div className="p-4 bg-gray-50 dark:bg-blue-900/20 border border-gray-200 dark:border-black rounded-lg">
+                <div className="p-4 bg-gray-50 dark:bg-gray-800/20 border border-gray-200 dark:border-black rounded-lg">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
                       <Eye className="h-5 w-5 text-black dark:text-white mr-3" />
@@ -1034,7 +1034,7 @@ const AddEditDeal = () => {
                       onClick={() => setFormData({...formData, status: 'draft'})}
                       className={`p-4 border-2 rounded-lg text-center transition-colors ${
                         formData.status === 'draft'
-                          ? 'border-black bg-gray-50 dark:bg-amber-900/20'
+                          ? 'border-black bg-gray-50 dark:bg-gray-100'
                           : 'border-gray-200 dark:border-gray-700'
                       }`}
                     >
@@ -1073,9 +1073,9 @@ const AddEditDeal = () => {
                     </div>
                   )}
                   {formData.photos.length === 0 && (
-                    <div className="flex items-center p-3 bg-gray-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+                    <div className="flex items-center p-3 bg-gray-50 dark:bg-gray-100 border border-gray-300 dark:border-gray-300 rounded-lg">
                       <Info className="h-5 w-5 text-black mr-2" />
-                      <p className="text-sm text-black dark:text-amber-400">
+                      <p className="text-sm text-black dark:text-gray-700">
                         Adding photos increases buyer engagement by 3x
                       </p>
                     </div>

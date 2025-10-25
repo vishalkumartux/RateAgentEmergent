@@ -276,7 +276,7 @@ const ReviewsPageImproved = () => {
                         else if (quick === 'Investment') handleFilterChange('transactionType', 'Investment Property');
                         else if (quick === 'First Home') handleFilterChange('serviceType', 'First Home Buyer Support');
                       }}
-                      className="px-3 py-1 bg-gray-100 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-amber-900 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-amber-400 rounded-full text-xs transition-all"
+                      className="px-3 py-1 bg-gray-100 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-100 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-gray-700 rounded-full text-xs transition-all"
                     >
                       {quick}
                     </button>
@@ -288,7 +288,7 @@ const ReviewsPageImproved = () => {
                   <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700 flex items-center gap-2 flex-wrap">
                     <span className="text-xs text-gray-600 dark:text-gray-400">Active:</span>
                     {filters.rating > 0 && (
-                      <Badge variant="outline" className="bg-gray-50 dark:bg-gray-900 border-gray-300 dark:border-amber-700 text-xs">
+                      <Badge variant="outline" className="bg-gray-50 dark:bg-gray-900 border-gray-300 dark:border-gray-300 text-xs">
                         {filters.rating}+ stars
                         <X className="h-3 w-3 ml-1 cursor-pointer" onClick={() => handleFilterChange('rating', 0)} />
                       </Badge>
@@ -376,7 +376,7 @@ const ReviewsPageImproved = () => {
                               key={i}
                               className={`h-4 w-4 ${
                                 i < review.rating
-                                  ? 'text-amber-400 fill-current'
+                                  ? 'text-gray-700 fill-current'
                                   : 'text-gray-300 dark:text-gray-600'
                               }`}
                             />
@@ -405,7 +405,7 @@ const ReviewsPageImproved = () => {
                         <Home className="h-3 w-3 mr-1" />
                         {review.transactionType}
                       </Badge>
-                      <Badge variant="outline" className="bg-gray-50 dark:bg-purple-950 text-purple-700 dark:text-purple-400 text-xs">
+                      <Badge variant="outline" className="bg-gray-50 dark:bg-gray-100 text-gray-700 dark:text-gray-700 text-xs">
                         <DollarSign className="h-3 w-3 mr-1" />
                         {review.budgetBand}
                       </Badge>
@@ -421,7 +421,7 @@ const ReviewsPageImproved = () => {
                         {review.tags.map((tag, idx) => (
                           <Badge
                             key={idx}
-                            className="bg-gray-100 dark:bg-gray-900 text-black dark:text-amber-400 border-gray-300 dark:border-amber-700 text-xs"
+                            className="bg-gray-100 dark:bg-gray-900 text-black dark:text-gray-700 border-gray-300 dark:border-gray-300 text-xs"
                           >
                             {tag}
                           </Badge>
@@ -448,7 +448,7 @@ const ReviewsPageImproved = () => {
                           variant="ghost"
                           size="sm"
                           className={`text-gray-600 dark:text-gray-400 text-xs ${
-                            isHelpful ? 'text-black dark:text-amber-400' : 'hover:text-black'
+                            isHelpful ? 'text-black dark:text-gray-700' : 'hover:text-black'
                           }`}
                           onClick={() => handleHelpfulClick(review.id)}
                         >
@@ -503,7 +503,7 @@ const ReviewsPageImproved = () => {
 
           {/* Call to Action */}
           {displayedReviews.length > 0 && (
-            <Card className="mt-8 bg-gradient-to-r from-amber-50 to-yellow-50 dark:from-amber-950 dark:to-yellow-950 border-amber-200 dark:border-amber-800">
+            <Card className="mt-8 bg-gradient-to-r from-gray-900 to-yellow-50 dark:from-gray-900 dark:to-yellow-950 border-gray-300 dark:border-gray-300">
               <CardContent className="p-8 text-center">
                 <Award className="h-12 w-12 text-black mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">

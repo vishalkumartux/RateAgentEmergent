@@ -74,7 +74,7 @@ const AboutPage = () => {
 
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-amber-50 via-white to-yellow-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-20">
+        <section className="bg-gradient-to-br from-gray-900 via-white to-yellow-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto">
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
@@ -128,7 +128,7 @@ const AboutPage = () => {
                 return (
                   <Card key={index} className="text-center hover:shadow-lg transition-shadow bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700">
                     <CardContent className="p-6">
-                      <div className="w-16 h-16 bg-gray-100 dark:bg-amber-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <div className="w-16 h-16 bg-gray-100 dark:bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                         <Icon className="h-8 w-8 text-black" />
                       </div>
                       <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">{value.title}</h3>
@@ -158,7 +158,7 @@ const AboutPage = () => {
                     <img 
                       src={member.image} 
                       alt={member.name}
-                      className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-amber-100 dark:border-amber-900"
+                      className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-gray-300 dark:border-gray-300"
                     />
                     <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">{member.name}</h3>
                     <p className="text-black font-medium mb-3">{member.role}</p>
@@ -171,12 +171,12 @@ const AboutPage = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-amber-600 to-blue-600 dark:from-amber-700 dark:to-yellow-700">
+        <section className="py-16 bg-gradient-to-r from-gray-900 to-blue-600 dark:from-gray-900 dark:to-yellow-700">
           <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
             <h2 className="text-4xl font-bold text-white mb-4">
               Ready to Find Your Perfect Agent?
             </h2>
-            <p className="text-xl text-amber-100 mb-8">
+            <p className="text-xl text-gray-700 mb-8">
               Join thousands of satisfied property buyers who found their ideal agent through AgentRate
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
