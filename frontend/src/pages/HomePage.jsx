@@ -718,24 +718,24 @@ const HomePageImproved = () => {
         </section>
 
         {/* Final CTA */}
-        <section className="py-16 bg-gradient-to-r from-blue-800 to-blue-600">
+        <section className="py-16 bg-black dark:bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <Award className="h-16 w-16 text-white mx-auto mb-6" />
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <Award className="h-16 w-16 text-white dark:text-black mx-auto mb-6" />
+            <h2 className="text-3xl md:text-4xl font-bold text-white dark:text-black mb-4">
               Ready to Find Your Perfect Property?
             </h2>
-            <p className="text-xl text-gray-700 mb-8">
+            <p className="text-xl text-gray-300 dark:text-gray-700 mb-8">
               Join thousands of smart buyers who use AgentRate to make informed decisions
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Link to="/deals">
-                <Button size="lg" className="bg-white text-black hover:bg-gray-100">
+                <Button size="lg" className="bg-green-700 hover:bg-green-800 text-white hover:text-white">
                   <Home className="h-5 w-5 mr-2" />
                   Browse Deals
                 </Button>
               </Link>
               <Link to="/agents">
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-black">
+                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-black dark:border-black dark:text-black dark:hover:bg-black dark:hover:text-white">
                   <Users className="h-5 w-5 mr-2" />
                   Find Agents
                 </Button>
