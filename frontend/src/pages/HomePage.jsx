@@ -195,16 +195,16 @@ const HomePageImproved = () => {
             <div className="max-w-4xl mx-auto mb-8">
               <form onSubmit={handleNaturalSearch} className="relative">
                 <div className="relative">
-                  <Sparkles className="absolute left-5 top-1/2 -translate-y-1/2 h-6 w-6 text-black z-10" />
+                  <Sparkles className="absolute left-5 top-1/2 -translate-y-1/2 h-6 w-6 text-gray-400 dark:text-gray-500 z-10" />
                   <Input
                     placeholder='Try: "3BR house in Preston under 1.2m" or "Investment property Melbourne high yield"'
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-14 pr-32 h-16 text-lg border-2 border-gray-300 dark:border-gray-300 focus:border-black rounded-2xl bg-white dark:bg-gray-800 shadow-xl"
+                    className="pl-14 pr-32 h-16 text-lg border-2 border-gray-300 dark:border-gray-700 focus:border-black dark:focus:border-white rounded-2xl bg-white dark:bg-gray-900 shadow-xl"
                   />
                   <Button 
                     type="submit"
-                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-green-700 hover:bg-green-800 hover:text-white text-white h-12 px-6 rounded-xl"
+                    className={`absolute right-2 top-1/2 -translate-y-1/2 ${buttons.primary} h-12 px-6 rounded-xl`}
                   >
                     <Search className="h-4 w-4 mr-2" />
                     Search
@@ -214,7 +214,7 @@ const HomePageImproved = () => {
 
               {/* Quick Search Links */}
               <div className="mt-4 flex items-center justify-center gap-2 flex-wrap">
-                <span className="text-sm text-gray-500 dark:text-gray-400">Popular:</span>
+                <span className="text-sm text-gray-500 dark:text-gray-500">Popular:</span>
                 {[
                   { text: 'Houses Sydney', query: 'house in sydney' },
                   { text: 'Investment Melbourne', query: 'investment property melbourne' },
@@ -224,7 +224,7 @@ const HomePageImproved = () => {
                   <button
                     key={idx}
                     onClick={() => setSearchQuery(link.query)}
-                    className="px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:border-black dark:hover:border-black hover:bg-gray-50 dark:hover:bg-gray-800 text-sm text-gray-700 dark:text-gray-300 rounded-full transition-all"
+                    className="px-3 py-1.5 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 hover:border-black dark:hover:border-white hover:bg-gray-50 dark:hover:bg-gray-800 text-sm text-gray-700 dark:text-gray-300 rounded-full transition-all"
                   >
                     {link.text}
                   </button>
