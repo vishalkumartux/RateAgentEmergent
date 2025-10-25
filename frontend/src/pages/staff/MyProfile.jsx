@@ -116,7 +116,7 @@ const MyProfile = () => {
       {isPreview ? (
         <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
           {/* Preview Banner */}
-          <div className="bg-green-700 dark:bg-green-700 text-white py-3 sticky top-0 z-50 shadow-lg">
+          <div className="bg-info dark:bg-info text-white py-3 sticky top-0 z-50 shadow-lg">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
