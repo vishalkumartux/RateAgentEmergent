@@ -181,7 +181,7 @@ const HomePageImproved = () => {
             <div className="text-center mb-12">
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
                 Find Your Next Property
-                <span className="bg-gradient-to-r from-gray-900 to-blue-600 bg-clip-text text-transparent block mt-2">
+                <span className="bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent block mt-2">
                   The Smart Way
                 </span>
               </h1>
