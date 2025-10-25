@@ -180,13 +180,13 @@ const HomePageImproved = () => {
           <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
           <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+              <h1 className="text-5xl md:text-6xl font-bold text-black dark:text-white mb-6 leading-tight">
                 Find Your Next Property
-                <span className="bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent block mt-2">
+                <span className="text-gray-700 dark:text-gray-300 block mt-2">
                   The Smart Way
                 </span>
               </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto">
                 Search deals, compare buyer agents, and build your perfect buy box—all in one place.
               </p>
             </div>
