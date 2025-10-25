@@ -470,7 +470,7 @@ const AgentListPage = () => {
                               id="verifiedOnly"
                               checked={filters.verifiedOnly}
                               onChange={(e) => setFilters({...filters, verifiedOnly: e.target.checked})}
-                              className="w-4 h-4 text-black border-gray-300 rounded focus:ring-amber-500"
+                              className="w-4 h-4 text-black border-gray-300 rounded focus:ring-black"
                             />
                             <label htmlFor="verifiedOnly" className="text-sm text-gray-900 dark:text-white cursor-pointer">
                               Verified deals only
@@ -502,7 +502,7 @@ const AgentListPage = () => {
                               id="displaysPricing"
                               checked={filters.displaysPricing}
                               onChange={(e) => setFilters({...filters, displaysPricing: e.target.checked})}
-                              className="w-4 h-4 text-black border-gray-300 rounded focus:ring-amber-500"
+                              className="w-4 h-4 text-black border-gray-300 rounded focus:ring-black"
                             />
                             <label htmlFor="displaysPricing" className="text-sm text-gray-900 dark:text-white cursor-pointer">
                               Displays pricing publicly

@@ -315,7 +315,7 @@ const AgentDashboard = () => {
                               key={i}
                               className={`h-3 w-3 ${
                                 i < review.rating
-                                  ? 'fill-amber-400 text-gray-700'
+                                  ? 'fill-yellow-600 text-gray-700'
                                   : 'text-gray-300 dark:text-gray-600'
                               }`}
                             />

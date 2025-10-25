@@ -206,7 +206,7 @@ const MyReviews = () => {
             key={star}
             className={`h-4 w-4 ${
               star <= rating
-                ? 'fill-amber-400 text-gray-700'
+                ? 'fill-yellow-600 text-gray-700'
                 : 'text-gray-300 dark:text-gray-600'
             }`}
           />

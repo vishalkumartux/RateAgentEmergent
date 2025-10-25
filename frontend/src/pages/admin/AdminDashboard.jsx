@@ -39,7 +39,7 @@ const Select = ({ value, onChange, children, className = '' }) => (
   <select
     value={value}
     onChange={onChange}
-    className={`w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-amber-500 ${className}`}
+    className={`w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-black ${className}`}
   >
     {children}
   </select>
