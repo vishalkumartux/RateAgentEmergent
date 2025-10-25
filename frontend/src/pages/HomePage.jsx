@@ -625,26 +625,26 @@ const HomePageImproved = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {topAgents.map(agent => (
                 <Link key={agent.id} to={`/agent/${agent.id}`}>
-                  <Card className="hover:shadow-xl transition-all border-2 border-transparent hover:border-gray-300">
+                  <Card className="hover:shadow-xl transition-all border-2 border-gray-200 hover:border-black dark:border-gray-700 dark:hover:border-white bg-white dark:bg-gray-800">
                     <CardContent className="p-6 text-center">
                       <img 
                         src={agent.photo} 
                         alt={agent.name}
-                        className="w-20 h-20 rounded-full mx-auto mb-4 object-cover border-2 border-gray-300 dark:border-gray-300"
+                        className="w-20 h-20 rounded-full mx-auto mb-4 object-cover border-2 border-gray-200 dark:border-gray-700"
                       />
-                      <h3 className="font-semibold text-lg text-gray-900 dark:text-white mb-1">
+                      <h3 className="font-semibold text-lg text-black dark:text-white mb-1">
                         {agent.name}
                       </h3>
                       <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{agent.company}</p>
                       
                       <div className="flex items-center justify-center gap-1 mb-3">
-                        <Star className="h-4 w-4 text-gray-700 fill-current" />
-                        <span className="font-bold text-gray-900 dark:text-white">{agent.rating}</span>
+                        <Star className="h-4 w-4 text-yellow-600 fill-yellow-600 dark:text-yellow-500 dark:fill-yellow-500" />
+                        <span className="font-bold text-black dark:text-white">{agent.rating}</span>
                         <span className="text-sm text-gray-600 dark:text-gray-400">({agent.reviewCount})</span>
                       </div>
 
                       <div className="flex items-center justify-center gap-2 text-xs text-gray-600 dark:text-gray-400">
-                        <Badge variant="outline" className="bg-gray-50 dark:bg-gray-900 text-black dark:text-white">
+                        <Badge variant="outline" className="bg-gray-50 dark:bg-gray-900 text-black dark:text-white border-gray-300 dark:border-gray-700">
                           {agent.verifiedDealsCount} deals
                         </Badge>
                       </div>
