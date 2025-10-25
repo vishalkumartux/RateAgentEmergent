@@ -270,7 +270,7 @@ const OnboardingWizard = () => {
                           isComplete
                             ? 'bg-success text-white'
                             : isCurrent
-                            ? 'bg-green-700 text-white ring-4 ring-blue-200 dark:ring-blue-900'
+                            ? 'bg-success text-white ring-4 ring-primary/20'
                             : 'bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400'
                         }`}
                       >
