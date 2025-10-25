@@ -240,7 +240,7 @@ const AgentListPage = () => {
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   list="agent-suggestions"
-                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-blue-700 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-900 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
+                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/20 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
                 />
                 <datalist id="agent-suggestions">
                   <option value="Sydney" />
@@ -256,7 +256,7 @@ const AgentListPage = () => {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="h-12 px-4 border-2 border-gray-200 dark:border-gray-600 rounded-2xl dark:bg-gray-700 dark:text-white font-semibold transition-all hover:border-blue-700"
+                  className="h-12 px-4 border-2 border-gray-200 dark:border-gray-600 rounded-2xl dark:bg-gray-700 dark:text-white font-semibold transition-all hover:border-primary"
                 >
                   <option value="rating">⭐ Highest Rated</option>
                   <option value="deals">✓ Most Deals</option>
@@ -437,7 +437,7 @@ const AgentListPage = () => {
                             <Badge
                               key={strategy}
                               variant={filters.strategyFocus.includes(strategy) ? 'default' : 'outline'}
-                              className={`cursor-pointer ${filters.strategyFocus.includes(strategy) ? 'bg-green-700 hover:bg-green-800' : 'hover:border-blue-700'}`}
+                              className={`cursor-pointer ${filters.strategyFocus.includes(strategy) ? 'bg-green-700 hover:bg-green-800' : 'hover:border-primary'}`}
                               onClick={() => toggleStrategyFocus(strategy)}
                             >
                               {strategy}
@@ -524,7 +524,7 @@ const AgentListPage = () => {
                           Reset
                         </Button>
                         <Button 
-                          className="bg-green-700 hover:bg-green-800 hover:text-white"
+                          className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm"
                           onClick={() => setShowFilters(false)}
                         >
                           Apply Filters
@@ -623,7 +623,7 @@ const AgentListPage = () => {
 
         {/* Compare Tray - Fixed Bottom */}
         {compareAgents.length > 0 && (
-          <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 border-t-2 border-blue-700 shadow-2xl z-40">
+          <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 border-t-2 border-primary shadow-2xl z-40">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
@@ -641,7 +641,7 @@ const AgentListPage = () => {
                         <img
                           src={agent.photo}
                           alt={agent.name}
-                          className="w-12 h-12 rounded-full object-cover border-2 border-blue-700"
+                          className="w-12 h-12 rounded-full object-cover border-2 border-primary"
                         />
                         <button
                           onClick={() => toggleCompare(agent)}
@@ -658,7 +658,7 @@ const AgentListPage = () => {
                     Clear All
                   </Button>
                   <Button 
-                    className="bg-green-700 hover:bg-green-800 hover:text-white"
+                    className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm"
                     onClick={goToCompare}
                     disabled={compareAgents.length < 2}
                   >
@@ -680,7 +680,7 @@ const AgentCard = ({ agent, isInCompare, isShortlisted, onToggleCompare, onToggl
   const [showTooltip, setShowTooltip] = useState(null);
 
   return (
-    <Card className="group hover:shadow-2xl transition-all duration-300 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-blue-700 dark:hover:border-black rounded-2xl overflow-hidden">
+    <Card className="group hover:shadow-2xl transition-all duration-300 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-black rounded-2xl overflow-hidden">
       <CardContent className="p-6">
         {/* Header with Photo */}
         <div className="flex items-start justify-between mb-4">
@@ -762,7 +762,7 @@ const AgentCard = ({ agent, isInCompare, isShortlisted, onToggleCompare, onToggl
                 <TrendingDown className="h-4 w-4 mr-1" />
                 Avg Discount
               </div>
-              <span className="font-semibold text-green-600">{agent.avgDiscountPercent}%</span>
+              <span className="font-semibold text-success">{agent.avgDiscountPercent}%</span>
             </div>
           )}
 
@@ -818,7 +818,7 @@ const AgentCard = ({ agent, isInCompare, isShortlisted, onToggleCompare, onToggl
         {/* CTAs */}
         <div className="space-y-2">
           <Link to={`/agent/${agent.id}`} className="block">
-            <Button className="w-full bg-green-700 hover:bg-green-800 hover:text-white">
+            <Button className="w-full bg-success hover:bg-success/90 text-white hover:text-white shadow-sm">
               View Profile
             </Button>
           </Link>

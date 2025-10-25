@@ -64,7 +64,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
               The agent profile you're looking for doesn't exist.
             </p>
             <Link to="/agents">
-              <Button className="bg-green-700 hover:bg-green-800 hover:text-white">
+              <Button className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm">
                 Browse All Agents
               </Button>
             </Link>
@@ -153,7 +153,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                       
                       {/* Action Buttons */}
                       <div className="flex flex-col gap-2 lg:min-w-[180px]">
-                        <Button className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
+                        <Button className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white">
                           <MessageCircle className="h-4 w-4 mr-2" />
                           Contact Agent
                         </Button>
@@ -482,7 +482,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                               </p>
                             </div>
                             {deal.verified && (
-                              <Badge variant="outline" className="ml-2 bg-green-50 dark:bg-green-950 text-green-700 dark:text-green-400 border-green-300 dark:border-green-700">
+                              <Badge variant="outline" className="ml-2 bg-success/10 dark:bg-green-950 text-success dark:text-green-400 border-green-300 dark:border-success">
                                 <CheckCircle className="h-3 w-3 mr-1" />
                                 Verified
                               </Badge>
@@ -601,7 +601,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                               ))}
                             </div>
                           </div>
-                          <Badge variant="outline" className="bg-green-50 dark:bg-green-950 text-green-700 dark:text-green-400 border-green-300 dark:border-green-700">
+                          <Badge variant="outline" className="bg-success/10 dark:bg-green-950 text-success dark:text-green-400 border-green-300 dark:border-success">
                             <CheckCircle className="h-3 w-3 mr-1" />
                             Verified
                           </Badge>
@@ -652,8 +652,8 @@ const AgentProfilePage = ({ agentIdOverride }) => {
             </CardHeader>
             <CardContent className="space-y-6">
               {/* License */}
-              <div className="flex items-start gap-3 p-4 bg-green-50 dark:bg-green-950 rounded-lg border border-green-200 dark:border-green-800">
-                <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+              <div className="flex items-start gap-3 p-4 bg-success/10 dark:bg-green-950 rounded-lg border border-success/30 dark:border-green-800">
+                <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-0.5" />
                 <div className="flex-1">
                   <div className="font-semibold text-gray-900 dark:text-white">Licensed Buyer's Agent</div>
                   <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">

@@ -770,7 +770,7 @@ const AddDeal = () => {
             {currentStep < 4 ? (
               <Button
                 onClick={nextStep}
-                className="bg-green-700 hover:bg-green-800 hover:text-white text-white"
+                className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white"
               >
                 Next Step
                 <ArrowLeft className="h-4 w-4 ml-2 rotate-180" />

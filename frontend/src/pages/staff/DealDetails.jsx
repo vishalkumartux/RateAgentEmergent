@@ -110,7 +110,7 @@ const DealDetails = () => {
   const getEnquiryStatusBadge = (status) => {
     const colors = {
       'New': 'bg-red-600 text-white',
-      'Responded': 'bg-green-600 text-white',
+      'Responded': 'bg-success text-white',
       'Follow Up': 'bg-green-700 text-white'
     };
     return colors[status] || 'bg-gray-600 text-white';
@@ -158,7 +158,7 @@ const DealDetails = () => {
                 Share
               </Button>
               <Link to={`/staff/deals/${id}/edit`}>
-                <Button className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
+                <Button className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white">
                   <Edit className="h-4 w-4 mr-2" />
                   Edit Deal
                 </Button>
@@ -260,7 +260,7 @@ const DealDetails = () => {
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <Share2 className="h-6 w-6 text-green-600 mx-auto mb-2" />
+              <Share2 className="h-6 w-6 text-success mx-auto mb-2" />
               <div className="text-xl font-bold text-gray-900 dark:text-white">{dealData.analytics.shares}</div>
               <div className="text-sm text-gray-600 dark:text-gray-400">Shares</div>
             </CardContent>
@@ -425,7 +425,7 @@ const DealDetails = () => {
                       </div>
                       <p className="text-gray-700 dark:text-gray-300 mb-3">{enquiry.message}</p>
                       <div className="flex space-x-2">
-                        <Button size="sm" className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
+                        <Button size="sm" className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white">
                           <Phone className="h-3 w-3 mr-1" />
                           Call
                         </Button>
@@ -481,7 +481,7 @@ const DealDetails = () => {
                       </div>
                     </div>
                   ))}
-                  <Button className="w-full bg-green-700 hover:bg-green-800 hover:text-white text-white">
+                  <Button className="w-full bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white">
                     Add Inspection Time
                   </Button>
                 </div>

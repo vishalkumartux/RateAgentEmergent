@@ -183,7 +183,7 @@ const DealsListPage = () => {
               </p>
             </div>
             <Link to="/staff/deals/add">
-              <Button className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
+              <Button className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white">
                 <Plus className="h-4 w-4 mr-2" />
                 Add New Deal
               </Button>
@@ -329,7 +329,7 @@ const DealsListPage = () => {
                   </Button>
                   <Button 
                     onClick={() => setShowFilters(false)}
-                    className="bg-green-700 hover:bg-green-800 hover:text-white text-white"
+                    className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white"
                   >
                     Apply Filters
                   </Button>
@@ -410,7 +410,7 @@ const DealsListPage = () => {
                       <div className="flex items-center space-x-3 mb-3">
                         <Badge 
                           variant={deal.status === 'Published' ? 'default' : 'secondary'}
-                          className={deal.status === 'Published' ? 'bg-green-600 text-white' : 'bg-gray-400 text-white'}
+                          className={deal.status === 'Published' ? 'bg-success text-white' : 'bg-gray-400 text-white'}
                         >
                           {deal.status === 'Published' ? (
                             <CheckCircle className="h-3 w-3 mr-1 inline" />
@@ -426,7 +426,7 @@ const DealsListPage = () => {
                           {deal.verification === 'L1' ? '✓ Verified' : 'Pending Verification'}
                         </Badge>
                         {deal.hasMedia && (
-                          <Badge variant="outline" className="bg-gray-50 text-gray-700 border-purple-200">
+                          <Badge variant="outline" className="bg-gray-50 text-gray-700 border-primary/30">
                             <ImageIcon className="h-3 w-3 mr-1" />
                             Media
                           </Badge>
@@ -498,7 +498,7 @@ const DealsListPage = () => {
                         </Button>
                       </Link>
                       {deal.status === 'Draft' && (
-                        <Button size="sm" className="bg-green-700 hover:bg-green-800 hover:text-white text-white w-full">
+                        <Button size="sm" className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white w-full">
                           <Upload className="h-4 w-4 mr-2" />
                           Publish
                         </Button>
@@ -522,7 +522,7 @@ const DealsListPage = () => {
                   : 'Start building your portfolio by adding your first deal'}
               </p>
               <Link to="/staff/deals/add">
-                <Button className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
+                <Button className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white">
                   <Plus className="h-4 w-4 mr-2" />
                   Add Your First Deal
                 </Button>

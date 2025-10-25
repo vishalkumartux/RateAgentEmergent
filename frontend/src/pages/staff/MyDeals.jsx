@@ -215,7 +215,7 @@ const MyDeals = () => {
             </div>
             <div className="mt-4 sm:mt-0">
               <Link to="/staff/deals/add">
-                <Button className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
+                <Button className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white">
                   <Plus className="h-4 w-4 mr-2" />
                   Add New Deal
                 </Button>
@@ -258,7 +258,7 @@ const MyDeals = () => {
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   list="deal-search"
-                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-blue-700 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-900 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
+                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/20 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
                 />
                 <datalist id="deal-search">
                   <option value="Bondi Beach" />
@@ -425,7 +425,7 @@ const MyDeals = () => {
                     }
                   </p>
                   <Link to="/staff/deals/add">
-                    <Button className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
+                    <Button className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white">
                       <Plus className="h-4 w-4 mr-2" />
                       Add New Deal
                     </Button>

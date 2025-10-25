@@ -423,7 +423,7 @@ const DealDetailsNew = () => {
                     )}
 
                     {/* Price Achievement */}
-                    <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
+                    <div className="p-4 bg-success/10 dark:bg-success/20/20 border border-success/30 dark:border-green-800 rounded-lg">
                       <h3 className="font-semibold text-gray-900 dark:text-white mb-3">
                         Price Achievement
                       </h3>
@@ -442,7 +442,7 @@ const DealDetailsNew = () => {
                         </div>
                       </div>
                       {deal.discountPercent > 0 && (
-                        <div className="mt-4 flex items-center text-green-600 dark:text-green-400">
+                        <div className="mt-4 flex items-center text-success dark:text-success">
                           <TrendingDown className="h-5 w-5 mr-2" />
                           <span className="font-semibold">
                             {deal.discountPercent}% below asking price
@@ -555,9 +555,9 @@ const DealDetailsNew = () => {
                 </div>
                 
                 {deal.discountPercent > 0 && (
-                  <div className="p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                  <div className="p-3 bg-success/10 dark:bg-success/20/20 rounded-lg">
                     <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Saved Buyer</p>
-                    <p className="text-xl font-bold text-green-600 dark:text-green-400">
+                    <p className="text-xl font-bold text-success dark:text-success">
                       ${((deal.askingPrice - deal.purchasePrice)).toLocaleString()}
                     </p>
                     <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
@@ -601,7 +601,7 @@ const DealDetailsNew = () => {
                     </Button>
                   </Link>
                   {deal.status === 'Draft' && (
-                    <Button className="w-full bg-green-600 hover:bg-green-700 text-white justify-start">
+                    <Button className="w-full bg-success hover:bg-success/90 text-white shadow-sm justify-start">
                       <Upload className="h-4 w-4 mr-2" />
                       Publish Deal
                     </Button>

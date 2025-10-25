@@ -71,7 +71,7 @@ const CompareAgentsPage = () => {
                 <div className="text-center">
                   <Button 
                     onClick={() => setShowAddAgent(true)} 
-                    className="bg-green-700 hover:bg-green-800 hover:text-white text-white"
+                    className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white"
                   >
                     <Plus className="h-5 w-5 mr-2" />
                     Add Agent to Compare
@@ -95,7 +95,7 @@ const CompareAgentsPage = () => {
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
                       list="compare-agents"
-                      className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-blue-700 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-900 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
+                      className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/20 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
                     />
                     <datalist id="compare-agents">
                       <option value="Sydney agents" />
@@ -142,7 +142,7 @@ const CompareAgentsPage = () => {
                 {selectedAgents.length < 4 && (
                   <Button 
                     onClick={() => setShowAddAgent(true)} 
-                    className="bg-green-700 hover:bg-green-800 hover:text-white text-white"
+                    className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white"
                     size="sm"
                   >
                     <Plus className="h-4 w-4 mr-2" />
@@ -154,7 +154,7 @@ const CompareAgentsPage = () => {
               {/* Row 2: Agent Cards - Aligned with comparison columns */}
               <div className={`grid gap-4 ${selectedAgents.length === 1 ? 'grid-cols-1' : selectedAgents.length === 2 ? 'grid-cols-1 md:grid-cols-2' : selectedAgents.length === 3 ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'}`}>
                 {selectedAgents.map((agent) => (
-                  <div key={agent.id} className="bg-gray-50 dark:bg-gray-700 border-2 border-blue-700 dark:border-black rounded-lg p-3">
+                  <div key={agent.id} className="bg-gray-50 dark:bg-gray-700 border-2 border-primary dark:border-black rounded-lg p-3">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3 min-w-0 flex-1">
                         <img
@@ -220,7 +220,7 @@ const CompareAgentsPage = () => {
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                             autoFocus
-                            className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-blue-700 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-900 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
+                            className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/20 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
                           />
                         </div>
 
@@ -230,7 +230,7 @@ const CompareAgentsPage = () => {
                             availableAgents.map((agent) => (
                               <div 
                                 key={agent.id} 
-                                className="border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg p-4 hover:border-blue-700 dark:hover:border-black hover:shadow-md cursor-pointer transition-all" 
+                                className="border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg p-4 hover:border-primary dark:hover:border-black hover:shadow-md cursor-pointer transition-all" 
                                 onClick={() => addAgent(agent)}
                               >
                                 <div className="flex items-center space-x-3">
@@ -381,7 +381,7 @@ const CompareAgentsPage = () => {
                     <div className={`grid gap-3 ${selectedAgents.length === 1 ? 'grid-cols-1' : selectedAgents.length === 2 ? 'grid-cols-2' : selectedAgents.length === 3 ? 'grid-cols-3' : 'grid-cols-4'}`}>
                       {selectedAgents.map((agent) => (
                         <div key={agent.id} className="text-center bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
-                          <div className="text-2xl font-bold text-green-600">{agent.avgDiscountPercent}%</div>
+                          <div className="text-2xl font-bold text-success">{agent.avgDiscountPercent}%</div>
                           <div className="text-xs text-gray-600 dark:text-gray-400">below asking</div>
                         </div>
                       ))}
@@ -502,7 +502,7 @@ const CompareAgentsPage = () => {
                         <h5 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-2 text-center">Top Tags</h5>
                         <div className="flex flex-wrap gap-1 justify-center">
                           {agent.topTags && agent.topTags.map((tag, index) => (
-                            <Badge key={index} variant="secondary" className="text-xs bg-green-50 dark:bg-green-900 text-green-700 dark:text-green-300 border border-green-200 dark:border-green-700">
+                            <Badge key={index} variant="secondary" className="text-xs bg-success/10 dark:bg-success/20 text-success dark:text-success border border-success/30 dark:border-success">
                               {tag}
                             </Badge>
                           ))}
@@ -548,7 +548,7 @@ const CompareAgentsPage = () => {
                           {agent.professionalIndemnity ? (
                             <>
                               <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                              <span className="text-sm text-green-600 dark:text-green-400 font-medium">Insured</span>
+                              <span className="text-sm text-success dark:text-success font-medium">Insured</span>
                             </>
                           ) : (
                             <>
@@ -622,7 +622,7 @@ const CompareAgentsPage = () => {
               </p>
               <Button 
                 onClick={() => setShowAddAgent(true)} 
-                className="bg-green-700 hover:bg-green-800 hover:text-white text-white"
+                className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white"
               >
                 <Plus className="h-5 w-5 mr-2" />
                 Add Your First Agent

@@ -237,7 +237,7 @@ const DealsPage = () => {
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   list="deals-suggestions"
-                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-blue-700 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-900 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
+                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/20 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
                 />
                 <datalist id="deals-suggestions">
                   <option value="Bondi Beach" />
@@ -282,7 +282,7 @@ const DealsPage = () => {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="h-12 px-4 border-2 border-gray-200 dark:border-gray-600 rounded-2xl dark:bg-gray-700 dark:text-white font-semibold transition-all hover:border-blue-700"
+                  className="h-12 px-4 border-2 border-gray-200 dark:border-gray-600 rounded-2xl dark:bg-gray-700 dark:text-white font-semibold transition-all hover:border-primary"
                 >
                   <option value="recent">🕐 Most Recent</option>
                   <option value="highestDiscount">💰 Highest Discount</option>
@@ -495,7 +495,7 @@ const DealsPage = () => {
                             <Badge
                               key={tag}
                               variant={filters.strategyTags.includes(tag) ? 'default' : 'outline'}
-                              className={`cursor-pointer ${filters.strategyTags.includes(tag) ? 'bg-green-700 hover:bg-green-800' : 'hover:border-blue-700'}`}
+                              className={`cursor-pointer ${filters.strategyTags.includes(tag) ? 'bg-green-700 hover:bg-green-800' : 'hover:border-primary'}`}
                               onClick={() => toggleStrategyTag(tag)}
                             >
                               {tag}
@@ -593,7 +593,7 @@ const DealsPage = () => {
                           Reset
                         </Button>
                         <Button 
-                          className="bg-green-700 hover:bg-green-800 hover:text-white"
+                          className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm"
                           onClick={() => setShowFilters(false)}
                         >
                           Apply Filters
@@ -695,7 +695,7 @@ const DealCard = ({ deal }) => {
   const achievement = formatAchievement(deal);
   
   return (
-    <Card className="group hover:shadow-2xl transition-all duration-300 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-blue-700 dark:hover:border-black overflow-hidden rounded-2xl">
+    <Card className="group hover:shadow-2xl transition-all duration-300 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-black overflow-hidden rounded-2xl">
       {/* Image */}
       <div className="relative h-48 overflow-hidden">
         <img
@@ -704,7 +704,7 @@ const DealCard = ({ deal }) => {
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
         {deal.verified && (
-          <Badge className="absolute top-3 right-3 bg-green-600 text-white">
+          <Badge className="absolute top-3 right-3 bg-success text-white">
             <CheckCircle className="h-3 w-3 mr-1" />
             Verified
           </Badge>
@@ -730,7 +730,7 @@ const DealCard = ({ deal }) => {
               {formatDealPrice(deal)}
             </span>
             {achievement && (
-              <span className="text-sm text-green-600 dark:text-green-400 font-semibold">
+              <span className="text-sm text-success dark:text-success font-semibold">
                 {achievement}
               </span>
             )}
@@ -768,7 +768,7 @@ const DealCard = ({ deal }) => {
             </Badge>
           )}
           {deal.discountPercent && (
-            <Badge variant="secondary" className="text-xs bg-green-50 dark:bg-green-900 text-green-700 dark:text-green-300">
+            <Badge variant="secondary" className="text-xs bg-success/10 dark:bg-success/20 text-success dark:text-success">
               <TrendingDown className="h-3 w-3 mr-1" />
               {deal.discountPercent}% off
             </Badge>
@@ -828,7 +828,7 @@ const DealCard = ({ deal }) => {
         {/* View Links */}
         <div className="mt-3 flex gap-2">
           <Link to={`/deal/${deal.id}`} className="flex-1">
-            <Button variant="default" size="sm" className="w-full bg-green-700 hover:bg-green-800 hover:text-white">
+            <Button variant="default" size="sm" className="w-full bg-success hover:bg-success/90 text-white hover:text-white shadow-sm">
               View Deal
             </Button>
           </Link>

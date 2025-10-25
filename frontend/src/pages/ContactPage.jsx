@@ -105,7 +105,7 @@ const ContactPage = () => {
 
                 {submitted ? (
                   <div className="text-center py-12">
-                    <CheckCircle className="h-16 w-16 text-green-600 mx-auto mb-4" />
+                    <CheckCircle className="h-16 w-16 text-success mx-auto mb-4" />
                     <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">
                       Message Sent Successfully!
                     </h3>
@@ -166,7 +166,7 @@ const ContactPage = () => {
                       />
                     </div>
 
-                    <Button type="submit" size="lg" className="w-full bg-green-700 hover:bg-green-800 hover:text-white text-white">
+                    <Button type="submit" size="lg" className="w-full bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white">
                       <Send className="h-5 w-5 mr-2" />
                       Send Message
                     </Button>

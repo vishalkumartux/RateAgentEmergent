@@ -223,7 +223,7 @@ const MyDealsNew = () => {
       label: 'Verified Deals',
       value: verifiedCount,
       icon: CheckCircle,
-      color: 'text-green-600'
+      color: 'text-success'
     },
     {
       label: 'Total Portfolio Value',
@@ -286,7 +286,7 @@ const MyDealsNew = () => {
             </div>
             <div className="mt-4 sm:mt-0">
               <Link to="/staff/deals/add">
-                <Button className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
+                <Button className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white">
                   <Plus className="h-4 w-4 mr-2" />
                   Add New Deal
                 </Button>
@@ -328,7 +328,7 @@ const MyDealsNew = () => {
                   placeholder="Search by suburb or address..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-blue-700 rounded-2xl dark:bg-gray-700 dark:text-white font-medium"
+                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-primary rounded-2xl dark:bg-gray-700 dark:text-white font-medium"
                 />
               </div>
               
@@ -417,7 +417,7 @@ const MyDealsNew = () => {
                       />
                       <div className="absolute top-3 right-3 flex gap-2">
                         <Badge 
-                          className={deal.status === 'Published' ? 'bg-green-600 text-white' : 'bg-gray-600 text-white'}
+                          className={deal.status === 'Published' ? 'bg-success text-white' : 'bg-gray-600 text-white'}
                         >
                           {deal.status}
                         </Badge>
@@ -463,7 +463,7 @@ const MyDealsNew = () => {
                             : 'Undisclosed'}
                         </p>
                         {deal.purchasePrice > 0 && deal.discountPercent > 0 && (
-                          <div className="flex items-center text-sm text-green-600 dark:text-green-400">
+                          <div className="flex items-center text-sm text-success dark:text-success">
                             <TrendingDown className="h-4 w-4 mr-1" />
                             {deal.discountPercent}% below asking
                           </div>
@@ -515,7 +515,7 @@ const MyDealsNew = () => {
                           </Button>
                         </Link>
                         {deal.status === 'Draft' && (
-                          <Button size="sm" className="bg-green-700 hover:bg-green-800 hover:text-white" title="Publish Deal">
+                          <Button size="sm" className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm" title="Publish Deal">
                             <Upload className="h-4 w-4" />
                           </Button>
                         )}
@@ -537,7 +537,7 @@ const MyDealsNew = () => {
                       : 'Start building your portfolio by adding your first deal'}
                   </p>
                   <Link to="/staff/deals/add">
-                    <Button className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
+                    <Button className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white">
                       <Plus className="h-4 w-4 mr-2" />
                       Add Your First Deal
                     </Button>

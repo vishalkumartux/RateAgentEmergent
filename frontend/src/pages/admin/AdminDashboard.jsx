@@ -65,7 +65,7 @@ const AdminDashboard = () => {
       title: 'Verified Deals',
       value: organization?.stats?.verifiedDeals || 3,
       icon: ShieldCheck,
-      color: 'text-green-600',
+      color: 'text-success',
       change: '60% verified'
     },
     {
@@ -209,7 +209,7 @@ const AdminDashboard = () => {
               Please complete your organization setup first.
             </p>
             <Link to="/organization-setup">
-              <Button className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
+              <Button className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white">
                 Setup Organization
               </Button>
             </Link>
@@ -233,7 +233,7 @@ const AdminDashboard = () => {
             </p>
           </div>
           <Link to="/admin/settings">
-            <Button className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
+            <Button className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white">
               <Settings className="h-4 w-4 mr-2" />
               Org Settings
             </Button>
@@ -247,7 +247,7 @@ const AdminDashboard = () => {
               {nudges.map((nudge, index) => {
                 const Icon = nudge.icon;
                 return (
-                  <Card key={index} className="border-l-4 border-green-700 bg-gray-50 dark:bg-gray-100">
+                  <Card key={index} className="border-l-4 border-success bg-gray-50 dark:bg-gray-100">
                     <CardContent className="p-4">
                       <div className="flex items-start space-x-3">
                         <div className="w-10 h-10 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -350,7 +350,7 @@ const AdminDashboard = () => {
                 <CardContent>
                   <div className="space-y-3">
                     <div className="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <div>
                         <p className="text-sm font-medium text-gray-900 dark:text-white">Organization setup completed</p>
                         <p className="text-xs text-gray-600 dark:text-gray-400">Today</p>
@@ -441,7 +441,7 @@ const AdminDashboard = () => {
                       <div className="flex items-center space-x-2">
                         <Badge 
                           variant={staff.status === 'active' ? 'default' : 'secondary'}
-                          className={staff.status === 'active' ? 'bg-green-600 text-white' : 'bg-gray-400 text-white'}
+                          className={staff.status === 'active' ? 'bg-success text-white' : 'bg-gray-400 text-white'}
                         >
                           {staff.status}
                         </Badge>
@@ -454,7 +454,7 @@ const AdminDashboard = () => {
                           {staff.status === 'active' ? (
                             <UserX className="h-4 w-4 text-red-600" />
                           ) : (
-                            <UserCheck className="h-4 w-4 text-green-600" />
+                            <UserCheck className="h-4 w-4 text-success" />
                           )}
                         </Button>
                         <Button variant="ghost" size="sm" title="View Profile">
@@ -537,15 +537,15 @@ const AdminDashboard = () => {
                       <Button
                         onClick={handleInviteStaff}
                         disabled={isInviting}
-                        className="bg-green-700 hover:bg-green-800 hover:text-white text-white"
+                        className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white"
                       >
                         {isInviting ? 'Sending...' : 'Send Invitations'}
                       </Button>
                     </div>
                     
                     {inviteSuccess && (
-                      <div className="flex items-center p-3 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
-                        <CheckCircle className="h-5 w-5 text-green-600 mr-2" />
+                      <div className="flex items-center p-3 bg-success/10 dark:bg-success/20/20 border border-success/30 dark:border-green-800 rounded-lg">
+                        <CheckCircle className="h-5 w-5 text-success mr-2" />
                         <p className="text-green-800 dark:text-green-200 font-medium">{inviteSuccess}</p>
                       </div>
                     )}

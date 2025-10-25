@@ -50,7 +50,7 @@ const DealDetailPage = () => {
               The deal you're looking for doesn't exist.
             </p>
             <Link to="/deals">
-              <Button className="bg-green-700 hover:bg-green-800 hover:text-white">
+              <Button className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm">
                 Browse All Deals
               </Button>
             </Link>
@@ -106,7 +106,7 @@ const DealDetailPage = () => {
                 <Button
                   variant={isShortlisted ? "default" : "outline"}
                   onClick={() => setIsShortlisted(!isShortlisted)}
-                  className={isShortlisted ? "bg-green-700 hover:bg-green-800 hover:text-white" : ""}
+                  className={isShortlisted ? "bg-success hover:bg-success/90 text-white hover:text-white shadow-sm" : ""}
                 >
                   <Heart className={`h-4 w-4 mr-2 ${isShortlisted ? 'fill-current' : ''}`} />
                   {isShortlisted ? 'Saved' : 'Save Deal'}
@@ -123,7 +123,7 @@ const DealDetailPage = () => {
             </div>
 
             {deal.verified && (
-              <Badge className="bg-green-600 text-white">
+              <Badge className="bg-success text-white">
                 <CheckCircle className="h-3 w-3 mr-1" />
                 Verified Deal
               </Badge>
@@ -190,10 +190,10 @@ const DealDetailPage = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   {formatAchievement(deal) && (
-                    <div className="bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-700 rounded-lg p-4">
+                    <div className="bg-success/10 dark:bg-success/20 border border-success/30 dark:border-success rounded-lg p-4">
                       <div className="flex items-center justify-between">
                         <span className="text-gray-700 dark:text-gray-300">Discount Achieved</span>
-                        <span className="text-2xl font-bold text-green-600 dark:text-green-400">
+                        <span className="text-2xl font-bold text-success dark:text-success">
                           {formatAchievement(deal)}
                         </span>
                       </div>
@@ -255,7 +255,7 @@ const DealDetailPage = () => {
                       {deal.rentalAchieved && (
                         <div>
                           <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Rental Achieved</div>
-                          <div className="text-xl font-bold text-green-600">
+                          <div className="text-xl font-bold text-success">
                             ${deal.rentalAchieved}/week
                           </div>
                         </div>
@@ -335,7 +335,7 @@ const DealDetailPage = () => {
               </Card>
 
               {/* Verification */}
-              <Card className="border-2 border-green-200 dark:border-green-700 bg-green-50 dark:bg-green-900">
+              <Card className="border-2 border-success/30 dark:border-success bg-success/10 dark:bg-success/20">
                 <CardHeader>
                   <CardTitle className="flex items-center text-green-800 dark:text-green-200">
                     <ShieldCheck className="h-5 w-5 mr-2" />
@@ -343,19 +343,19 @@ const DealDetailPage = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-green-700 dark:text-green-300 mb-3">
+                  <p className="text-success dark:text-success mb-3">
                     This deal has been verified by AgentRate through:
                   </p>
                   <ul className="space-y-2">
-                    <li className="flex items-start text-green-700 dark:text-green-300">
+                    <li className="flex items-start text-success dark:text-success">
                       <CheckCircle className="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" />
                       Settlement documentation sighted and verified
                     </li>
-                    <li className="flex items-start text-green-700 dark:text-green-300">
+                    <li className="flex items-start text-success dark:text-success">
                       <CheckCircle className="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" />
                       Agent credentials and license confirmed
                     </li>
-                    <li className="flex items-start text-green-700 dark:text-green-300">
+                    <li className="flex items-start text-success dark:text-success">
                       <CheckCircle className="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" />
                       Property details cross-referenced with public records
                     </li>
@@ -373,7 +373,7 @@ const DealDetailPage = () => {
                     <div className="space-y-4">
                       {similarDeals.map(d => (
                         <Link key={d.id} to={`/deal/${d.id}`}>
-                          <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-blue-700 transition-colors">
+                          <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-primary transition-colors">
                             <div className="flex items-start justify-between">
                               <div>
                                 <h4 className="font-semibold text-gray-900 dark:text-white">
@@ -384,7 +384,7 @@ const DealDetailPage = () => {
                                 </p>
                               </div>
                               {d.discountPercent && (
-                                <Badge variant="secondary" className="bg-green-50 dark:bg-green-900 text-green-700 dark:text-green-300">
+                                <Badge variant="secondary" className="bg-success/10 dark:bg-success/20 text-success dark:text-success">
                                   {d.discountPercent}% off
                                 </Badge>
                               )}
@@ -439,7 +439,7 @@ const DealDetailPage = () => {
             <div className="lg:col-span-1">
               {agent && (
                 <div className="sticky top-32">
-                  <Card className="border-2 border-blue-700 dark:border-black">
+                  <Card className="border-2 border-primary dark:border-black">
                     <CardHeader className="bg-gray-50 dark:bg-gray-100">
                       <CardTitle className="text-gray-700 dark:text-gray-700">
                         Deal Secured By
@@ -478,13 +478,13 @@ const DealDetailPage = () => {
                         </div>
                         <div className="flex items-center justify-between text-sm">
                           <span className="text-gray-600 dark:text-gray-400">Avg Discount</span>
-                          <span className="font-semibold text-green-600">{agent.avgDiscountPercent}%</span>
+                          <span className="font-semibold text-success">{agent.avgDiscountPercent}%</span>
                         </div>
                       </div>
 
                       <div className="space-y-2">
                         <Link to={`/agent/${agent.id}`}>
-                          <Button className="w-full bg-green-700 hover:bg-green-800 hover:text-white">
+                          <Button className="w-full bg-success hover:bg-success/90 text-white hover:text-white shadow-sm">
                             View Full Profile
                           </Button>
                         </Link>
@@ -505,7 +505,7 @@ const DealDetailPage = () => {
                   </Card>
 
                   {/* Privacy Notice */}
-                  <Card className="mt-4 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-blue-700">
+                  <Card className="mt-4 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-primary">
                     <CardContent className="p-4">
                       <div className="flex items-start">
                         <Info className="h-5 w-5 text-black dark:text-white mr-2 flex-shrink-0 mt-0.5" />

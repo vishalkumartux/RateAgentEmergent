@@ -229,7 +229,7 @@ const UserDashboardComplete = () => {
   const stats = [
     { label: 'Saved Searches', value: savedSearches.length, icon: Search, color: 'text-black', bgColor: 'bg-gray-100 dark:bg-gray-900' },
     { label: 'Shortlisted Agents', value: shortlistedAgents.length, icon: Users, color: 'text-black', bgColor: 'bg-gray-100 dark:bg-gray-900' },
-    { label: 'Shortlisted Deals', value: shortlistedDeals.length, icon: Home, color: 'text-green-600', bgColor: 'bg-green-100 dark:bg-green-950' },
+    { label: 'Shortlisted Deals', value: shortlistedDeals.length, icon: Home, color: 'text-success', bgColor: 'bg-green-100 dark:bg-green-950' },
     { label: 'Reviews Posted', value: myReviews.length, icon: Star, color: 'text-gray-700', bgColor: 'bg-gray-100 dark:bg-gray-100' }
   ];
 
@@ -349,13 +349,13 @@ const UserDashboardComplete = () => {
                           </Button>
                         </Link>
                         <Link to="/agents">
-                          <Button className="w-full bg-green-700 hover:bg-green-800 hover:text-white text-white h-12">
+                          <Button className="w-full bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white h-12">
                             <Users className="h-4 w-4 mr-2" />
                             Browse Agents
                           </Button>
                         </Link>
                         <Link to="/deals">
-                          <Button className="w-full bg-green-600 hover:bg-green-700 text-white h-12">
+                          <Button className="w-full bg-success hover:bg-success/90 text-white shadow-sm h-12">
                             <Home className="h-4 w-4 mr-2" />
                             Browse Deals
                           </Button>
@@ -422,12 +422,12 @@ const UserDashboardComplete = () => {
                         </div>
                         <Badge className="bg-green-700 text-white">{shortlistedAgents.length}</Badge>
                       </div>
-                      <div className="flex items-center justify-between p-3 bg-green-50 dark:bg-green-950 rounded-lg">
+                      <div className="flex items-center justify-between p-3 bg-success/10 dark:bg-green-950 rounded-lg">
                         <div className="flex items-center gap-3">
-                          <Home className="h-5 w-5 text-green-600" />
+                          <Home className="h-5 w-5 text-success" />
                           <span className="text-sm font-medium text-gray-900 dark:text-white">Shortlisted Deals</span>
                         </div>
-                        <Badge className="bg-green-600 text-white">{shortlistedDeals.length}</Badge>
+                        <Badge className="bg-success text-white">{shortlistedDeals.length}</Badge>
                       </div>
                       <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-100 rounded-lg">
                         <div className="flex items-center gap-3">
@@ -487,7 +487,7 @@ const UserDashboardComplete = () => {
                       {savedSearches.map(search => {
                         const delta = search.resultCount - search.previousCount;
                         return (
-                          <div key={search.id} className="p-4 border-2 border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-300 dark:hover:border-blue-700 transition-all">
+                          <div key={search.id} className="p-4 border-2 border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-300 dark:hover:border-primary transition-all">
                             <div className="flex items-start justify-between mb-3">
                               <div className="flex-1">
                                 <h4 className="font-semibold text-gray-900 dark:text-white mb-1">{search.name}</h4>
@@ -496,7 +496,7 @@ const UserDashboardComplete = () => {
                                 </p>
                               </div>
                               <div className="flex items-center gap-2">
-                                <Badge className={`${delta > 0 ? 'bg-green-100 dark:bg-green-950 text-green-700 dark:text-green-400' : delta < 0 ? 'bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-400' : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400'}`}>
+                                <Badge className={`${delta > 0 ? 'bg-green-100 dark:bg-green-950 text-success dark:text-green-400' : delta < 0 ? 'bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-400' : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400'}`}>
                                   {search.resultCount} results
                                   {delta !== 0 && (
                                     <span className="ml-1">
@@ -528,7 +528,7 @@ const UserDashboardComplete = () => {
                                 size="sm"
                                 variant={search.alertEnabled ? "default" : "outline"}
                                 onClick={() => handleToggleAlert(search.id)}
-                                className={search.alertEnabled ? "bg-green-700 hover:bg-green-800 hover:text-white text-white" : ""}
+                                className={search.alertEnabled ? "bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white" : ""}
                               >
                                 <Bell className="h-3 w-3 mr-1" />
                                 {search.alertEnabled ? 'Alert On' : 'Alert Off'}
@@ -592,7 +592,7 @@ const UserDashboardComplete = () => {
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">No agents shortlisted</h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">Browse agents and save your favorites</p>
                       <Link to="/agents">
-                        <Button className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
+                        <Button className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white">
                           Browse Agents
                         </Button>
                       </Link>
@@ -641,7 +641,7 @@ const UserDashboardComplete = () => {
                                     rows={2}
                                   />
                                   <div className="flex gap-2">
-                                    <Button size="sm" onClick={() => handleSaveNote(agent.id)} className="bg-green-600 hover:bg-green-700 text-white">
+                                    <Button size="sm" onClick={() => handleSaveNote(agent.id)} className="bg-success hover:bg-success/90 text-white shadow-sm">
                                       Save
                                     </Button>
                                     <Button size="sm" variant="ghost" onClick={() => { setEditingNote(null); setNoteText(''); }}>
@@ -700,7 +700,7 @@ const UserDashboardComplete = () => {
                 <CardHeader className="border-b border-gray-200 dark:border-gray-700">
                   <div className="flex items-center justify-between">
                     <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                      <Home className="h-5 w-5 mr-2 text-green-600" />
+                      <Home className="h-5 w-5 mr-2 text-success" />
                       Shortlisted Deals ({shortlistedDeals.length})
                     </CardTitle>
                     <Button 
@@ -721,7 +721,7 @@ const UserDashboardComplete = () => {
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">No deals shortlisted</h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">Browse property deals and save interesting ones</p>
                       <Link to="/deals">
-                        <Button className="bg-green-600 hover:bg-green-700 text-white">
+                        <Button className="bg-success hover:bg-success/90 text-white shadow-sm">
                           Browse Deals
                         </Button>
                       </Link>
@@ -739,7 +739,7 @@ const UserDashboardComplete = () => {
                           </Link>
                           <div className="p-4">
                             <Link to={`/deal/${deal.id}`}>
-                              <h4 className="font-semibold text-gray-900 dark:text-white hover:text-green-600 transition-colors mb-1">
+                              <h4 className="font-semibold text-gray-900 dark:text-white hover:text-success transition-colors mb-1">
                                 {deal.suburb}, {deal.state}
                               </h4>
                             </Link>
@@ -757,7 +757,7 @@ const UserDashboardComplete = () => {
                                 {deal.carSpaces}
                               </span>
                             </div>
-                            <div className="text-lg font-bold text-green-600 mb-3">
+                            <div className="text-lg font-bold text-success mb-3">
                               {formatDealPrice(deal)}
                             </div>
                             
@@ -827,7 +827,7 @@ const UserDashboardComplete = () => {
                               {review.agentName}
                             </Link>
                             <Badge className={
-                              review.status === 'published' ? 'bg-green-100 dark:bg-green-950 text-green-700 dark:text-green-400' :
+                              review.status === 'published' ? 'bg-green-100 dark:bg-green-950 text-success dark:text-green-400' :
                               review.status === 'pending' ? 'bg-gray-200 dark:bg-gray-200 text-yellow-700 dark:text-yellow-400' :
                               'bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-400'
                             }>
@@ -898,7 +898,7 @@ const UserDashboardComplete = () => {
                         {savedSearches.filter(s => s.alertEnabled).map(search => (
                           <div key={search.id} className="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-900 rounded">
                             <span className="text-sm text-gray-900 dark:text-white">{search.name}</span>
-                            <Badge className="bg-green-100 dark:bg-green-950 text-green-700 dark:text-green-400">
+                            <Badge className="bg-green-100 dark:bg-green-950 text-success dark:text-green-400">
                               <Bell className="h-3 w-3 mr-1" />
                               On
                             </Badge>

@@ -77,9 +77,9 @@ const AdminProfile = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Success Message */}
         {showSuccess && (
-          <div className="mb-6 p-4 bg-green-50 dark:bg-green-950 border border-green-200 dark:border-green-800 rounded-lg">
+          <div className="mb-6 p-4 bg-success/10 dark:bg-green-950 border border-success/30 dark:border-green-800 rounded-lg">
             <div className="flex items-center">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2" />
+              <CheckCircle className="h-5 w-5 text-success mr-2" />
               <span className="text-green-800 dark:text-green-200">
                 Profile updated successfully!
               </span>
@@ -102,7 +102,7 @@ const AdminProfile = () => {
               {!isEditing ? (
                 <Button
                   onClick={() => setIsEditing(true)}
-                  className="bg-green-700 hover:bg-green-800 hover:text-white text-white"
+                  className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white"
                 >
                   <Edit className="h-4 w-4 mr-2" />
                   Edit Profile
@@ -111,7 +111,7 @@ const AdminProfile = () => {
                 <div className="flex space-x-2">
                   <Button
                     onClick={handleSave}
-                    className="bg-green-700 hover:bg-green-800 hover:text-white text-white"
+                    className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white"
                   >
                     <Save className="h-4 w-4 mr-2" />
                     Save Changes

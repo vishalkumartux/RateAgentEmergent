@@ -268,7 +268,7 @@ const OnboardingWizard = () => {
                       <div
                         className={`w-12 h-12 rounded-full flex items-center justify-center mb-2 transition-all ${
                           isComplete
-                            ? 'bg-green-600 text-white'
+                            ? 'bg-success text-white'
                             : isCurrent
                             ? 'bg-green-700 text-white ring-4 ring-blue-200 dark:ring-blue-900'
                             : 'bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400'
@@ -472,7 +472,7 @@ const OnboardingWizard = () => {
                         placeholder="Enter suburb or region"
                         className="dark:bg-gray-700 dark:text-white"
                       />
-                      <Button onClick={handleAddCoverageArea} type="button" className="bg-green-700 hover:bg-green-800 hover:text-white">
+                      <Button onClick={handleAddCoverageArea} type="button" className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm">
                         Add
                       </Button>
                     </div>
@@ -740,7 +740,7 @@ const OnboardingWizard = () => {
                       <div className="space-y-2">
                         {orgData.licenseNumbers.filter(l => l.state && l.number).map((license, index) => (
                           <div key={index} className="flex items-center gap-2">
-                            <Shield className="h-4 w-4 text-green-600" />
+                            <Shield className="h-4 w-4 text-success" />
                             <span className="text-sm text-gray-900 dark:text-white">
                               {license.state}: {license.number}
                             </span>
@@ -758,8 +758,8 @@ const OnboardingWizard = () => {
                     </div>
                   </div>
 
-                  <div className="p-6 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950 rounded-lg border-2 border-green-200 dark:border-green-800 text-center">
-                    <CheckCircle className="h-12 w-12 text-green-600 mx-auto mb-3" />
+                  <div className="p-6 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950 rounded-lg border-2 border-success/30 dark:border-green-800 text-center">
+                    <CheckCircle className="h-12 w-12 text-success mx-auto mb-3" />
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                       Ready to Go Live!
                     </h3>
@@ -768,7 +768,7 @@ const OnboardingWizard = () => {
                     </p>
                     <Button
                       onClick={handlePublish}
-                      className="bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-6"
+                      className="bg-success hover:bg-success/90 text-white shadow-sm text-lg px-8 py-6"
                     >
                       <CheckCircle className="h-5 w-5 mr-2" />
                       Publish Profile
@@ -795,7 +795,7 @@ const OnboardingWizard = () => {
               <Button
                 onClick={handleNext}
                 disabled={!isStepComplete(currentStep)}
-                className="bg-green-700 hover:bg-green-800 hover:text-white text-white"
+                className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white"
               >
                 Next
                 <ChevronRight className="h-4 w-4 ml-2" />

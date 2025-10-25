@@ -158,8 +158,8 @@ const OrgSettings = () => {
 
         {/* Save Success Message */}
         {saveSuccess && (
-          <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg flex items-center">
-            <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 mr-3" />
+          <div className="mb-6 p-4 bg-success/10 dark:bg-success/20/20 border border-success/30 dark:border-green-800 rounded-lg flex items-center">
+            <CheckCircle className="h-5 w-5 text-success dark:text-success mr-3" />
             <span className="text-green-800 dark:text-green-200 font-medium">{saveSuccess}</span>
           </div>
         )}
@@ -503,10 +503,10 @@ const OrgSettings = () => {
                       />
                     </div>
 
-                    <div className="flex items-center justify-between p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
+                    <div className="flex items-center justify-between p-4 bg-success/10 dark:bg-success/20/20 rounded-lg border border-success/30 dark:border-green-800">
                       <div>
                         <h4 className="font-medium text-gray-900 dark:text-white flex items-center">
-                          <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
+                          <CheckCircle className="h-4 w-4 text-success mr-2" />
                           GDPR Compliant
                         </h4>
                         <p className="text-sm text-gray-600 dark:text-gray-400">Follow data protection regulations</p>
@@ -661,7 +661,7 @@ const OrgSettings = () => {
                         <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{subscription.plan}</h3>
                         <p className="text-black dark:text-gray-700 font-medium">{subscription.amount}</p>
                       </div>
-                      <Badge className="bg-green-600 text-white px-3 py-1">
+                      <Badge className="bg-success text-white px-3 py-1">
                         <CheckCircle className="h-3 w-3 mr-1 inline" />
                         {subscription.status}
                       </Badge>
@@ -685,7 +685,7 @@ const OrgSettings = () => {
                     <div className="space-y-2">
                       {subscription.features.map((feature, index) => (
                         <div key={index} className="flex items-center space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-600" />
+                          <CheckCircle className="h-4 w-4 text-success" />
                           <span className="text-gray-700 dark:text-gray-300">{feature}</span>
                         </div>
                       ))}
@@ -726,7 +726,7 @@ const OrgSettings = () => {
                   <Button
                     onClick={handleSave}
                     disabled={isSaving}
-                    className="bg-green-700 hover:bg-green-800 hover:text-white text-white"
+                    className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white"
                   >
                     <Save className="h-4 w-4 mr-2" />
                     {isSaving ? 'Saving...' : 'Save Changes'}

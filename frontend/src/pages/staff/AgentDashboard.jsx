@@ -137,8 +137,8 @@ const AgentDashboard = () => {
       title: 'Profile Views',
       value: agentStats.profileViews,
       icon: Eye,
-      color: 'text-green-600',
-      bgColor: 'bg-green-50 dark:bg-green-900/20',
+      color: 'text-success',
+      bgColor: 'bg-success/10 dark:bg-success/20/20',
       change: 'Last 30 days'
     }
   ];
@@ -158,7 +158,7 @@ const AgentDashboard = () => {
               </p>
             </div>
             <Link to="/staff/deals/add">
-              <Button className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
+              <Button className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white">
                 <Plus className="h-4 w-4 mr-2" />
                 Add New Deal
               </Button>
@@ -225,7 +225,7 @@ const AgentDashboard = () => {
                           </h4>
                           <Badge 
                             variant={deal.status === 'Verified' ? 'default' : 'secondary'}
-                            className={deal.status === 'Verified' ? 'bg-green-600 text-white' : 'bg-gray-100 text-black dark:bg-gray-800 dark:text-gray-700'}
+                            className={deal.status === 'Verified' ? 'bg-success text-white' : 'bg-gray-100 text-black dark:bg-gray-800 dark:text-gray-700'}
                           >
                             {deal.status === 'Verified' ? (
                               <CheckCircle className="h-3 w-3 mr-1 inline" />
@@ -269,7 +269,7 @@ const AgentDashboard = () => {
                         Start adding your successful deals to showcase your track record
                       </p>
                       <Link to="/staff/deals/add">
-                        <Button className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
+                        <Button className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white">
                           <Plus className="h-4 w-4 mr-2" />
                           Add Your First Deal
                         </Button>
@@ -303,7 +303,7 @@ const AgentDashboard = () => {
                             {review.reviewer}
                           </span>
                           {review.verified && (
-                            <Badge variant="outline" className="text-xs bg-green-50 text-green-700 border-green-200 dark:bg-green-900/20 dark:text-green-400 dark:border-green-800">
+                            <Badge variant="outline" className="text-xs bg-success/10 text-success border-success/30 dark:bg-green-900/20 dark:text-green-400 dark:border-green-800">
                               <CheckCircle className="h-3 w-3 mr-1" />
                               Verified
                             </Badge>

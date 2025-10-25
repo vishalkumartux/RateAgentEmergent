@@ -163,7 +163,7 @@ const MyProfile = () => {
               <Button 
                 onClick={handleSave}
                 disabled={isSaving}
-                className="bg-green-700 hover:bg-green-800 hover:text-white text-white"
+                className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white"
               >
                 <Save className="h-4 w-4 mr-2" />
                 {isSaving ? 'Saving...' : 'Save Changes'}
@@ -174,8 +174,8 @@ const MyProfile = () => {
 
         {/* Save Success Message */}
         {saveSuccess && (
-          <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg flex items-center">
-            <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 mr-3" />
+          <div className="mb-6 p-4 bg-success/10 dark:bg-success/20/20 border border-success/30 dark:border-green-800 rounded-lg flex items-center">
+            <CheckCircle className="h-5 w-5 text-success dark:text-success mr-3" />
             <span className="text-green-800 dark:text-green-200 font-medium">{saveSuccess}</span>
           </div>
         )}

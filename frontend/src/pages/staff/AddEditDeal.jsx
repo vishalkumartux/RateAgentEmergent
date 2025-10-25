@@ -260,7 +260,7 @@ const AddEditDeal = () => {
                       onClick={() => setCurrentStep(step.number)}
                       className={`w-12 h-12 rounded-full flex items-center justify-center mb-2 transition-colors ${
                         isCompleted
-                          ? 'bg-green-600 text-white'
+                          ? 'bg-success text-white'
                           : isActive
                           ? 'bg-green-700 text-white'
                           : 'bg-gray-200 dark:bg-gray-700 text-gray-400'
@@ -579,7 +579,7 @@ const AddEditDeal = () => {
                           key={tag}
                           type="button"
                           onClick={() => addStrategyTag(tag)}
-                          className="px-3 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-full hover:border-blue-700 hover:text-black transition-colors"
+                          className="px-3 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-full hover:border-primary hover:text-black transition-colors"
                         >
                           + {tag}
                         </button>
@@ -650,14 +650,14 @@ const AddEditDeal = () => {
 
                   {/* Auto-calculated Discount */}
                   {discountPercent && discountPercent > 0 && (
-                    <div className="mt-3 p-3 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
+                    <div className="mt-3 p-3 bg-success/10 dark:bg-success/20/20 border border-success/30 dark:border-green-800 rounded-lg">
                       <div className="flex items-center">
-                        <CheckCircle className="h-5 w-5 text-green-600 mr-2" />
+                        <CheckCircle className="h-5 w-5 text-success mr-2" />
                         <div>
-                          <p className="font-semibold text-green-700 dark:text-green-400">
+                          <p className="font-semibold text-success dark:text-green-400">
                             {discountPercent}% below asking
                           </p>
-                          <p className="text-sm text-green-600 dark:text-green-500">
+                          <p className="text-sm text-success dark:text-green-500">
                             Saved client ${(formData.askingPrice - formData.purchasePrice).toLocaleString()}
                           </p>
                         </div>
@@ -784,7 +784,7 @@ const AddEditDeal = () => {
                         onChange={handlePhotoUpload}
                         className="hidden"
                       />
-                      <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-8 text-center cursor-pointer hover:border-blue-700 transition-colors">
+                      <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-8 text-center cursor-pointer hover:border-primary transition-colors">
                         <ImageIcon className="h-12 w-12 text-gray-400 mx-auto mb-3" />
                         <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
                           Click to upload photos
@@ -1049,7 +1049,7 @@ const AddEditDeal = () => {
                       onClick={() => setFormData({...formData, status: 'published'})}
                       className={`p-4 border-2 rounded-lg text-center transition-colors ${
                         formData.status === 'published'
-                          ? 'border-green-600 bg-green-50 dark:bg-green-900/20'
+                          ? 'border-success bg-success/10 dark:bg-success/20/20'
                           : 'border-gray-200 dark:border-gray-700'
                       }`}
                     >
@@ -1100,12 +1100,12 @@ const AddEditDeal = () => {
                   Save Draft
                 </Button>
                 {currentStep < 6 ? (
-                  <Button onClick={handleNext} className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
+                  <Button onClick={handleNext} className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white">
                     Next Step
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
                 ) : (
-                  <Button onClick={handlePublish} className="bg-green-600 hover:bg-green-700 text-white" disabled={isSaving}>
+                  <Button onClick={handlePublish} className="bg-success hover:bg-success/90 text-white shadow-sm" disabled={isSaving}>
                     {isSaving ? (
                       <>
                         <Loader className="h-4 w-4 mr-2 animate-spin" />

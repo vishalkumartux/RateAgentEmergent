@@ -214,7 +214,7 @@ const ReviewsPageImproved = () => {
             <p className="text-xl text-gray-600 dark:text-gray-400">
               Read authentic, verified reviews from real clients • {totalReviews} reviews
               {verifiedCount > 0 && (
-                <span className="text-green-600 dark:text-green-400 ml-2">
+                <span className="text-success dark:text-success ml-2">
                   <CheckCircle className="h-4 w-4 inline mr-1" />
                   {verifiedCount} verified
                 </span>
@@ -233,7 +233,7 @@ const ReviewsPageImproved = () => {
                       placeholder="Search reviews, agents, or suburbs..."
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="pl-12 h-12 border-2 border-gray-200 dark:border-gray-600 focus:border-blue-700 rounded-xl dark:bg-gray-700 dark:text-white"
+                      className="pl-12 h-12 border-2 border-gray-200 dark:border-gray-600 focus:border-primary rounded-xl dark:bg-gray-700 dark:text-white"
                     />
                   </div>
                   <Button
@@ -294,13 +294,13 @@ const ReviewsPageImproved = () => {
                       </Badge>
                     )}
                     {filters.verifiedOnly && (
-                      <Badge variant="outline" className="bg-green-50 dark:bg-green-950 border-green-300 dark:border-green-700 text-xs">
+                      <Badge variant="outline" className="bg-success/10 dark:bg-green-950 border-green-300 dark:border-success text-xs">
                         Verified
                         <X className="h-3 w-3 ml-1 cursor-pointer" onClick={() => handleFilterChange('verifiedOnly', false)} />
                       </Badge>
                     )}
                     {filters.tags.map((tag) => (
-                      <Badge key={tag} variant="outline" className="bg-gray-50 dark:bg-gray-900 border-gray-300 dark:border-blue-700 text-xs">
+                      <Badge key={tag} variant="outline" className="bg-gray-50 dark:bg-gray-900 border-gray-300 dark:border-primary text-xs">
                         {tag}
                         <X className="h-3 w-3 ml-1 cursor-pointer" onClick={() => handleTagToggle(tag)} />
                       </Badge>
@@ -357,7 +357,7 @@ const ReviewsPageImproved = () => {
                           <p className="text-gray-600 dark:text-gray-400 text-sm">{review.agentCompany}</p>
                           <div className="flex flex-wrap gap-2 mt-2">
                             {review.verified && (
-                              <Badge className="bg-green-100 dark:bg-green-950 text-green-700 dark:text-green-400 border-green-300 dark:border-green-700 text-xs">
+                              <Badge className="bg-green-100 dark:bg-green-950 text-success dark:text-green-400 border-green-300 dark:border-success text-xs">
                                 <CheckCircle className="h-3 w-3 mr-1" />
                                 Verified
                               </Badge>
@@ -437,7 +437,7 @@ const ReviewsPageImproved = () => {
                           {review.reviewerInitials}
                         </span>
                         {review.wouldRecommend && (
-                          <Badge variant="outline" className="bg-green-50 dark:bg-green-950 text-green-700 dark:text-green-400 text-xs">
+                          <Badge variant="outline" className="bg-success/10 dark:bg-green-950 text-success dark:text-green-400 text-xs">
                             Would recommend
                           </Badge>
                         )}
@@ -478,7 +478,7 @@ const ReviewsPageImproved = () => {
             <div className="mt-8 text-center">
               <Button
                 onClick={() => setReviewsToShow(prev => prev + 12)}
-                className="bg-green-700 hover:bg-green-800 hover:text-white text-white"
+                className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white"
               >
                 Load More Reviews ({sortedReviews.length - reviewsToShow} remaining)
               </Button>
@@ -494,7 +494,7 @@ const ReviewsPageImproved = () => {
                 <p className="text-gray-600 dark:text-gray-400 mb-6">
                   Try adjusting your search criteria or filters to see more reviews.
                 </p>
-                <Button onClick={clearAllFilters} className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
+                <Button onClick={clearAllFilters} className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white">
                   Clear All Filters
                 </Button>
               </CardContent>
@@ -513,7 +513,7 @@ const ReviewsPageImproved = () => {
                   Help other property buyers by sharing your experience. Your review makes a difference!
                 </p>
                 <Link to="/submit-review">
-                  <Button className="bg-green-700 hover:bg-green-800 hover:text-white text-white">
+                  <Button className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white">
                     <MessageCircle className="h-4 w-4 mr-2" />
                     Write a Review
                   </Button>
@@ -576,7 +576,7 @@ const ReviewsPageImproved = () => {
                   htmlFor="verified-modal"
                   className="text-sm font-medium text-gray-700 dark:text-gray-300 cursor-pointer flex items-center"
                 >
-                  <ShieldCheck className="h-4 w-4 mr-1 text-green-600" />
+                  <ShieldCheck className="h-4 w-4 mr-1 text-success" />
                   Verified reviews only
                 </label>
               </div>
@@ -715,7 +715,7 @@ const ReviewsPageImproved = () => {
               )}
               <Button
                 onClick={() => setShowFiltersModal(false)}
-                className="bg-green-700 hover:bg-green-800 hover:text-white text-white ml-auto"
+                className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm text-white ml-auto"
               >
                 Apply Filters
               </Button>

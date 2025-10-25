@@ -76,7 +76,7 @@ const HomePageImproved = () => {
     { label: 'Verified Deals', value: '3,800+', icon: Home, color: 'text-black dark:text-white' },
     { label: 'Buyer Agents', value: '1,200+', icon: Users, color: 'text-black dark:text-white' },
     { label: 'Client Reviews', value: '8,500+', icon: Star, color: 'text-yellow-600 dark:text-yellow-500' },
-    { label: 'Avg. Savings', value: '$42K', icon: TrendingUp, color: 'text-green-700 dark:text-green-500' }
+    { label: 'Avg. Savings', value: '$42K', icon: TrendingUp, color: 'text-success dark:text-green-500' }
   ];
 
   // Basic natural language parsing
@@ -397,7 +397,7 @@ const HomePageImproved = () => {
               <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-black transition-all">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
-                    <DollarSign className="h-5 w-5 mr-2 text-green-600" />
+                    <DollarSign className="h-5 w-5 mr-2 text-success" />
                     Budget Range
                   </h3>
                   <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950 p-4 rounded-xl mb-4">
@@ -729,7 +729,7 @@ const HomePageImproved = () => {
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Link to="/deals">
-                <Button size="lg" className="bg-green-700 hover:bg-green-800 text-white hover:text-white">
+                <Button size="lg" className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm">
                   <Home className="h-5 w-5 mr-2" />
                   Browse Deals
                 </Button>
