@@ -224,7 +224,7 @@ const HomePageImproved = () => {
                   <button
                     key={idx}
                     onClick={() => setSearchQuery(link.query)}
-                    className="px-3 py-1.5 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 hover:border-black dark:hover:border-white hover:bg-gray-50 dark:hover:bg-gray-800 text-sm text-black dark:text-white rounded-full transition-all"
+                    className="px-3 py-1.5 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 hover:border-black dark:hover:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black text-sm text-black dark:text-white rounded-full transition-all"
                   >
                     {link.text}
                   </button>
@@ -551,7 +551,7 @@ const HomePageImproved = () => {
                 </p>
               </div>
               <Link to="/deals">
-                <Button variant="outline" className="border-black text-black hover:bg-gray-50 dark:hover:bg-gray-800">
+                <Button variant="outline" className="border-black text-black hover:bg-black hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black">
                   View All
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </Button>
@@ -703,12 +703,12 @@ const HomePageImproved = () => {
               </p>
               <div className="flex gap-4 justify-center">
                 <Link to="/agents">
-                  <Button variant="outline" className="border-gray-300 text-black hover:bg-gray-50 dark:hover:bg-gray-800">
+                  <Button variant="outline" className="border-black text-black hover:bg-black hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black">
                     Browse All Agents
                   </Button>
                 </Link>
                 <Link to="/deals">
-                  <Button variant="outline" className="border-black text-black hover:bg-gray-50 dark:hover:bg-gray-800">
+                  <Button variant="outline" className="border-black text-black hover:bg-black hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black">
                     Browse All Deals
                   </Button>
                 </Link>
