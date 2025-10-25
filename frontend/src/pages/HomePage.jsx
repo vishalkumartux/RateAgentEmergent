@@ -7,6 +7,7 @@ import { Badge } from '../components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
 import { Slider } from '../components/ui/slider';
 import SEO from '../components/SEO';
+import { buttons, text, backgrounds, borders } from '../theme';
 import { 
   Search, 
   MapPin, 
