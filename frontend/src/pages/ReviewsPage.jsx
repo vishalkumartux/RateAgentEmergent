@@ -692,7 +692,7 @@ const ReviewsPageImproved = () => {
                       variant={filters.tags.includes(tag) ? "default" : "outline"}
                       className={`cursor-pointer transition-colors ${
                         filters.tags.includes(tag)
-                          ? 'bg-green-700 text-white border-black'
+                          ? 'bg-success text-white border-black'
                           : 'border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-black hover:text-black'
                       }`}
                       onClick={() => handleTagToggle(tag)}
