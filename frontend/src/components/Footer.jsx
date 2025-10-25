@@ -48,8 +48,8 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-800 to-blue-600 rounded-xl flex items-center justify-center">
-                <Star className="h-5 w-5 text-white" />
+              <div className="w-10 h-10 bg-black dark:bg-white rounded-xl flex items-center justify-center">
+                <Star className="h-5 w-5 text-white dark:text-black" />
               </div>
               <div>
                 <span className="text-2xl font-bold">AgentRate</span>
