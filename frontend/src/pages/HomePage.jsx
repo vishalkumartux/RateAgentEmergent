@@ -561,7 +561,7 @@ const HomePageImproved = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {featuredDeals.map(deal => (
                 <Link key={deal.id} to={`/deal/${deal.id}`}>
-                  <Card className="hover:shadow-xl transition-all border-2 border-transparent hover:border-black">
+                  <Card className="hover:shadow-xl transition-all border-2 border-gray-200 hover:border-black dark:border-gray-700 dark:hover:border-white bg-white dark:bg-gray-800">
                     <img 
                       src={deal.photos[0]} 
                       alt={deal.address}
@@ -569,12 +569,12 @@ const HomePageImproved = () => {
                     />
                     <CardContent className="p-4">
                       {deal.verified && (
-                        <Badge className="bg-green-100 dark:bg-green-950 text-green-700 dark:text-green-400 mb-2">
+                        <Badge className="bg-green-700 text-white mb-2">
                           <CheckCircle className="h-3 w-3 mr-1" />
                           Verified
                         </Badge>
                       )}
-                      <h3 className="font-semibold text-gray-900 dark:text-white mb-2 truncate">
+                      <h3 className="font-semibold text-black dark:text-white mb-2 truncate">
                         {deal.suburb}, {deal.state}
                       </h3>
                       <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 mb-3">
@@ -591,7 +591,7 @@ const HomePageImproved = () => {
                           {deal.carSpaces}
                         </span>
                       </div>
-                      <div className="text-2xl font-bold text-black">
+                      <div className="text-2xl font-bold text-black dark:text-white">
                         {formatDealPrice(deal)}
                       </div>
                     </CardContent>
