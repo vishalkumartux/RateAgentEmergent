@@ -424,7 +424,7 @@ const MyDealsNew = () => {
                       </div>
                       <div className="absolute top-3 left-3">
                         {deal.verified ? (
-                          <Badge className="bg-green-700 text-white">
+                          <Badge className="bg-success text-white">
                             <CheckCircle className="h-3 w-3 mr-1" />
                             Verified
                           </Badge>

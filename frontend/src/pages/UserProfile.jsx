@@ -125,7 +125,7 @@ const UserProfile = () => {
 
           {/* Success Message */}
           {saveSuccess && (
-            <div className="mb-6 p-4 bg-success/10 dark:bg-green-950 border border-success/30 dark:border-green-800 rounded-lg flex items-center">
+            <div className="mb-6 p-4 bg-success/10 dark:bg-success/20 border border-success/30 dark:border-success rounded-lg flex items-center">
               <CheckCircle className="h-5 w-5 text-success mr-3" />
               <span className="text-green-800 dark:text-green-200">Profile updated successfully!</span>
             </div>
@@ -370,7 +370,7 @@ const UserProfile = () => {
                     </div>
 
                     <div className="pt-4">
-                      <Button onClick={handleSaveProfile} className="bg-green-700 hover:bg-green-700 hover:text-white text-white">
+                      <Button onClick={handleSaveProfile} className="bg-green-700 hover:bg-success/90 text-white shadow-sm">
                         <Save className="h-4 w-4 mr-2" />
                         Save Preferences
                       </Button>
@@ -510,7 +510,7 @@ const UserProfile = () => {
                     <div className="pt-6 border-t border-gray-200 dark:border-gray-700">
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Account Security</h3>
                       <div className="space-y-3">
-                        <div className="flex items-center justify-between p-4 bg-success/10 dark:bg-green-950 rounded-lg">
+                        <div className="flex items-center justify-between p-4 bg-success/10 dark:bg-success/20 rounded-lg">
                           <div className="flex items-center gap-3">
                             <CheckCircle className="h-5 w-5 text-success" />
                             <span className="text-gray-900 dark:text-white">Email Verified</span>

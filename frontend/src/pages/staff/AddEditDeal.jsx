@@ -285,7 +285,7 @@ const AddEditDeal = () => {
                   </div>
                   {index < steps.length - 1 && (
                     <div className={`flex-1 h-1 mx-2 ${
-                      currentStep > step.number ? 'bg-green-600' : 'bg-gray-200 dark:bg-gray-700'
+                      currentStep > step.number ? 'bg-success' : 'bg-gray-200 dark:bg-gray-700'
                     }`} />
                   )}
                 </React.Fragment>
@@ -561,7 +561,7 @@ const AddEditDeal = () => {
                   </p>
                   <div className="flex flex-wrap gap-2 mb-3">
                     {formData.strategyTags.map(tag => (
-                      <Badge key={tag} className="bg-green-700 text-white">
+                      <Badge key={tag} className="bg-success text-white">
                         {tag}
                         <button
                           onClick={() => removeStrategyTag(tag)}
@@ -650,11 +650,11 @@ const AddEditDeal = () => {
 
                   {/* Auto-calculated Discount */}
                   {discountPercent && discountPercent > 0 && (
-                    <div className="mt-3 p-3 bg-success/10 dark:bg-success/20/20 border border-success/30 dark:border-green-800 rounded-lg">
+                    <div className="mt-3 p-3 bg-success/10 dark:bg-success/20/20 border border-success/30 dark:border-success rounded-lg">
                       <div className="flex items-center">
                         <CheckCircle className="h-5 w-5 text-success mr-2" />
                         <div>
-                          <p className="font-semibold text-success dark:text-green-400">
+                          <p className="font-semibold text-success dark:text-success">
                             {discountPercent}% below asking
                           </p>
                           <p className="text-sm text-success dark:text-green-500">
@@ -996,7 +996,7 @@ const AddEditDeal = () => {
                       </div>
                       <div>
                         <p className="text-gray-600 dark:text-gray-400">Verification</p>
-                        <Badge className={formData.verificationLevel === 'L1' ? 'bg-green-700' : 'bg-gray-600'}>
+                        <Badge className={formData.verificationLevel === 'L1' ? 'bg-success' : 'bg-gray-600'}>
                           {formData.verificationLevel}
                         </Badge>
                       </div>

@@ -388,7 +388,7 @@ const AdminDashboard = () => {
                 <div className="space-y-4">
                   <div className="flex items-center justify-between p-4 border border-gray-300 dark:border-gray-300 bg-gray-50 dark:bg-gray-900 rounded-lg">
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-green-700 rounded-full flex items-center justify-center">
+                      <div className="w-12 h-12 bg-success rounded-full flex items-center justify-center">
                         <span className="text-white font-semibold">
                           {user?.name?.charAt(0) || 'A'}
                         </span>
@@ -396,7 +396,7 @@ const AdminDashboard = () => {
                       <div className="flex-1">
                         <div className="flex items-center space-x-2 mb-1">
                           <h3 className="font-semibold text-gray-900 dark:text-white">{user?.name}</h3>
-                          <Badge className="bg-green-700 text-white">Admin</Badge>
+                          <Badge className="bg-success text-white">Admin</Badge>
                         </div>
                         <p className="text-gray-600 dark:text-gray-400 text-sm mb-1">{user?.email}</p>
                         <div className="flex items-center space-x-3 text-xs text-gray-500 dark:text-gray-500">
@@ -544,7 +544,7 @@ const AdminDashboard = () => {
                     </div>
                     
                     {inviteSuccess && (
-                      <div className="flex items-center p-3 bg-success/10 dark:bg-success/20/20 border border-success/30 dark:border-green-800 rounded-lg">
+                      <div className="flex items-center p-3 bg-success/10 dark:bg-success/20/20 border border-success/30 dark:border-success rounded-lg">
                         <CheckCircle className="h-5 w-5 text-success mr-2" />
                         <p className="text-green-800 dark:text-green-200 font-medium">{inviteSuccess}</p>
                       </div>

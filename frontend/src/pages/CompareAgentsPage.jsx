@@ -448,7 +448,7 @@ const CompareAgentsPage = () => {
                                   <span className="font-semibold text-black">{percentage}%</span>
                                 </div>
                                 <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                                  <div className="bg-green-700 h-2 rounded-full" style={{ width: `${percentage}%` }}></div>
+                                  <div className="bg-success h-2 rounded-full" style={{ width: `${percentage}%` }}></div>
                                 </div>
                               </div>
                             ))}
@@ -465,7 +465,7 @@ const CompareAgentsPage = () => {
                                   <span className="font-semibold text-black">{percentage}%</span>
                                 </div>
                                 <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                                  <div className="bg-green-700 h-2 rounded-full" style={{ width: `${percentage}%` }}></div>
+                                  <div className="bg-success h-2 rounded-full" style={{ width: `${percentage}%` }}></div>
                                 </div>
                               </div>
                             ))}

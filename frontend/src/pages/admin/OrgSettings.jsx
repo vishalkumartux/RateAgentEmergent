@@ -158,7 +158,7 @@ const OrgSettings = () => {
 
         {/* Save Success Message */}
         {saveSuccess && (
-          <div className="mb-6 p-4 bg-success/10 dark:bg-success/20/20 border border-success/30 dark:border-green-800 rounded-lg flex items-center">
+          <div className="mb-6 p-4 bg-success/10 dark:bg-success/20/20 border border-success/30 dark:border-success rounded-lg flex items-center">
             <CheckCircle className="h-5 w-5 text-success dark:text-success mr-3" />
             <span className="text-green-800 dark:text-green-200 font-medium">{saveSuccess}</span>
           </div>
@@ -503,7 +503,7 @@ const OrgSettings = () => {
                       />
                     </div>
 
-                    <div className="flex items-center justify-between p-4 bg-success/10 dark:bg-success/20/20 rounded-lg border border-success/30 dark:border-green-800">
+                    <div className="flex items-center justify-between p-4 bg-success/10 dark:bg-success/20/20 rounded-lg border border-success/30 dark:border-success">
                       <div>
                         <h4 className="font-medium text-gray-900 dark:text-white flex items-center">
                           <CheckCircle className="h-4 w-4 text-success mr-2" />

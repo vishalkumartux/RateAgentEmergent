@@ -348,7 +348,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                         <div className="w-32 text-sm text-gray-600 dark:text-gray-400 flex-shrink-0">{band}</div>
                         <div className="flex-1 bg-gray-200 dark:bg-gray-700 rounded-full h-6 relative overflow-hidden">
                           <div 
-                            className="bg-green-700 h-full rounded-full flex items-center justify-end pr-2 transition-all duration-300"
+                            className="bg-success h-full rounded-full flex items-center justify-end pr-2 transition-all duration-300"
                             style={{ width: `${Math.max(percent, 5)}%` }}
                           >
                             {percent >= 10 && (
@@ -482,7 +482,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                               </p>
                             </div>
                             {deal.verified && (
-                              <Badge variant="outline" className="ml-2 bg-success/10 dark:bg-green-950 text-success dark:text-green-400 border-green-300 dark:border-success">
+                              <Badge variant="outline" className="ml-2 bg-success/10 dark:bg-success/20 text-success dark:text-success border-success/30 dark:border-success">
                                 <CheckCircle className="h-3 w-3 mr-1" />
                                 Verified
                               </Badge>
@@ -601,7 +601,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                               ))}
                             </div>
                           </div>
-                          <Badge variant="outline" className="bg-success/10 dark:bg-green-950 text-success dark:text-green-400 border-green-300 dark:border-success">
+                          <Badge variant="outline" className="bg-success/10 dark:bg-success/20 text-success dark:text-success border-success/30 dark:border-success">
                             <CheckCircle className="h-3 w-3 mr-1" />
                             Verified
                           </Badge>
@@ -652,7 +652,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
             </CardHeader>
             <CardContent className="space-y-6">
               {/* License */}
-              <div className="flex items-start gap-3 p-4 bg-success/10 dark:bg-green-950 rounded-lg border border-success/30 dark:border-green-800">
+              <div className="flex items-start gap-3 p-4 bg-success/10 dark:bg-success/20 rounded-lg border border-success/30 dark:border-success">
                 <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-0.5" />
                 <div className="flex-1">
                   <div className="font-semibold text-gray-900 dark:text-white">Licensed Buyer's Agent</div>

@@ -77,7 +77,7 @@ const AdminProfile = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Success Message */}
         {showSuccess && (
-          <div className="mb-6 p-4 bg-success/10 dark:bg-green-950 border border-success/30 dark:border-green-800 rounded-lg">
+          <div className="mb-6 p-4 bg-success/10 dark:bg-success/20 border border-success/30 dark:border-success rounded-lg">
             <div className="flex items-center">
               <CheckCircle className="h-5 w-5 text-success mr-2" />
               <span className="text-green-800 dark:text-green-200">
@@ -146,7 +146,7 @@ const AdminProfile = () => {
                   <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
                     {profileData.name}
                   </h2>
-                  <Badge className="bg-green-700 text-white">
+                  <Badge className="bg-success text-white">
                     <Shield className="h-3 w-3 mr-1" />
                     Admin
                   </Badge>
@@ -317,7 +317,7 @@ const AdminProfile = () => {
                 <div className="space-y-4">
                   {recentActivities.map((activity, index) => (
                     <div key={index} className="flex items-start space-x-4 p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
-                      <div className="w-2 h-2 bg-green-700 rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-success rounded-full mt-2 flex-shrink-0"></div>
                       <div className="flex-1">
                         <h4 className="font-semibold text-gray-900 dark:text-white">{activity.action}</h4>
                         <p className="text-gray-600 dark:text-gray-400 text-sm">{activity.details}</p>

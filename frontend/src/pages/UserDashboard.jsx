@@ -229,7 +229,7 @@ const UserDashboardComplete = () => {
   const stats = [
     { label: 'Saved Searches', value: savedSearches.length, icon: Search, color: 'text-black', bgColor: 'bg-gray-100 dark:bg-gray-900' },
     { label: 'Shortlisted Agents', value: shortlistedAgents.length, icon: Users, color: 'text-black', bgColor: 'bg-gray-100 dark:bg-gray-900' },
-    { label: 'Shortlisted Deals', value: shortlistedDeals.length, icon: Home, color: 'text-success', bgColor: 'bg-green-100 dark:bg-green-950' },
+    { label: 'Shortlisted Deals', value: shortlistedDeals.length, icon: Home, color: 'text-success', bgColor: 'bg-green-100 dark:bg-success/20' },
     { label: 'Reviews Posted', value: myReviews.length, icon: Star, color: 'text-gray-700', bgColor: 'bg-gray-100 dark:bg-gray-100' }
   ];
 
@@ -290,42 +290,42 @@ const UserDashboardComplete = () => {
               <TabsList className="w-full bg-transparent grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 h-auto p-0">
                 <TabsTrigger 
                   value="overview" 
-                  className="data-[state=active]:bg-green-700 data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
+                  className="data-[state=active]:bg-success data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
                 >
                   <BarChart3 className="h-4 w-4 mr-2 flex-shrink-0" />
                   <span className="hidden sm:inline">Overview</span>
                 </TabsTrigger>
                 <TabsTrigger 
                   value="searches" 
-                  className="data-[state=active]:bg-green-700 data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
+                  className="data-[state=active]:bg-success data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
                 >
                   <Search className="h-4 w-4 mr-2 flex-shrink-0" />
                   <span className="hidden sm:inline">Searches</span>
                 </TabsTrigger>
                 <TabsTrigger 
                   value="agents" 
-                  className="data-[state=active]:bg-green-700 data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
+                  className="data-[state=active]:bg-success data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
                 >
                   <Users className="h-4 w-4 mr-2 flex-shrink-0" />
                   <span className="hidden sm:inline">Agents</span>
                 </TabsTrigger>
                 <TabsTrigger 
                   value="deals" 
-                  className="data-[state=active]:bg-green-700 data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
+                  className="data-[state=active]:bg-success data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
                 >
                   <Home className="h-4 w-4 mr-2 flex-shrink-0" />
                   <span className="hidden sm:inline">Deals</span>
                 </TabsTrigger>
                 <TabsTrigger 
                   value="reviews" 
-                  className="data-[state=active]:bg-green-700 data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
+                  className="data-[state=active]:bg-success data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
                 >
                   <Star className="h-4 w-4 mr-2 flex-shrink-0" />
                   <span className="hidden sm:inline">Reviews</span>
                 </TabsTrigger>
                 <TabsTrigger 
                   value="settings" 
-                  className="data-[state=active]:bg-green-700 data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
+                  className="data-[state=active]:bg-success data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all rounded-lg py-3 px-4"
                 >
                   <Bell className="h-4 w-4 mr-2 flex-shrink-0" />
                   <span className="hidden sm:inline">Alerts</span>
@@ -343,7 +343,7 @@ const UserDashboardComplete = () => {
                       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Quick Actions</h3>
                       <div className="grid grid-cols-2 gap-3">
                         <Link to="/">
-                          <Button className="w-full bg-green-700 hover:bg-green-700 hover:text-white text-white h-12">
+                          <Button className="w-full bg-green-700 hover:bg-success/90 text-white shadow-sm h-12">
                             <Search className="h-4 w-4 mr-2" />
                             New Search
                           </Button>
@@ -413,16 +413,16 @@ const UserDashboardComplete = () => {
                           <Search className="h-5 w-5 text-black" />
                           <span className="text-sm font-medium text-gray-900 dark:text-white">Saved Searches</span>
                         </div>
-                        <Badge className="bg-green-700 text-white">{savedSearches.length}</Badge>
+                        <Badge className="bg-success text-white">{savedSearches.length}</Badge>
                       </div>
                       <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
                         <div className="flex items-center gap-3">
                           <Users className="h-5 w-5 text-black" />
                           <span className="text-sm font-medium text-gray-900 dark:text-white">Shortlisted Agents</span>
                         </div>
-                        <Badge className="bg-green-700 text-white">{shortlistedAgents.length}</Badge>
+                        <Badge className="bg-success text-white">{shortlistedAgents.length}</Badge>
                       </div>
-                      <div className="flex items-center justify-between p-3 bg-success/10 dark:bg-green-950 rounded-lg">
+                      <div className="flex items-center justify-between p-3 bg-success/10 dark:bg-success/20 rounded-lg">
                         <div className="flex items-center gap-3">
                           <Home className="h-5 w-5 text-success" />
                           <span className="text-sm font-medium text-gray-900 dark:text-white">Shortlisted Deals</span>
@@ -477,7 +477,7 @@ const UserDashboardComplete = () => {
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">No saved searches yet</h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">Create a search on the homepage to get started</p>
                       <Link to="/">
-                        <Button className="bg-green-700 hover:bg-green-700 hover:text-white text-white">
+                        <Button className="bg-green-700 hover:bg-success/90 text-white shadow-sm">
                           Create Search
                         </Button>
                       </Link>
@@ -496,7 +496,7 @@ const UserDashboardComplete = () => {
                                 </p>
                               </div>
                               <div className="flex items-center gap-2">
-                                <Badge className={`${delta > 0 ? 'bg-green-100 dark:bg-green-950 text-success dark:text-green-400' : delta < 0 ? 'bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-400' : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400'}`}>
+                                <Badge className={`${delta > 0 ? 'bg-green-100 dark:bg-success/20 text-success dark:text-success' : delta < 0 ? 'bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-400' : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400'}`}>
                                   {search.resultCount} results
                                   {delta !== 0 && (
                                     <span className="ml-1">
@@ -511,7 +511,7 @@ const UserDashboardComplete = () => {
                               <Button
                                 size="sm"
                                 onClick={() => handleRunSearch(search)}
-                                className="bg-green-700 hover:bg-green-700 hover:text-white text-white"
+                                className="bg-green-700 hover:bg-success/90 text-white shadow-sm"
                               >
                                 <Play className="h-3 w-3 mr-1" />
                                 Run
@@ -766,7 +766,7 @@ const UserDashboardComplete = () => {
                                 size="sm"
                                 variant={dealContacted[deal.id] ? "default" : "outline"}
                                 onClick={() => handleToggleDealContacted(deal.id)}
-                                className={dealContacted[deal.id] ? "bg-green-700 hover:bg-green-700 hover:text-white text-white" : ""}
+                                className={dealContacted[deal.id] ? "bg-green-700 hover:bg-success/90 text-white shadow-sm" : ""}
                               >
                                 <CheckCircle className="h-3 w-3 mr-1" />
                                 {dealContacted[deal.id] ? 'Contacted' : 'Mark Contacted'}
@@ -827,7 +827,7 @@ const UserDashboardComplete = () => {
                               {review.agentName}
                             </Link>
                             <Badge className={
-                              review.status === 'published' ? 'bg-green-100 dark:bg-green-950 text-success dark:text-green-400' :
+                              review.status === 'published' ? 'bg-green-100 dark:bg-success/20 text-success dark:text-success' :
                               review.status === 'pending' ? 'bg-gray-200 dark:bg-gray-200 text-yellow-700 dark:text-yellow-400' :
                               'bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-400'
                             }>
@@ -898,7 +898,7 @@ const UserDashboardComplete = () => {
                         {savedSearches.filter(s => s.alertEnabled).map(search => (
                           <div key={search.id} className="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-900 rounded">
                             <span className="text-sm text-gray-900 dark:text-white">{search.name}</span>
-                            <Badge className="bg-green-100 dark:bg-green-950 text-success dark:text-green-400">
+                            <Badge className="bg-green-100 dark:bg-success/20 text-success dark:text-success">
                               <Bell className="h-3 w-3 mr-1" />
                               On
                             </Badge>

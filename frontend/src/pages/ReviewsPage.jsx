@@ -294,7 +294,7 @@ const ReviewsPageImproved = () => {
                       </Badge>
                     )}
                     {filters.verifiedOnly && (
-                      <Badge variant="outline" className="bg-success/10 dark:bg-green-950 border-green-300 dark:border-success text-xs">
+                      <Badge variant="outline" className="bg-success/10 dark:bg-success/20 border-success/30 dark:border-success text-xs">
                         Verified
                         <X className="h-3 w-3 ml-1 cursor-pointer" onClick={() => handleFilterChange('verifiedOnly', false)} />
                       </Badge>
@@ -357,7 +357,7 @@ const ReviewsPageImproved = () => {
                           <p className="text-gray-600 dark:text-gray-400 text-sm">{review.agentCompany}</p>
                           <div className="flex flex-wrap gap-2 mt-2">
                             {review.verified && (
-                              <Badge className="bg-green-100 dark:bg-green-950 text-success dark:text-green-400 border-green-300 dark:border-success text-xs">
+                              <Badge className="bg-green-100 dark:bg-success/20 text-success dark:text-success border-success/30 dark:border-success text-xs">
                                 <CheckCircle className="h-3 w-3 mr-1" />
                                 Verified
                               </Badge>
@@ -437,7 +437,7 @@ const ReviewsPageImproved = () => {
                           {review.reviewerInitials}
                         </span>
                         {review.wouldRecommend && (
-                          <Badge variant="outline" className="bg-success/10 dark:bg-green-950 text-success dark:text-green-400 text-xs">
+                          <Badge variant="outline" className="bg-success/10 dark:bg-success/20 text-success dark:text-success text-xs">
                             Would recommend
                           </Badge>
                         )}

@@ -286,7 +286,7 @@ const OnboardingWizard = () => {
                     </div>
                     {index < steps.length - 1 && (
                       <div className={`flex-1 h-1 mx-2 rounded ${
-                        isComplete ? 'bg-green-600' : 'bg-gray-200 dark:bg-gray-700'
+                        isComplete ? 'bg-success' : 'bg-gray-200 dark:bg-gray-700'
                       }`} />
                     )}
                   </React.Fragment>
@@ -715,7 +715,7 @@ const OnboardingWizard = () => {
                       <h3 className="font-semibold text-gray-900 dark:text-white mb-3">Coverage Areas ({orgData.coverageAreas.length})</h3>
                       <div className="flex flex-wrap gap-2">
                         {orgData.coverageAreas.map((area, index) => (
-                          <Badge key={index} className="bg-green-700 text-white">
+                          <Badge key={index} className="bg-success text-white">
                             {area}
                           </Badge>
                         ))}
@@ -758,7 +758,7 @@ const OnboardingWizard = () => {
                     </div>
                   </div>
 
-                  <div className="p-6 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950 rounded-lg border-2 border-success/30 dark:border-green-800 text-center">
+                  <div className="p-6 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950 rounded-lg border-2 border-success/30 dark:border-success text-center">
                     <CheckCircle className="h-12 w-12 text-success mx-auto mb-3" />
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                       Ready to Go Live!

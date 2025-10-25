@@ -164,7 +164,7 @@ const StaffProfileSetup = () => {
                   </div>
                   <label 
                     htmlFor="photo-upload"
-                    className="absolute bottom-0 right-0 w-10 h-10 bg-green-700 rounded-full flex items-center justify-center cursor-pointer hover:bg-green-800 hover:text-white transition-colors"
+                    className="absolute bottom-0 right-0 w-10 h-10 bg-success rounded-full flex items-center justify-center cursor-pointer hover:bg-green-800 hover:text-white transition-colors"
                   >
                     <Camera className="h-5 w-5 text-white" />
                   </label>

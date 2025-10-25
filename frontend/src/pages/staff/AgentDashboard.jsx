@@ -303,7 +303,7 @@ const AgentDashboard = () => {
                             {review.reviewer}
                           </span>
                           {review.verified && (
-                            <Badge variant="outline" className="text-xs bg-success/10 text-success border-success/30 dark:bg-green-900/20 dark:text-green-400 dark:border-green-800">
+                            <Badge variant="outline" className="text-xs bg-success/10 text-success border-success/30 dark:bg-green-900/20 dark:text-success dark:border-success">
                               <CheckCircle className="h-3 w-3 mr-1" />
                               Verified
                             </Badge>

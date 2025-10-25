@@ -135,7 +135,7 @@ const StaffProfilePage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Success Message */}
         {showSuccess && (
-          <div className="mb-6 p-4 bg-success/10 dark:bg-green-950 border border-success/30 dark:border-green-800 rounded-lg">
+          <div className="mb-6 p-4 bg-success/10 dark:bg-success/20 border border-success/30 dark:border-success rounded-lg">
             <div className="flex items-center">
               <CheckCircle className="h-5 w-5 text-success mr-2" />
               <span className="text-green-800 dark:text-green-200">
@@ -210,7 +210,7 @@ const StaffProfilePage = () => {
                   <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
                     {profileData.name}
                   </h2>
-                  <Badge className="bg-green-700 text-white">Agent</Badge>
+                  <Badge className="bg-success text-white">Agent</Badge>
                 </div>
                 
                 <p className="text-xl text-gray-700 dark:text-gray-300 mb-2">

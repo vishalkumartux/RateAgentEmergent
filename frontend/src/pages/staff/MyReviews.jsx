@@ -355,7 +355,7 @@ const MyReviews = () => {
                   size="sm"
                   onClick={() => handleReply(review.id)}
                   disabled={!replyText.trim()}
-                  className="bg-green-700 hover:bg-green-700 hover:text-white text-white"
+                  className="bg-green-700 hover:bg-success/90 text-white shadow-sm"
                 >
                   <Send className="h-4 w-4 mr-2" />
                   Post Reply

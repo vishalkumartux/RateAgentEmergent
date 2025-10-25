@@ -214,10 +214,10 @@ const DealDetailsNew = () => {
                   <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
                     {deal.address.split(',')[0]}
                   </h1>
-                  <Badge className={deal.status === 'Published' ? 'bg-green-600' : 'bg-gray-600'}>
+                  <Badge className={deal.status === 'Published' ? 'bg-success' : 'bg-gray-600'}>
                     {deal.status}
                   </Badge>
-                  <Badge className={deal.verified ? 'bg-green-700' : 'bg-gray-400'}>
+                  <Badge className={deal.verified ? 'bg-success' : 'bg-gray-400'}>
                     {deal.verified ? (
                       <>
                         <CheckCircle className="h-3 w-3 mr-1" />
@@ -414,7 +414,7 @@ const DealDetailsNew = () => {
                         </h3>
                         <div className="flex flex-wrap gap-2">
                           {deal.strategyTags.map((tag, index) => (
-                            <Badge key={index} className="bg-green-700 text-white">
+                            <Badge key={index} className="bg-success text-white">
                               {tag}
                             </Badge>
                           ))}
@@ -423,7 +423,7 @@ const DealDetailsNew = () => {
                     )}
 
                     {/* Price Achievement */}
-                    <div className="p-4 bg-success/10 dark:bg-success/20/20 border border-success/30 dark:border-green-800 rounded-lg">
+                    <div className="p-4 bg-success/10 dark:bg-success/20/20 border border-success/30 dark:border-success rounded-lg">
                       <h3 className="font-semibold text-gray-900 dark:text-white mb-3">
                         Price Achievement
                       </h3>
@@ -521,7 +521,7 @@ const DealDetailsNew = () => {
                         <h4 className="font-semibold text-gray-900 dark:text-white">
                           Verification Status
                         </h4>
-                        <Badge className={deal.verified ? 'bg-green-600' : 'bg-gray-400'}>
+                        <Badge className={deal.verified ? 'bg-success' : 'bg-gray-400'}>
                           {deal.verified ? 'L1 - Verified' : 'L0 - Pending'}
                         </Badge>
                       </div>
@@ -630,7 +630,7 @@ const DealDetailsNew = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-12 h-12 bg-green-700 rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 bg-success rounded-full flex items-center justify-center">
                       <span className="text-white font-semibold text-lg">
                         {deal.agentName ? deal.agentName.charAt(0) : 'A'}
                       </span>
