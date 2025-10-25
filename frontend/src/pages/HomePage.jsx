@@ -237,8 +237,8 @@ const HomePageImproved = () => {
               <Link to="/deals">
                 <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-gray-200 dark:border-gray-800 hover:border-success bg-white dark:bg-gray-900">
                   <CardContent className="p-6 text-center">
-                    <div className="w-14 h-14 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Home className="h-7 w-7 text-black dark:text-white" />
+                    <div className="w-14 h-14 bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-900/30 dark:to-emerald-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Home className="h-7 w-7 text-green-600 dark:text-green-400" />
                     </div>
                     <h3 className="text-lg font-bold text-black dark:text-white mb-2">Find Deals</h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
