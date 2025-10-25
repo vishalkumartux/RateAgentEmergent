@@ -813,7 +813,7 @@ const UserDashboardComplete = () => {
                       <Star className="h-10 w-10 text-gray-300 dark:text-gray-600 mx-auto mb-3" />
                       <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">No reviews yet</p>
                       <Link to="/submit-review">
-                        <Button size="sm" className="bg-gray-200 hover:bg-gray-200 text-white">
+                        <Button size="sm" className="bg-accent hover:bg-accent/90 text-white">
                           Write Your First Review
                         </Button>
                       </Link>
