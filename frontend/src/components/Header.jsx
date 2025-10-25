@@ -45,7 +45,7 @@ const Header = () => {
               <Star className="h-5 w-5 text-white dark:text-black" />
             </div>
             <div className="flex flex-col">
-              <span className={`text-xl font-bold text-black dark:text-white group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors`}>
+              <span className={`text-xl font-bold text-black dark:text-white transition-colors`}>
                 AgentRate
               </span>
               <span className="text-xs text-gray-500 dark:text-gray-400 -mt-1">Find Your Perfect Agent</span>
