@@ -276,7 +276,7 @@ const ReviewsPageImproved = () => {
                         else if (quick === 'Investment') handleFilterChange('transactionType', 'Investment Property');
                         else if (quick === 'First Home') handleFilterChange('serviceType', 'First Home Buyer Support');
                       }}
-                      className="px-3 py-1 bg-gray-100 dark:bg-success hover:bg-success/90 dark:hover:bg-gray-100 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-gray-700 rounded-full text-xs transition-all"
+                      className="px-3 py-1 bg-muted hover:bg-primary hover:text-white rounded-full text-xs transition-all"
                     >
                       {quick}
                     </button>
