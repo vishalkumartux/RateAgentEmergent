@@ -244,7 +244,7 @@ const ReviewsPageImproved = () => {
                     <Filter className="h-4 w-4 mr-2" />
                     Filters
                     {activeFiltersCount > 0 && (
-                      <Badge className="ml-2 bg-green-700 text-white">
+                      <Badge className="ml-2 bg-success text-white">
                         {activeFiltersCount}
                       </Badge>
                     )}
@@ -534,7 +534,7 @@ const ReviewsPageImproved = () => {
                   <Filter className="h-5 w-5 mr-2 text-black" />
                   Filters
                   {activeFiltersCount > 0 && (
-                    <Badge className="ml-2 bg-green-700 text-white">
+                    <Badge className="ml-2 bg-success text-white">
                       {activeFiltersCount}
                     </Badge>
                   )}

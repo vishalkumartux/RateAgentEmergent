@@ -215,7 +215,7 @@ const DealsListPage = () => {
               <Filter className="h-4 w-4 mr-2" />
               Filters
               {activeFiltersCount > 0 && (
-                <Badge className="ml-2 bg-green-700 text-white">
+                <Badge className="ml-2 bg-success text-white">
                   {activeFiltersCount}
                 </Badge>
               )}
