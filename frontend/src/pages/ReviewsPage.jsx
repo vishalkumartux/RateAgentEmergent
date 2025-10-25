@@ -503,7 +503,7 @@ const ReviewsPageImproved = () => {
 
           {/* Call to Action */}
           {displayedReviews.length > 0 && (
-            <Card className="mt-8 bg-gradient-to-r from-gray-900 to-yellow-50 dark:from-gray-900 dark:to-yellow-950 border-gray-300 dark:border-gray-300">
+            <Card className="mt-8 bg-gradient-to-r from-card to-accent/10 border-gray-300 dark:border-gray-300">
               <CardContent className="p-8 text-center">
                 <Award className="h-12 w-12 text-black mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">

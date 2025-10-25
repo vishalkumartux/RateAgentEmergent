@@ -338,7 +338,7 @@ const UserDashboardComplete = () => {
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {/* Left Column - Quick Actions */}
                 <div className="lg:col-span-2 space-y-6">
-                  <Card className="bg-gradient-to-br from-gray-900 to-yellow-50 dark:from-gray-900 dark:to-yellow-950 border-2 border-gray-300 dark:border-gray-300">
+                  <Card className="bg-gradient-to-br from-card to-accent/10 border-2 border-gray-300 dark:border-gray-300">
                     <CardContent className="p-6">
                       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Quick Actions</h3>
                       <div className="grid grid-cols-2 gap-3">

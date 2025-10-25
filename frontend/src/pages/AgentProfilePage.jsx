@@ -93,7 +93,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
           {/* Header Section */}
           <Card className="mb-8 overflow-hidden bg-card border-gray-200 dark:border-gray-700">
             <CardContent className="p-0">
-              <div className="relative h-32 bg-gradient-to-r from-blue-800 to-blue-600"></div>
+              <div className="relative h-32 bg-gradient-to-r from-primary to-primary/80"></div>
               <div className="relative px-6 pb-6">
                 <div className="flex flex-col lg:flex-row gap-6">
                   {/* Profile Photo */}
@@ -693,7 +693,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
           </Card>
 
           {/* Contact CTA Section */}
-          <Card className="bg-gradient-to-r from-blue-800 to-blue-600 text-white border-0">
+          <Card className="bg-gradient-to-r from-primary to-primary/80 text-white border-0">
             <CardContent className="p-8 text-center">
               <h2 className="text-3xl font-bold mb-3">Ready to Work with {agent.name.split(' ')[0]}?</h2>
               <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
