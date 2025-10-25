@@ -112,17 +112,17 @@ export const colors = {
 // ==================== BUTTON STYLES ====================
 
 export const buttons = {
-  // Primary - Indigo (Main actions)
-  primary: `${colors.primary.bg} ${colors.primary.bgHover} dark:bg-indigo-600 dark:hover:bg-indigo-700 text-white hover:text-white shadow-sm`,
+  // Primary - GREEN (Main actions - Real Estate Standard)
+  primary: `${colors.success.bg} ${colors.success.bgHover} dark:bg-green-600 dark:hover:bg-green-700 text-white hover:text-white shadow-sm`,
   
-  // Secondary - Teal (Secondary actions)
-  secondary: `${colors.teal.bg} ${colors.teal.bgHover} ${colors.teal.bgDark} dark:hover:bg-teal-600 text-white hover:text-white shadow-sm`,
+  // Secondary - Outlined (Secondary actions)
+  secondary: `border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white dark:border-green-500 dark:text-green-500 dark:hover:bg-green-600 dark:hover:text-white`,
   
-  // Accent - Amber (Highlight actions)
+  // Accent - Amber (Featured/Special items only)
   accent: `${colors.amber.bg} ${colors.amber.bgHover} ${colors.amber.bgDark} dark:hover:bg-amber-700 text-white hover:text-white shadow-sm`,
   
-  // Outline - Indigo (Subtle actions)
-  outline: `border-2 ${colors.primary.border} ${colors.primary.text} hover:bg-indigo-600 hover:text-white dark:border-indigo-500 dark:text-indigo-400 dark:hover:bg-indigo-600 dark:hover:text-white`,
+  // Outline - Neutral (Subtle actions)
+  outline: `border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-700 dark:hover:text-white`,
   
   // Ghost - Minimal
   ghost: `${colors.neutral.subtext} ${colors.neutral.hover} hover:text-slate-900 dark:hover:text-white`,
@@ -130,8 +130,8 @@ export const buttons = {
   // Danger - Destructive actions
   danger: `${colors.danger.bg} ${colors.danger.bgHover} dark:bg-red-600 dark:hover:bg-red-700 text-white hover:text-white`,
   
-  // Success - Success actions
-  success: `${colors.success.bg} ${colors.success.bgHover} dark:bg-green-600 dark:hover:bg-green-700 text-white hover:text-white`,
+  // Info - Informational (replaces old primary indigo)
+  info: `${colors.primary.bg} ${colors.primary.bgHover} dark:bg-indigo-600 dark:hover:bg-indigo-700 text-white hover:text-white shadow-sm`,
 };
 
 // ==================== BADGE STYLES ====================
