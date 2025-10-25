@@ -257,7 +257,7 @@ const DealsPage = () => {
                     onClick={() => setViewMode('list')}
                     className={`h-12 px-4 rounded-xl transition-all ${
                       viewMode === 'list' 
-                        ? 'bg-green-700 hover:bg-green-800 text-white shadow-md' 
+                        ? 'bg-success hover:bg-success/90 text-white shadow-md' 
                         : 'hover:bg-gray-200 dark:hover:bg-gray-600'
                     }`}
                   >
@@ -269,7 +269,7 @@ const DealsPage = () => {
                     onClick={() => setViewMode('map')}
                     className={`h-12 px-4 rounded-xl transition-all ${
                       viewMode === 'map' 
-                        ? 'bg-green-700 hover:bg-green-800 text-white shadow-md' 
+                        ? 'bg-success hover:bg-success/90 text-white shadow-md' 
                         : 'hover:bg-gray-200 dark:hover:bg-gray-600'
                     }`}
                   >
@@ -298,7 +298,7 @@ const DealsPage = () => {
                   onClick={() => setShowFilters(!showFilters)}
                   className={`h-12 px-6 rounded-2xl font-semibold transition-all ${
                     showFilters 
-                      ? 'bg-green-700 hover:bg-green-800 text-white' 
+                      ? 'bg-success hover:bg-success/90 text-white' 
                       : 'border-2 border-gray-200 dark:border-gray-600 hover:border-black'
                   }`}
                 >
@@ -495,7 +495,7 @@ const DealsPage = () => {
                             <Badge
                               key={tag}
                               variant={filters.strategyTags.includes(tag) ? 'default' : 'outline'}
-                              className={`cursor-pointer ${filters.strategyTags.includes(tag) ? 'bg-green-700 hover:bg-green-800' : 'hover:border-primary'}`}
+                              className={`cursor-pointer ${filters.strategyTags.includes(tag) ? 'bg-success hover:bg-success/90' : 'hover:border-primary'}`}
                               onClick={() => toggleStrategyTag(tag)}
                             >
                               {tag}
@@ -667,7 +667,7 @@ const DealsPage = () => {
                         key={i}
                         variant={currentPage === i + 1 ? 'default' : 'outline'}
                         onClick={() => setCurrentPage(i + 1)}
-                        className={currentPage === i + 1 ? 'bg-green-700 hover:bg-green-800' : ''}
+                        className={currentPage === i + 1 ? 'bg-success hover:bg-success/90' : ''}
                       >
                         {i + 1}
                       </Button>

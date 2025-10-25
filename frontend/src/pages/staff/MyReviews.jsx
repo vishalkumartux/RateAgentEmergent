@@ -523,7 +523,7 @@ const MyReviews = () => {
               />
               <Button
                 onClick={handleCopyLink}
-                className={linkCopied ? 'bg-green-600 hover:bg-green-700' : 'bg-green-700 hover:bg-green-800'}
+                className={linkCopied ? 'bg-success hover:bg-success/90' : 'bg-success hover:bg-success/90'}
               >
                 {linkCopied ? (
                   <>

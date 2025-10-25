@@ -271,7 +271,7 @@ const AgentListPage = () => {
                   onClick={() => setShowFilters(!showFilters)}
                   className={`h-12 px-6 rounded-2xl font-semibold transition-all ${
                     showFilters 
-                      ? 'bg-green-700 hover:bg-green-800 text-white' 
+                      ? 'bg-success hover:bg-success/90 text-white' 
                       : 'border-2 border-gray-200 dark:border-gray-600 hover:border-black'
                   }`}
                 >
@@ -437,7 +437,7 @@ const AgentListPage = () => {
                             <Badge
                               key={strategy}
                               variant={filters.strategyFocus.includes(strategy) ? 'default' : 'outline'}
-                              className={`cursor-pointer ${filters.strategyFocus.includes(strategy) ? 'bg-green-700 hover:bg-green-800' : 'hover:border-primary'}`}
+                              className={`cursor-pointer ${filters.strategyFocus.includes(strategy) ? 'bg-success hover:bg-success/90' : 'hover:border-primary'}`}
                               onClick={() => toggleStrategyFocus(strategy)}
                             >
                               {strategy}
@@ -582,7 +582,7 @@ const AgentListPage = () => {
                         key={i}
                         variant={currentPage === pageNum ? 'default' : 'outline'}
                         onClick={() => setCurrentPage(pageNum)}
-                        className={currentPage === pageNum ? 'bg-green-700 hover:bg-green-800' : ''}
+                        className={currentPage === pageNum ? 'bg-success hover:bg-success/90' : ''}
                       >
                         {pageNum}
                       </Button>

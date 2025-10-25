@@ -412,7 +412,7 @@ const DealDetailPage = () => {
                     <Button
                       variant={feedback === 'yes' ? 'default' : 'outline'}
                       onClick={() => setFeedback('yes')}
-                      className={feedback === 'yes' ? 'bg-green-600 hover:bg-green-700' : ''}
+                      className={feedback === 'yes' ? 'bg-success hover:bg-success/90' : ''}
                     >
                       <ThumbsUp className="h-4 w-4 mr-2" />
                       Yes
@@ -490,7 +490,7 @@ const DealDetailPage = () => {
                         </Link>
                         <Button
                           variant={agentShortlisted ? "default" : "outline"}
-                          className={`w-full ${agentShortlisted ? 'bg-green-700 hover:bg-green-800' : ''}`}
+                          className={`w-full ${agentShortlisted ? 'bg-success hover:bg-success/90' : ''}`}
                           onClick={() => setAgentShortlisted(!agentShortlisted)}
                         >
                           <Heart className={`h-4 w-4 mr-2 ${agentShortlisted ? 'fill-current' : ''}`} />
