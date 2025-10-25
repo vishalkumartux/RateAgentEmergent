@@ -566,7 +566,7 @@ const MyReviews = () => {
             <TabsTrigger value="new" className="text-base">
               New ({newReviews.length})
               {newReviews.length > 0 && (
-                <Badge className="ml-2 bg-green-700">
+                <Badge className="ml-2 bg-success">
                   {newReviews.length}
                 </Badge>
               )}
