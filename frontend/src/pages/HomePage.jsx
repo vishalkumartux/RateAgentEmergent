@@ -317,7 +317,7 @@ const HomePageImproved = () => {
                 onClick={() => setBuyBoxTab('deals')}
                 className={`px-8 py-4 rounded-2xl font-semibold transition-all text-lg ${
                   buyBoxTab === 'deals'
-                    ? 'bg-green-700 text-white shadow-2xl scale-105'
+                    ? 'bg-success text-white shadow-2xl scale-105'
                     : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:scale-105 shadow-lg'
                 }`}
               >
@@ -328,7 +328,7 @@ const HomePageImproved = () => {
                 onClick={() => setBuyBoxTab('agents')}
                 className={`px-8 py-4 rounded-2xl font-semibold transition-all text-lg ${
                   buyBoxTab === 'agents'
-                    ? 'bg-green-700 text-white shadow-2xl scale-105'
+                    ? 'bg-success text-white shadow-2xl scale-105'
                     : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:scale-105 shadow-lg'
                 }`}
               >
@@ -569,7 +569,7 @@ const HomePageImproved = () => {
                     />
                     <CardContent className="p-4">
                       {deal.verified && (
-                        <Badge className="bg-green-700 text-white mb-2">
+                        <Badge className="bg-success text-white mb-2">
                           <CheckCircle className="h-3 w-3 mr-1" />
                           Verified
                         </Badge>

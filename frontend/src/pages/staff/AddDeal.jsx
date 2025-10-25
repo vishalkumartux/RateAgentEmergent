@@ -261,7 +261,7 @@ const AddDeal = () => {
                 <div key={step.number} className="flex items-center">
                   <div className={`flex items-center justify-center w-12 h-12 rounded-full border-2 transition-colors ${
                     isCompleted ? 'bg-emerald-600 border-emerald-600' :
-                    isActive ? 'bg-green-700 border-black' :
+                    isActive ? 'bg-success border-black' :
                     'bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600'
                   }`}>
                     {isCompleted ? (
@@ -494,7 +494,7 @@ const AddDeal = () => {
                           />
                           {index === 0 && (
                             <div className="absolute top-2 left-2">
-                              <Badge className="bg-green-700 text-white text-xs">Main Photo</Badge>
+                              <Badge className="bg-success text-white text-xs">Main Photo</Badge>
                             </div>
                           )}
                           <button

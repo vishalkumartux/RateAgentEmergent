@@ -370,7 +370,7 @@ const UserProfile = () => {
                     </div>
 
                     <div className="pt-4">
-                      <Button onClick={handleSaveProfile} className="bg-green-700 hover:bg-success/90 text-white shadow-sm">
+                      <Button onClick={handleSaveProfile} className="bg-success hover:bg-success/90 text-white shadow-sm">
                         <Save className="h-4 w-4 mr-2" />
                         Save Preferences
                       </Button>

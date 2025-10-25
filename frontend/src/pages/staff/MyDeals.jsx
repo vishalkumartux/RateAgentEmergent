@@ -191,8 +191,8 @@ const MyDeals = () => {
 
   const getStatusBadge = (status) => {
     const statusColors = {
-      'Active': 'bg-green-700 text-white',
-      'Under Contract': 'bg-green-700 text-white',
+      'Active': 'bg-success text-white',
+      'Under Contract': 'bg-success text-white',
       'Sold': 'bg-emerald-600 text-white',
       'Leased': 'bg-emerald-600 text-white'
     };

@@ -473,8 +473,8 @@ const StaffProfilePage = () => {
                       <Badge 
                         className={`${
                           deal.status === 'Sold' ? 'bg-success text-white' :
-                          deal.status === 'Under Contract' ? 'bg-green-700 text-white' :
-                          'bg-green-700 text-white'
+                          deal.status === 'Under Contract' ? 'bg-success text-white' :
+                          'bg-success text-white'
                         }`}
                       >
                         {deal.status}

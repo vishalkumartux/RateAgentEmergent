@@ -343,7 +343,7 @@ const UserDashboardComplete = () => {
                       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Quick Actions</h3>
                       <div className="grid grid-cols-2 gap-3">
                         <Link to="/">
-                          <Button className="w-full bg-green-700 hover:bg-success/90 text-white shadow-sm h-12">
+                          <Button className="w-full bg-success hover:bg-success/90 text-white shadow-sm h-12">
                             <Search className="h-4 w-4 mr-2" />
                             New Search
                           </Button>
@@ -477,7 +477,7 @@ const UserDashboardComplete = () => {
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">No saved searches yet</h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">Create a search on the homepage to get started</p>
                       <Link to="/">
-                        <Button className="bg-green-700 hover:bg-success/90 text-white shadow-sm">
+                        <Button className="bg-success hover:bg-success/90 text-white shadow-sm">
                           Create Search
                         </Button>
                       </Link>
@@ -511,7 +511,7 @@ const UserDashboardComplete = () => {
                               <Button
                                 size="sm"
                                 onClick={() => handleRunSearch(search)}
-                                className="bg-green-700 hover:bg-success/90 text-white shadow-sm"
+                                className="bg-success hover:bg-success/90 text-white shadow-sm"
                               >
                                 <Play className="h-3 w-3 mr-1" />
                                 Run
@@ -766,7 +766,7 @@ const UserDashboardComplete = () => {
                                 size="sm"
                                 variant={dealContacted[deal.id] ? "default" : "outline"}
                                 onClick={() => handleToggleDealContacted(deal.id)}
-                                className={dealContacted[deal.id] ? "bg-green-700 hover:bg-success/90 text-white shadow-sm" : ""}
+                                className={dealContacted[deal.id] ? "bg-success hover:bg-success/90 text-white shadow-sm" : ""}
                               >
                                 <CheckCircle className="h-3 w-3 mr-1" />
                                 {dealContacted[deal.id] ? 'Contacted' : 'Mark Contacted'}

@@ -230,7 +230,7 @@ const MyReviews = () => {
                   {review.reviewerInitials}
                 </span>
                 {review.verified && (
-                  <Badge className="bg-green-700 text-white text-xs">
+                  <Badge className="bg-success text-white text-xs">
                     <Check className="h-3 w-3 mr-1" />
                     Verified
                   </Badge>
@@ -355,7 +355,7 @@ const MyReviews = () => {
                   size="sm"
                   onClick={() => handleReply(review.id)}
                   disabled={!replyText.trim()}
-                  className="bg-green-700 hover:bg-success/90 text-white shadow-sm"
+                  className="bg-success hover:bg-success/90 text-white shadow-sm"
                 >
                   <Send className="h-4 w-4 mr-2" />
                   Post Reply

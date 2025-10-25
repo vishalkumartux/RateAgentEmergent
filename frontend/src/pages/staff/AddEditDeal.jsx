@@ -262,7 +262,7 @@ const AddEditDeal = () => {
                         isCompleted
                           ? 'bg-success text-white'
                           : isActive
-                          ? 'bg-green-700 text-white'
+                          ? 'bg-success text-white'
                           : 'bg-gray-200 dark:bg-gray-700 text-gray-400'
                       }`}
                     >
@@ -878,7 +878,7 @@ const AddEditDeal = () => {
                     <div className="flex items-start">
                       <div className="flex-1">
                         <div className="flex items-center mb-2">
-                          <Badge className="bg-green-700 text-white mr-2">L1</Badge>
+                          <Badge className="bg-success text-white mr-2">L1</Badge>
                           <span className="font-semibold text-gray-900 dark:text-white">
                             Evidence Submitted
                           </span>

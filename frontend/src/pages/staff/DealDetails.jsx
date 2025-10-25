@@ -99,8 +99,8 @@ const DealDetails = () => {
 
   const getStatusBadge = (status) => {
     const statusColors = {
-      'Active': 'bg-green-700 text-white',
-      'Under Contract': 'bg-green-700 text-white',
+      'Active': 'bg-success text-white',
+      'Under Contract': 'bg-success text-white',
       'Sold': 'bg-emerald-600 text-white',
       'Leased': 'bg-emerald-600 text-white'
     };
@@ -111,7 +111,7 @@ const DealDetails = () => {
     const colors = {
       'New': 'bg-red-600 text-white',
       'Responded': 'bg-success text-white',
-      'Follow Up': 'bg-green-700 text-white'
+      'Follow Up': 'bg-success text-white'
     };
     return colors[status] || 'bg-gray-600 text-white';
   };
@@ -379,7 +379,7 @@ const DealDetails = () => {
                       />
                       {index === 0 && (
                         <div className="absolute top-2 left-2">
-                          <Badge className="bg-green-700 text-white text-xs">Main Photo</Badge>
+                          <Badge className="bg-success text-white text-xs">Main Photo</Badge>
                         </div>
                       )}
                     </div>
