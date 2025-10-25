@@ -176,7 +176,7 @@ const HomePageImproved = () => {
       
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-gray-900 via-white to-yellow-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-800 pt-20 pb-16 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-gray-900 dark:via-gray-900 dark:to-black pt-20 pb-16 overflow-hidden">
           <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
           <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
