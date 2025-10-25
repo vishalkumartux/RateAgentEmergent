@@ -5,6 +5,7 @@ import axios from "axios";
 import { ThemeProvider } from "./context/ThemeContext";
 import { AuthProvider } from "./context/AuthContext";
 import Header from "./components/Header";
+import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import AgentListPage from "./pages/AgentListPage";
@@ -64,6 +65,7 @@ function App() {
       <AuthProvider>
         <div className="App min-h-screen bg-background text-foreground">
           <BrowserRouter>
+            <ScrollToTop />
             <Header />
             <Routes>
               <Route path="/" element={<HomePage />} />
