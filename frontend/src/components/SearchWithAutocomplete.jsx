@@ -90,7 +90,7 @@ const SearchWithAutocomplete = ({
           placeholder={placeholder}
           className={`${showIcon ? 'pl-12' : 'pl-4'} pr-10 ${sizeClasses[size]} 
             border-2 border-gray-200 dark:border-gray-600 
-            focus:border-blue-700 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-900
+            focus:border-primary focus:ring-2 focus:ring-primary/20
             transition-all duration-200
             dark:bg-gray-700 dark:text-white`}
         />
