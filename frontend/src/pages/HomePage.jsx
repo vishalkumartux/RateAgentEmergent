@@ -235,12 +235,12 @@ const HomePageImproved = () => {
             {/* Primary CTA Tiles */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
               <Link to="/deals">
-                <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-black bg-white dark:bg-gray-800">
+                <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white bg-white dark:bg-gray-900">
                   <CardContent className="p-6 text-center">
-                    <div className="w-14 h-14 bg-gray-100 dark:bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Home className="h-7 w-7 text-black" />
+                    <div className="w-14 h-14 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Home className="h-7 w-7 text-black dark:text-white" />
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Find Deals</h3>
+                    <h3 className="text-lg font-bold text-black dark:text-white mb-2">Find Deals</h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
                       Browse verified property deals
                     </p>
@@ -249,12 +249,12 @@ const HomePageImproved = () => {
               </Link>
 
               <Link to="/agents">
-                <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-gray-300 bg-white dark:bg-gray-800">
+                <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white bg-white dark:bg-gray-900">
                   <CardContent className="p-6 text-center">
-                    <div className="w-14 h-14 bg-gray-100 dark:bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Users className="h-7 w-7 text-black" />
+                    <div className="w-14 h-14 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Users className="h-7 w-7 text-black dark:text-white" />
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Find Buyer Agents</h3>
+                    <h3 className="text-lg font-bold text-black dark:text-white mb-2">Find Buyer Agents</h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
                       Compare top-rated agents
                     </p>
@@ -263,12 +263,12 @@ const HomePageImproved = () => {
               </Link>
 
               <Link to="/compare">
-                <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-purple-500 bg-white dark:bg-gray-800">
+                <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white bg-white dark:bg-gray-900">
                   <CardContent className="p-6 text-center">
-                    <div className="w-14 h-14 bg-gray-100 dark:bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Target className="h-7 w-7 text-gray-700" />
+                    <div className="w-14 h-14 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Target className="h-7 w-7 text-black dark:text-white" />
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Compare Agents</h3>
+                    <h3 className="text-lg font-bold text-black dark:text-white mb-2">Compare Agents</h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
                       Side-by-side comparison
                     </p>
