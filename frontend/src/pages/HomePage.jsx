@@ -199,7 +199,7 @@ const HomePageImproved = () => {
                     placeholder='Try: "3BR house in Preston under 1.2m" or "Investment property Melbourne high yield"'
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-14 pr-32 h-16 text-lg border-2 border-gray-300 dark:border-gray-300 focus:border-blue-700 rounded-2xl bg-white dark:bg-gray-800 shadow-xl"
+                    className="pl-14 pr-32 h-16 text-lg border-2 border-gray-300 dark:border-gray-300 focus:border-black rounded-2xl bg-white dark:bg-gray-800 shadow-xl"
                   />
                   <Button 
                     type="submit"
@@ -223,7 +223,7 @@ const HomePageImproved = () => {
                   <button
                     key={idx}
                     onClick={() => setSearchQuery(link.query)}
-                    className="px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:border-blue-700 dark:hover:border-blue-700 hover:bg-gray-50 dark:hover:bg-gray-800 text-sm text-gray-700 dark:text-gray-300 rounded-full transition-all"
+                    className="px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:border-black dark:hover:border-black hover:bg-gray-50 dark:hover:bg-gray-800 text-sm text-gray-700 dark:text-gray-300 rounded-full transition-all"
                   >
                     {link.text}
                   </button>
@@ -234,7 +234,7 @@ const HomePageImproved = () => {
             {/* Primary CTA Tiles */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
               <Link to="/deals">
-                <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-blue-700 bg-white dark:bg-gray-800">
+                <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-black bg-white dark:bg-gray-800">
                   <CardContent className="p-6 text-center">
                     <div className="w-14 h-14 bg-gray-100 dark:bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Home className="h-7 w-7 text-black" />
@@ -354,7 +354,7 @@ const HomePageImproved = () => {
                           onClick={() => setBuyBox(prev => ({ ...prev, propertyType: type === 'All' ? 'all' : type }))}
                           className={`p-4 rounded-xl border-2 transition-all text-center ${
                             isSelected
-                              ? 'border-blue-700 bg-gray-50 dark:bg-gray-900 shadow-md'
+                              ? 'border-black bg-gray-50 dark:bg-gray-900 shadow-md'
                               : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-300'
                           }`}
                         >
@@ -393,7 +393,7 @@ const HomePageImproved = () => {
               </Card>
 
               {/* Column 2: Budget & Features */}
-              <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-blue-700 transition-all">
+              <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-black transition-all">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
                     <DollarSign className="h-5 w-5 mr-2 text-green-600" />
@@ -508,7 +508,7 @@ const HomePageImproved = () => {
                         <button
                           key={idx}
                           onClick={() => setBuyBox(prev => ({ ...prev, ...item.preset }))}
-                          className="w-full text-left px-3 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-blue-700 dark:hover:border-blue-700 rounded-lg text-sm transition-all"
+                          className="w-full text-left px-3 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-black rounded-lg text-sm transition-all"
                         >
                           {item.label}
                         </button>
@@ -564,7 +564,7 @@ const HomePageImproved = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {featuredDeals.map(deal => (
                 <Link key={deal.id} to={`/deal/${deal.id}`}>
-                  <Card className="hover:shadow-xl transition-all border-2 border-transparent hover:border-blue-700">
+                  <Card className="hover:shadow-xl transition-all border-2 border-transparent hover:border-black">
                     <img 
                       src={deal.photos[0]} 
                       alt={deal.address}
