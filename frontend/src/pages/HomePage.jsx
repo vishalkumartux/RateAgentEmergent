@@ -615,7 +615,7 @@ const HomePageImproved = () => {
                 </p>
               </div>
               <Link to="/agents">
-                <Button variant="outline" className="border-gray-300 text-black hover:bg-gray-50 dark:hover:bg-gray-800">
+                <Button variant="outline" className="border-black text-black hover:bg-black hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black">
                   View All
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </Button>
