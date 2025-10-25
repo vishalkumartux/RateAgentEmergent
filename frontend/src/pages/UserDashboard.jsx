@@ -290,42 +290,42 @@ const UserDashboardComplete = () => {
               <TabsList className="w-full bg-transparent grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 h-auto p-0">
                 <TabsTrigger 
                   value="overview" 
-                  className="data-[state=active]:bg-success data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-primary/10 transition-all rounded-lg py-3 px-4"
+                  className="data-[state=active]:bg-success data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-success/10 transition-all rounded-lg py-3 px-4"
                 >
                   <BarChart3 className="h-4 w-4 mr-2 flex-shrink-0" />
                   <span className="hidden sm:inline">Overview</span>
                 </TabsTrigger>
                 <TabsTrigger 
                   value="searches" 
-                  className="data-[state=active]:bg-success data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-primary/10 transition-all rounded-lg py-3 px-4"
+                  className="data-[state=active]:bg-success data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-success/10 transition-all rounded-lg py-3 px-4"
                 >
                   <Search className="h-4 w-4 mr-2 flex-shrink-0" />
                   <span className="hidden sm:inline">Searches</span>
                 </TabsTrigger>
                 <TabsTrigger 
                   value="agents" 
-                  className="data-[state=active]:bg-success data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-primary/10 transition-all rounded-lg py-3 px-4"
+                  className="data-[state=active]:bg-success data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-success/10 transition-all rounded-lg py-3 px-4"
                 >
                   <Users className="h-4 w-4 mr-2 flex-shrink-0" />
                   <span className="hidden sm:inline">Agents</span>
                 </TabsTrigger>
                 <TabsTrigger 
                   value="deals" 
-                  className="data-[state=active]:bg-success data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-primary/10 transition-all rounded-lg py-3 px-4"
+                  className="data-[state=active]:bg-success data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-success/10 transition-all rounded-lg py-3 px-4"
                 >
                   <Home className="h-4 w-4 mr-2 flex-shrink-0" />
                   <span className="hidden sm:inline">Deals</span>
                 </TabsTrigger>
                 <TabsTrigger 
                   value="reviews" 
-                  className="data-[state=active]:bg-success data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-primary/10 transition-all rounded-lg py-3 px-4"
+                  className="data-[state=active]:bg-success data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-success/10 transition-all rounded-lg py-3 px-4"
                 >
                   <Star className="h-4 w-4 mr-2 flex-shrink-0" />
                   <span className="hidden sm:inline">Reviews</span>
                 </TabsTrigger>
                 <TabsTrigger 
                   value="settings" 
-                  className="data-[state=active]:bg-success data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-primary/10 transition-all rounded-lg py-3 px-4"
+                  className="data-[state=active]:bg-success data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 hover:bg-success/10 transition-all rounded-lg py-3 px-4"
                 >
                   <Bell className="h-4 w-4 mr-2 flex-shrink-0" />
                   <span className="hidden sm:inline">Alerts</span>
@@ -361,7 +361,7 @@ const UserDashboardComplete = () => {
                           </Button>
                         </Link>
                         <Link to="/submit-review">
-                          <Button className="w-full bg-gray-700 hover:bg-primary/10 text-white h-12">
+                          <Button className="w-full bg-gray-700 hover:bg-success/10 text-white h-12">
                             <Star className="h-4 w-4 mr-2" />
                             Write Review
                           </Button>
@@ -463,7 +463,7 @@ const UserDashboardComplete = () => {
                       Saved Searches
                     </CardTitle>
                     <Link to="/">
-                      <Button size="sm" variant="outline" className="border-gray-300 text-black hover:bg-primary hover:text-white">
+                      <Button size="sm" variant="outline" className="border-gray-300 text-black hover:bg-success hover:text-white">
                         <Plus className="h-4 w-4 mr-1" />
                         New Search
                       </Button>
@@ -487,7 +487,7 @@ const UserDashboardComplete = () => {
                       {savedSearches.map(search => {
                         const delta = search.resultCount - search.previousCount;
                         return (
-                          <div key={search.id} className="p-4 border-2 border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-300 dark:hover:border-primary transition-all">
+                          <div key={search.id} className="p-4 border-2 border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-300 dark:hover:border-success transition-all">
                             <div className="flex items-start justify-between mb-3">
                               <div className="flex-1">
                                 <h4 className="font-semibold text-gray-900 dark:text-white mb-1">{search.name}</h4>
@@ -567,7 +567,7 @@ const UserDashboardComplete = () => {
                         <Button 
                           size="sm"
                           onClick={handleCompareAgents}
-                          className="bg-gray-700 hover:bg-primary/10 text-white"
+                          className="bg-gray-700 hover:bg-success/10 text-white"
                         >
                           <BarChart3 className="h-4 w-4 mr-1" />
                           Compare ({selectedAgentsForCompare.length})

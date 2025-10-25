@@ -240,7 +240,7 @@ const AgentListPage = () => {
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   list="agent-suggestions"
-                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/20 rounded-2xl bg-background text-foreground font-medium transition-all"
+                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-success focus:ring-2 focus:ring-success/20 dark:focus:ring-success/20 rounded-2xl bg-background text-foreground font-medium transition-all"
                 />
                 <datalist id="agent-suggestions">
                   <option value="Sydney" />
@@ -256,7 +256,7 @@ const AgentListPage = () => {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="h-12 px-4 border-2 border-gray-200 dark:border-gray-600 rounded-2xl bg-background text-foreground font-semibold transition-all hover:border-primary"
+                  className="h-12 px-4 border-2 border-gray-200 dark:border-gray-600 rounded-2xl bg-background text-foreground font-semibold transition-all hover:border-success"
                 >
                   <option value="rating">⭐ Highest Rated</option>
                   <option value="deals">✓ Most Deals</option>
@@ -296,7 +296,7 @@ const AgentListPage = () => {
                 <button
                   key={quick}
                   onClick={() => setSearchTerm(quick)}
-                  className="px-3 py-1.5 bg-muted hover:bg-primary hover:text-white rounded-full text-sm transition-all duration-200 hover:shadow-md"
+                  className="px-3 py-1.5 bg-muted hover:bg-success hover:text-white rounded-full text-sm transition-all duration-200 hover:shadow-md"
                 >
                   {quick}
                 </button>
@@ -437,7 +437,7 @@ const AgentListPage = () => {
                             <Badge
                               key={strategy}
                               variant={filters.strategyFocus.includes(strategy) ? 'default' : 'outline'}
-                              className={`cursor-pointer ${filters.strategyFocus.includes(strategy) ? 'bg-success hover:bg-success/90' : 'hover:border-primary'}`}
+                              className={`cursor-pointer ${filters.strategyFocus.includes(strategy) ? 'bg-success hover:bg-success/90' : 'hover:border-success'}`}
                               onClick={() => toggleStrategyFocus(strategy)}
                             >
                               {strategy}
@@ -680,7 +680,7 @@ const AgentCard = ({ agent, isInCompare, isShortlisted, onToggleCompare, onToggl
   const [showTooltip, setShowTooltip] = useState(null);
 
   return (
-    <Card className="group hover:shadow-2xl transition-all duration-300 bg-card border-2 border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-black rounded-2xl overflow-hidden">
+    <Card className="group hover:shadow-2xl transition-all duration-300 bg-card border-2 border-gray-200 dark:border-gray-700 hover:border-success dark:hover:border-black rounded-2xl overflow-hidden">
       <CardContent className="p-6">
         {/* Header with Photo */}
         <div className="flex items-start justify-between mb-4">

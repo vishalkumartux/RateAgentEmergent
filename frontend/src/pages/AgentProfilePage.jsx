@@ -158,11 +158,11 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                           Contact Agent
                         </Button>
                         <div className="flex gap-2">
-                          <Button variant="outline" size="sm" className="flex-1 border-black text-black hover:bg-primary hover:text-white">
+                          <Button variant="outline" size="sm" className="flex-1 border-black text-black hover:bg-success hover:text-white">
                             <Phone className="h-4 w-4 mr-1" />
                             Call
                           </Button>
-                          <Button variant="outline" size="sm" className="flex-1 border-black text-black hover:bg-primary hover:text-white">
+                          <Button variant="outline" size="sm" className="flex-1 border-black text-black hover:bg-success hover:text-white">
                             <Mail className="h-4 w-4 mr-1" />
                             Email
                           </Button>
@@ -463,7 +463,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                       <Link 
                         key={deal.id} 
                         to={`/deal/${deal.id}`}
-                        className="group border border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden hover:border-primary hover:shadow-lg transition-all"
+                        className="group border border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden hover:border-success hover:shadow-lg transition-all"
                       >
                         <img 
                           src={deal.photos[0]} 
@@ -524,7 +524,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                       <Button
                         variant="outline"
                         onClick={() => setDealsToShow(prev => Math.min(prev + 6, agentDeals.length))}
-                        className="border-black text-black hover:bg-primary hover:text-white"
+                        className="border-black text-black hover:bg-success hover:text-white"
                       >
                         Load More Deals ({agentDeals.length - dealsToShow} remaining)
                       </Button>
@@ -620,7 +620,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                       <Button
                         variant="outline"
                         onClick={() => setReviewsToShow(prev => Math.min(prev + 5, agent.reviews.length))}
-                        className="border-black text-black hover:bg-primary hover:text-white"
+                        className="border-black text-black hover:bg-success hover:text-white"
                       >
                         Load More Reviews ({agent.reviews.length - reviewsToShow} remaining)
                       </Button>
@@ -700,7 +700,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                 Get in touch to discuss your property goals and see how {agent.name.split(' ')[0]} can help you secure your ideal property.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button size="lg" className="bg-white text-black hover:bg-primary hover:text-white">
+                <Button size="lg" className="bg-white text-black hover:bg-success hover:text-white">
                   <MessageCircle className="h-5 w-5 mr-2" />
                   Send Message
                 </Button>

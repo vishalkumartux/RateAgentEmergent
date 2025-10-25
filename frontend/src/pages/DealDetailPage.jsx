@@ -373,7 +373,7 @@ const DealDetailPage = () => {
                     <div className="space-y-4">
                       {similarDeals.map(d => (
                         <Link key={d.id} to={`/deal/${d.id}`}>
-                          <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-primary transition-colors">
+                          <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-success transition-colors">
                             <div className="flex items-start justify-between">
                               <div>
                                 <h4 className="font-semibold text-gray-900 dark:text-white">

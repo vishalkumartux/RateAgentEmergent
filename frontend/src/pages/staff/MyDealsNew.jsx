@@ -328,7 +328,7 @@ const MyDealsNew = () => {
                   placeholder="Search by suburb or address..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-primary rounded-2xl bg-background text-foreground font-medium"
+                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-success rounded-2xl bg-background text-foreground font-medium"
                 />
               </div>
               
@@ -377,7 +377,7 @@ const MyDealsNew = () => {
                 <button
                   key={index}
                   onClick={() => handlePopularSearch(search)}
-                  className="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full hover:bg-primary hover:text-white hover:text-black dark:hover:text-gray-700 transition-colors"
+                  className="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full hover:bg-success hover:text-white hover:text-black dark:hover:text-gray-700 transition-colors"
                 >
                   {search.label}
                 </button>

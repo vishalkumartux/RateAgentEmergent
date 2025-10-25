@@ -237,7 +237,7 @@ const DealsPage = () => {
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   list="deals-suggestions"
-                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/20 rounded-2xl bg-background text-foreground font-medium transition-all"
+                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-success focus:ring-2 focus:ring-success/20 dark:focus:ring-success/20 rounded-2xl bg-background text-foreground font-medium transition-all"
                 />
                 <datalist id="deals-suggestions">
                   <option value="Bondi Beach" />
@@ -258,7 +258,7 @@ const DealsPage = () => {
                     className={`h-12 px-4 rounded-xl transition-all ${
                       viewMode === 'list' 
                         ? 'bg-success hover:bg-success/90 text-white shadow-md' 
-                        : 'hover:bg-primary/10'
+                        : 'hover:bg-success/10'
                     }`}
                   >
                     <List className="h-4 w-4 mr-2" />
@@ -270,7 +270,7 @@ const DealsPage = () => {
                     className={`h-12 px-4 rounded-xl transition-all ${
                       viewMode === 'map' 
                         ? 'bg-success hover:bg-success/90 text-white shadow-md' 
-                        : 'hover:bg-primary/10'
+                        : 'hover:bg-success/10'
                     }`}
                   >
                     <Map className="h-4 w-4 mr-2" />
@@ -282,7 +282,7 @@ const DealsPage = () => {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="h-12 px-4 border-2 border-gray-200 dark:border-gray-600 rounded-2xl bg-background text-foreground font-semibold transition-all hover:border-primary"
+                  className="h-12 px-4 border-2 border-gray-200 dark:border-gray-600 rounded-2xl bg-background text-foreground font-semibold transition-all hover:border-success"
                 >
                   <option value="recent">🕐 Most Recent</option>
                   <option value="highestDiscount">💰 Highest Discount</option>
@@ -323,7 +323,7 @@ const DealsPage = () => {
                 <button
                   key={quick}
                   onClick={() => setSearchTerm(quick)}
-                  className="px-3 py-1.5 bg-muted hover:bg-primary hover:text-white rounded-full text-sm transition-all duration-200 hover:shadow-md"
+                  className="px-3 py-1.5 bg-muted hover:bg-success hover:text-white rounded-full text-sm transition-all duration-200 hover:shadow-md"
                 >
                   {quick}
                 </button>
@@ -495,7 +495,7 @@ const DealsPage = () => {
                             <Badge
                               key={tag}
                               variant={filters.strategyTags.includes(tag) ? 'default' : 'outline'}
-                              className={`cursor-pointer ${filters.strategyTags.includes(tag) ? 'bg-success hover:bg-success/90' : 'hover:border-primary'}`}
+                              className={`cursor-pointer ${filters.strategyTags.includes(tag) ? 'bg-success hover:bg-success/90' : 'hover:border-success'}`}
                               onClick={() => toggleStrategyTag(tag)}
                             >
                               {tag}
@@ -695,7 +695,7 @@ const DealCard = ({ deal }) => {
   const achievement = formatAchievement(deal);
   
   return (
-    <Card className="group hover:shadow-2xl transition-all duration-300 bg-card border-2 border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-black overflow-hidden rounded-2xl">
+    <Card className="group hover:shadow-2xl transition-all duration-300 bg-card border-2 border-gray-200 dark:border-gray-700 hover:border-success dark:hover:border-black overflow-hidden rounded-2xl">
       {/* Image */}
       <div className="relative h-48 overflow-hidden">
         <img
@@ -833,7 +833,7 @@ const DealCard = ({ deal }) => {
             </Button>
           </Link>
           <Link to={`/agent/${deal.agentId}`} className="flex-1">
-            <Button variant="outline" size="sm" className="w-full border-black text-black hover:bg-primary hover:text-white">
+            <Button variant="outline" size="sm" className="w-full border-black text-black hover:bg-success hover:text-white">
               View Agent
             </Button>
           </Link>

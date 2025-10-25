@@ -95,7 +95,7 @@ const CompareAgentsPage = () => {
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
                       list="compare-agents"
-                      className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/20 rounded-2xl bg-background text-foreground font-medium transition-all"
+                      className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-success focus:ring-2 focus:ring-success/20 dark:focus:ring-success/20 rounded-2xl bg-background text-foreground font-medium transition-all"
                     />
                     <datalist id="compare-agents">
                       <option value="Sydney agents" />
@@ -105,7 +105,7 @@ const CompareAgentsPage = () => {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-64 overflow-y-auto">
                     {availableAgents.map((agent) => (
-                      <div key={agent.id} className="border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg p-4 hover:border-primary cursor-pointer transition-colors" onClick={() => addAgent(agent)}>
+                      <div key={agent.id} className="border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg p-4 hover:border-success cursor-pointer transition-colors" onClick={() => addAgent(agent)}>
                         <div className="flex items-center space-x-3">
                           <img src={agent.photo} alt={agent.name} className="w-12 h-12 rounded-full object-cover" />
                           <div>
@@ -220,7 +220,7 @@ const CompareAgentsPage = () => {
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                             autoFocus
-                            className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/20 rounded-2xl bg-background text-foreground font-medium transition-all"
+                            className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-success focus:ring-2 focus:ring-success/20 dark:focus:ring-success/20 rounded-2xl bg-background text-foreground font-medium transition-all"
                           />
                         </div>
 
@@ -230,7 +230,7 @@ const CompareAgentsPage = () => {
                             availableAgents.map((agent) => (
                               <div 
                                 key={agent.id} 
-                                className="border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg p-4 hover:border-primary dark:hover:border-black hover:shadow-md cursor-pointer transition-all" 
+                                className="border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg p-4 hover:border-success dark:hover:border-black hover:shadow-md cursor-pointer transition-all" 
                                 onClick={() => addAgent(agent)}
                               >
                                 <div className="flex items-center space-x-3">
@@ -320,7 +320,7 @@ const CompareAgentsPage = () => {
                       </div>
 
                       <Link to={`/agent/${agent.id}`} className="mt-4 block">
-                        <Button size="sm" variant="outline" className="w-full border-black text-black hover:bg-primary hover:text-white">
+                        <Button size="sm" variant="outline" className="w-full border-black text-black hover:bg-success hover:text-white">
                           View Full Profile
                         </Button>
                       </Link>
@@ -579,7 +579,7 @@ const CompareAgentsPage = () => {
                       <h4 className="font-semibold text-gray-900 dark:text-white mb-3">{agent.name}</h4>
                       <div className="space-y-3">
                         {agent.recentSales && agent.recentSales.slice(0, 3).map((sale, index) => (
-                          <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-3 hover:border-primary border-2 border-transparent transition-colors">
+                          <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-3 hover:border-success border-2 border-transparent transition-colors">
                             <div className="flex items-start justify-between mb-2">
                               <Building2 className="h-4 w-4 text-black mt-1 flex-shrink-0" />
                               <span className="text-lg font-bold text-black ml-2">{sale.price}</span>
@@ -599,7 +599,7 @@ const CompareAgentsPage = () => {
                         ))}
                       </div>
                       <Link to={`/agent/${agent.id}`} className="mt-3 block">
-                        <Button size="sm" variant="ghost" className="w-full text-black hover:bg-primary hover:text-white">
+                        <Button size="sm" variant="ghost" className="w-full text-black hover:bg-success hover:text-white">
                           View All Deals →
                         </Button>
                       </Link>

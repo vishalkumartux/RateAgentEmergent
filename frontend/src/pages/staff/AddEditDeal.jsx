@@ -579,7 +579,7 @@ const AddEditDeal = () => {
                           key={tag}
                           type="button"
                           onClick={() => addStrategyTag(tag)}
-                          className="px-3 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-full hover:border-primary hover:text-black transition-colors"
+                          className="px-3 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-full hover:border-success hover:text-black transition-colors"
                         >
                           + {tag}
                         </button>
@@ -784,7 +784,7 @@ const AddEditDeal = () => {
                         onChange={handlePhotoUpload}
                         className="hidden"
                       />
-                      <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-8 text-center cursor-pointer hover:border-primary transition-colors">
+                      <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-8 text-center cursor-pointer hover:border-success transition-colors">
                         <ImageIcon className="h-12 w-12 text-gray-400 mx-auto mb-3" />
                         <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
                           Click to upload photos

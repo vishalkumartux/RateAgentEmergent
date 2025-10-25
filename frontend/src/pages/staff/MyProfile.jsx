@@ -127,7 +127,7 @@ const MyProfile = () => {
                   </div>
                 </div>
                 <Link to="/staff/my-profile">
-                  <Button variant="secondary" size="sm" className="bg-white text-black hover:bg-primary hover:text-white">
+                  <Button variant="secondary" size="sm" className="bg-white text-black hover:bg-success hover:text-white">
                     <X className="h-4 w-4 mr-2" />
                     Exit Preview
                   </Button>

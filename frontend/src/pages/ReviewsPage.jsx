@@ -233,13 +233,13 @@ const ReviewsPageImproved = () => {
                       placeholder="Search reviews, agents, or suburbs..."
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="pl-12 h-12 border-2 border-gray-200 dark:border-gray-600 focus:border-primary rounded-xl bg-background text-foreground"
+                      className="pl-12 h-12 border-2 border-gray-200 dark:border-gray-600 focus:border-success rounded-xl bg-background text-foreground"
                     />
                   </div>
                   <Button
                     variant="outline"
                     onClick={() => setShowFiltersModal(true)}
-                    className="h-12 border-2 border-black text-black hover:bg-primary hover:text-white rounded-xl font-semibold min-w-[140px]"
+                    className="h-12 border-2 border-black text-black hover:bg-success hover:text-white rounded-xl font-semibold min-w-[140px]"
                   >
                     <Filter className="h-4 w-4 mr-2" />
                     Filters
@@ -276,7 +276,7 @@ const ReviewsPageImproved = () => {
                         else if (quick === 'Investment') handleFilterChange('transactionType', 'Investment Property');
                         else if (quick === 'First Home') handleFilterChange('serviceType', 'First Home Buyer Support');
                       }}
-                      className="px-3 py-1 bg-muted hover:bg-primary hover:text-white rounded-full text-xs transition-all"
+                      className="px-3 py-1 bg-muted hover:bg-success hover:text-white rounded-full text-xs transition-all"
                     >
                       {quick}
                     </button>

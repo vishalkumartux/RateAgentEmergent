@@ -179,7 +179,7 @@ const OrgSettings = () => {
                         className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
                           activeSection === section.id
                             ? 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-700'
-                            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 hover:text-primary hover:bg-primary/10'
+                            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 hover:text-indigo-600 hover:bg-success/10'
                         }`}
                       >
                         <Icon className="h-5 w-5" />

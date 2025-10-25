@@ -152,7 +152,7 @@ const UserProfile = () => {
                           className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
                             activeSection === section.id
                               ? 'bg-gray-100 dark:bg-gray-900 text-black dark:text-gray-700 font-semibold'
-                              : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 hover:text-primary hover:bg-primary/10'
+                              : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 hover:text-indigo-600 hover:bg-success/10'
                           }`}
                         >
                           <Icon className="h-5 w-5" />
@@ -448,7 +448,7 @@ const UserProfile = () => {
                     </div>
 
                     <div className="pt-4">
-                      <Button onClick={handleSaveProfile} className="bg-gray-700 hover:bg-primary/10 text-white">
+                      <Button onClick={handleSaveProfile} className="bg-gray-700 hover:bg-success/10 text-white">
                         <Save className="h-4 w-4 mr-2" />
                         Save Settings
                       </Button>
@@ -577,7 +577,7 @@ const UserProfile = () => {
                     </div>
 
                     <div className="pt-4">
-                      <Button onClick={handleSaveProfile} className="bg-black hover:bg-primary/10 text-white">
+                      <Button onClick={handleSaveProfile} className="bg-black hover:bg-success/10 text-white">
                         <Save className="h-4 w-4 mr-2" />
                         Save Privacy Settings
                       </Button>

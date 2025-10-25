@@ -181,7 +181,7 @@ const AboutPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/agents">
-                <Button size="lg" className="bg-white text-black hover:bg-primary hover:text-white px-8">
+                <Button size="lg" className="bg-white text-black hover:bg-success hover:text-white px-8">
                   Browse Agents
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>

@@ -224,7 +224,7 @@ const HomePageImproved = () => {
                   <button
                     key={idx}
                     onClick={() => setSearchQuery(link.query)}
-                    className="px-3 py-1.5 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 hover:border-primary hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black text-sm text-black dark:text-white rounded-full transition-all"
+                    className="px-3 py-1.5 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 hover:border-success hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black text-sm text-black dark:text-white rounded-full transition-all"
                   >
                     {link.text}
                   </button>
@@ -235,7 +235,7 @@ const HomePageImproved = () => {
             {/* Primary CTA Tiles */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
               <Link to="/deals">
-                <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-gray-200 dark:border-gray-800 hover:border-primary bg-white dark:bg-gray-900">
+                <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-gray-200 dark:border-gray-800 hover:border-success bg-white dark:bg-gray-900">
                   <CardContent className="p-6 text-center">
                     <div className="w-14 h-14 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Home className="h-7 w-7 text-black dark:text-white" />
@@ -249,7 +249,7 @@ const HomePageImproved = () => {
               </Link>
 
               <Link to="/agents">
-                <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-gray-200 dark:border-gray-800 hover:border-primary bg-white dark:bg-gray-900">
+                <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-gray-200 dark:border-gray-800 hover:border-success bg-white dark:bg-gray-900">
                   <CardContent className="p-6 text-center">
                     <div className="w-14 h-14 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Users className="h-7 w-7 text-black dark:text-white" />
@@ -263,7 +263,7 @@ const HomePageImproved = () => {
               </Link>
 
               <Link to="/compare">
-                <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-gray-200 dark:border-gray-800 hover:border-primary bg-white dark:bg-gray-900">
+                <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-gray-200 dark:border-gray-800 hover:border-success bg-white dark:bg-gray-900">
                   <CardContent className="p-6 text-center">
                     <div className="w-14 h-14 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Target className="h-7 w-7 text-black dark:text-white" />
@@ -339,7 +339,7 @@ const HomePageImproved = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {/* Column 1: Property Type & Location */}
-              <Card className="bg-card border-2 border-gray-200 dark:border-gray-700 hover:border-primary transition-all">
+              <Card className="bg-card border-2 border-gray-200 dark:border-gray-700 hover:border-success transition-all">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
                     <Building2 className="h-5 w-5 mr-2 text-black" />
@@ -356,7 +356,7 @@ const HomePageImproved = () => {
                           className={`p-4 rounded-xl border-2 transition-all text-center ${
                             isSelected
                               ? 'border-black bg-gray-50 dark:bg-gray-900 shadow-md'
-                              : 'border-gray-200 dark:border-gray-700 hover:border-primary'
+                              : 'border-gray-200 dark:border-gray-700 hover:border-success'
                           }`}
                         >
                           <div className="text-2xl mb-1">{icons[type]}</div>
@@ -394,7 +394,7 @@ const HomePageImproved = () => {
               </Card>
 
               {/* Column 2: Budget & Features */}
-              <Card className="bg-card border-2 border-gray-200 dark:border-gray-700 hover:border-primary transition-all">
+              <Card className="bg-card border-2 border-gray-200 dark:border-gray-700 hover:border-success transition-all">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
                     <DollarSign className="h-5 w-5 mr-2 text-success" />
@@ -472,7 +472,7 @@ const HomePageImproved = () => {
               </Card>
 
               {/* Column 3: Strategy & CTA */}
-              <Card className="bg-card border-2 border-gray-200 dark:border-gray-700 hover:border-primary transition-all">
+              <Card className="bg-card border-2 border-gray-200 dark:border-gray-700 hover:border-success transition-all">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
                     <Target className="h-5 w-5 mr-2 text-gray-700" />

@@ -258,7 +258,7 @@ const MyDeals = () => {
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   list="deal-search"
-                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/20 rounded-2xl bg-background text-foreground font-medium transition-all"
+                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-success focus:ring-2 focus:ring-success/20 dark:focus:ring-success/20 rounded-2xl bg-background text-foreground font-medium transition-all"
                 />
                 <datalist id="deal-search">
                   <option value="Bondi Beach" />
