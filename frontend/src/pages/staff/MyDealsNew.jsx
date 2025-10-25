@@ -217,7 +217,7 @@ const MyDealsNew = () => {
       label: 'Published Deals',
       value: publishedCount,
       icon: BarChart3,
-      color: 'text-blue-600'
+      color: 'text-black'
     },
     {
       label: 'Verified Deals',
@@ -235,7 +235,7 @@ const MyDealsNew = () => {
       label: 'Avg Days-to-Secure',
       value: avgDaysToSecure,
       icon: Clock,
-      color: 'text-purple-600'
+      color: 'text-gray-700'
     }
   ];
 
@@ -377,7 +377,7 @@ const MyDealsNew = () => {
                 <button
                   key={index}
                   onClick={() => handlePopularSearch(search)}
-                  className="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full hover:bg-amber-100 dark:hover:bg-amber-900/30 hover:text-black dark:hover:text-amber-400 transition-colors"
+                  className="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-black dark:hover:text-amber-400 transition-colors"
                 >
                   {search.label}
                 </button>
@@ -424,7 +424,7 @@ const MyDealsNew = () => {
                       </div>
                       <div className="absolute top-3 left-3">
                         {deal.verified ? (
-                          <Badge className="bg-blue-600 text-white">
+                          <Badge className="bg-green-700 text-white">
                             <CheckCircle className="h-3 w-3 mr-1" />
                             Verified
                           </Badge>

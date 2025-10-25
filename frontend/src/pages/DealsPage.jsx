@@ -323,7 +323,7 @@ const DealsPage = () => {
                 <button
                   key={quick}
                   onClick={() => setSearchTerm(quick)}
-                  className="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 hover:bg-amber-100 dark:hover:bg-amber-900 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-amber-400 rounded-full text-sm transition-all duration-200 hover:shadow-md"
+                  className="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-amber-900 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-amber-400 rounded-full text-sm transition-all duration-200 hover:shadow-md"
                 >
                   {quick}
                 </button>
@@ -774,7 +774,7 @@ const DealCard = ({ deal }) => {
             </Badge>
           )}
           {deal.grossYield && (
-            <Badge variant="secondary" className="text-xs bg-gray-50 dark:bg-blue-900 text-black dark:text-blue-300">
+            <Badge variant="secondary" className="text-xs bg-gray-50 dark:bg-blue-900 text-black dark:text-gray-300">
               {deal.grossYield}% yield
             </Badge>
           )}
@@ -784,7 +784,7 @@ const DealCard = ({ deal }) => {
         {deal.strategyTags && deal.strategyTags.length > 0 && (
           <div className="flex flex-wrap gap-1 mb-4">
             {deal.strategyTags.map((tag, index) => (
-              <Badge key={index} variant="outline" className="text-xs border-blue-300 dark:border-black text-black dark:text-amber-300">
+              <Badge key={index} variant="outline" className="text-xs border-gray-300 dark:border-black text-black dark:text-amber-300">
                 {tag}
               </Badge>
             ))}

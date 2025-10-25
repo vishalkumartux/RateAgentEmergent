@@ -25,7 +25,7 @@ const HowItWorksPage = () => {
       title: "Search & Browse",
       description: "Enter your location and property type to find verified agents in your area. Browse detailed profiles with performance metrics and client reviews.",
       icon: Search,
-      color: "bg-gray-50 text-blue-600",
+      color: "bg-gray-50 text-black",
       features: ["Location-based search", "Property type filtering", "Advanced search options"]
     },
     {
@@ -49,7 +49,7 @@ const HowItWorksPage = () => {
       title: "Make Contact",
       description: "Connect with your chosen agent directly through our platform. Schedule consultations and start your property journey with confidence.",
       icon: UserCheck,
-      color: "bg-purple-50 text-purple-600",
+      color: "bg-gray-50 text-gray-700",
       features: ["Direct contact", "Consultation booking", "Secure messaging"]
     }
   ];

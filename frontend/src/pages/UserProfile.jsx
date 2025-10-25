@@ -151,7 +151,7 @@ const UserProfile = () => {
                           onClick={() => setActiveSection(section.id)}
                           className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
                             activeSection === section.id
-                              ? 'bg-amber-100 dark:bg-gray-900 text-black dark:text-amber-400 font-semibold'
+                              ? 'bg-gray-100 dark:bg-gray-900 text-black dark:text-amber-400 font-semibold'
                               : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-700'
                           }`}
                         >
@@ -298,7 +298,7 @@ const UserProfile = () => {
                 <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
                   <CardHeader className="border-b border-gray-200 dark:border-gray-700">
                     <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                      <Globe className="h-5 w-5 mr-2 text-blue-600" />
+                      <Globe className="h-5 w-5 mr-2 text-black" />
                       Search Preferences
                     </CardTitle>
                   </CardHeader>
@@ -370,7 +370,7 @@ const UserProfile = () => {
                     </div>
 
                     <div className="pt-4">
-                      <Button onClick={handleSaveProfile} className="bg-blue-600 hover:bg-blue-700 hover:text-white text-white">
+                      <Button onClick={handleSaveProfile} className="bg-green-700 hover:bg-green-700 hover:text-white text-white">
                         <Save className="h-4 w-4 mr-2" />
                         Save Preferences
                       </Button>
@@ -384,7 +384,7 @@ const UserProfile = () => {
                 <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
                   <CardHeader className="border-b border-gray-200 dark:border-gray-700">
                     <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                      <Bell className="h-5 w-5 mr-2 text-purple-600" />
+                      <Bell className="h-5 w-5 mr-2 text-gray-700" />
                       Notification Settings
                     </CardTitle>
                   </CardHeader>
@@ -448,7 +448,7 @@ const UserProfile = () => {
                     </div>
 
                     <div className="pt-4">
-                      <Button onClick={handleSaveProfile} className="bg-purple-600 hover:bg-purple-700 text-white">
+                      <Button onClick={handleSaveProfile} className="bg-gray-700 hover:bg-purple-700 text-white">
                         <Save className="h-4 w-4 mr-2" />
                         Save Settings
                       </Button>
@@ -534,7 +534,7 @@ const UserProfile = () => {
                 <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
                   <CardHeader className="border-b border-gray-200 dark:border-gray-700">
                     <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                      <Eye className="h-5 w-5 mr-2 text-indigo-600" />
+                      <Eye className="h-5 w-5 mr-2 text-black" />
                       Privacy Settings
                     </CardTitle>
                   </CardHeader>
@@ -577,7 +577,7 @@ const UserProfile = () => {
                     </div>
 
                     <div className="pt-4">
-                      <Button onClick={handleSaveProfile} className="bg-indigo-600 hover:bg-indigo-700 text-white">
+                      <Button onClick={handleSaveProfile} className="bg-black hover:bg-indigo-700 text-white">
                         <Save className="h-4 w-4 mr-2" />
                         Save Privacy Settings
                       </Button>

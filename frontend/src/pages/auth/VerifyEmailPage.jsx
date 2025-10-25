@@ -94,7 +94,7 @@ const VerifyEmailPage = () => {
             Back to Registration
           </Link>
           
-          <div className="w-16 h-16 bg-amber-100 dark:bg-amber-900 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="w-16 h-16 bg-gray-100 dark:bg-amber-900 rounded-full flex items-center justify-center mx-auto mb-4">
             <Mail className="h-8 w-8 text-black" />
           </div>
           
@@ -175,15 +175,15 @@ const VerifyEmailPage = () => {
         </Card>
 
         {/* Help */}
-        <Card className="mt-6 bg-gray-50 dark:bg-gray-900 border-blue-200 dark:border-black">
+        <Card className="mt-6 bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-black">
           <CardContent className="p-4">
             <div className="flex items-start space-x-3">
-              <AlertCircle className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <AlertCircle className="h-5 w-5 text-black flex-shrink-0 mt-0.5" />
               <div className="text-sm">
-                <p className="text-black dark:text-blue-100 font-medium mb-1">
+                <p className="text-black dark:text-gray-100 font-medium mb-1">
                   Having trouble?
                 </p>
-                <p className="text-black dark:text-blue-300">
+                <p className="text-black dark:text-gray-300">
                   Check your spam folder or contact support if you don't receive the verification code within 5 minutes.
                 </p>
               </div>

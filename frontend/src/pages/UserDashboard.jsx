@@ -227,10 +227,10 @@ const UserDashboardComplete = () => {
   };
 
   const stats = [
-    { label: 'Saved Searches', value: savedSearches.length, icon: Search, color: 'text-blue-600', bgColor: 'bg-blue-100 dark:bg-gray-900' },
-    { label: 'Shortlisted Agents', value: shortlistedAgents.length, icon: Users, color: 'text-black', bgColor: 'bg-amber-100 dark:bg-gray-900' },
+    { label: 'Saved Searches', value: savedSearches.length, icon: Search, color: 'text-black', bgColor: 'bg-gray-100 dark:bg-gray-900' },
+    { label: 'Shortlisted Agents', value: shortlistedAgents.length, icon: Users, color: 'text-black', bgColor: 'bg-gray-100 dark:bg-gray-900' },
     { label: 'Shortlisted Deals', value: shortlistedDeals.length, icon: Home, color: 'text-green-600', bgColor: 'bg-green-100 dark:bg-green-950' },
-    { label: 'Reviews Posted', value: myReviews.length, icon: Star, color: 'text-purple-600', bgColor: 'bg-purple-100 dark:bg-purple-950' }
+    { label: 'Reviews Posted', value: myReviews.length, icon: Star, color: 'text-gray-700', bgColor: 'bg-gray-100 dark:bg-purple-950' }
   ];
 
   return (
@@ -343,7 +343,7 @@ const UserDashboardComplete = () => {
                       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Quick Actions</h3>
                       <div className="grid grid-cols-2 gap-3">
                         <Link to="/">
-                          <Button className="w-full bg-blue-600 hover:bg-blue-700 hover:text-white text-white h-12">
+                          <Button className="w-full bg-green-700 hover:bg-green-700 hover:text-white text-white h-12">
                             <Search className="h-4 w-4 mr-2" />
                             New Search
                           </Button>
@@ -361,7 +361,7 @@ const UserDashboardComplete = () => {
                           </Button>
                         </Link>
                         <Link to="/submit-review">
-                          <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white h-12">
+                          <Button className="w-full bg-gray-700 hover:bg-purple-700 text-white h-12">
                             <Star className="h-4 w-4 mr-2" />
                             Write Review
                           </Button>
@@ -374,7 +374,7 @@ const UserDashboardComplete = () => {
                   <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
                     <CardHeader className="border-b border-gray-200 dark:border-gray-700">
                       <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                        <Clock className="h-5 w-5 mr-2 text-purple-600" />
+                        <Clock className="h-5 w-5 mr-2 text-gray-700" />
                         Recent Activity
                       </CardTitle>
                     </CardHeader>
@@ -384,8 +384,8 @@ const UserDashboardComplete = () => {
                           const Icon = getActivityIcon(activity.type);
                           return (
                             <div key={activity.id} className="flex items-start gap-3 pb-4 border-b border-gray-100 dark:border-gray-700 last:border-0 last:pb-0">
-                              <div className="w-8 h-8 bg-purple-100 dark:bg-purple-950 rounded-full flex items-center justify-center flex-shrink-0">
-                                <Icon className="h-4 w-4 text-purple-600" />
+                              <div className="w-8 h-8 bg-gray-100 dark:bg-purple-950 rounded-full flex items-center justify-center flex-shrink-0">
+                                <Icon className="h-4 w-4 text-gray-700" />
                               </div>
                               <div className="flex-1">
                                 <p className="text-sm text-gray-900 dark:text-white">{activity.description}</p>
@@ -410,10 +410,10 @@ const UserDashboardComplete = () => {
                     <CardContent className="space-y-4">
                       <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
                         <div className="flex items-center gap-3">
-                          <Search className="h-5 w-5 text-blue-600" />
+                          <Search className="h-5 w-5 text-black" />
                           <span className="text-sm font-medium text-gray-900 dark:text-white">Saved Searches</span>
                         </div>
-                        <Badge className="bg-blue-600 text-white">{savedSearches.length}</Badge>
+                        <Badge className="bg-green-700 text-white">{savedSearches.length}</Badge>
                       </div>
                       <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
                         <div className="flex items-center gap-3">
@@ -429,19 +429,19 @@ const UserDashboardComplete = () => {
                         </div>
                         <Badge className="bg-green-600 text-white">{shortlistedDeals.length}</Badge>
                       </div>
-                      <div className="flex items-center justify-between p-3 bg-purple-50 dark:bg-purple-950 rounded-lg">
+                      <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-purple-950 rounded-lg">
                         <div className="flex items-center gap-3">
-                          <Star className="h-5 w-5 text-purple-600" />
+                          <Star className="h-5 w-5 text-gray-700" />
                           <span className="text-sm font-medium text-gray-900 dark:text-white">Reviews Posted</span>
                         </div>
-                        <Badge className="bg-purple-600 text-white">{myReviews.length}</Badge>
+                        <Badge className="bg-gray-700 text-white">{myReviews.length}</Badge>
                       </div>
                     </CardContent>
                   </Card>
 
-                  <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950 border-2 border-blue-200 dark:border-black">
+                  <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950 border-2 border-gray-200 dark:border-black">
                     <CardContent className="p-6 text-center">
-                      <TrendingUp className="h-10 w-10 text-blue-600 mx-auto mb-3" />
+                      <TrendingUp className="h-10 w-10 text-black mx-auto mb-3" />
                       <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Pro Tip</h3>
                       <p className="text-sm text-gray-700 dark:text-gray-300">
                         Set up alerts on your saved searches to get notified when new matching deals are added!
@@ -459,11 +459,11 @@ const UserDashboardComplete = () => {
                 <CardHeader className="border-b border-gray-200 dark:border-gray-700">
                   <div className="flex items-center justify-between">
                     <CardTitle className="flex items-center text-gray-900 dark:text-white">
-                      <Search className="h-5 w-5 mr-2 text-blue-600" />
+                      <Search className="h-5 w-5 mr-2 text-black" />
                       Saved Searches
                     </CardTitle>
                     <Link to="/">
-                      <Button size="sm" variant="outline" className="border-gray-300 text-blue-600 hover:bg-gray-50 dark:hover:bg-gray-800">
+                      <Button size="sm" variant="outline" className="border-gray-300 text-black hover:bg-gray-50 dark:hover:bg-gray-800">
                         <Plus className="h-4 w-4 mr-1" />
                         New Search
                       </Button>
@@ -477,7 +477,7 @@ const UserDashboardComplete = () => {
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">No saved searches yet</h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">Create a search on the homepage to get started</p>
                       <Link to="/">
-                        <Button className="bg-blue-600 hover:bg-blue-700 hover:text-white text-white">
+                        <Button className="bg-green-700 hover:bg-green-700 hover:text-white text-white">
                           Create Search
                         </Button>
                       </Link>
@@ -487,7 +487,7 @@ const UserDashboardComplete = () => {
                       {savedSearches.map(search => {
                         const delta = search.resultCount - search.previousCount;
                         return (
-                          <div key={search.id} className="p-4 border-2 border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-300 dark:hover:border-blue-700 transition-all">
+                          <div key={search.id} className="p-4 border-2 border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-300 dark:hover:border-blue-700 transition-all">
                             <div className="flex items-start justify-between mb-3">
                               <div className="flex-1">
                                 <h4 className="font-semibold text-gray-900 dark:text-white mb-1">{search.name}</h4>
@@ -511,7 +511,7 @@ const UserDashboardComplete = () => {
                               <Button
                                 size="sm"
                                 onClick={() => handleRunSearch(search)}
-                                className="bg-blue-600 hover:bg-blue-700 hover:text-white text-white"
+                                className="bg-green-700 hover:bg-green-700 hover:text-white text-white"
                               >
                                 <Play className="h-3 w-3 mr-1" />
                                 Run
@@ -567,7 +567,7 @@ const UserDashboardComplete = () => {
                         <Button 
                           size="sm"
                           onClick={handleCompareAgents}
-                          className="bg-purple-600 hover:bg-purple-700 text-white"
+                          className="bg-gray-700 hover:bg-purple-700 text-white"
                         >
                           <BarChart3 className="h-4 w-4 mr-1" />
                           Compare ({selectedAgentsForCompare.length})
@@ -766,7 +766,7 @@ const UserDashboardComplete = () => {
                                 size="sm"
                                 variant={dealContacted[deal.id] ? "default" : "outline"}
                                 onClick={() => handleToggleDealContacted(deal.id)}
-                                className={dealContacted[deal.id] ? "bg-blue-600 hover:bg-blue-700 hover:text-white text-white" : ""}
+                                className={dealContacted[deal.id] ? "bg-green-700 hover:bg-green-700 hover:text-white text-white" : ""}
                               >
                                 <CheckCircle className="h-3 w-3 mr-1" />
                                 {dealContacted[deal.id] ? 'Contacted' : 'Mark Contacted'}

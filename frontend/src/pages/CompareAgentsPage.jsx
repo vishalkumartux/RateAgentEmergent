@@ -105,7 +105,7 @@ const CompareAgentsPage = () => {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-64 overflow-y-auto">
                     {availableAgents.map((agent) => (
-                      <div key={agent.id} className="border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg p-4 hover:border-blue-300 dark:hover:border-black cursor-pointer transition-colors" onClick={() => addAgent(agent)}>
+                      <div key={agent.id} className="border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg p-4 hover:border-gray-300 dark:hover:border-black cursor-pointer transition-colors" onClick={() => addAgent(agent)}>
                         <div className="flex items-center space-x-3">
                           <img src={agent.photo} alt={agent.name} className="w-12 h-12 rounded-full object-cover" />
                           <div>
@@ -535,7 +535,7 @@ const CompareAgentsPage = () => {
                         <h5 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-2">Industry Memberships</h5>
                         <div className="flex flex-wrap gap-1">
                           {agent.industryMemberships && agent.industryMemberships.map((membership, index) => (
-                            <Badge key={index} variant="outline" className="text-xs border-blue-300 dark:border-gray-300 text-black dark:text-blue-300 bg-gray-50 dark:bg-blue-900">
+                            <Badge key={index} variant="outline" className="text-xs border-gray-300 dark:border-gray-300 text-black dark:text-gray-300 bg-gray-50 dark:bg-blue-900">
                               {membership}
                             </Badge>
                           ))}
@@ -579,7 +579,7 @@ const CompareAgentsPage = () => {
                       <h4 className="font-semibold text-gray-900 dark:text-white mb-3">{agent.name}</h4>
                       <div className="space-y-3">
                         {agent.recentSales && agent.recentSales.slice(0, 3).map((sale, index) => (
-                          <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-3 hover:border-blue-300 dark:hover:border-black border-2 border-transparent transition-colors">
+                          <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-3 hover:border-gray-300 dark:hover:border-black border-2 border-transparent transition-colors">
                             <div className="flex items-start justify-between mb-2">
                               <Building2 className="h-4 w-4 text-black mt-1 flex-shrink-0" />
                               <span className="text-lg font-bold text-black ml-2">{sale.price}</span>

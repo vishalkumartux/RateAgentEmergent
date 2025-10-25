@@ -45,8 +45,8 @@ const AdminProfile = () => {
   // Mock admin stats
   const adminStats = [
     { label: 'Organization Revenue', value: '$2.4M', icon: BarChart3, color: 'text-emerald-600' },
-    { label: 'Team Members', value: '12', icon: Users, color: 'text-blue-600' },
-    { label: 'Active Listings', value: '48', icon: Building2, color: 'text-purple-600' },
+    { label: 'Team Members', value: '12', icon: Users, color: 'text-black' },
+    { label: 'Active Listings', value: '48', icon: Building2, color: 'text-gray-700' },
     { label: 'Years Leading', value: '8', icon: Award, color: 'text-black' }
   ];
   
@@ -353,7 +353,7 @@ const AdminProfile = () => {
                 
                 <div className="bg-gray-50 dark:bg-gray-900 border border-amber-200 dark:border-amber-800 rounded-lg p-4">
                   <h4 className="font-semibold text-amber-900 dark:text-amber-100 mb-2">Administrative Privileges</h4>
-                  <ul className="text-amber-800 dark:text-amber-200 text-sm space-y-1">
+                  <ul className="text-black dark:text-amber-200 text-sm space-y-1">
                     <li>• Full organization management access</li>
                     <li>• Staff member invitation and management</li>
                     <li>• Organization settings and profile editing</li>

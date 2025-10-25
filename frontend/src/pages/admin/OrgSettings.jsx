@@ -178,7 +178,7 @@ const OrgSettings = () => {
                         onClick={() => setActiveSection(section.id)}
                         className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
                           activeSection === section.id
-                            ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-900 dark:text-amber-200'
+                            ? 'bg-gray-100 dark:bg-gray-800 text-amber-900 dark:text-amber-200'
                             : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-800'
                         }`}
                       >
@@ -534,12 +534,12 @@ const OrgSettings = () => {
                   </div>
 
                   {/* Compliance Notice */}
-                  <div className="p-4 bg-gray-50 dark:bg-blue-900/20 border border-blue-200 dark:border-black rounded-lg">
+                  <div className="p-4 bg-gray-50 dark:bg-blue-900/20 border border-gray-200 dark:border-black rounded-lg">
                     <div className="flex">
-                      <Lock className="h-5 w-5 text-blue-600 dark:text-white mr-3 mt-0.5" />
+                      <Lock className="h-5 w-5 text-black dark:text-white mr-3 mt-0.5" />
                       <div>
-                        <h4 className="font-medium text-black dark:text-blue-200 mb-1">Data Security</h4>
-                        <p className="text-sm text-black dark:text-blue-300">
+                        <h4 className="font-medium text-black dark:text-gray-200 mb-1">Data Security</h4>
+                        <p className="text-sm text-black dark:text-gray-300">
                           All user data is encrypted at rest and in transit. We comply with Australian Privacy Principles (APPs) and GDPR requirements.
                         </p>
                       </div>
@@ -631,7 +631,7 @@ const OrgSettings = () => {
                       <Users className="h-5 w-5 text-black dark:text-amber-400 mr-3 mt-0.5" />
                       <div>
                         <h4 className="font-medium text-amber-900 dark:text-amber-200 mb-1">Team Performance</h4>
-                        <p className="text-sm text-amber-800 dark:text-amber-300">
+                        <p className="text-sm text-black dark:text-amber-300">
                           Fast response times improve conversion rates. We recommend targeting 24 hours or less for initial contact.
                         </p>
                       </div>
@@ -707,8 +707,8 @@ const OrgSettings = () => {
                   </div>
 
                   {/* Support Notice */}
-                  <div className="p-4 bg-gray-50 dark:bg-blue-900/20 border border-blue-200 dark:border-black rounded-lg">
-                    <p className="text-sm text-black dark:text-blue-300">
+                  <div className="p-4 bg-gray-50 dark:bg-blue-900/20 border border-gray-200 dark:border-black rounded-lg">
+                    <p className="text-sm text-black dark:text-gray-300">
                       Need help with billing? <a href="/contact" className="font-semibold underline">Contact our support team</a>
                     </p>
                   </div>

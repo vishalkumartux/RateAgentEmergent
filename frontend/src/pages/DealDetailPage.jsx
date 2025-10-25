@@ -324,7 +324,7 @@ const DealDetailPage = () => {
                       <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Features</h4>
                       <div className="flex flex-wrap gap-2">
                         {deal.features.map((feature, idx) => (
-                          <Badge key={idx} variant="outline" className="border-blue-300 dark:border-black">
+                          <Badge key={idx} variant="outline" className="border-gray-300 dark:border-black">
                             {feature}
                           </Badge>
                         ))}
@@ -505,11 +505,11 @@ const DealDetailPage = () => {
                   </Card>
 
                   {/* Privacy Notice */}
-                  <Card className="mt-4 bg-gray-50 dark:bg-blue-900 border-2 border-blue-200 dark:border-blue-700">
+                  <Card className="mt-4 bg-gray-50 dark:bg-blue-900 border-2 border-gray-200 dark:border-blue-700">
                     <CardContent className="p-4">
                       <div className="flex items-start">
-                        <Info className="h-5 w-5 text-blue-600 dark:text-white mr-2 flex-shrink-0 mt-0.5" />
-                        <div className="text-sm text-black dark:text-blue-200">
+                        <Info className="h-5 w-5 text-black dark:text-white mr-2 flex-shrink-0 mt-0.5" />
+                        <div className="text-sm text-black dark:text-gray-200">
                           <strong>Privacy Protected:</strong> Street numbers are masked and no personally identifying buyer details are displayed.
                         </div>
                       </div>

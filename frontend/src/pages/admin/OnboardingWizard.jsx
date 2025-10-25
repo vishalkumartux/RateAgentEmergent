@@ -480,7 +480,7 @@ const OnboardingWizard = () => {
                       {orgData.coverageAreas.map((area, index) => (
                         <Badge
                           key={index}
-                          className="bg-amber-100 dark:bg-gray-900 text-black dark:text-amber-400 pr-1"
+                          className="bg-gray-100 dark:bg-gray-900 text-black dark:text-amber-400 pr-1"
                         >
                           {area}
                           <button
@@ -612,7 +612,7 @@ const OnboardingWizard = () => {
                   </div>
 
                   {/* PI Insurance */}
-                  <div className="p-4 bg-gray-50 dark:bg-gray-900 rounded-lg border border-blue-200 dark:border-black">
+                  <div className="p-4 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-black">
                     <div className="flex items-center space-x-2">
                       <Checkbox
                         id="piInsurance"
@@ -748,7 +748,7 @@ const OnboardingWizard = () => {
                         ))}
                         {orgData.hasPIInsurance && (
                           <div className="flex items-center gap-2">
-                            <Award className="h-4 w-4 text-blue-600" />
+                            <Award className="h-4 w-4 text-black" />
                             <span className="text-sm text-gray-900 dark:text-white">
                               Professional Indemnity Insurance
                             </span>

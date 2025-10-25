@@ -113,7 +113,7 @@ const AgentDashboard = () => {
       title: 'My Published Deals',
       value: agentStats.publishedDeals,
       icon: BarChart3,
-      color: 'text-blue-600',
+      color: 'text-black',
       bgColor: 'bg-gray-50 dark:bg-blue-900/20',
       change: `+${agentStats.dealsThisMonth} this month`
     },
@@ -121,8 +121,8 @@ const AgentDashboard = () => {
       title: 'Median Days-to-Secure',
       value: agentStats.medianDaysToSecure,
       icon: Calendar,
-      color: 'text-purple-600',
-      bgColor: 'bg-purple-50 dark:bg-purple-900/20',
+      color: 'text-gray-700',
+      bgColor: 'bg-gray-50 dark:bg-purple-900/20',
       change: '5 days faster than avg'
     },
     {
@@ -216,7 +216,7 @@ const AgentDashboard = () => {
                   {myDeals.map((deal) => (
                     <div 
                       key={deal.id} 
-                      className="flex items-start justify-between p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-300 dark:hover:border-amber-700 transition-colors"
+                      className="flex items-start justify-between p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-300 dark:hover:border-amber-700 transition-colors"
                     >
                       <div className="flex-1">
                         <div className="flex items-center space-x-2 mb-2">
@@ -225,7 +225,7 @@ const AgentDashboard = () => {
                           </h4>
                           <Badge 
                             variant={deal.status === 'Verified' ? 'default' : 'secondary'}
-                            className={deal.status === 'Verified' ? 'bg-green-600 text-white' : 'bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400'}
+                            className={deal.status === 'Verified' ? 'bg-green-600 text-white' : 'bg-gray-100 text-black dark:bg-gray-800 dark:text-amber-400'}
                           >
                             {deal.status === 'Verified' ? (
                               <CheckCircle className="h-3 w-3 mr-1 inline" />

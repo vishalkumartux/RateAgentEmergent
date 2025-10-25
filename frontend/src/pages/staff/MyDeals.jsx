@@ -167,7 +167,7 @@ const MyDeals = () => {
       label: 'Total Active',
       value: mockDeals.filter(d => d.status === 'Active').length,
       icon: Home,
-      color: 'text-blue-600'
+      color: 'text-black'
     },
     {
       label: 'Under Contract',
@@ -185,13 +185,13 @@ const MyDeals = () => {
       label: 'Total Commission',
       value: '$239,400',
       icon: DollarSign,
-      color: 'text-purple-600'
+      color: 'text-gray-700'
     }
   ];
 
   const getStatusBadge = (status) => {
     const statusColors = {
-      'Active': 'bg-blue-600 text-white',
+      'Active': 'bg-green-700 text-white',
       'Under Contract': 'bg-green-700 text-white',
       'Sold': 'bg-emerald-600 text-white',
       'Leased': 'bg-emerald-600 text-white'

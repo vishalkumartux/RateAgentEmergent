@@ -99,7 +99,7 @@ const DealDetails = () => {
 
   const getStatusBadge = (status) => {
     const statusColors = {
-      'Active': 'bg-blue-600 text-white',
+      'Active': 'bg-green-700 text-white',
       'Under Contract': 'bg-green-700 text-white',
       'Sold': 'bg-emerald-600 text-white',
       'Leased': 'bg-emerald-600 text-white'
@@ -246,7 +246,7 @@ const DealDetails = () => {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
           <Card>
             <CardContent className="p-4 text-center">
-              <Eye className="h-6 w-6 text-blue-600 mx-auto mb-2" />
+              <Eye className="h-6 w-6 text-black mx-auto mb-2" />
               <div className="text-xl font-bold text-gray-900 dark:text-white">{dealData.analytics.views}</div>
               <div className="text-sm text-gray-600 dark:text-gray-400">Views</div>
             </CardContent>
@@ -267,7 +267,7 @@ const DealDetails = () => {
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <TrendingUp className="h-6 w-6 text-purple-600 mx-auto mb-2" />
+              <TrendingUp className="h-6 w-6 text-gray-700 mx-auto mb-2" />
               <div className="text-xl font-bold text-gray-900 dark:text-white">{dealData.analytics.inquiryRate}</div>
               <div className="text-sm text-gray-600 dark:text-gray-400">Inquiry Rate</div>
             </CardContent>
@@ -510,7 +510,7 @@ const DealDetails = () => {
                       <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Target Market</h4>
                       <div className="flex flex-wrap gap-2">
                         {dealData.targetMarket.map((market, index) => (
-                          <Badge key={index} className="bg-gray-50 dark:bg-gray-900 text-black dark:text-blue-300">
+                          <Badge key={index} className="bg-gray-50 dark:bg-gray-900 text-black dark:text-gray-300">
                             {market}
                           </Badge>
                         ))}

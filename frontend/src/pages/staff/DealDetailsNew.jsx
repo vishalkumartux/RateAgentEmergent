@@ -40,18 +40,18 @@ const DealDetailsNew = () => {
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
         {/* Preview Banner */}
-        <div className="bg-blue-600 dark:bg-blue-700 text-white py-3 sticky top-0 z-50 shadow-lg">
+        <div className="bg-green-700 dark:bg-green-700 text-white py-3 sticky top-0 z-50 shadow-lg">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <Eye className="h-5 w-5 mr-3" />
                 <div>
                   <p className="font-semibold">Preview Mode - Public View</p>
-                  <p className="text-sm text-blue-100">This is exactly how buyers will see your deal</p>
+                  <p className="text-sm text-gray-100">This is exactly how buyers will see your deal</p>
                 </div>
               </div>
               <Link to={`/staff/deals/${id}`}>
-                <Button variant="secondary" size="sm" className="bg-white text-blue-600 hover:bg-gray-50">
+                <Button variant="secondary" size="sm" className="bg-white text-black hover:bg-gray-50">
                   <X className="h-4 w-4 mr-2" />
                   Exit Preview
                 </Button>
@@ -176,15 +176,15 @@ const DealDetailsNew = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Preview Banner */}
         {isPreview && (
-          <div className="mb-6 p-4 bg-gray-50 dark:bg-blue-900/20 border border-blue-200 dark:border-black rounded-lg">
+          <div className="mb-6 p-4 bg-gray-50 dark:bg-blue-900/20 border border-gray-200 dark:border-black rounded-lg">
             <div className="flex items-center justify-between">
               <div className="flex items-center">
-                <Eye className="h-5 w-5 text-blue-600 dark:text-white mr-3" />
+                <Eye className="h-5 w-5 text-black dark:text-white mr-3" />
                 <div>
-                  <p className="font-semibold text-black dark:text-blue-200">
+                  <p className="font-semibold text-black dark:text-gray-200">
                     Preview Mode
                   </p>
-                  <p className="text-sm text-black dark:text-blue-300">
+                  <p className="text-sm text-black dark:text-gray-300">
                     This is how your deal will appear to buyers on the public site
                   </p>
                 </div>
@@ -217,7 +217,7 @@ const DealDetailsNew = () => {
                   <Badge className={deal.status === 'Published' ? 'bg-green-600' : 'bg-gray-600'}>
                     {deal.status}
                   </Badge>
-                  <Badge className={deal.verified ? 'bg-blue-600' : 'bg-gray-400'}>
+                  <Badge className={deal.verified ? 'bg-green-700' : 'bg-gray-400'}>
                     {deal.verified ? (
                       <>
                         <CheckCircle className="h-3 w-3 mr-1" />
@@ -491,9 +491,9 @@ const DealDetailsNew = () => {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="grid grid-cols-2 gap-4">
-                      <div className="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                      <div className="p-4 bg-gray-50 dark:bg-purple-900/20 rounded-lg">
                         <div className="flex items-center mb-2">
-                          <Clock className="h-5 w-5 text-purple-600 mr-2" />
+                          <Clock className="h-5 w-5 text-gray-700 mr-2" />
                           <span className="text-sm text-gray-600 dark:text-gray-400">Days-to-Secure</span>
                         </div>
                         <p className="text-3xl font-bold text-gray-900 dark:text-white">
@@ -503,7 +503,7 @@ const DealDetailsNew = () => {
                       
                       <div className="p-4 bg-gray-50 dark:bg-blue-900/20 rounded-lg">
                         <div className="flex items-center mb-2">
-                          <Calendar className="h-5 w-5 text-blue-600 mr-2" />
+                          <Calendar className="h-5 w-5 text-black mr-2" />
                           <span className="text-sm text-gray-600 dark:text-gray-400">Purchase Date</span>
                         </div>
                         <p className="text-lg font-bold text-gray-900 dark:text-white">

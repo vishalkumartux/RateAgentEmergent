@@ -276,7 +276,7 @@ const ReviewsPageImproved = () => {
                         else if (quick === 'Investment') handleFilterChange('transactionType', 'Investment Property');
                         else if (quick === 'First Home') handleFilterChange('serviceType', 'First Home Buyer Support');
                       }}
-                      className="px-3 py-1 bg-gray-100 dark:bg-gray-700 hover:bg-amber-100 dark:hover:bg-amber-900 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-amber-400 rounded-full text-xs transition-all"
+                      className="px-3 py-1 bg-gray-100 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-amber-900 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-amber-400 rounded-full text-xs transition-all"
                     >
                       {quick}
                     </button>
@@ -288,7 +288,7 @@ const ReviewsPageImproved = () => {
                   <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700 flex items-center gap-2 flex-wrap">
                     <span className="text-xs text-gray-600 dark:text-gray-400">Active:</span>
                     {filters.rating > 0 && (
-                      <Badge variant="outline" className="bg-gray-50 dark:bg-gray-900 border-blue-300 dark:border-amber-700 text-xs">
+                      <Badge variant="outline" className="bg-gray-50 dark:bg-gray-900 border-gray-300 dark:border-amber-700 text-xs">
                         {filters.rating}+ stars
                         <X className="h-3 w-3 ml-1 cursor-pointer" onClick={() => handleFilterChange('rating', 0)} />
                       </Badge>
@@ -300,7 +300,7 @@ const ReviewsPageImproved = () => {
                       </Badge>
                     )}
                     {filters.tags.map((tag) => (
-                      <Badge key={tag} variant="outline" className="bg-gray-50 dark:bg-gray-900 border-blue-300 dark:border-blue-700 text-xs">
+                      <Badge key={tag} variant="outline" className="bg-gray-50 dark:bg-gray-900 border-gray-300 dark:border-blue-700 text-xs">
                         {tag}
                         <X className="h-3 w-3 ml-1 cursor-pointer" onClick={() => handleTagToggle(tag)} />
                       </Badge>
@@ -405,7 +405,7 @@ const ReviewsPageImproved = () => {
                         <Home className="h-3 w-3 mr-1" />
                         {review.transactionType}
                       </Badge>
-                      <Badge variant="outline" className="bg-purple-50 dark:bg-purple-950 text-purple-700 dark:text-purple-400 text-xs">
+                      <Badge variant="outline" className="bg-gray-50 dark:bg-purple-950 text-purple-700 dark:text-purple-400 text-xs">
                         <DollarSign className="h-3 w-3 mr-1" />
                         {review.budgetBand}
                       </Badge>
@@ -421,7 +421,7 @@ const ReviewsPageImproved = () => {
                         {review.tags.map((tag, idx) => (
                           <Badge
                             key={idx}
-                            className="bg-amber-100 dark:bg-gray-900 text-black dark:text-amber-400 border-blue-300 dark:border-amber-700 text-xs"
+                            className="bg-gray-100 dark:bg-gray-900 text-black dark:text-amber-400 border-gray-300 dark:border-amber-700 text-xs"
                           >
                             {tag}
                           </Badge>

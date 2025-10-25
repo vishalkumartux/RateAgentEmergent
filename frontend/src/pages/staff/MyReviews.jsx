@@ -221,7 +221,7 @@ const MyReviews = () => {
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center">
+            <div className="w-10 h-10 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
               <User className="h-5 w-5 text-black" />
             </div>
             <div>
@@ -230,7 +230,7 @@ const MyReviews = () => {
                   {review.reviewerInitials}
                 </span>
                 {review.verified && (
-                  <Badge className="bg-blue-600 text-white text-xs">
+                  <Badge className="bg-green-700 text-white text-xs">
                     <Check className="h-3 w-3 mr-1" />
                     Verified
                   </Badge>
@@ -279,7 +279,7 @@ const MyReviews = () => {
         {review.tags.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-4">
             {review.tags.map((tag, index) => (
-              <Badge key={index} className="bg-amber-100 dark:bg-amber-900/30 text-black dark:text-amber-400 text-xs">
+              <Badge key={index} className="bg-gray-100 dark:bg-gray-800 text-black dark:text-amber-400 text-xs">
                 {tag}
               </Badge>
             ))}
@@ -305,17 +305,17 @@ const MyReviews = () => {
         {review.hasReply && review.reply && (
           <div className="mt-4 p-4 bg-gray-50 dark:bg-blue-900/20 border-l-4 border-gray-300 rounded">
             <div className="flex items-start space-x-3">
-              <Reply className="h-4 w-4 text-blue-600 dark:text-white mt-1 flex-shrink-0" />
+              <Reply className="h-4 w-4 text-black dark:text-white mt-1 flex-shrink-0" />
               <div className="flex-1">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-semibold text-black dark:text-blue-200">
+                  <span className="text-sm font-semibold text-black dark:text-gray-200">
                     Your Reply
                   </span>
-                  <span className="text-xs text-black dark:text-blue-300">
+                  <span className="text-xs text-black dark:text-gray-300">
                     {new Date(review.reply.date).toLocaleDateString()}
                   </span>
                 </div>
-                <p className="text-sm text-black dark:text-blue-200 leading-relaxed">
+                <p className="text-sm text-black dark:text-gray-200 leading-relaxed">
                   {review.reply.text}
                 </p>
               </div>
@@ -355,7 +355,7 @@ const MyReviews = () => {
                   size="sm"
                   onClick={() => handleReply(review.id)}
                   disabled={!replyText.trim()}
-                  className="bg-blue-600 hover:bg-blue-700 hover:text-white text-white"
+                  className="bg-green-700 hover:bg-green-700 hover:text-white text-white"
                 >
                   <Send className="h-4 w-4 mr-2" />
                   Post Reply
@@ -462,7 +462,7 @@ const MyReviews = () => {
           <Card>
             <CardContent className="p-6">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center">
                   <Star className="h-6 w-6 text-black" />
                 </div>
                 <div>
@@ -476,8 +476,8 @@ const MyReviews = () => {
           <Card>
             <CardContent className="p-6">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
-                  <MessageCircle className="h-6 w-6 text-blue-600" />
+                <div className="w-12 h-12 bg-gray-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+                  <MessageCircle className="h-6 w-6 text-black" />
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-gray-900 dark:text-white">{allReviews.length}</p>
@@ -490,8 +490,8 @@ const MyReviews = () => {
           <Card>
             <CardContent className="p-6">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center">
-                  <Reply className="h-6 w-6 text-purple-600" />
+                <div className="w-12 h-12 bg-gray-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center">
+                  <Reply className="h-6 w-6 text-gray-700" />
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-gray-900 dark:text-white">{pendingReplies}</p>

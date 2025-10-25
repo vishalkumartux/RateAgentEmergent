@@ -106,7 +106,7 @@ const PublicSignupPage = () => {
             Back to Home
           </Link>
           
-          <div className="w-16 h-16 bg-amber-100 dark:bg-amber-900 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="w-16 h-16 bg-gray-100 dark:bg-amber-900 rounded-full flex items-center justify-center mx-auto mb-4">
             <User className="h-8 w-8 text-black" />
           </div>
           
@@ -240,15 +240,15 @@ const PublicSignupPage = () => {
         </Card>
 
         {/* Benefits */}
-        <Card className="mt-6 bg-gray-50 dark:bg-gray-900 border-blue-200 dark:border-black">
+        <Card className="mt-6 bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-black">
           <CardContent className="p-4">
             <div className="flex items-start space-x-3">
-              <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="h-5 w-5 text-black flex-shrink-0 mt-0.5" />
               <div className="text-sm">
-                <p className="text-black dark:text-blue-100 font-medium mb-1">
+                <p className="text-black dark:text-gray-100 font-medium mb-1">
                   What you get with your account:
                 </p>
-                <ul className="text-black dark:text-blue-300 space-y-1">
+                <ul className="text-black dark:text-gray-300 space-y-1">
                   <li>• Save favorite agents and properties</li>
                   <li>• Track your search history and preferences</li>
                   <li>• Get personalized agent recommendations</li>

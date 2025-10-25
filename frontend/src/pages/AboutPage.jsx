@@ -128,7 +128,7 @@ const AboutPage = () => {
                 return (
                   <Card key={index} className="text-center hover:shadow-lg transition-shadow bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700">
                     <CardContent className="p-6">
-                      <div className="w-16 h-16 bg-amber-100 dark:bg-amber-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <div className="w-16 h-16 bg-gray-100 dark:bg-amber-900 rounded-full flex items-center justify-center mx-auto mb-4">
                         <Icon className="h-8 w-8 text-black" />
                       </div>
                       <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">{value.title}</h3>

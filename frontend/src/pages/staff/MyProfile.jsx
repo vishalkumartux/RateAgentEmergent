@@ -116,18 +116,18 @@ const MyProfile = () => {
       {isPreview ? (
         <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
           {/* Preview Banner */}
-          <div className="bg-blue-600 dark:bg-blue-700 text-white py-3 sticky top-0 z-50 shadow-lg">
+          <div className="bg-green-700 dark:bg-green-700 text-white py-3 sticky top-0 z-50 shadow-lg">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
                   <Eye className="h-5 w-5 mr-3" />
                   <div>
                     <p className="font-semibold">Preview Mode - Public View</p>
-                    <p className="text-sm text-blue-100">This is exactly how buyers will see your profile</p>
+                    <p className="text-sm text-gray-100">This is exactly how buyers will see your profile</p>
                   </div>
                 </div>
                 <Link to="/staff/my-profile">
-                  <Button variant="secondary" size="sm" className="bg-white text-blue-600 hover:bg-gray-50">
+                  <Button variant="secondary" size="sm" className="bg-white text-black hover:bg-gray-50">
                     <X className="h-4 w-4 mr-2" />
                     Exit Preview
                   </Button>
@@ -447,17 +447,17 @@ const MyProfile = () => {
                 <div className="p-4 bg-gray-50 dark:bg-blue-900/20 rounded-lg">
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-sm text-gray-600 dark:text-gray-400">Verified Deals</span>
-                    <CheckCircle className="h-4 w-4 text-blue-600" />
+                    <CheckCircle className="h-4 w-4 text-black" />
                   </div>
                   <p className="text-2xl font-bold text-gray-900 dark:text-white">
                     {metrics.verifiedDeals}
                   </p>
                 </div>
 
-                <div className="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                <div className="p-4 bg-gray-50 dark:bg-purple-900/20 rounded-lg">
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-sm text-gray-600 dark:text-gray-400">Median Days-to-Secure</span>
-                    <Clock className="h-4 w-4 text-purple-600" />
+                    <Clock className="h-4 w-4 text-gray-700" />
                   </div>
                   <p className="text-2xl font-bold text-gray-900 dark:text-white">
                     {metrics.medianDaysToSecure}

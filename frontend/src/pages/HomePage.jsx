@@ -73,9 +73,9 @@ const HomePageImproved = () => {
 
   const stats = [
     { label: 'Verified Deals', value: '3,800+', icon: Home, color: 'text-black' },
-    { label: 'Buyer Agents', value: '1,200+', icon: Users, color: 'text-blue-600' },
+    { label: 'Buyer Agents', value: '1,200+', icon: Users, color: 'text-black' },
     { label: 'Client Reviews', value: '8,500+', icon: Star, color: 'text-green-600' },
-    { label: 'Avg. Savings', value: '$42K', icon: TrendingUp, color: 'text-purple-600' }
+    { label: 'Avg. Savings', value: '$42K', icon: TrendingUp, color: 'text-gray-700' }
   ];
 
   // Basic natural language parsing
@@ -236,7 +236,7 @@ const HomePageImproved = () => {
               <Link to="/deals">
                 <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-blue-700 bg-white dark:bg-gray-800">
                   <CardContent className="p-6 text-center">
-                    <div className="w-14 h-14 bg-amber-100 dark:bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-14 h-14 bg-gray-100 dark:bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Home className="h-7 w-7 text-black" />
                     </div>
                     <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Find Deals</h3>
@@ -250,8 +250,8 @@ const HomePageImproved = () => {
               <Link to="/agents">
                 <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-gray-300 bg-white dark:bg-gray-800">
                   <CardContent className="p-6 text-center">
-                    <div className="w-14 h-14 bg-blue-100 dark:bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Users className="h-7 w-7 text-blue-600" />
+                    <div className="w-14 h-14 bg-gray-100 dark:bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Users className="h-7 w-7 text-black" />
                     </div>
                     <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Find Buyer Agents</h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -264,8 +264,8 @@ const HomePageImproved = () => {
               <Link to="/compare">
                 <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-purple-500 bg-white dark:bg-gray-800">
                   <CardContent className="p-6 text-center">
-                    <div className="w-14 h-14 bg-purple-100 dark:bg-purple-950 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Target className="h-7 w-7 text-purple-600" />
+                    <div className="w-14 h-14 bg-gray-100 dark:bg-purple-950 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Target className="h-7 w-7 text-gray-700" />
                     </div>
                     <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Compare Agents</h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -327,7 +327,7 @@ const HomePageImproved = () => {
                 onClick={() => setBuyBoxTab('agents')}
                 className={`px-8 py-4 rounded-2xl font-semibold transition-all text-lg ${
                   buyBoxTab === 'agents'
-                    ? 'bg-blue-600 text-white shadow-2xl scale-105'
+                    ? 'bg-green-700 text-white shadow-2xl scale-105'
                     : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:scale-105 shadow-lg'
                 }`}
               >
@@ -338,7 +338,7 @@ const HomePageImproved = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {/* Column 1: Property Type & Location */}
-              <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-amber-700 transition-all">
+              <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-amber-700 transition-all">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
                     <Building2 className="h-5 w-5 mr-2 text-black" />
@@ -355,7 +355,7 @@ const HomePageImproved = () => {
                           className={`p-4 rounded-xl border-2 transition-all text-center ${
                             isSelected
                               ? 'border-blue-700 bg-gray-50 dark:bg-gray-900 shadow-md'
-                              : 'border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-amber-800'
+                              : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-amber-800'
                           }`}
                         >
                           <div className="text-2xl mb-1">{icons[type]}</div>
@@ -368,7 +368,7 @@ const HomePageImproved = () => {
                   </div>
 
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center">
-                    <MapPin className="h-5 w-5 mr-2 text-blue-600" />
+                    <MapPin className="h-5 w-5 mr-2 text-black" />
                     Location
                   </h3>
                   <Input
@@ -393,7 +393,7 @@ const HomePageImproved = () => {
               </Card>
 
               {/* Column 2: Budget & Features */}
-              <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-700 transition-all">
+              <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-blue-700 transition-all">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
                     <DollarSign className="h-5 w-5 mr-2 text-green-600" />
@@ -416,7 +416,7 @@ const HomePageImproved = () => {
                   </div>
 
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center">
-                    <Home className="h-5 w-5 mr-2 text-purple-600" />
+                    <Home className="h-5 w-5 mr-2 text-gray-700" />
                     Features
                   </h3>
                   <div className="space-y-3">
@@ -474,7 +474,7 @@ const HomePageImproved = () => {
               <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-700 transition-all">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
-                    <Target className="h-5 w-5 mr-2 text-purple-600" />
+                    <Target className="h-5 w-5 mr-2 text-gray-700" />
                     Strategy
                   </h3>
                   <div className="flex flex-wrap gap-2 mb-6">
@@ -486,7 +486,7 @@ const HomePageImproved = () => {
                           onClick={() => handleStrategyToggle(strategy)}
                           className={`px-3 py-2 rounded-lg text-sm font-medium transition-all border-2 ${
                             isSelected
-                              ? 'border-purple-500 bg-purple-50 dark:bg-purple-950 text-purple-700 dark:text-purple-400 shadow-md'
+                              ? 'border-purple-500 bg-gray-50 dark:bg-purple-950 text-purple-700 dark:text-purple-400 shadow-md'
                               : 'border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-purple-300 dark:hover:border-purple-800'
                           }`}
                         >
@@ -618,7 +618,7 @@ const HomePageImproved = () => {
                 </p>
               </div>
               <Link to="/agents">
-                <Button variant="outline" className="border-gray-300 text-blue-600 hover:bg-gray-50 dark:hover:bg-gray-800">
+                <Button variant="outline" className="border-gray-300 text-black hover:bg-gray-50 dark:hover:bg-gray-800">
                   View All
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </Button>
@@ -680,7 +680,7 @@ const HomePageImproved = () => {
                     <div className="space-y-2 text-sm">
                       <Link 
                         to={`/agents?location=${city.name}`}
-                        className="flex items-center text-blue-600 hover:text-black font-medium"
+                        className="flex items-center text-black hover:text-black font-medium"
                       >
                         <Users className="h-4 w-4 mr-2" />
                         {city.agents} Buyer Agents in {city.name}
@@ -706,7 +706,7 @@ const HomePageImproved = () => {
               </p>
               <div className="flex gap-4 justify-center">
                 <Link to="/agents">
-                  <Button variant="outline" className="border-gray-300 text-blue-600 hover:bg-gray-50 dark:hover:bg-gray-800">
+                  <Button variant="outline" className="border-gray-300 text-black hover:bg-gray-50 dark:hover:bg-gray-800">
                     Browse All Agents
                   </Button>
                 </Link>

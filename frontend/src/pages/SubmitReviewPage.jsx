@@ -368,10 +368,10 @@ const SubmitReviewPage = () => {
               </Card>
 
               {/* Guidelines */}
-              <Card className="bg-gray-50 border-blue-200">
+              <Card className="bg-gray-50 border-gray-200">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-3">
-                    <AlertCircle className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <AlertCircle className="h-6 w-6 text-black flex-shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-semibold text-black mb-2">Review Guidelines</h3>
                       <ul className="text-black text-sm space-y-1">

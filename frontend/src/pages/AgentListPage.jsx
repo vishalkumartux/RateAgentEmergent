@@ -296,7 +296,7 @@ const AgentListPage = () => {
                 <button
                   key={quick}
                   onClick={() => setSearchTerm(quick)}
-                  className="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 hover:bg-amber-100 dark:hover:bg-amber-900 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-amber-400 rounded-full text-sm transition-all duration-200 hover:shadow-md"
+                  className="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-amber-900 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-amber-400 rounded-full text-sm transition-all duration-200 hover:shadow-md"
                 >
                   {quick}
                 </button>
@@ -795,7 +795,7 @@ const AgentCard = ({ agent, isInCompare, isShortlisted, onToggleCompare, onToggl
           </p>
           <div className="flex flex-wrap gap-1">
             {agent.services && agent.services.slice(0, 2).map((service, index) => (
-              <Badge key={index} variant="outline" className="text-xs border-blue-300 dark:border-black">
+              <Badge key={index} variant="outline" className="text-xs border-gray-300 dark:border-black">
                 {service}
               </Badge>
             ))}
@@ -807,7 +807,7 @@ const AgentCard = ({ agent, isInCompare, isShortlisted, onToggleCompare, onToggl
           <div className="mb-4">
             <div className="flex flex-wrap gap-1">
               {agent.specialties.map((specialty, index) => (
-                <Badge key={index} variant="secondary" className="text-xs bg-gray-50 dark:bg-blue-900 text-black dark:text-blue-300">
+                <Badge key={index} variant="secondary" className="text-xs bg-gray-50 dark:bg-blue-900 text-black dark:text-gray-300">
                   {specialty}
                 </Badge>
               ))}

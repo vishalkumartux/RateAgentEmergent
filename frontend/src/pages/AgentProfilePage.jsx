@@ -220,7 +220,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-10 h-10 bg-amber-100 dark:bg-gray-900 rounded-lg flex items-center justify-center">
+                  <div className="flex-shrink-0 w-10 h-10 bg-gray-100 dark:bg-gray-900 rounded-lg flex items-center justify-center">
                     <Award className="h-5 w-5 text-black" />
                   </div>
                   <div>
@@ -229,7 +229,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-10 h-10 bg-amber-100 dark:bg-gray-900 rounded-lg flex items-center justify-center">
+                  <div className="flex-shrink-0 w-10 h-10 bg-gray-100 dark:bg-gray-900 rounded-lg flex items-center justify-center">
                     <Briefcase className="h-5 w-5 text-black" />
                   </div>
                   <div>
@@ -238,7 +238,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-10 h-10 bg-amber-100 dark:bg-gray-900 rounded-lg flex items-center justify-center">
+                  <div className="flex-shrink-0 w-10 h-10 bg-gray-100 dark:bg-gray-900 rounded-lg flex items-center justify-center">
                     <Building2 className="h-5 w-5 text-black" />
                   </div>
                   <div>
@@ -307,7 +307,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                   <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Coverage Areas ({agent.coverageAreas.length})</h3>
                   <div className="flex flex-wrap gap-2">
                     {(showAllAreas ? agent.coverageAreas : agent.coverageAreas.slice(0, 8)).map((area, idx) => (
-                      <Badge key={idx} className="bg-amber-100 dark:bg-gray-900 text-black dark:text-amber-400 border-blue-300 dark:border-amber-700">
+                      <Badge key={idx} className="bg-gray-100 dark:bg-gray-900 text-black dark:text-amber-400 border-gray-300 dark:border-amber-700">
                         {area}
                       </Badge>
                     ))}
@@ -378,28 +378,28 @@ const AgentProfilePage = ({ agentIdOverride }) => {
             <CardContent>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div className="text-center">
-                  <div className="w-16 h-16 mx-auto bg-amber-100 dark:bg-gray-900 rounded-full flex items-center justify-center mb-3">
+                  <div className="w-16 h-16 mx-auto bg-gray-100 dark:bg-gray-900 rounded-full flex items-center justify-center mb-3">
                     <Clock className="h-8 w-8 text-black" />
                   </div>
                   <div className="text-2xl font-bold text-gray-900 dark:text-white">{agent.medianDaysToSecure}</div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">Median Days to Secure</div>
                 </div>
                 <div className="text-center">
-                  <div className="w-16 h-16 mx-auto bg-amber-100 dark:bg-gray-900 rounded-full flex items-center justify-center mb-3">
+                  <div className="w-16 h-16 mx-auto bg-gray-100 dark:bg-gray-900 rounded-full flex items-center justify-center mb-3">
                     <Percent className="h-8 w-8 text-black" />
                   </div>
                   <div className="text-2xl font-bold text-gray-900 dark:text-white">{agent.avgDiscountPercent}%</div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">Avg. Discount</div>
                 </div>
                 <div className="text-center">
-                  <div className="w-16 h-16 mx-auto bg-amber-100 dark:bg-gray-900 rounded-full flex items-center justify-center mb-3">
+                  <div className="w-16 h-16 mx-auto bg-gray-100 dark:bg-gray-900 rounded-full flex items-center justify-center mb-3">
                     <Target className="h-8 w-8 text-black" />
                   </div>
                   <div className="text-2xl font-bold text-gray-900 dark:text-white">{agent.auctionSuccessRatio}%</div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">Auction Success Rate</div>
                 </div>
                 <div className="text-center">
-                  <div className="w-16 h-16 mx-auto bg-amber-100 dark:bg-gray-900 rounded-full flex items-center justify-center mb-3">
+                  <div className="w-16 h-16 mx-auto bg-gray-100 dark:bg-gray-900 rounded-full flex items-center justify-center mb-3">
                     <TrendingDown className="h-8 w-8 text-black" />
                   </div>
                   <div className="text-2xl font-bold text-gray-900 dark:text-white">{agent.offMarketRatio}%</div>
@@ -463,7 +463,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                       <Link 
                         key={deal.id} 
                         to={`/deal/${deal.id}`}
-                        className="group border border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden hover:border-blue-300 dark:hover:border-black hover:shadow-lg transition-all"
+                        className="group border border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden hover:border-gray-300 dark:hover:border-black hover:shadow-lg transition-all"
                       >
                         <img 
                           src={deal.photos[0]} 
@@ -576,7 +576,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                       <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Most Mentioned Qualities</h4>
                       <div className="flex flex-wrap gap-2">
                         {agent.topTags.map((tag, idx) => (
-                          <Badge key={idx} className="bg-amber-200 dark:bg-amber-800 text-amber-800 dark:text-amber-200">
+                          <Badge key={idx} className="bg-gray-200 dark:bg-amber-800 text-black dark:text-amber-200">
                             {tag}
                           </Badge>
                         ))}
@@ -664,8 +664,8 @@ const AgentProfilePage = ({ agentIdOverride }) => {
               
               {/* Professional Indemnity */}
               {agent.professionalIndemnity && (
-                <div className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg border border-blue-200 dark:border-black">
-                  <ShieldCheck className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-black">
+                  <ShieldCheck className="h-5 w-5 text-black flex-shrink-0 mt-0.5" />
                   <div className="flex-1">
                     <div className="font-semibold text-gray-900 dark:text-white">Professional Indemnity Insurance</div>
                     <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">

@@ -52,8 +52,8 @@ const StaffProfile = () => {
   const performanceStats = [
     { label: 'Properties Sold (12m)', value: '24', icon: BarChart3, color: 'text-emerald-600' },
     { label: 'Average Rating', value: '4.8', icon: Star, color: 'text-black' },
-    { label: 'Avg Days on Market', value: '23', icon: Clock, color: 'text-blue-600' },
-    { label: 'Client Satisfaction', value: '98%', icon: TrendingUp, color: 'text-purple-600' }
+    { label: 'Avg Days on Market', value: '23', icon: Clock, color: 'text-black' },
+    { label: 'Client Satisfaction', value: '98%', icon: TrendingUp, color: 'text-gray-700' }
   ];
   
   const recentSales = [
@@ -333,8 +333,8 @@ const StaffProfile = () => {
                           onClick={() => handleSpecialtyToggle(specialty)}
                           className={`p-3 text-sm rounded-lg border transition-all text-center ${
                             profileData.specialties.includes(specialty)
-                              ? 'bg-gray-50 dark:bg-gray-900 border-blue-300 dark:border-amber-700 text-black dark:text-amber-300'
-                              : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-blue-300'
+                              ? 'bg-gray-50 dark:bg-gray-900 border-gray-300 dark:border-amber-700 text-black dark:text-amber-300'
+                              : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300'
                           }`}
                         >
                           {specialty}

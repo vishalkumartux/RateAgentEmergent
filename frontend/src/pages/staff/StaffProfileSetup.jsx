@@ -128,7 +128,7 @@ const StaffProfileSetup = () => {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="w-16 h-16 bg-amber-100 dark:bg-amber-900 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="w-16 h-16 bg-gray-100 dark:bg-amber-900 rounded-full flex items-center justify-center mx-auto mb-4">
             <User className="h-8 w-8 text-black" />
           </div>
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -306,8 +306,8 @@ const StaffProfileSetup = () => {
                       onClick={() => handleSpecialtyToggle(specialty)}
                       className={`p-3 text-sm rounded-lg border transition-all text-center ${
                         formData.specialties.includes(specialty)
-                          ? 'bg-gray-50 dark:bg-gray-900 border-blue-300 dark:border-amber-700 text-black dark:text-amber-300'
-                          : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-blue-300 dark:hover:border-amber-700'
+                          ? 'bg-gray-50 dark:bg-gray-900 border-gray-300 dark:border-amber-700 text-black dark:text-amber-300'
+                          : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300 dark:hover:border-amber-700'
                       }`}
                     >
                       {specialty}

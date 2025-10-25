@@ -49,9 +49,9 @@ const StaffProfilePage = () => {
   // Mock agent performance stats
   const performanceStats = [
     { label: 'Active Listings', value: '12', icon: BarChart3, color: 'text-emerald-600' },
-    { label: 'Properties Sold (YTD)', value: '24', icon: TrendingUp, color: 'text-blue-600' },
+    { label: 'Properties Sold (YTD)', value: '24', icon: TrendingUp, color: 'text-black' },
     { label: 'Average Rating', value: '4.8', icon: Star, color: 'text-black' },
-    { label: 'Avg Days on Market', value: '23', icon: Clock, color: 'text-purple-600' }
+    { label: 'Avg Days on Market', value: '23', icon: Clock, color: 'text-gray-700' }
   ];
   
   const recentDeals = [
@@ -210,7 +210,7 @@ const StaffProfilePage = () => {
                   <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
                     {profileData.name}
                   </h2>
-                  <Badge className="bg-blue-600 text-white">Agent</Badge>
+                  <Badge className="bg-green-700 text-white">Agent</Badge>
                 </div>
                 
                 <p className="text-xl text-gray-700 dark:text-gray-300 mb-2">
@@ -374,8 +374,8 @@ const StaffProfilePage = () => {
                           onClick={() => handleSpecialtyToggle(specialty)}
                           className={`p-3 text-sm rounded-lg border transition-all text-center ${
                             profileData.specialties.includes(specialty)
-                              ? 'bg-gray-50 dark:bg-gray-900 border-blue-300 dark:border-amber-700 text-black dark:text-amber-300'
-                              : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-blue-300'
+                              ? 'bg-gray-50 dark:bg-gray-900 border-gray-300 dark:border-amber-700 text-black dark:text-amber-300'
+                              : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300'
                           }`}
                         >
                           {specialty}
@@ -473,7 +473,7 @@ const StaffProfilePage = () => {
                       <Badge 
                         className={`${
                           deal.status === 'Sold' ? 'bg-green-600 text-white' :
-                          deal.status === 'Under Contract' ? 'bg-blue-600 text-white' :
+                          deal.status === 'Under Contract' ? 'bg-green-700 text-white' :
                           'bg-green-700 text-white'
                         }`}
                       >

@@ -456,10 +456,10 @@ const AddEditDeal = () => {
                     <p className="text-red-500 text-sm mt-1">{errors.streetAddress}</p>
                   )}
                   
-                  <div className="flex items-center justify-between mt-3 p-3 bg-gray-50 dark:bg-blue-900/20 border border-blue-200 dark:border-black rounded-lg">
+                  <div className="flex items-center justify-between mt-3 p-3 bg-gray-50 dark:bg-blue-900/20 border border-gray-200 dark:border-black rounded-lg">
                     <div className="flex-1">
                       <div className="flex items-center">
-                        <Info className="h-4 w-4 text-blue-600 dark:text-white mr-2" />
+                        <Info className="h-4 w-4 text-black dark:text-white mr-2" />
                         <span className="text-sm font-medium text-gray-900 dark:text-white">
                           Mask street number for privacy
                         </span>
@@ -694,7 +694,7 @@ const AddEditDeal = () => {
 
                   {/* Auto-calculated Yield */}
                   {grossYield && (
-                    <div className="mt-3 p-3 bg-gray-50 dark:bg-blue-900/20 border border-blue-200 dark:border-black rounded-lg">
+                    <div className="mt-3 p-3 bg-gray-50 dark:bg-blue-900/20 border border-gray-200 dark:border-black rounded-lg">
                       <p className="text-sm text-black dark:text-white">
                         <strong>Gross Yield:</strong> {grossYield}%
                       </p>
@@ -878,7 +878,7 @@ const AddEditDeal = () => {
                     <div className="flex items-start">
                       <div className="flex-1">
                         <div className="flex items-center mb-2">
-                          <Badge className="bg-blue-600 text-white mr-2">L1</Badge>
+                          <Badge className="bg-green-700 text-white mr-2">L1</Badge>
                           <span className="font-semibold text-gray-900 dark:text-white">
                             Evidence Submitted
                           </span>
@@ -889,7 +889,7 @@ const AddEditDeal = () => {
                         </p>
                       </div>
                       {formData.verificationLevel === 'L1' && (
-                        <CheckCircle className="h-5 w-5 text-blue-600 ml-2" />
+                        <CheckCircle className="h-5 w-5 text-black ml-2" />
                       )}
                     </div>
                   </button>
@@ -897,7 +897,7 @@ const AddEditDeal = () => {
 
                 {/* Evidence Upload */}
                 {formData.verificationLevel === 'L1' && (
-                  <div className="p-4 bg-gray-50 dark:bg-blue-900/20 border border-blue-200 dark:border-black rounded-lg">
+                  <div className="p-4 bg-gray-50 dark:bg-blue-900/20 border border-gray-200 dark:border-black rounded-lg">
                     <Label>Upload Evidence (Redacted)</Label>
                     <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
                       Upload redacted contract page or settlement statement (names, addresses removed)
@@ -908,8 +908,8 @@ const AddEditDeal = () => {
                         accept=".pdf,.jpg,.jpeg,.png"
                         className="hidden"
                       />
-                      <div className="border-2 border-dashed border-blue-300 dark:border-gray-300 rounded-lg p-6 text-center cursor-pointer hover:border-gray-300 transition-colors">
-                        <FileText className="h-10 w-10 text-blue-600 mx-auto mb-2" />
+                      <div className="border-2 border-dashed border-gray-300 dark:border-gray-300 rounded-lg p-6 text-center cursor-pointer hover:border-gray-300 transition-colors">
+                        <FileText className="h-10 w-10 text-black mx-auto mb-2" />
                         <p className="text-sm font-medium text-black dark:text-white">
                           Click to upload document
                         </p>
@@ -996,7 +996,7 @@ const AddEditDeal = () => {
                       </div>
                       <div>
                         <p className="text-gray-600 dark:text-gray-400">Verification</p>
-                        <Badge className={formData.verificationLevel === 'L1' ? 'bg-blue-600' : 'bg-gray-600'}>
+                        <Badge className={formData.verificationLevel === 'L1' ? 'bg-green-700' : 'bg-gray-600'}>
                           {formData.verificationLevel}
                         </Badge>
                       </div>
@@ -1005,10 +1005,10 @@ const AddEditDeal = () => {
                 </Card>
 
                 {/* Preview Link */}
-                <div className="p-4 bg-gray-50 dark:bg-blue-900/20 border border-blue-200 dark:border-black rounded-lg">
+                <div className="p-4 bg-gray-50 dark:bg-blue-900/20 border border-gray-200 dark:border-black rounded-lg">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
-                      <Eye className="h-5 w-5 text-blue-600 dark:text-white mr-3" />
+                      <Eye className="h-5 w-5 text-black dark:text-white mr-3" />
                       <div>
                         <p className="font-medium text-gray-900 dark:text-white">
                           Preview Public View

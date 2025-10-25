@@ -58,7 +58,7 @@ const AdminDashboard = () => {
       title: 'Published Deals',
       value: organization?.stats?.publishedDeals || 2,
       icon: BarChart3,
-      color: 'text-blue-600',
+      color: 'text-black',
       change: '+2 this month'
     },
     {
@@ -79,14 +79,14 @@ const AdminDashboard = () => {
       title: 'Median Days-to-Secure',
       value: '42',
       icon: Calendar,
-      color: 'text-purple-600',
+      color: 'text-gray-700',
       change: '6 days faster'
     },
     {
       title: 'Profile Views',
       value: '1,247',
       icon: Eye,
-      color: 'text-indigo-600',
+      color: 'text-black',
       change: 'Last 30 days'
     },
     {
@@ -250,7 +250,7 @@ const AdminDashboard = () => {
                   <Card key={index} className="border-l-4 border-blue-700 bg-gray-50 dark:bg-amber-900/10">
                     <CardContent className="p-4">
                       <div className="flex items-start space-x-3">
-                        <div className="w-10 h-10 bg-amber-100 dark:bg-amber-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <div className="w-10 h-10 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0">
                           <Icon className="h-5 w-5 text-black dark:text-amber-400" />
                         </div>
                         <div className="flex-1">
@@ -357,7 +357,7 @@ const AdminDashboard = () => {
                       </div>
                     </div>
                     <div className="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                      <Users className="h-5 w-5 text-blue-600" />
+                      <Users className="h-5 w-5 text-black" />
                       <div>
                         <p className="text-sm font-medium text-gray-900 dark:text-white">Admin account activated</p>
                         <p className="text-xs text-gray-600 dark:text-gray-400">Today</p>
@@ -550,10 +550,10 @@ const AdminDashboard = () => {
                       </div>
                     )}
                     
-                    <div className="p-4 bg-gray-50 dark:bg-blue-900/20 border border-blue-200 dark:border-black rounded-lg">
+                    <div className="p-4 bg-gray-50 dark:bg-blue-900/20 border border-gray-200 dark:border-black rounded-lg">
                       <div className="flex">
-                        <AlertCircle className="h-5 w-5 text-blue-600 dark:text-white mr-2 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm text-black dark:text-blue-200">
+                        <AlertCircle className="h-5 w-5 text-black dark:text-white mr-2 mt-0.5 flex-shrink-0" />
+                        <div className="text-sm text-black dark:text-gray-200">
                           <strong>Role Permissions:</strong>
                           <ul className="mt-1 space-y-1">
                             <li>• <strong>Admin:</strong> Full access to dashboard, settings, and staff management</li>
@@ -605,7 +605,7 @@ const AdminDashboard = () => {
                             </div>
                           </div>
                           <div className="flex items-center space-x-2">
-                            <Badge variant="secondary" className="bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400">
+                            <Badge variant="secondary" className="bg-gray-100 text-black dark:bg-gray-800 dark:text-amber-400">
                               Pending
                             </Badge>
                             <Button
@@ -614,7 +614,7 @@ const AdminDashboard = () => {
                               onClick={() => resendInvite(invite.id)}
                               title="Resend invitation"
                             >
-                              <RefreshCw className="h-4 w-4 text-blue-600" />
+                              <RefreshCw className="h-4 w-4 text-black" />
                             </Button>
                             <Button
                               variant="ghost"
