@@ -204,7 +204,7 @@ const ReviewsPageImproved = () => {
         description="Read verified reviews from real clients about their buyer agent experiences. Filter by rating, service type, location, and more."
       />
 
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <div className="min-h-screen bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Header */}
           <div className="mb-8">
@@ -224,7 +224,7 @@ const ReviewsPageImproved = () => {
 
           {/* Sticky Search and Filter Bar */}
           <div className="sticky top-16 z-40 mb-6 bg-gray-50 dark:bg-gray-900 py-4 -mx-4 px-4">
-            <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 shadow-xl">
+            <Card className="bg-card border-2 border-gray-200 dark:border-gray-700 shadow-xl">
               <CardContent className="p-4">
                 <div className="flex flex-col sm:flex-row gap-3">
                   <div className="relative flex-1">
@@ -233,7 +233,7 @@ const ReviewsPageImproved = () => {
                       placeholder="Search reviews, agents, or suburbs..."
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="pl-12 h-12 border-2 border-gray-200 dark:border-gray-600 focus:border-primary rounded-xl dark:bg-gray-700 dark:text-white"
+                      className="pl-12 h-12 border-2 border-gray-200 dark:border-gray-600 focus:border-primary rounded-xl bg-background text-foreground"
                     />
                   </div>
                   <Button
@@ -250,7 +250,7 @@ const ReviewsPageImproved = () => {
                     )}
                   </Button>
                   <Select value={sortBy} onValueChange={setSortBy}>
-                    <SelectTrigger className="w-full sm:w-48 h-12 border-2 border-gray-200 dark:border-gray-600 rounded-xl dark:bg-gray-700 dark:text-white">
+                    <SelectTrigger className="w-full sm:w-48 h-12 border-2 border-gray-200 dark:border-gray-600 rounded-xl bg-background text-foreground">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
@@ -334,7 +334,7 @@ const ReviewsPageImproved = () => {
               return (
                 <Card
                   key={review.id}
-                  className="hover:shadow-lg transition-all bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700"
+                  className="hover:shadow-lg transition-all bg-card border-gray-200 dark:border-gray-700"
                 >
                   <CardContent className="p-6">
                     {/* Review Header */}
@@ -527,7 +527,7 @@ const ReviewsPageImproved = () => {
       {/* Filters Modal */}
       {showFiltersModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-start justify-center p-4 overflow-y-auto">
-          <Card className="w-full max-w-2xl my-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+          <Card className="w-full max-w-2xl my-8 bg-card border-gray-200 dark:border-gray-700">
             <CardHeader className="border-b border-gray-200 dark:border-gray-700">
               <div className="flex items-center justify-between">
                 <CardTitle className="flex items-center text-gray-900 dark:text-white">
@@ -592,7 +592,7 @@ const ReviewsPageImproved = () => {
                     value={filters.serviceType}
                     onValueChange={(value) => handleFilterChange('serviceType', value)}
                   >
-                    <SelectTrigger className="dark:bg-gray-700 dark:text-white dark:border-gray-600">
+                    <SelectTrigger className="bg-background text-foreground dark:border-gray-600">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
@@ -616,7 +616,7 @@ const ReviewsPageImproved = () => {
                     value={filters.transactionType}
                     onValueChange={(value) => handleFilterChange('transactionType', value)}
                   >
-                    <SelectTrigger className="dark:bg-gray-700 dark:text-white dark:border-gray-600">
+                    <SelectTrigger className="bg-background text-foreground dark:border-gray-600">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
@@ -638,7 +638,7 @@ const ReviewsPageImproved = () => {
                   Suburb
                 </label>
                 <Select value={filters.suburb} onValueChange={(value) => handleFilterChange('suburb', value)}>
-                  <SelectTrigger className="dark:bg-gray-700 dark:text-white dark:border-gray-600">
+                  <SelectTrigger className="bg-background text-foreground dark:border-gray-600">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -663,7 +663,7 @@ const ReviewsPageImproved = () => {
                     type="date"
                     value={filters.dateFrom}
                     onChange={(e) => handleFilterChange('dateFrom', e.target.value)}
-                    className="dark:bg-gray-700 dark:text-white dark:border-gray-600"
+                    className="bg-background text-foreground dark:border-gray-600"
                   />
                 </div>
                 <div>
@@ -675,7 +675,7 @@ const ReviewsPageImproved = () => {
                     type="date"
                     value={filters.dateTo}
                     onChange={(e) => handleFilterChange('dateTo', e.target.value)}
-                    className="dark:bg-gray-700 dark:text-white dark:border-gray-600"
+                    className="bg-background text-foreground dark:border-gray-600"
                   />
                 </div>
               </div>

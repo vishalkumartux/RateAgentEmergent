@@ -240,7 +240,7 @@ const AgentListPage = () => {
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   list="agent-suggestions"
-                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/20 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
+                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/20 rounded-2xl bg-background text-foreground font-medium transition-all"
                 />
                 <datalist id="agent-suggestions">
                   <option value="Sydney" />
@@ -256,7 +256,7 @@ const AgentListPage = () => {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="h-12 px-4 border-2 border-gray-200 dark:border-gray-600 rounded-2xl dark:bg-gray-700 dark:text-white font-semibold transition-all hover:border-primary"
+                  className="h-12 px-4 border-2 border-gray-200 dark:border-gray-600 rounded-2xl bg-background text-foreground font-semibold transition-all hover:border-primary"
                 >
                   <option value="rating">⭐ Highest Rated</option>
                   <option value="deals">✓ Most Deals</option>
@@ -319,7 +319,7 @@ const AgentListPage = () => {
               
               {/* Modal */}
               <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto">
-                <Card className="w-full max-w-5xl max-h-[90vh] overflow-hidden bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 shadow-2xl my-8">
+                <Card className="w-full max-w-5xl max-h-[90vh] overflow-hidden bg-card border-gray-200 dark:border-gray-700 shadow-2xl my-8">
                   <CardHeader className="border-b border-gray-200 dark:border-gray-700 sticky top-0 bg-white dark:bg-gray-800 z-10">
                     <div className="flex items-center justify-between">
                       <CardTitle className="flex items-center text-gray-900 dark:text-white">
@@ -349,7 +349,7 @@ const AgentListPage = () => {
                             <select
                               value={filters.state}
                               onChange={(e) => setFilters({...filters, state: e.target.value})}
-                              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg dark:bg-gray-700 dark:text-white"
+                              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-background text-foreground"
                             >
                               <option value="">All States</option>
                               <option value="NSW">NSW</option>
@@ -365,7 +365,7 @@ const AgentListPage = () => {
                               placeholder="Enter suburb or region"
                               value={filters.coverage}
                               onChange={(e) => setFilters({...filters, coverage: e.target.value})}
-                              className="dark:bg-gray-700 dark:text-white"
+                              className="bg-background text-foreground"
                             />
                           </div>
                         </div>
@@ -377,7 +377,7 @@ const AgentListPage = () => {
                         <select
                           value={filters.propertyTypeFocus}
                           onChange={(e) => setFilters({...filters, propertyTypeFocus: e.target.value})}
-                          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg dark:bg-gray-700 dark:text-white"
+                          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-background text-foreground"
                         >
                           <option value="">All Types</option>
                           <option value="House">House</option>
@@ -393,7 +393,7 @@ const AgentListPage = () => {
                         <select
                           value={filters.serviceType}
                           onChange={(e) => setFilters({...filters, serviceType: e.target.value})}
-                          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg dark:bg-gray-700 dark:text-white"
+                          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-background text-foreground"
                         >
                           <option value="">All Services</option>
                           <option value="full">Full Service</option>
@@ -413,7 +413,7 @@ const AgentListPage = () => {
                               placeholder="$ Min"
                               value={filters.minBudget}
                               onChange={(e) => setFilters({...filters, minBudget: e.target.value})}
-                              className="dark:bg-gray-700 dark:text-white"
+                              className="bg-background text-foreground"
                             />
                           </div>
                           <div>
@@ -423,7 +423,7 @@ const AgentListPage = () => {
                               placeholder="$ Max"
                               value={filters.maxBudget}
                               onChange={(e) => setFilters({...filters, maxBudget: e.target.value})}
-                              className="dark:bg-gray-700 dark:text-white"
+                              className="bg-background text-foreground"
                             />
                           </div>
                         </div>
@@ -488,7 +488,7 @@ const AgentListPage = () => {
                             <select
                               value={filters.feeModel}
                               onChange={(e) => setFilters({...filters, feeModel: e.target.value})}
-                              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg dark:bg-gray-700 dark:text-white"
+                              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-background text-foreground"
                             >
                               <option value="">Any Model</option>
                               <option value="fixed">Fixed Fee</option>
@@ -606,7 +606,7 @@ const AgentListPage = () => {
 
           {/* Empty State */}
           {sortedAgents.length === 0 && (
-            <Card className="text-center py-16 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+            <Card className="text-center py-16 bg-card border-gray-200 dark:border-gray-700">
               <CardContent>
                 <Users className="h-16 w-16 text-gray-300 dark:text-gray-600 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">No agents found</h3>
@@ -623,7 +623,7 @@ const AgentListPage = () => {
 
         {/* Compare Tray - Fixed Bottom */}
         {compareAgents.length > 0 && (
-          <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 border-t-2 border-primary shadow-2xl z-40">
+          <div className="fixed bottom-0 left-0 right-0 bg-card border-t-2 border-primary shadow-2xl z-40">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
@@ -680,7 +680,7 @@ const AgentCard = ({ agent, isInCompare, isShortlisted, onToggleCompare, onToggl
   const [showTooltip, setShowTooltip] = useState(null);
 
   return (
-    <Card className="group hover:shadow-2xl transition-all duration-300 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-black rounded-2xl overflow-hidden">
+    <Card className="group hover:shadow-2xl transition-all duration-300 bg-card border-2 border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-black rounded-2xl overflow-hidden">
       <CardContent className="p-6">
         {/* Header with Photo */}
         <div className="flex items-start justify-between mb-4">

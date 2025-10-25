@@ -174,7 +174,7 @@ const HomePageImproved = () => {
         keywords="buyer agents Australia, property deals, real estate comparison, agent reviews, buy box, property search"
       />
       
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <div className="min-h-screen bg-background">
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-gray-900 dark:via-gray-900 dark:to-black pt-20 pb-16 overflow-hidden">
           <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
@@ -224,7 +224,7 @@ const HomePageImproved = () => {
                   <button
                     key={idx}
                     onClick={() => setSearchQuery(link.query)}
-                    className="px-3 py-1.5 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 hover:border-black dark:hover:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black text-sm text-black dark:text-white rounded-full transition-all"
+                    className="px-3 py-1.5 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 hover:border-primary hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black text-sm text-black dark:text-white rounded-full transition-all"
                   >
                     {link.text}
                   </button>
@@ -235,7 +235,7 @@ const HomePageImproved = () => {
             {/* Primary CTA Tiles */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
               <Link to="/deals">
-                <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white bg-white dark:bg-gray-900">
+                <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-gray-200 dark:border-gray-800 hover:border-primary bg-white dark:bg-gray-900">
                   <CardContent className="p-6 text-center">
                     <div className="w-14 h-14 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Home className="h-7 w-7 text-black dark:text-white" />
@@ -249,7 +249,7 @@ const HomePageImproved = () => {
               </Link>
 
               <Link to="/agents">
-                <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white bg-white dark:bg-gray-900">
+                <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-gray-200 dark:border-gray-800 hover:border-primary bg-white dark:bg-gray-900">
                   <CardContent className="p-6 text-center">
                     <div className="w-14 h-14 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Users className="h-7 w-7 text-black dark:text-white" />
@@ -263,7 +263,7 @@ const HomePageImproved = () => {
               </Link>
 
               <Link to="/compare">
-                <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white bg-white dark:bg-gray-900">
+                <Card className="hover:shadow-xl transition-all cursor-pointer border-2 border-gray-200 dark:border-gray-800 hover:border-primary bg-white dark:bg-gray-900">
                   <CardContent className="p-6 text-center">
                     <div className="w-14 h-14 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Target className="h-7 w-7 text-black dark:text-white" />
@@ -280,7 +280,7 @@ const HomePageImproved = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="py-12 bg-white dark:bg-gray-800 border-y border-gray-200 dark:border-gray-700">
+        <section className="py-12 bg-card border-y border-gray-200 dark:border-gray-700">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => {
@@ -339,7 +339,7 @@ const HomePageImproved = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {/* Column 1: Property Type & Location */}
-              <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white transition-all">
+              <Card className="bg-card border-2 border-gray-200 dark:border-gray-700 hover:border-primary transition-all">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
                     <Building2 className="h-5 w-5 mr-2 text-black" />
@@ -356,7 +356,7 @@ const HomePageImproved = () => {
                           className={`p-4 rounded-xl border-2 transition-all text-center ${
                             isSelected
                               ? 'border-black bg-gray-50 dark:bg-gray-900 shadow-md'
-                              : 'border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white'
+                              : 'border-gray-200 dark:border-gray-700 hover:border-primary'
                           }`}
                         >
                           <div className="text-2xl mb-1">{icons[type]}</div>
@@ -376,10 +376,10 @@ const HomePageImproved = () => {
                     placeholder="e.g., Carlton, Melbourne"
                     value={buyBox.suburb}
                     onChange={(e) => setBuyBox(prev => ({ ...prev, suburb: e.target.value }))}
-                    className="mb-3 h-12 border-2 dark:bg-gray-700 dark:text-white"
+                    className="mb-3 h-12 border-2 bg-background text-foreground"
                   />
                   <Select value={buyBox.radius.toString()} onValueChange={(value) => setBuyBox(prev => ({ ...prev, radius: parseInt(value) }))}>
-                    <SelectTrigger className="h-12 border-2 dark:bg-gray-700 dark:text-white">
+                    <SelectTrigger className="h-12 border-2 bg-background text-foreground">
                       <SelectValue placeholder="Search radius" />
                     </SelectTrigger>
                     <SelectContent>
@@ -394,7 +394,7 @@ const HomePageImproved = () => {
               </Card>
 
               {/* Column 2: Budget & Features */}
-              <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-black transition-all">
+              <Card className="bg-card border-2 border-gray-200 dark:border-gray-700 hover:border-primary transition-all">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
                     <DollarSign className="h-5 w-5 mr-2 text-success" />
@@ -424,7 +424,7 @@ const HomePageImproved = () => {
                     <div className="flex items-center gap-3">
                       <Bed className="h-5 w-5 text-gray-700 dark:text-gray-400" />
                       <Select value={buyBox.bedrooms} onValueChange={(value) => setBuyBox(prev => ({ ...prev, bedrooms: value }))}>
-                        <SelectTrigger className="flex-1 h-11 border-2 dark:bg-gray-700 dark:text-white">
+                        <SelectTrigger className="flex-1 h-11 border-2 bg-background text-foreground">
                           <SelectValue placeholder="Bedrooms" />
                         </SelectTrigger>
                         <SelectContent>
@@ -441,7 +441,7 @@ const HomePageImproved = () => {
                     <div className="flex items-center gap-3">
                       <Bath className="h-5 w-5 text-gray-700 dark:text-gray-400" />
                       <Select value={buyBox.bathrooms} onValueChange={(value) => setBuyBox(prev => ({ ...prev, bathrooms: value }))}>
-                        <SelectTrigger className="flex-1 h-11 border-2 dark:bg-gray-700 dark:text-white">
+                        <SelectTrigger className="flex-1 h-11 border-2 bg-background text-foreground">
                           <SelectValue placeholder="Bathrooms" />
                         </SelectTrigger>
                         <SelectContent>
@@ -456,7 +456,7 @@ const HomePageImproved = () => {
                     <div className="flex items-center gap-3">
                       <Car className="h-5 w-5 text-gray-700 dark:text-gray-400" />
                       <Select value={buyBox.parking} onValueChange={(value) => setBuyBox(prev => ({ ...prev, parking: value }))}>
-                        <SelectTrigger className="flex-1 h-11 border-2 dark:bg-gray-700 dark:text-white">
+                        <SelectTrigger className="flex-1 h-11 border-2 bg-background text-foreground">
                           <SelectValue placeholder="Parking" />
                         </SelectTrigger>
                         <SelectContent>
@@ -472,7 +472,7 @@ const HomePageImproved = () => {
               </Card>
 
               {/* Column 3: Strategy & CTA */}
-              <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white transition-all">
+              <Card className="bg-card border-2 border-gray-200 dark:border-gray-700 hover:border-primary transition-all">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
                     <Target className="h-5 w-5 mr-2 text-gray-700" />
@@ -509,7 +509,7 @@ const HomePageImproved = () => {
                         <button
                           key={idx}
                           onClick={() => setBuyBox(prev => ({ ...prev, ...item.preset }))}
-                          className="w-full text-left px-3 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-black rounded-lg text-sm transition-all"
+                          className="w-full text-left px-3 py-2 bg-card border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-black rounded-lg text-sm transition-all"
                         >
                           {item.label}
                         </button>
@@ -657,7 +657,7 @@ const HomePageImproved = () => {
         </section>
 
         {/* SEO Blocks - Cities */}
-        <section className="py-16 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+        <section className="py-16 bg-card border-t border-gray-200 dark:border-gray-700">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
               Find Buyer Agents & Deals by City

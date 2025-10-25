@@ -232,7 +232,7 @@ const OrganizationSetupPage = () => {
                     className={`p-3 text-sm rounded-lg border transition-all text-center ${
                       formData.specializations.includes(spec)
                         ? 'bg-gray-50 dark:bg-gray-900 border-gray-300 dark:border-gray-300 text-black dark:text-gray-700'
-                        : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-300'
+                        : 'bg-card border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-300'
                     }`}
                   >
                     {spec}

@@ -51,7 +51,7 @@ const CompareAgentsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
@@ -65,7 +65,7 @@ const CompareAgentsPage = () => {
 
         {/* Add Agent Section - Only show when no agents selected or at top of page */}
         {selectedAgents.length < 4 && selectedAgents.length === 0 && (
-          <Card className="mb-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+          <Card className="mb-8 bg-card border-gray-200 dark:border-gray-700">
             <CardContent className="p-6">
               {!showAddAgent ? (
                 <div className="text-center">
@@ -95,7 +95,7 @@ const CompareAgentsPage = () => {
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
                       list="compare-agents"
-                      className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/20 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
+                      className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/20 rounded-2xl bg-background text-foreground font-medium transition-all"
                     />
                     <datalist id="compare-agents">
                       <option value="Sydney agents" />
@@ -105,7 +105,7 @@ const CompareAgentsPage = () => {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-64 overflow-y-auto">
                     {availableAgents.map((agent) => (
-                      <div key={agent.id} className="border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg p-4 hover:border-gray-300 dark:hover:border-black cursor-pointer transition-colors" onClick={() => addAgent(agent)}>
+                      <div key={agent.id} className="border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg p-4 hover:border-primary cursor-pointer transition-colors" onClick={() => addAgent(agent)}>
                         <div className="flex items-center space-x-3">
                           <img src={agent.photo} alt={agent.name} className="w-12 h-12 rounded-full object-cover" />
                           <div>
@@ -130,7 +130,7 @@ const CompareAgentsPage = () => {
         {selectedAgents.length > 0 && (
           <div className="space-y-6">
             {/* Enhanced Sticky Agent Header - Two Rows */}
-            <div className="sticky top-16 z-40 bg-white dark:bg-gray-800 border-b-2 border-gray-200 dark:border-gray-700 shadow-md pb-3 pt-3">
+            <div className="sticky top-16 z-40 bg-card border-b-2 border-gray-200 dark:border-gray-700 shadow-md pb-3 pt-3">
               {/* Row 1: Title + Add Button */}
               <div className="flex items-center justify-between mb-3 px-1">
                 <div className="flex items-center space-x-3">
@@ -195,7 +195,7 @@ const CompareAgentsPage = () => {
                 
                 {/* Modal */}
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-                  <Card className="w-full max-w-4xl max-h-[80vh] overflow-hidden bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 shadow-2xl">
+                  <Card className="w-full max-w-4xl max-h-[80vh] overflow-hidden bg-card border-gray-200 dark:border-gray-700 shadow-2xl">
                     <CardHeader className="border-b border-gray-200 dark:border-gray-700">
                       <div className="flex items-center justify-between">
                         <CardTitle className="flex items-center text-gray-900 dark:text-white">
@@ -220,7 +220,7 @@ const CompareAgentsPage = () => {
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                             autoFocus
-                            className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/20 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
+                            className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/20 rounded-2xl bg-background text-foreground font-medium transition-all"
                           />
                         </div>
 
@@ -265,7 +265,7 @@ const CompareAgentsPage = () => {
             )}
 
             {/* 1. Overview Block */}
-            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+            <Card className="bg-card border-gray-200 dark:border-gray-700">
               <CardHeader>
                 <CardTitle className="flex items-center text-gray-900 dark:text-white">
                   <Users className="h-5 w-5 mr-2 text-black" />
@@ -331,7 +331,7 @@ const CompareAgentsPage = () => {
             </Card>
 
             {/* 2. Performance Block */}
-            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+            <Card className="bg-card border-gray-200 dark:border-gray-700">
               <CardHeader>
                 <CardTitle className="flex items-center text-gray-900 dark:text-white">
                   <TrendingUp className="h-5 w-5 mr-2 text-black" />
@@ -424,7 +424,7 @@ const CompareAgentsPage = () => {
             </Card>
 
             {/* 3. Deal Mix Block */}
-            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+            <Card className="bg-card border-gray-200 dark:border-gray-700">
               <CardHeader>
                 <CardTitle className="flex items-center text-gray-900 dark:text-white">
                   <BarChart3 className="h-5 w-5 mr-2 text-black" />
@@ -479,7 +479,7 @@ const CompareAgentsPage = () => {
             </Card>
 
             {/* 4. Customer Voice Block */}
-            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+            <Card className="bg-card border-gray-200 dark:border-gray-700">
               <CardHeader>
                 <CardTitle className="flex items-center text-gray-900 dark:text-white">
                   <MessageSquare className="h-5 w-5 mr-2 text-black" />
@@ -515,7 +515,7 @@ const CompareAgentsPage = () => {
             </Card>
 
             {/* 5. Compliance & Credibility Block */}
-            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+            <Card className="bg-card border-gray-200 dark:border-gray-700">
               <CardHeader>
                 <CardTitle className="flex items-center text-gray-900 dark:text-white">
                   <Shield className="h-5 w-5 mr-2 text-black" />
@@ -565,7 +565,7 @@ const CompareAgentsPage = () => {
             </Card>
 
             {/* 6. Recent Deals Block */}
-            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+            <Card className="bg-card border-gray-200 dark:border-gray-700">
               <CardHeader>
                 <CardTitle className="flex items-center text-gray-900 dark:text-white">
                   <Home className="h-5 w-5 mr-2 text-black" />
@@ -579,7 +579,7 @@ const CompareAgentsPage = () => {
                       <h4 className="font-semibold text-gray-900 dark:text-white mb-3">{agent.name}</h4>
                       <div className="space-y-3">
                         {agent.recentSales && agent.recentSales.slice(0, 3).map((sale, index) => (
-                          <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-3 hover:border-gray-300 dark:hover:border-black border-2 border-transparent transition-colors">
+                          <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-3 hover:border-primary border-2 border-transparent transition-colors">
                             <div className="flex items-start justify-between mb-2">
                               <Building2 className="h-4 w-4 text-black mt-1 flex-shrink-0" />
                               <span className="text-lg font-bold text-black ml-2">{sale.price}</span>
@@ -613,7 +613,7 @@ const CompareAgentsPage = () => {
 
         {/* Empty State */}
         {selectedAgents.length === 0 && (
-          <Card className="text-center py-16 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+          <Card className="text-center py-16 bg-card border-gray-200 dark:border-gray-700">
             <CardContent>
               <BarChart3 className="h-16 w-16 text-gray-300 dark:text-gray-600 mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Start Comparing Buyer Agents</h3>

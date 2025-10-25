@@ -271,7 +271,7 @@ const MyDealsNew = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
@@ -318,7 +318,7 @@ const MyDealsNew = () => {
         </div>
 
         {/* Search and Filters */}
-        <Card className="mb-6 bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700">
+        <Card className="mb-6 bg-card border-2 border-gray-100 dark:border-gray-700">
           <CardContent className="p-6">
             <div className="flex flex-col lg:flex-row gap-4">
               {/* Search */}
@@ -328,7 +328,7 @@ const MyDealsNew = () => {
                   placeholder="Search by suburb or address..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-primary rounded-2xl dark:bg-gray-700 dark:text-white font-medium"
+                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-primary rounded-2xl bg-background text-foreground font-medium"
                 />
               </div>
               

@@ -153,7 +153,7 @@ const AboutPage = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {team.map((member, index) => (
-                <Card key={index} className="text-center hover:shadow-lg transition-shadow bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                <Card key={index} className="text-center hover:shadow-lg transition-shadow bg-card border-gray-200 dark:border-gray-700">
                   <CardContent className="p-6">
                     <img 
                       src={member.image} 
@@ -181,7 +181,7 @@ const AboutPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/agents">
-                <Button size="lg" className="bg-white text-black hover:bg-gray-50 px-8">
+                <Button size="lg" className="bg-white text-black hover:bg-primary hover:text-white px-8">
                   Browse Agents
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>

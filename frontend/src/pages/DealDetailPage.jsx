@@ -75,7 +75,7 @@ const DealDetailPage = () => {
         description={`See how a buyer agent secured this ${deal.propertyType} in ${deal.suburb}. Verified deal details with negotiation insights.`}
       />
       
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <div className="min-h-screen bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Hero Section */}
           <div className="mb-8">

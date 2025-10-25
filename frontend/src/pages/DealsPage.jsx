@@ -213,7 +213,7 @@ const DealsPage = () => {
         description="Explore verified property deals secured by top buyer agents. See discounts achieved, days to secure, and rental yields across Australia."
         keywords="buyer agent deals, property purchases, real estate discounts, off-market deals, investment properties Australia"
       />
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <div className="min-h-screen bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Header */}
           <div className="mb-8">
@@ -237,7 +237,7 @@ const DealsPage = () => {
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   list="deals-suggestions"
-                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/20 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
+                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/20 rounded-2xl bg-background text-foreground font-medium transition-all"
                 />
                 <datalist id="deals-suggestions">
                   <option value="Bondi Beach" />
@@ -282,7 +282,7 @@ const DealsPage = () => {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="h-12 px-4 border-2 border-gray-200 dark:border-gray-600 rounded-2xl dark:bg-gray-700 dark:text-white font-semibold transition-all hover:border-primary"
+                  className="h-12 px-4 border-2 border-gray-200 dark:border-gray-600 rounded-2xl bg-background text-foreground font-semibold transition-all hover:border-primary"
                 >
                   <option value="recent">🕐 Most Recent</option>
                   <option value="highestDiscount">💰 Highest Discount</option>
@@ -346,7 +346,7 @@ const DealsPage = () => {
               
               {/* Modal */}
               <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto">
-                <Card className="w-full max-w-5xl max-h-[90vh] overflow-hidden bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 shadow-2xl my-8">
+                <Card className="w-full max-w-5xl max-h-[90vh] overflow-hidden bg-card border-gray-200 dark:border-gray-700 shadow-2xl my-8">
                   <CardHeader className="border-b border-gray-200 dark:border-gray-700 sticky top-0 bg-white dark:bg-gray-800 z-10">
                     <div className="flex items-center justify-between">
                       <CardTitle className="flex items-center text-gray-900 dark:text-white">
@@ -381,7 +381,7 @@ const DealsPage = () => {
                             <select
                               value={filters.state}
                               onChange={(e) => setFilters({...filters, state: e.target.value})}
-                              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg dark:bg-gray-700 dark:text-white"
+                              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-background text-foreground"
                             >
                               <option value="">All States</option>
                               {stateOptions.map(state => (
@@ -395,7 +395,7 @@ const DealsPage = () => {
                               placeholder="Enter suburb"
                               value={filters.suburb}
                               onChange={(e) => setFilters({...filters, suburb: e.target.value})}
-                              className="dark:bg-gray-700 dark:text-white"
+                              className="bg-background text-foreground"
                             />
                           </div>
                           <div>
@@ -404,7 +404,7 @@ const DealsPage = () => {
                               placeholder="Enter postcode"
                               value={filters.postcode}
                               onChange={(e) => setFilters({...filters, postcode: e.target.value})}
-                              className="dark:bg-gray-700 dark:text-white"
+                              className="bg-background text-foreground"
                             />
                           </div>
                         </div>
@@ -419,7 +419,7 @@ const DealsPage = () => {
                             <select
                               value={filters.propertyType}
                               onChange={(e) => setFilters({...filters, propertyType: e.target.value})}
-                              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg dark:bg-gray-700 dark:text-white"
+                              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-background text-foreground"
                             >
                               <option value="">All Types</option>
                               {propertyTypeOptions.map(type => (
@@ -434,7 +434,7 @@ const DealsPage = () => {
                               placeholder="Any"
                               value={filters.bedrooms}
                               onChange={(e) => setFilters({...filters, bedrooms: e.target.value})}
-                              className="dark:bg-gray-700 dark:text-white"
+                              className="bg-background text-foreground"
                             />
                           </div>
                           <div>
@@ -444,7 +444,7 @@ const DealsPage = () => {
                               placeholder="Any"
                               value={filters.bathrooms}
                               onChange={(e) => setFilters({...filters, bathrooms: e.target.value})}
-                              className="dark:bg-gray-700 dark:text-white"
+                              className="bg-background text-foreground"
                             />
                           </div>
                           <div>
@@ -454,7 +454,7 @@ const DealsPage = () => {
                               placeholder="Any"
                               value={filters.carSpaces}
                               onChange={(e) => setFilters({...filters, carSpaces: e.target.value})}
-                              className="dark:bg-gray-700 dark:text-white"
+                              className="bg-background text-foreground"
                             />
                           </div>
                         </div>
@@ -471,7 +471,7 @@ const DealsPage = () => {
                               placeholder="$ Min"
                               value={filters.minPrice}
                               onChange={(e) => setFilters({...filters, minPrice: e.target.value})}
-                              className="dark:bg-gray-700 dark:text-white"
+                              className="bg-background text-foreground"
                             />
                           </div>
                           <div>
@@ -481,7 +481,7 @@ const DealsPage = () => {
                               placeholder="$ Max"
                               value={filters.maxPrice}
                               onChange={(e) => setFilters({...filters, maxPrice: e.target.value})}
-                              className="dark:bg-gray-700 dark:text-white"
+                              className="bg-background text-foreground"
                             />
                           </div>
                         </div>
@@ -526,7 +526,7 @@ const DealsPage = () => {
                               type="date"
                               value={filters.dateFrom}
                               onChange={(e) => setFilters({...filters, dateFrom: e.target.value})}
-                              className="dark:bg-gray-700 dark:text-white"
+                              className="bg-background text-foreground"
                             />
                           </div>
                           <div>
@@ -535,7 +535,7 @@ const DealsPage = () => {
                               type="date"
                               value={filters.dateTo}
                               onChange={(e) => setFilters({...filters, dateTo: e.target.value})}
-                              className="dark:bg-gray-700 dark:text-white"
+                              className="bg-background text-foreground"
                             />
                           </div>
                         </div>
@@ -552,7 +552,7 @@ const DealsPage = () => {
                               placeholder="Any"
                               value={filters.maxDaysToSecure}
                               onChange={(e) => setFilters({...filters, maxDaysToSecure: e.target.value})}
-                              className="dark:bg-gray-700 dark:text-white"
+                              className="bg-background text-foreground"
                             />
                           </div>
                           <div>
@@ -563,7 +563,7 @@ const DealsPage = () => {
                               placeholder="Any"
                               value={filters.minDiscountPercent}
                               onChange={(e) => setFilters({...filters, minDiscountPercent: e.target.value})}
-                              className="dark:bg-gray-700 dark:text-white"
+                              className="bg-background text-foreground"
                             />
                           </div>
                           <div>
@@ -574,7 +574,7 @@ const DealsPage = () => {
                               placeholder="Any"
                               value={filters.minYield}
                               onChange={(e) => setFilters({...filters, minYield: e.target.value})}
-                              className="dark:bg-gray-700 dark:text-white"
+                              className="bg-background text-foreground"
                             />
                           </div>
                         </div>
@@ -613,7 +613,7 @@ const DealsPage = () => {
 
           {/* Map View Placeholder */}
           {viewMode === 'map' && (
-            <Card className="mb-6 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+            <Card className="mb-6 bg-card border-gray-200 dark:border-gray-700">
               <CardContent className="p-16 text-center">
                 <Map className="h-16 w-16 text-gray-300 dark:text-gray-600 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Map View Coming Soon</h3>
@@ -637,7 +637,7 @@ const DealsPage = () => {
                   ))}
                 </div>
               ) : (
-                <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                <Card className="bg-card border-gray-200 dark:border-gray-700">
                   <CardContent className="p-16 text-center">
                     <Search className="h-16 w-16 text-gray-300 dark:text-gray-600 mx-auto mb-4" />
                     <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">No deals found</h3>
@@ -695,7 +695,7 @@ const DealCard = ({ deal }) => {
   const achievement = formatAchievement(deal);
   
   return (
-    <Card className="group hover:shadow-2xl transition-all duration-300 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-black overflow-hidden rounded-2xl">
+    <Card className="group hover:shadow-2xl transition-all duration-300 bg-card border-2 border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-black overflow-hidden rounded-2xl">
       {/* Image */}
       <div className="relative h-48 overflow-hidden">
         <img

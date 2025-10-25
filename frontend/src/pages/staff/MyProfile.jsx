@@ -114,7 +114,7 @@ const MyProfile = () => {
     <>
       {/* If preview mode, render the public view with a banner */}
       {isPreview ? (
-        <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+        <div className="min-h-screen bg-background">
           {/* Preview Banner */}
           <div className="bg-info dark:bg-info text-white py-3 sticky top-0 z-50 shadow-lg">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -127,7 +127,7 @@ const MyProfile = () => {
                   </div>
                 </div>
                 <Link to="/staff/my-profile">
-                  <Button variant="secondary" size="sm" className="bg-white text-black hover:bg-gray-50">
+                  <Button variant="secondary" size="sm" className="bg-white text-black hover:bg-primary hover:text-white">
                     <X className="h-4 w-4 mr-2" />
                     Exit Preview
                   </Button>
@@ -140,7 +140,7 @@ const MyProfile = () => {
           <AgentProfilePage agentIdOverride={1} />
         </div>
       ) : (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">

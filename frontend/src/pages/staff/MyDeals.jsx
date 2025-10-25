@@ -200,7 +200,7 @@ const MyDeals = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
@@ -247,7 +247,7 @@ const MyDeals = () => {
         </div>
 
         {/* Modern Search and Filters */}
-        <Card className="mb-6 bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700 shadow-xl">
+        <Card className="mb-6 bg-card border-2 border-gray-100 dark:border-gray-700 shadow-xl">
           <CardContent className="p-6">
             <div className="flex flex-col lg:flex-row gap-4">
               {/* Modern Search */}
@@ -258,7 +258,7 @@ const MyDeals = () => {
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   list="deal-search"
-                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/20 rounded-2xl dark:bg-gray-700 dark:text-white font-medium transition-all"
+                  className="pl-12 h-14 text-base border-2 border-gray-200 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/20 rounded-2xl bg-background text-foreground font-medium transition-all"
                 />
                 <datalist id="deal-search">
                   <option value="Bondi Beach" />
@@ -270,7 +270,7 @@ const MyDeals = () => {
               {/* Modern Filters */}
               <div className="flex space-x-3">
                 <Select value={statusFilter} onValueChange={setStatusFilter}>
-                  <SelectTrigger className="w-44 h-14 border-2 border-gray-200 dark:border-gray-600 rounded-2xl font-semibold dark:bg-gray-700 dark:text-white">
+                  <SelectTrigger className="w-44 h-14 border-2 border-gray-200 dark:border-gray-600 rounded-2xl font-semibold bg-background text-foreground">
                     <SelectValue placeholder="Status" />
                   </SelectTrigger>
                   <SelectContent>
@@ -283,7 +283,7 @@ const MyDeals = () => {
                 </Select>
                 
                 <Select value={typeFilter} onValueChange={setTypeFilter}>
-                  <SelectTrigger className="w-40 h-14 border-2 border-gray-200 dark:border-gray-600 rounded-2xl font-semibold dark:bg-gray-700 dark:text-white">
+                  <SelectTrigger className="w-40 h-14 border-2 border-gray-200 dark:border-gray-600 rounded-2xl font-semibold bg-background text-foreground">
                     <SelectValue placeholder="Type" />
                   </SelectTrigger>
                   <SelectContent>

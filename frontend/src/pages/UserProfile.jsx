@@ -107,7 +107,7 @@ const UserProfile = () => {
         description="Manage your profile settings, preferences, and account details."
       />
       
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <div className="min-h-screen bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Header */}
           <div className="mb-8">
@@ -134,7 +134,7 @@ const UserProfile = () => {
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
             {/* Sidebar Navigation */}
             <div className="lg:col-span-1">
-              <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 sticky top-20">
+              <Card className="bg-card border-gray-200 dark:border-gray-700 sticky top-20">
                 <CardContent className="p-4">
                   <nav className="space-y-2">
                     {[
@@ -152,7 +152,7 @@ const UserProfile = () => {
                           className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
                             activeSection === section.id
                               ? 'bg-gray-100 dark:bg-gray-900 text-black dark:text-gray-700 font-semibold'
-                              : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-700'
+                              : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 hover:text-primary hover:bg-primary/10'
                           }`}
                         >
                           <Icon className="h-5 w-5" />
@@ -170,7 +170,7 @@ const UserProfile = () => {
               {/* Personal Information */}
               {activeSection === 'personal' && (
                 <>
-                  <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                  <Card className="bg-card border-gray-200 dark:border-gray-700">
                     <CardHeader className="border-b border-gray-200 dark:border-gray-700">
                       <CardTitle className="flex items-center text-gray-900 dark:text-white">
                         <User className="h-5 w-5 mr-2 text-black" />
@@ -218,7 +218,7 @@ const UserProfile = () => {
                             id="firstName"
                             value={profile.firstName}
                             onChange={(e) => handleProfileChange('firstName', e.target.value)}
-                            className="mt-2 dark:bg-gray-700 dark:text-white"
+                            className="mt-2 bg-background text-foreground"
                           />
                         </div>
                         <div>
@@ -227,7 +227,7 @@ const UserProfile = () => {
                             id="lastName"
                             value={profile.lastName}
                             onChange={(e) => handleProfileChange('lastName', e.target.value)}
-                            className="mt-2 dark:bg-gray-700 dark:text-white"
+                            className="mt-2 bg-background text-foreground"
                           />
                         </div>
                         <div>
@@ -240,7 +240,7 @@ const UserProfile = () => {
                             type="email"
                             value={profile.email}
                             onChange={(e) => handleProfileChange('email', e.target.value)}
-                            className="mt-2 dark:bg-gray-700 dark:text-white"
+                            className="mt-2 bg-background text-foreground"
                           />
                         </div>
                         <div>
@@ -253,7 +253,7 @@ const UserProfile = () => {
                             type="tel"
                             value={profile.phone}
                             onChange={(e) => handleProfileChange('phone', e.target.value)}
-                            className="mt-2 dark:bg-gray-700 dark:text-white"
+                            className="mt-2 bg-background text-foreground"
                           />
                         </div>
                         <div className="md:col-span-2">
@@ -265,7 +265,7 @@ const UserProfile = () => {
                             id="location"
                             value={profile.location}
                             onChange={(e) => handleProfileChange('location', e.target.value)}
-                            className="mt-2 dark:bg-gray-700 dark:text-white"
+                            className="mt-2 bg-background text-foreground"
                             placeholder="City, State"
                           />
                         </div>
@@ -275,7 +275,7 @@ const UserProfile = () => {
                             id="bio"
                             value={profile.bio}
                             onChange={(e) => handleProfileChange('bio', e.target.value)}
-                            className="mt-2 dark:bg-gray-700 dark:text-white"
+                            className="mt-2 bg-background text-foreground"
                             rows={3}
                             placeholder="Tell us about your property search goals..."
                           />
@@ -295,7 +295,7 @@ const UserProfile = () => {
 
               {/* Preferences */}
               {activeSection === 'preferences' && (
-                <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                <Card className="bg-card border-gray-200 dark:border-gray-700">
                   <CardHeader className="border-b border-gray-200 dark:border-gray-700">
                     <CardTitle className="flex items-center text-gray-900 dark:text-white">
                       <Globe className="h-5 w-5 mr-2 text-black" />
@@ -330,7 +330,7 @@ const UserProfile = () => {
                     <div>
                       <Label className="text-gray-700 dark:text-gray-300 mb-2 block">Default Search Radius</Label>
                       <Select value={profile.searchRadius} onValueChange={(value) => handleProfileChange('searchRadius', value)}>
-                        <SelectTrigger className="dark:bg-gray-700 dark:text-white">
+                        <SelectTrigger className="bg-background text-foreground">
                           <SelectValue />
                         </SelectTrigger>
                         <SelectContent>
@@ -352,7 +352,7 @@ const UserProfile = () => {
                             type="number"
                             value={profile.budgetRange.min}
                             onChange={(e) => handleProfileChange('budgetRange', { ...profile.budgetRange, min: parseInt(e.target.value) })}
-                            className="mt-1 dark:bg-gray-700 dark:text-white"
+                            className="mt-1 bg-background text-foreground"
                             placeholder="Min budget"
                           />
                         </div>
@@ -362,7 +362,7 @@ const UserProfile = () => {
                             type="number"
                             value={profile.budgetRange.max}
                             onChange={(e) => handleProfileChange('budgetRange', { ...profile.budgetRange, max: parseInt(e.target.value) })}
-                            className="mt-1 dark:bg-gray-700 dark:text-white"
+                            className="mt-1 bg-background text-foreground"
                             placeholder="Max budget"
                           />
                         </div>
@@ -381,7 +381,7 @@ const UserProfile = () => {
 
               {/* Notifications */}
               {activeSection === 'notifications' && (
-                <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                <Card className="bg-card border-gray-200 dark:border-gray-700">
                   <CardHeader className="border-b border-gray-200 dark:border-gray-700">
                     <CardTitle className="flex items-center text-gray-900 dark:text-white">
                       <Bell className="h-5 w-5 mr-2 text-gray-700" />
@@ -459,7 +459,7 @@ const UserProfile = () => {
 
               {/* Security */}
               {activeSection === 'security' && (
-                <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                <Card className="bg-card border-gray-200 dark:border-gray-700">
                   <CardHeader className="border-b border-gray-200 dark:border-gray-700">
                     <CardTitle className="flex items-center text-gray-900 dark:text-white">
                       <Shield className="h-5 w-5 mr-2 text-red-600" />
@@ -477,7 +477,7 @@ const UserProfile = () => {
                             type="password"
                             value={passwordData.currentPassword}
                             onChange={(e) => handlePasswordChange('currentPassword', e.target.value)}
-                            className="mt-2 dark:bg-gray-700 dark:text-white"
+                            className="mt-2 bg-background text-foreground"
                           />
                         </div>
                         <div>
@@ -487,7 +487,7 @@ const UserProfile = () => {
                             type="password"
                             value={passwordData.newPassword}
                             onChange={(e) => handlePasswordChange('newPassword', e.target.value)}
-                            className="mt-2 dark:bg-gray-700 dark:text-white"
+                            className="mt-2 bg-background text-foreground"
                           />
                         </div>
                         <div>
@@ -497,7 +497,7 @@ const UserProfile = () => {
                             type="password"
                             value={passwordData.confirmPassword}
                             onChange={(e) => handlePasswordChange('confirmPassword', e.target.value)}
-                            className="mt-2 dark:bg-gray-700 dark:text-white"
+                            className="mt-2 bg-background text-foreground"
                           />
                         </div>
                         <Button onClick={handleChangePassword} className="bg-red-600 hover:bg-red-700 hover:text-white text-white">
@@ -531,7 +531,7 @@ const UserProfile = () => {
 
               {/* Privacy */}
               {activeSection === 'privacy' && (
-                <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                <Card className="bg-card border-gray-200 dark:border-gray-700">
                   <CardHeader className="border-b border-gray-200 dark:border-gray-700">
                     <CardTitle className="flex items-center text-gray-900 dark:text-white">
                       <Eye className="h-5 w-5 mr-2 text-black" />
@@ -542,7 +542,7 @@ const UserProfile = () => {
                     <div>
                       <Label className="text-gray-700 dark:text-gray-300 mb-3 block">Profile Visibility</Label>
                       <Select value={profile.profileVisibility} onValueChange={(value) => handleProfileChange('profileVisibility', value)}>
-                        <SelectTrigger className="dark:bg-gray-700 dark:text-white">
+                        <SelectTrigger className="bg-background text-foreground">
                           <SelectValue />
                         </SelectTrigger>
                         <SelectContent>

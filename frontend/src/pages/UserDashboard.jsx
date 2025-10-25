@@ -240,7 +240,7 @@ const UserDashboardComplete = () => {
         description="Manage your saved searches, shortlisted agents, property deals, and reviews."
       />
       
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <div className="min-h-screen bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Header */}
           <div className="mb-8 flex items-start justify-between">
@@ -267,7 +267,7 @@ const UserDashboardComplete = () => {
             {stats.map((stat, idx) => {
               const Icon = stat.icon;
               return (
-                <Card key={idx} className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                <Card key={idx} className="bg-card border-gray-200 dark:border-gray-700">
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between">
                       <div>
@@ -371,7 +371,7 @@ const UserDashboardComplete = () => {
                   </Card>
 
                   {/* Recent Activity */}
-                  <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                  <Card className="bg-card border-gray-200 dark:border-gray-700">
                     <CardHeader className="border-b border-gray-200 dark:border-gray-700">
                       <CardTitle className="flex items-center text-gray-900 dark:text-white">
                         <Clock className="h-5 w-5 mr-2 text-gray-700" />
@@ -403,7 +403,7 @@ const UserDashboardComplete = () => {
 
                 {/* Right Column - Summary Cards */}
                 <div className="space-y-6">
-                  <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                  <Card className="bg-card border-gray-200 dark:border-gray-700">
                     <CardHeader>
                       <CardTitle className="text-gray-900 dark:text-white">At a Glance</CardTitle>
                     </CardHeader>
@@ -455,7 +455,7 @@ const UserDashboardComplete = () => {
             {/* Searches Tab */}
             <TabsContent value="searches">
               {/* Saved Searches Widget */}
-              <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+              <Card className="bg-card border-gray-200 dark:border-gray-700">
                 <CardHeader className="border-b border-gray-200 dark:border-gray-700">
                   <div className="flex items-center justify-between">
                     <CardTitle className="flex items-center text-gray-900 dark:text-white">
@@ -555,7 +555,7 @@ const UserDashboardComplete = () => {
             {/* Agents Tab */}
             <TabsContent value="agents">
               {/* Shortlisted Agents Widget */}
-              <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+              <Card className="bg-card border-gray-200 dark:border-gray-700">
                 <CardHeader className="border-b border-gray-200 dark:border-gray-700">
                   <div className="flex items-center justify-between">
                     <CardTitle className="flex items-center text-gray-900 dark:text-white">
@@ -637,7 +637,7 @@ const UserDashboardComplete = () => {
                                     value={noteText}
                                     onChange={(e) => setNoteText(e.target.value)}
                                     placeholder="Add your notes..."
-                                    className="mb-2 dark:bg-gray-700 dark:text-white"
+                                    className="mb-2 bg-background text-foreground"
                                     rows={2}
                                   />
                                   <div className="flex gap-2">
@@ -696,7 +696,7 @@ const UserDashboardComplete = () => {
             {/* Deals Tab */}
             <TabsContent value="deals">
               {/* Shortlisted Deals Widget */}
-              <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+              <Card className="bg-card border-gray-200 dark:border-gray-700">
                 <CardHeader className="border-b border-gray-200 dark:border-gray-700">
                   <div className="flex items-center justify-between">
                     <CardTitle className="flex items-center text-gray-900 dark:text-white">
@@ -792,7 +792,7 @@ const UserDashboardComplete = () => {
             {/* Reviews Tab */}
             <TabsContent value="reviews">
               {/* My Reviews Widget */}
-              <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+              <Card className="bg-card border-gray-200 dark:border-gray-700">
                 <CardHeader className="border-b border-gray-200 dark:border-gray-700">
                   <div className="flex items-center justify-between">
                     <CardTitle className="flex items-center text-gray-900 dark:text-white">
@@ -863,7 +863,7 @@ const UserDashboardComplete = () => {
             {/* Settings Tab */}
             <TabsContent value="settings">
               {/* Alerts Settings Widget */}
-              <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+              <Card className="bg-card border-gray-200 dark:border-gray-700">
                 <CardHeader className="border-b border-gray-200 dark:border-gray-700">
                   <CardTitle className="flex items-center text-gray-900 dark:text-white">
                     <Bell className="h-5 w-5 mr-2 text-red-600" />
@@ -881,7 +881,7 @@ const UserDashboardComplete = () => {
                         value={alertSettings.globalCadence}
                         onValueChange={(value) => setAlertSettings({ ...alertSettings, globalCadence: value })}
                       >
-                        <SelectTrigger className="dark:bg-gray-700 dark:text-white">
+                        <SelectTrigger className="bg-background text-foreground">
                           <SelectValue />
                         </SelectTrigger>
                         <SelectContent>

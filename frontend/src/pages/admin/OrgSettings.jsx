@@ -144,7 +144,7 @@ const OrgSettings = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
@@ -179,7 +179,7 @@ const OrgSettings = () => {
                         className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
                           activeSection === section.id
                             ? 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-700'
-                            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-800'
+                            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 hover:text-primary hover:bg-primary/10'
                         }`}
                       >
                         <Icon className="h-5 w-5" />
@@ -718,7 +718,7 @@ const OrgSettings = () => {
 
             {/* Save Button (Fixed at bottom for all sections except subscription) */}
             {activeSection !== 'subscription' && (
-              <div className="sticky bottom-0 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 p-4 rounded-lg shadow-lg">
+              <div className="sticky bottom-0 bg-card border-t border-gray-200 dark:border-gray-700 p-4 rounded-lg shadow-lg">
                 <div className="flex justify-between items-center">
                   <p className="text-sm text-gray-600 dark:text-gray-400">
                     Make sure to save your changes before leaving

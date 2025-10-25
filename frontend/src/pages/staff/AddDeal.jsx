@@ -233,7 +233,7 @@ const AddDeal = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-background">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
@@ -262,7 +262,7 @@ const AddDeal = () => {
                   <div className={`flex items-center justify-center w-12 h-12 rounded-full border-2 transition-colors ${
                     isCompleted ? 'bg-emerald-600 border-emerald-600' :
                     isActive ? 'bg-success border-black' :
-                    'bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600'
+                    'bg-card border-gray-300 dark:border-gray-600'
                   }`}>
                     {isCompleted ? (
                       <CheckCircle className="h-6 w-6 text-white" />

@@ -81,7 +81,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
         description={`${agent.name} is a buyer's agent specializing in ${agent.specialties.join(', ')}. ${agent.verifiedDealsCount} verified deals with ${agent.rating} rating.`}
       />
       
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <div className="min-h-screen bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 mb-6">
@@ -91,7 +91,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
           </div>
 
           {/* Header Section */}
-          <Card className="mb-8 overflow-hidden bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+          <Card className="mb-8 overflow-hidden bg-card border-gray-200 dark:border-gray-700">
             <CardContent className="p-0">
               <div className="relative h-32 bg-gradient-to-r from-blue-800 to-blue-600"></div>
               <div className="relative px-6 pb-6">
@@ -207,7 +207,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
           </Card>
 
           {/* About Section */}
-          <Card className="mb-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+          <Card className="mb-8 bg-card border-gray-200 dark:border-gray-700">
             <CardHeader>
               <CardTitle className="flex items-center text-gray-900 dark:text-white">
                 <Users className="h-5 w-5 mr-2 text-black" />
@@ -251,7 +251,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
           </Card>
 
           {/* Services & Pricing */}
-          <Card className="mb-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+          <Card className="mb-8 bg-card border-gray-200 dark:border-gray-700">
             <CardHeader>
               <CardTitle className="flex items-center text-gray-900 dark:text-white">
                 <DollarSign className="h-5 w-5 mr-2 text-black" />
@@ -293,7 +293,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
           </Card>
 
           {/* Coverage & Focus */}
-          <Card className="mb-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+          <Card className="mb-8 bg-card border-gray-200 dark:border-gray-700">
             <CardHeader>
               <CardTitle className="flex items-center text-gray-900 dark:text-white">
                 <MapPin className="h-5 w-5 mr-2 text-black" />
@@ -368,7 +368,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
           </Card>
 
           {/* Performance Metrics */}
-          <Card className="mb-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+          <Card className="mb-8 bg-card border-gray-200 dark:border-gray-700">
             <CardHeader>
               <CardTitle className="flex items-center text-gray-900 dark:text-white">
                 <BarChart3 className="h-5 w-5 mr-2 text-black" />
@@ -435,7 +435,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
           </Card>
 
           {/* Portfolio of Recent Deals */}
-          <Card className="mb-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+          <Card className="mb-8 bg-card border-gray-200 dark:border-gray-700">
             <CardHeader>
               <CardTitle className="flex items-center text-gray-900 dark:text-white">
                 <TrendingUp className="h-5 w-5 mr-2 text-black" />
@@ -463,7 +463,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                       <Link 
                         key={deal.id} 
                         to={`/deal/${deal.id}`}
-                        className="group border border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden hover:border-gray-300 dark:hover:border-black hover:shadow-lg transition-all"
+                        className="group border border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden hover:border-primary hover:shadow-lg transition-all"
                       >
                         <img 
                           src={deal.photos[0]} 
@@ -547,7 +547,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
           </Card>
 
           {/* Customer Reviews */}
-          <Card className="mb-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+          <Card className="mb-8 bg-card border-gray-200 dark:border-gray-700">
             <CardHeader>
               <CardTitle className="flex items-center text-gray-900 dark:text-white">
                 <Star className="h-5 w-5 mr-2 text-black" />
@@ -643,7 +643,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
           </Card>
 
           {/* Compliance & Credibility */}
-          <Card className="mb-8 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+          <Card className="mb-8 bg-card border-gray-200 dark:border-gray-700">
             <CardHeader>
               <CardTitle className="flex items-center text-gray-900 dark:text-white">
                 <ShieldCheck className="h-5 w-5 mr-2 text-black" />
@@ -700,7 +700,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                 Get in touch to discuss your property goals and see how {agent.name.split(' ')[0]} can help you secure your ideal property.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button size="lg" className="bg-white text-black hover:bg-gray-100">
+                <Button size="lg" className="bg-white text-black hover:bg-primary hover:text-white">
                   <MessageCircle className="h-5 w-5 mr-2" />
                   Send Message
                 </Button>

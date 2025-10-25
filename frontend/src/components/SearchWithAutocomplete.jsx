@@ -92,7 +92,7 @@ const SearchWithAutocomplete = ({
             border-2 border-gray-200 dark:border-gray-600 
             focus:border-primary focus:ring-2 focus:ring-primary/20
             transition-all duration-200
-            dark:bg-gray-700 dark:text-white`}
+            bg-background text-foreground`}
         />
         {value && (
           <button
@@ -106,7 +106,7 @@ const SearchWithAutocomplete = ({
 
       {/* Suggestions Dropdown */}
       {showSuggestions && (filteredSuggestions.length > 0 || popularSearches.length > 0) && (
-        <div className="absolute z-50 w-full mt-2 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-600 rounded-xl shadow-xl overflow-hidden">
+        <div className="absolute z-50 w-full mt-2 bg-card border-2 border-gray-200 dark:border-gray-600 rounded-xl shadow-xl overflow-hidden">
           {/* Filtered Suggestions */}
           {filteredSuggestions.length > 0 && (
             <div className="border-b border-gray-100 dark:border-gray-700">

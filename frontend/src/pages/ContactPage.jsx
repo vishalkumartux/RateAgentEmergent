@@ -80,7 +80,7 @@ const ContactPage = () => {
             {contactInfo.map((info, index) => {
               const Icon = info.icon;
               return (
-                <Card key={index} className="text-center hover:shadow-lg transition-shadow bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                <Card key={index} className="text-center hover:shadow-lg transition-shadow bg-card border-gray-200 dark:border-gray-700">
                   <CardContent className="p-6">
                     <div className="w-16 h-16 bg-gray-100 dark:bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Icon className="h-8 w-8 text-black" />
@@ -96,7 +96,7 @@ const ContactPage = () => {
 
           {/* Contact Form */}
           <div className="max-w-3xl mx-auto">
-            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+            <Card className="bg-card border-gray-200 dark:border-gray-700">
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
                   <MessageCircle className="h-6 w-6 text-black mr-3" />

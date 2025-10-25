@@ -312,7 +312,7 @@ const OnboardingWizard = () => {
           </div>
 
           {/* Step Content */}
-          <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 mb-6">
+          <Card className="bg-card border-gray-200 dark:border-gray-700 mb-6">
             <CardContent className="p-8">
               {/* Step 1: Organisation Basics */}
               {currentStep === 1 && (
@@ -336,7 +336,7 @@ const OnboardingWizard = () => {
                         value={orgData.tradingName}
                         onChange={(e) => handleInputChange('tradingName', e.target.value)}
                         placeholder="Premium Realty Group"
-                        className="mt-2 dark:bg-gray-700 dark:text-white"
+                        className="mt-2 bg-background text-foreground"
                       />
                     </div>
 
@@ -349,7 +349,7 @@ const OnboardingWizard = () => {
                         value={orgData.abnAcn}
                         onChange={(e) => handleInputChange('abnAcn', e.target.value)}
                         placeholder="12 345 678 901"
-                        className="mt-2 dark:bg-gray-700 dark:text-white"
+                        className="mt-2 bg-background text-foreground"
                       />
                     </div>
 
@@ -363,7 +363,7 @@ const OnboardingWizard = () => {
                         value={orgData.website}
                         onChange={(e) => handleInputChange('website', e.target.value)}
                         placeholder="https://www.yourwebsite.com"
-                        className="mt-2 dark:bg-gray-700 dark:text-white"
+                        className="mt-2 bg-background text-foreground"
                       />
                     </div>
 
@@ -377,7 +377,7 @@ const OnboardingWizard = () => {
                         value={orgData.primaryPhone}
                         onChange={(e) => handleInputChange('primaryPhone', e.target.value)}
                         placeholder="+61 2 1234 5678"
-                        className="mt-2 dark:bg-gray-700 dark:text-white"
+                        className="mt-2 bg-background text-foreground"
                       />
                     </div>
 
@@ -392,7 +392,7 @@ const OnboardingWizard = () => {
                         value={orgData.primaryEmail}
                         onChange={(e) => handleInputChange('primaryEmail', e.target.value)}
                         placeholder="info@yourwebsite.com"
-                        className="mt-2 dark:bg-gray-700 dark:text-white"
+                        className="mt-2 bg-background text-foreground"
                       />
                     </div>
 
@@ -405,7 +405,7 @@ const OnboardingWizard = () => {
                         value={orgData.officeSuburb}
                         onChange={(e) => handleInputChange('officeSuburb', e.target.value)}
                         placeholder="Sydney"
-                        className="mt-2 dark:bg-gray-700 dark:text-white"
+                        className="mt-2 bg-background text-foreground"
                       />
                     </div>
 
@@ -417,7 +417,7 @@ const OnboardingWizard = () => {
                         id="officeState"
                         value={orgData.officeState}
                         onChange={(e) => handleInputChange('officeState', e.target.value)}
-                        className="mt-2 w-full h-10 px-3 rounded-md border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+                        className="mt-2 w-full h-10 px-3 rounded-md border border-gray-300 dark:border-gray-600 bg-background text-foreground"
                       >
                         <option value="">Select state</option>
                         {stateOptions.map(state => (
@@ -436,7 +436,7 @@ const OnboardingWizard = () => {
                         value={orgData.logo}
                         onChange={(e) => handleInputChange('logo', e.target.value)}
                         placeholder="https://example.com/logo.png"
-                        className="mt-2 dark:bg-gray-700 dark:text-white"
+                        className="mt-2 bg-background text-foreground"
                       />
                       {orgData.logo && (
                         <img src={orgData.logo} alt="Logo preview" className="mt-2 h-16 object-contain" />
@@ -470,7 +470,7 @@ const OnboardingWizard = () => {
                         onChange={(e) => handleInputChange('coverageInput', e.target.value)}
                         onKeyPress={(e) => e.key === 'Enter' && handleAddCoverageArea()}
                         placeholder="Enter suburb or region"
-                        className="dark:bg-gray-700 dark:text-white"
+                        className="bg-background text-foreground"
                       />
                       <Button onClick={handleAddCoverageArea} type="button" className="bg-success hover:bg-success/90 text-white hover:text-white shadow-sm">
                         Add
@@ -525,7 +525,7 @@ const OnboardingWizard = () => {
                     <select
                       value={orgData.feeModel}
                       onChange={(e) => handleInputChange('feeModel', e.target.value)}
-                      className="w-full h-10 px-3 rounded-md border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white mb-3"
+                      className="w-full h-10 px-3 rounded-md border border-gray-300 dark:border-gray-600 bg-background text-foreground mb-3"
                     >
                       <option value="">Select fee model</option>
                       {feeModelOptions.map(model => (
@@ -539,7 +539,7 @@ const OnboardingWizard = () => {
                           value={orgData.feeAmount}
                           onChange={(e) => handleInputChange('feeAmount', e.target.value)}
                           placeholder="e.g., $15,000 or 2.5%"
-                          className="mb-3 dark:bg-gray-700 dark:text-white"
+                          className="mb-3 bg-background text-foreground"
                         />
                         <div className="flex items-center space-x-2">
                           <Checkbox
@@ -581,7 +581,7 @@ const OnboardingWizard = () => {
                           <select
                             value={license.state}
                             onChange={(e) => handleLicenseChange(index, 'state', e.target.value)}
-                            className="w-32 h-10 px-3 rounded-md border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+                            className="w-32 h-10 px-3 rounded-md border border-gray-300 dark:border-gray-600 bg-background text-foreground"
                           >
                             <option value="">State</option>
                             {stateOptions.map(state => (
@@ -592,7 +592,7 @@ const OnboardingWizard = () => {
                             value={license.number}
                             onChange={(e) => handleLicenseChange(index, 'number', e.target.value)}
                             placeholder="License number"
-                            className="flex-1 dark:bg-gray-700 dark:text-white"
+                            className="flex-1 bg-background text-foreground"
                           />
                           {orgData.licenseNumbers.length > 1 && (
                             <Button
@@ -651,7 +651,7 @@ const OnboardingWizard = () => {
                           value={email}
                           onChange={(e) => handleStaffInviteChange(index, e.target.value)}
                           placeholder="agent@email.com"
-                          className="flex-1 dark:bg-gray-700 dark:text-white"
+                          className="flex-1 bg-background text-foreground"
                         />
                         {orgData.staffInvites.length > 1 && (
                           <Button
