@@ -117,7 +117,7 @@ const SearchWithAutocomplete = ({
                 <button
                   key={index}
                   onClick={() => handleSuggestionClick(suggestion)}
-                  className="w-full px-4 py-3 text-left hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors flex items-center space-x-3 group"
+                  className="w-full px-4 py-3 text-left hover:bg-primary hover:text-white transition-colors flex items-center space-x-3 group"
                 >
                   <MapPin className="h-4 w-4 text-gray-400 group-hover:text-black transition-colors" />
                   <span className="text-gray-900 dark:text-white group-hover:text-black transition-colors">
@@ -139,7 +139,7 @@ const SearchWithAutocomplete = ({
                 <button
                   key={index}
                   onClick={() => handleSuggestionClick(search)}
-                  className="w-full px-4 py-3 text-left hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors flex items-center space-x-3 group"
+                  className="w-full px-4 py-3 text-left hover:bg-primary hover:text-white transition-colors flex items-center space-x-3 group"
                 >
                   <TrendingUp className="h-4 w-4 text-black group-hover:text-black transition-colors" />
                   <span className="text-gray-900 dark:text-white group-hover:text-black transition-colors">

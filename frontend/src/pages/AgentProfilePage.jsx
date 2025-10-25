@@ -158,11 +158,11 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                           Contact Agent
                         </Button>
                         <div className="flex gap-2">
-                          <Button variant="outline" size="sm" className="flex-1 border-black text-black hover:bg-gray-50 dark:hover:bg-gray-800">
+                          <Button variant="outline" size="sm" className="flex-1 border-black text-black hover:bg-primary hover:text-white">
                             <Phone className="h-4 w-4 mr-1" />
                             Call
                           </Button>
-                          <Button variant="outline" size="sm" className="flex-1 border-black text-black hover:bg-gray-50 dark:hover:bg-gray-800">
+                          <Button variant="outline" size="sm" className="flex-1 border-black text-black hover:bg-primary hover:text-white">
                             <Mail className="h-4 w-4 mr-1" />
                             Email
                           </Button>
@@ -524,7 +524,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                       <Button
                         variant="outline"
                         onClick={() => setDealsToShow(prev => Math.min(prev + 6, agentDeals.length))}
-                        className="border-black text-black hover:bg-gray-50 dark:hover:bg-gray-800"
+                        className="border-black text-black hover:bg-primary hover:text-white"
                       >
                         Load More Deals ({agentDeals.length - dealsToShow} remaining)
                       </Button>
@@ -620,7 +620,7 @@ const AgentProfilePage = ({ agentIdOverride }) => {
                       <Button
                         variant="outline"
                         onClick={() => setReviewsToShow(prev => Math.min(prev + 5, agent.reviews.length))}
-                        className="border-black text-black hover:bg-gray-50 dark:hover:bg-gray-800"
+                        className="border-black text-black hover:bg-primary hover:text-white"
                       >
                         Load More Reviews ({agent.reviews.length - reviewsToShow} remaining)
                       </Button>

@@ -239,7 +239,7 @@ const ReviewsPageImproved = () => {
                   <Button
                     variant="outline"
                     onClick={() => setShowFiltersModal(true)}
-                    className="h-12 border-2 border-black text-black hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl font-semibold min-w-[140px]"
+                    className="h-12 border-2 border-black text-black hover:bg-primary hover:text-white rounded-xl font-semibold min-w-[140px]"
                   >
                     <Filter className="h-4 w-4 mr-2" />
                     Filters
@@ -276,7 +276,7 @@ const ReviewsPageImproved = () => {
                         else if (quick === 'Investment') handleFilterChange('transactionType', 'Investment Property');
                         else if (quick === 'First Home') handleFilterChange('serviceType', 'First Home Buyer Support');
                       }}
-                      className="px-3 py-1 bg-gray-100 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-100 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-gray-700 rounded-full text-xs transition-all"
+                      className="px-3 py-1 bg-gray-100 dark:bg-success hover:bg-success/90 dark:hover:bg-gray-100 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-gray-700 rounded-full text-xs transition-all"
                     >
                       {quick}
                     </button>

@@ -448,7 +448,7 @@ const UserProfile = () => {
                     </div>
 
                     <div className="pt-4">
-                      <Button onClick={handleSaveProfile} className="bg-gray-700 hover:bg-gray-100 text-white">
+                      <Button onClick={handleSaveProfile} className="bg-gray-700 hover:bg-primary/10 text-white">
                         <Save className="h-4 w-4 mr-2" />
                         Save Settings
                       </Button>
@@ -577,7 +577,7 @@ const UserProfile = () => {
                     </div>
 
                     <div className="pt-4">
-                      <Button onClick={handleSaveProfile} className="bg-black hover:bg-gray-100 text-white">
+                      <Button onClick={handleSaveProfile} className="bg-black hover:bg-primary/10 text-white">
                         <Save className="h-4 w-4 mr-2" />
                         Save Privacy Settings
                       </Button>

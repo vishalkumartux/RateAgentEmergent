@@ -320,7 +320,7 @@ const CompareAgentsPage = () => {
                       </div>
 
                       <Link to={`/agent/${agent.id}`} className="mt-4 block">
-                        <Button size="sm" variant="outline" className="w-full border-black text-black hover:bg-gray-50 dark:hover:bg-gray-800">
+                        <Button size="sm" variant="outline" className="w-full border-black text-black hover:bg-primary hover:text-white">
                           View Full Profile
                         </Button>
                       </Link>
@@ -599,7 +599,7 @@ const CompareAgentsPage = () => {
                         ))}
                       </div>
                       <Link to={`/agent/${agent.id}`} className="mt-3 block">
-                        <Button size="sm" variant="ghost" className="w-full text-black hover:bg-gray-50 dark:hover:bg-gray-800">
+                        <Button size="sm" variant="ghost" className="w-full text-black hover:bg-primary hover:text-white">
                           View All Deals →
                         </Button>
                       </Link>

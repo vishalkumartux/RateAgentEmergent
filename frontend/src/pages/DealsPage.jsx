@@ -258,7 +258,7 @@ const DealsPage = () => {
                     className={`h-12 px-4 rounded-xl transition-all ${
                       viewMode === 'list' 
                         ? 'bg-success hover:bg-success/90 text-white shadow-md' 
-                        : 'hover:bg-gray-200 dark:hover:bg-gray-600'
+                        : 'hover:bg-primary/10'
                     }`}
                   >
                     <List className="h-4 w-4 mr-2" />
@@ -270,7 +270,7 @@ const DealsPage = () => {
                     className={`h-12 px-4 rounded-xl transition-all ${
                       viewMode === 'map' 
                         ? 'bg-success hover:bg-success/90 text-white shadow-md' 
-                        : 'hover:bg-gray-200 dark:hover:bg-gray-600'
+                        : 'hover:bg-primary/10'
                     }`}
                   >
                     <Map className="h-4 w-4 mr-2" />
@@ -323,7 +323,7 @@ const DealsPage = () => {
                 <button
                   key={quick}
                   onClick={() => setSearchTerm(quick)}
-                  className="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-100 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-gray-700 rounded-full text-sm transition-all duration-200 hover:shadow-md"
+                  className="px-3 py-1.5 bg-gray-100 dark:bg-success hover:bg-success/90 dark:hover:bg-gray-100 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-gray-700 rounded-full text-sm transition-all duration-200 hover:shadow-md"
                 >
                   {quick}
                 </button>
@@ -833,7 +833,7 @@ const DealCard = ({ deal }) => {
             </Button>
           </Link>
           <Link to={`/agent/${deal.agentId}`} className="flex-1">
-            <Button variant="outline" size="sm" className="w-full border-black text-black hover:bg-gray-50 dark:hover:bg-gray-800">
+            <Button variant="outline" size="sm" className="w-full border-black text-black hover:bg-primary hover:text-white">
               View Agent
             </Button>
           </Link>

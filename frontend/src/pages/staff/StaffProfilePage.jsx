@@ -461,7 +461,7 @@ const StaffProfilePage = () => {
               <CardContent>
                 <div className="space-y-4">
                   {recentDeals.map((deal) => (
-                    <div key={deal.id} className="flex items-center justify-between p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                    <div key={deal.id} className="flex items-center justify-between p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-primary hover:text-white transition-colors">
                       <div className="flex-1">
                         <h4 className="font-semibold text-gray-900 dark:text-white">{deal.address}</h4>
                         <p className="text-gray-600 dark:text-gray-400 text-sm">{deal.type} • Listed {deal.date}</p>
